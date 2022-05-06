@@ -217,7 +217,7 @@ namespace Server.Engines.Quests
 
             Female = false;
             CantWalk = true;
-            Race = Race.Elf;
+            
 
             Hue = 0x876C;
             HairItemID = 0x2FC0;

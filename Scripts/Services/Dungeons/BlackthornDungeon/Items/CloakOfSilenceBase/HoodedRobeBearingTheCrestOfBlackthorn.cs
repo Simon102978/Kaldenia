@@ -14,7 +14,7 @@ namespace Server.Items
             : base(0x2683)
         {
             ReforgedSuffix = ReforgedSuffix.Blackthorn;
-            SkillBonuses.SetValues(0, SkillName.Stealth, 10.0);
+            SkillBonuses.SetValues(0, SkillName.Hiding, 10.0);
             Hue = 2130;
         }
 

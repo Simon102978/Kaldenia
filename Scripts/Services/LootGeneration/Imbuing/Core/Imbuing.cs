@@ -249,20 +249,12 @@ namespace Server.SkillHandlers
             double i = item is BaseJewel ? 0.9162 : 1.0;
 
             // - Racial Bonus - SA ONLY -
-            if (from.Race == Race.Gargoyle)
-            {
-                a = 1362.281555;
-                b = 66.32801518;
-                c = 235.2223147;
-                w = -1481.037561;
-            }
-            else
-            {
+           
                 a = 1554.96118;
                 b = 53.81743328;
                 c = 230.0038452;
                 w = -1664.857794;
-            }
+            
 
             // Royal City Bonus, Fluctuation - Removed as EA doesn't seem to fluctuate despite stratics posts
             /*if (bonus == 0.02)
@@ -1610,7 +1602,7 @@ namespace Server.SkillHandlers
                 SkillName.Focus,
                 SkillName.Necromancy,
                 SkillName.Stealing,
-                SkillName.Stealth,
+                SkillName.Hiding,
                 SkillName.SpiritSpeak,
                 SkillName.Bushido,
                 SkillName.Ninjitsu,
@@ -1622,7 +1614,7 @@ namespace Server.SkillHandlers
         {
             new SkillName[] { SkillName.Fencing, SkillName.Macing, SkillName.Swords, SkillName.Musicianship, SkillName.Magery },
             new SkillName[] { SkillName.Wrestling, SkillName.AnimalTaming, SkillName.SpiritSpeak, SkillName.Tactics, SkillName.Provocation },
-            new SkillName[] { SkillName.Focus, SkillName.Parry, SkillName.Stealth, SkillName.Meditation, SkillName.AnimalLore, SkillName.Discordance },
+            new SkillName[] { SkillName.Focus, SkillName.Parry, SkillName.Hiding, SkillName.Meditation, SkillName.AnimalLore, SkillName.Discordance },
             new SkillName[] { SkillName.Mysticism, SkillName.Bushido, SkillName.Necromancy, SkillName.Veterinary, SkillName.Stealing, SkillName.EvalInt, SkillName.Anatomy },
             new SkillName[] { SkillName.Peacemaking, SkillName.Ninjitsu, SkillName.Chivalry, SkillName.Archery, SkillName.MagicResist, SkillName.Healing, SkillName.Throwing }
         };

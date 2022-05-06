@@ -200,8 +200,6 @@ namespace Server.Items
 
                     ChangeHairstyleEntry[] entry = HumanMaleEntries;
 
-                    if (from.Race == Race.Human)
-                    {
                         if (from.Female)
                         {
                             entry = HumanFemaleEntries;
@@ -210,29 +208,8 @@ namespace Server.Items
                         {
                             entry = HumanMaleEntries;
                         }
-                    }
-                    else if (from.Race == Race.Elf)
-                    {
-                        if (from.Female)
-                        {
-                            entry = ElfFemaleEntries;
-                        }
-                        else
-                        {
-                            entry = ElfMaleEntries;
-                        }
-                    }
-                    else if (from.Race == Race.Gargoyle)
-                    {
-                        if (from.Female)
-                        {
-                            entry = GargoyleFemaleEntries;
-                        }
-                        else
-                        {
-                            entry = GargoyleMaleEntries;
-                        }
-                    }
+                    
+                   
 
                     from.SendGump(new InternalGump(from, Token, entry));
                 }

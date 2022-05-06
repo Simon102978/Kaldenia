@@ -617,7 +617,7 @@ namespace Server.Mobiles
                 }
             }
 
-            Race = Race.Gargoyle;
+            
 
             Hue = Race.RandomSkinHue();
 

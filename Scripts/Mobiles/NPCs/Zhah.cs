@@ -16,7 +16,7 @@ namespace Server.Mobiles
         public override void InitBody()
         {
             Female = true;
-            Race = Race.Gargoyle;
+            
             Body = 667;
 
             InitStats(100, 100, 25);

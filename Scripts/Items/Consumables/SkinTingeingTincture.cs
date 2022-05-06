@@ -74,7 +74,6 @@ namespace Server.Items
 
                 int rows = User.Race == Race.Human ? 8 : 6;
                 int start = User.Race == Race.Human ? 40 : 80;
-                bool elf = User.Race == Race.Elf;
 
                 int x = start;
                 int y = start;
@@ -88,7 +87,7 @@ namespace Server.Items
                         y += 22;
                     }
 
-                    displayHue = elf ? list[i] - 1 : list[i];
+                    displayHue = list[i];
 
                     AddImage(x, y, 210, displayHue);
                     AddButton(x, y, 212, 212, i + 100, GumpButtonType.Reply, 0);
@@ -98,9 +97,7 @@ namespace Server.Items
 
                 displayHue = SelectedHue != 0 ? SelectedHue : User.Hue ^ 0x8000;
 
-                if (elf)
-                    displayHue--;
-
+              
                 AddImage(240, 0, GetPaperdollImage(), displayHue);
 
                 AddButton(250, 260, 239, 238, 1, GumpButtonType.Reply, 0);
@@ -139,38 +136,13 @@ namespace Server.Items
                 {
                     return User.Female ? 13 : 12;
                 }
-
-                if (User.Race == Race.Elf)
-                {
-                    return User.Female ? 15 : 14;
-                }
-
-                if (User.Race == Race.Gargoyle)
-                {
-                    return User.Female ? 665 : 666;
-                }
-
+               
                 return 0;
             }
 
             private int[] GetHueList()
             {
-                if (User.Race == Race.Human)
-                {
-                    return HumanSkinHues;
-                }
-
-                if (User.Race == Race.Elf)
-                {
-                    return ElfSkinHues;
-                }
-
-                if (User.Race == Race.Gargoyle)
-                {
-                    return GargoyleSkinHues;
-                }
-
-                return new int[0];
+              return HumanSkinHues;  
             }
 
             private static int[] _HumanSkinHues;

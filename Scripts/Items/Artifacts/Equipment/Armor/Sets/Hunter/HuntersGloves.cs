@@ -14,7 +14,7 @@ namespace Server.Items
 
             SetAttributes.BonusDex = 10;
 
-            SetSkillBonuses.SetValues(0, SkillName.Stealth, 40);
+            SetSkillBonuses.SetValues(0, SkillName.Hiding, 40);
 
             SetSelfRepair = 3;
 

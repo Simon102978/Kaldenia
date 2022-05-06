@@ -774,7 +774,7 @@ namespace Server
 			}
 			set
 			{
-				var oldRace = Race;
+				Race oldRace = Race;
 
 				m_Race = value;
 
@@ -783,10 +783,19 @@ namespace Server
 					m_Race = Race.DefaultRace;
 				}
 
+
+
 				Body = m_Race.Body(this);
 				UpdateResistances();
 
 				Delta(MobileDelta.Race);
+
+
+
+				oldRace.RemoveRace(this);
+
+				m_Race.AddRace(this);
+
 
 				OnRaceChange(oldRace);
 			}
@@ -1091,15 +1100,15 @@ namespace Server
 			var prefix = ""; // still needs to be defined due to cliloc. Only defined in PlayerMobile. BaseCreature and BaseVendor require the suffix for the title and use the same cliloc.
 
 			var suffix = "";
-
+/*
 			if (PropertyTitle && !String.IsNullOrEmpty(Title))
 			{
 				suffix = Title;
 			}
 
 			suffix = ApplyNameSuffix(suffix);
-
-			list.Add(1050045, "{0} \t{1}\t {2}", prefix, name, suffix); // ~1_PREFIX~~2_NAME~~3_SUFFIX~           
+*/
+			list.Add(1050045,name); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      
 		}
 
 		public virtual void GetProperties(ObjectPropertyList list)

@@ -1,6 +1,7 @@
 #region References
 using System;
 using System.Collections.Generic;
+using System.Linq;
 #endregion
 
 namespace Server
@@ -14,9 +15,11 @@ namespace Server
 
 		public static Race[] Races => m_Races;
 
+
+
 		public static Race Human => m_Races[0];
-		public static Race Elf => m_Races[1];
-		public static Race Gargoyle => m_Races[2];
+		/*		public static Race Elf => m_Races[1];
+				public static Race Gargoyle => m_Races[2];*/
 
 		private static readonly List<Race> m_AllRaces = new List<Race>();
 
@@ -36,6 +39,19 @@ namespace Server
 			return m_RaceNames;
 		}
 
+		public static Race GetRace(int Id)
+		{
+			foreach (Race item in m_AllRaces)
+			{
+				if (item.RaceID == Id)
+				{
+					return item;
+				}
+			}
+
+			return DefaultRace;
+		}
+
 		public static Race[] GetRaceValues()
 		{
 			CheckNamesAndValues();
@@ -46,7 +62,7 @@ namespace Server
 		{
 			CheckNamesAndValues();
 
-			for (var i = 0; i < m_RaceNames.Length; ++i)
+			for (int i = 0; i < m_RaceNames.Length; ++i)
 			{
 				if (Insensitive.Equals(m_RaceNames[i], value))
 				{
@@ -54,7 +70,7 @@ namespace Server
 				}
 			}
 
-			if (Int32.TryParse(value, out var index))
+			if (int.TryParse(value, out int index))
 			{
 				if (index >= 0 && index < m_Races.Length && m_Races[index] != null)
 				{
@@ -75,9 +91,9 @@ namespace Server
 			m_RaceNames = new string[m_AllRaces.Count];
 			m_RaceValues = new Race[m_AllRaces.Count];
 
-			for (var i = 0; i < m_AllRaces.Count; ++i)
+			for (int i = 0; i < m_AllRaces.Count; ++i)
 			{
-				var race = m_AllRaces[i];
+				Race race = m_AllRaces[i];
 
 				m_RaceNames[i] = race.Name;
 				m_RaceValues[i] = race;
@@ -93,6 +109,10 @@ namespace Server
 		private readonly int m_FemaleBody;
 		private readonly int m_MaleGhostBody;
 		private readonly int m_FemaleGhostBody;
+		/*       private  int[] m_SkinHues = new[]{ 1002 };
+			   private  Type m_Skin; */
+
+
 
 		public int MaleBody => m_MaleBody;
 		public int MaleGhostBody => m_MaleGhostBody;
@@ -121,6 +141,11 @@ namespace Server
 			m_FemaleGhostBody = femaleGhostBody;
 
 			PluralName = pluralName;
+		}
+		public static void RegisterRace(Race race)
+		{
+			Race.Races[race.RaceIndex] = race;
+			Race.AllRaces.Add(race);
 		}
 
 		public virtual bool ValidateHair(Mobile m, int itemID)
@@ -166,8 +191,67 @@ namespace Server
 
 		public abstract bool ValidateEquipment(Item item);
 
+		public virtual bool ValidateEquipment(Mobile from, Item equipment)
+		{
+			return ValidateEquipment(from, equipment, true);
+		}
+		public virtual bool ValidateEquipment(Mobile from, Item equipment, bool message)
+		{
+			return true;
+		}
+
+		public virtual int GetArmorRating(Mobile m)
+		{
+			return 0;
+		}
+
+		public virtual void ChangeHue(Mobile m)
+		{
+			// Sert principalement à rotater sur le hue.
+		}
+
+		public virtual int RotateHue(int Hue)
+		{
+			int n = 0;
+
+			foreach (int item in SkinHues)
+			{
+				if (item == Hue)
+				{
+					break;
+				}
+
+				n++;
+			}
+
+			n++;
+
+			if (n >= SkinHues.Length)
+			{
+				n = 0;
+			}
+
+			return SkinHues[n];
+
+			// Sert principalement à rotater sur le hue.
+		}
+
+
+
 		public abstract int ClipSkinHue(int hue);
-		public abstract int RandomSkinHue();
+		public virtual int RandomSkinHue()
+		{
+			int hue = 1002;
+
+			if (SkinHues.Length > 0)
+			{
+				hue = SkinHues[Utility.Random(0, SkinHues.Length)];
+			}
+
+			return hue;
+		}
+
+
 
 		public abstract int ClipHairHue(int hue);
 		public abstract int RandomHairHue();
@@ -192,7 +276,7 @@ namespace Server
 
 		public virtual int AliveBody(bool female)
 		{
-			return female ? m_FemaleBody : m_MaleBody;
+			return (female ? m_FemaleBody : m_MaleBody);
 		}
 
 		public virtual int GhostBody(Mobile m)
@@ -202,8 +286,33 @@ namespace Server
 
 		public virtual int GhostBody(bool female)
 		{
-			return female ? m_FemaleGhostBody : m_MaleGhostBody;
+			return (female ? m_FemaleGhostBody : m_MaleGhostBody);
 		}
+
+
+		public virtual void AddRace(Mobile m)
+		{
+
+		}
+
+		public virtual void AddRace(Mobile m, int hue)
+		{
+
+		}
+
+		public virtual void RemoveRace(Mobile m)
+		{
+
+		}
+
+
+		public virtual void CheckGump(Mobile m)
+		{
+
+		}
+
+
+
 
 		public int RaceID => m_RaceID;
 
@@ -212,5 +321,21 @@ namespace Server
 		public string Name { get => m_Name; set => m_Name = value; }
 
 		public string PluralName { get; set; }
+
+
+
+		public virtual int[] SkinHues => new int[] { 1023 };
+
+		//   public virtual Type Skin => null;
+
+		public virtual List<Type> RaceGump => new List<Type>();
+
+		public virtual bool StaticHue => false;
+
+		public virtual bool FemmeBarbe => false;
+
+		public virtual bool Barbe => true;
+
+		public virtual List<Type> VetementDepart => new List<Type>();
 	}
 }

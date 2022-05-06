@@ -5,6 +5,8 @@ namespace Server.Items
     [Alterable(typeof(DefBlacksmithy), typeof(GargishChaosShield))]
     public class ChaosShield : BaseShield
     {
+
+
         [Constructable]
         public ChaosShield()
             : base(0x1BC3)
@@ -25,8 +27,7 @@ namespace Server.Items
         public override int InitMinHits => 100;
         public override int InitMaxHits => 125;
         public override int StrReq => 95;
-
-        public override void Deserialize(GenericReader reader)
+		public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();

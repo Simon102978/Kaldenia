@@ -216,10 +216,7 @@ namespace Server.Misc
             if (CheckTransform(from, typeof(VampiricEmbraceSpell)))
                 points += 3;
             else if (CheckTransform(from, typeof(LichFormSpell)))
-                points += 13;
-
-            if (from is PlayerMobile && from.Race == Race.Gargoyle)
-                points += 2;
+                points += 13;           
 
             foreach (RegenBonusHandler handler in ManaBonusHandlers)
                 points += handler(from);

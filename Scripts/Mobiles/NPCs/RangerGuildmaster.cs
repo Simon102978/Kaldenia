@@ -13,7 +13,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 65.0, 88.0);
             SetSkill(SkillName.Archery, 90.0, 100.0);
             SetSkill(SkillName.Tracking, 90.0, 100.0);
-            SetSkill(SkillName.Stealth, 60.0, 83.0);
+            SetSkill(SkillName.Hiding, 60.0, 83.0);
             SetSkill(SkillName.Fencing, 36.0, 68.0);
             SetSkill(SkillName.Herding, 36.0, 68.0);
             SetSkill(SkillName.Swords, 45.0, 68.0);

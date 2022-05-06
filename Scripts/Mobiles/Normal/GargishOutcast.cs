@@ -11,7 +11,7 @@ namespace Server.Mobiles
         public GargishOutcast()
             : base(AIType.AI_Mystic, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Race = Race.Gargoyle;
+          
             Title = "the Gargish Outcast";
 
             SetStr(150);

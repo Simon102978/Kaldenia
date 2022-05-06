@@ -154,10 +154,7 @@ namespace Server.SkillHandlers
                 if (m == null || m == src || m is ShadowKnight || !CanDetect(src, m, false))
                     continue;
 
-                double ts = (m.Skills[SkillName.Hiding].Value + m.Skills[SkillName.Stealth].Value) / 2;
-
-                if (src.Race == Race.Elf)
-                    ss += 20;
+                double ts = (m.Skills[SkillName.Hiding].Value);
 
                 if (src.AccessLevel >= m.AccessLevel && Utility.Random(1000) < (ss - ts) + 1)
                 {

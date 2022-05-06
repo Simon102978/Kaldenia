@@ -179,7 +179,7 @@ namespace Server.Items
         {
             return GetSkill(from, SkillName.Swords) + GetSkill(from, SkillName.Macing) +
                    GetSkill(from, SkillName.Fencing) + GetSkill(from, SkillName.Archery) + GetSkill(from, SkillName.Parry) +
-                   GetSkill(from, SkillName.Lumberjacking) + GetSkill(from, SkillName.Stealth) + GetSkill(from, SkillName.Throwing) +
+                   GetSkill(from, SkillName.Lumberjacking) + GetSkill(from, SkillName.Hiding) + GetSkill(from, SkillName.Throwing) +
                    GetSkill(from, SkillName.Poisoning) + GetSkill(from, SkillName.Bushido) + GetSkill(from, SkillName.Ninjitsu);
         }
 

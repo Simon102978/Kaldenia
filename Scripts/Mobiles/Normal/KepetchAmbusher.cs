@@ -37,7 +37,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 94.6, 97.4);
             SetSkill(SkillName.Tactics, 110.4, 123.5);
             SetSkill(SkillName.Wrestling, 107.3, 113.9);
-            SetSkill(SkillName.Stealth, 125.0);
+         //   SetSkill(SkillName.Hiding, 125.0);
             SetSkill(SkillName.Hiding, 125.0);
 
             Fame = 2500;
@@ -175,7 +175,7 @@ namespace Server.Mobiles
                 PlaySound(0x22F);
                 Hidden = true;
 
-                UseSkill(SkillName.Stealth);
+                UseSkill(SkillName.Hiding);
             }
         }
 

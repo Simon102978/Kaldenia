@@ -121,7 +121,7 @@ namespace Server.Engines.Quests
         {
             Female = false;
             CantWalk = true;
-            Race = Race.Elf;
+            
 
             base.InitBody();
         }

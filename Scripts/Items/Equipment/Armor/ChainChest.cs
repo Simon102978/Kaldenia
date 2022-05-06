@@ -13,7 +13,7 @@ namespace Server.Items
         public override int StrReq => 60;
         public override ArmorMaterialType MaterialType => ArmorMaterialType.Chainmail;
 
-        [Constructable]
+		[Constructable]
         public ChainChest()
             : base(0x13BF)
         {

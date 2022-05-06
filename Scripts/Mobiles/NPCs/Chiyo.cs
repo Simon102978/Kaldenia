@@ -93,7 +93,7 @@ namespace Server.Engines.Quests
             SetSkill(SkillName.Healing, 120.0, 120.0);
             SetSkill(SkillName.Tactics, 120.0, 120.0);
             SetSkill(SkillName.Fencing, 120.0, 120.0);
-            SetSkill(SkillName.Stealth, 120.0, 120.0);
+    //        SetSkill(SkillName.Stealth, 120.0, 120.0);
             SetSkill(SkillName.Ninjitsu, 120.0, 120.0);
         }
 

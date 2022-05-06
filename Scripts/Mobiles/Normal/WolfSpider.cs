@@ -38,7 +38,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 84.1, 95.9);
             SetSkill(SkillName.Wrestling, 80.2, 90.0);
             SetSkill(SkillName.Hiding, 105.0, 110.0);
-            SetSkill(SkillName.Stealth, 105.0, 110.0);
+  //          SetSkill(SkillName.Stealth, 105.0, 110.0);
 
             Tamable = true;
             ControlSlots = 2;

@@ -414,7 +414,7 @@ namespace Server.Items
                     return false;
                 }
 
-                if (!RaceDefinitions.ValidateEquipment(from, this))
+                if (!from.Race.ValidateEquipment(this))
                 {
                     return false;
                 }
@@ -522,7 +522,7 @@ namespace Server.Items
                 {
                     BaseClothing clothing = (BaseClothing)item;
 
-                    if (!RaceDefinitions.ValidateEquipment(m, clothing))
+                    if (!m.Race.ValidateEquipment(clothing))
                     {
                         m.AddToBackpack(clothing);
                     }
@@ -927,15 +927,6 @@ namespace Server.Items
 
                     GetSetProperties(list);
                 }
-            }
-
-            if (RaceDefinitions.GetRequiredRace(this) == Race.Elf)
-            {
-                list.Add(1075086); // Elves Only
-            }
-            else if (RaceDefinitions.GetRequiredRace(this) == Race.Gargoyle)
-            {
-                list.Add(1111709); // Gargoyles Only
             }
 
             if (m_NegativeAttributes != null)

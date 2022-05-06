@@ -14,7 +14,7 @@ namespace Server.Items
         public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
         public override CraftResource DefaultResource => CraftResource.RegularLeather;
 
-        [Constructable]
+		[Constructable]
         public BoneArms()
             : base(0x144E)
         {

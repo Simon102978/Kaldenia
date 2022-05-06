@@ -64,10 +64,7 @@ namespace Server.Engines.Quests
 
                     quester.CheckCompleted(m, true); // removes done quests
 
-                    if (m.Race == Race.Elf)
-                        m.SendLocalizedMessage(1073653); // You are now fully initiated into the Elven culture.
-                    else if (m.Race == Race.Human)
-                        m.SendLocalizedMessage(1073654); // You are now fully human.
+                    m.SendLocalizedMessage(1073654); // You are now fully human.
                 }
                 else if (RaceChangeToken.IsPending(m))
                 {

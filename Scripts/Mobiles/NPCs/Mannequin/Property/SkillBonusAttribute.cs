@@ -128,7 +128,7 @@ namespace Server.Mobiles.MannequinProperty
     public class StealthBonusProperty : SkillBonusAttr
     {
         public override int LabelNumber => 1044107;  // Stealth
-        public override SkillName Skill => SkillName.Stealth;
+        public override SkillName Skill => SkillName.Hiding;
     }
 
     public class ParryBonusProperty : SkillBonusAttr

@@ -46,7 +46,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Anatomy, 50.1, 90.0);
             SetSkill(SkillName.DetectHidden, 100.1, 120.0);
             SetSkill(SkillName.Hiding, 100.0, 120.0);
-            SetSkill(SkillName.Stealth, 80.1, 120.0);
+   //         SetSkill(SkillName.Stealth, 80.1, 120.0);
 
             Fame = 1500;
             Karma = -1500;

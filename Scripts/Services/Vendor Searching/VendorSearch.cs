@@ -342,23 +342,8 @@ namespace Server.Engines.VendorSearching
                 {
                     switch ((Misc)o)
                     {
-                        case Misc.ExcludeFel: break;
-                        case Misc.GargoyleOnly:
-                            if (!IsGargoyle(item))
-                                return false;
-                            break;
-                        case Misc.NotGargoyleOnly:
-                            if (IsGargoyle(item))
-                                return false;
-                            break;
-                        case Misc.ElvesOnly:
-                            if (!IsElf(item))
-                                return false;
-                            break;
-                        case Misc.NotElvesOnly:
-                            if (IsElf(item))
-                                return false;
-                            break;
+                        case Misc.ExcludeFel: 
+							break;                      
                         case Misc.FactionItem:
                             return false;
                         case Misc.PromotionalToken:
@@ -495,15 +480,6 @@ namespace Server.Engines.VendorSearching
             return Keywords.ContainsKey(searchstring.ToLower()) && Keywords[searchstring.ToLower()] == item.GetType();
         }
 
-        public static bool IsGargoyle(Item item)
-        {
-            return Race.Gargoyle.ValidateEquipment(item);
-        }
-
-        public static bool IsElf(Item item)
-        {
-            return Race.Elf.ValidateEquipment(item);
-        }
 
         public static SearchCriteria AddNewContext(PlayerMobile pm)
         {

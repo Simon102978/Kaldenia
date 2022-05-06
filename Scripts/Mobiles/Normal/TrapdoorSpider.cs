@@ -38,7 +38,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 73.3, 78.9);
             SetSkill(SkillName.Wrestling, 92.5, 94.6);
             SetSkill(SkillName.Hiding, 110.3, 119.9);
-            SetSkill(SkillName.Stealth, 110.5, 119.6);
+     //       SetSkill(SkillName.Stealth, 110.5, 119.6);
         }
 
         public TrapdoorSpider(Serial serial)
@@ -125,7 +125,7 @@ namespace Server.Mobiles
                 PlaySound(0x22F);
                 Hidden = true;
 
-                UseSkill(SkillName.Stealth);
+                UseSkill(SkillName.Hiding);
             }
         }
 

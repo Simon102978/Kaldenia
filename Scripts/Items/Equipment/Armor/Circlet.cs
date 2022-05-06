@@ -26,7 +26,7 @@ namespace Server.Items
         public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
         public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.All;
 
-        public override void Serialize(GenericWriter writer)
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.WriteEncodedInt(0); // version

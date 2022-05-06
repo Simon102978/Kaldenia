@@ -125,7 +125,7 @@ namespace Server.Engines.Quests
 
             Female = false;
             CantWalk = true;
-            Race = Race.Gargoyle;
+            
 
             Body = 666;
             Utility.AssignRandomHair(this);

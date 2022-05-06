@@ -14,7 +14,7 @@ namespace Server.Items
         public override int InitMaxHits => 50;
         public override int StrReq => 20;
 
-        [Constructable]
+		[Constructable]
         public Buckler()
             : base(0x1B73)
         {

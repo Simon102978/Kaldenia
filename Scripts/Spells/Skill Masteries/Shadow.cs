@@ -17,7 +17,7 @@ namespace Server.Spells.SkillMasteries
         public override bool CheckManaBeforeCast => !HasSpell(Caster, GetType());
 
         public override SkillName CastSkill => SkillName.Ninjitsu;
-        public override SkillName DamageSkill => SkillName.Stealth;
+        public override SkillName DamageSkill => SkillName.Hiding;
 
         public ShadowSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)

@@ -128,7 +128,7 @@ namespace Server.Commands
 
 	public static class CommandSystem
 	{
-		private static string m_Prefix = "[";
+		private static string m_Prefix = ".";
 
 		public static string Prefix { get => m_Prefix; set => m_Prefix = value; }
 
@@ -218,7 +218,7 @@ namespace Server.Commands
 
 		public static bool Handle(Mobile from, string text, MessageType type)
 		{
-			if (text.StartsWith(m_Prefix) || type == MessageType.Command)
+			if (text.StartsWith(".") || type == MessageType.Command)
 			{
 				if (type != MessageType.Command)
 				{

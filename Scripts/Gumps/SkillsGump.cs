@@ -489,7 +489,7 @@ namespace Server.Gumps
                 SkillName.RemoveTrap,
                 SkillName.Poisoning,
                 SkillName.Stealing,
-                SkillName.Stealth,
+                SkillName.Equitation,
                 SkillName.Tracking
             }),
             new SkillsGumpGroup("Lore & Knowledge", new SkillName[]

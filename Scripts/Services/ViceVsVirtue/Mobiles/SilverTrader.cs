@@ -56,12 +56,6 @@ namespace Server.Engines.VvV
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
             base.OnMovement(m, oldLocation);
-
-            if (_NextSpeak < DateTime.UtcNow && ViceVsVirtueSystem.IsVvV(m) && InRange(m.Location, 6) && m.Race == Race.Gargoyle)
-            {
-                SayTo(m, 1155534); // I will convert your human artifacts to gargoyle versions if you hand them to me.
-                _NextSpeak = DateTime.UtcNow + TimeSpan.FromSeconds(25);
-            }
         }
 
         public override void OnDoubleClick(Mobile m)
@@ -148,59 +142,9 @@ namespace Server.Engines.VvV
             {
                 if (!(dropped is IOwnerRestricted) || ((IOwnerRestricted)dropped).Owner == from)
                 {
-                    if (dropped is IVvVItem && from.Race == Race.Gargoyle)
-                    {
-                        foreach (Type[] t in _Table)
-                        {
-                            if (dropped.GetType() == t[0])
-                            {
-                                IDurability dur = dropped as IDurability;
 
-                                if (dur != null && dur.MaxHitPoints == 255 && dur.HitPoints == 255)
-                                {
-                                    Item item = Loot.Construct(t[1]);
-
-                                    if (item != null)
-                                    {
-                                        VvVRewards.OnRewardItemCreated(from, item);
-
-                                        if (item is GargishCrimsonCincture)
-                                        {
-                                            ((GargishCrimsonCincture)item).Attributes.BonusDex = 10;
-                                        }
-
-                                        if (item is GargishMaceAndShieldGlasses)
-                                        {
-                                            ((GargishMaceAndShieldGlasses)item).Attributes.WeaponDamage = 10;
-                                        }
-
-                                        if (item is GargishFoldedSteelGlasses)
-                                        {
-                                            ((GargishFoldedSteelGlasses)item).Attributes.DefendChance = 25;
-                                        }
-
-                                        if (item is GargishWizardsCrystalGlasses)
-                                        {
-                                            ((GargishWizardsCrystalGlasses)item).PhysicalBonus = 5;
-                                            ((GargishWizardsCrystalGlasses)item).FireBonus = 5;
-                                            ((GargishWizardsCrystalGlasses)item).ColdBonus = 5;
-                                            ((GargishWizardsCrystalGlasses)item).PoisonBonus = 5;
-                                            ((GargishWizardsCrystalGlasses)item).EnergyBonus = 5;
-                                        }
-
-                                        from.AddToBackpack(item);
-                                        dropped.Delete();
-
-                                        return true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
                         return false;
-                    }
+
                 }
             }
 

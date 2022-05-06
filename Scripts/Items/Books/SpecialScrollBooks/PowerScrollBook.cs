@@ -54,7 +54,7 @@ namespace Server.Items
             _SkillInfo[SkillCat.TradeSkills] = new List<SkillName>() { SkillName.Blacksmith, SkillName.Tailoring };
             _SkillInfo[SkillCat.Magic] = new List<SkillName>() { SkillName.Bushido, SkillName.Chivalry, SkillName.EvalInt, SkillName.Imbuing, SkillName.Magery, SkillName.Meditation, SkillName.Mysticism, SkillName.Necromancy, SkillName.Ninjitsu, SkillName.MagicResist, SkillName.Spellweaving, SkillName.SpiritSpeak };
             _SkillInfo[SkillCat.Wilderness] = new List<SkillName>() { SkillName.AnimalLore, SkillName.AnimalTaming, SkillName.Fishing, SkillName.Veterinary };
-            _SkillInfo[SkillCat.Thievery] = new List<SkillName>() { SkillName.Stealing, SkillName.Stealth };
+            _SkillInfo[SkillCat.Thievery] = new List<SkillName>() { SkillName.Stealing, SkillName.Hiding };
             _SkillInfo[SkillCat.Bard] = new List<SkillName>() { SkillName.Discordance, SkillName.Musicianship, SkillName.Peacemaking, SkillName.Provocation };
 
             _ValueInfo = new Dictionary<int, double>();

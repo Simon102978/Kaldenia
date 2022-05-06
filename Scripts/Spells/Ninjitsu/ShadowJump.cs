@@ -92,7 +92,7 @@ namespace Server.Spells.Ninjitsu
 
                 m.PlaySound(0x512);
 
-                SkillHandlers.Stealth.OnUse(m); // stealth check after the a jump
+                SkillHandlers.Hiding.OnUse(m); // stealth check after the a jump
             }
 
             FinishSequence();

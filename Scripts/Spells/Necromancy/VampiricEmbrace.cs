@@ -24,11 +24,6 @@ namespace Server.Spells.Necromancy
         {
             get
             {
-                if (Caster.Race == Race.Gargoyle)
-                {
-                    return Caster.Female ? 667 : 666;
-                }
-
                 return Caster.Female ? Caster.Race.FemaleBody : Caster.Race.MaleBody;
             }
         }

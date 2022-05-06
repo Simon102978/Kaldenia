@@ -15,7 +15,7 @@ namespace Server.Items
         public ShadowDancerLeggings()
         {
             Hue = 0x455;
-            SkillBonuses.SetValues(0, SkillName.Stealth, 20.0);
+            SkillBonuses.SetValues(0, SkillName.Hiding, 20.0);
             SkillBonuses.SetValues(1, SkillName.Stealing, 20.0);
         }
 

@@ -285,8 +285,7 @@ namespace Server.Mobiles
                     Hue = 35187; break;
                 case EodonTribe.Urali:
                     Female = true;
-                    Body = 0x25E;
-                    Race = Race.Elf;
+                    Body = 0x25E;              
                     HairItemID = 0x2FC1;
                     Hue = 35356;
                     break;
@@ -487,7 +486,7 @@ namespace Server.Mobiles
                 case EodonTribe.Urali:
                     Female = false;
                     Body = 0x25D;
-                    Race = Race.Elf;
+                    
                     HairItemID = 0x2FC1;
                     Hue = 35356;
                     break;
@@ -647,7 +646,7 @@ namespace Server.Mobiles
                 case EodonTribe.Urali:
                     Female = true;
                     Body = 0x25E;
-                    Race = Race.Elf;
+                    
                     HairItemID = 0x2FD0;
                     Hue = 35356;
                     break;

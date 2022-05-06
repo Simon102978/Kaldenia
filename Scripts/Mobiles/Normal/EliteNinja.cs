@@ -48,7 +48,7 @@ namespace Server.Mobiles
 
             SetSkill(SkillName.Ninjitsu, 95.0, 120.0);
             SetSkill(SkillName.Hiding, 100.0);
-            SetSkill(SkillName.Stealth, 120.0);
+        //    SetSkill(SkillName.Stealth, 120.0);
 
             Fame = 8500;
             Karma = -8500;

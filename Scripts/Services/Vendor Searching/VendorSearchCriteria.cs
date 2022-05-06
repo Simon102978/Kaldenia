@@ -231,7 +231,7 @@ namespace Server.Engines.VendorSearching
             }),
             new SearchCriteriaCategory(Category.Skill3, 21, 1114257, new[] // Skill Group 3
             {
-                new SearchCriterionEntry(SkillName.Stealth, 1044107),
+                new SearchCriterionEntry(SkillName.Equitation, 1044107),
                 new SearchCriterionEntry(SkillName.Parry, 1044065),
                 new SearchCriterionEntry(SkillName.Meditation, 1044106),
                 new SearchCriterionEntry(SkillName.AnimalLore, 1044062),

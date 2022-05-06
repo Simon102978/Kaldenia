@@ -8,7 +8,7 @@
             : base()
         {
             Hue = 1163;
-            SkillBonuses.SetValues(0, SkillName.Stealth, 20.0);
+            SkillBonuses.SetValues(0, SkillName.Hiding, 20.0);
         }
 
         public RoyalGuardInvestigatorsCloak(Serial serial)

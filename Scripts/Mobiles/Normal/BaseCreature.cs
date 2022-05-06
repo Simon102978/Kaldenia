@@ -3912,10 +3912,10 @@ namespace Server.Mobiles
                 return false;
             }
 
-            if (skill == SkillName.Stealth && from.Skills[SkillName.Hiding].Base < Stealth.HidingRequirement)
+        /*    if (skill == SkillName.Stealth && from.Skills[SkillName.Hiding].Base < Stealth.HidingRequirement)
             {
                 return false;
-            }
+            }*/
 
             return true;
         }
@@ -4516,7 +4516,7 @@ namespace Server.Mobiles
 
             if (Hidden) //Hidden, let's try stealth
             {
-                if (!Mounted && Skills.Stealth.Value >= 25.0 && CanStealth)
+                if (!Mounted && Skills.Hiding.Value >= 25.0 && CanStealth)
                 {
                     bool running = (d & Direction.Running) != 0;
 
@@ -4527,7 +4527,7 @@ namespace Server.Mobiles
                     }
                     else if (AllowedStealthSteps-- <= 0)
                     {
-                        Stealth.OnUse(this);
+                        Hiding.OnUse(this);
                     }
                 }
                 else

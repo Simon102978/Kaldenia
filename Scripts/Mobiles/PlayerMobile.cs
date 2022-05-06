@@ -143,52 +143,7 @@ namespace Server.Mobiles
         #region Stygian Abyss
         public override void ToggleFlying()
         {
-            if (Race != Race.Gargoyle)
-                return;
-
-            if (Frozen)
-            {
-                SendLocalizedMessage(1060170); // You cannot use this ability while frozen.
-                return;
-            }
-
-            if (!Flying)
-            {
-                if (BeginAction(typeof(FlySpell)))
-                {
-                    if (Spell is Spell)
-                        ((Spell)Spell).Disturb(DisturbType.Unspecified, false, false);
-
-                    Spell spell = new FlySpell(this);
-                    spell.Cast();
-
-                    Timer.DelayCall(TimeSpan.FromSeconds(3), () => EndAction(typeof(FlySpell)));
-                }
-                else
-                {
-                    LocalOverheadMessage(MessageType.Regular, 0x3B2, 1075124); // You must wait before casting that spell again.
-                }
-            }
-            else if (IsValidLandLocation(Location, Map))
-            {
-                if (BeginAction(typeof(FlySpell)))
-                {
-                    if (Spell is Spell)
-                        ((Spell)Spell).Disturb(DisturbType.Unspecified, false, false);
-
-                    Animate(AnimationType.Land, 0);
-                    Flying = false;
-                    BuffInfo.RemoveBuff(this, BuffIcon.Fly);
-
-                    Timer.DelayCall(TimeSpan.FromSeconds(3), () => EndAction(typeof(FlySpell)));
-                }
-                else
-                {
-                    LocalOverheadMessage(MessageType.Regular, 0x3B2, 1075124); // You must wait before casting that spell again.
-                }
-            }
-            else
-                LocalOverheadMessage(MessageType.Regular, 0x3B2, 1113081); // You may not land here.
+             return;         
         }
 
         public static bool IsValidLandLocation(Point3D p, Map map)
@@ -997,10 +952,6 @@ namespace Server.Mobiles
                 max += Spells.Mysticism.StoneFormSpell.GetMaxResistBonus(this);
             }
 
-            if (Race == Race.Elf && type == ResistanceType.Energy)
-            {
-                max += 5; //Intended to go after the 60 max from curse
-            }
 
             if (type != ResistanceType.Physical && 60 < max && CurseSpell.UnderEffect(this))
             {
@@ -1087,17 +1038,7 @@ namespace Server.Mobiles
 
         protected override void OnRaceChange(Race oldRace)
         {
-            if (oldRace == Race.Gargoyle && Flying)
-            {
-                Flying = false;
-                SendSpeedControl(SpeedControlType.Disable);
-                BuffInfo.RemoveBuff(this, BuffIcon.Fly);
-            }
-            else if (oldRace != Race.Gargoyle && Race == Race.Gargoyle && Mounted)
-            {
-                Mount.Rider = null;
-            }
-
+            
             ValidateEquipment();
             UpdateResistances();
         }
@@ -1130,9 +1071,8 @@ namespace Server.Mobiles
         {
             global = LightCycle.ComputeLevelFor(this);
 
-            bool racialNightSight = Race == Race.Elf;
-
-            if (LightLevel < 21 && (AosAttributes.GetValue(this, AosAttribute.NightSight) > 0 || racialNightSight))
+        
+            if (LightLevel < 21 && (AosAttributes.GetValue(this, AosAttribute.NightSight) > 0))
             {
                 personal = 21;
             }
@@ -1353,7 +1293,7 @@ namespace Server.Mobiles
                     Item item = items[i];
                     bool drop = false;
 
-                    if (!RaceDefinitions.ValidateEquipment(from, item, false))
+                    if (!Race.ValidateEquipment(item))
                     {
                         drop = true;
                     }
@@ -1930,7 +1870,7 @@ namespace Server.Mobiles
         public override int StamMax => base.StamMax + AosAttributes.GetValue(this, AosAttribute.BonusStam);
 
         [CommandProperty(AccessLevel.GameMaster)]
-        public override int ManaMax => base.ManaMax + AosAttributes.GetValue(this, AosAttribute.BonusMana) + (Race == Race.Elf ? 20 : 0) + MasteryInfo.IntuitionBonus(this) + UraliTranceTonic.GetManaBuff(this);
+        public override int ManaMax => base.ManaMax + AosAttributes.GetValue(this, AosAttribute.BonusMana)  + MasteryInfo.IntuitionBonus(this) + UraliTranceTonic.GetManaBuff(this);
         #endregion
 
         #region Stat Getters/Setters
@@ -2053,19 +1993,7 @@ namespace Server.Mobiles
 
         public override void OnHitsChange(int oldValue)
         {
-            if (Race == Race.Gargoyle)
-            {
-                if (Hits <= HitsMax / 2)
-                {
-                    BuffInfo.AddBuff(this, new BuffInfo(BuffIcon.Berserk, 1080449, 1115021, string.Format("{0}\t{1}", GetRacialBerserkBuff(false), GetRacialBerserkBuff(true)), false));
-                    Delta(MobileDelta.WeaponDamage);
-                }
-                else if (oldValue < Hits && Hits > HitsMax / 2)
-                {
-                    BuffInfo.RemoveBuff(this, BuffIcon.Berserk);
-                    Delta(MobileDelta.WeaponDamage);
-                }
-            }
+                                
 
             base.OnHitsChange(oldValue);
         }
@@ -2077,8 +2005,6 @@ namespace Server.Mobiles
         /// <returns></returns>
         public virtual int GetRacialBerserkBuff(bool spell)
         {
-            if (Race != Race.Gargoyle || Hits > HitsMax / 2)
-                return 0;
 
             double perc = (Hits / (double)HitsMax) * 100;
             int value = 0;
@@ -3441,19 +3367,7 @@ namespace Server.Mobiles
 
         public override double GetRacialSkillBonus(SkillName skill)
         {
-            if (Race == Race.Human)
-                return 20.0;
-
-            if (Race == Race.Gargoyle)
-            {
-                if (skill == SkillName.Imbuing)
-                    return 30.0;
-
-                if (skill == SkillName.Throwing)
-                    return 20.0;
-            }
-
-            return RacialSkillBonus;
+            return 0;
         }
 
         public override void OnWarmodeChanged()
@@ -5001,71 +4915,6 @@ namespace Server.Mobiles
             }
         }
 
-        public override void GetProperties(ObjectPropertyList list)
-        {
-            base.GetProperties(list);
-
-            Engines.JollyRoger.JollyRogerData.DisplayTitle(this, list);
-
-            if (m_SubtitleSkillTitle != null)
-                list.Add(1042971, m_SubtitleSkillTitle);
-
-            if (m_CurrentVeteranTitle > 0)
-                list.Add(m_CurrentVeteranTitle);
-
-            if (m_RewardTitles != null && m_SelectedTitle > -1)
-            {
-                if (m_SelectedTitle < m_RewardTitles.Count)
-                {
-                    if (m_RewardTitles[m_SelectedTitle] is int)
-                    {
-                        string cust = null;
-
-                        if ((int)m_RewardTitles[m_SelectedTitle] == 1154017 && CityLoyaltySystem.HasCustomTitle(this, out cust))
-                        {
-                            list.Add(1154017, cust); // ~1_TITLE~ of ~2_CITY~
-                        }
-                        else
-                            list.Add((int)m_RewardTitles[m_SelectedTitle]);
-                    }
-                    else if (m_RewardTitles[m_SelectedTitle] is string)
-                    {
-                        list.Add(1070722, (string)m_RewardTitles[m_SelectedTitle]);
-                    }
-                }
-            }
-
-            for (int i = AllFollowers.Count - 1; i >= 0; i--)
-            {
-                BaseCreature c = AllFollowers[i] as BaseCreature;
-
-                if (c != null && c.ControlOrder == OrderType.Guard)
-                {
-                    list.Add(501129); // guarded
-                    break;
-                }
-            }
-
-            if (TestCenter.Enabled)
-            {
-                VvVPlayerEntry entry = PointsSystem.ViceVsVirtue.GetPlayerEntry<VvVPlayerEntry>(this);
-
-                list.Add(string.Format("Kills: {0} / Deaths: {1} / Assists: {2}", // no cliloc for this!
-                    entry == null ? "0" : entry.Kills.ToString(), entry == null ? "0" : entry.Deaths.ToString(), entry == null ? "0" : entry.Assists.ToString()));
-
-                list.Add(1060415, AosAttributes.GetValue(this, AosAttribute.AttackChance).ToString()); // hit chance increase ~1_val~%
-                list.Add(1060408, AosAttributes.GetValue(this, AosAttribute.DefendChance).ToString()); // defense chance increase ~1_val~%
-                list.Add(1060486, AosAttributes.GetValue(this, AosAttribute.WeaponSpeed).ToString()); // swing speed increase ~1_val~%
-                list.Add(1060401, AosAttributes.GetValue(this, AosAttribute.WeaponDamage).ToString()); // damage increase ~1_val~%
-                list.Add(1060483, AosAttributes.GetValue(this, AosAttribute.SpellDamage).ToString()); // spell damage increase ~1_val~%
-                list.Add(1060433, AosAttributes.GetValue(this, AosAttribute.LowerManaCost).ToString()); // lower mana cost
-            }
-
-            if (PlayerProperties != null)
-            {
-                PlayerProperties(new PlayerPropertiesEventArgs(this, list));
-            }
-        }
 
         protected override bool OnMove(Direction d)
         {
@@ -5081,7 +4930,7 @@ namespace Server.Mobiles
 
             if (Hidden && DesignContext.Find(this) == null) //Hidden & NOT customizing a house
             {
-                if (!Mounted && Skills.Stealth.Value >= 25.0)
+                if (!Mounted && Skills.Hiding.Value >= 25.0)
                 {
                     bool running = (d & Direction.Running) != 0;
 
@@ -5094,7 +4943,7 @@ namespace Server.Mobiles
                     }
                     else if (AllowedStealthSteps-- <= 0)
                     {
-                        Stealth.OnUse(this);
+                        Hiding.OnUse(this);
                     }
                 }
                 else
@@ -5337,7 +5186,9 @@ namespace Server.Mobiles
 
         public override void AddNameProperties(ObjectPropertyList list)
         {
-            string prefix = "";
+			base.AddNameProperties(list);
+
+    /*        string prefix = "";
 
             if (ShowFameTitle && Fame >= 10000)
             {
@@ -5421,7 +5272,7 @@ namespace Server.Mobiles
                 {
                     list.Add("{0}, {1}", Utility.FixHtml(title), Utility.FixHtml(guild.Name));
                 }
-            }
+            }*/
         }
 
         public override void OnAfterNameChange(string oldName, string newName)

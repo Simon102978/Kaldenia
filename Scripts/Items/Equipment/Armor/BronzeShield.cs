@@ -14,7 +14,7 @@ namespace Server.Items
         public override int InitMaxHits => 30;
         public override int StrReq => 35;
 
-        [Constructable]
+		[Constructable]
         public BronzeShield()
             : base(0x1B72)
         {

@@ -310,21 +310,17 @@ namespace Server.Misc
 
         private static bool AllowGain(Mobile from, Skill skill, object obj)
         {
-            if (Engines.VvV.ViceVsVirtueSystem.InSkillLoss(from)) //Changed some time between the introduction of AoS and SE.
-                return false;
+			/*     if (Engines.VvV.ViceVsVirtueSystem.InSkillLoss(from)) //Changed some time between the introduction of AoS and SE.
+					 return false;
 
-            if (from is PlayerMobile)
-            {
-                if (skill.Info.SkillID == (int)SkillName.Archery && from.Race == Race.Gargoyle)
-                    return false;
+				 if (from is PlayerMobile)
+				 {
+					 if (_AntiMacroCode && UseAntiMacro[skill.Info.SkillID])
+						 return ((PlayerMobile)from).AntiMacroCheck(skill, obj);
+				 }
+				 return true;*/
 
-                if (skill.Info.SkillID == (int)SkillName.Throwing && from.Race != Race.Gargoyle)
-                    return false;
-
-                if (_AntiMacroCode && UseAntiMacro[skill.Info.SkillID])
-                    return ((PlayerMobile)from).AntiMacroCheck(skill, obj);
-            }
-            return true;
+			return false;
         }
 
         public enum Stat
@@ -444,7 +440,7 @@ namespace Server.Misc
 
         private static void CheckReduceSkill(Skills skills, int toGain, Skill gainSKill)
         {
-            if (skills.Total / skills.Cap >= Utility.RandomDouble())
+         /*   if (skills.Total / skills.Cap >= Utility.RandomDouble())
             {
                 foreach (Skill toLower in skills)
                 {
@@ -454,13 +450,17 @@ namespace Server.Misc
                         break;
                     }
                 }
-            }
+            }*/
         }
 
         public static void TryStatGain(SkillInfo info, Mobile from)
         {
             // Chance roll
-            double chance;
+
+			
+
+
+     /*       double chance;
 
             if (from is BaseCreature && ((BaseCreature)from).Controlled)
             {
@@ -521,12 +521,12 @@ namespace Server.Misc
                     GainStat(from, (Stat)info.Primary);
                 else if (secondaryLock == StatLockType.Up)
                     GainStat(from, (Stat)info.Secondary);
-            }
+            }*/
         }
 
         public static bool CanLower(Mobile from, Stat stat)
         {
-            switch (stat)
+       /*     switch (stat)
             {
                 case Stat.Str:
                     return from.StrLock == StatLockType.Down && from.RawStr > 10;
@@ -536,14 +536,14 @@ namespace Server.Misc
 
                 case Stat.Int:
                     return from.IntLock == StatLockType.Down && from.RawInt > 10;
-            }
+            }*/
 
             return false;
         }
 
         public static bool CanRaise(Mobile from, Stat stat, bool atTotalCap)
         {
-            switch (stat)
+          /*  switch (stat)
             {
                 case Stat.Str:
                     if (from.RawStr < from.StrCap)
@@ -584,7 +584,7 @@ namespace Server.Misc
 
                     return false;
             }
-
+		  */
             return false;
         }
 

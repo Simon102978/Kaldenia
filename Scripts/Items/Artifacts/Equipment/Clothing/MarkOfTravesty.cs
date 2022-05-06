@@ -44,7 +44,7 @@ namespace Server.Items
                     break;
                 case 7:
                     SkillBonuses.SetValues(0, SkillName.Ninjitsu, 10);
-                    SkillBonuses.SetValues(1, SkillName.Stealth, 10);
+                    SkillBonuses.SetValues(1, SkillName.Hiding, 10);
                     break;
                 case 8:
                     SkillBonuses.SetValues(0, SkillName.Bushido, 10);
@@ -63,7 +63,7 @@ namespace Server.Items
                     SkillBonuses.SetValues(1, SkillName.SpiritSpeak, 10);
                     break;
                 case 12:
-                    SkillBonuses.SetValues(0, SkillName.Stealth, 10);
+                    SkillBonuses.SetValues(0, SkillName.Hiding, 10);
                     SkillBonuses.SetValues(1, SkillName.Stealing, 10);
                     break;
                 case 13:

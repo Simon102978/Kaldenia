@@ -452,7 +452,7 @@ namespace Server.Items
 
         public override bool CanEquip(Mobile m)
         {
-            if (!RaceDefinitions.ValidateEquipment(m, this))
+            if (m.Race.ValidateEquipment(this))
             { 
                 return false;
             }

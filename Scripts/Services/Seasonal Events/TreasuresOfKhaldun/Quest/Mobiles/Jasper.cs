@@ -33,8 +33,7 @@ namespace Server.Engines.Khaldun
 
             Female = false;
             CantWalk = true;
-
-            Race = Race.Elf;
+        
             Hue = 33770;
             HairItemID = 0x2FCF;
             HairHue = Race.RandomHairHue();

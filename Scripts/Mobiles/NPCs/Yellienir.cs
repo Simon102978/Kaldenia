@@ -35,7 +35,7 @@ namespace Server.Mobiles
 
             Female = true;
             CantWalk = true;
-            Race = Race.Elf;
+            
 
             Hue = 0x851D;
             HairItemID = 0x2FCE;

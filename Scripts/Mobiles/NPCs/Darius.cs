@@ -20,7 +20,7 @@ namespace Server.Engines.Quests
         public override void InitBody()
         {
             Female = false;
-            Race = Race.Elf;
+            
 
             Hue = 0x8385;
             HairItemID = 0x2FCE;

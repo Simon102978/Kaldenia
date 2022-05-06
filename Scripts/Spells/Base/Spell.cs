@@ -704,24 +704,6 @@ namespace Server.Spells
             }
             else if (!CheckManaBeforeCast || m_Caster.Mana >= ScaleMana(GetMana()))
             {
-                #region Stygian Abyss
-                if (m_Caster.Race == Race.Gargoyle && m_Caster.Flying)
-                {
-                    if (BaseMount.OnFlightPath(m_Caster))
-                    {
-                        if (m_Caster.IsPlayer())
-                        {
-                            m_Caster.SendLocalizedMessage(1113750); // You may not cast spells while flying over such precarious terrain.
-                            return false;
-                        }
-                        else
-                        {
-                            m_Caster.SendMessage("Your staff level allows you to cast while flying over precarious terrain.");
-                        }
-                    }
-                }
-                #endregion
-
                 if (m_Caster.Spell == null && m_Caster.CheckSpellCast(this) && CheckCast() &&
                     m_Caster.Region.OnBeginSpellCast(m_Caster, this))
                 {

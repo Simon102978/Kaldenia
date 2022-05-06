@@ -151,13 +151,11 @@ namespace Server.Engines.Blackthorn
         {
             switch (_Specialty)
             {
-                default:
-                    if (0.75 > Utility.RandomDouble())
+                default:                 
                         Race = Race.Human;
-                    else
-                        Race = Race.Elf; break;
+					   break;                    
                 case SkillName.Archery:
-                case SkillName.Spellweaving: Race = Race.Elf; break;
+                case SkillName.Spellweaving:  break;
             }
 
             HairItemID = Race.RandomHair(Female);
@@ -211,7 +209,7 @@ namespace Server.Engines.Blackthorn
             if (_Specialty == SkillName.Ninjitsu)
             {
                 SetSkill(SkillName.Hiding, 100);
-                SetSkill(SkillName.Stealth, 100);
+           //     SetSkill(SkillName.Stealth, 100);
             }
         }
 
@@ -367,17 +365,12 @@ namespace Server.Engines.Blackthorn
 
         public Item RandomSwordWeapon()
         {
-            if (Race == Race.Elf)
-                return Loot.Construct(new Type[] { typeof(ElvenMachete), typeof(RadiantScimitar) });
-
+          
             return Loot.Construct(new Type[] { typeof(Broadsword), typeof(Longsword), typeof(Katana), typeof(Halberd), typeof(Bardiche), typeof(VikingSword) });
         }
 
         public Item RandomFencingWeapon()
         {
-            if (Race == Race.Elf)
-                return Loot.Construct(new Type[] { typeof(Leafblade), typeof(WarCleaver), typeof(AssassinSpike) });
-
             return Loot.Construct(new Type[] { typeof(Kryss), typeof(Spear), typeof(ShortSpear), typeof(Lance), typeof(Pike) });
         }
 
@@ -388,9 +381,6 @@ namespace Server.Engines.Blackthorn
 
         public Item RandomArhceryWeapon()
         {
-            if (Race == Race.Elf)
-                return Loot.Construct(new Type[] { typeof(MagicalShortbow), typeof(ElvenCompositeLongbow) });
-
             return Loot.Construct(new Type[] { typeof(Bow), typeof(Crossbow), typeof(HeavyCrossbow), typeof(CompositeBow), typeof(RepeatingCrossbow) });
         }
 

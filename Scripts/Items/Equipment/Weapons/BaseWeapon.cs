@@ -799,7 +799,7 @@ namespace Server.Items
                 }
             }
 
-            if (!RaceDefinitions.ValidateEquipment(from, this))
+            if (!from.Race.ValidateEquipment(this))
             {
                 return false;
             }
@@ -1122,7 +1122,7 @@ namespace Server.Items
             }
 
             //SA Gargoyle cap is 50, else 45
-            bonus = Math.Min(attacker.Race == Race.Gargoyle ? 50 : 45, bonus);
+            bonus = Math.Min(45, bonus);
 
             ourValue = (atkValue + 20.0) * (100 + bonus);
 
@@ -3110,10 +3110,10 @@ namespace Server.Items
                 attacker.CheckSkill(SkillName.Anatomy, 0.0, attacker.Skills[SkillName.Anatomy].Cap);
                 // Passively check Anatomy for gain
 
-                if (Type == WeaponType.Axe)
+           /*     if (Type == WeaponType.Axe)
                 {
                     attacker.CheckSkill(SkillName.Lumberjacking, 0.0, 100.0); // Passively check Lumberjacking for gain
-                }
+                }*/
             }
 
             #region Physical bonuses
@@ -3124,12 +3124,12 @@ namespace Server.Items
             double strengthBonus = GetBonus(attacker.Str, 0.300, 100.0, 5.00);
             double anatomyBonus = GetBonus(attacker.Skills[SkillName.Anatomy].Value, 0.500, 100.0, 5.00);
             double tacticsBonus = GetBonus(attacker.Skills[SkillName.Tactics].Value, 0.625, 100.0, 6.25);
-            double lumberBonus = GetBonus(attacker.Skills[SkillName.Lumberjacking].Value, 0.200, 100.0, 10.00);
+         //   double lumberBonus = GetBonus(attacker.Skills[SkillName.Lumberjacking].Value, 0.200, 100.0, 10.00);
 
-            if (Type != WeaponType.Axe)
+   /*         if (Type != WeaponType.Axe)
             {
                 lumberBonus = 0.0;
-            }
+            }*/
             #endregion
 
             #region Modifiers
@@ -3145,7 +3145,7 @@ namespace Server.Items
             }
             #endregion
 
-            double totalBonus = strengthBonus + anatomyBonus + tacticsBonus + lumberBonus +
+            double totalBonus = strengthBonus + anatomyBonus + tacticsBonus /*+ lumberBonus*/ +
                                 (damageBonus / 100.0);
 
             return damage + (int)(damage * totalBonus);
@@ -4503,15 +4503,6 @@ namespace Server.Items
             if (m_AosSkillBonuses != null)
             {
                 m_AosSkillBonuses.GetProperties(list);
-            }
-
-            if (RaceDefinitions.GetRequiredRace(this) == Race.Elf)
-            {
-                list.Add(1075086); // Elves Only
-            }
-            else if (RaceDefinitions.GetRequiredRace(this) == Race.Gargoyle)
-            {
-                list.Add(1111709); // Gargoyles Only
             }
 
             if (ArtifactRarity > 0)

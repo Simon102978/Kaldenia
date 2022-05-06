@@ -74,7 +74,7 @@ namespace Server
 		Lumberjacking = 44,
 		Mining = 45,
 		Meditation = 46,
-		Stealth = 47,
+		Equitation = 47,
 		RemoveTrap = 48,
 		Necromancy = 49,
 		Focus = 50,
@@ -634,7 +634,7 @@ namespace Server
 			new SkillInfo(44, "Lumberjacking", 20.0, 0.0, 0.0, "Lumberjack", null, 2.0, 0.0, 0.0, 1.0, StatCode.Str, StatCode.Dex),
 			new SkillInfo(45, "Mining", 20.0, 0.0, 0.0, "Miner", null, 2.0, 0.0, 0.0, 1.0, StatCode.Str, StatCode.Dex),
 			new SkillInfo(46, "Meditation", 0.0, 0.0, 0.0, "Stoic", null, 0.0, 0.0, 0.0, 1.0, StatCode.Int, StatCode.Str),
-			new SkillInfo(47, "Stealth", 0.0, 0.0, 0.0, "Rogue", null, 0.0, 0.0, 0.0, 1.0, StatCode.Dex, StatCode.Int),
+			new SkillInfo(47, "Equitation", 0.0, 0.0, 0.0, "Rogue", null, 0.0, 0.0, 0.0, 1.0, StatCode.Dex, StatCode.Int),
 			new SkillInfo(48, "Remove Trap", 0.0, 0.0, 0.0, "Trap Specialist", null, 0.0, 0.0, 0.0, 1.0, StatCode.Dex, StatCode.Int),
 			new SkillInfo(49, "Necromancy", 0.0, 0.0, 0.0, "Necromancer", null, 0.0, 0.0, 0.0, 1.0, StatCode.Int, StatCode.Str, true ),
 			new SkillInfo(50, "Focus", 0.0, 0.0, 0.0, "Driven", null, 0.0, 0.0, 0.0, 1.0, StatCode.Dex, StatCode.Int),
@@ -801,7 +801,7 @@ namespace Server
 		public Skill Meditation { get => this[SkillName.Meditation]; set { } }
 
 		[CommandProperty(AccessLevel.Counselor)]
-		public Skill Stealth { get => this[SkillName.Stealth]; set { } }
+		public Skill Equitation { get => this[SkillName.Equitation]; set { } }
 
 		[CommandProperty(AccessLevel.Counselor)]
 		public Skill RemoveTrap { get => this[SkillName.RemoveTrap]; set { } }

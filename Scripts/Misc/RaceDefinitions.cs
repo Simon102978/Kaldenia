@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Linq;
 
 using Server.Items;
@@ -16,6 +16,7 @@ namespace Server.Misc
             * 3) Race 0xFF is reserved for core use.
             * 4) Changing or removing any predefined races may cause server instability.
             */
+/*
             RegisterRace(new Human(0, 0));
             RegisterRace(new Elf(1, 1));
             RegisterRace(new Gargoyle(2, 2));
@@ -488,86 +489,17 @@ namespace Server.Misc
                 return true;
             }
 
-            if (!from.Race.ValidateEquipment(equipment))
-            {
-                if (from.Race == Race.Gargoyle)
-                {
-                    if (message)
-                    {
-                        from.LocalOverheadMessage(Network.MessageType.Regular, 0x3B2, 1111708); // Gargoyles can't wear this.
-                    }
-                }
-                else
-                {
-                    var required = GetRequiredRace(equipment);
-
-                    if (required == Race.Elf)
-                    {
-                        if (from.FindItemOnLayer(Layer.Earrings) is MorphEarrings)
-                        {
-                            return true;
-                        }
-
-                        if (message)
-                        {
-                            from.SendLocalizedMessage(1072203); // Only Elves may use this.
-                        }
-                    }
-                    else if (required == Race.Gargoyle)
-                    {
-                        if (message)
-                        {
-                            from.LocalOverheadMessage(Network.MessageType.Regular, 0x3B2, 1111707); // Only gargoyles can wear this.
-                        }
-                    }
-                    else if (required != Race.Human)
-                    {
-                        if (message)
-                        {
-                            from.SendMessage("Only {0} may use this.", required.PluralName);
-                        }
-                    }
-                }
-
-                return false;
-            }
-
+          
             return true;
         }
 
         public static bool ValidateElfOrHuman(Mobile from, Item equipment)
         {
-            var elfOrHuman = equipment as ICanBeElfOrHuman;
-
-            if (elfOrHuman != null)
-            {
-                return from.Race == Race.Elf || !elfOrHuman.ElfOnly;
-            }
-
             return true;
         }
 
         public static Race GetRequiredRace(Item item)
         {
-            var itemID = item.ItemID;
-
-            if (GargoyleOnlyIDs.Any(id => id == itemID))
-            {
-                return Race.Gargoyle;
-            }
-
-            var elfOrHuman = item as ICanBeElfOrHuman;
-
-            if (elfOrHuman != null)
-            {
-                return elfOrHuman.ElfOnly ? Race.Elf : Race.Human;
-            }
-
-            if (ElfOnlyIDs.Any(id => id == itemID))
-            {
-                return Race.Elf;
-            }
-
             return Race.Human;
         }
 
@@ -654,3 +586,4 @@ namespace Server.Misc
         };
     }
 }
+*/

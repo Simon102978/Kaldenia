@@ -27,7 +27,7 @@ namespace Server.Engines.Quests
             InitStats(100, 100, 25);
 
             CantWalk = true;
-            Race = Race.Gargoyle;
+            
 
             Hue = 0x86E8;
             HairItemID = 0x4258;

@@ -388,7 +388,7 @@ namespace Server.Mobiles
             SkillName.MagicResist, SkillName.Tactics, SkillName.Snooping, SkillName.RemoveTrap, SkillName.Musicianship,
             SkillName.Poisoning, SkillName.Archery, SkillName.SpiritSpeak, SkillName.Tailoring, SkillName.AnimalTaming,
             SkillName.TasteID, SkillName.Tinkering, SkillName.Veterinary, SkillName.Forensics, SkillName.Herding,
-            SkillName.Tracking, SkillName.Stealth, SkillName.Inscribe, SkillName.Swords, SkillName.Macing, SkillName.Fencing,
+            SkillName.Tracking, SkillName.Equitation, SkillName.Inscribe, SkillName.Swords, SkillName.Macing, SkillName.Fencing,
             SkillName.Wrestling, SkillName.Lumberjacking, SkillName.Mining, SkillName.Meditation
         };
 

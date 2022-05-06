@@ -9,7 +9,7 @@ namespace Server.Mobiles
         public ElfBrigand()
             : base(AIType.AI_Spellweaving, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Race = Race.Elf;
+            
 
             if (Female = Utility.RandomBool())
             {

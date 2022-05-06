@@ -911,59 +911,7 @@ namespace Server.Gumps
 
             AddHtmlLocalized(10, 42, 150, 18, 1062459, 0x421F, false, false); // <CENTER>HAIR</CENTER>
 
-            if (vendor.Race == Race.Elf)
-            {
-                // Remove Hair
-                AddButton(10, 70 + m_FemaleElfHairStyles.Length * 20, 0xFB1, 0xFB3, 2, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(45, 72 + m_FemaleElfHairStyles.Length * 20, 110, 18, 1011403, 0x7FFF, false, false); // Remove
-
-                // Color Hair
-                AddButton(10, 70 + (m_FemaleElfHairStyles.Length + 1) * 20, 0xFA5, 0xFA7, 3, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(45, 72 + (m_FemaleElfHairStyles.Length + 1) * 20, 110, 18, 1011402, 0x7FFF, false, false); // Color
-
-                if (vendor.Female)
-                {
-                    // Hair
-                    for (int i = 0; i < m_FemaleElfHairStyles.Length; i++)
-                    {
-                        HairOrBeard hair = m_FemaleElfHairStyles[i];
-
-                        AddButton(10, 70 + i * 20, 0xFA5, 0xFA7, 0x100 | i, GumpButtonType.Reply, 0);
-                        AddHtmlLocalized(45, 72 + i * 20, 110, 18, hair.Name, 0x7FFF, false, false);
-                    }
-
-                    // Change gender
-                    AddButton(160, 290, 0xFA5, 0xFA7, 1, GumpButtonType.Reply, 0);
-                    AddHtmlLocalized(195, 292, 160, 18, 1015327, 0x7FFF, false, false); // Male
-
-                    AddHtmlLocalized(195, 312, 160, 18, 1015328, 0x421F, false, false); // Female
-                }
-                else
-                {
-                    // Hair
-                    for (int i = 0; i < m_MaleElfHairStyles.Length; i++)
-                    {
-                        HairOrBeard hair = m_MaleElfHairStyles[i];
-
-                        AddButton(10, 70 + i * 20, 0xFA5, 0xFA7, 0x100 | i, GumpButtonType.Reply, 0);
-                        AddHtmlLocalized(45, 72 + i * 20, 110, 18, hair.Name, 0x7FFF, false, false);
-                    }
-
-                    // Change gender
-                    AddHtmlLocalized(195, 292, 160, 18, 1015327, 0x421F, false, false); // Male
-
-                    AddButton(160, 310, 0xFA5, 0xFA7, 1, GumpButtonType.Reply, 0);
-                    AddHtmlLocalized(195, 312, 160, 18, 1015328, 0x7FFF, false, false); // Female
-                }
-
-                // Change race
-                AddButton(245, 290, 0xFA5, 0xFA7, 6, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(275, 292, 160, 18, 1072255, 0x7FFF, false, false); // Human
-
-                AddHtmlLocalized(275, 312, 160, 18, 1072256, 0x421F, false, false); // Elf
-            }
-            else
-            {
+    
                 // Change hair
                 for (int i = 0; i < m_HairStyles.Length; i++)
                 {
@@ -1015,7 +963,7 @@ namespace Server.Gumps
 
                 AddButton(245, 310, 0xFA5, 0xFA7, 6, GumpButtonType.Reply, 0);
                 AddHtmlLocalized(275, 312, 160, 18, 1072256, 0x7FFF, false, false); // Elf
-            }
+            
 
             AddButton(10, 340, 0xFA5, 0xFA7, 0, GumpButtonType.Reply, 0);
             AddHtmlLocalized(45, 342, 305, 18, 1060675, 0x7FFF, false, false); // CLOSE
@@ -1101,10 +1049,10 @@ namespace Server.Gumps
                     }
                 case 6: // Change race
                     {
-                        if (m_Vendor.Race == Race.Elf)
+                   /*     if (m_Vendor.Race == Race.Elf)
                             m_Vendor.Race = Race.Human;
                         else
-                            m_Vendor.Race = Race.Elf;
+                            m_Vendor.
 
                         m_Vendor.Hue = m_Vendor.Race.RandomSkinHue();
                         m_Vendor.HairItemID = m_Vendor.Race.RandomHair(m_Vendor.Female);
@@ -1113,7 +1061,7 @@ namespace Server.Gumps
                         m_Vendor.FacialHairHue = 0;
 
                         from.SendGump(new NewPlayerVendorCustomizeGump(m_Vendor));
-
+				   */
                         break;
                     }
                 default:
@@ -1126,17 +1074,12 @@ namespace Server.Gumps
 
                             if (index >= m_HairStyles.Length && m_Vendor.Race == Race.Human)
                                 return;
-                            else if (index >= m_FemaleElfHairStyles.Length && m_Vendor.Race == Race.Elf)
-                                return;
+
 
                             HairOrBeard hairStyle = m_HairStyles[index];
 
-                            if (m_Vendor.Race == Race.Elf && m_Vendor.Female)
-                                hairStyle = m_FemaleElfHairStyles[index];
-                            else if (m_Vendor.Race == Race.Elf)
-                                hairStyle = m_MaleElfHairStyles[index];
-                            else
-                                hairStyle = m_HairStyles[index];
+                           
+                            hairStyle = m_HairStyles[index];
 
                             hairhue = m_Vendor.HairHue;
 

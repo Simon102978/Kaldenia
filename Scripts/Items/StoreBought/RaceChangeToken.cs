@@ -174,19 +174,6 @@ namespace Server.Items
                     AddHtmlLocalized(100, y, 150, 20, 1111906, 0x7FFF, false, false); // Make me a human!
                     y += 25;
                 }
-
-                if (User.Race != Race.Elf)
-                {
-                    AddButton(8, y, 0xFB7, 0xFB9, 3, GumpButtonType.Reply, 0);
-                    AddHtmlLocalized(100, y, 150, 20, 1111910, 0x7FFF, false, false); // Make me an elf!
-                    y += 25;
-                }
-
-                if (User.Race != Race.Gargoyle)
-                {
-                    AddButton(8, y, 0xFB7, 0xFB9, 4, GumpButtonType.Reply, 0);
-                    AddHtmlLocalized(100, y, 150, 20, 1111900, 0x7FFF, false, false); // Make me a gargoyle!
-                }
             }
         }
 

@@ -254,7 +254,7 @@ namespace Server.Spells.Ninjitsu
 
             if (entry.StealthBonus)
             {
-                mod = new DefaultSkillMod(SkillName.Stealth, true, 20.0)
+                mod = new DefaultSkillMod(SkillName.Hiding, true, 20.0)
                 {
                     ObeyCap = true
                 };

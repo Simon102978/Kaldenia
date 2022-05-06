@@ -78,9 +78,9 @@ namespace Server.Spells.Ninjitsu
 
             var ninjitsu = attacker.Skills[SkillName.Ninjitsu].Base;
             var hiding = attacker.Skills[SkillName.Hiding].Base;
-            var stealth = attacker.Skills[SkillName.Stealth].Base;
+    
 
-            var avarage = (hiding + stealth) / 100;
+            var avarage = (hiding * 2) / 100;
 
             var scalar = ninjitsu / 9;
 

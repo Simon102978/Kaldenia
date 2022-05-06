@@ -255,8 +255,7 @@ namespace Server.Items
         }
 
         public double BaseArmorRatingScaled => (BaseArmorRating * ArmorScalar);
-
-        public virtual double ArmorRating
+		public virtual double ArmorRating
         {
             get
             {
@@ -1129,7 +1128,7 @@ namespace Server.Items
                 {
                     BaseArmor armor = (BaseArmor)item;
 
-                    if (!RaceDefinitions.ValidateEquipment(m, item))
+                    if (!m.Race.ValidateEquipment(item))
                     {
                         m.AddToBackpack(armor);
                     }
@@ -1878,7 +1877,7 @@ namespace Server.Items
                     return false;
                 }
 
-                if (!RaceDefinitions.ValidateEquipment(from, this))
+                if (!from.Race.ValidateEquipment(this))
                 {
                     return false;
                 }
@@ -2234,15 +2233,7 @@ namespace Server.Items
 
             AddDamageTypeProperty(list);
 
-            if (RaceDefinitions.GetRequiredRace(this) == Race.Elf)
-            {
-                list.Add(1075086); // Elves Only
-            }
-            else if (RaceDefinitions.GetRequiredRace(this) == Race.Gargoyle)
-            {
-                list.Add(1111709); // Gargoyles Only
-            }
-
+            
             if (this is SurgeShield && ((SurgeShield)this).Surge > SurgeType.None)
                 list.Add(1116176 + ((int)((SurgeShield)this).Surge));
 

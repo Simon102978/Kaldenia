@@ -30,7 +30,7 @@ namespace Server.Engines.Quests
             InitStats(100, 100, 25);
 
             Female = false;
-            Race = Race.Elf;
+            
 
             Hue = 0x8384;
             HairItemID = 0x2FCE;

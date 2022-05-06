@@ -12,7 +12,7 @@ namespace Server.Items
             Attributes.BonusStam = 2;
             Attributes.WeaponSpeed = 5;
 
-            SetSkillBonuses.SetValues(0, SkillName.Stealth, 30);
+            SetSkillBonuses.SetValues(0, SkillName.Hiding, 30);
 
             SetSelfRepair = 3;
 

@@ -25,7 +25,7 @@ namespace Server.Mobiles
             m_Type = type;
             m_Manifested = false;
 
-            Race = Race.Gargoyle;
+            
             Title = "the Gargish Rouser";
 
             SetStr(150);

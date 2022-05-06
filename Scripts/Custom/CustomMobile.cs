@@ -10,7 +10,9 @@ using System.Collections;
 #endregion
 
 namespace Server.Mobiles
-{
+{/// <summary>
+/// test
+/// </summary>
 
   
     public partial class CustomPlayerMobile : PlayerMobile

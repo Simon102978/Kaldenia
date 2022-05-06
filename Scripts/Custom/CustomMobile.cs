@@ -16,6 +16,8 @@ namespace Server.Mobiles
     public partial class CustomPlayerMobile : PlayerMobile
 	{
 
+		// Ceci est un test.
+
 
 		public static List<SkillName> SkillGeneral = new List<SkillName>() { SkillName.Mining, SkillName.Lumberjacking, SkillName.Fishing, SkillName.MagicResist };
 
@@ -36,6 +38,8 @@ namespace Server.Mobiles
 		private int m_TotalFE;
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
+
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }

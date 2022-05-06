@@ -11,7 +11,7 @@ namespace Server.Mobiles
             InitStats(31, 41, 51);
 
             SpeechHue = Utility.RandomDyedHue();
-            Title = "the sculptor";
+            Title = "Sculpteur";
             Hue = Utility.RandomSkinHue();
 
             if (Female = Utility.RandomBool())

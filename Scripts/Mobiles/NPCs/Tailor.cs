@@ -13,7 +13,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public Tailor()
-            : base("the tailor")
+            : base("Couturier")
         {
             SetSkill(SkillName.Tailoring, 64.0, 100.0);
         }

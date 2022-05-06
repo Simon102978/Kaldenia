@@ -157,7 +157,7 @@ namespace Server.Mobiles
         private Timer m_NewsTimer;
 
         public PlayerBarkeeper(Mobile owner, BaseHouse house)
-            : base("the barkeeper")
+            : base("Tenancier")
         {
             m_Owner = owner;
             House = house;

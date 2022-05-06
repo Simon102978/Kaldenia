@@ -5,7 +5,7 @@ namespace Server.Mobiles
         [Constructable]
         public Healer()
         {
-            Title = "the healer";
+            Title = "Soigneur";
 
             SetSkill(SkillName.Forensics, 80.0, 100.0);
             SetSkill(SkillName.SpiritSpeak, 80.0, 100.0);

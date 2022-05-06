@@ -8,7 +8,7 @@ namespace Server.Mobiles
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
         public Monk()
-            : base("the Monk")
+            : base("Moine")
         {
             SetSkill(SkillName.EvalInt, 100.0);
             SetSkill(SkillName.Tactics, 70.0, 90.0);

@@ -7,7 +7,7 @@ namespace Server.Mobiles
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
         public Herbalist()
-            : base("the herbalist")
+            : base("Herboriste")
         {
             SetSkill(SkillName.Alchemy, 80.0, 100.0);
             SetSkill(SkillName.Cooking, 80.0, 100.0);

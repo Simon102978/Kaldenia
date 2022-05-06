@@ -66,7 +66,7 @@ namespace Server.Mobiles
 
         public virtual NpcGuild NpcGuild => NpcGuild.None;
 
-        public virtual bool ChangeRace => true;
+        public virtual bool ChangeRace => false;
 
         public override bool IsInvulnerable => true;
 

@@ -16,7 +16,6 @@ namespace Server.Mobiles
             SetSkill(SkillName.Poisoning, 60.0, 83.0);
             SetSkill(SkillName.Stealing, 90.0, 100.0);
             SetSkill(SkillName.Fencing, 75.0, 98.0);
-   //         SetSkill(SkillName.Stealth, 85.0, 100.0);
             SetSkill(SkillName.RemoveTrap, 85.0, 100.0);
         }
 

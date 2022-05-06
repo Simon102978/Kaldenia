@@ -8,7 +8,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public RealEstateBroker()
-            : base("the real estate broker")
+            : base("Courtier Immobilier")
         {
         }
 

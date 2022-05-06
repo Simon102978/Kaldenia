@@ -66,7 +66,7 @@ namespace Server.Engines.Quests
             InitStats(100, 100, 25);
 
             CantWalk = true;
-            
+           
 
             Hue = 34536;
             HairItemID = 0x425D;

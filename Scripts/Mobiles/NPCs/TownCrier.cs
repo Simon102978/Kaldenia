@@ -47,7 +47,7 @@ namespace Server.Mobiles
             CommandSystem.Register("TownCriers", AccessLevel.GameMaster, TownCriers_OnCommand);
         }
 
-        [Usage("TownCriers")]
+        [Usage("Crieur Publique")]
         [Description("Manages the global town crier list.")]
         public static void TownCriers_OnCommand(CommandEventArgs e)
         {

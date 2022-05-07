@@ -34,6 +34,8 @@ namespace Server
 		private int m_ClasseSecondaire = -1;
 		private int m_Metier = -1;
 
+		private God m_God = null;
+
 		public BaseRace Race
         {
             get => m_Race;
@@ -170,6 +172,8 @@ namespace Server
 
 		public int Hue { get => m_Hue; set => m_Hue = value; }
 
+		public God God { get => m_God; set => m_God = value; }
+
 		public AppearanceEnum Appearance { get => m_Appearance; set => m_Appearance = value; }
 
 		public GrandeurEnum Grandeur { get => m_Grandeur; set => m_Grandeur = value; }
@@ -228,7 +232,6 @@ namespace Server
 		{
 		
 		}
-
 
 		public bool InfoGeneral()
 		{
@@ -367,6 +370,8 @@ namespace Server
 			m_Player.ClasseSecondaire = Classe.GetClasse(m_ClasseSecondaire);
 			m_Player.Metier = Classe.GetClasse(Metier);
 
+			m_Player.God = God;
+
 	//		Dictionary<SkillName, int> m_skills = new Dictionary<SkillName, int>();
 
 
@@ -443,7 +448,6 @@ namespace Server
 
 
 		}
-
 
     }
 

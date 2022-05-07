@@ -43,6 +43,7 @@ namespace Server.Gumps
         public static readonly int BorderSize = PropsConfig.BorderSize;
 		private static readonly Type _TypeofRace = typeof(Race);
 		private static readonly Type _TypeofClasse = typeof(Classe);
+		private static readonly Type _TypeofGod = typeof(God);
 
 		public static string[] m_BoolNames = { "True", "False" };
         public static object[] m_BoolValues = { true, false };
@@ -530,6 +531,11 @@ namespace Server.Gumps
 							{
 								from.SendGump(
 								 new SetListOptionGump(prop, from, m_Object, m_Stack, m_Page, m_List, Classe.GetClassesNames(), Classe.AllClasse.ToArray()));
+							}
+							else if (IsType(type, _TypeofGod))
+							{
+								from.SendGump(
+								 new SetListOptionGump(prop, from, m_Object, m_Stack, m_Page, m_List, God.GetGodsNames(), God.AllGods.ToArray()));
 							}
 						}
                     }

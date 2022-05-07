@@ -79,22 +79,6 @@ namespace Server
 
 		}
 
-
-
-		public virtual void AddClasse(Mobile m, int hue)
-		{
-
-		}
-
-		public virtual void RemoveClasse(Mobile m)
-		{
-
-		}
-		public virtual void CheckGump(Mobile m)
-		{
-
-		}
-
 		public static string[] GetClassesNames()
 		{
 

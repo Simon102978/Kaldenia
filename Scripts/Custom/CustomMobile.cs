@@ -35,6 +35,9 @@ namespace Server.Mobiles
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
 
+		private God m_God = God.GetGod(-1);
+		private AffinityDictionary m_MagicAfinity;
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }
 		public double DeathDuration => 0.25; //minutes
@@ -147,10 +150,29 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Container Corps { get { return m_Corps; } set { m_Corps = value; } }
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public God God 
+		{ 
+			get => m_God;
+			set
+			{
+
+				MagicAfinity.ChangeGod(value);
+		
+
+				m_God = value; // S'assurer que le metier, soit un metier...
+
+				
+			}
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public AffinityDictionary MagicAfinity { get { return m_MagicAfinity; } set { m_MagicAfinity = value; } }
+
 		public CustomPlayerMobile()
 		{
 
-
+			MagicAfinity = new AffinityDictionary(this);
 		}
 
 		public override void GetProperties(ObjectPropertyList list)
@@ -297,7 +319,7 @@ namespace Server.Mobiles
 		public CustomPlayerMobile(Serial s)
 			: base(s)
 		{
-
+			MagicAfinity = new AffinityDictionary(this);
 		}
 
 		public override bool OnEquip(Item item)
@@ -493,6 +515,8 @@ namespace Server.Mobiles
 
 		}
 
+
+
 		#region Classe
 
 
@@ -585,153 +609,161 @@ namespace Server.Mobiles
 			{
 				case 1:
 					{
+						if (ClassePrimaire != null)
+						{
+							foreach (SkillName item in ClassePrimaire.Skill)
+							{
+								if (Metier.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (NewClass.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (ClasseSecondaire.ContainSkill(item))
+								{
+									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									Skills[item].Base -= 20;
+								}
+								else
+								{
+									int Arecuperer = (int)(Skills[item].Base - 50);
+									Skills[item].Base = 0;
+									m_feAttente += Arecuperer;
+								}
+							}
+
+							foreach (SkillName item in NewClass.Skill)
+							{
+								if (Metier.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (ClassePrimaire.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (ClasseSecondaire.ContainSkill(item))
+								{
+									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									Skills[item].Base += 20;
+								}
+								else
+								{
+									Skills[item].Base = 50;
+								}
+							}
+						}
+
 						// classe primaire
-						foreach (SkillName item in ClassePrimaire.Skill)
-						{
-							if (Metier.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (NewClass.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (ClasseSecondaire.ContainSkill(item))
-							{
-								// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
-								Skills[item].Base -= 20;
-							}
-							else 
-							{
-								int Arecuperer = (int)(Skills[item].Base - 50);
-								Skills[item].Base = 0;
-								m_feAttente += Arecuperer;
-							}
-						}
-
-						foreach (SkillName item in NewClass.Skill)
-						{
-							if (Metier.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (ClassePrimaire.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (ClasseSecondaire.ContainSkill(item))
-							{
-								// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
-								Skills[item].Base += 20;
-							}
-							else
-							{
-								Skills[item].Base = 50;
-							}
-						}
-
-
-
-
+					
 						break;
 					}
 				case 2:
 					{
 						// Classe secondaire
 
-						foreach (SkillName item in ClasseSecondaire.Skill)
+						if (ClasseSecondaire != null)
 						{
-							if (ClassePrimaire.ContainSkill(item))
+							foreach (SkillName item in ClasseSecondaire.Skill)
 							{
-								// rien a faire, classe primaire est plus elevés.
+								if (ClassePrimaire.ContainSkill(item))
+								{
+									// rien a faire, classe primaire est plus elevés.
+								}
+								else if (NewClass.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 30...
+								}
+								else if (Metier.ContainSkill(item))
+								{
+									// rien a faire, metier à 50...
+								}
+								else
+								{
+									int Arecuperer = (int)(Skills[item].Value - 30);
+									Skills[item].Base = 0;
+									m_feAttente += Arecuperer;
+								}
 							}
-							else if (NewClass.ContainSkill(item))
+
+							foreach (SkillName item in NewClass.Skill)
 							{
-								// rien a faire, tout deux a 30...
-							}
-							else if (Metier.ContainSkill(item))
-							{
-								// rien a faire, metier à 50...
-							}
-							else
-							{
-								int Arecuperer = (int)(Skills[item].Value - 30);
-								Skills[item].Base = 0;
-								m_feAttente += Arecuperer;
+								if (ClassePrimaire.ContainSkill(item))
+								{
+									// rien a faire, classe primaire est plus elevés.
+								}
+								else if (ClasseSecondaire.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 30...
+								}
+								else if (Metier.ContainSkill(item))
+								{
+									// rien a faire, metier à 50...
+								}
+								else
+								{
+									Skills[item].Base = 30;
+								}
 							}
 						}
 
-						foreach (SkillName item in NewClass.Skill)
-						{
-							if (ClassePrimaire.ContainSkill(item))
-							{
-								// rien a faire, classe primaire est plus elevés.
-							}
-							else if (ClasseSecondaire.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 30...
-							}
-							else if (Metier.ContainSkill(item))
-							{
-								// rien a faire, metier à 50...
-							}
-							else
-							{
-								Skills[item].Base = 30;
-							}
-						}
-
-
-
+						
 						break;
 					}
 				case 3:
 					{
 						// Metier
 
-						foreach (SkillName item in Metier.Skill)
+						if (Metier != null)
 						{
-							if (ClassePrimaire.ContainSkill(item))
+							foreach (SkillName item in Metier.Skill)
 							{
-								// rien a faire, tout deux a 50...
+								if (ClassePrimaire.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (NewClass.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (ClasseSecondaire.ContainSkill(item))
+								{
+									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									Skills[item].Base -= 20;
+								}
+								else
+								{
+									int Arecuperer = (int)(Skills[item].Base - 50);
+									Skills[item].Base = 0;
+									m_feAttente += Arecuperer;
+								}
 							}
-							else if (NewClass.ContainSkill(item))
+
+							foreach (SkillName item in NewClass.Skill)
 							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (ClasseSecondaire.ContainSkill(item))
-							{
-								// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
-								Skills[item].Base -= 20;
-							}
-							else
-							{
-								int Arecuperer = (int)(Skills[item].Base - 50);
-								Skills[item].Base = 0;
-								m_feAttente += Arecuperer;
+								if (ClassePrimaire.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (Metier.ContainSkill(item))
+								{
+									// rien a faire, tout deux a 50...
+								}
+								else if (ClasseSecondaire.ContainSkill(item))
+								{
+
+									Skills[item].Base += 20;
+								}
+								else
+								{
+									Skills[item].Base = 50;
+								}
 							}
 						}
 
-						foreach (SkillName item in NewClass.Skill)
-						{
-							if (ClassePrimaire.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (Metier.ContainSkill(item))
-							{
-								// rien a faire, tout deux a 50...
-							}
-							else if (ClasseSecondaire.ContainSkill(item))
-							{
-							
-								Skills[item].Base += 20;
-							}
-							else
-							{
-								Skills[item].Base = 50;
-							}
-						}
+						
 
 
 						break;
@@ -1094,6 +1126,35 @@ namespace Server.Mobiles
 
             switch (version)
             {
+				case 6:
+					{
+						God = God.GetGod(reader.ReadInt());
+
+						MagicAfinity = new AffinityDictionary(this, reader);
+					
+						/*
+												int count = reader.ReadInt();
+
+												for (int i = 0; i < count; i++)
+												{
+
+													MagieType affinity = (MagieType)reader.ReadInt();
+
+													int affinityValue = reader.ReadInt();
+
+													if (m_MagicAfinity.ContainsKey(affinity))
+													{
+														m_MagicAfinity[affinity] += affinityValue;
+													}
+													else
+													{
+														m_MagicAfinity.Add(affinity, affinityValue);
+													}
+
+
+												}*/
+						goto case 5;
+					}
 				case 5:
 					{
 						m_feAttente = reader.ReadInt();
@@ -1144,7 +1205,11 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(5); // version
+            writer.Write(6); // version
+
+			writer.Write(God.GodID);
+
+			m_MagicAfinity.Serialize(writer);
 
 			writer.Write(m_StatAttente);
 			writer.Write(m_feAttente);

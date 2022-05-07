@@ -41,8 +41,10 @@ namespace Server.Gumps
         public static readonly int OffsetSize = PropsConfig.OffsetSize;
         public static readonly int EntryHeight = PropsConfig.EntryHeight;
         public static readonly int BorderSize = PropsConfig.BorderSize;
+		private static readonly Type _TypeofRace = typeof(Race);
+		private static readonly Type _TypeofClasse = typeof(Classe);
 
-        public static string[] m_BoolNames = { "True", "False" };
+		public static string[] m_BoolNames = { "True", "False" };
         public static object[] m_BoolValues = { true, false };
 
         public static string[] m_PoisonNames =
@@ -519,7 +521,17 @@ namespace Server.Gumps
                                         ? new PropertiesGump(from, obj, m_Stack, new StackEntry(m_Object, prop))
                                         : new PropertiesGump(from, m_Object, m_Stack, m_List, m_Page));
                             }
-                        }
+							else if (IsType(type, _TypeofRace))
+							{
+								from.SendGump(
+								 new SetListOptionGump(prop, from, m_Object, m_Stack, m_Page, m_List, Race.GetRaceNames(), Race.AllRaces.ToArray()));
+							}
+							else if (IsType(type, _TypeofClasse))
+							{
+								from.SendGump(
+								 new SetListOptionGump(prop, from, m_Object, m_Stack, m_Page, m_List, Classe.GetClassesNames(), Classe.AllClasse.ToArray()));
+							}
+						}
                     }
                     break;
             }

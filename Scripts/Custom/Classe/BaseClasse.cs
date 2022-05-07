@@ -59,8 +59,6 @@ namespace Server
 		{
 			Classe.AllClasse.Add(Classe);
 		}
-
-
 		public virtual void AddClasse(Mobile m)
 		{
 
@@ -75,15 +73,23 @@ namespace Server
 		{
 
 		}
-
-
 		public virtual void CheckGump(Mobile m)
 		{
 
 		}
 
+		public static string[] GetClassesNames()
+		{
 
+			List<string> ClasseName = new List<string>();
 
+			foreach (Classe item in AllClasse)
+			{
+				ClasseName.Add(item.Name);
+			}
+
+			return ClasseName.ToArray();
+		}
 
 		public int ClasseID => m_ClasseID;
 

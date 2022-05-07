@@ -362,12 +362,12 @@ namespace Server.Mobiles
 
 		public int TileToDontFall { get; set; }
 		// 0   1    2    3    4    5    6    7    8    9    10   11   12
-		private static int[] m_RunningTable = new int[] { 100, 100, 050, 025, 000, 000, 000, 000, 000, 000 };
-		private static int[] m_BeingAttackedTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 075, 050, 005 };
-		private static int[] m_MeleeAttackingTable = new int[] { 100, 100, 100, 100, 100, 075, 050, 025, 005, 000 };
-		private static int[] m_CastAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-		private static int[] m_RangedAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-		private static int[] m_DismountTable = new int[] { 100, 100, 090, 080, 075, 070, 065, 060, 055, 050 };
+		private static int[] m_RunningTable = new int[] {100, 100, 100, 050, 025, 000, 000, 000, 000, 000, 000, 000 };
+		private static int[] m_BeingAttackedTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 075, 050, 005 };
+		private static int[] m_MeleeAttackingTable = new int[] { 100, 100, 100, 100, 100, 075, 050, 025, 005, 000, 000 };
+		private static int[] m_CastAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+		private static int[] m_RangedAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+		private static int[] m_DismountTable = new int[] { 100, 100, 100, 090, 080, 075, 070, 065, 060, 055, 050 };
 
 		public virtual bool CheckEquitation(EquitationType type, Point3D oldLocation)
 		{

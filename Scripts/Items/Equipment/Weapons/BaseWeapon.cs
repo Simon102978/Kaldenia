@@ -1755,7 +1755,7 @@ namespace Server.Items
 		
 				if (defender is CustomPlayerMobile)
 				{
-					var def = (CustomPlayerMobile)attacker;
+				CustomPlayerMobile def = (CustomPlayerMobile)defender;
 
 					def.CheckEquitation(EquitationType.BeingAttacked);
 				}

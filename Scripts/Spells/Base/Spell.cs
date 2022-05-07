@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Server.Custom;
 #endregion
 
 namespace Server.Spells
@@ -1022,7 +1023,9 @@ namespace Server.Spells
         {
             int mana = ScaleMana(GetMana());
 
-            if (m_Caster.Deleted || !m_Caster.Alive || m_Caster.Spell != this || m_State != SpellState.Sequencing)
+			var pm = m_Caster as CustomPlayerMobile;
+
+			if (m_Caster.Deleted || !m_Caster.Alive || m_Caster.Spell != this || m_State != SpellState.Sequencing)
             {
                 DoFizzle();
             }
@@ -1050,7 +1053,12 @@ namespace Server.Spells
                 m_Caster.SendLocalizedMessage(1072060); // You cannot cast a spell while calmed.
                 DoFizzle();
             }
-            else if (CheckFizzle())
+			else if (pm != null && !pm.CheckEquitation(EquitationType.CastAttacking))
+			{
+				DoFizzle();
+			}
+
+			else if (CheckFizzle())
             {
                 m_Caster.Mana -= mana;
 

@@ -153,7 +153,7 @@ namespace Server.Gumps
 
 			AddHtmlTexte(x + 10, y + 500, 150, "Dextérité :");
 
-			if (m_From.CanDecreaseStat(StatType.Str))
+			if (m_From.CanDecreaseStat(StatType.Dex))
 			{
 				AddButton(x + 100, y + 502, 5603, 5607, 302, GumpButtonType.Reply, 0);
 			}

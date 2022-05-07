@@ -538,10 +538,7 @@ namespace Server.Mobiles
 
 		public void RecalculeClasse()
 		{
-			foreach (Skill skill in )
-			{
 
-			}
 
 		}
 

@@ -64,6 +64,23 @@ namespace Server
 
 		}
 
+
+	    public virtual bool ContainSkill(SkillName skill)
+		{
+			foreach (SkillName item in m_Skill)
+			{
+				if (item == skill)
+				{
+					return true;
+				}
+			}
+
+			return false;
+
+		}
+
+
+
 		public virtual void AddClasse(Mobile m, int hue)
 		{
 

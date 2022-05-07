@@ -14,8 +14,8 @@ using Server.Movement;
 namespace Server.Mobiles
 {
 
-  
-    public partial class CustomPlayerMobile : PlayerMobile
+
+	public partial class CustomPlayerMobile : PlayerMobile
 	{
 
 		public static List<SkillName> SkillGeneral = new List<SkillName>() { SkillName.Mining, SkillName.Lumberjacking, SkillName.Fishing, SkillName.MagicResist };
@@ -29,16 +29,12 @@ namespace Server.Mobiles
 		private Classe m_Metier;
 
 		private Container m_Corps;
-
 		private int m_StatAttente;
-
 		private int m_fe;
 		private int m_feAttente;
 		private int m_TotalFE;
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
-
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }
@@ -68,23 +64,36 @@ namespace Server.Mobiles
 		public AppearanceEnum Beaute { get => m_Beaute; set => m_Beaute = value; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Classe ClassePrimaire { get => m_ClassePrimaire; set => m_ClassePrimaire = value; }
+		public Classe ClassePrimaire
+		{
+			get => m_ClassePrimaire;
+			set
+			{
+				if (CheckClassePrimaire(value))
+				{
+					m_ClassePrimaire = value; // S'assurer que le metier, soit un metier...
+
+					RecalculeClasse();
+				}
+			}
+
+		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Classe ClasseSecondaire { get => m_ClasseSecondaire; set => m_ClasseSecondaire = value; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Classe Metier 
-		{ 
+		public Classe Metier
+		{
 			get => m_Metier;
 			set
 			{
 				if (value.ClasseType == ClasseType.Metier || value.ClasseType == ClasseType.None)
 				{
 					m_Metier = value; // S'assurer que le metier, soit un metier...
-				}			
+				}
 			}
-			
+
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -122,12 +131,11 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Container Corps { get { return m_Corps; } set { m_Corps = value; } }
 
-
 		public CustomPlayerMobile()
-        {
-    
+		{
 
-        }
+
+		}
 
 		public override void GetProperties(ObjectPropertyList list)
 		{
@@ -138,7 +146,7 @@ namespace Server.Mobiles
 				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMÉE" : "ASSOMÉ") + "</basefont></h3>\t");
 
 
-		//		list.Add(1050045, "<BASEFONT COLOR =#80FFD4>"  ""); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      */
+				//		list.Add(1050045, "<BASEFONT COLOR =#80FFD4>"  ""); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      */
 
 			}
 
@@ -224,7 +232,7 @@ namespace Server.Mobiles
 			{
 				gros = (AppearanceEnum)19;
 			}
-			
+
 			var type = typeof(AppearanceEnum);
 			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
 			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
@@ -234,7 +242,7 @@ namespace Server.Mobiles
 		public string GrosseurString()
 		{
 
-			GrosseurEnum gros = m_Grosseur;		
+			GrosseurEnum gros = m_Grosseur;
 
 			if (gros < 0)
 			{
@@ -271,18 +279,15 @@ namespace Server.Mobiles
 		#endregion
 
 		public CustomPlayerMobile(Serial s)
-            : base(s)
-        {
+			: base(s)
+		{
 
-        }
-
-
-
+		}
 
 		public override bool OnEquip(Item item)
 		{
 
-			 if (item is BaseArmor)
+			if (item is BaseArmor)
 			{
 
 				int req = 10;
@@ -358,11 +363,11 @@ namespace Server.Mobiles
 		public int TileToDontFall { get; set; }
 		// 0   1    2    3    4    5    6    7    8    9    10   11   12
 		private static int[] m_RunningTable = new int[] { 100, 100, 050, 025, 000, 000, 000, 000, 000, 000 };
-		private static int[] m_BeingAttackedTable = new int[] { 100, 100, 100, 100, 100, 100, 075, 050, 005 };
-		private static int[] m_MeleeAttackingTable = new int[] {100, 100, 100, 100, 100, 075, 050, 025, 005, 000 };
-		private static int[] m_CastAttackingTable = new int[] {  100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+		private static int[] m_BeingAttackedTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 075, 050, 005 };
+		private static int[] m_MeleeAttackingTable = new int[] { 100, 100, 100, 100, 100, 075, 050, 025, 005, 000 };
+		private static int[] m_CastAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 		private static int[] m_RangedAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-		private static int[] m_DismountTable = new int[] {  100, 100, 100, 090, 080, 075, 070, 065, 060, 055, 050 };
+		private static int[] m_DismountTable = new int[] { 100, 100, 090, 080, 075, 070, 065, 060, 055, 050 };
 
 		public virtual bool CheckEquitation(EquitationType type, Point3D oldLocation)
 		{
@@ -383,8 +388,8 @@ namespace Server.Mobiles
 			if (equitation < 0)
 				equitation = 0;
 
-			if (equitation > 11)
-				equitation = 11;
+			if (equitation > 10)
+				equitation = 10;
 
 			switch (type)
 			{
@@ -404,8 +409,8 @@ namespace Server.Mobiles
 
 			if (type == EquitationType.Running)
 			{
-//				if (TileToDontFall > 0)
-//					return true;
+				//				if (TileToDontFall > 0)
+				//					return true;
 
 				TileType tile = Deplacement.GetTileType(this);
 
@@ -423,7 +428,7 @@ namespace Server.Mobiles
 			Timer.DelayCall(TimeSpan.FromSeconds(0.3), new TimerStateCallback(Equitation_Callback), mount);
 
 			BeginAction(typeof(BaseMount));
-			double seconds = 12.0 -  (Skills[SkillName.Equitation].Value / 10 );
+			double seconds = 12.0 - (Skills[SkillName.Equitation].Value / 10);
 
 			SetMountBlock(BlockMountType.DismountRecovery, TimeSpan.FromSeconds(seconds), false);
 
@@ -440,8 +445,6 @@ namespace Server.Mobiles
 
 			Damage(Utility.RandomMinMax(10, 20));
 		}
-
-	
 
 		public HashSet<SkillName> SkillDisponible()
 		{
@@ -473,6 +476,9 @@ namespace Server.Mobiles
 			return list;
 
 		}
+
+
+		#region Classe
 
 
 		public bool ClassSkill(SkillName skills)
@@ -514,6 +520,38 @@ namespace Server.Mobiles
 			return false;
 
 		}
+
+		public bool CheckClassePrimaire(Classe cl)
+		{
+			if (cl == ClasseSecondaire)
+			{
+				m_ClasseSecondaire = Classe.GetClasse(-1);
+			}
+			else if (cl == Metier)
+			{
+				Metier = Classe.GetClasse(-1);
+			}
+
+			return true;
+		}
+
+
+		public void RecalculeClasse()
+		{
+			foreach (Skill skill in )
+			{
+
+			}
+
+		}
+
+
+		#endregion
+
+
+
+
+
 
 
 		#region Stats
@@ -937,8 +975,5 @@ namespace Server.Mobiles
 
 
 		}
-
-
-
 	}
 }

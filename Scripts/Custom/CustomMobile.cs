@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using Server.Items;
 using Server.Custom.Misc;
 using System.Collections;
-using Server.Custom;
-using Server.Movement;
 
 #endregion
 
 namespace Server.Mobiles
-{
+{/// <summary>
+/// test
+/// </summary>
 
   
     public partial class CustomPlayerMobile : PlayerMobile
@@ -350,98 +350,8 @@ namespace Server.Mobiles
 
 		}
 
-		public virtual bool CheckEquitation(EquitationType type)
-		{
-			return CheckEquitation(type, Location);
-		}
-
-		public int TileToDontFall { get; set; }
-		// 0   1    2    3    4    5    6    7    8    9    10   11   12
-		private static int[] m_RunningTable = new int[] { 100, 100, 050, 025, 000, 000, 000, 000, 000, 000 };
-		private static int[] m_BeingAttackedTable = new int[] { 100, 100, 100, 100, 100, 100, 075, 050, 005 };
-		private static int[] m_MeleeAttackingTable = new int[] {100, 100, 100, 100, 100, 075, 050, 025, 005, 000 };
-		private static int[] m_CastAttackingTable = new int[] {  100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-		private static int[] m_RangedAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
-		private static int[] m_DismountTable = new int[] {  100, 100, 100, 090, 080, 075, 070, 065, 060, 055, 050 };
-
-		public virtual bool CheckEquitation(EquitationType type, Point3D oldLocation)
-		{
-			//true s'il ne tombe pas, false s'il tombe
-
-			if (!Mounted)
-				return true;
-
-			if (AccessLevel >= AccessLevel.GameMaster)
-				return true;
-
-			if (Map == null)
-				return true;
-
-			int chanceToFall = 0;
-			int equitation = (int)(Skills[SkillName.Equitation].Value / 10);
-
-			if (equitation < 0)
-				equitation = 0;
-
-			if (equitation > 11)
-				equitation = 11;
-
-			switch (type)
-			{
-				case EquitationType.Running: chanceToFall = m_RunningTable[equitation]; break;
-				case EquitationType.BeingAttacked: chanceToFall = m_BeingAttackedTable[equitation]; break;
-				case EquitationType.MeleeAttacking: chanceToFall = m_MeleeAttackingTable[equitation]; break;
-				case EquitationType.CastAttacking: chanceToFall = m_CastAttackingTable[equitation]; break;
-				case EquitationType.RangedAttacking: chanceToFall = m_RangedAttackingTable[equitation]; break;
-				case EquitationType.Dismount: chanceToFall = m_DismountTable[equitation]; break;
-			}
-
-			if (chanceToFall < 0)
-				chanceToFall = 0;
-
-			if (chanceToFall <= Utility.RandomMinMax(0, 100))
-				return true;
-
-			if (type == EquitationType.Running)
-			{
-//				if (TileToDontFall > 0)
-//					return true;
-
-				TileType tile = Deplacement.GetTileType(this);
-
-				if (tile == TileType.Other || tile == TileType.Dirt)
-					return true;
-			}
-
-			BaseMount mount = (BaseMount)Mount;
-
-			mount.Rider = null;
-			mount.Location = oldLocation;
-
-			TileToDontFall = 3;
-
-			Timer.DelayCall(TimeSpan.FromSeconds(0.3), new TimerStateCallback(Equitation_Callback), mount);
-
-			BeginAction(typeof(BaseMount));
-			double seconds = 12.0 -  (Skills[SkillName.Equitation].Value / 10 );
-
-			SetMountBlock(BlockMountType.DismountRecovery, TimeSpan.FromSeconds(seconds), false);
 
 
-			return false;
-		}
-
-		private void Equitation_Callback(object state)
-		{
-			BaseMount mount = (BaseMount)state;
-
-			mount.Animate(5, 5, 1, true, false, 0);
-			Animate(22, 5, 1, true, false, 0);
-
-			Damage(Utility.RandomMinMax(10, 20));
-		}
-
-	
 
 		public HashSet<SkillName> SkillDisponible()
 		{

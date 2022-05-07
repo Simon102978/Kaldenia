@@ -1,8 +1,6 @@
 using Server.Items;
 using Server.Mobiles;
 using System;
-using Server.Movement;
-using Server.Custom;
 
 namespace Server.Misc
 {
@@ -61,7 +59,7 @@ namespace Server.Misc
             Mobile from = e.Mobile;
 
             if (!from.Alive || from.IsStaff())
-               return;
+                return;
 
             if (!from.Player)
             {
@@ -99,19 +97,7 @@ namespace Server.Misc
                 if ((++pm.StepsTaken % amt) == 0)
                     --from.Stam;
             }
-
-
-
-			if (from is CustomPlayerMobile && (e.Direction & Direction.Running) != 0)
-			{
-				CustomPlayerMobile cp = (CustomPlayerMobile)from;
-
-				cp.CheckEquitation(EquitationType.Running);
-			}
-		}
-
-
-
+        }
 
         public static int GetStamLoss(Mobile from, int overWeight, bool running)
         {

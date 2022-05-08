@@ -216,7 +216,42 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0x2310, 0x230F)]
+	public class Survetement : BaseMiddleTorso
+	{
+		[Constructable]
+		public Survetement()
+			: this(0)
+		{
+		}
+
+		[Constructable]
+		public Survetement(int hue)
+			: base(39270, hue)
+		{
+			Weight = 5.0;
+		}
+
+		public Survetement(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	[Flipable(0x2310, 0x230F)]
     public class FormalShirt : BaseMiddleTorso
     {
         [Constructable]

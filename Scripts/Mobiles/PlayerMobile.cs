@@ -1862,7 +1862,7 @@ namespace Server.Mobiles
                 strOffs += ToughnessSpell.GetHPBonus(this);
                 strOffs += InvigorateSpell.GetHPBonus(this);
 
-                return (strBase / 2) + 50 + strOffs;
+                return (strBase) + 100 + strOffs;
             }
         }
 

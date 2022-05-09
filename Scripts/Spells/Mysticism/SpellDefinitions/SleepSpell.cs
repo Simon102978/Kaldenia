@@ -18,7 +18,9 @@ namespace Server.Spells.Mysticism
                 Reagent.BlackPearl
             );
 
-        public SleepSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Anarchique, 5) }; } }
+
+		public SleepSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
         }
 

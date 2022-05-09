@@ -11,8 +11,8 @@ namespace Server.Spells.Necromancy
 
         public abstract double RequiredSkill { get; }
         public abstract int RequiredMana { get; }
-        public override SkillName CastSkill => SkillName.Necromancy;
-        public override SkillName DamageSkill => SkillName.SpiritSpeak;
+  //      public override SkillName CastSkill => SkillName.Necromancy;
+  //      public override SkillName DamageSkill => SkillName.SpiritSpeak;
 
         public override bool ClearHandsOnCast => false;
 

@@ -10,7 +10,10 @@ namespace Server.Spells.Bushido
             "CounterAttack", null,
             -1,
             9002);
-        private static readonly Hashtable m_Table = new Hashtable();
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 11) }; } }
+
+		private static readonly Hashtable m_Table = new Hashtable();
         public CounterAttack(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {

@@ -24,7 +24,9 @@ namespace Server.Spells.Ninjitsu
         public override int RequiredMana => 10;
         public override bool BlockedByAnimalForm => false;
 
-        public static bool HasClone(Mobile m)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Anarchique, 3) }; } }
+
+		public static bool HasClone(Mobile m)
         {
             return m_CloneCount.ContainsKey(m);
         }
@@ -121,7 +123,7 @@ namespace Server.Spells.Ninjitsu
         {
             Clone clone = null;
 
-            if (HasClone(defender) && (defender.Skills.Ninjitsu.Value / 133.2) > Utility.RandomDouble())
+            if (HasClone(defender) && (defender.Skills.EvalInt.Value / 133.2) > Utility.RandomDouble())
             {
                 IPooledEnumerable eable = defender.GetMobilesInRange(4);
 
@@ -197,7 +199,7 @@ namespace Server.Mobiles
             ControlOrder = OrderType.Follow;
             ControlTarget = caster;
 
-            TimeSpan duration = TimeSpan.FromSeconds(30 + caster.Skills.Ninjitsu.Fixed / 40);
+            TimeSpan duration = TimeSpan.FromSeconds(30 + caster.Skills.EvalInt.Fixed / 40);
 
             SummonEnd = DateTime.UtcNow + duration;
             TimerRegistry.Register<BaseCreature>("UnsummonTimer", this, duration, c => c.Delete());

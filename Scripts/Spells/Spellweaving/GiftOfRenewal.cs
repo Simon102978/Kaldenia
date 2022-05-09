@@ -12,7 +12,9 @@ namespace Server.Spells.Spellweaving
 
         public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(3.0);
 
-        public override double RequiredSkill => 0.0;
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 4) }; } }
+
+		public override double RequiredSkill => 0.0;
         public override int RequiredMana => 24;
 
         public GiftOfRenewalSpell(Mobile caster, Item scroll)
@@ -52,7 +54,7 @@ namespace Server.Spells.Spellweaving
                 }
                 else
                 {
-                    double skill = Caster.Skills[SkillName.Spellweaving].Value;
+                    double skill = Caster.Skills[SkillName.EvalInt].Value;
 
                     int hitsPerRound = 5 + (int)(skill / 24) + FocusLevel;
                     TimeSpan duration = TimeSpan.FromSeconds(30 + (FocusLevel * 10));

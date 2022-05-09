@@ -12,7 +12,8 @@ namespace Server.Spells.Spellweaving
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(3.5);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Anarchique, 13) }; } }
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(3.5);
         public override double RequiredSkill => 24.0;
         public override int RequiredMana => 32;
         public override int Body => 0x302;
@@ -55,7 +56,7 @@ namespace Server.Spells.Spellweaving
             m.PlaySound(0x5C8);
             m.SendLocalizedMessage(1074770); // You are now under the effects of Ethereal Voyage.
 
-            double skill = Caster.Skills.Spellweaving.Value;
+            double skill = Caster.Skills.EvalInt.Value;
 
             TimeSpan duration = TimeSpan.FromSeconds(12 + (int)(skill / 24) + (FocusLevel * 2));
 

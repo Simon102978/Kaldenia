@@ -32,9 +32,9 @@ namespace Server.Spells.Mysticism
             max = avg + ChanceOffset;
         }
 
-        public override SkillName CastSkill => SkillName.Mysticism;
+  //      public override SkillName CastSkill => SkillName.Mysticism;
 
-        public override SkillName DamageSkill
+  /*      public override SkillName DamageSkill
         {
             get
             {
@@ -43,6 +43,7 @@ namespace Server.Spells.Mysticism
                 return SkillName.Focus;
             }
         }
+*/
 
         public override void SendCastEffect()
         {
@@ -121,12 +122,12 @@ namespace Server.Spells.Mysticism
 
         public static double GetBaseSkill(Mobile m)
         {
-            return m.Skills[SkillName.Mysticism].Value;
+            return m.Skills[SkillName.Magery].Value;
         }
 
         public static double GetBoostSkill(Mobile m)
         {
-            return Math.Max(m.Skills[SkillName.Imbuing].Value, m.Skills[SkillName.Focus].Value);
+            return Math.Max(m.Skills[SkillName.EvalInt].Value, m.Skills[SkillName.Focus].Value);
         }
     }
 }

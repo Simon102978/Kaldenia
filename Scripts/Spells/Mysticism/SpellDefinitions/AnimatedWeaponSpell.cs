@@ -14,8 +14,7 @@ namespace Server.Spells.Mysticism
                 9022,
                 Reagent.BlackPearl,
                 Reagent.MandrakeRoot,
-                Reagent.Nightshade,
-                Reagent.Bone
+                Reagent.Nightshade
             );
 
         public AnimatedWeaponSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)

@@ -14,7 +14,10 @@ namespace Server.Spells.Spellweaving
 
         private static readonly Dictionary<Mobile, ExpireTimer> m_Table = new Dictionary<Mobile, ExpireTimer>();
 
-        public GiftOfLifeSpell(Mobile caster, Item scroll)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 13) }; } }
+
+		public GiftOfLifeSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }
@@ -22,7 +25,7 @@ namespace Server.Spells.Spellweaving
         public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(4.0);
         public override double RequiredSkill => 38.0;
         public override int RequiredMana => 70;
-        public double HitsScalar => ((Caster.Skills.Spellweaving.Value / 2.4) + FocusLevel) / 100;
+        public double HitsScalar => ((Caster.Skills.EvalInt.Value / 2.4) + FocusLevel) / 100;
         public static void Initialize()
         {
             EventSink.PlayerDeath += HandleDeath;
@@ -106,7 +109,7 @@ namespace Server.Spells.Spellweaving
                 m.FixedParticles(0x3709, 1, 30, 0x26ED, 5, 2, EffectLayer.Waist);
                 m.FixedParticles(0x376A, 1, 30, 0x251E, 5, 3, EffectLayer.Waist);
 
-                double skill = Caster.Skills[SkillName.Spellweaving].Value;
+                double skill = Caster.Skills[SkillName.EvalInt].Value;
 
                 TimeSpan duration = TimeSpan.FromMinutes(((int)(skill / 24)) * 2 + FocusLevel);
 

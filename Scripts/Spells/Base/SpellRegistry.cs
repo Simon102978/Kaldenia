@@ -5,7 +5,7 @@ namespace Server.Spells
 {
     public class SpellRegistry
     {
-        private static readonly Type[] m_Types = new Type[745];
+        private static readonly Type[] m_Types = new Type[858];
         private static int m_Count;
 
         public static Type[] Types

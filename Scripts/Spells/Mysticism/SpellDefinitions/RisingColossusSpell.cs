@@ -14,11 +14,12 @@ namespace Server.Spells.Mysticism
                 9022,
                 Reagent.DaemonBone,
                 Reagent.DragonBlood,
-                Reagent.FertileDirt,
-                Reagent.Nightshade
+                Reagent.FertileDirt
             );
 
-        public RisingColossusSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 16) }; } }
+
+		public RisingColossusSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
         }
 
@@ -45,7 +46,7 @@ namespace Server.Spells.Mysticism
             }
             else if (SpellHelper.CheckTown(p, Caster) && CheckSequence())
             {
-                double baseskill = Caster.Skills[SkillName.Mysticism].Value;
+                double baseskill = Caster.Skills[SkillName.Magery].Value;
                 double boostskill = GetBoostSkill(Caster);
 
                 int level = (int)(baseskill + boostskill);

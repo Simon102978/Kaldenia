@@ -5,7 +5,7 @@ namespace Server.Mobiles
     {
         [Constructable]
         public SummonedWaterElemental()
-            : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
+            : base(AIType.AI_Healer, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Name = "a water elemental";
             Body = 16;

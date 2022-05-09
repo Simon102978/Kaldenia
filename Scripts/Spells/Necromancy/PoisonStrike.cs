@@ -14,7 +14,9 @@ namespace Server.Spells.Necromancy
             9031,
             Reagent.NoxCrystal);
 
-        public PoisonStrikeSpell(Mobile caster, Item scroll)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 12) }; } }
+
+		public PoisonStrikeSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

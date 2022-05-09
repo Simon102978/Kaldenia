@@ -16,7 +16,9 @@ namespace Server.Spells.Bushido
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(0.25);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Obeissance, 14) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(0.25);
         public override double RequiredSkill => 60.0;
         public override int RequiredMana => 10;
         public static bool VerifyCast(Mobile Caster, bool messages)
@@ -114,10 +116,10 @@ namespace Server.Spells.Bushido
             */
             double seconds = 3;
 
-            if (m.Skills.Bushido.Value > 60)
-                seconds += (m.Skills.Bushido.Value - 60) / 20;
+            if (m.Skills.Magery.Value > 60)
+                seconds += (m.Skills.EvalInt.Value - 60) / 20;
 
-            if (m.Skills.Anatomy.Value >= 100.0 && m.Skills.Tactics.Value >= 100.0 && m.Skills.Bushido.Value > 100.0)	//Bushido being HIGHER than 100 for bonus is intended
+            if (m.Skills.Anatomy.Value >= 100.0 && m.Skills.Tactics.Value >= 100.0 && m.Skills.Magery.Value > 100.0)	//Bushido being HIGHER than 100 for bonus is intended
                 seconds++;
 
             return TimeSpan.FromSeconds((int)seconds);
@@ -135,10 +137,10 @@ namespace Server.Spells.Bushido
             */
             double bonus = 0;
 
-            if (m.Skills.Bushido.Value >= 60)
-                bonus += (((m.Skills.Bushido.Value - 60) * .004) + 0.16);
+            if (m.Skills.Magery.Value >= 60)
+                bonus += (((m.Skills.Magery.Value - 60) * .004) + 0.16);
 
-            if (m.Skills.Anatomy.Value >= 100 && m.Skills.Tactics.Value >= 100 && m.Skills.Bushido.Value > 100) //Bushido being HIGHER than 100 for bonus is intended
+            if (m.Skills.Anatomy.Value >= 100 && m.Skills.Tactics.Value >= 100 && m.Skills.Magery.Value > 100) //Bushido being HIGHER than 100 for bonus is intended
                 bonus += 0.10;
 
             return 1.0 + bonus;

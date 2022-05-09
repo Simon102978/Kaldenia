@@ -9,8 +9,9 @@ namespace Server.Spells.Spellweaving
             : base(caster, scroll, m_Info)
         {
         }
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 9) }; } }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(2.5);
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(2.5);
         public override double RequiredSkill => 24.0;
         public override int RequiredMana => 34;
         public override int Body => 0x11D;

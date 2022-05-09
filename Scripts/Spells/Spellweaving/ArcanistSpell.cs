@@ -18,8 +18,8 @@ namespace Server.Spells.Spellweaving
 
         public abstract double RequiredSkill { get; }
         public abstract int RequiredMana { get; }
-        public override SkillName CastSkill => SkillName.Spellweaving;
-        public override SkillName DamageSkill => SkillName.Spellweaving;
+ //       public override SkillName CastSkill => SkillName.Spellweaving;
+ //       public override SkillName DamageSkill => SkillName.Spellweaving;
         public override bool ClearHandsOnCast => false;
         public virtual int FocusLevel => m_CastTimeFocusLevel;
 

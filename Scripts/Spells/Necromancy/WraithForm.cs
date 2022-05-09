@@ -16,7 +16,9 @@ namespace Server.Spells.Necromancy
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(2.25);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Anarchique, 2) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(2.25);
         public override double RequiredSkill => 20.0;
         public override int RequiredMana => 17;
         public override int Body => Caster.Female ? 747 : 748;
@@ -34,7 +36,7 @@ namespace Server.Spells.Necromancy
             m.PlaySound(0x17F);
             m.FixedParticles(0x374A, 1, 15, 9902, 1108, 4, EffectLayer.Waist);
 
-            int manadrain = Math.Max(8, 5 + (int)(0.16 * m.Skills.SpiritSpeak.Value));
+            int manadrain = Math.Max(8, 5 + (int)(0.16 * m.Skills.EvalInt.Value));
 
             BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.WraithForm, 1060524, 1153829, string.Format("15\t5\t5\t{0}", manadrain)));
         }

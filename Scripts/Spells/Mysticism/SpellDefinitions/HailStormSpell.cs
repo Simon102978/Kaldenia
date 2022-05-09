@@ -17,11 +17,12 @@ namespace Server.Spells.Mysticism
                 9022,
                 Reagent.BlackPearl,
                 Reagent.Bloodmoss,
-                Reagent.MandrakeRoot,
-                Reagent.DragonBlood
+                Reagent.MandrakeRoot
             );
 
-        public HailStormSpell(Mobile caster, Item scroll)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 13) }; } }
+
+		public HailStormSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

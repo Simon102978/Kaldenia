@@ -16,7 +16,9 @@ namespace Server.Spells.Necromancy
             Reagent.GraveDust,
             Reagent.DaemonBlood);
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(2.25);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 1) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(2.25);
 
         public override double RequiredSkill => 30.0;
         public override int RequiredMana => 17;
@@ -123,8 +125,8 @@ namespace Server.Spells.Necromancy
 
             AddHtmlLocalized(30, 26, 200, 20, 1060147, EnabledColor16, false, false); // Chose thy familiar...
 
-            double necro = from.Skills[SkillName.Necromancy].Value;
-            double spirit = from.Skills[SkillName.SpiritSpeak].Value;
+            double necro = from.Skills[SkillName.Magery].Value;
+            double spirit = from.Skills[SkillName.EvalInt].Value;
 
             for (int i = 0; i < entries.Length; ++i)
             {
@@ -151,8 +153,8 @@ namespace Server.Spells.Necromancy
             {
                 SummonFamiliarEntry entry = m_Entries[index];
 
-                double necro = m_From.Skills[SkillName.Necromancy].Value;
-                double spirit = m_From.Skills[SkillName.SpiritSpeak].Value;
+                double necro = m_From.Skills[SkillName.Magery].Value;
+                double spirit = m_From.Skills[SkillName.EvalInt].Value;
 
                 BaseCreature check = (BaseCreature)SummonFamiliarSpell.Table[m_From];
 

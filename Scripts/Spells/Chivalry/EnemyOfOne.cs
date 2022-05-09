@@ -16,7 +16,9 @@ namespace Server.Spells.Chivalry
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(0.5);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Obeissance, 3) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(0.5);
 
         public override double RequiredSkill => 45.0;
         public override int RequiredMana => 20;

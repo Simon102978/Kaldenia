@@ -11,7 +11,10 @@ namespace Server.Spells.Ninjitsu
         public override int BaseMana => 25;
         public override double RequiredSkill => 80.0;
         public override TextDefinition AbilityMessage => new TextDefinition(1063099);// Your Ki Attack must be complete within 2 seconds for the damage bonus!
-        public static double GetBonus(Mobile from)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Obeissance, 11) }; } }
+		
+		public static double GetBonus(Mobile from)
         {
             KiAttackInfo info = m_Table[from] as KiAttackInfo;
 

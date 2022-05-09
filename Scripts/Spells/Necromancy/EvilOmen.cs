@@ -17,7 +17,9 @@ namespace Server.Spells.Necromancy
 
         private static readonly Dictionary<Mobile, double> m_Table = new Dictionary<Mobile, double>();
 
-        public EvilOmenSpell(Mobile caster, Item scroll)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 2) }; } }
+
+		public EvilOmenSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }
@@ -113,7 +115,7 @@ namespace Server.Spells.Necromancy
 
             m_Table[m] = resistMalas;
 
-            TimeSpan duration = TimeSpan.FromSeconds(((Caster.Skills[SkillName.SpiritSpeak].Value / 12) + 1.0) * strength);
+            TimeSpan duration = TimeSpan.FromSeconds(((Caster.Skills[SkillName.EvalInt].Value / 12) + 1.0) * strength);
 
             Timer.DelayCall(duration, new TimerStateCallback(EffectExpire_Callback), m);
 

@@ -13,7 +13,9 @@ namespace Server.Spells.Bushido
         private static readonly Dictionary<Mobile, Timer> m_Table = new Dictionary<Mobile, Timer>();
         private static readonly Dictionary<Mobile, Timer> m_RegenTable = new Dictionary<Mobile, Timer>();
 
-        public Confidence(Mobile caster, Item scroll)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 12) }; } }
+
+		public Confidence(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }
@@ -40,7 +42,7 @@ namespace Server.Spells.Bushido
 
             t.Start();
 
-            double bushido = m.Skills[SkillName.Bushido].Value;
+            double bushido = m.Skills[SkillName.EvalInt].Value;
             BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Confidence, 1060596, 1153809, TimeSpan.FromSeconds(4), m, string.Format("{0}\t{1}\t{2}", ((int)(bushido / 12)).ToString(), ((int)(bushido / 5)).ToString(), "100"))); // Successful parry will heal for 1-~1_HEAL~ hit points and refresh for 1-~2_STAM~ stamina points.<br>+~3_HP~ hit point regeneration (4 second duration).
 
             int anticipateHitBonus = SkillMasteries.MasteryInfo.AnticipateHitBonus(m);

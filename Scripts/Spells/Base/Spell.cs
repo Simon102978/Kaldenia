@@ -627,12 +627,52 @@ namespace Server.Spells
                 m_Caster.SendLocalizedMessage(1049616); // You are too busy to do that at the moment.
                 return false;
             }
-            #endregion
+			#endregion
 
-            return true;
+			#region Kaldenia
+			if (m_Caster is CustomPlayerMobile)
+			{
+				CustomPlayerMobile cp = (CustomPlayerMobile)m_Caster;
+
+				if (m_Caster != null && !VerifyAffinity(cp, AffinityRequirements))
+				{
+					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinités requises.");
+
+					if (m_Caster.AccessLevel > AccessLevel.Counselor)
+					{
+						foreach (MagicAptitudeRequirement item in AffinityRequirements)
+						{
+							m_Caster.SendMessage(item.RequiredAffinity + ":" + item.RequiredValue.ToString());
+						}
+					}
+					return false;
+				}
+			}
+			#endregion
+
+			return true;
         }
 
-        public virtual void SayMantra()
+
+		public virtual bool VerifyAffinity(CustomPlayerMobile pm, MagicAptitudeRequirement[] affinity)
+		{
+			bool valid = false;
+
+			for (int i = 0; !valid && i < affinity.Length; ++i)
+			{
+				MagieType affinite = affinity[i].RequiredAffinity;
+
+				valid = (pm.GetAffinityValue(affinite) >= affinity[i].RequiredValue);
+			}
+
+
+			return valid;
+		}
+
+		public virtual MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 99) }; } }
+
+
+		public virtual void SayMantra()
         {
             if (m_Scroll is SpellStone)
             {

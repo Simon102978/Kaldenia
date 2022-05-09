@@ -14,7 +14,10 @@ namespace Server.Spells.Necromancy
             Reagent.DaemonBlood);
         private static readonly Hashtable m_OathTable = new Hashtable();
         private static readonly Hashtable m_Table = new Hashtable();
-        public BloodOathSpell(Mobile caster, Item scroll)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 10) }; } }
+		
+		public BloodOathSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

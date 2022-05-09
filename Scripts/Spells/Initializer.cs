@@ -215,9 +215,121 @@ namespace Server.Spells
             Register(741, typeof(SkillMasteries.PassiveMasterySpell));
             Register(742, typeof(SkillMasteries.WhisperingSpell));
             Register(743, typeof(SkillMasteries.CombatTrainingSpell));
-        }
 
-        public static void Register(int spellID, Type type)
+			// Custom spell pour le spellbook
+
+
+			Register(750, typeof(Spellweaving.ImmolatingWeaponSpell));
+			Register(751, typeof(Spellweaving.EtherealVoyageSpell));
+			Register(752, typeof(Necromancy.MindRotSpell));
+			Register(753, typeof(Necromancy.WraithFormSpell));
+			Register(754, typeof(Ninjitsu.MirrorImage));
+			Register(755, typeof(Mysticism.SleepSpell));
+			Register(756, typeof(Fourth.CurseSpell));
+			Register(757, typeof(Third.PoisonSpell));
+			Register(758, typeof(Fifth.IncognitoSpell));
+			Register(759, typeof(Sixth.InvisibilitySpell));
+			Register(760, typeof(Seventh.ManaVampireSpell));
+			Register(761, typeof(Ninjitsu.AnimalForm));
+			Register(762, typeof(Ninjitsu.Shadowjump));
+			Register(763, typeof(Seventh.FlameStrikeSpell));
+			Register(764, typeof(Necromancy.VengefulSpiritSpell));
+			Register(765, typeof(Eighth.EnergyVortexSpell));
+			Register(766, typeof(First.ReactiveArmorSpell));
+			Register(767, typeof(First.CreateFoodSpell));
+			Register(768, typeof(First.NightSightSpell));
+			Register(769, typeof(First.HealSpell));
+			Register(770, typeof(First.MagicArrowSpell));
+			Register(771, typeof(First.ClumsySpell));
+			Register(772, typeof(First.FeeblemindSpell));
+			Register(773, typeof(First.WeakenSpell));
+			Register(774, typeof(Second.AgilitySpell));
+			Register(775, typeof(Second.CunningSpell));
+			Register(776, typeof(Second.StrengthSpell));
+			Register(777, typeof(Second.ProtectionSpell));
+			Register(778, typeof(Second.CureSpell));
+			Register(779, typeof(Second.HarmSpell));
+			Register(780, typeof(Second.MagicTrapSpell));
+			Register(781, typeof(Second.RemoveTrapSpell));
+			Register(782, typeof(Third.MagicLockSpell));
+			Register(783, typeof(Third.UnlockSpell));
+			Register(784, typeof(Third.TelekinesisSpell));
+			Register(785, typeof(Third.TeleportSpell));
+			Register(786, typeof(Fourth.RecallSpell));
+			Register(787, typeof(Fifth.MindBlastSpell));
+			Register(788, typeof(Third.FireballSpell));
+			Register(789, typeof(Eighth.FireElementalSpell));
+			Register(790, typeof(Eighth.EarthElementalSpell));
+			Register(791, typeof(Eighth.AirElementalSpell));
+			Register(792, typeof(Spellweaving.NatureFurySpell));
+			Register(793, typeof(Spellweaving.ReaperFormSpell));
+			Register(794, typeof(Necromancy.SummonFamiliarSpell));
+			Register(795, typeof(Necromancy.CorpseSkinSpell));
+			Register(796, typeof(Mysticism.EnchantSpell));
+			Register(797, typeof(Necromancy.WitherSpell));
+			Register(798, typeof(Fourth.FireFieldSpell));
+			Register(799, typeof(Seventh.PolymorphSpell));
+			Register(800, typeof(Necromancy.AnimateDeadSpell));
+			Register(801, typeof(Fifth.SummonCreatureSpell));
+			Register(802, typeof(Sixth.MarkSpell));
+			Register(803, typeof(Sixth.ExplosionSpell));
+			Register(804, typeof(Mysticism.HailStormSpell));
+			Register(805, typeof(Mysticism.NetherCycloneSpell));
+			Register(806, typeof(Seventh.GateTravelSpell));
+			Register(807, typeof(Eighth.EarthquakeSpell));
+			Register(808, typeof(Spellweaving.GiftOfRenewalSpell));
+			Register(809, typeof(Necromancy.CurseWeaponSpell));
+			Register(810, typeof(Necromancy.EvilOmenSpell));
+			Register(811, typeof(Necromancy.HorrificBeastSpell));
+			Register(812, typeof(Mysticism.AnimatedWeaponSpell));
+			Register(813, typeof(Fourth.ManaDrainSpell));
+			Register(814, typeof(Sixth.MassCurseSpell));
+			Register(815, typeof(Fifth.DispelFieldSpell));
+			Register(816, typeof(Fifth.PoisonFieldSpell));
+			Register(817, typeof(Necromancy.BloodOathSpell));
+			Register(818, typeof(Ninjitsu.DeathStrike));
+			Register(819, typeof(Necromancy.PoisonStrikeSpell));
+			Register(820, typeof(Necromancy.StrangleSpell));
+			Register(821, typeof(Necromancy.LichFormSpell));
+			Register(822, typeof(Necromancy.VampiricEmbraceSpell));
+			Register(823, typeof(Eighth.SummonDaemonSpell));
+			Register(824, typeof(Chivalry.RemoveCurseSpell));
+			Register(825, typeof(Third.WallOfStoneSpell));
+			Register(826, typeof(Chivalry.EnemyOfOneSpell));
+			Register(827, typeof(Fifth.BladeSpiritsSpell));
+			Register(828, typeof(Fourth.LightningSpell));
+			Register(829, typeof(Chivalry.CleanseByFireSpell));
+			Register(830, typeof(Chivalry.ConsecrateWeaponSpell));
+			Register(831, typeof(Fourth.ArchProtectionSpell));
+			Register(832, typeof(Fifth.MagicReflectSpell));
+			Register(833, typeof(Sixth.DispelSpell));
+			Register(834, typeof(Ninjitsu.KiAttack));
+			Register(835, typeof(Sixth.ParalyzeFieldSpell));
+			Register(836, typeof(Chivalry.DivineFurySpell));
+			Register(837, typeof(Bushido.Evasion));
+			Register(838, typeof(Seventh.MassDispelSpell));
+			Register(839, typeof(Eighth.ResurrectionSpell));
+			Register(840, typeof(Eighth.WaterElementalSpell));
+			Register(841, typeof(Spellweaving.AttuneWeaponSpell));
+			Register(842, typeof(Spellweaving.GiftOfLifeSpell));
+			Register(843, typeof(Sixth.RevealSpell));
+			Register(844, typeof(Chivalry.CloseWoundsSpell));
+			Register(845, typeof(Third.BlessSpell));
+			Register(846, typeof(Chivalry.DispelEvilSpell));
+			Register(847, typeof(Fourth.ArchCureSpell));
+			Register(848, typeof(Fourth.GreaterHealSpell));
+			Register(849, typeof(Fifth.ParalyzeSpell));
+			Register(850, typeof(Chivalry.HolyLightSpell));
+			Register(851, typeof(Chivalry.NobleSacrificeSpell));
+			Register(852, typeof(Bushido.CounterAttack));
+			Register(853, typeof(Bushido.Confidence));
+			Register(854, typeof(Sixth.EnergyBoltSpell));
+			Register(855, typeof(Seventh.EnergyFieldSpell));
+			Register(856, typeof(Mysticism.RisingColossusSpell));
+
+		}
+
+		public static void Register(int spellID, Type type)
         {
             SpellRegistry.Register(spellID, type);
         }

@@ -28,7 +28,9 @@ namespace Server.Spells.Ninjitsu
             }
         }
 
-        private static readonly SpellInfo m_Info = new SpellInfo("Animal Form", null, -1, 9002);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Anarchique, 11) }; } }
+
+		private static readonly SpellInfo m_Info = new SpellInfo("Animal Form", null, -1, 9002);
 
         public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.0);
 
@@ -203,9 +205,9 @@ namespace Server.Spells.Ninjitsu
 
             AddLastAnimalForm(m, entryID); //On OSI, it's the last /attempted/ one not the last succeeded one
 
-            if (m.Skills.Ninjitsu.Value < entry.ReqSkill)
+            if (m.Skills.Magery.Value < entry.ReqSkill)
             {
-                string args = string.Format("{0}\t{1}\t ", entry.ReqSkill.ToString("F1"), SkillName.Ninjitsu);
+                string args = string.Format("{0}\t{1}\t ", entry.ReqSkill.ToString("F1"), SkillName.Magery);
                 m.SendLocalizedMessage(1063013, args);
                 // You need at least ~1_SKILL_REQUIREMENT~ ~2_SKILL_NAME~ skill to use that ability.
                 return MorphResult.NoSkill;
@@ -218,7 +220,7 @@ namespace Server.Spells.Ninjitsu
             * On OSI,it seems you can only gain starting at '0' using Animal form.
             */
 
-            double ninjitsu = m.Skills.Ninjitsu.Value;
+            double ninjitsu = m.Skills.Magery.Value;
 
             if (ninjitsu < entry.ReqSkill + 37.5)
             {
@@ -230,7 +232,7 @@ namespace Server.Spells.Ninjitsu
                 }
             }
 
-            m.CheckSkill(SkillName.Ninjitsu, 0.0, 37.5);
+            m.CheckSkill(SkillName.Magery, 0.0, 37.5);
 
             if (!BaseFormTalisman.EntryEnabled(m, entry.Type))
             {
@@ -482,7 +484,7 @@ namespace Server.Spells.Ninjitsu
                 AddButton(10, 374, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0);
                 AddHtmlLocalized(45, 376, 450, 20, 1011012, 0x7FFF, false, false); // CANCEL
 
-                double ninjitsu = caster.Skills.Ninjitsu.Value;
+                double ninjitsu = caster.Skills.Magery.Value;
 
                 int current = 0;
 

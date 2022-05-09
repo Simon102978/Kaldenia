@@ -13,7 +13,10 @@ namespace Server.Spells.Necromancy
             9031,
             Reagent.DaemonBlood,
             Reagent.NoxCrystal);
-        private static readonly Hashtable m_Table = new Hashtable();
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 13) }; } }
+
+		private static readonly Hashtable m_Table = new Hashtable();
         public StrangleSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -99,7 +102,7 @@ namespace Server.Spells.Necromancy
                 m_Table[m] = t;
 
                 //Calculations for the buff bar
-                double spiritlevel = Caster.Skills[SkillName.SpiritSpeak].Value / 10;
+                double spiritlevel = Caster.Skills[SkillName.EvalInt].Value / 10;
                 if (spiritlevel < 4)
                     spiritlevel = 4;
                 int d_MinDamage = (int)(4.0 * strength);
@@ -158,7 +161,7 @@ namespace Server.Spells.Necromancy
                 m_Target = target;
                 m_From = from;
 
-                double spiritLevel = from.Skills[SkillName.SpiritSpeak].Value / 10;
+                double spiritLevel = from.Skills[SkillName.EvalInt].Value / 10;
 
                 m_MinBaseDamage = (spiritLevel - 2) * strength;
                 m_MaxBaseDamage = (spiritLevel + 1) * strength;

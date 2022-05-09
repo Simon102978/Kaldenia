@@ -12,7 +12,9 @@ namespace Server.Spells.Chivalry
             "Dispel Evil", "Dispiro Malas",
             -1,
             9002);
-        public DispelEvilSpell(Mobile caster, Item scroll)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 5) }; } }
+		public DispelEvilSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }
@@ -38,7 +40,7 @@ namespace Server.Spells.Chivalry
                 Caster.FixedParticles(0x37C4, 1, 25, 9922, 14, 3, EffectLayer.Head);
 
                 int dispelSkill = ComputePowerValue(2);
-                double chiv = Caster.Skills.Chivalry.Value;
+                double chiv = Caster.Skills.EvalInt.Value;
 
                 foreach (Mobile m in AcquireIndirectTargets(Caster.Location, 8).OfType<Mobile>())
                 {
@@ -83,7 +85,7 @@ namespace Server.Spells.Chivalry
                     if (context != null && context.Spell is NecromancerSpell)	//Trees are not evil!	TODO: OSI confirm?
                     {
                         // transformed ..
-                        double drainChance = 0.5 * (Caster.Skills.Chivalry.Value / Math.Max(m.Skills.Necromancy.Value, 1));
+                        double drainChance = 0.5 * (Caster.Skills.EvalInt.Value / Math.Max(m.Skills.Magery.Value, 1));
 
                         if (drainChance > Utility.RandomDouble())
                         {

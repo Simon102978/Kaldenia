@@ -11,7 +11,9 @@ namespace Server.Spells.Chivalry
             "Close Wounds", "Obsu Vulni",
             -1,
             9002);
-        public CloseWoundsSpell(Mobile caster, Item scroll)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 3) }; } }
+		public CloseWoundsSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

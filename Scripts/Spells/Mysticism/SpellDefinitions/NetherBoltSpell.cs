@@ -15,7 +15,8 @@ namespace Server.Spells.Mysticism
                 Reagent.SulfurousAsh
             );
 
-        public NetherBoltSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+
+		public NetherBoltSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
         }
 

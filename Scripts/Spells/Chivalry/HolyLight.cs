@@ -12,7 +12,8 @@ namespace Server.Spells.Chivalry
             -1,
             9002);
 
-        public HolyLightSpell(Mobile caster, Item scroll)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Vie, 9) }; } }
+		public HolyLightSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

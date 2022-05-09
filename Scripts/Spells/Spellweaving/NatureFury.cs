@@ -16,7 +16,9 @@ namespace Server.Spells.Spellweaving
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.5);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 3) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.5);
         public override double RequiredSkill => 0.0;
         public override int RequiredMana => 24;
         public override bool CheckCast()
@@ -57,7 +59,7 @@ namespace Server.Spells.Spellweaving
             }
             else if (SpellHelper.CheckTown(p, Caster) && CheckSequence())
             {
-                TimeSpan duration = TimeSpan.FromSeconds(Caster.Skills.Spellweaving.Value / 24 + 25 + FocusLevel * 2);
+                TimeSpan duration = TimeSpan.FromSeconds(Caster.Skills.EvalInt.Value / 24 + 25 + FocusLevel * 2);
 
                 NatureFury nf = new NatureFury();
                 BaseCreature.Summon(nf, false, Caster, p, 0x5CB, duration);

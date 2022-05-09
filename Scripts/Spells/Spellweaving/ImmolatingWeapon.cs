@@ -11,7 +11,9 @@ namespace Server.Spells.Spellweaving
             -1);
         private static readonly Dictionary<Mobile, ImmolatingWeaponEntry> m_WeaponDamageTable = new Dictionary<Mobile, ImmolatingWeaponEntry>();
 
-        public ImmolatingWeaponSpell(Mobile caster, Item scroll)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Anarchique, 4) }; } }
+
+		public ImmolatingWeaponSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }
@@ -100,7 +102,7 @@ namespace Server.Spells.Spellweaving
 
                 if (!IsImmolating(Caster, weapon)) // On OSI, the effect is not re-applied
                 {
-                    double skill = Caster.Skills.Spellweaving.Value;
+                    double skill = Caster.Skills.EvalInt.Value;
 
                     int duration = 10 + (int)(skill / 24) + FocusLevel;
                     int damage = 5 + (int)(skill / 24) + FocusLevel;

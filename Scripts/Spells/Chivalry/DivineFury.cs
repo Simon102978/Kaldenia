@@ -17,7 +17,9 @@ namespace Server.Spells.Chivalry
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.0);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Obeissance, 13) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.0);
         public override double RequiredSkill => 25.0;
         public override int RequiredMana => 15;
         public override int RequiredTithing => 10;
@@ -72,7 +74,7 @@ namespace Server.Spells.Chivalry
         {
             if (m_Table.ContainsKey(m))
             {
-                return m.Skills[SkillName.Chivalry].Value >= 120.0 && m.Karma >= 10000 ? 20 : 10;
+                return m.Skills[SkillName.EvalInt].Value >= 120.0 && m.Karma >= 10000 ? 20 : 10;
             }
 
             return 0;
@@ -82,7 +84,7 @@ namespace Server.Spells.Chivalry
         {
             if (m_Table.ContainsKey(m))
             {
-                return m.Skills[SkillName.Chivalry].Value >= 120.0 && m.Karma >= 10000 ? 15 : 10;
+                return m.Skills[SkillName.EvalInt].Value >= 120.0 && m.Karma >= 10000 ? 15 : 10;
             }
 
             return 0;
@@ -92,7 +94,7 @@ namespace Server.Spells.Chivalry
         {
             if (m_Table.ContainsKey(m))
             {
-                return m.Skills[SkillName.Chivalry].Value >= 120.0 && m.Karma >= 10000 ? 15 : 10;
+                return m.Skills[SkillName.EvalInt].Value >= 120.0 && m.Karma >= 10000 ? 15 : 10;
             }
 
             return 0;
@@ -102,7 +104,7 @@ namespace Server.Spells.Chivalry
         {
             if (m_Table.ContainsKey(m))
             {
-                return m.Skills[SkillName.Chivalry].Value >= 120.0 && m.Karma >= 10000 ? 10 : 20;
+                return m.Skills[SkillName.EvalInt].Value >= 120.0 && m.Karma >= 10000 ? 10 : 20;
             }
 
             return 0;

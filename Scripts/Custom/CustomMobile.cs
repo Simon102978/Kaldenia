@@ -37,6 +37,7 @@ namespace Server.Mobiles
 
 		private God m_God = God.GetGod(-1);
 		private AffinityDictionary m_MagicAfinity;
+		private List<int> m_QuickSpells = new List<int>();
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }
@@ -168,6 +169,35 @@ namespace Server.Mobiles
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public AffinityDictionary MagicAfinity { get { return m_MagicAfinity; } set { m_MagicAfinity = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Item ChosenSpellbook { get; set; }
+
+
+
+		public List<int> QuickSpells
+		{
+			get { return m_QuickSpells; }
+			set { m_QuickSpells = value; }
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		public CustomPlayerMobile()
 		{
@@ -515,6 +545,12 @@ namespace Server.Mobiles
 
 		}
 
+		public int GetAffinityValue(MagieType affinity)
+		{
+			return MagicAfinity.GetValue(affinity);
+		}
+
+
 
 
 		#region Classe
@@ -775,8 +811,6 @@ namespace Server.Mobiles
 		}
 
 		#endregion
-
-
 
 		#region Stats
 
@@ -1124,8 +1158,28 @@ namespace Server.Mobiles
 
             int version = reader.ReadInt();
 
-            switch (version)
-            {
+
+			switch (version)
+			{
+
+				case 8:
+					{
+						ChosenSpellbook = reader.ReadItem();
+
+						goto case 7;
+					}
+
+				case 7:
+					{
+						QuickSpells = new List<int>();
+						int count = reader.ReadInt();
+						for (int i = 0; i < count; i++)
+							QuickSpells.Add(reader.ReadInt());
+
+						goto case 6;
+					}
+
+
 				case 6:
 					{
 						God = God.GetGod(reader.ReadInt());
@@ -1205,7 +1259,13 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(6); // version
+            writer.Write(8); // version
+
+			writer.Write(ChosenSpellbook);
+
+			writer.Write(QuickSpells.Count);
+			for (int i = 0; i < QuickSpells.Count; i++)
+				writer.Write((int)QuickSpells[i]);
 
 			writer.Write(God.GodID);
 

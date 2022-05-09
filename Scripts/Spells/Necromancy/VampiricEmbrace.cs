@@ -12,7 +12,9 @@ namespace Server.Spells.Necromancy
             Reagent.BatWing,
             Reagent.NoxCrystal,
             Reagent.PigIron);
-        public VampiricEmbraceSpell(Mobile caster, Item scroll)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 15) }; } }
+		public VampiricEmbraceSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

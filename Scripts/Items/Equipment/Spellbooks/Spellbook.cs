@@ -8,6 +8,7 @@ using Server.Spells.Mysticism;
 using Server.Targeting;
 using System;
 using System.Collections.Generic;
+using Server.Gumps;
 #endregion
 
 namespace Server.Items
@@ -713,7 +714,7 @@ namespace Server.Items
             }
         }
 
-        public bool HasSpell(int spellID)
+        public virtual bool HasSpell(int spellID)
         {
             spellID -= BookOffset;
 
@@ -1189,7 +1190,19 @@ namespace Server.Items
 
         private static void AllSpells_OnTarget(Mobile from, object obj)
         {
-            if (obj is Spellbook)
+			if (obj is NewSpellbook)
+			{
+				NewSpellbook newSpellbook = (NewSpellbook)obj;
+
+				foreach (SpellBookEntry item in NewSpellbookGump.m_SpellBookEntry)
+				{
+					newSpellbook.AddSpell(item.SpellID);
+					
+				}
+
+				from.SendMessage("Le livre a été remplis.");
+			}
+            else if (obj is Spellbook)
             {
                 Spellbook book = (Spellbook)obj;
 

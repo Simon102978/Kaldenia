@@ -9,8 +9,8 @@ namespace Server.Spells.Ninjitsu
 
         public abstract double RequiredSkill { get; }
         public abstract int RequiredMana { get; }
-        public override SkillName CastSkill => SkillName.Ninjitsu;
-        public override SkillName DamageSkill => SkillName.Ninjitsu;
+//        public override SkillName CastSkill => SkillName.Ninjitsu;
+ //       public override SkillName DamageSkill => SkillName.Ninjitsu;
         public override bool RevealOnCast => false;
         public override bool ClearHandsOnCast => false;
         public override bool ShowHandMovement => false;

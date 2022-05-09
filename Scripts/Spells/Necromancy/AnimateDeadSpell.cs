@@ -18,7 +18,9 @@ namespace Server.Spells.Necromancy
 
         public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.75);
 
-        public override double RequiredSkill => 40.0;
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 8) }; } }
+
+		public override double RequiredSkill => 40.0;
         public override int RequiredMana => 23;
 
         public AnimateDeadSpell(Mobile caster, Item scroll)
@@ -261,8 +263,8 @@ namespace Server.Spells.Necromancy
             if (owner == null)
                 return;
 
-            double necromancy = caster.Skills[SkillName.Necromancy].Value;
-            double spiritSpeak = caster.Skills[SkillName.SpiritSpeak].Value;
+            double necromancy = caster.Skills[SkillName.Magery].Value;
+            double spiritSpeak = caster.Skills[SkillName.EvalInt].Value;
 
             int casterAbility = 0;
 

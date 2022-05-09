@@ -10,7 +10,9 @@ namespace Server.Spells.Necromancy
             9031,
             Reagent.BatWing,
             Reagent.DaemonBlood);
-        public HorrificBeastSpell(Mobile caster, Item scroll)
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 3) }; } }
+		public HorrificBeastSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
         }

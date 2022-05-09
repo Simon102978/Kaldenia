@@ -15,11 +15,12 @@ namespace Server.Spells.Mysticism
                 9022,
                 Reagent.MandrakeRoot,
                 Reagent.Nightshade,
-                Reagent.SulfurousAsh,
-                Reagent.Bloodmoss
+                Reagent.SulfurousAsh
             );
 
-        public NetherCycloneSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 14) }; } }
+
+		public NetherCycloneSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
         }
 

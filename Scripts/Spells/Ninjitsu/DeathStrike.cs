@@ -18,7 +18,9 @@ namespace Server.Spells.Ninjitsu
         public override double RequiredSkill => 85.0;
         public override TextDefinition AbilityMessage => new TextDefinition(1063091);// You prepare to hit your opponent with a Death Strike.
 
-        public static void AddStep(Mobile m)
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 11) }; } }
+
+		public static void AddStep(Mobile m)
         {
             if (!m_Table.ContainsKey(m))
                 return;
@@ -76,7 +78,7 @@ namespace Server.Spells.Ninjitsu
             defender.FixedParticles(0x374A, 1, 17, 0x26BC, EffectLayer.Waist);
             attacker.PlaySound(attacker.Female ? 0x50D : 0x50E);
 
-            var ninjitsu = attacker.Skills[SkillName.Ninjitsu].Base;
+            var ninjitsu = attacker.Skills[SkillName.EvalInt].Base;
             var hiding = attacker.Skills[SkillName.Hiding].Base;
     
 

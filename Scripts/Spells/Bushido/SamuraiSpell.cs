@@ -12,8 +12,8 @@ namespace Server.Spells.Bushido
 
         public abstract double RequiredSkill { get; }
         public abstract int RequiredMana { get; }
-        public override SkillName CastSkill => SkillName.Bushido;
-        public override SkillName DamageSkill => SkillName.Bushido;
+    //    public override SkillName CastSkill => SkillName.Magery;
+    //    public override SkillName DamageSkill => SkillName.EvalInt;
         public override bool ClearHandsOnCast => false;
         public override bool BlocksMovement => false;
         public override bool ShowHandMovement => false;

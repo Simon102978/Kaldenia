@@ -20,7 +20,9 @@ namespace Server.Spells.Necromancy
         {
         }
 
-        public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.5);
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 5) }; } }
+
+		public override TimeSpan CastDelayBase => TimeSpan.FromSeconds(1.5);
         public override double RequiredSkill => 60.0;
         public override int RequiredMana => 23;
         public override bool DelayedDamage => false;

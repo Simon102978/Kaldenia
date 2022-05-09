@@ -12,7 +12,10 @@ namespace Server.Spells.Necromancy
             9031,
             Reagent.PigIron);
 
-        private static readonly Dictionary<Mobile, ExpireTimer> m_Table = new Dictionary<Mobile, ExpireTimer>();
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 1) }; } }
+
+		private static readonly Dictionary<Mobile, ExpireTimer> m_Table = new Dictionary<Mobile, ExpireTimer>();
 
         public CurseWeaponSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)

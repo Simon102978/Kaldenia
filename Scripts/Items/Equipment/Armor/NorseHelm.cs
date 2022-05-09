@@ -2,7 +2,7 @@ namespace Server.Items
 {
     public class NorseHelm : BaseArmor
     {
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
+
 
 		[Constructable]
         public NorseHelm()
@@ -24,8 +24,10 @@ namespace Server.Items
         public override int InitMinHits => 45;
         public override int InitMaxHits => 60;
         public override int StrReq => 55;
-        public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
-        public override void Serialize(GenericWriter writer)
+
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

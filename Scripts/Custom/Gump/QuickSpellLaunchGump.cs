@@ -113,8 +113,19 @@ namespace Server.Gumps
 
                     if (spell != null)
                         spell.Cast();
+					else
+					{
+						SpecialMove sm = SpellRegistry.GetSpecialMove(info.ButtonID);
 
-                    if (from is CustomPlayerMobile)
+						if (sm != null)
+						{
+							sm.OnUse(from);
+						}
+
+					}
+
+
+					if (from is CustomPlayerMobile)
                         from.SendGump(new QuickSpellLaunchGump((CustomPlayerMobile)from, m_Book, m_List));
                 }
                 else

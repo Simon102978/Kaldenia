@@ -45,7 +45,17 @@ namespace Server.Scripts.Commands
 
                             if (spell != null)
                                 spell.Cast();
-                        }
+							else
+							{
+								SpecialMove sm = SpellRegistry.GetSpecialMove(id);
+
+								if (sm != null)
+								{
+									sm.OnUse(from);
+								}
+
+							}
+						}
                     }
                     else
                         pm.SendMessage("Le numéro du sort est invalide !");

@@ -14,6 +14,8 @@ namespace Server.Items
         public override int InitMaxHits => 50;
         public override int StrReq => 20;
 
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Cloth;
+
 		[Constructable]
         public Buckler()
             : base(0x1B73)

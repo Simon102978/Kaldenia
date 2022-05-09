@@ -25,7 +25,10 @@ namespace Server.Items
         public override int InitMinHits => 45;
         public override int InitMaxHits => 60;
         public override int StrReq => 45;
-        public bool Dye(Mobile from, DyeTub sender)
+
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
+
+		public bool Dye(Mobile from, DyeTub sender)
         {
             if (Deleted)
                 return false;

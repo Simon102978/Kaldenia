@@ -25,7 +25,9 @@ namespace Server.Items
         public override int InitMinHits => 50;
         public override int InitMaxHits => 65;
         public override int StrReq => 90;
-        public override void Deserialize(GenericReader reader)
+
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Chainmail;
+		public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();

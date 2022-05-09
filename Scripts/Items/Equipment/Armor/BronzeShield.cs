@@ -14,6 +14,8 @@ namespace Server.Items
         public override int InitMaxHits => 30;
         public override int StrReq => 35;
 
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Studded;
+
 		[Constructable]
         public BronzeShield()
             : base(0x1B72)

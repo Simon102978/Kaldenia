@@ -363,7 +363,7 @@ namespace Server.Mobiles
 				switch (armor.MaterialType)
 				{
 					case ArmorMaterialType.Cloth:
-						req = 1;
+						req = 0;
 						break;
 					case ArmorMaterialType.Leather:
 						req = 1;

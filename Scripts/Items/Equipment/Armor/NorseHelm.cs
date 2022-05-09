@@ -2,7 +2,9 @@ namespace Server.Items
 {
     public class NorseHelm : BaseArmor
     {
-        [Constructable]
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
+
+		[Constructable]
         public NorseHelm()
             : base(0x140E)
         {

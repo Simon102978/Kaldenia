@@ -18,8 +18,9 @@ namespace Server.Items
             : base(serial)
         {
         }
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
 
-        public override int BasePhysicalResistance => 1;
+		public override int BasePhysicalResistance => 1;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 0;
         public override int BasePoisonResistance => 0;

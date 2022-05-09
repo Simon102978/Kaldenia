@@ -10,7 +10,7 @@ namespace Server.Items
         public override int InitMinHits => 40;
         public override int InitMaxHits => 50;
         public override int StrReq => 40;
-        public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
+        public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
 
         [Constructable]
         public Bascinet()

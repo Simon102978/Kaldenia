@@ -27,11 +27,11 @@ namespace Server.Gumps
 			m_stade = stade;
 
 			// Layout
-
+			
 			AddSection(x - 10, y, 202, 300, "Guerrier");
-			AddSection(x - 10, y + 301, 202, 308, "Mage");
+			AddSection(x - 10, y + 301, 202, 308, "Métier");
 			AddSection(x - 10 + 203, y, 203, 300, "Roublard");
-			AddSection(x - 10 + 407, y, 203, 300, "Métier");
+			AddSection(x - 10 + 407, y, 203, 300, "Mage");
 			AddSection(x - 10 + 203, y + +301, 406, 308, "Description", ClasseDescription());
 
 
@@ -73,10 +73,10 @@ namespace Server.Gumps
 								LGuerrier++;
 								break;
 							}
-						case ClasseType.Mage:
+						case ClasseType.Metier:
 							{
-								AddButtonHtlml(x + 10, y + 40 + LMage * scale + 301, 100 + item.ClasseID, 2117, 2118, item.Name, color);
-								LMage++;
+								AddButtonHtlml(x + 10, y + 40 + LMetier * scale + 301, 100 + item.ClasseID, 2117, 2118, item.Name, color);
+								LMetier++;
 								break;
 							}
 						case ClasseType.Roublard:
@@ -85,10 +85,10 @@ namespace Server.Gumps
 								LRoublard++;
 								break;
 							}
-						case ClasseType.Metier:
-							{
-								AddButtonHtlml(x + 10 + 406, y + 40 + LMetier * scale, 100 + item.ClasseID, 2117, 2118, item.Name, color);
-								LMetier++;
+						case ClasseType.Mage:
+							{							
+								AddButtonHtlml(x + 10 + 406, y + 40 + LMage * scale, 100 + item.ClasseID, 2117, 2118, item.Name, color);
+								LMage++;
 								break;
 							}
 						default:

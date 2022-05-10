@@ -173,30 +173,11 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Item ChosenSpellbook { get; set; }
 
-
-
 		public List<int> QuickSpells
 		{
 			get { return m_QuickSpells; }
 			set { m_QuickSpells = value; }
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		public CustomPlayerMobile()

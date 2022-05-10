@@ -1487,7 +1487,51 @@ namespace Server.Items
                 blocked = CheckParry(defender);
                 BaseWeapon weapon = defender.Weapon as BaseWeapon;
 
-                if (blocked)
+
+				if (CounterAttack.IsCountering(defender))
+				{
+					if (weapon != null)
+					{
+						IDamageable combatant = defender.Combatant;
+
+						defender.FixedParticles(0x3779, 1, 15, 0x158B, 0x0, 0x3, EffectLayer.Waist);
+
+						if (defender.Mana >= 20)
+						{
+							blocked = true;
+							defender.Mana -= 20;
+						}
+						else
+						{
+							defender.SendMessage("vous n'avez pas assez de mana pour activer contre attaque.");
+						}
+
+
+						
+
+
+					//	weapon.OnSwing(defender, attacker);
+
+				//		if (combatant != null && defender.Combatant != combatant && combatant.Alive)
+				//			defender.Combatant = combatant;
+
+						
+					}
+
+					CounterAttack.StopCountering(defender);
+				}
+
+
+
+
+
+
+
+
+
+
+
+				if (blocked)
                 {
                     defender.FixedEffect(0x37B9, 10, 16);
                     damage = 0;
@@ -1497,21 +1541,7 @@ namespace Server.Items
                     // Successful block removes the Honorable Execution penalty.
                     HonorableExecution.RemovePenalty(defender);
 
-                    if (CounterAttack.IsCountering(defender))
-                    {
-                        if (weapon != null)
-                        {
-                            IDamageable combatant = defender.Combatant;
-
-                            defender.FixedParticles(0x3779, 1, 15, 0x158B, 0x0, 0x3, EffectLayer.Waist);
-                            weapon.OnSwing(defender, attacker);
-
-                            if (combatant != null && defender.Combatant != combatant && combatant.Alive)
-                                defender.Combatant = combatant;
-                        }
-
-                        CounterAttack.StopCountering(defender);
-                    }
+                    
 
                     if (Confidence.IsConfident(defender))
                     {

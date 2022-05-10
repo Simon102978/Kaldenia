@@ -2385,7 +2385,7 @@ public class RemoveCurseScroll : SpellScroll
 	[Constructable]
 	public RemoveCurseScroll(int amount) : base(824, 7993, amount)
 		{
-		Name ="Supprimer la malédiction";
+		Name ="Supprimer le mal";
 		Hue = 140;
 	}
 
@@ -2449,7 +2449,7 @@ public class CleanseByFireScroll : SpellScroll
 	[Constructable]
 	public CleanseByFireScroll(int amount) : base(829, 7993, amount)
 		{
-		Name ="Nettoyer par le feu";
+		Name = "Purification";
 		Hue = 140;
 	}
 

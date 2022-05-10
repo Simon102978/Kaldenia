@@ -687,7 +687,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 50;
 
-			index = AddCraft(typeof(RemoveCurseScroll),"Obeissance","Supprimer la malédiction", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(RemoveCurseScroll),"Obeissance","Supprimer le mal", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
 			 craftItem = CraftItems.GetAt(index);
 			 craftItem.Mana = 4;
 
@@ -697,7 +697,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 9;
 
-			index = AddCraft(typeof(CleanseByFireScroll),"Obeissance","Nettoyer par le feu", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(CleanseByFireScroll),"Obeissance", "Purification", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
 			 craftItem = CraftItems.GetAt(index);
 			 craftItem.Mana = 4;
 

@@ -13,7 +13,7 @@ namespace Server.Spells.Fifth
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk);
 
-		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 10) }; } }
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 4) }; } }
 
 		// NOTE: Creature list based on 1hr of summon/release on OSI.
 		private static readonly Type[] m_Types = new Type[]

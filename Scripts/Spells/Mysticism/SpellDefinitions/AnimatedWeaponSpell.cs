@@ -8,7 +8,9 @@ namespace Server.Spells.Mysticism
     {
         public override SpellCircle Circle => SpellCircle.Fourth;
 
-        private static readonly SpellInfo m_Info = new SpellInfo(
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Mort, 5) }; } }
+
+		private static readonly SpellInfo m_Info = new SpellInfo(
                 "Animated Weapon", "In Jux Por Ylem",
                 230,
                 9022,

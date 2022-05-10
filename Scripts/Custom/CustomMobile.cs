@@ -1066,6 +1066,8 @@ namespace Server.Mobiles
 			PreventPvpAttack = true;
 			PreventPvpAttackTime = DateTime.Now + TimeSpan.FromMinutes(DeathDuration + PreventPvpAttackDuration);
 			Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration + PreventPvpAttackDuration), new TimerStateCallback(RetourCombatPvP_Callback), this);
+
+			Server.Spells.Fifth.IncognitoSpell.StopTimer(this);
 		}
 
 		private static void RetourCombatPvP_Callback(object state)

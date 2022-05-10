@@ -54,12 +54,12 @@ namespace Server.Spells.Fifth
 
         public override bool CheckCast()
         {
-            if (!Caster.CanBeginAction(typeof(IncognitoSpell)))
+     /*       if (!Caster.CanBeginAction(typeof(IncognitoSpell)))
             {
                 Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
                 return false;
             }
-            else if (Caster.BodyMod == 183 || Caster.BodyMod == 184)
+            else*/ if (Caster.BodyMod == 183 || Caster.BodyMod == 184)
             {
                 Caster.SendLocalizedMessage(1042402); // You cannot use incognito while wearing body paint
                 return false;
@@ -70,11 +70,11 @@ namespace Server.Spells.Fifth
 
         public override void OnCast()
         {
-            if (!Caster.CanBeginAction(typeof(IncognitoSpell)))
+         /*   if (!Caster.CanBeginAction(typeof(IncognitoSpell)))
             {
                 Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
             }
-            else if (Caster.BodyMod == 183 || Caster.BodyMod == 184)
+            else*/ if (Caster.BodyMod == 183 || Caster.BodyMod == 184)
             {
                 Caster.SendLocalizedMessage(1042402); // You cannot use incognito while wearing body paint
             }
@@ -112,12 +112,12 @@ namespace Server.Spells.Fifth
 
                     StopTimer(Caster);
 
-                    int timeVal = ((6 * Caster.Skills.Magery.Fixed) / 50) + 1;
+                 /*   int timeVal = ((6 * Caster.Skills.Magery.Fixed) / 50) + 1;
 
                     if (timeVal > 144)
-                        timeVal = 144;
+                        timeVal = 144;*/
 
-                    TimeSpan length = TimeSpan.FromSeconds(timeVal);
+                    TimeSpan length = TimeSpan.FromHours(5)    /*TimeSpan.FromHours(2)*/;
 
                     Timer t = new InternalTimer(Caster, length);
 
@@ -129,7 +129,9 @@ namespace Server.Spells.Fifth
                 }
                 else
                 {
-                    Caster.SendLocalizedMessage(1079022); // You're already incognitoed!
+					StopTimer(Caster);
+					
+					// Caster.SendLocalizedMessage(1079022); // You're already incognitoed!
                 }
             }
 
@@ -155,7 +157,7 @@ namespace Server.Spells.Fifth
                 Priority = TimerPriority.OneSecond;
             }
 
-            protected override void OnTick()
+     /*       protected override void OnTick()
             {
                 if (!m_Owner.CanBeginAction(typeof(IncognitoSpell)))
                 {
@@ -170,7 +172,28 @@ namespace Server.Spells.Fifth
                     BaseArmor.ValidateMobile(m_Owner);
                     BaseClothing.ValidateMobile(m_Owner);
                 }
-            }
+            }*/
+
+			public override void Stop()
+			{
+				base.Stop();
+
+
+				if (m_Owner is PlayerMobile)
+					((PlayerMobile)m_Owner).SetHairMods(-1, -1);
+
+				m_Owner.BodyMod = 0;
+				m_Owner.HueMod = -1;
+				m_Owner.NameMod = null;
+				m_Owner.EndAction(typeof(IncognitoSpell));
+
+				BaseArmor.ValidateMobile(m_Owner);
+				BaseClothing.ValidateMobile(m_Owner);
+
+
+			}
+
+
         }
     }
 }

@@ -891,7 +891,7 @@ namespace Server
 			}
 		}
 
-		public void Stop()
+		public virtual void Stop()
 		{
 			if (!m_Running)
 			{

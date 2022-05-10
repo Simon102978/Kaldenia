@@ -413,10 +413,17 @@ namespace Server
 			}
 
 
-/*			m_skills.Add(SkillName.Mining, 0);
-			m_skills.Add(SkillName.Lumberjacking, 0);
-			m_skills.Add(SkillName.Fishing, 0);
-			m_skills.Add(SkillName.MagicResist, 0);*/
+			m_Player.Skills[SkillName.Mining].Base = 30;
+			m_Player.Skills[SkillName.Lumberjacking].Base = 30;
+			m_Player.Skills[SkillName.Fishing].Base = 30;
+			m_Player.Skills[SkillName.MagicResist].Base = 30;
+
+
+
+			/*			m_skills.Add(SkillName.Mining, 0);
+						m_skills.Add(SkillName.Lumberjacking, 0);
+						m_skills.Add(SkillName.Fishing, 0);
+						m_skills.Add(SkillName.MagicResist, 0);*/
 
 			int GoldNumber = 5000;
 			

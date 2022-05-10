@@ -27,11 +27,6 @@ namespace Server.Gumps
             int space = 115;
 
 
-
-
-
-
-
             string info = "<h3><basefont color=#FFFFFFF>Nom: " + m_Creation.Name + "\n\nRace: " + m_Creation.Race + "\nDivinité: " + m_Creation.God.Name + "\nSexe: " + (m_Creation.Female ? "Femme" : "Homme") + "\nApparence: " + m_Creation.GetApparence() + "\nGrandeur: " + m_Creation.GetGrandeur() + "\nGrosseur: " + m_Creation.GetGrosseur() + "\n\n<basefont></h3>";
 
 			Dictionary<SkillName, int> Skill = new Dictionary<SkillName, int>();
@@ -69,12 +64,20 @@ namespace Server.Gumps
 				}			
 			}
 
+
+
+
+
 			info = info + "Skills: \n\n";
 
 			foreach (KeyValuePair<SkillName,int> item in Skill)
 			{
 				info = info +"  -" + item.Key + ": " + item.Value + "\n";
 			}
+
+			info = info + "  -Mining: 30\n  -Fishing: 30\n  -Lumberjacking: 30\n  -MagicResist: 30\n";
+
+
 
 			info = info + "\nArmure: " + armor;
 

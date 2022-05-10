@@ -1033,11 +1033,14 @@ namespace Server.Mobiles
 				}
 			}
 
-
-
-
+			foreach (SkillName item in SkillGeneral)
+			{
+				if (item == skills && Skills[skills].Value == 30)
+				{
+					return false;
+				}
+			}
 			return true;
-
 		}
 
 		#endregion

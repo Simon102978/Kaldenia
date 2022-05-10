@@ -3158,20 +3158,36 @@ namespace Server.Items
 			double strengthBonus = GetBonus(attacker.Str, 0.300, 100.0, 5.00);
             double anatomyBonus = GetBonus(attacker.Skills[SkillName.Anatomy].Value, 0.500, 100.0, 5.00);
             double tacticsBonus = GetBonus(attacker.Skills[SkillName.Tactics].Value, 0.625, 100.0, 6.25);
-         //   double lumberBonus = GetBonus(attacker.Skills[SkillName.Lumberjacking].Value, 0.200, 100.0, 10.00);
 
-   /*         if (Type != WeaponType.Axe)
-            {
-                lumberBonus = 0.0;
-            }*/
-            #endregion
 
-            #region Modifiers
-            /*
+			if (attacker is CustomPlayerMobile)
+			{
+				// Solution non elegante pour booster les dégats des joueurs du double.
+
+
+				anatomyBonus *= 2;
+				tacticsBonus *= 2;
+			}
+
+
+
+	//		double anatomyBonus = GetBonus(attacker.Skills[SkillName.Anatomy].Value, 0.500, 100.0, 5.00);
+	//		double tacticsBonus = GetBonus(attacker.Skills[SkillName.Tactics].Value, 0.625, 100.0, 6.25);
+
+			//   double lumberBonus = GetBonus(attacker.Skills[SkillName.Lumberjacking].Value, 0.200, 100.0, 10.00);
+
+			/*         if (Type != WeaponType.Axe)
+					 {
+						 lumberBonus = 0.0;
+					 }*/
+			#endregion
+
+			#region Modifiers
+			/*
             * The following are damage modifiers whose effect shows on the status bar.
             * Capped at 100% total.
             */
-            int damageBonus = AosAttributes.GetValue(attacker, AosAttribute.WeaponDamage);
+			int damageBonus = AosAttributes.GetValue(attacker, AosAttribute.WeaponDamage);
 
             if (damageBonus > 100)
             {

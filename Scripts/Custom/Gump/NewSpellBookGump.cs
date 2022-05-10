@@ -86,7 +86,8 @@ namespace Server.Gumps
 			new SpellBookEntry( 0, MagieType.Arcane,"Élém. : Feu", new Type[] {typeof(Bloodmoss), typeof(MandrakeRoot), typeof(SpidersSilk)},0x8fe, 8,789),
 			new SpellBookEntry( 0, MagieType.Arcane,"Élém. : Terre", new Type[] {typeof(Bloodmoss), typeof(MandrakeRoot), typeof(SpidersSilk) },0x8fd, 8,790),
 			new SpellBookEntry( 0, MagieType.Arcane,"Élém. : Air", new Type[] {typeof(Bloodmoss), typeof(MandrakeRoot), typeof(SpidersSilk) },0x8fb, 8,791),
-			
+			new SpellBookEntry( 16, MagieType.Arcane,"Élém. : Eau", new Type[] {typeof(Bloodmoss), typeof(MandrakeRoot), typeof(SpidersSilk) },0x8ff, 8,840),
+
 			new SpellBookEntry( 1, MagieType.Cycle,"Familier", new Type[] {typeof(BatWing), typeof(GraveDust), typeof(DaemonBlood) },20491, 3,794),
 			new SpellBookEntry( 2, MagieType.Cycle,"Peau de mort", new Type[] {typeof(BatWing), typeof(GraveDust) },20482, 2,795),
 			new SpellBookEntry( 3, MagieType.Cycle,"Fureur naturelle", new Type[] { },23005, 2,792),
@@ -137,8 +138,7 @@ namespace Server.Gumps
 			new SpellBookEntry( 14, MagieType.Obeissance,"Évasion", new Type[] { },21538, 6,837),
 			new SpellBookEntry( 15, MagieType.Obeissance,"Dissipation massive", new Type[] {typeof(Garlic), typeof(MandrakeRoot), typeof(BlackPearl) },0x8f5, 7,838),
 			new SpellBookEntry( 16, MagieType.Obeissance,"Résurrection", new Type[] {typeof(Bloodmoss), typeof(Garlic), typeof(Ginseng) },0x8fa, 8,839),
-			new SpellBookEntry( 16, MagieType.Obeissance,"Élém. : Eau", new Type[] {typeof(Bloodmoss), typeof(MandrakeRoot), typeof(SpidersSilk) },0x8ff, 8,840),
-			
+		
 			new SpellBookEntry( 1, MagieType.Vie,"Révélation", new Type[] {typeof(Bloodmoss), typeof(SulfurousAsh) },0x8ef, 6,843),
 			new SpellBookEntry( 2, MagieType.Vie,"Harmonisation", new Type[] { },23003, 2,841),
 			new SpellBookEntry( 3, MagieType.Vie,"Fermer les plaies", new Type[] { },20737, 0,844),

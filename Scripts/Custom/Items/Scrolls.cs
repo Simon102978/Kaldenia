@@ -2900,7 +2900,7 @@ public class WaterElementalScroll : SpellScroll
 	public WaterElementalScroll(int amount) : base(840, 7993, amount)
 		{
 		Name ="Élém. : Eau";
-		Hue = 140;
+		Hue = 498;
 	}
 
 	public WaterElementalScroll(Serial serial) : base(serial)

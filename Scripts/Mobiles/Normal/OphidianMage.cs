@@ -61,7 +61,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.Potions);
             AddLoot(LootPack.MageryRegs, 10);
-            AddLoot(LootPack.LootItem<PainSpikeScroll>(16.7));
+    //        AddLoot(LootPack.LootItem<PainSpikeScroll>(16.7));
         }
 
         public override void Serialize(GenericWriter writer)

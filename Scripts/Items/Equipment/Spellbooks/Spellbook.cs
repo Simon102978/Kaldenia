@@ -103,7 +103,7 @@ namespace Server.Items
 
             Weight = 3.0;
             Layer = Layer.OneHanded;
-            LootType = LootType.Blessed;
+   //         LootType = LootType.Blessed;
 
             Content = content;
         }
@@ -933,7 +933,7 @@ namespace Server.Items
 
             AddProperty(list);
 
-            list.Add(1042886, m_Count.ToString()); // ~1_NUMBERS_OF_SPELLS~ Spells
+//            list.Add(1042886, m_Count.ToString()); // ~1_NUMBERS_OF_SPELLS~ Spells
 
             if (m_MaxHitPoints > 0)
                 list.Add(1060639, "{0}\t{1}", m_HitPoints, m_MaxHitPoints); // durability ~1_val~ / ~2_val~

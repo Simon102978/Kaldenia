@@ -15,12 +15,12 @@ namespace Server.Mobiles
         {
             public InternalBuyInfo()
             {
-                Add(new GenericBuyInfo(typeof(PurgeMagicScroll), 18, 10, 0x2DA0, 0, true));
+        //        Add(new GenericBuyInfo(typeof(PurgeMagicScroll), 18, 10, 0x2DA0, 0, true));
                 Add(new GenericBuyInfo(typeof(EnchantScroll), 23, 10, 0x2DA1, 0, true));
                 Add(new GenericBuyInfo(typeof(SleepScroll), 28, 10, 0x2DA2, 0, true));
-                Add(new GenericBuyInfo(typeof(EagleStrikeScroll), 33, 10, 0x2DA3, 0, true));
+          //      Add(new GenericBuyInfo(typeof(EagleStrikeScroll), 33, 10, 0x2DA3, 0, true));
                 Add(new GenericBuyInfo(typeof(AnimatedWeaponScroll), 38, 10, 0x2DA4, 0, true));
-                Add(new GenericBuyInfo(typeof(StoneFormScroll), 43, 10, 0x2DA5, 0, true));
+            //    Add(new GenericBuyInfo(typeof(StoneFormScroll), 43, 10, 0x2DA5, 0, true));
                 Add(new GenericBuyInfo(typeof(MysticBook), 18, 10, 0x2D9D, 0, true));
                 Add(new GenericBuyInfo(typeof(ScribesPen), 8, 10, 0xFBF, 0, true));
                 Add(new GenericBuyInfo(typeof(BlankScroll), 5, 20, 0x0E34, 0, true));
@@ -47,8 +47,8 @@ namespace Server.Mobiles
 
                 Add(new GenericBuyInfo(typeof(Bone), 3, 20, 0xf7e, 0));
                 Add(new GenericBuyInfo(typeof(FertileDirt), 3, 20, 0xF81, 0));
-                Add(new GenericBuyInfo(typeof(NetherBoltScroll), 8, 20, 0x2D9E, 0));
-                Add(new GenericBuyInfo(typeof(HealingStoneScroll), 13, 20, 0x2D9F, 0));
+        //        Add(new GenericBuyInfo(typeof(NetherBoltScroll), 8, 20, 0x2D9E, 0));
+        //        Add(new GenericBuyInfo(typeof(HealingStoneScroll), 13, 20, 0x2D9F, 0));
             }
         }
 
@@ -56,12 +56,12 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(PurgeMagicScroll), 9);
+      //          Add(typeof(PurgeMagicScroll), 9);
                 Add(typeof(EnchantScroll), 11);
                 Add(typeof(SleepScroll), 14);
-                Add(typeof(EagleStrikeScroll), 16);
+        //        Add(typeof(EagleStrikeScroll), 16);
                 Add(typeof(AnimatedWeaponScroll), 19);
-                Add(typeof(StoneFormScroll), 21);
+          //      Add(typeof(StoneFormScroll), 21);
                 Add(typeof(MysticBook), 9);
                 Add(typeof(RecallRune), 13);
 
@@ -74,8 +74,8 @@ namespace Server.Mobiles
                 Add(typeof(SpidersSilk), 2);
                 Add(typeof(SulfurousAsh), 2);
 
-                Add(typeof(NetherBoltScroll), 4);
-                Add(typeof(HealingStoneScroll), 6);
+         //       Add(typeof(NetherBoltScroll), 4);
+         //       Add(typeof(HealingStoneScroll), 6);
             }
         }
     }

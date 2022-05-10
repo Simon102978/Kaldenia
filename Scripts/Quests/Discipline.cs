@@ -189,7 +189,7 @@ namespace Server.Engines.Quests
         {
             AddObjective(new ObtainObjective(typeof(SeveredHumanEars), "severed human ears", 30, 0x312F));
 
-            AddReward(new BaseReward(typeof(ArcaneCircleScroll), 1071026)); // Arcane Circle			
+    //        AddReward(new BaseReward(typeof(ArcaneCircleScroll), 1071026)); // Arcane Circle			
             AddReward(new BaseReward(typeof(GiftOfRenewalScroll), 1071027)); // Gift of Renewal
             AddReward(new BaseReward(typeof(SpellweavingBook), 1031600)); // Spellweaving Spellbook
         }

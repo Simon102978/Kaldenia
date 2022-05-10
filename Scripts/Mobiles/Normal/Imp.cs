@@ -78,7 +78,7 @@ namespace Server.Mobiles
                 case 4: c.DropItem(new HorrificBeastScroll()); break;
                 case 5: c.DropItem(new LichFormScroll()); break;
                 case 6: c.DropItem(new MindRotScroll()); break;
-                case 7: c.DropItem(new PainSpikeScroll()); break;
+                case 7: c.DropItem(new MirrorImageScroll()); break;
                 case 8: c.DropItem(new PoisonStrikeScroll()); break;
                 case 9: c.DropItem(new StrangleScroll()); break;
                 case 10: c.DropItem(new SummonFamiliarScroll()); break;

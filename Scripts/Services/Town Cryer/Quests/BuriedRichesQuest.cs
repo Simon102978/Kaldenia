@@ -210,8 +210,8 @@ namespace Server.Engines.Quests
                 };
                 chest.DropItem(heals);
 
-                TelekinisisScroll scrolls = new TelekinisisScroll
-                {
+				TelekinesisScroll scrolls = new TelekinesisScroll
+				{
                     Amount = 20
                 };
                 chest.DropItem(scrolls);

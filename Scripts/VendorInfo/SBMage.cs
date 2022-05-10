@@ -98,13 +98,13 @@ namespace Server.Mobiles
                 for (int i = 0; i < types.Length; ++i)
                     Add(types[i], ((i / 8) + 2) * 2);
 
-                Add(typeof(ExorcismScroll), 3);
+        //        Add(typeof(ExorcismScroll), 3);
                 Add(typeof(AnimateDeadScroll), 8);
                 Add(typeof(BloodOathScroll), 8);
                 Add(typeof(CorpseSkinScroll), 8);
                 Add(typeof(CurseWeaponScroll), 8);
                 Add(typeof(EvilOmenScroll), 8);
-                Add(typeof(PainSpikeScroll), 8);
+     //           Add(typeof(PainSpikeScroll), 8);
                 Add(typeof(SummonFamiliarScroll), 8);
                 Add(typeof(HorrificBeastScroll), 8);
                 Add(typeof(MindRotScroll), 10);
@@ -115,6 +115,9 @@ namespace Server.Mobiles
                 Add(typeof(WitherScroll), 16);
                 Add(typeof(VampiricEmbraceScroll), 20);
                 Add(typeof(VengefulSpiritScroll), 20);
+
+
+
             }
         }
     }

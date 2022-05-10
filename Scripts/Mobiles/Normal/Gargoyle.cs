@@ -52,7 +52,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.Gems, Utility.RandomMinMax(1, 4));
             AddLoot(LootPack.LootItem<GargoylesPickaxe>(2.5));
-            AddLoot(LootPack.LootItem<PainSpikeScroll>(15.0, true));
+         //   AddLoot(LootPack.LootItem<PainSpikeScroll>(15.0, true));
         }
 
         public override void Serialize(GenericWriter writer)

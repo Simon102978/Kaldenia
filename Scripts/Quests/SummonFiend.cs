@@ -96,7 +96,7 @@ namespace Server.Engines.Quests
         {
             AddObjective(new SlayObjective(typeof(ArcaneDaemon), "arcane daemon", 1));
 
-            AddReward(new BaseReward(typeof(SummonFiendScroll), 1071033));
+      //      AddReward(new BaseReward(typeof(SummonFiendScroll), 1071033));
         }
 
         public override QuestChain ChainID => QuestChain.SummonFiend;

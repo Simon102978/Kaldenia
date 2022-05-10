@@ -101,7 +101,7 @@ namespace Server.Engines.Quests
         {
             AddObjective(new SlayObjective(typeof(Reaper), "reapers", 20));
 
-            AddReward(new BaseReward(typeof(SummonFeyScroll), 1071032)); // Summon Fey
+         //   AddReward(new BaseReward(typeof(SummonFeyScroll), 1071032)); // Summon Fey
         }
 
         public override QuestChain ChainID => QuestChain.SummonFey;

@@ -254,54 +254,59 @@ namespace Server
         {
             typeof(ReactiveArmorScroll), typeof(ClumsyScroll), typeof(CreateFoodScroll), typeof(FeeblemindScroll),
             typeof(HealScroll), typeof(MagicArrowScroll), typeof(NightSightScroll), typeof(WeakenScroll), typeof(AgilityScroll),
-            typeof(CunningScroll), typeof(CureScroll), typeof(HarmScroll), typeof(MagicTrapScroll), typeof(MagicUnTrapScroll),
+            typeof(CunningScroll), typeof(CureScroll), typeof(HarmScroll), typeof(MagicTrapScroll), typeof(RemoveTrapScroll),
             typeof(ProtectionScroll), typeof(StrengthScroll), typeof(BlessScroll), typeof(FireballScroll),
-            typeof(MagicLockScroll), typeof(PoisonScroll), typeof(TelekinisisScroll), typeof(TeleportScroll),
+            typeof(MagicLockScroll), typeof(PoisonScroll), typeof(TelekinesisScroll), typeof(TeleportScroll),
             typeof(UnlockScroll), typeof(WallOfStoneScroll), typeof(ArchCureScroll), typeof(ArchProtectionScroll),
             typeof(CurseScroll), typeof(FireFieldScroll), typeof(GreaterHealScroll), typeof(LightningScroll),
             typeof(ManaDrainScroll), typeof(RecallScroll), typeof(BladeSpiritsScroll), typeof(DispelFieldScroll),
             typeof(IncognitoScroll), typeof(MagicReflectScroll), typeof(MindBlastScroll), typeof(ParalyzeScroll),
             typeof(PoisonFieldScroll), typeof(SummonCreatureScroll), typeof(DispelScroll), typeof(EnergyBoltScroll),
             typeof(ExplosionScroll), typeof(InvisibilityScroll), typeof(MarkScroll), typeof(MassCurseScroll),
-            typeof(ParalyzeFieldScroll), typeof(RevealScroll), typeof(ChainLightningScroll), typeof(EnergyFieldScroll),
-            typeof(FlamestrikeScroll), typeof(GateTravelScroll), typeof(ManaVampireScroll), typeof(MassDispelScroll),
-            typeof(MeteorSwarmScroll), typeof(PolymorphScroll), typeof(EarthquakeScroll), typeof(EnergyVortexScroll),
-            typeof(ResurrectionScroll), typeof(SummonAirElementalScroll), typeof(SummonDaemonScroll),
-            typeof(SummonEarthElementalScroll), typeof(SummonFireElementalScroll), typeof(SummonWaterElementalScroll)
-        };
+            typeof(ParalyzeFieldScroll), typeof(RevealScroll),/* typeof(ChainLightningScroll),*/ typeof(EnergyFieldScroll),
+            typeof(FlameStrikeScroll), typeof(GateTravelScroll), typeof(ManaVampireScroll), typeof(MassDispelScroll),
+           /* typeof(MeteorSwarmScroll),*/ typeof(PolymorphScroll), typeof(EarthquakeScroll), typeof(EnergyVortexScroll),
+            typeof(ResurrectionScroll), typeof(AirElementalScroll), typeof(SummonDaemonScroll),
+            typeof(EarthElementalScroll), typeof(FireElementalScroll), typeof(WaterElementalScroll), typeof(EvasionScroll),
+			typeof(CounterAttackScroll), typeof(ConfidenceScroll), typeof(MirrorImageScroll), typeof(AnimalFormScroll), typeof(ShadowjumpScroll),
+			typeof(DeathStrikeScroll), typeof(KiAttackScroll)
+		};
 
         private static readonly Type[] m_NecromancyScrollTypes = new[]
         {
             typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
             typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
-            typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
-            typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll),
-            typeof(ExorcismScroll)
+           /* typeof(PainSpikeScroll),*/ typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
+            typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll) /*,
+            typeof(ExorcismScroll)*/
         };
 
         private static readonly Type[] m_MysticScrollTypes = new[]
         {
-            typeof( NetherBoltScroll ),     typeof( HealingStoneScroll ),   typeof( PurgeMagicScroll ),         typeof( EnchantScroll ),
-            typeof( SleepScroll ),          typeof( EagleStrikeScroll ),   typeof( AnimatedWeaponScroll ),      typeof( StoneFormScroll ),
+            /*typeof( NetherBoltScroll ),     typeof( HealingStoneScroll ),   typeof( PurgeMagicScroll ),*/         typeof( EnchantScroll ),
+            typeof( SleepScroll ),      /*    typeof( EagleStrikeScroll ),   typeof( AnimatedWeaponScroll ),      typeof( StoneFormScroll ),
             typeof( SpellTriggerScroll ),   typeof( MassSleepScroll ),      typeof( CleansingWindsScroll ),     typeof( BombardScroll ),
-            typeof( SpellPlagueScroll ),    typeof( HailStormScroll ),      typeof( NetherCycloneScroll ),      typeof( RisingColossusScroll )
-        };
+            typeof( SpellPlagueScroll ),  */  typeof( HailStormScroll ),      typeof( NetherCycloneScroll ),      typeof( RisingColossusScroll ),
+			typeof( RemoveCurseScroll ),      typeof( EnemyOfOneScroll ),      typeof( CleanseByFireScroll ), typeof( ConsecrateWeaponScroll ),     
+			typeof( DivineFuryScroll ),      typeof( CloseWoundsScroll ),
+		};
         public static Type[] MysticScrollTypes => m_MysticScrollTypes;
 
         private static readonly Type[] m_ArcanistScrollTypes = new[]
         {
-            typeof(ArcaneCircleScroll), typeof(GiftOfRenewalScroll), typeof(ImmolatingWeaponScroll), typeof(AttuneWeaponScroll),
-            typeof(ThunderstormScroll), typeof(NatureFuryScroll),
-			typeof(ReaperFormScroll), typeof(WildfireScroll), typeof(EssenceOfWindScroll), typeof(DryadAllureScroll),
-            typeof(EtherealVoyageScroll), typeof(WordOfDeathScroll), typeof(GiftOfLifeScroll), typeof(ArcaneEmpowermentScroll)
+            /*typeof(ArcaneCircleScroll),*/ typeof(GiftOfRenewalScroll), typeof(ImmolatingWeaponScroll), typeof(AttuneWeaponScroll),
+           /* typeof(ThunderstormScroll),*/ typeof(NatureFuryScroll),
+			typeof(ReaperFormScroll),/* typeof(WildfireScroll), typeof(EssenceOfWindScroll), typeof(DryadAllureScroll),*/
+            typeof(EtherealVoyageScroll),/* typeof(WordOfDeathScroll),*/ typeof(GiftOfLifeScroll), typeof( DispelEvilScroll ),      typeof( HolyLightScroll ), 
+			typeof( NobleSacrificeScroll )/*, typeof(ArcaneEmpowermentScroll)*/
         };
 
         private static readonly Type[] m_MysticismScrollTypes = new[]
         {
-            typeof(NetherBoltScroll), typeof(HealingStoneScroll), typeof(PurgeMagicScroll), typeof(EagleStrikeScroll),
-            typeof(AnimatedWeaponScroll), typeof(StoneFormScroll), typeof(SpellTriggerScroll), typeof(CleansingWindsScroll),
-            typeof(BombardScroll), typeof(SpellPlagueScroll), typeof(HailStormScroll), typeof(NetherCycloneScroll),
-            typeof(RisingColossusScroll), typeof(SleepScroll), typeof(MassSleepScroll), typeof(EnchantScroll)
+            /*typeof(NetherBoltScroll), typeof(HealingStoneScroll), typeof(PurgeMagicScroll), typeof(EagleStrikeScroll),*/
+            typeof(AnimatedWeaponScroll), /*typeof(StoneFormScroll), typeof(SpellTriggerScroll), typeof(CleansingWindsScroll),
+            typeof(BombardScroll), typeof(SpellPlagueScroll),*/ typeof(HailStormScroll), typeof(NetherCycloneScroll),
+            typeof(RisingColossusScroll), typeof(SleepScroll),/* typeof(MassSleepScroll),*/ typeof(EnchantScroll)
         };
 
         public static Type[] MageryScrollTypes => m_MageryScrollTypes;

@@ -56,7 +56,7 @@ namespace Server.Items
 				{
 					int val = scroll.SpellID;
 
-					if (val >= 600)
+					if (val >= 750 && val <= 856)
 					{
 						Contents.Add(val);
 

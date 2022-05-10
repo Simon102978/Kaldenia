@@ -5,7 +5,7 @@ namespace Server.Engines.Craft
 {
     public enum InscriptionRecipes
     {
-        RunicAtlas = 800
+        
     }
 
     public class DefInscription : CraftSystem
@@ -227,289 +227,698 @@ namespace Server.Engines.Craft
 
         public override void InitCraftList()
         {
-            m_Circle = 0;
-            m_Mana = 4;
-
-            AddSpell(typeof(ReactiveArmorScroll), Reg.Garlic, Reg.SpidersSilk, Reg.SulfurousAsh);
-            AddSpell(typeof(ClumsyScroll), Reg.Bloodmoss, Reg.Nightshade);
-            AddSpell(typeof(CreateFoodScroll), Reg.Garlic, Reg.Ginseng, Reg.MandrakeRoot);
-            AddSpell(typeof(FeeblemindScroll), Reg.Nightshade, Reg.Ginseng);
-            AddSpell(typeof(HealScroll), Reg.Garlic, Reg.Ginseng, Reg.SpidersSilk);
-            AddSpell(typeof(MagicArrowScroll), Reg.SulfurousAsh);
-            AddSpell(typeof(NightSightScroll), Reg.SpidersSilk, Reg.SulfurousAsh);
-            AddSpell(typeof(WeakenScroll), Reg.Garlic, Reg.Nightshade);
-
-
-
-			m_Circle = 1;
-            m_Mana = 6;
-
-            AddSpell(typeof(AgilityScroll), Reg.Bloodmoss, Reg.MandrakeRoot);
-            AddSpell(typeof(CunningScroll), Reg.Nightshade, Reg.MandrakeRoot);
-            AddSpell(typeof(CureScroll), Reg.Garlic, Reg.Ginseng);
-            AddSpell(typeof(HarmScroll), Reg.Nightshade, Reg.SpidersSilk);
-            AddSpell(typeof(MagicTrapScroll), Reg.Garlic, Reg.SpidersSilk, Reg.SulfurousAsh);
-            AddSpell(typeof(MagicTrapScroll), Reg.Bloodmoss, Reg.SulfurousAsh);
-            AddSpell(typeof(ProtectionScroll), Reg.Garlic, Reg.Ginseng, Reg.SulfurousAsh);
-            AddSpell(typeof(StrengthScroll), Reg.Nightshade, Reg.MandrakeRoot);
-
-			m_Circle = 2;
-            m_Mana = 9;
-
-            AddSpell(typeof(BlessScroll), Reg.Garlic, Reg.MandrakeRoot);
-            AddSpell(typeof(FireballScroll), Reg.BlackPearl);
-            AddSpell(typeof(MagicLockScroll), Reg.Bloodmoss, Reg.Garlic, Reg.SulfurousAsh);
-            AddSpell(typeof(PoisonScroll), Reg.Nightshade);
-            AddSpell(typeof(TelekinesisScroll), Reg.Bloodmoss, Reg.MandrakeRoot);
-            AddSpell(typeof(TeleportScroll), Reg.Bloodmoss, Reg.MandrakeRoot);
-            AddSpell(typeof(UnlockScroll), Reg.Bloodmoss, Reg.SulfurousAsh);
-            AddSpell(typeof(WallOfStoneScroll), Reg.Bloodmoss, Reg.Garlic);
-
-			m_Circle = 3;
-            m_Mana = 11;
-
-            AddSpell(typeof(ArchCureScroll), Reg.Garlic, Reg.Ginseng, Reg.MandrakeRoot);
-            AddSpell(typeof(ArchProtectionScroll), Reg.Garlic, Reg.Ginseng, Reg.MandrakeRoot);
-            AddSpell(typeof(CurseScroll), Reg.Garlic, Reg.Nightshade, Reg.SulfurousAsh);
-            AddSpell(typeof(FireFieldScroll), Reg.BlackPearl, Reg.SpidersSilk, Reg.SulfurousAsh);
-            AddSpell(typeof(GreaterHealScroll), Reg.Garlic, Reg.SpidersSilk, Reg.MandrakeRoot);
-            AddSpell(typeof(LightningScroll), Reg.MandrakeRoot, Reg.SulfurousAsh);
-            AddSpell(typeof(ManaDrainScroll), Reg.BlackPearl, Reg.SpidersSilk, Reg.MandrakeRoot);
-            AddSpell(typeof(RecallScroll), Reg.BlackPearl, Reg.Bloodmoss, Reg.MandrakeRoot);
-
-
-			m_Circle = 4;
-            m_Mana = 14;
-
-            AddSpell(typeof(BladeSpiritsScroll), Reg.BlackPearl, Reg.Nightshade, Reg.MandrakeRoot);
-            AddSpell(typeof(DispelFieldScroll), Reg.BlackPearl, Reg.Garlic, Reg.SpidersSilk);
-            AddSpell(typeof(IncognitoScroll), Reg.Bloodmoss, Reg.Garlic, Reg.Nightshade);
-            AddSpell(typeof(MagicReflectScroll), Reg.Garlic, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(MindBlastScroll), Reg.BlackPearl, Reg.MandrakeRoot, Reg.Nightshade);
-            AddSpell(typeof(ParalyzeScroll), Reg.Garlic, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(PoisonFieldScroll), Reg.BlackPearl, Reg.Nightshade, Reg.SpidersSilk);
-            AddSpell(typeof(SummonCreatureScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-
-
-
-			m_Circle = 5;
-            m_Mana = 20;
-
-            AddSpell(typeof(DispelScroll), Reg.Garlic, Reg.MandrakeRoot, Reg.SulfurousAsh);
-            AddSpell(typeof(EnergyBoltScroll), Reg.BlackPearl, Reg.Nightshade);
-            AddSpell(typeof(ExplosionScroll), Reg.Bloodmoss, Reg.MandrakeRoot);
-            AddSpell(typeof(InvisibilityScroll), Reg.Bloodmoss, Reg.Nightshade);
-            AddSpell(typeof(MarkScroll), Reg.Bloodmoss, Reg.BlackPearl, Reg.MandrakeRoot);
-            AddSpell(typeof(MassCurseScroll), Reg.Garlic, Reg.MandrakeRoot, Reg.Nightshade);
-            AddSpell(typeof(ParalyzeFieldScroll), Reg.BlackPearl, Reg.Ginseng, Reg.SpidersSilk);
-            AddSpell(typeof(RevealScroll), Reg.Bloodmoss, Reg.SulfurousAsh);
-
-			m_Circle = 6;
-            m_Mana = 40;
-
-     //       AddSpell(typeof(ChainLightningScroll), Reg.BlackPearl, Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SulfurousAsh);
-            AddSpell(typeof(EnergyFieldScroll), Reg.BlackPearl, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(FlameStrikeScroll), Reg.SpidersSilk, Reg.SulfurousAsh);
-            AddSpell(typeof(GateTravelScroll), Reg.BlackPearl, Reg.MandrakeRoot, Reg.SulfurousAsh);
-            AddSpell(typeof(ManaVampireScroll), Reg.BlackPearl, Reg.Bloodmoss, Reg.MandrakeRoot);
-            AddSpell(typeof(MassDispelScroll), Reg.BlackPearl, Reg.Garlic, Reg.MandrakeRoot);
-       //     AddSpell(typeof(MeteorSwarmScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SulfurousAsh, Reg.SpidersSilk);
-            AddSpell(typeof(PolymorphScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-
-            m_Circle = 7;
-            m_Mana = 50;
-
-            AddSpell(typeof(EarthquakeScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.Ginseng);
-            AddSpell(typeof(EnergyVortexScroll), Reg.BlackPearl, Reg.Bloodmoss, Reg.MandrakeRoot);
-            AddSpell(typeof(ResurrectionScroll), Reg.Bloodmoss, Reg.Garlic, Reg.Ginseng);
-            AddSpell(typeof(AirElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(SummonDaemonScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(EarthElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(FireElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-            AddSpell(typeof(WaterElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
-
-			AddNecroSpell(0, 23, 39.6, typeof(AnimateDeadScroll), Reg.GraveDust, Reg.DaemonBlood);
-            AddNecroSpell(1, 13, 19.6, typeof(BloodOathScroll), Reg.DaemonBlood);
-            AddNecroSpell(2, 11, 19.6, typeof(CorpseSkinScroll), Reg.BatWing, Reg.GraveDust);
-            AddNecroSpell(3, 7, 19.6, typeof(CurseWeaponScroll), Reg.PigIron);
-            AddNecroSpell(4, 11, 19.6, typeof(EvilOmenScroll), Reg.BatWing, Reg.NoxCrystal);
-            AddNecroSpell(5, 11, 39.6, typeof(HorrificBeastScroll), Reg.BatWing, Reg.DaemonBlood);
-            AddNecroSpell(6, 23, 69.6, typeof(LichFormScroll), Reg.GraveDust, Reg.DaemonBlood, Reg.NoxCrystal);
-            AddNecroSpell(7, 17, 29.6, typeof(MindRotScroll), Reg.BatWing, Reg.DaemonBlood, Reg.PigIron);
-        //    AddNecroSpell(8, 5, 19.6, typeof(PainSpikeScroll), Reg.GraveDust, Reg.PigIron);
-            AddNecroSpell(9, 17, 49.6, typeof(PoisonStrikeScroll), Reg.NoxCrystal);
-            AddNecroSpell(10, 29, 64.6, typeof(StrangleScroll), Reg.DaemonBlood, Reg.NoxCrystal);
-            AddNecroSpell(11, 17, 29.6, typeof(SummonFamiliarScroll), Reg.BatWing, Reg.GraveDust, Reg.DaemonBlood);
-            AddNecroSpell(12, 23, 98.6, typeof(VampiricEmbraceScroll), Reg.BatWing, Reg.NoxCrystal, Reg.PigIron);
-            AddNecroSpell(13, 41, 79.6, typeof(VengefulSpiritScroll), Reg.BatWing, Reg.GraveDust, Reg.PigIron);
-            AddNecroSpell(14, 23, 59.6, typeof(WitherScroll), Reg.GraveDust, Reg.NoxCrystal, Reg.PigIron);
-            AddNecroSpell(15, 17, 19.6, typeof(WraithFormScroll), Reg.NoxCrystal, Reg.PigIron);
-          //  AddNecroSpell(16, 40, 79.6, typeof(ExorcismScroll), Reg.NoxCrystal, Reg.GraveDust);
 
             int index;
 
-            index = AddCraft(typeof(EnchantedSwitch), 1044294, 1072893, 45.0, 95.0, typeof(BlankScroll), 1044377, 1, 1044378);
-            AddRes(index, typeof(SpidersSilk), 1044360, 1, 1044253);
-            AddRes(index, typeof(BlackPearl), 1044353, 1, 1044253);
-            AddRes(index, typeof(SwitchItem), 1073464, 1, 1044253);
-            ForceNonExceptional(index);
-
-            index = AddCraft(typeof(RunedPrism), 1044294, 1073465, 45.0, 95.0, typeof(BlankScroll), 1044377, 1, 1044378);
-            AddRes(index, typeof(SpidersSilk), 1044360, 1, 1044253);
-            AddRes(index, typeof(BlackPearl), 1044353, 1, 1044253);
-            AddRes(index, typeof(HollowPrism), 1072895, 1, 1044253);
-            ForceNonExceptional(index);
-
-            index = AddCraft(typeof(Runebook), 1044294, 1041267, 45.0, 95.0, typeof(BlankScroll), 1044377, 8, 1044378);
-            AddRes(index, typeof(RecallScroll), 1044445, 1, 1044253);
-            AddRes(index, typeof(GateTravelScroll), 1044446, 1, 1044253);            
-
-            AddCraft(typeof(BulkOrders.BulkOrderBook), 1044294, 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
-
-            AddCraft(typeof(Spellbook), 1044294, 1023834, 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
-
-            index = AddCraft(typeof(ScrappersCompendium), 1044294, 1072940, 75.0, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
-            AddRes(index, typeof(DreadHornMane), 1032682, 1, 1044253);
-            AddRes(index, typeof(Taint), 1032679, 10, 1044253);
-            AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
-            AddRecipe(index, (int)TinkerRecipes.ScrappersCompendium);
-            ForceNonExceptional(index);
-
-            index = AddCraft(typeof(SpellbookEngraver), 1044294, 1072151, 75.0, 100.0, typeof(Feather), 1044562, 1, 1044563);
-            AddRes(index, typeof(BlackPearl), 1015001, 7, 1044253);
-                        
-            AddCraft(typeof(MysticBook), 1044294, 1031677, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
-
-            AddCraft(typeof(NecromancerSpellbook), 1044294, 1074909, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
-
-            index = AddCraft(typeof(ExodusSummoningRite), 1044294, 1153498, 95.0, 120.0, typeof(DaemonBlood), 1023965, 5, 1044253);
-            AddRes(index, typeof(Taint), 1032679, 1, 1044253);
-            AddRes(index, typeof(DaemonBone), 1017412, 5, 1044253);
-            AddRes(index, typeof(SummonDaemonScroll), 1016017, 1, 1044253);
-
-            index = AddCraft(typeof(PropheticManuscript), 1044294, 1155631, 90.0, 115.0, typeof(AncientParchment), 1155627, 10, 1044253);
-            AddRes(index, typeof(AntiqueDocumentsKit), 1155630, 1, 1044253);
-            AddRes(index, typeof(WoodPulp), 1113136, 10, 1113289);
-            AddRes(index, typeof(Beeswax), 1025154, 5, 1044253);
-
-            AddCraft(typeof(BlankScroll), 1044294, 1023636, 50.0, 100.0, typeof(WoodPulp), 1113136, 1, 1044378);
-
-            index = AddCraft(typeof(ScrollBinderDeed), 1044294, 1113135, 75.0, 125.0, typeof(WoodPulp), 1113136, 1, 1044253);
-            SetItemHue(index, 1641);
-
-            index = AddCraft(typeof(GargoyleBook100), 1044294, 1113290, 60.0, 100.0, typeof(BlankScroll), 1044377, 40, 1044378);
-            AddRes(index, typeof(Beeswax), 1025154, 2, 1053098);
-
-            index = AddCraft(typeof(GargoyleBook200), 1044294, 1113291, 72.0, 100.0, typeof(BlankScroll), 1044377, 40, 1044378);
-            AddRes(index, typeof(Beeswax), 1025154, 4, 1053098);
-
-            index = AddCraft(typeof(RunicAtlas), 1044294, 1156443, 45.0, 95.0, typeof(BlankScroll), 1044377, 24, 1044378);
-            AddRes(index, typeof(RecallRune), 1044447, 3, 1044253);
-            AddRes(index, typeof(RecallScroll), 1044445, 3, 1044253);
-            AddRes(index, typeof(GateTravelScroll), 1044446, 3, 1044253);
-            AddRecipe(index, (int)InscriptionRecipes.RunicAtlas);
-
-     //       AddMysticSpell(1031678, 4, 0.0, typeof(NetherBoltScroll), Reg.SulfurousAsh, Reg.BlackPearl);
-     //       AddMysticSpell(1031679, 4, 0.0, typeof(HealingStoneScroll), Reg.Bone, Reg.Garlic, Reg.Ginseng, Reg.SpidersSilk);
-     //       AddMysticSpell(1031680, 6, 0.0, typeof(PurgeMagicScroll), Reg.FertileDirt, Reg.Garlic, Reg.MandrakeRoot, Reg.SulfurousAsh);
-            AddMysticSpell(1031681, 6, 0.0, typeof(EnchantScroll), Reg.SpidersSilk, Reg.MandrakeRoot, Reg.SulfurousAsh);
-            AddMysticSpell(1031682, 9, 3.5, typeof(SleepScroll), Reg.SpidersSilk, Reg.BlackPearl, Reg.Nightshade);
-   //         AddMysticSpell(1031683, 9, 3.5, typeof(EagleStrikeScroll), Reg.SpidersSilk, Reg.Bloodmoss, Reg.MandrakeRoot, Reg.Bone);
-            AddMysticSpell(1031684, 11, 17.8, typeof(AnimatedWeaponScroll),  Reg.BlackPearl, Reg.MandrakeRoot, Reg.Nightshade);
-    //        AddMysticSpell(1031685, 11, 17.8, typeof(StoneFormScroll), Reg.Bloodmoss, Reg.FertileDirt, Reg.Garlic);
-     //       AddMysticSpell(1031686, 14, 32.1, typeof(SpellTriggerScroll), Reg.SpidersSilk, Reg.MandrakeRoot, Reg.Garlic, Reg.DragonBlood);
-      //      AddMysticSpell(1031687, 14, 32.1, typeof(MassSleepScroll), Reg.SpidersSilk, Reg.Nightshade, Reg.Ginseng);
-       //     AddMysticSpell(1031688, 20, 46.4, typeof(CleansingWindsScroll), Reg.Ginseng, Reg.Garlic, Reg.DragonBlood, Reg.MandrakeRoot);
-      //      AddMysticSpell(1031689, 20, 46.4, typeof(BombardScroll), Reg.Garlic, Reg.DragonBlood, Reg.SulfurousAsh, Reg.Bloodmoss);
-     //       AddMysticSpell(1031690, 40, 60.7, typeof(SpellPlagueScroll), Reg.DaemonBone, Reg.DragonBlood, Reg.MandrakeRoot, Reg.Nightshade, Reg.SulfurousAsh, Reg.DaemonBone);
-            AddMysticSpell(1031691, 40, 60.7, typeof(HailStormScroll),  Reg.BlackPearl, Reg.MandrakeRoot, Reg.Bloodmoss);
-            AddMysticSpell(1031692, 50, 75.0, typeof(NetherCycloneScroll),  Reg.Nightshade, Reg.SulfurousAsh, Reg.MandrakeRoot);
-            AddMysticSpell(1031693, 50, 75.0, typeof(RisingColossusScroll), Reg.DaemonBone, Reg.FertileDirt, Reg.DragonBlood);
-
-
-
-
-			index = AddCraft(typeof(ConfidenceScroll), "Autres", "Confiance", -10.8, 25.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(MindRotScroll),"Anarchique","Pourriture", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(PigIron),"PigIron", 1,"Vous n'avez pas assez de PigIron.");
+			AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
 			CraftItem craftItem = CraftItems.GetAt(index);
-			craftItem.Mana = 6;
-
-			index = AddCraft(typeof(CounterAttackScroll),"Autres","Contre - attaque", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 11;
-
-			index = AddCraft(typeof(EvasionScroll),"Autres","Évasion", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 20;
-
-			index = AddCraft(typeof(CloseWoundsScroll),"Autres","Fermer les plaies", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 4;
-
-			index = AddCraft(typeof(RemoveCurseScroll),"Autres","Supprimer la malédiction", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 4;
-
-			index = AddCraft(typeof(CleanseByFireScroll),"Autres","Nettoyer par le feu", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 4;
-
-			index = AddCraft(typeof(ConsecrateWeaponScroll),"Autres","Consacrer l'arme", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
-			craftItem = CraftItems.GetAt(index);
-			craftItem.Mana = 4;
-
-			index = AddCraft(typeof(DivineFuryScroll),"Autres","Fureur divine", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 6;
-
-			index = AddCraft(typeof(DispelEvilScroll),"Autres","Dissiper le mal", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
 			craftItem.Mana = 9;
 
-			index = AddCraft(typeof(EnemyOfOneScroll),"Autres","Ennemi d'un", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(WraithFormScroll),"Anarchique","Spectre", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			AddRes(index, typeof(PigIron),"PigIron", 1,"Vous n'avez pas assez de PigIron.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+			index = AddCraft(typeof(ConfidenceScroll),"Vie","Confiance", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+		    craftItem = CraftItems.GetAt(index);
+		    craftItem.Mana = 6;
+
+			index = AddCraft(typeof(ImmolatingWeaponScroll),"Anarchique","Arme d'immolation", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(SleepScroll),"Anarchique","Dormir", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(CurseScroll),"Anarchique","Malédiction", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 11;
 
-			index = AddCraft(typeof(HolyLightScroll),"Autres","Lumière sacrée", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 14;
+			index = AddCraft(typeof(PoisonScroll),"Anarchique","Poison", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
 
-			index = AddCraft(typeof(NobleSacrificeScroll),"Autres","Nobles sacrifices", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 20;
-
-			index = AddCraft(typeof(AnimalFormScroll),"Autres","Forme animale", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 4;
-
-			index = AddCraft(typeof(MirrorImageScroll),"Autres","Image miroir", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
-			craftItem.Mana = 6;
-
-			index = AddCraft(typeof(ShadowjumpScroll),"Autres","Saut d'ombre", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+		    index = AddCraft(typeof(IncognitoScroll),"Anarchique","Incognito", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 14;
 
-			index = AddCraft(typeof(DeathStrikeScroll),"Autres","Frappe mortelle", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
+			index = AddCraft(typeof(InvisibilityScroll),"Anarchique","Invisibilité", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(ManaVampireScroll),"Anarchique","Drain vampirique", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(CounterAttackScroll),"Vie","Contre - attaque", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(EvasionScroll),"Obeissance","Évasion", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 20;
+
+			index = AddCraft(typeof(EtherealVoyageScroll),"Anarchique","Voyage éthéré", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(FlameStrikeScroll),"Anarchique","Jet de feu", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 40;
+
+			index = AddCraft(typeof(VengefulSpiritScroll),"Anarchique","Esprit Vengeur", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(GraveDust),"GraveDust", 1,"Vous n'avez pas assez de GraveDust.");
+			 AddRes(index, typeof(PigIron),"PigIron", 1,"Vous n'avez pas assez de PigIron.");
+			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 50;
 
-			index = AddCraft(typeof(KiAttackScroll),"Autres","Attaque Ki", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378); 
-			craftItem = CraftItems.GetAt(index); 
+			index = AddCraft(typeof(EnergyVortexScroll),"Anarchique","Vortex d'energie", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 50;
+
+			index = AddCraft(typeof(ReactiveArmorScroll),"Arcane","Armure réactive", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(CreateFoodScroll),"Arcane","Nourriture", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(NightSightScroll),"Arcane","Vision de nuit", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(HealScroll),"Arcane","Guérison", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(MagicArrowScroll),"Arcane","Flèche magique", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(ClumsyScroll),"Arcane","Maladresse", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(FeeblemindScroll),"Arcane","Abrutissement", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(WeakenScroll),"Arcane","Faiblesse", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(AgilityScroll),"Arcane","Agilité", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(CunningScroll),"Arcane","Astuce", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(StrengthScroll),"Arcane","Force", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(ProtectionScroll),"Arcane","Protection", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+			index = AddCraft(typeof(CureScroll),"Arcane","Antidote", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(HarmScroll),"Arcane","Malaise", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(MagicTrapScroll),"Arcane","Piège Magique", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+			index = AddCraft(typeof(RemoveTrapScroll),"Arcane","Sup.De Piège", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(MagicLockScroll),"Arcane","Fermeture Mag.", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(UnlockScroll),"Arcane","Crochetage", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 9;
+
+			index = AddCraft(typeof(TelekinesisScroll),"Arcane","Télékinésie", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 9;
+
+			index = AddCraft(typeof(TeleportScroll),"Arcane","Téléportation", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 9;
+
+			index = AddCraft(typeof(RecallScroll),"Arcane","Rappel", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(MindBlastScroll),"Arcane","Souffle d'esprit", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 14;
+
+			index = AddCraft(typeof(FireballScroll),"Arcane","Boule de feu", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(FireElementalScroll),"Arcane","Élém. : Feu", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(EarthElementalScroll),"Arcane","Élém. : Terre", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(AirElementalScroll),"Arcane","Élém. : Air", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(SummonFamiliarScroll),"Cycle","Familier", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(GraveDust),"GraveDust", 1,"Vous n'avez pas assez de GraveDust.");
+			 AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(CorpseSkinScroll),"Cycle","Peau de mort", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(GraveDust),"GraveDust", 1,"Vous n'avez pas assez de GraveDust.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(NatureFuryScroll),"Cycle","Fureur de la nature", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(EnchantScroll),"Cycle","Enchanter", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+			index = AddCraft(typeof(WitherScroll),"Cycle","Flétrissement", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			AddRes(index, typeof(GraveDust),"GraveDust", 1,"Vous n'avez pas assez de GraveDust.");
+			 AddRes(index, typeof(PigIron),"PigIron", 1,"Vous n'avez pas assez de PigIron.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(FireFieldScroll),"Cycle","Mur de feu", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(PolymorphScroll),"Cycle","Transformation", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(AnimateDeadScroll),"Cycle","Réanimation", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(GraveDust),"GraveDust", 1,"Vous n'avez pas assez de GraveDust.");
+			AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 11;
+
+			index = AddCraft(typeof(ReaperFormScroll),"Cycle","Forme de faucheuse", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(SummonCreatureScroll),"Cycle","Créatures", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			index = AddCraft(typeof(MarkScroll),"Cycle","Marquage", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(ExplosionScroll),"Cycle","Explosion", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 20;
+
+			index = AddCraft(typeof(HailStormScroll),"Cycle","Orage de grêle", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(NetherCycloneScroll),"Cycle","Cyclone du Néant", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(GateTravelScroll),"Cycle","Trou de ver", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(EarthquakeScroll),"Cycle","Séisme", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(CurseWeaponScroll),"Mort","Calamite", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(PigIron),"PigIron", 1,"Vous n'avez pas assez de PigIron.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(EvilOmenScroll),"Mort","Mauvais présage", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(HorrificBeastScroll),"Mort","Bête Horrifique", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 11;
+
+			index = AddCraft(typeof(GiftOfRenewalScroll),"Mort","Don du renouveau", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(AnimatedWeaponScroll),"Mort","Arme Animée", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(ManaDrainScroll),"Mort","Drain de mana", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(MassCurseScroll),"Mort","Malédiction de groupe", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(DispelFieldScroll),"Mort","Dissipation de mur", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			index = AddCraft(typeof(PoisonFieldScroll),"Mort","Mur de poison", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+		   index = AddCraft(typeof(BloodOathScroll),"Mort","Serment de sang", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+		  index = AddCraft(typeof(CloseWoundsScroll),"Vie","Fermer les plaies", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+		 craftItem = CraftItems.GetAt(index);
+		 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(PoisonStrikeScroll),"Mort","Jet de poison", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+		   index = AddCraft(typeof(StrangleScroll),"Mort","Étranglement", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
+			AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 20;
+
+			index = AddCraft(typeof(LichFormScroll),"Mort","Liche", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(GraveDust),"GraveDust", 1,"Vous n'avez pas assez de GraveDust.");
+			AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
+			 AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(VampiricEmbraceScroll),"Mort","Vampirisme", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(BatWing),"BatWing", 1,"Vous n'avez pas assez de BatWing.");
+			AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
+			 AddRes(index, typeof(PigIron),"PigIron", 1,"Vous n'avez pas assez de PigIron.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(SummonDaemonScroll),"Mort","Démon", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(RemoveCurseScroll),"Obeissance","Supprimer la malédiction", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(WallOfStoneScroll),"Obeissance","Mur de pierre", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(CleanseByFireScroll),"Obeissance","Nettoyer par le feu", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 4;
+
+			index = AddCraft(typeof(BladeSpiritsScroll),"Obeissance","Esprit de Lame", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(Nightshade),"Nightshade", 1,"Vous n'avez pas assez de Nightshade.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			index = AddCraft(typeof(LightningScroll),"Obeissance","Éclair", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(ConsecrateWeaponScroll),"Obeissance","Consacrer l'arme", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(DivineFuryScroll),"Obeissance","Fureur divine", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+			index = AddCraft(typeof(ArchProtectionScroll),"Obeissance","Protection de groupe", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(MagicReflectScroll),"Obeissance","Armure magique", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			index = AddCraft(typeof(DispelScroll),"Obeissance","Dissipation", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(DispelEvilScroll),"Vie","Dissiper le mal", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(ParalyzeFieldScroll),"Obeissance","Mur de paralysie", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(EnemyOfOneScroll),"Obeissance","Ennemi d'un", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(HolyLightScroll),"Vie","Lumière sacrée", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			index = AddCraft(typeof(MassDispelScroll),"Obeissance","Dissipation massive", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(BlackPearl),"BlackPearl", 1,"Vous n'avez pas assez de BlackPearl.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(ResurrectionScroll),"Obeissance","Résurrection", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(WaterElementalScroll),"Arcane","Élém. : Eau", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 50;
+
+			index = AddCraft(typeof(RevealScroll),"Vie","Révélation", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
+			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(AttuneWeaponScroll),"Vie","Harmonisation", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 6;
+
+			index = AddCraft(typeof(NobleSacrificeScroll),"Vie","Nobles sacrifices", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(BlessScroll),"Vie","Bénédiction", 3.5, 53.5, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 9;
+
+			index = AddCraft(typeof(AnimalFormScroll),"Anarchique","Forme animale", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 4;
+
+			index = AddCraft(typeof(ArchCureScroll),"Vie","Antidote de masse", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(GreaterHealScroll),"Vie","Guérison majeure", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(Ginseng),"Ginseng", 1,"Vous n'avez pas assez de Ginseng.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 11;
+
+			index = AddCraft(typeof(ParalyzeScroll),"Vie","Paralysie", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
+			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
+			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			 index = AddCraft(typeof(MirrorImageScroll),"Anarchique","Image miroir", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 6;
+
+			index = AddCraft(typeof(ShadowjumpScroll),"Anarchique","Saut d'ombre", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 14;
+
+			index = AddCraft(typeof(DeathStrikeScroll),"Mort","Frappe mortelle", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 50;
+
+			index = AddCraft(typeof(KiAttackScroll),"Obeissance","Attaque Ki", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 50;
+
+			index = AddCraft(typeof(GiftOfLifeScroll),"Vie","Don de vie", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			 craftItem = CraftItems.GetAt(index);
+			 craftItem.Mana = 11;
+
+			index = AddCraft(typeof(EnergyBoltScroll),"Vie","Boule d'énergie", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 20;
+
+			index = AddCraft(typeof(EnergyFieldScroll),"Vie","Mur d'energie", 60.7, 110.7, typeof(BlankScroll), 1044377, 1, 1044378);
+			craftItem = CraftItems.GetAt(index);
+			craftItem.Mana = 40;
+
+			index = AddCraft(typeof(RisingColossusScroll),"Vie","Colosse montant", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(DaemonBone),"DaemonBone", 1,"Vous n'avez pas assez de DaemonBone.");
+			AddRes(index, typeof(DragonBlood),"DragonBlood", 1,"Vous n'avez pas assez de DragonBlood.");
+		    AddRes(index, typeof(FertileDirt),"FertileDirt", 1,"Vous n'avez pas assez de FertileDirt.");
+			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 50;
 
 
 
+	/*		index = AddCraft(typeof(EnchantedSwitch), 1044294, 1072893, 45.0, 95.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(SpidersSilk), 1044360, 1, 1044253);
+			AddRes(index, typeof(BlackPearl), 1044353, 1, 1044253);
+			AddRes(index, typeof(SwitchItem), 1073464, 1, 1044253);
+			ForceNonExceptional(index);
 
+			index = AddCraft(typeof(RunedPrism), 1044294, 1073465, 45.0, 95.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			AddRes(index, typeof(SpidersSilk), 1044360, 1, 1044253);
+			AddRes(index, typeof(BlackPearl), 1044353, 1, 1044253);
+			AddRes(index, typeof(HollowPrism), 1072895, 1, 1044253);
+			ForceNonExceptional(index);*/
 
+			index = AddCraft(typeof(Runebook), "Autres", 1041267, 45.0, 95.0, typeof(BlankScroll), 1044377, 8, 1044378);
+			AddRes(index, typeof(RecallScroll), 1044445, 1, 1044253);
+			AddRes(index, typeof(GateTravelScroll), 1044446, 1, 1044253);
 
+			AddCraft(typeof(BulkOrders.BulkOrderBook), "Autres", 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
+			AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
 
+/*			index = AddCraft(typeof(ScrappersCompendium), 1044294, 1072940, 75.0, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
+			AddRes(index, typeof(DreadHornMane), 1032682, 1, 1044253);
+			AddRes(index, typeof(Taint), 1032679, 10, 1044253);
+			AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
+			AddRecipe(index, (int)TinkerRecipes.ScrappersCompendium);
+			ForceNonExceptional(index);
 
+			index = AddCraft(typeof(SpellbookEngraver), 1044294, 1072151, 75.0, 100.0, typeof(Feather), 1044562, 1, 1044563);
+			AddRes(index, typeof(BlackPearl), 1015001, 7, 1044253);
 
+			AddCraft(typeof(MysticBook), 1044294, 1031677, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
+			AddCraft(typeof(NecromancerSpellbook), 1044294, 1074909, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
+			index = AddCraft(typeof(ExodusSummoningRite), 1044294, 1153498, 95.0, 120.0, typeof(DaemonBlood), 1023965, 5, 1044253);
+			AddRes(index, typeof(Taint), 1032679, 1, 1044253);
+			AddRes(index, typeof(DaemonBone), 1017412, 5, 1044253);
+			AddRes(index, typeof(SummonDaemonScroll), 1016017, 1, 1044253);
 
+			index = AddCraft(typeof(PropheticManuscript), 1044294, 1155631, 90.0, 115.0, typeof(AncientParchment), 1155627, 10, 1044253);
+			AddRes(index, typeof(AntiqueDocumentsKit), 1155630, 1, 1044253);
+			AddRes(index, typeof(WoodPulp), 1113136, 10, 1113289);
+			AddRes(index, typeof(Beeswax), 1025154, 5, 1044253);*/
 
+			AddCraft(typeof(BlankScroll), "Autres", 1023636, 50.0, 100.0, typeof(WoodPulp), 1113136, 1, 1044378);
+
+/*			index = AddCraft(typeof(ScrollBinderDeed), 1044294, 1113135, 75.0, 125.0, typeof(WoodPulp), 1113136, 1, 1044253);
+			SetItemHue(index, 1641);*/
+
+			index = AddCraft(typeof(GargoyleBook100), "Autres", 1113290, 60.0, 100.0, typeof(BlankScroll), 1044377, 40, 1044378);
+			AddRes(index, typeof(Beeswax), 1025154, 2, 1053098);
+
+			index = AddCraft(typeof(GargoyleBook200), "Autres", 1113291, 72.0, 100.0, typeof(BlankScroll), 1044377, 40, 1044378);
+			AddRes(index, typeof(Beeswax), 1025154, 4, 1053098);
 
 			MarkOption = true;
         }

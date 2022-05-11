@@ -334,9 +334,9 @@ namespace Server.Misc
             PlaceItemIn(bag, 114, 74, new RunicHammer(CraftResource.Verite, 30000));
             PlaceItemIn(bag, 124, 74, new RunicHammer(CraftResource.Valorite, 30000));
 
-            PlaceItemIn(bag, 54, 90, new RunicSewingKit(CraftResource.SpinedLeather, 30000));
+ /*           PlaceItemIn(bag, 54, 90, new RunicSewingKit(CraftResource.SpinedLeather, 30000));
             PlaceItemIn(bag, 64, 90, new RunicSewingKit(CraftResource.HornedLeather, 30000));
-            PlaceItemIn(bag, 64, 90, new RunicSewingKit(CraftResource.BarbedLeather, 30000));
+            PlaceItemIn(bag, 64, 90, new RunicSewingKit(CraftResource.BarbedLeather, 30000));*/
 
             PlaceItemIn(bag, 74, 90, new RunicDovetailSaw(CraftResource.OakWood, 30000));
             PlaceItemIn(bag, 84, 90, new RunicDovetailSaw(CraftResource.AshWood, 30000));
@@ -355,9 +355,9 @@ namespace Server.Misc
                 Name = "Raw Materials Bag"
             };
 
-            PlaceItemIn(bag, 92, 59, new BarbedLeather(5000));
+/*            PlaceItemIn(bag, 92, 59, new BarbedLeather(5000));
             PlaceItemIn(bag, 92, 68, new HornedLeather(5000));
-            PlaceItemIn(bag, 92, 76, new SpinedLeather(5000));
+            PlaceItemIn(bag, 92, 76, new SpinedLeather(5000));*/
             PlaceItemIn(bag, 92, 84, new Leather(5000));
 
             PlaceItemIn(bag, 30, 118, new Cloth(5000));

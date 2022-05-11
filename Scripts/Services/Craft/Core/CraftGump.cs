@@ -271,10 +271,15 @@ namespace Server.Engines.Craft
             new Type[]{ typeof( AshLog ), typeof( AshBoard ) },
             new Type[]{ typeof( YewLog ), typeof( YewBoard ) },
             new Type[]{ typeof( Leather ), typeof( Hides ) },
-            new Type[]{ typeof( SpinedLeather ), typeof( SpinedHides ) },
-            new Type[]{ typeof( HornedLeather ), typeof( HornedHides ) },
-            new Type[]{ typeof( BarbedLeather ), typeof( BarbedHides ) },
-        };
+            new Type[]{ typeof( LupusLeather ), typeof(LupusHides) },
+            new Type[]{ typeof(ReptilienLeather), typeof(ReptilienHides) },
+            new Type[]{ typeof(GeantLeather), typeof(GeantHides) },
+			new Type[]{ typeof(OphidienLeather), typeof(OphidienHides) },
+			new Type[]{ typeof(ArachnideLeather), typeof(ArachnideHides) },
+			new Type[]{ typeof(DragoniqueLeather), typeof(DragoniqueHides) },
+			new Type[]{ typeof(DemoniaqueLeather), typeof(DemoniaqueHides) },
+			new Type[]{ typeof(AncienLeather), typeof(AncienHides) }
+		};
 
         public void CreateResList(bool opt, Mobile from)
         {

@@ -610,21 +610,21 @@ namespace Server.Engines.Quests
                         break;
                     case 1:
                         if (Utility.RandomBool())
-                            hold.DropItem(new SpinedLeather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new LupusLeather(Utility.RandomMinMax(40, 50)));
                         else
-                            hold.DropItem(new SpinedHides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new LupusHides(Utility.RandomMinMax(40, 50)));
                         break;
                     case 2:
                         if (Utility.RandomBool())
-                            hold.DropItem(new HornedLeather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ReptilienLeather(Utility.RandomMinMax(40, 50)));
                         else
-                            hold.DropItem(new HornedHides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ReptilienHides(Utility.RandomMinMax(40, 50)));
                         break;
                     case 3:
                         if (Utility.RandomBool())
-                            hold.DropItem(new BarbedLeather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new GeantLeather(Utility.RandomMinMax(40, 50)));
                         else
-                            hold.DropItem(new BarbedHides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new GeantHides(Utility.RandomMinMax(40, 50)));
                         break;
                 }
 

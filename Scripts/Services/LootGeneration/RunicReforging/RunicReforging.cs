@@ -610,7 +610,7 @@ namespace Server.Items
                             return false;
                         break;
 
-                    case CraftResource.SpinedLeather:
+   /*                 case CraftResource.SpinedLeather:
                         if ((index == 10 || index == 11) && HasOption(options, ReforgingOption.PowerfulAndStructural))
                             return false;
                         else if ((index == 10 || index == 11 || index == 5) && HasOption(options, ReforgingOption.PowerfulAndFundamental, ReforgingOption.StructuralAndFundamental))
@@ -631,7 +631,7 @@ namespace Server.Items
                             return false;
                         else if (index == 5 && HasOption(options, ReforgingOption.PowerfulAndStructural, ReforgingOption.PowerfulAndFundamental, ReforgingOption.StructuralAndFundamental, ReforgingOption.PowerfulStructuralAndFundamental))
                             return false;
-                        break;
+                        break;*/
 
                     case CraftResource.OakWood:
                         if ((index == 10 || index == 11) && HasOption(options, ReforgingOption.PowerfulAndStructural, ReforgingOption.PowerfulAndFundamental, ReforgingOption.StructuralAndFundamental))
@@ -766,9 +766,14 @@ namespace Server.Items
                 case CraftResource.Verite: return Utility.RandomMinMax(3, 4);
                 case CraftResource.Valorite: return 5;
 
-                case CraftResource.SpinedLeather: return Utility.RandomMinMax(1, 2);
-                case CraftResource.HornedLeather: return 3;
-                case CraftResource.BarbedLeather: return 5;
+                case CraftResource.LupusLeather:
+                case CraftResource.ReptilienLeather: return Utility.RandomMinMax(1, 2);
+                case CraftResource.GeantLeather: return Utility.RandomMinMax(2, 3);
+                case CraftResource.OphidienLeather:
+                case CraftResource.ArachnideLeather: return 3;
+                case CraftResource.DragoniqueLeather:
+                case CraftResource.DemoniaqueLeather: return Utility.RandomMinMax(3, 4);
+                case CraftResource.AncienLeather: return 5;
 
                 case CraftResource.OakWood: return Utility.RandomMinMax(1, 2);
                 case CraftResource.AshWood: return 2;
@@ -1073,14 +1078,14 @@ namespace Server.Items
                 case CraftResource.Verite:
                 case CraftResource.Valorite:
                 case CraftResource.Copper: return 2;
-                case CraftResource.SpinedLeather: return 3;
+    //            case CraftResource.SpinedLeather: return 3;
                 case CraftResource.OakWood: return 4;
                 case CraftResource.YewWood:
                 case CraftResource.Heartwood:
                 case CraftResource.Bloodwood:
                 case CraftResource.Frostwood:
-                case CraftResource.HornedLeather:
-                case CraftResource.BarbedLeather:
+    //            case CraftResource.HornedLeather:
+    //            case CraftResource.BarbedLeather:
                 case CraftResource.AshWood: return 5;
             }
         }

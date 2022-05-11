@@ -186,11 +186,11 @@ namespace Server.Engines.BulkOrders
                     return BulkMaterialType.Verite;
                 case CraftResource.Valorite:
                     return BulkMaterialType.Valorite;
-                case CraftResource.SpinedLeather:
-                    return BulkMaterialType.Spined;
+ /*               case CraftResource.SpinedLeather:
+                    return BulkMaterialType.;
                 case CraftResource.HornedLeather:
                     return BulkMaterialType.Horned;
-                case CraftResource.BarbedLeather:
+                case CraftResource.BarbedLeather:*/
                     return BulkMaterialType.Barbed;
                 case CraftResource.OakWood:
                     return BulkMaterialType.OakWood;

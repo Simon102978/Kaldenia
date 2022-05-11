@@ -382,10 +382,15 @@ namespace Server.Engines.Craft
             new[] {typeof(AshBoard), typeof(AshLog)},
             new[] {typeof(YewBoard), typeof(YewLog)},
             new[] {typeof(Leather), typeof(Hides)},
-            new[] {typeof(SpinedLeather), typeof(SpinedHides)},
-            new[] {typeof(HornedLeather), typeof(HornedHides)},
-            new[] {typeof(BarbedLeather), typeof(BarbedHides)},
-            new[] {typeof(BlankMap), typeof(BlankScroll)},
+            new[] {typeof(LupusLeather), typeof(LupusHides) },
+            new[] {typeof(ReptilienLeather), typeof(ReptilienHides) },
+            new[] {typeof(GeantLeather), typeof(GeantHides) },
+			new[] {typeof(OphidienLeather), typeof(OphidienHides) },
+			new[] {typeof(ArachnideLeather), typeof(ArachnideHides) },
+			new[] {typeof(DragoniqueLeather), typeof(DragoniqueHides) },
+			new[] {typeof(DemoniaqueLeather), typeof(DemoniaqueHides) },
+			new[] {typeof(AncienLeather), typeof(AncienHides) },
+			new[] {typeof(BlankMap), typeof(BlankScroll)},
             new[] {typeof(Cloth), typeof(UncutCloth), typeof(AbyssalCloth)},
             new[] {typeof(CheeseWheel), typeof(CheeseWedge)},
             new[] {typeof(Pumpkin), typeof(SmallPumpkin)},
@@ -456,10 +461,15 @@ namespace Server.Engines.Craft
             { typeof(AshBoard), typeof(AshLog) },
             { typeof(YewBoard), typeof(YewLog) },
             { typeof(Leather), typeof(Hides) },
-            { typeof(SpinedLeather), typeof(SpinedHides) },
-            { typeof(HornedLeather), typeof(HornedHides) },
-            { typeof(BarbedLeather), typeof(BarbedHides) },
-        };
+            { typeof(LupusLeather), typeof(LupusHides) },
+            { typeof(ReptilienLeather), typeof(ReptilienHides) },
+            { typeof(GeantLeather), typeof(GeantHides) },
+			{ typeof(OphidienLeather), typeof(OphidienHides) },
+			{ typeof(ArachnideLeather), typeof(ArachnideHides) },
+			{ typeof(DragoniqueLeather), typeof(DragoniqueHides) },
+			{ typeof(DemoniaqueLeather), typeof(DemoniaqueHides) },
+			{ typeof(AncienLeather), typeof(AncienHides) }
+		};
 
         private static readonly Type[] m_NeverColorTable = new[] { typeof(OrcHelm) };
         #endregion

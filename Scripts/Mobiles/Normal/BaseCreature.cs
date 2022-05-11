@@ -2010,7 +2010,7 @@ namespace Server.Mobiles
                             if (cutHides) leather = new Leather(hides);
                             else leather = new Hides(hides);
                             break;
-                        case HideType.Spined:
+ /*                       case HideType.:
                             if (cutHides) leather = new SpinedLeather(hides);
                             else leather = new SpinedHides(hides);
                             break;
@@ -2020,8 +2020,8 @@ namespace Server.Mobiles
                             break;
                         case HideType.Barbed:
                             if (cutHides) leather = new BarbedLeather(hides);
-                            else leather = new BarbedHides(hides);
-                            break;
+                            else leather = new BarbedHides(hides);*/
+                         //   break;
                     }
 
                     if (!cutHides || !from.AddToBackpack(leather))

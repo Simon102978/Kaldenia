@@ -82,12 +82,12 @@ namespace Server.Engines.Points
                 {
                     RunicSewingKit sewing = (RunicSewingKit)item;
 
-                    if (sewing.Resource == CraftResource.SpinedLeather)
+       /*             if (sewing.Resource == CraftResource.SpinedLeather)
                         points = 10 * sewing.UsesRemaining;
                     else if (sewing.Resource == CraftResource.HornedLeather)
                         points = 100 * sewing.UsesRemaining;
                     else if (sewing.Resource == CraftResource.BarbedLeather)
-                        points = 400 * sewing.UsesRemaining;
+                        points = 400 * sewing.UsesRemaining;*/
                 }
                 else if (item is PowerScroll)
                 {
@@ -230,9 +230,9 @@ namespace Server.Engines.Points
 
             //Tailoring
             Entries[typeof(Leather)] = 0.10;
-            Entries[typeof(SpinedLeather)] = 0.50;
+/*            Entries[typeof(SpinedLeather)] = 0.50;
             Entries[typeof(HornedLeather)] = 1.0;
-            Entries[typeof(BarbedLeather)] = 2.0;
+            Entries[typeof(BarbedLeather)] = 2.0;*/
             Entries[typeof(Fur)] = 0.10;
 
 
@@ -771,9 +771,9 @@ namespace Server.Engines.Points
                                 case CraftResource.Agapite: award = amount * 5.0; break;
                                 case CraftResource.Verite: award = amount * 8.5; break;
                                 case CraftResource.Valorite: award = amount * 10; break;
-                                case CraftResource.SpinedLeather: award = amount * 0.5; break;
+ /*                               case CraftResource.SpinedLeather: award = amount * 0.5; break;
                                 case CraftResource.HornedLeather: award = amount * 1.0; break;
-                                case CraftResource.BarbedLeather: award = amount * 2.0; break;
+                                case CraftResource.BarbedLeather: award = amount * 2.0; break;*/
                                 case CraftResource.OakWood: award = amount * .17; break;
                                 case CraftResource.AshWood: award = amount * .33; break;
                                 case CraftResource.YewWood: award = amount * .67; break;

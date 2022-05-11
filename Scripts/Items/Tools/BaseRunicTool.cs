@@ -497,7 +497,7 @@ namespace Server.Items
 
             if (!isShield && armor.MeditationAllowance == ArmorMeditationAllowance.All)
                 m_Props.Set(3, true); // remove mage armor from possible properties
-            if (armor.Resource >= CraftResource.RegularLeather && armor.Resource <= CraftResource.BarbedLeather)
+            if (armor.Resource >= CraftResource.RegularLeather && armor.Resource <= CraftResource.AncienLeather)
             {
                 m_Props.Set(0, true); // remove lower requirements from possible properties for leather armor
                 m_Props.Set(2, true); // remove durability bonus from possible properties

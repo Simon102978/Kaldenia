@@ -271,7 +271,7 @@ namespace Server.Items
 
             foreach (Item i in FindItemsByType(typeof(Item), true))
             {
-                if ((i is Leather) || (i is Cloth) || (i is SpinedLeather) || (i is HornedLeather) || (i is BarbedLeather) || (i is Bandage) || (i is Bone))
+                if ((i is Leather) || (i is Cloth) || (i is GeantLeather) || (i is LupusLeather) || (i is ReptilienLeather) || (i is OphidienLeather) || (i is ArachnideLeather) || (i is DragoniqueLeather) || (i is DemoniaqueLeather) || (i is AncienLeather) || (i is Bandage) || (i is Bone))
                 {
                     from.AddToBackpack(i);
                 }

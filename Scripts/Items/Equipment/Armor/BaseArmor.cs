@@ -221,9 +221,9 @@ namespace Server.Items
                 {
                     default:
                     case AMT.Cloth: return 0;
-                    case AMT.Spined:
+ /*                   case AMT.Spined:
                     case AMT.Horned:
-                    case AMT.Barbed:
+                    case AMT.Barbed:*/
                     case AMT.Leather: return 13;
                     case AMT.Studded: return 16;
                     case AMT.Ringmail: return 22;
@@ -287,16 +287,31 @@ namespace Server.Items
                     case CraftResource.Valorite:
                         ar += 16;
                         break;
-                    case CraftResource.SpinedLeather:
-                        ar += 10;
-                        break;
-                    case CraftResource.HornedLeather:
-                        ar += 13;
-                        break;
-                    case CraftResource.BarbedLeather:
-                        ar += 16;
-                        break;
-                }
+					case CraftResource.LupusLeather:
+						ar += 2;
+						break;
+					case CraftResource.ReptilienLeather:
+						ar += 4;
+						break;
+					case CraftResource.GeantLeather:
+						ar += 6;
+						break;
+					case CraftResource.OphidienLeather:
+						ar += 8;
+						break;
+					case CraftResource.ArachnideLeather:
+						ar += 10;
+						break;
+					case CraftResource.DragoniqueLeather:
+						ar += 12;
+						break;
+					case CraftResource.DemoniaqueLeather:
+						ar += 14;
+						break;
+					case CraftResource.AncienLeather:
+						ar += 16;
+						break;
+				}
 
                 ar += -8 + (8 * (int)m_Quality);
                 return ScaleArmorByDurability(ar);
@@ -2102,9 +2117,9 @@ namespace Server.Items
                 case CraftResource.Agapite: oreType = 1053103; break; // agapite
                 case CraftResource.Verite: oreType = 1053102; break; // verite
                 case CraftResource.Valorite: oreType = 1053101; break; // valorite
-                case CraftResource.SpinedLeather: oreType = 1061118; break; // spined
+  /*              case CraftResource.SpinedLeather: oreType = 1061118; break; // spined
                 case CraftResource.HornedLeather: oreType = 1061117; break; // horned
-                case CraftResource.BarbedLeather: oreType = 1061116; break; // barbed
+                case CraftResource.BarbedLeather: oreType = 1061116; break; // barbed*/
                 case CraftResource.RedScales: oreType = 1060814; break; // red
                 case CraftResource.YellowScales: oreType = 1060818; break; // yellow
                 case CraftResource.BlackScales: oreType = 1060820; break; // black
@@ -2204,7 +2219,11 @@ namespace Server.Items
         {
             base.AddNameProperties(list);
 
-            if (m_GorgonLenseCharges > 0)
+			list.Add("Ressource: " + CraftResources.GetDescription(Resource));
+
+
+
+			if (m_GorgonLenseCharges > 0)
                 list.Add(1112590, m_GorgonLenseCharges.ToString()); //Gorgon Lens Charges: ~1_val~         
 
             if (IsSetItem)
@@ -2635,7 +2654,7 @@ namespace Server.Items
             if (info == null)
                 return CraftAttributeInfo.Blank;
 
-            return info.AttributeInfo;
+           return info.AttributeInfo;
         }
 
         public static bool IsMageArmorType(BaseArmor armor)

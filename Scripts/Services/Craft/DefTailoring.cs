@@ -667,30 +667,13 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Bone Armor
-            index = AddCraft(typeof(BoneHelm), 1049149, 1025206, 85.0, 110.0, typeof(Leather), 1044462, 4, 1044463);
-            AddRes(index, typeof(Bone), 1049064, 2, 1049063);
-
-            index = AddCraft(typeof(BoneGloves), 1049149, 1025205, 89.0, 114.0, typeof(Leather), 1044462, 6, 1044463);
-            AddRes(index, typeof(Bone), 1049064, 2, 1049063);
-
-            index = AddCraft(typeof(BoneArms), 1049149, 1025203, 92.0, 117.0, typeof(Leather), 1044462, 8, 1044463);
-            AddRes(index, typeof(Bone), 1049064, 4, 1049063);
-
-            index = AddCraft(typeof(BoneLegs), 1049149, 1025202, 95.0, 120.0, typeof(Leather), 1044462, 10, 1044463);
-            AddRes(index, typeof(Bone), 1049064, 6, 1049063);
-
-            index = AddCraft(typeof(BoneChest), 1049149, 1025199, 96.0, 121.0, typeof(Leather), 1044462, 12, 1044463);
-            AddRes(index, typeof(Bone), 1049064, 10, 1049063);
-
-            index = AddCraft(typeof(OrcHelm), 1049149, 1027947, 90.0, 115.0, typeof(Leather), 1044462, 6, 1044463);
-            AddRes(index, typeof(Bone), 1049064, 4, 1049063);
-
+/*
             index = AddCraft(typeof(CuffsOfTheArchmage), 1049149, 1157348, 120.0, 120.1, typeof(Cloth), 1044455, 8, 1044287);
             AddRes(index, typeof(MidnightBracers), 1061093, 1, 1044253);
             AddRes(index, typeof(BloodOfTheDarkFather), 1157343, 5, 1044253);
             AddRes(index, typeof(DarkSapphire), 1032690, 4, 1044253);
             ForceNonExceptional(index);
-            AddRecipe(index, (int)TailorRecipe.CuffsOfTheArchmage);
+            AddRecipe(index, (int)TailorRecipe.CuffsOfTheArchmage);*/
             #endregion
 
             // Set the overridable material
@@ -698,10 +681,15 @@ namespace Server.Engines.Craft
 
             // Add every material you want the player to be able to choose from
             // This will override the overridable material
-            AddSubRes(typeof(Leather), 1049150, 0.0, 1044462, 1049312);
-            AddSubRes(typeof(SpinedLeather), 1049151, 65.0, 1044462, 1049312);
-            AddSubRes(typeof(HornedLeather), 1049152, 80.0, 1044462, 1049312);
-            AddSubRes(typeof(BarbedLeather), 1049153, 99.0, 1044462, 1049312);
+            AddSubRes(typeof(Leather), "Cuir", 0.0, 1049312);
+			AddSubRes(typeof(LupusLeather), "Lupus", 65.0, 1049312);
+			AddSubRes(typeof(ReptilienLeather), "Reptilien", 70.0, 1049312);
+			AddSubRes(typeof(GeantLeather), "Géant", 75.0, 1049312);
+			AddSubRes(typeof(OphidienLeather), "Ophidien", 80.0, 1049312);
+			AddSubRes(typeof(ArachnideLeather), "Arachnide", 85.0, 1049312);
+			AddSubRes(typeof(DragoniqueLeather), "Dragonique", 90.0, 1049312);
+			AddSubRes(typeof(DemoniaqueLeather), "Demoniaque", 95.0, 1049312);
+			AddSubRes(typeof(AncienLeather), "Ancien", 99.0, 1049312);
 
             MarkOption = true;
             Repair = true;

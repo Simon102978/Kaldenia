@@ -51,9 +51,9 @@ namespace Server.Items
             Infos.Add(new CoverInfo(CoverType.Agapite, 1071113, CraftResources.GetHue(CraftResource.Agapite)));
             Infos.Add(new CoverInfo(CoverType.Verite, 1071114, CraftResources.GetHue(CraftResource.Verite)));
             Infos.Add(new CoverInfo(CoverType.Valorite, 1071115, CraftResources.GetHue(CraftResource.Valorite)));
-            Infos.Add(new CoverInfo(CoverType.Spined, 1071098, CraftResources.GetHue(CraftResource.SpinedLeather)));
-            Infos.Add(new CoverInfo(CoverType.Horned, 1071099, CraftResources.GetHue(CraftResource.HornedLeather)));
-            Infos.Add(new CoverInfo(CoverType.Barbed, 1071100, CraftResources.GetHue(CraftResource.BarbedLeather)));
+            Infos.Add(new CoverInfo(CoverType.Tailoring, 1071098, CraftResources.GetHue(CraftResource.LupusLeather)));
+            Infos.Add(new CoverInfo(CoverType.Tailoring, 1071099, CraftResources.GetHue(CraftResource.ReptilienLeather)));
+            Infos.Add(new CoverInfo(CoverType.Tailoring, 1071100, CraftResources.GetHue(CraftResource.GeantLeather)));
             Infos.Add(new CoverInfo(CoverType.Oak, 1071410, CraftResources.GetHue(CraftResource.OakWood)));
             Infos.Add(new CoverInfo(CoverType.Ash, 1071411, CraftResources.GetHue(CraftResource.AshWood)));
             Infos.Add(new CoverInfo(CoverType.Yew, 1071412, CraftResources.GetHue(CraftResource.YewWood)));

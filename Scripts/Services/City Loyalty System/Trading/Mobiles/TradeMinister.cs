@@ -237,12 +237,12 @@ namespace Server.Engines.CityLoyalty
                     }
                     break;
                 case 1:
-                    switch (Utility.Random(4))
+                    switch (/*Utility.Random(*/0/*)*/)
                     {
                         case 0: return new Leather(amount);
-                        case 1: return new SpinedLeather(amount);
-                        case 2: return new HornedLeather(amount);
-                        case 3: return new BarbedLeather(amount);
+                     //   case 1: return new SpinedLeather(amount);
+                    //    case 2: return new HornedLeather(amount);
+                    //    case 3: return new BarbedLeather(amount);
                     }
                     break;
                 case 2:

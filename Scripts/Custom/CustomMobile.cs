@@ -355,15 +355,6 @@ namespace Server.Mobiles
 					case ArmorMaterialType.Bone:
 						req = 3;
 						break;
-					case ArmorMaterialType.Spined:
-						req = 3;
-						break;
-					case ArmorMaterialType.Horned:
-						req = 3;
-						break;
-					case ArmorMaterialType.Barbed:
-						req = 3;
-						break;
 					case ArmorMaterialType.Ringmail:
 						req = 4;
 						break;

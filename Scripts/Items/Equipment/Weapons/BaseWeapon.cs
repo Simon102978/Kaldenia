@@ -4317,7 +4317,7 @@ namespace Server.Items
 
             int oreType;
 
-            switch (m_Resource)
+			switch (m_Resource)
             {
                 case CraftResource.DullCopper:
                     oreType = 1053108;
@@ -4343,7 +4343,7 @@ namespace Server.Items
                 case CraftResource.Valorite:
                     oreType = 1053101;
                     break; // valorite
-                case CraftResource.SpinedLeather:
+      /*          case CraftResource.SpinedLeather:
                     oreType = 1061118;
                     break; // spined
                 case CraftResource.HornedLeather:
@@ -4351,7 +4351,7 @@ namespace Server.Items
                     break; // horned
                 case CraftResource.BarbedLeather:
                     oreType = 1061116;
-                    break; // barbed
+                    break; // barbed*/
                 case CraftResource.RedScales:
                     oreType = 1060814;
                     break; // red

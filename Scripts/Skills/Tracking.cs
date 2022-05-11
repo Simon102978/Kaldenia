@@ -185,9 +185,9 @@ namespace Server.SkillHandlers
 
             from.CheckSkill(SkillName.Tracking, 21.1, 100.0); // Passive gain
 
-            int range = 10 + (int)(from.Skills[SkillName.Tracking].Value / 10);
+		    int range = 10 + (int)(from.Skills[SkillName.Tracking].Value / 3);
 
-            List<Mobile> list = new List<Mobile>();
+			List <Mobile> list = new List<Mobile>();
             IPooledEnumerable eable = from.GetMobilesInRange(range);
 
             foreach (Mobile m in eable)
@@ -225,6 +225,11 @@ namespace Server.SkillHandlers
                 Mobile m = m_List[index];
 
                 m_From.QuestArrow = new TrackArrow(m_From, m, m_Range * 2);
+
+				if (m_From.AccessLevel > AccessLevel.Player)
+				{
+					m_From.SendMessage("Localisation: " + m.Location.ToString());
+				}
 
                 Tracking.AddInfo(m_From, m);
             }

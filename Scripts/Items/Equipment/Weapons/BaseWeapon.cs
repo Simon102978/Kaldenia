@@ -3228,6 +3228,17 @@ namespace Server.Items
             double totalBonus = strengthBonus + anatomyBonus + tacticsBonus /*+ lumberBonus*/ +
                                 (damageBonus / 100.0);
 
+
+
+			if (attacker is BaseCreature)
+			{
+				totalBonus = totalBonus * 70 / 100;
+			}
+
+
+
+
+
             return damage + (int)(damage * totalBonus);
         }
 

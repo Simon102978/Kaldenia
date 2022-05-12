@@ -21,7 +21,7 @@ namespace Server.Engines.RisingTide
 
         protected override void Generate()
         {
-            if (BlackMarketMerchant.InstanceTram == null)
+      /*      if (BlackMarketMerchant.InstanceTram == null)
             {
                 BlackMarketMerchant.InstanceTram = new BlackMarketMerchant();
                 BlackMarketMerchant.InstanceTram.MoveToWorld(BlackMarketMerchant.SpawnLocation, Map.Trammel);
@@ -42,7 +42,7 @@ namespace Server.Engines.RisingTide
             if (PlunderBeaconSpawner.Spawner == null)
             {
                 PlunderBeaconSpawner.Spawner = new PlunderBeaconSpawner();
-            }
+            }*/
         }
 
         protected override void Remove()

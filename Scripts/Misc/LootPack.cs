@@ -901,7 +901,7 @@ namespace Server
         {
             if (item != null)
             {
-                if (item is BaseWeapon && 1 > Utility.Random(100))
+             /*   if (item is BaseWeapon && 1 > Utility.Random(100))
                 {
                     item.Delete();
                     item = new FireHorn();
@@ -969,7 +969,7 @@ namespace Server
                     instr.Quality = ItemQuality.Normal;
                     instr.Slayer = slayer;
                 }
-
+		 */
                 if (item.Stackable)
                 {
                     item.Amount = Quantity.Roll();

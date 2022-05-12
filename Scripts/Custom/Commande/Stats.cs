@@ -24,11 +24,6 @@ namespace Commands
 
 				cp.SendGump(new StatsMobileGump(cp));
 			}
-
-
-			
-
-
 		}
 
 		[Usage("StatsItems")]

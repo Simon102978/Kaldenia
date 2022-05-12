@@ -259,7 +259,7 @@ namespace Server.Items
 
         public static void ApplyAttributesTo(BaseWeapon weapon, bool playerMade, int luckChance, int attributeCount, int min, int max)
         {
-            int delta;
+ /*           int delta;
 
             if (min > max)
             {
@@ -434,31 +434,33 @@ namespace Server.Items
                         ApplyVelocityAttribute((BaseRanged)weapon, min, max, 2, 50, 2);
                         break;
                 }
-            }
+            }*/
         }
 
         public static SlayerName GetRandomSlayer()
         {
-            // TODO: Check random algorithm on OSI
-            SlayerGroup[] groups = SlayerGroup.Groups;
+			/*          // TODO: Check random algorithm on OSI
+					  SlayerGroup[] groups = SlayerGroup.Groups;
 
-            if (groups.Length == 0)
-                return SlayerName.None;
+					  if (groups.Length == 0)
+						  return SlayerName.None;
 
-            SlayerGroup group = groups[Utility.Random(6)]; //-1 To Exclude the Fey Slayer which appears ONLY on a certain artifact.
-            SlayerEntry entry;
+					  SlayerGroup group = groups[Utility.Random(6)]; //-1 To Exclude the Fey Slayer which appears ONLY on a certain artifact.
+					  SlayerEntry entry;
 
-            if (group.Entries.Length == 0 || 10 > Utility.Random(100)) // 10% chance to do super slayer
-            {
-                entry = group.Super;
-            }
-            else
-            {
-                SlayerEntry[] entries = group.Entries;
-                entry = entries[Utility.Random(entries.Length)];
-            }
+					  if (group.Entries.Length == 0 || 10 > Utility.Random(100)) // 10% chance to do super slayer
+					  {
+						  entry = group.Super;
+					  }
+					  else
+					  {
+						  SlayerEntry[] entries = group.Entries;
+						  entry = entries[Utility.Random(entries.Length)];
+					  }
 
-            return entry.Name;
+					  return entry.Name;*/
+
+			return SlayerName.None;
         }
 
         public static void ApplyAttributesTo(BaseArmor armor, int attributeCount, int min, int max)
@@ -468,7 +470,7 @@ namespace Server.Items
 
         public static void ApplyAttributesTo(BaseArmor armor, bool playerMade, int luckChance, int attributeCount, int min, int max)
         {
-            int delta;
+  /*          int delta;
 
             if (min > max)
             {
@@ -515,7 +517,7 @@ namespace Server.Items
                 switch (random)
                 {
                     /* Begin Sheilds */
-                    case 0:
+       /*             case 0:
                         ApplyAttribute(primary, min, max, AosAttribute.SpellChanneling, 1, 1);
                         break;
                     case 1:
@@ -528,7 +530,7 @@ namespace Server.Items
                         ApplyAttribute(primary, min, max, AosAttribute.CastSpeed, 1, 1);
                         break;
                     /* Begin Armor */
-                    case 4:
+ /*                   case 4:
                         ApplyAttribute(secondary, min, max, AosArmorAttribute.LowerStatReq, 10, 100, 10);
                         break;
                     case 5:
@@ -538,7 +540,7 @@ namespace Server.Items
                         ApplyAttribute(secondary, min, max, AosArmorAttribute.DurabilityBonus, 10, 100, 10);
                         break;
                     /* End Shields */
-                    case 7:
+ /*                   case 7:
                         ApplyAttribute(secondary, min, max, AosArmorAttribute.MageArmor, 1, 1);
                         break;
                     case 8:
@@ -590,8 +592,8 @@ namespace Server.Items
                         ApplyResistance(armor, min, max, ResistanceType.Energy, 1, 15);
                         break;
                         /* End Armor */
-                }
-            }
+               // }
+           // }
         }
 
         public static void ApplyAttributesTo(BaseHat hat, int attributeCount, int min, int max)
@@ -601,7 +603,7 @@ namespace Server.Items
 
         public static void ApplyAttributesTo(BaseHat hat, bool playerMade, int luckChance, int attributeCount, int min, int max)
         {
-            int delta;
+       /*     int delta;
 
             if (min > max)
             {
@@ -692,7 +694,7 @@ namespace Server.Items
                         ApplyAttribute(resists, min, max, AosElementAttribute.Energy, 1, 15);
                         break;
                 }
-            }
+            }*/
         }
 
         public static void ApplyAttributesTo(BaseJewel jewelry, int attributeCount, int min, int max)
@@ -702,7 +704,7 @@ namespace Server.Items
 
         public static void ApplyAttributesTo(BaseJewel jewelry, bool playerMade, int luckChance, int attributeCount, int min, int max)
         {
-            int delta;
+  /*          int delta;
 
             if (min > max)
             {
@@ -808,7 +810,7 @@ namespace Server.Items
                         ApplySkillBonus(skills, min, max, 4, 1, 15);
                         break;
                 }
-            }
+            }*/
         }
 
         public static void ApplyAttributesTo(Spellbook spellbook, int attributeCount, int min, int max)
@@ -818,7 +820,7 @@ namespace Server.Items
 
         public static void ApplyAttributesTo(Spellbook spellbook, bool playerMade, int luckChance, int attributeCount, int min, int max)
         {
-            int delta;
+ /*           int delta;
 
             if (min > max)
             {
@@ -893,7 +895,7 @@ namespace Server.Items
                         spellbook.Slayer = GetRandomSlayer();
                         break;
                 }
-            }
+            }*/
         }
 
         public override void Serialize(GenericWriter writer)
@@ -922,7 +924,7 @@ namespace Server.Items
 
         public void ApplyAttributesTo(BaseWeapon weapon)
         {
-            CraftResourceInfo resInfo = CraftResources.GetInfo(Resource);
+   /*         CraftResourceInfo resInfo = CraftResources.GetInfo(Resource);
 
             if (resInfo == null)
                 return;
@@ -936,12 +938,12 @@ namespace Server.Items
             int min = attrs.RunicMinIntensity;
             int max = attrs.RunicMaxIntensity;
 
-            ApplyAttributesTo(weapon, true, 0, attributeCount, min, max);
+            ApplyAttributesTo(weapon, true, 0, attributeCount, min, max);*/
         }
 
         public void ApplyAttributesTo(BaseArmor armor)
         {
-            CraftResourceInfo resInfo = CraftResources.GetInfo(Resource);
+  /*          CraftResourceInfo resInfo = CraftResources.GetInfo(Resource);
 
             if (resInfo == null)
                 return;
@@ -955,7 +957,7 @@ namespace Server.Items
             int min = attrs.RunicMinIntensity;
             int max = attrs.RunicMaxIntensity;
 
-            ApplyAttributesTo(armor, true, 0, attributeCount, min, max);
+            ApplyAttributesTo(armor, true, 0, attributeCount, min, max);*/
         }
 
         private static int Scale(int min, int max, int low, int high)
@@ -996,13 +998,13 @@ namespace Server.Items
 
         private static void ApplyAttribute(AosAttributes attrs, int min, int max, AosAttribute attr, int low, int high, int scale)
         {
-            if (attr == AosAttribute.CastSpeed)
+ /*           if (attr == AosAttribute.CastSpeed)
                 attrs[attr] += Scale(min, max, low / scale, high / scale) * scale;
             else
                 attrs[attr] = Scale(min, max, low / scale, high / scale) * scale;
 
             if (attr == AosAttribute.SpellChanneling)
-                attrs[AosAttribute.CastSpeed] -= 1;
+                attrs[AosAttribute.CastSpeed] -= 1;*/
         }
 
         private static void ApplyAttribute(AosArmorAttributes attrs, int min, int max, AosArmorAttribute attr, int low, int high)
@@ -1042,7 +1044,7 @@ namespace Server.Items
 
         public static void ApplyElementalDamage(BaseWeapon weapon, int min, int max)
         {
-            int fire, phys, cold, nrgy, pois, chaos, direct;
+ /*           int fire, phys, cold, nrgy, pois, chaos, direct;
 
             weapon.GetDamageTypes(null, out phys, out fire, out cold, out pois, out nrgy, out chaos, out direct);
 
@@ -1050,7 +1052,7 @@ namespace Server.Items
 
             weapon.AosElementDamages[_DamageTypes[Utility.Random(_DamageTypes.Length)]] = intensity;
 
-            weapon.Hue = weapon.GetElementalDamageHue();
+            weapon.Hue = weapon.GetElementalDamageHue();*/
         }
 
         private static readonly AosElementAttribute[] _DamageTypes =
@@ -1063,7 +1065,7 @@ namespace Server.Items
 
         private static void ApplySkillBonus(AosSkillBonuses attrs, int min, int max, int index, int low, int high)
         {
-            SkillName[] possibleSkills = attrs.Owner is Spellbook ? m_PossibleSpellbookSkills : m_PossibleBonusSkills;
+  /*          SkillName[] possibleSkills = attrs.Owner is Spellbook ? m_PossibleSpellbookSkills : m_PossibleBonusSkills;
 
             SkillName sk;
             bool found;
@@ -1078,12 +1080,12 @@ namespace Server.Items
             }
             while (found);
 
-            attrs.SetValues(index, sk, Scale(min, max, low, high));
+            attrs.SetValues(index, sk, Scale(min, max, low, high));*/
         }
 
         private static void ApplyResistance(BaseArmor ar, int min, int max, ResistanceType res, int low, int high)
         {
-            switch (res)
+/*            switch (res)
             {
                 case ResistanceType.Physical:
                     ar.PhysicalBonus += Scale(min, max, low, high);
@@ -1100,7 +1102,7 @@ namespace Server.Items
                 case ResistanceType.Energy:
                     ar.EnergyBonus += Scale(min, max, low, high);
                     break;
-            }
+            }*/
         }
     }
 }

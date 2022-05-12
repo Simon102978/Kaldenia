@@ -267,7 +267,7 @@ namespace Server.Engines.Quests
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+ /*           if (TramInstance == null)
             {
                 TramInstance = new SheriffOfMinoc();
                 TramInstance.MoveToWorld(new Point3D(2462, 439, 15), Map.Trammel);
@@ -279,7 +279,7 @@ namespace Server.Engines.Quests
                 FelInstance = new SheriffOfMinoc();
                 FelInstance.MoveToWorld(new Point3D(2462, 439, 15), Map.Felucca);
                 FelInstance.Direction = Direction.South;
-            }
+            }*/
         }
 
         public SheriffOfMinoc()

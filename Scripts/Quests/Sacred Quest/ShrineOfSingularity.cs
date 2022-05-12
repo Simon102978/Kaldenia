@@ -135,11 +135,11 @@ namespace Server.Items
 
         public static void Initialize()
         {
-            if (Instance == null)
+     /*       if (Instance == null)
             {
                 Instance = new ShrineOfSingularity();
                 Instance.MoveToWorld(new Point3D(995, 3802, -19), Map.TerMur);
-            }
+            }*/
         }
     }
 }

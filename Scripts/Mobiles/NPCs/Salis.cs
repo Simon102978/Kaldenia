@@ -76,7 +76,7 @@ namespace Server.Engines.Quests
 
         public static void Initialize()
         {
-            if (InstanceTram == null)
+ /*           if (InstanceTram == null)
             {
                 InstanceTram = new Salis();
                 InstanceTram.MoveToWorld(new Point3D(5768, 2610, 46), Map.Trammel);
@@ -90,7 +90,7 @@ namespace Server.Engines.Quests
                 InstanceFel.MoveToWorld(new Point3D(5768, 2610, 46), Map.Felucca);
                 InstanceFel.Home = InstanceFel.Location;
                 InstanceFel.RangeHome = 5;
-            }
+            }*/
         }
 
         public Salis()

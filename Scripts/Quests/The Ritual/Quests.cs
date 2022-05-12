@@ -277,7 +277,7 @@ namespace Server.Engines.Quests.RitualQuest
 
             private void SetupRegion()
             {
-                Map map = Map.TerMur;
+     /*           Map map = Map.TerMur;
 
                 for (int x = 390; x < 408; x++)
                 {
@@ -294,7 +294,7 @@ namespace Server.Engines.Quests.RitualQuest
                 {
                     BexilPunchingBag bex = new BexilPunchingBag();
                     bex.MoveToWorld(new Point3D(403, 3391, 38), Map.TerMur);
-                }
+                }*/
             }
 
             public override bool CheckTravel(Mobile traveller, Point3D p, Spells.TravelCheckType type)

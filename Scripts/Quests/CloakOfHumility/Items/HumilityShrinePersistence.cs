@@ -6,7 +6,7 @@ namespace Server.Engines.Quests
     {
         public static void Initialize()
         {
-            if (m_TramInstance == null)
+/*            if (m_TramInstance == null)
             {
                 m_TramInstance = new HumilityShrinePersistence();
                 m_TramInstance.MoveToWorld(new Point3D(4270, 3698, 0), Map.Trammel);
@@ -18,7 +18,7 @@ namespace Server.Engines.Quests
             {
                 m_FelInstance = new HumilityShrinePersistence();
                 m_FelInstance.MoveToWorld(new Point3D(4270, 3698, 0), Map.Felucca);
-            }
+            }*/
         }
 
         private static HumilityShrinePersistence m_TramInstance;
@@ -79,7 +79,7 @@ namespace Server.Engines.Quests
 
         public static void SetupMobiles()
         {
-            BaseCreature next = new Gareth();
+   /*         BaseCreature next = new Gareth();
             next.MoveToWorld(new Point3D(2023, 2841, 20), Map.Trammel);
             next.Home = next.Location;
             next.RangeHome = 5;
@@ -122,7 +122,7 @@ namespace Server.Engines.Quests
             next = new Walton();
             next.MoveToWorld(new Point3D(610, 2197, 0), Map.Felucca);
             next.Home = next.Location;
-            next.RangeHome = 40;
+            next.RangeHome = 40;*/
         }
     }
 }

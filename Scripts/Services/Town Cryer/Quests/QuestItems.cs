@@ -53,7 +53,7 @@ namespace Server.Engines.Quests
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+ /*           if (TramInstance == null)
             {
                 TramInstance = new CorpseOfBennetYardley();
                 TramInstance.MoveToWorld(new Point3D(5688, 653, 0), Map.Trammel);
@@ -63,7 +63,7 @@ namespace Server.Engines.Quests
             {
                 FelInstance = new CorpseOfBennetYardley();
                 FelInstance.MoveToWorld(new Point3D(5688, 653, 0), Map.Felucca);
-            }
+            }*/
         }
 
         public override bool ForceShowProperties => true;
@@ -484,7 +484,7 @@ namespace Server.Engines.Quests
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+  /*          if (TramInstance == null)
             {
                 TramInstance = new PaladinCorpse();
                 TramInstance.MoveToWorld(new Point3D(5396, 118, 0), Map.Trammel);
@@ -494,7 +494,7 @@ namespace Server.Engines.Quests
             {
                 FelInstance = new PaladinCorpse();
                 FelInstance.MoveToWorld(new Point3D(5396, 118, 0), Map.Felucca);
-            }
+            }*/
         }
 
         public override int LabelNumber => 1158135;  // the remains of a would-be paladin

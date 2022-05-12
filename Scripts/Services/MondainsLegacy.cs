@@ -262,7 +262,7 @@ namespace Server
                 Diagnostics.ExceptionLogging.LogException(e);
             }
 
-            if (!FindItem(new Point3D(1431, 1696, 0), Map.Trammel, 0x307F))
+      /*      if (!FindItem(new Point3D(1431, 1696, 0), Map.Trammel, 0x307F))
             {
                 ArcaneCircleAddon addon = new ArcaneCircleAddon();
                 addon.MoveToWorld(new Point3D(1431, 1696, 0), Map.Trammel);
@@ -272,7 +272,7 @@ namespace Server
             {
                 ArcaneCircleAddon addon = new ArcaneCircleAddon();
                 addon.MoveToWorld(new Point3D(1431, 1696, 0), Map.Felucca);
-            }
+            }*/
         }
 
         public static void SaveSetings()

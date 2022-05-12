@@ -20,12 +20,12 @@ namespace Server.Engines.Khaldun
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+ /*           if (TramInstance == null)
             {
                 TramInstance = new Cryptologist();
                 TramInstance.MoveToWorld(new Point3D(4325, 949, 10), Map.Trammel);
                 TramInstance.Direction = Direction.South;
-            }
+            }*/
         }
 
         public Cryptologist()

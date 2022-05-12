@@ -20,12 +20,12 @@ namespace Server.Engines.Khaldun
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+	/*        if (TramInstance == null)
             {
                 TramInstance = new SageHumbolt();
                 TramInstance.MoveToWorld(new Point3D(5808, 3270, -15), Map.Trammel);
                 TramInstance.Direction = Direction.North;
-            }
+            }*/
         }
 
         public SageHumbolt()

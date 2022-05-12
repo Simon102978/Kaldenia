@@ -162,7 +162,7 @@ namespace Server.Engines.Quests
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+     /*       if (TramInstance == null)
             {
                 TramInstance = new Kane();
                 var p = new Point3D(2027, 2740, 50);
@@ -180,7 +180,7 @@ namespace Server.Engines.Quests
                 FelInstance.MoveToWorld(p, Map.Felucca);
                 FelInstance.Home = p;
                 FelInstance.RangeHome = 5;
-            }
+            }*/
         }
 
         [Constructable]

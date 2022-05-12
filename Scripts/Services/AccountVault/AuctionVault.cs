@@ -170,7 +170,7 @@ namespace Server.AccountVault
 
         public static void Initialize()
         {
-            if (Vaults.Count == 0)
+   /*         if (Vaults.Count == 0)
             {
                 var map = Siege.SiegeShard ? Map.Felucca : Map.Trammel;
 
@@ -179,7 +179,7 @@ namespace Server.AccountVault
                     var vault = new AuctionVault(i + 1);
                     vault.MoveToWorld(Locs[i], map);
                 }
-            }
+            }*/
         }
 
         private static Point3D[] Locs = new[]

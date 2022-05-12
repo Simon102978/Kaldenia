@@ -25,8 +25,8 @@ namespace Server.Misc
         public override string DefaultName => "TreasuresOfTokuno Persistance - Internal";
         public static void Initialize()
         {
-            if (m_Instance == null)
-                new TreasuresOfTokunoPersistence();
+//            if (m_Instance == null)
+//                new TreasuresOfTokunoPersistence();
         }
 
         public override void Serialize(GenericWriter writer)

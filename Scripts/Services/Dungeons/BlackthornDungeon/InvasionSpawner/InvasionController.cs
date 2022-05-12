@@ -23,7 +23,7 @@ namespace Server.Engines.Blackthorn
 
     public class InvasionController : Item
     {
-        public static bool Enabled = true;
+        public static bool Enabled = false;
         public static int WaveCountMin = 8;
         public static int WaveCountMax = 10;
         public static int MaxWaves = 2;
@@ -544,7 +544,7 @@ namespace Server.Engines.Blackthorn
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+  /*          if (TramInstance == null)
             {
                 TramInstance = new InvasionController(Map.Trammel);
                 TramInstance.MoveToWorld(new Point3D(6359, 2570, 0), Map.Trammel);
@@ -647,7 +647,7 @@ namespace Server.Engines.Blackthorn
                     new Rectangle2D(6460, 2551, 5, 10),
                     new Rectangle2D(6433, 2561, 6, 6),
                 },
-                new Point3D(6444, 2553, 0));
+                new Point3D(6444, 2553, 0));*/
         }
     }
 }

@@ -556,7 +556,7 @@ namespace Server.Engines.Fellowship
 
         public static void Initialize()
         {
-            if (MiningCooperativeMerchant.InstanceTram == null && !Siege.SiegeShard)
+  /*          if (MiningCooperativeMerchant.InstanceTram == null && !Siege.SiegeShard)
             {
                 MiningCooperativeMerchant.InstanceTram = new MiningCooperativeMerchant();
                 MiningCooperativeMerchant.InstanceTram.MoveToWorld(new Point3D(2497, 432, 15), Map.Trammel);
@@ -590,7 +590,7 @@ namespace Server.Engines.Fellowship
 
                 FellowshipAdept.InstanceFel.Home = FellowshipAdept.InstanceFel.Location;
                 FellowshipAdept.InstanceFel.RangeHome = 5;
-            }
+            }*/
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Server.Engines.Quests
     {
         public static void Initialize()
         {
-            Spawn();
+ //           Spawn();
         }
 
         public static Point3D HomeLocation => new Point3D(6311, 449, -50);

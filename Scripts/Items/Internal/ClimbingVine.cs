@@ -56,7 +56,7 @@ namespace Server.Items
 
         public static void Initialize()
         {
-            Vine1 = Map.TerMur.FindItem<ClimbingVine>(new Point3D(687, 1759, 40));
+  /*        Vine1 = Map.TerMur.FindItem<ClimbingVine>(new Point3D(687, 1759, 40));
             Vine2 = Map.TerMur.FindItem<ClimbingVine>(new Point3D(687, 1759, 60));
 
             if (Vine1 == null)
@@ -69,7 +69,7 @@ namespace Server.Items
             {
                 Vine2 = new ClimbingVine(new Point3D(679, 1757, 100));
                 Vine2.MoveToWorld(new Point3D(678, 1759, 60), Map.TerMur);
-            }
+            }*/
         }
     }
 }

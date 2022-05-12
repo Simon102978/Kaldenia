@@ -125,7 +125,7 @@ namespace Server.Engines.Quests
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+     /*       if (TramInstance == null)
             {
                 TramInstance = new Morz();
                 TramInstance.MoveToWorld(new Point3D(2018, 2745, 30), Map.Trammel);
@@ -137,7 +137,7 @@ namespace Server.Engines.Quests
                 FelInstance = new Morz();
                 FelInstance.MoveToWorld(new Point3D(2018, 2745, 30), Map.Felucca);
                 FelInstance.Direction = Direction.South;
-            }
+            }*/
         }
 
         public Morz()

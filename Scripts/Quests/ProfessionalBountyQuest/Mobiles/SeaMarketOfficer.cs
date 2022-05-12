@@ -136,7 +136,7 @@ namespace Server.Mobiles
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+    /*        if (TramInstance == null)
             {
                 TramInstance = new SeaMarketOfficer();
                 TramInstance.MoveToWorld(new Point3D(4543, 2299, -1), Map.Trammel);
@@ -146,7 +146,7 @@ namespace Server.Mobiles
             {
                 FelInstance = new SeaMarketOfficer();
                 FelInstance.MoveToWorld(new Point3D(4543, 2299, -1), Map.Felucca);
-            }
+            }*/
         }
     }
 }

@@ -11,11 +11,11 @@ namespace Server.Engines.Quests.RitualQuest
 
         public static void Initialize()
         {
-            if (Instance == null)
+   /*         if (Instance == null)
             {
                 Instance = new Prugyilonus();
                 Instance.MoveToWorld(new Point3D(750, 3344, 61), Map.TerMur);
-            }
+            }*/
         }
 
         public override Type[] Quests => new Type[] { typeof(ScalesOfADreamSerpentQuest) };
@@ -69,11 +69,11 @@ namespace Server.Engines.Quests.RitualQuest
 
         public static void Initialize()
         {
-            if (Instance == null)
+ /*           if (Instance == null)
             {
                 Instance = new Bexil();
                 Instance.MoveToWorld(new Point3D(662, 3819, -43), Map.TerMur);
-            }
+            }*/
         }
 
         public override void OnDoubleClick(Mobile m)
@@ -231,11 +231,11 @@ namespace Server.Engines.Quests.RitualQuest
 
         public static void Initialize()
         {
-            if (Instance == null)
+    /*        if (Instance == null)
             {
                 Instance = new Grubbix();
                 Instance.MoveToWorld(new Point3D(1106, 3138, -43), Map.TerMur);
-            }
+            }*/
         }
 
         public Grubbix()

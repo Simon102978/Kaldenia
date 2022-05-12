@@ -124,7 +124,7 @@ namespace Server.Items
 
         public static void Initialize()
         {
-            if (InstanceTram == null)
+    /*        if (InstanceTram == null)
             {
                 StrangeContraptionAddon item = new StrangeContraptionAddon();
                 item.MoveToWorld(new Point3D(5668, 1925, 0), Map.Trammel);
@@ -134,7 +134,7 @@ namespace Server.Items
             {
                 StrangeContraptionAddon item = new StrangeContraptionAddon();
                 item.MoveToWorld(new Point3D(5668, 1925, 0), Map.Felucca);
-            }
+            }*/
         }
 
         public static Dictionary<Mobile, DateTime> Table = new Dictionary<Mobile, DateTime>();

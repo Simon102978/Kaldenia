@@ -12,7 +12,7 @@ namespace Server.Engines.Quests.RitualQuest
 
         public static void Initialize()
         {
-            if (Instance == null)
+  /*          if (Instance == null)
             {
                 Instance = new CrystalLotusPuzzle();
                 Instance.MoveToWorld(new Point3D(978, 2876, 37), Map.TerMur);
@@ -23,7 +23,7 @@ namespace Server.Engines.Quests.RitualQuest
                     Name = "Pristine Crystal Lotus"
                 };
                 s.MoveToWorld(new Point3D(978, 2876, 47), Map.TerMur);
-            }
+            }*/
         }
 
         public List<PuzzleTile> Tiles { get; set; } = new List<PuzzleTile>();

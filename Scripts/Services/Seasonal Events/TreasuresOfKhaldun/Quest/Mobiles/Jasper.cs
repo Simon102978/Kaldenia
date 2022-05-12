@@ -14,12 +14,12 @@ namespace Server.Engines.Khaldun
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+       /*     if (TramInstance == null)
             {
                 TramInstance = new InspectorJasper();
                 TramInstance.MoveToWorld(new Point3D(1675, 1584, 7), Map.Trammel);
                 TramInstance.Direction = Direction.South;
-            }
+            }*/
         }
 
         public InspectorJasper()

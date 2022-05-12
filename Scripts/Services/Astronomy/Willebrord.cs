@@ -19,7 +19,7 @@ namespace Server.Engines.Astronomy
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+ /*           if (TramInstance == null)
             {
                 TramInstance = new Willebrord();
                 TramInstance.MoveToWorld(new Point3D(4706, 1128, 6), Map.Trammel);
@@ -65,7 +65,7 @@ namespace Server.Engines.Astronomy
                     Movable = false
                 };
                 book.MoveToWorld(new Point3D(4709, 1126, 4), Map.Trammel);
-            }
+            }*/
         }
 
         public Willebrord()

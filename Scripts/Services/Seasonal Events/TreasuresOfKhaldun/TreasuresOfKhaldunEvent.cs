@@ -310,7 +310,7 @@ namespace Server.Engines.Khaldun
 
         public static void Initialize()
         {
-            if (!Siege.SiegeShard)
+       /*     if (!Siege.SiegeShard)
             {
                 KhaldunCampRegion.InstanceTram = new KhaldunCampRegion(Map.Trammel);
             }
@@ -357,7 +357,7 @@ namespace Server.Engines.Khaldun
 
                     ChestSpawner.InstanceTram = null;
                 }
-            }
+            }*/
         }
     }
 }

@@ -41,11 +41,11 @@ namespace Server.Engines.Exodus
 
         public static void Initialize()
         {
-            if (IlshenarInstance == null)
+/*            if (IlshenarInstance == null)
             {
                 IlshenarInstance = new VerLorRegController(Map.Ilshenar);
                 IlshenarInstance.MoveToWorld(new Point3D(849, 648, -40), Map.Ilshenar);
-            }
+            }*/
         }
 
         public override void Serialize(GenericWriter writer)

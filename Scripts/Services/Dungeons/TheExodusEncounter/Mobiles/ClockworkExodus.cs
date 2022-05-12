@@ -79,7 +79,7 @@ namespace Server.Mobiles
 
             m_MinHits = Hits;
 
-            if (Instances == null)
+             if (Instances == null)
                 Instances = new List<ClockworkExodus>();
 
             Instances.Add(this);

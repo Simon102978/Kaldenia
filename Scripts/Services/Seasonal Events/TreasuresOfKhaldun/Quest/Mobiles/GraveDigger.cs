@@ -21,12 +21,12 @@ namespace Server.Engines.Khaldun
 
         public static void Initialize()
         {
-            if (TramInstance == null)
+       /*     if (TramInstance == null)
             {
                 TramInstance = new GraveDigger();
                 TramInstance.MoveToWorld(new Point3D(1382, 1447, 10), Map.Trammel);
                 TramInstance.Direction = Direction.South;
-            }
+            }*/
         }
 
         public GraveDigger()

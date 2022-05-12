@@ -22,7 +22,7 @@ namespace Server.Misc
     {
         public override PointsType Loyalty => PointsType.TOT;
         public override TextDefinition Name => m_Name;
-        public override bool AutoAdd => true;
+        public override bool AutoAdd => false;
         public override double MaxPoints => double.MaxValue;
         public override bool ShowOnLoyaltyGump => false;
 

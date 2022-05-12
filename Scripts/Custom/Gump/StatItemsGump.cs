@@ -36,9 +36,9 @@ namespace Server.Gumps
 				{
 					Item m = item.Value;
 
-	//				AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0, m.Name + "-" + m.Map  +" - " + m.Location);
+					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0, m.Name + "-" + m.Map  +" - " + m.Location);
 
-					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0, m.GetType().ToString() + "-" + m.Map + " - " + m.Location);
+//					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0, m.GetType().ToString() + "-" + m.Map + " - " + m.Location);
 
 					line++;
 

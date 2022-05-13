@@ -1042,6 +1042,48 @@ namespace Server.Mobiles
 			Server.Spells.Fifth.IncognitoSpell.StopTimer(this);
 		}
 
+
+		public override void OnAfterResurrect()
+		{
+			base.OnAfterResurrect();
+
+			Frozen = false;
+
+			if (Corpse != null)
+			{
+				ArrayList list = new ArrayList();
+
+				foreach (Item item in Corpse.Items)
+				{
+					list.Add(item);
+				}
+
+				foreach (Item item in list)
+				{
+					if (item.Layer == Layer.Hair || item.Layer == Layer.FacialHair)
+						item.Delete();
+
+					if (item is BaseRaceGumps || (Corpse is Corpse && ((Corpse)Corpse).EquipItems.Contains(item)))
+					{
+						if (!EquipItem(item))
+							AddToBackpack(item);
+					}
+					else
+					{
+						AddToBackpack(item);
+					}
+				}
+
+				Corpse.Delete();
+			}
+
+
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous vous relevez péniblement.", VulnerabilityDuration);
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous êtes vulnérable pendant les {0} prochaines minutes.", VulnerabilityDuration);
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Si vous tombez au combat, vous serez envoyé{0} dans le monde des esprits.", Female ? "e" : "");
+
+		}
+
 		private static void RetourCombatPvP_Callback(object state)
 		{
 			if ((Mobile)state is CustomPlayerMobile)
@@ -1064,41 +1106,9 @@ namespace Server.Mobiles
 
 				if (!pm.Alive)
 				{
-					pm.Frozen = false;
+
 					pm.Resurrect();
 
-					if (pm.Corpse != null)
-					{
-						ArrayList list = new ArrayList();
-
-						foreach (Item item in pm.Corpse.Items)
-						{
-							list.Add(item);
-						}
-
-						foreach (Item item in list)
-						{
-							if (item.Layer == Layer.Hair || item.Layer == Layer.FacialHair)
-								item.Delete();
-
-							if (item is BaseRaceGumps || (pm.Corpse is Corpse && ((Corpse)pm.Corpse).EquipItems.Contains(item)))
-							{
-								if (!pm.EquipItem(item))
-									pm.AddToBackpack(item);
-							}
-							else
-							{
-								pm.AddToBackpack(item);
-							}
-						}
-
-						pm.Corpse.Delete();
-					}
-
-
-					pm.SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous vous relevez péniblement.", pm.VulnerabilityDuration);
-					pm.SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous êtes vulnérable pendant les {0} prochaines minutes.", pm.VulnerabilityDuration);
-					pm.SendMessage(HueManager.GetHue(HueManagerList.Red), "Si vous tombez au combat, vous serez envoyé{0} dans le monde des esprits.", pm.Female ? "e" : "");
 				}
 			}
 		}

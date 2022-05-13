@@ -213,7 +213,7 @@ namespace Server.Items
 
             CraftAttributeInfo dullCopper = DullCopper = new CraftAttributeInfo();
 
-            dullCopper.ArmorPhysicalResist = 1;
+            dullCopper.ArmorPhysicalResist = 0;
             dullCopper.ArmorDurability = 50;
             dullCopper.ArmorLowerRequirements = 20;
             dullCopper.WeaponDurability = 100;
@@ -226,7 +226,7 @@ namespace Server.Items
 
             CraftAttributeInfo shadowIron = ShadowIron = new CraftAttributeInfo();
 
-            shadowIron.ArmorPhysicalResist = 3;
+            shadowIron.ArmorPhysicalResist = 0;
             shadowIron.ArmorFireResist = 2;
             shadowIron.ArmorEnergyResist = 7;
             shadowIron.ArmorDurability = 100;
@@ -242,7 +242,7 @@ namespace Server.Items
 
             CraftAttributeInfo copper = Copper = new CraftAttributeInfo();
 
-            copper.ArmorPhysicalResist = 2;
+            copper.ArmorPhysicalResist = 0;
             copper.ArmorFireResist = 2;
             copper.ArmorPoisonResist = 7;
             copper.ArmorEnergyResist = 2;
@@ -256,7 +256,7 @@ namespace Server.Items
 
             CraftAttributeInfo bronze = Bronze = new CraftAttributeInfo();
 
-            bronze.ArmorPhysicalResist = 3;
+            bronze.ArmorPhysicalResist = 0;
             bronze.ArmorColdResist = 7;
             bronze.ArmorPoisonResist = 2;
             bronze.ArmorEnergyResist = 2;
@@ -269,7 +269,7 @@ namespace Server.Items
 
             CraftAttributeInfo golden = Golden = new CraftAttributeInfo();
 
-            golden.ArmorPhysicalResist = 2;
+            golden.ArmorPhysicalResist = 0;
             golden.ArmorFireResist = 2;
             golden.ArmorColdResist = 2;
             golden.ArmorEnergyResist = 3;
@@ -285,7 +285,7 @@ namespace Server.Items
 
             CraftAttributeInfo agapite = Agapite = new CraftAttributeInfo();
 
-            agapite.ArmorPhysicalResist = 2;
+            agapite.ArmorPhysicalResist = 1;
             agapite.ArmorFireResist = 7;
             agapite.ArmorColdResist = 2;
             agapite.ArmorPoisonResist = 2;
@@ -300,7 +300,7 @@ namespace Server.Items
 
             CraftAttributeInfo verite = Verite = new CraftAttributeInfo();
 
-            verite.ArmorPhysicalResist = 4;
+            verite.ArmorPhysicalResist = 1;
             verite.ArmorFireResist = 4;
             verite.ArmorColdResist = 3;
             verite.ArmorPoisonResist = 4;
@@ -315,7 +315,7 @@ namespace Server.Items
 
             CraftAttributeInfo valorite = Valorite = new CraftAttributeInfo();
 
-            valorite.ArmorPhysicalResist = 5;
+            valorite.ArmorPhysicalResist = 1;
             valorite.ArmorColdResist = 4;
             valorite.ArmorPoisonResist = 4;
             valorite.ArmorEnergyResist = 4;
@@ -334,7 +334,7 @@ namespace Server.Items
 
 			CraftAttributeInfo lupusLeather = LupusLeather = new CraftAttributeInfo();
 
-			lupusLeather.ArmorPhysicalResist = 1;
+			lupusLeather.ArmorPhysicalResist = 0;
 			lupusLeather.ArmorDurability = 50;
 			lupusLeather.ArmorLowerRequirements = 20;
 			lupusLeather.WeaponDurability = 100;
@@ -347,7 +347,7 @@ namespace Server.Items
 
 			CraftAttributeInfo reptilienLeather = ReptilienLeather = new CraftAttributeInfo();
 
-			reptilienLeather.ArmorPhysicalResist = 3;
+			reptilienLeather.ArmorPhysicalResist = 0;
 			reptilienLeather.ArmorFireResist = 2;
 			reptilienLeather.ArmorEnergyResist = 7;
 			reptilienLeather.ArmorDurability = 100;
@@ -363,7 +363,7 @@ namespace Server.Items
 
 			CraftAttributeInfo geantLeather = GeantLeather = new CraftAttributeInfo();
 
-			geantLeather.ArmorPhysicalResist = 2;
+			geantLeather.ArmorPhysicalResist = 0;
 			geantLeather.ArmorFireResist = 2;
 			geantLeather.ArmorPoisonResist = 7;
 			geantLeather.ArmorEnergyResist = 2;
@@ -377,7 +377,7 @@ namespace Server.Items
 
 			CraftAttributeInfo ophidienLeather = OphidienLeather = new CraftAttributeInfo();
 
-			ophidienLeather.ArmorPhysicalResist = 3;
+			ophidienLeather.ArmorPhysicalResist = 0;
 			ophidienLeather.ArmorColdResist = 7;
 			ophidienLeather.ArmorPoisonResist = 2;
 			ophidienLeather.ArmorEnergyResist = 2;
@@ -390,7 +390,7 @@ namespace Server.Items
 
 			CraftAttributeInfo arachnideLeather = ArachnideLeather = new CraftAttributeInfo();
 
-			arachnideLeather.ArmorPhysicalResist = 2;
+			arachnideLeather.ArmorPhysicalResist = 0;
 			arachnideLeather.ArmorFireResist = 2;
 			arachnideLeather.ArmorColdResist = 2;
 			arachnideLeather.ArmorEnergyResist = 3;
@@ -406,7 +406,7 @@ namespace Server.Items
 
 			CraftAttributeInfo dragoniqueLeather = DragoniqueLeather = new CraftAttributeInfo();
 
-			dragoniqueLeather.ArmorPhysicalResist = 2;
+			dragoniqueLeather.ArmorPhysicalResist = 1;
 			dragoniqueLeather.ArmorFireResist = 7;
 			dragoniqueLeather.ArmorColdResist = 2;
 			dragoniqueLeather.ArmorPoisonResist = 2;
@@ -421,7 +421,7 @@ namespace Server.Items
 
 			CraftAttributeInfo demoniaqueLeather = DemoniaqueLeather = new CraftAttributeInfo();
 
-			demoniaqueLeather.ArmorPhysicalResist = 4;
+			demoniaqueLeather.ArmorPhysicalResist = 1;
 			demoniaqueLeather.ArmorFireResist = 4;
 			demoniaqueLeather.ArmorColdResist = 3;
 			demoniaqueLeather.ArmorPoisonResist = 4;
@@ -436,7 +436,7 @@ namespace Server.Items
 
 			CraftAttributeInfo ancienLeather = AncienLeather = new CraftAttributeInfo();
 
-			ancienLeather.ArmorPhysicalResist = 5;
+			ancienLeather.ArmorPhysicalResist = 1;
 			ancienLeather.ArmorColdResist = 4;
 			ancienLeather.ArmorPoisonResist = 4;
 			ancienLeather.ArmorEnergyResist = 4;

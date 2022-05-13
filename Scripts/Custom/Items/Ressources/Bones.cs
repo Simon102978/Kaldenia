@@ -61,7 +61,7 @@ namespace Server.Items
 			var name = CraftResources.GetName(m_Resource);
 
 			if (Amount > 1)
-				list.Add(1060532, String.Format("{3} {0}{1}{2}", "Os [", name, "]", Amount)); // ~1_NUMBER~ ~2_ITEMNAME~
+				list.Add(String.Format("{3} {0}{1}{2}", "Os [", name, "]", Amount)); // ~1_NUMBER~ ~2_ITEMNAME~
 			else
 				list.Add(String.Format("{0}{1}{2}", "Os [", name, "]")); // ingots
 		}

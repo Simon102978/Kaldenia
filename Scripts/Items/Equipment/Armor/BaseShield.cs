@@ -148,9 +148,9 @@ namespace Server.Items
             }
         }
 
-        public override void DistributeExceptionalBonuses(bool runic)
+  /*      public override void DistributeExceptionalBonuses(bool runic)
         {
-        }
+        }*/
 
         public override void DistributeMaterialBonus(CraftAttributeInfo attrInfo)
         {

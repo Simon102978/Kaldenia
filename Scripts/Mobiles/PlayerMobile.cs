@@ -1130,20 +1130,25 @@ namespace Server.Mobiles
 
         public override int GetMinResistance(ResistanceType type)
         {
-            int magicResist = (int)(Skills[SkillName.MagicResist].Value * 10);
-            int min = int.MinValue;
+				if (type == ResistanceType.Physical)
+				{
+					return MinPlayerResistance;
+				}
 
-            if (magicResist >= 1000)
-            {
-                min = 40 + ((magicResist - 1000) / 50);
-            }
-            else if (magicResist >= 400)
-            {
-                min = (magicResist - 400) / 15;
-            }
+			   int magicResist = (int)(Skills[SkillName.MagicResist].Value * 10);
+			   int min = int.MinValue;
 
-            return Math.Max(MinPlayerResistance, Math.Min(MaxPlayerResistance, min));
-        }
+			   if (magicResist >= 1000)
+			   {
+				   min = 40 + ((magicResist - 1000) / 50);
+			   }
+			   else if (magicResist >= 400)
+			   {
+				   min = (magicResist - 400) / 15;
+			   }
+	
+		    return Math.Max(MinPlayerResistance, Math.Min(MaxPlayerResistance, min));
+		}
 
         #region City Loyalty
         public override int GetResistance(ResistanceType type)

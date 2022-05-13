@@ -137,7 +137,6 @@ namespace Server.Engines.Despise
             typeof(UnicornManeWovenSandals),
             typeof(UnicornManeWovenTalons),
             typeof(DespicableQuiver),
-            typeof(UnforgivenVeil),
             typeof(HailstormHuman),
             typeof(HailstormGargoyle),
         };

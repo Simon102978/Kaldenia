@@ -1141,10 +1141,8 @@ namespace Server.Items
             m_AllowableTable[typeof(Cleaver)] = DefBlacksmithy.CraftSystem;
             m_AllowableTable[typeof(SkinningKnife)] = DefBlacksmithy.CraftSystem;
             m_AllowableTable[typeof(ButcherKnife)] = DefBlacksmithy.CraftSystem;
-            m_AllowableTable[typeof(GargishNecklace)] = DefBlacksmithy.CraftSystem;
-            m_AllowableTable[typeof(GargishEarrings)] = DefBlacksmithy.CraftSystem;
-            m_AllowableTable[typeof(GargishAmulet)] = DefBlacksmithy.CraftSystem;
-            m_AllowableTable[typeof(GargishStoneAmulet)] = DefMasonry.CraftSystem;
+            m_AllowableTable[typeof(Necklace)] = DefBlacksmithy.CraftSystem;
+            m_AllowableTable[typeof(Earrings)] = DefBlacksmithy.CraftSystem;
             m_AllowableTable[typeof(BarbedWhip)] = DefTailoring.CraftSystem;
             m_AllowableTable[typeof(SpikedWhip)] = DefTailoring.CraftSystem;
             m_AllowableTable[typeof(BladedWhip)] = DefTailoring.CraftSystem;
@@ -1639,7 +1637,7 @@ namespace Server.Items
                 found = false;
                 sk = possibleSkills[Utility.Random(possibleSkills.Length)];
 
-                if ((item is GargishRing || item is GargishBracelet) && sk == SkillName.Archery)
+                if ((item is Ring || item is Bracelet) && sk == SkillName.Archery)
                     sk = SkillName.Throwing;
 
                 for (int i = 0; !found && i < 5; ++i)
@@ -2744,8 +2742,8 @@ namespace Server.Items
             if (item is Glasses)
                 return ((Glasses)item).WeaponAttributes;
 
-            if (item is GargishGlasses)
-                return ((GargishGlasses)item).WeaponAttributes;
+            if (item is Glasses)
+                return ((Glasses)item).WeaponAttributes;
 
             if (item is ElvenGlasses)
                 return ((ElvenGlasses)item).WeaponAttributes;

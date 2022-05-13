@@ -112,7 +112,7 @@ namespace Server.Engines.Quests
         public override object Title => 1113260;
         /* Oh my! Now isn't this something? A Gargoyle seeking to master the ways of our humble little industry.
          * Why, this is nothing short of inspirational!<BR><BR>I think I have just the thing for him. There's a
-         * book over... oh! It's a her? My apologies, I just don't have a knack for those Gargish names you know!
+         * book over... oh! It's a her? My apologies, I just don't have a knack for those  names you know!
          * <BR><BR>Regardless, please take this back to the young lady, if you would be so kind.<BR><BR>Best regards! */
         public override object Description => 1113261;
         /* Oh dear, truly? I'm sure she'd be very pleased to have this, and I don't have the means to journey there
@@ -213,9 +213,9 @@ namespace Server.Engines.Quests
         {
             AddItem(new Backpack());
 
-            AddItem(new GargishClothChest(Utility.RandomNeutralHue()));
-            AddItem(new GargishClothKilt(Utility.RandomNeutralHue()));
-            AddItem(new GargishClothLegs(Utility.RandomNeutralHue()));
+            AddItem(new ClothChest(Utility.RandomNeutralHue()));
+            AddItem(new ClothKilt(Utility.RandomNeutralHue()));
+            AddItem(new ClothLegs(Utility.RandomNeutralHue()));
         }
 
         public override void Serialize(GenericWriter writer)

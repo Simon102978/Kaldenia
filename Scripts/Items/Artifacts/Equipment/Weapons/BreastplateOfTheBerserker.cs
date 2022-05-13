@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class BreastplateOfTheBerserker : GargishPlateChest
+    public class BreastplateOfTheBerserker : PlateChest
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1113539;  // Breastplate of the Berserker

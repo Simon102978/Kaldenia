@@ -51,8 +51,8 @@ namespace Server.Items
         }
     }
 
-    public class GargishBritchesOfWarding : GargishPlateLegs
-    {
+    public class GargishBritchesOfWarding : PlateLegs
+	{
         public override int LabelNumber => 1157345; // britches of warding
         public override bool IsArtifact => true;
 

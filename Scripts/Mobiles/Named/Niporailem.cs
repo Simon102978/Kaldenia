@@ -16,31 +16,22 @@ namespace Server.Mobiles
           typeof(ArmsOfVillainousEpiphany),
           typeof(GauntletsOfVillainousEpiphany),
           typeof(LegsOfVillainousEpiphany),
-          typeof(KiltOfVillainousEpiphany),
-          typeof(EarringsOfVillainousEpiphany),
-          typeof(GargishBreastplateOfVillainousEpiphany),
-          typeof(GargishArmsOfVillainousEpiphany),
-          typeof(NecklaceOfVillainousEpiphany),
-          typeof(GargishLegsOfVillainousEpiphany),
+         
+          typeof(EarringsOfVillainousEpiphany),       
           typeof(HelmOfVirtuousEpiphany),
           typeof(GorgetOfVirtuousEpiphany),
           typeof(BreastplateOfVirtuousEpiphany),
           typeof(ArmsOfVirtuousEpiphany),
           typeof(GauntletsOfVirtuousEpiphany),
           typeof(LegsOfVirtuousEpiphany),
-          typeof(KiltOfVirtuousEpiphany),
-          typeof(EarringsOfVirtuousEpiphany),
-          typeof(GargishBreastplateOfVirtuousEpiphany),
-          typeof(GargishArmsOfVirtuousEpiphany),
-          typeof(NecklaceOfVirtuousEpiphany),
-          typeof(GargishLegsOfVirtuousEpiphany)
+          typeof(EarringsOfVirtuousEpiphany)
+
         };
 
         public override Type[] SharedSAList => new Type[]
         {
             typeof(BladeOfBattle),
             typeof(DemonBridleRing),
-            typeof(GiantSteps),
             typeof(SwordOfShatteredHopes)
         };
 

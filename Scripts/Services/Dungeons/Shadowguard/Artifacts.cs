@@ -263,7 +263,7 @@ namespace Server.Items
         }
     }
 
-    public class GrugorsShieldGargoyle : GargishWoodenShield
+    public class GrugorsShieldGargoyle : WoodenShield
     {
         public override int LabelNumber => 1156129;
 
@@ -461,7 +461,7 @@ namespace Server.Items
         }
     }
 
-    public class JumusSacredHideGargoyle : GargishLeatherWingArmor
+    public class JumusSacredHideGargoyle : Cyclone
     {
         public override int LabelNumber => 1156130;
 
@@ -931,7 +931,7 @@ namespace Server.Items
         }
     }
 
-    public class WamapsBoneEarringsGargoyle : GargishEarrings
+    public class WamapsBoneEarringsGargoyle : Earrings
     {
         public override int LabelNumber => 1156132;
 

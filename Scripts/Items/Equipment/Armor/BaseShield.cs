@@ -148,7 +148,7 @@ namespace Server.Items
             }
         }
 
-        public override void DistributeExceptionalBonuses(Mobile from, bool runic)
+        public override void DistributeExceptionalBonuses(bool runic)
         {
         }
 

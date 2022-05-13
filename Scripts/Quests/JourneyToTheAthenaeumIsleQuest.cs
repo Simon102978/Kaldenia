@@ -11,7 +11,7 @@ namespace Server.Engines.Quests
         public override object Title => 1150929;         // Journey to the Athenaeum Isle
 
         public override object Description => 1150902;   /*Greetings, adventurer. <br><br>	As you know, my people have suffered the 
-                                                                         * incessant onslaught of the Void and its minions for as long as Gargish 
+                                                                         * incessant onslaught of the Void and its minions for as long as  
                                                                          * history exists. Protecting Ter Mur from the darkness, and its desire to
                                                                          * consume the land completely, is a burden passed down from one ruler to another
                                                                          * upon ascension to the throne.  During my rule, I have been more successful 
@@ -164,10 +164,10 @@ namespace Server.Engines.Quests
 
         private readonly string[] m_Names =
         {
-                "Obtain Gargish Document - Challenge Rite",             "Obtain Gargish Document - Athenaeum Decree",           "Obtain Gargish Document - Letter from the King",
-                "Obtain Gargish Document - On the Void",                "Obtain Gargish Document - Shilaxrinar's Memorial",     "Obtain Gargish Document - To the High Scholar",
-                "Obtain Gargish Document - To the High Broodmother",    "Obtain Gargish Document - Reply to the High Scholar",  "Obtain Gargish Document - Access to the Isle",
-                "Obtain Gargish Document - In Memory"
+                "Obtain  Document - Challenge Rite",             "Obtain  Document - Athenaeum Decree",           "Obtain  Document - Letter from the King",
+                "Obtain  Document - On the Void",                "Obtain  Document - Shilaxrinar's Memorial",     "Obtain  Document - To the High Scholar",
+                "Obtain  Document - To the High Broodmother",    "Obtain  Document - Reply to the High Scholar",  "Obtain  Document - Access to the Isle",
+                "Obtain  Document - In Memory"
         };
     }
 }

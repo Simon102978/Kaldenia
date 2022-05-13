@@ -16,7 +16,7 @@ namespace Server.Items
             Attributes.RegenMana = 1;
         }
 
-        public override int BasePhysicalResistance => 15;
+        public override int BasePhysicalResistance => 1;
         public override int BaseFireResistance => 10;
         public override int BaseColdResistance => 10;
         public override int BasePoisonResistance => 10;

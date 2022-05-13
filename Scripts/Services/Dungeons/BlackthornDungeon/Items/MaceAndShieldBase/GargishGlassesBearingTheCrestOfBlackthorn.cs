@@ -1,11 +1,11 @@
 namespace Server.Items
 {
-    public class GargishGlassesBearingTheCrestOfBlackthorn2 : GargishGlasses
+    public class GlassesBearingTheCrestOfBlackthorn2 : Glasses
     {
         public override bool IsArtifact => true;
 
         [Constructable]
-        public GargishGlassesBearingTheCrestOfBlackthorn2()
+        public GlassesBearingTheCrestOfBlackthorn2()
             : base()
         {
             ReforgedSuffix = ReforgedSuffix.Blackthorn;
@@ -24,7 +24,7 @@ namespace Server.Items
         public override int InitMinHits => 255;
         public override int InitMaxHits => 255;
 
-        public GargishGlassesBearingTheCrestOfBlackthorn2(Serial serial)
+        public GlassesBearingTheCrestOfBlackthorn2(Serial serial)
             : base(serial)
         {
         }

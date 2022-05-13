@@ -210,11 +210,11 @@ namespace Server.SkillHandlers
 
         private static readonly Type[] _SpecialImbuable =
        {
-            typeof(ClockworkLeggings), typeof(GargishClockworkLeggings), typeof(OrcishKinMask), typeof(SavageMask), typeof(VirtuososArmbands),
+            typeof(ClockworkLeggings), typeof(ClockworkLeggings), typeof(OrcishKinMask), typeof(SavageMask), typeof(VirtuososArmbands),
             typeof(VirtuososCap), typeof(VirtuososCollar), typeof(VirtuososEarpieces), typeof(VirtuososKidGloves), typeof(VirtuososKilt),
-            typeof(VirtuososNecklace), typeof(VirtuososTunic), typeof(BestialArms), typeof(BestialEarrings), typeof(BestialGloves), typeof(BestialGorget),
-            typeof(BestialHelm), typeof(BestialKilt), typeof(BestialLegs), typeof(BestialNecklace), typeof(BarbedWhip), typeof(BladedWhip),
-            typeof(SpikedWhip), typeof(SkullGnarledStaff), typeof(GargishSkullGnarledStaff), typeof(SkullLongsword), typeof(GargishSkullLongsword), typeof(JukaBow),
+             typeof(VirtuososTunic),  typeof(BestialGloves), typeof(BestialGorget),
+            typeof(BestialHelm),  typeof(BestialLegs), typeof(BarbedWhip), typeof(BladedWhip),
+            typeof(SpikedWhip), typeof(SkullGnarledStaff), typeof(SkullGnarledStaff), typeof(SkullLongsword), typeof(SkullLongsword), typeof(JukaBow),
             typeof(SlayerLongbow), typeof(JackOLanternHelm)
         };
 
@@ -1779,7 +1779,7 @@ namespace Server.SkillHandlers
 
         private static readonly Type[] m_CannotImbue = new Type[]
         {
-            typeof(GargishLeatherWingArmor), typeof(GargishClothWingArmor)
+            typeof(Cyclone), typeof(ClothWingArmor)
         };
 
         public static int GetValueForID(Item item, int id)

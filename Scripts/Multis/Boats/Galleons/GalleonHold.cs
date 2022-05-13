@@ -17,7 +17,7 @@ namespace Server.Items
             {
                 if (Galleon is BritannianShip)
                     return 28000;
-                else if (Galleon is GargishGalleon)
+                else if (Galleon is Galleon)
                     return 12000;
                 else if (Galleon is OrcishGalleon)
                     return 14000;

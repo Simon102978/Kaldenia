@@ -2,7 +2,7 @@ namespace Server.Items
 {
     public class DragonTurtleHideBustier : BaseArmor
     {
-        public override int BasePhysicalResistance => 3;
+        public override int BasePhysicalResistance => 1;
         public override int BaseFireResistance => 3;
         public override int BaseColdResistance => 4;
         public override int BasePoisonResistance => 3;

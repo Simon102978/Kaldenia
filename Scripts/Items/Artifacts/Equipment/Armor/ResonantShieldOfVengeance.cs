@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class ResonantShieldOfVengeance : GargishWoodenShield
+    public class ResonantShieldOfVengeance : WoodenShield
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1150357;  // Resonant Shield of Vengeance

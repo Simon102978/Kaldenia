@@ -1,6 +1,6 @@
 ﻿namespace Server.Items
 {
-    public class WardensArmorOfAugmentation : GargishLeatherWingArmor
+    public class WardensArmorOfAugmentation : Cyclone
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1115515;  // Warden's Armor Of Augmentation

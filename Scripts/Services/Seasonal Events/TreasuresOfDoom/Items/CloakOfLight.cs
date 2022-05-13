@@ -34,7 +34,7 @@ namespace Server.Items
         }
     }
 
-    public class WingArmorOfLight : GargishClothWingArmor
+    public class WingArmorOfLight : ClothWingArmor
     {
         public override bool IsArtifact => true;
 

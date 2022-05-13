@@ -325,20 +325,13 @@ namespace Server.Engines.Points
             Entries[typeof(SwordDisplay2WestArtifact)] = 200.0;
             Entries[typeof(SwordDisplay2NorthArtifact)] = 200.0;
             Entries[typeof(LargeDyingPlantArtifact)] = 200.0;
-            Entries[typeof(GargishLuckTotemArtifact)] = 200.0;
             Entries[typeof(BookOfTruthArtifact)] = 200.0;
-            Entries[typeof(GargishTraditionalVaseArtifact)] = 200.0;
-            Entries[typeof(GargishProtectiveTotemArtifact)] = 200.0;
             Entries[typeof(BottlesOfSpoiledWine2Artifact)] = 200.0;
             Entries[typeof(BatteredPanArtifact)] = 200.0;
             Entries[typeof(RustedPanArtifact)] = 200.0;
 
             //ArtifactRarity 7 Stealable Artifacts
             Entries[typeof(FlowersArtifact)] = 350.0;
-            Entries[typeof(GargishBentasVaseArtifact)] = 350.0;
-            Entries[typeof(GargishPortraitArtifact)] = 350.0;
-            Entries[typeof(GargishKnowledgeTotemArtifact)] = 350.0;
-            Entries[typeof(GargishMemorialStatueArtifact)] = 350.0;
             Entries[typeof(StolenBottlesOfLiquor3Artifact)] = 350.0;
             Entries[typeof(BottlesOfSpoiledWine3Artifact)] = 350.0;
             Entries[typeof(DriedUpInkWellArtifact)] = 350.0;
@@ -517,7 +510,6 @@ namespace Server.Engines.Points
             Entries[typeof(DraconisWrath)] = 5000.0;
             Entries[typeof(EternalGuardianStaff)] = 5000.0;
             Entries[typeof(FallenMysticsSpellbook)] = 5000.0;
-            Entries[typeof(GiantSteps)] = 5000.0;
             Entries[typeof(IronwoodCompositeBow)] = 5000.0;
             Entries[typeof(JadeWarAxe)] = 5000.0;
             Entries[typeof(LegacyOfDespair)] = 5000.0;
@@ -534,9 +526,9 @@ namespace Server.Engines.Points
             Entries[typeof(RaptorClaw)] = 5000.0;
             Entries[typeof(ResonantStaffofEnlightenment)] = 5000.0;
             Entries[typeof(ShroudOfTheCondemned)] = 500.0;
-            Entries[typeof(GargishSignOfOrder)] = 5000.0;
+            Entries[typeof(SignOfOrder)] = 5000.0;
             Entries[typeof(HumanSignOfOrder)] = 5000.0;
-            Entries[typeof(GargishSignOfChaos)] = 5000.0;
+            Entries[typeof(SignOfChaos)] = 5000.0;
             Entries[typeof(HumanSignOfChaos)] = 5000.0;
             Entries[typeof(Slither)] = 5000.0;
             Entries[typeof(SpinedBloodwormBracers)] = 5000.0;
@@ -554,7 +546,6 @@ namespace Server.Engines.Points
             Entries[typeof(TokenOfHolyFavor)] = 5000.0;
             Entries[typeof(VampiricEssence)] = 5000.0;
             Entries[typeof(Venom)] = 5000.0;
-            Entries[typeof(VoidInfusedKilt)] = 5000.0;
             Entries[typeof(WallOfHungryMouths)] = 5000.0;
 
             //Tokuno Major Artifacts
@@ -633,8 +624,8 @@ namespace Server.Engines.Points
             Entries[typeof(Asclepius)] = 5000.0;
             Entries[typeof(BracersofAlchemicalDevastation)] = 5000.0;
 
-            Entries[typeof(GargishAsclepius)] = 5000.0;
-            Entries[typeof(GargishBracersofAlchemicalDevastation)] = 5000.0;
+            Entries[typeof(Asclepius)] = 5000.0;
+            Entries[typeof(BracersofAlchemicalDevastation)] = 5000.0;
             Entries[typeof(HygieiasAmulet)] = 5000.0;
             Entries[typeof(ScrollofValiantCommendation)] = 5000.0;
 

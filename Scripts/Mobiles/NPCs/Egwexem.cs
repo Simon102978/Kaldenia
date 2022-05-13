@@ -70,9 +70,9 @@ namespace Server.Engines.Quests
         public override void InitOutfit()
         {
             AddItem(new Backpack());
-            AddItem(new GargishClothChest());
-            AddItem(new GargishClothKilt());
-            AddItem(new GargishClothLegs(Utility.RandomNeutralHue()));
+            AddItem(new ClothChest());
+            AddItem(new ClothKilt());
+            AddItem(new ClothLegs(Utility.RandomNeutralHue()));
         }
 
         public override void Serialize(GenericWriter writer)

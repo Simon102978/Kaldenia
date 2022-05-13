@@ -4,7 +4,7 @@ namespace Server.Items
     {
         public override int LabelNumber => 1126024;  // assassin's cowl
 
-        public override int BasePhysicalResistance => 2;
+        public override int BasePhysicalResistance => 0;
         public override int BaseFireResistance => 4;
         public override int BaseColdResistance => 4;
         public override int BasePoisonResistance => 3;

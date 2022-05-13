@@ -486,7 +486,7 @@ namespace Server.Items
 
                 Item item = m_Healer.FindItemOnLayer(Layer.TwoHanded);
 
-                if (item is Asclepius || item is GargishAsclepius)
+                if (item is Asclepius || item is Asclepius)
                     m_HealingBonus += 15;
 
                 if (m_HealingBonus > 0)

@@ -5,7 +5,7 @@ namespace Server.Items
     [Alterable(typeof(DefBlacksmithy), typeof(SmallPlateShield))]
     public class Buckler : BaseShield
     {
-        public override int BasePhysicalResistance => 0;
+        public override int BasePhysicalResistance => 1;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 0;
         public override int BasePoisonResistance => 1;

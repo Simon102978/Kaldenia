@@ -3,7 +3,7 @@ using Server.Engines.VeteranRewards;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefTailoring), typeof(GargishLeatherWingArmor))]
+    [Alterable(typeof(DefTailoring), typeof(Cyclone))]
     public abstract class BaseCloak : BaseClothing
     {
         public BaseCloak(int itemID)
@@ -313,16 +313,16 @@ namespace Server.Items
     }
 
     [Flipable(0x45A4, 0x45A5)]
-    public class GargishClothWingArmor : BaseClothing
+    public class ClothWingArmor : BaseClothing
     {
         [Constructable]
-        public GargishClothWingArmor()
+        public ClothWingArmor()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishClothWingArmor(int hue)
+        public ClothWingArmor(int hue)
             : base(0x45A4, Layer.Cloak, hue)
         {
             Weight = 2.0;
@@ -330,7 +330,7 @@ namespace Server.Items
 
         public override int StrReq => 10;
 
-        public GargishClothWingArmor(Serial serial)
+        public ClothWingArmor(Serial serial)
             : base(serial)
         {
         }
@@ -349,22 +349,22 @@ namespace Server.Items
     }
 
     [Flipable(0x4002, 0x4003)]
-    public class GargishFancyRobe : BaseClothing
+    public class FancyRobe : BaseClothing
     {
         [Constructable]
-        public GargishFancyRobe()
+        public FancyRobe()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishFancyRobe(int hue)
+        public FancyRobe(int hue)
             : base(0x4002, Layer.OuterTorso, hue)
         {
             Weight = 3.0;
         }
 
-        public GargishFancyRobe(Serial serial)
+        public FancyRobe(Serial serial)
             : base(serial)
         {
         }
@@ -382,7 +382,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0x4000, 0x4001)]
+
     public class GargishRobe : BaseClothing
     {
         [Constructable]

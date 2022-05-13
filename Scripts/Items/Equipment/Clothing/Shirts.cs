@@ -211,22 +211,22 @@ namespace Server.Items
         }
     }
 
-    public class GargishClothChest : BaseClothing
+    public class ClothChest : BaseClothing
     {
         [Constructable]
-        public GargishClothChest()
+        public ClothChest()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishClothChest(int hue)
+        public ClothChest(int hue)
             : base(0x0406, Layer.InnerTorso, hue)
         {
             Weight = 2.0;
         }
 
-        public GargishClothChest(Serial serial)
+        public ClothChest(Serial serial)
             : base(serial)
         {
         }
@@ -257,22 +257,22 @@ namespace Server.Items
         }
     }
 
-    public class FemaleGargishClothChest : BaseClothing
+    public class FemaleClothChest : BaseClothing
     {
         [Constructable]
-        public FemaleGargishClothChest()
+        public FemaleClothChest()
             : this(0)
         {
         }
 
         [Constructable]
-        public FemaleGargishClothChest(int hue)
+        public FemaleClothChest(int hue)
             : base(0x0405, Layer.InnerTorso, hue)
         {
             Weight = 2.0;
         }
 
-        public FemaleGargishClothChest(Serial serial)
+        public FemaleClothChest(Serial serial)
             : base(serial)
         {
         }
@@ -290,22 +290,22 @@ namespace Server.Items
         }
     }
 
-    public class MaleGargishClothChest : BaseClothing
+    public class MaleClothChest : BaseClothing
     {
         [Constructable]
-        public MaleGargishClothChest()
+        public MaleClothChest()
             : this(0)
         {
         }
 
         [Constructable]
-        public MaleGargishClothChest(int hue)
+        public MaleClothChest(int hue)
             : base(0x0406, Layer.InnerTorso, hue)
         {
             Weight = 2.0;
         }
 
-        public MaleGargishClothChest(Serial serial)
+        public MaleClothChest(Serial serial)
             : base(serial)
         {
         }

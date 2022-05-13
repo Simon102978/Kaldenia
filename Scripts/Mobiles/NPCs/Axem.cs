@@ -78,9 +78,9 @@ namespace Server.Engines.Quests
         }
     }
 
-    public class YeOldeGargishQuest : BaseQuest
+    public class YeOldeQuest : BaseQuest
     {
-        public YeOldeGargishQuest()
+        public YeOldeQuest()
         {
             AddObjective(new ObtainObjective(typeof(UntranslatedAncientTome), "Untranslated Ancient Tome", 1, 0xFF2, 0, 2405));
 
@@ -88,7 +88,7 @@ namespace Server.Engines.Quests
             AddReward(new BaseReward("Loyalty Rating"));
         }
 
-        /* Ye Olde Gargish */
+        /* Ye Olde  */
 
         public override object Title => 1112797;
 
@@ -134,7 +134,7 @@ namespace Server.Engines.Quests
                 {
                     typeof (ABrokenVaseQuest),
                     typeof (PuttingThePiecesTogetherQuest),
-                    typeof (YeOldeGargishQuest)
+                    typeof (YeOldeQuest)
                 };
 
         public override void InitBody()
@@ -152,9 +152,9 @@ namespace Server.Engines.Quests
         {
             AddItem(new Backpack());
 
-            AddItem(new GargishClothChest(Utility.RandomNeutralHue()));
-            AddItem(new GargishClothKilt(Utility.RandomNeutralHue()));
-            AddItem(new GargishClothLegs(Utility.RandomNeutralHue()));
+            AddItem(new ClothChest(Utility.RandomNeutralHue()));
+            AddItem(new ClothKilt(Utility.RandomNeutralHue()));
+            AddItem(new ClothLegs(Utility.RandomNeutralHue()));
         }
 
         public override void Serialize(GenericWriter writer)

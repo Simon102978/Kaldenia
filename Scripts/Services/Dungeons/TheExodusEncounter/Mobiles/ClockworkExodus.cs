@@ -26,10 +26,10 @@ namespace Server.Mobiles
             typeof(Asclepius),
             typeof(ClockworkLeggings),
             typeof(DupresSword),
-            typeof(GargishDupresSword),
-            typeof(GargishClockworkLeggings),
-            typeof(GargishBracersofAlchemicalDevastation),
-            typeof(GargishAsclepius)
+            typeof(DupresSword),
+            typeof(ClockworkLeggings),
+            typeof(BracersofAlchemicalDevastation),
+            typeof(Asclepius)
         };
 
         private Point3D m_LastTarget;

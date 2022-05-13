@@ -1,18 +1,18 @@
 namespace Server.Items
 {
-    public class GargishClothWingArmorBearingTheCrestOfBlackthorn : GargishClothWingArmor
+    public class ClothWingArmorBearingTheCrestOfBlackthorn : ClothWingArmor
     {
         public override bool IsArtifact => true;
 
         [Constructable]
-        public GargishClothWingArmorBearingTheCrestOfBlackthorn()
+        public ClothWingArmorBearingTheCrestOfBlackthorn()
         {
             ReforgedSuffix = ReforgedSuffix.Blackthorn;
             Hue = 1766;
             Attributes.DefendChance = 5;
         }
 
-        public GargishClothWingArmorBearingTheCrestOfBlackthorn(Serial serial)
+        public ClothWingArmorBearingTheCrestOfBlackthorn(Serial serial)
             : base(serial)
         {
         }

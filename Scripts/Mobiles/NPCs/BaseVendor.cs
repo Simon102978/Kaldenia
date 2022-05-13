@@ -787,13 +787,13 @@ namespace Server.Mobiles
                 switch (Utility.Random(2))
                 {
                     case 0:
-                        SetWearable(new FemaleGargishClothLegs(GetRandomHue()));
-                        SetWearable(new FemaleGargishClothKilt(GetRandomHue()));
-                        SetWearable(new FemaleGargishClothChest(GetRandomHue()));
+                        SetWearable(new FemaleClothLegs(GetRandomHue()));
+                        SetWearable(new FemaleClothKilt(GetRandomHue()));
+                        SetWearable(new FemaleClothChest(GetRandomHue()));
                         break;
                     case 1:
-                        SetWearable(new FemaleGargishClothKilt(GetRandomHue()));
-                        SetWearable(new FemaleGargishClothChest(GetRandomHue()));
+                        SetWearable(new FemaleClothKilt(GetRandomHue()));
+                        SetWearable(new FemaleClothChest(GetRandomHue()));
                         break;
                 }
             }
@@ -802,13 +802,13 @@ namespace Server.Mobiles
                 switch (Utility.Random(2))
                 {
                     case 0:
-                        SetWearable(new MaleGargishClothLegs(GetRandomHue()));
-                        SetWearable(new MaleGargishClothKilt(GetRandomHue()));
-                        SetWearable(new MaleGargishClothChest(GetRandomHue()));
+                        SetWearable(new MaleClothLegs(GetRandomHue()));
+                        SetWearable(new MaleClothKilt(GetRandomHue()));
+                        SetWearable(new MaleClothChest(GetRandomHue()));
                         break;
                     case 1:
-                        SetWearable(new MaleGargishClothKilt(GetRandomHue()));
-                        SetWearable(new MaleGargishClothChest(GetRandomHue()));
+                        SetWearable(new MaleClothKilt(GetRandomHue()));
+                        SetWearable(new MaleClothChest(GetRandomHue()));
                         break;
                 }
             }

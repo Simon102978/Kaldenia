@@ -263,7 +263,7 @@ namespace Server.Items
         }
     }
 
-    public class FishermansChestguard : GargishPlateChest, ISetItem, IFishingAttire
+    public class FishermansChestguard : PlateChest, ISetItem, IFishingAttire
     {
         public override int LabelNumber => 1151574;  //Fisherman's Chestguard
 
@@ -328,71 +328,9 @@ namespace Server.Items
         }
     }
 
-    public class FishermansKilt : GargishClothKiltArmor, ISetItem, IFishingAttire
-    {
-        public override int LabelNumber => 1151575;  // Fisherman's Kilt
+  
 
-        #region ISetItem Members
-        public override SetItem SetID => SetItem.Fisherman;
-        public override int Pieces => 4;
-        #endregion
-
-        #region IFishingAttire Members
-        public int BaitBonus { get { return 10; } set { } }
-        public int SetBonus { get { return 50; } set { } }
-        #endregion
-
-        public override int InitMinHits => 125;
-        public override int InitMaxHits => 125;
-
-        public override int BasePhysicalResistance => PhysicalBonus == 0 ? 7 : base.BasePhysicalResistance;
-        public override int BaseFireResistance => FireBonus == 0 ? 21 : base.BaseFireResistance;
-        public override int BaseColdResistance => ColdBonus == 0 ? 8 : base.BaseColdResistance;
-        public override int BasePoisonResistance => PoisonBonus == 0 ? 8 : base.BasePoisonResistance;
-        public override int BaseEnergyResistance => EnergyBonus == 0 ? 8 : base.BaseEnergyResistance;
-
-        public override int[] BaseResists
-        {
-            get
-            {
-                int[] list = new int[5];
-
-                list[0] = base.BasePhysicalResistance;
-                list[1] = base.BaseFireResistance;
-                list[2] = base.BaseColdResistance;
-                list[3] = base.BasePoisonResistance;
-                list[4] = base.BaseEnergyResistance;
-
-                return list;
-            }
-        }
-
-        [Constructable]
-        public FishermansKilt()
-        {
-            Hue = 2578;
-            SetHue = 2578;
-        }
-
-        public FishermansKilt(Serial serial)
-            : base(serial)
-        {
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write(0);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
-    }
-
-    public class FishermansArms : GargishLeatherArms, ISetItem, IFishingAttire
+    public class FishermansArms : LeatherArms, ISetItem, IFishingAttire
     {
         public override int LabelNumber => 1151576;  // Fisherman's Arms
 
@@ -456,7 +394,7 @@ namespace Server.Items
         }
     }
 
-    public class FishermansEarrings : GargishEarrings, ISetItem, IFishingAttire
+    public class FishermansEarrings : Earrings, ISetItem, IFishingAttire
     {
         public override int LabelNumber => 1151577;  // Fisherman's Earrings
 

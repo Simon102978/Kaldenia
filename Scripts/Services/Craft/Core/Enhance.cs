@@ -30,7 +30,7 @@ namespace Server.Engines.Craft
             _SpecialTable = new Dictionary<Type, CraftSystem>();
 
             _SpecialTable[typeof(ClockworkLeggings)] = DefBlacksmithy.CraftSystem;
-            _SpecialTable[typeof(GargishClockworkLeggings)] = DefBlacksmithy.CraftSystem;
+            _SpecialTable[typeof(ClockworkLeggings)] = DefBlacksmithy.CraftSystem;
             _SpecialTable[typeof(JukaBow)] = DefBowFletching.CraftSystem;
         }
 
@@ -55,7 +55,7 @@ namespace Server.Engines.Craft
             if (item == null)
                 return EnhanceResult.BadItem;
 
-            if (item is GargishNecklace || item is GargishEarrings)
+            if (item is Necklace || item is Earrings)
                 return EnhanceResult.BadItem;
 
             if (!item.IsChildOf(from.Backpack))

@@ -122,7 +122,7 @@ namespace Server.Mobiles
             else if (Map == Map.Tokuno)
                 gal = new TokunoGalleon(Direction.North);
             else
-                gal = new GargishGalleon(Direction.North);
+                gal = new Galleon(Direction.North);
 
             Point3D p = Location;
             Map map = Map;

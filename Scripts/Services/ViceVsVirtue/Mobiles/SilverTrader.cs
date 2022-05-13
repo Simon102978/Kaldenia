@@ -125,10 +125,10 @@ namespace Server.Engines.VvV
 
         private readonly Type[][] _Table =
         {
-            new Type[] { typeof(CrimsonCincture), typeof(GargishCrimsonCincture) },
-            new Type[] { typeof(MaceAndShieldGlasses), typeof(GargishMaceAndShieldGlasses) },
-            new Type[] { typeof(WizardsCrystalGlasses), typeof(GargishWizardsCrystalGlasses) },
-            new Type[] { typeof(FoldedSteelGlasses), typeof(GargishFoldedSteelGlasses) },
+            new Type[] { typeof(CrimsonCincture), typeof(CrimsonCincture) },
+            new Type[] { typeof(MaceAndShieldGlasses), typeof(MaceAndShieldGlasses) },
+            new Type[] { typeof(WizardsCrystalGlasses), typeof(WizardsCrystalGlasses) },
+            new Type[] { typeof(FoldedSteelGlasses), typeof(FoldedSteelGlasses) },
         };
 
         public override bool OnDragDrop(Mobile from, Item dropped)

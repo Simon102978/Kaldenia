@@ -35,7 +35,7 @@ namespace Server.Mobiles
                 if (m.Region is SeaMarketRegion || m.Region is TokunoDocksRegion)
                 {
                     Add(new GenericBuyInfo("1116740", typeof(TokunoGalleonDeed), 150002, 20, 0x14F2, 0));
-                    Add(new GenericBuyInfo("1116739", typeof(GargishGalleonDeed), 200002, 20, 0x14F2, 0));
+                    Add(new GenericBuyInfo("1116739", typeof(GalleonDeed), 200002, 20, 0x14F2, 0));
                     Add(new GenericBuyInfo("1116491", typeof(RowBoatDeed), 6252, 20, 0x14F2, 0));
                 }
 

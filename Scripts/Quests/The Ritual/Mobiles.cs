@@ -39,7 +39,7 @@ namespace Server.Engines.Quests.RitualQuest
 
         public override void InitOutfit()
         {
-            SetWearable(new GargishFancyRobe(), 1345);
+            SetWearable(new FancyRobe(), 1345);
         }
 
         public Prugyilonus(Serial serial) : base(serial)

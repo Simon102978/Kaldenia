@@ -1,10 +1,10 @@
 namespace Server.Items
 {
-    public class GargishSignOfChaos : GargishChaosShield
+    public class SignOfChaos : ChaosShield
     {
         public override bool IsArtifact => true;
         [Constructable]
-        public GargishSignOfChaos()
+        public SignOfChaos()
             : base()
         {
             Hue = 2075;
@@ -14,7 +14,7 @@ namespace Server.Items
             Attributes.CastSpeed = 1;
         }
 
-        public GargishSignOfChaos(Serial serial)
+        public SignOfChaos(Serial serial)
             : base(serial)
         {
         }

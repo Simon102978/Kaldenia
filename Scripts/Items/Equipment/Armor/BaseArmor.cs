@@ -836,6 +836,22 @@ namespace Server.Items
             set
             {
                 UnscaleDurability();
+
+
+
+				if (m_Quality != ItemQuality.Exceptional && value == ItemQuality.Exceptional)
+				{
+					DistributeExceptionalBonuses(false);
+				}
+				else if (m_Quality == ItemQuality.Exceptional && value != ItemQuality.Exceptional)
+				{
+					DistributeExceptionalBonuses(true);
+				}
+
+
+
+
+
                 m_Quality = value;
                 Invalidate();
                 InvalidateProperties();
@@ -1063,7 +1079,7 @@ namespace Server.Items
         {
             int bonus = 0;
 
-            if (m_Quality == ItemQuality.Exceptional && !(this is GargishLeatherWingArmor))
+            if (m_Quality == ItemQuality.Exceptional)
                 bonus += 20;
 
             bonus += m_AosArmorAttributes.DurabilityBonus;
@@ -2500,7 +2516,7 @@ namespace Server.Items
 
             if (Quality == ItemQuality.Exceptional && !craftItem.ForceNonExceptional)
             {
-                DistributeExceptionalBonuses(from, tool is BaseRunicTool); // Not sure since when, but right now 15 points are added, not 14.
+                DistributeExceptionalBonuses(false); // Not sure since when, but right now 15 points are added, not 14.
             }
 
             if (tool is BaseRunicTool && !craftItem.ForceNonExceptional)
@@ -2524,62 +2540,208 @@ namespace Server.Items
             return quality;
         }
 
-        public virtual void DistributeExceptionalBonuses(Mobile from, bool runic)
+        public virtual void DistributeExceptionalBonuses(bool negatif)
         {
-            var anvilEntry = CraftContext.GetAnvilEntry(from, false);
 
-            if (anvilEntry != null && anvilEntry.Ready)
-            {
-                var table = runic ? anvilEntry.Runic : anvilEntry.Exceptional;
+			int Mod = 0;
 
-                foreach (var kvp in table)
-                {
-                    switch (kvp.Key)
-                    {
-                        case ResistanceType.Physical: m_PhysicalBonus += kvp.Value; break;
-                        case ResistanceType.Fire: m_FireBonus += kvp.Value; break;
-                        case ResistanceType.Cold: m_ColdBonus += kvp.Value; break;
-                        case ResistanceType.Poison: m_PoisonBonus += kvp.Value; break;
-                        case ResistanceType.Energy: m_EnergyBonus += kvp.Value; break;
-                    }
-                }
+			switch (Resource)
+			{
+				case CraftResource.None:
+					break;
+				case CraftResource.Iron:
+					Mod += 1;
+					break;
+				case CraftResource.DullCopper:
+					Mod += 1;
+					break;
+				case CraftResource.ShadowIron:
+					Mod += 1;
+					break;
+				case CraftResource.Copper:
+					Mod += 2;
+					break;
+				case CraftResource.Bronze:
+					Mod += 2;
+					break;
+				case CraftResource.Gold:
+					Mod += 2;
+					break;
+				case CraftResource.Agapite:
+					Mod += 2;
+					break;
+				case CraftResource.Verite:
+					Mod += 2;
+					break;
+				case CraftResource.Valorite:
+					Mod += 3;
+					break;
+				case CraftResource.RegularLeather:
+					Mod += 1;
+					break;
+				case CraftResource.LupusLeather:
+					Mod += 1;
+					break;
+				case CraftResource.ReptilienLeather:
+					Mod += 1;
+					break;
+				case CraftResource.GeantLeather:
+					Mod += 2;
+					break;
+				case CraftResource.OphidienLeather:
+					Mod += 2;
+					break;
+				case CraftResource.ArachnideLeather:
+					Mod += 2;
+					break;
+				case CraftResource.DragoniqueLeather:
+					Mod += 2;
+					break;
+				case CraftResource.DemoniaqueLeather:
+					Mod += 2;
+					break;
+				case CraftResource.AncienLeather:
+					Mod += 3;
+					break;
+				case CraftResource.RedScales:
+					break;
+				case CraftResource.YellowScales:
+					break;
+				case CraftResource.BlackScales:
+					break;
+				case CraftResource.GreenScales:
+					break;
+				case CraftResource.WhiteScales:
+					break;
+				case CraftResource.BlueScales:
+					break;
+				case CraftResource.RegularWood:
+					break;
+				case CraftResource.OakWood:
+					break;
+				case CraftResource.AshWood:
+					break;
+				case CraftResource.YewWood:
+					break;
+				case CraftResource.Heartwood:
+					break;
+				case CraftResource.Bloodwood:
+					break;
+				case CraftResource.Frostwood:
+					break;
+				case CraftResource.RegularBone:
+					Mod += 1;
+					break;
+				case CraftResource.LupusBone:
+					Mod += 1;
+					break;
+				case CraftResource.ReptilienBone:
+					Mod += 1;
+					break;
+				case CraftResource.GeantBone:
+					Mod += 2;
+					break;
+				case CraftResource.OphidienBone:
+					Mod += 2;
+					break;
+				case CraftResource.ArachnideBone:
+					Mod += 2;
+					break;
+				case CraftResource.DragoniqueBone:
+					Mod += 2;
+					break;
+				case CraftResource.DemoniaqueBone:
+					Mod += 2;
+					break;
+				case CraftResource.AncienBone:
+					Mod += 3;
+					break;
+				default:
+					break;
+			}
 
-                anvilEntry.Clear(from);
-            }
-            else
-            {
-                int amount = GetResistBonus(from, runic);
 
-                // Exceptional Bonus
-                for (int i = 0; i < amount; ++i)
-                {
-                    switch (Utility.Random(5))
-                    {
-                        case 0: ++m_PhysicalBonus; break;
-                        case 1: ++m_FireBonus; break;
-                        case 2: ++m_ColdBonus; break;
-                        case 3: ++m_PoisonBonus; break;
-                        case 4: ++m_EnergyBonus; break;
-                    }
-                }
 
-                from.CheckSkill(SkillName.ArmsLore, 0, 100);
-            }
+			if (negatif)
+			{
+				m_PhysicalBonus -= Mod;
+			}
+			else
+			{
+				m_PhysicalBonus += Mod;
+			}
 
-            // Imbuing needs to keep track of what is natrual, what is imbued bonuses
-            m_PhysNonImbuing = m_PhysicalBonus;
-            m_FireNonImbuing = m_FireBonus;
-            m_ColdNonImbuing = m_ColdBonus;
-            m_PoisonNonImbuing = m_PoisonBonus;
-            m_EnergyNonImbuing = m_EnergyBonus;
 
-            // Gives MageArmor property for certain armor types
-            if (m_AosArmorAttributes.MageArmor <= 0 && IsMageArmorType(this))
-            {
-                m_AosArmorAttributes.MageArmor = 1;
-            }
 
-            InvalidateProperties();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			/*          var anvilEntry = CraftContext.GetAnvilEntry(from, false);
+
+					  if (anvilEntry != null && anvilEntry.Ready)
+					  {
+						  var table = runic ? anvilEntry.Runic : anvilEntry.Exceptional;
+
+						  foreach (var kvp in table)
+						  {
+							  switch (kvp.Key)
+							  {
+								  case ResistanceType.Physical: m_PhysicalBonus += kvp.Value; break;
+								  case ResistanceType.Fire: m_FireBonus += kvp.Value; break;
+								  case ResistanceType.Cold: m_ColdBonus += kvp.Value; break;
+								  case ResistanceType.Poison: m_PoisonBonus += kvp.Value; break;
+								  case ResistanceType.Energy: m_EnergyBonus += kvp.Value; break;
+							  }
+						  }
+
+						  anvilEntry.Clear(from);
+					  }
+					  else
+					  {
+						  int amount = GetResistBonus(from, runic);
+
+						  // Exceptional Bonus
+						  for (int i = 0; i < amount; ++i)
+						  {
+							  switch (Utility.Random(5))
+							  {
+								  case 0: ++m_PhysicalBonus; break;
+								  case 1: ++m_FireBonus; break;
+								  case 2: ++m_ColdBonus; break;
+								  case 3: ++m_PoisonBonus; break;
+								  case 4: ++m_EnergyBonus; break;
+							  }
+						  }
+
+						  from.CheckSkill(SkillName.ArmsLore, 0, 100);
+					  }
+
+					  // Imbuing needs to keep track of what is natrual, what is imbued bonuses
+					  m_PhysNonImbuing = m_PhysicalBonus;
+					  m_FireNonImbuing = m_FireBonus;
+					  m_ColdNonImbuing = m_ColdBonus;
+					  m_PoisonNonImbuing = m_PoisonBonus;
+					  m_EnergyNonImbuing = m_EnergyBonus;
+
+					  // Gives MageArmor property for certain armor types
+					  if (m_AosArmorAttributes.MageArmor <= 0 && IsMageArmorType(this))
+					  {
+						  m_AosArmorAttributes.MageArmor = 1;
+					  }*/
+
+			InvalidateProperties();
         }
 
         private int GetResistBonus(Mobile from, bool runic)

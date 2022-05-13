@@ -1307,16 +1307,16 @@ namespace Server.Items
 
     [Furniture]
     [Flipable(0x4026, 0x4025)]
-    public class GargishChest : LockableContainer
+    public class Chest : LockableContainer
     {
         [Constructable]
-        public GargishChest()
+        public Chest()
             : base(0x4026)
         {
             Weight = 1.0;
         }
 
-        public GargishChest(Serial serial)
+        public Chest(Serial serial)
             : base(serial)
         {
         }

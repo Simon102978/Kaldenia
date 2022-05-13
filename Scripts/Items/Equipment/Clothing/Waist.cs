@@ -192,22 +192,22 @@ namespace Server.Items
     }
 
     [Flipable(0x50D8, 0x50D9)]
-    public class GargishApron : BaseWaist
+    public class Apron : BaseWaist
     {
         [Constructable]
-        public GargishApron()
+        public Apron()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishApron(int hue)
+        public Apron(int hue)
             : base(0x50D8, hue)
         {
             Weight = 2.0;
         }
 
-        public GargishApron(Serial serial)
+        public Apron(Serial serial)
             : base(serial)
         {
         }

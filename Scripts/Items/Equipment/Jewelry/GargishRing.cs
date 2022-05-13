@@ -1,15 +1,15 @@
 namespace Server.Items
 {
-    public class GargishRing : BaseRing
+    public class Ring : BaseRing
     {
         [Constructable]
-        public GargishRing()
+        public Ring()
             : base(0x4212)
         {
             //Weight = 0.1;
         }
 
-        public GargishRing(Serial serial)
+        public Ring(Serial serial)
             : base(serial)
         {
         }

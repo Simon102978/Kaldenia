@@ -3,24 +3,24 @@ using Server.Engines.Craft;
 namespace Server.Items
 {
     [Flipable(0x4644, 0x4645)]
-    public class GargishGlasses : BaseArmor, IRepairable
+    public class Glasses : BaseArmor, IRepairable
     {
         public CraftSystem RepairSystem => DefTinkering.CraftSystem;
 
         [Constructable]
-        public GargishGlasses()
+        public Glasses()
             : base(0x4644)
         {
             Layer = Layer.Earrings;
             Weight = 2;
         }
 
-        public GargishGlasses(Serial serial)
+        public Glasses(Serial serial)
             : base(serial)
         {
         }
 
-        public override int LabelNumber => 1096713;// Gargish Glasses
+        public override int LabelNumber => 1096713;//  Glasses
         public override int BasePhysicalResistance => 2;
         public override int BaseFireResistance => 4;
         public override int BaseColdResistance => 4;

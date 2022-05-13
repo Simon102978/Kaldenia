@@ -8,7 +8,7 @@ namespace Server.Items
         public override int LabelNumber => 1159229;  // mage's hood of scholarly insight
         public override bool IsArtifact => true;
 
-        public override int BasePhysicalResistance => 15;
+        public override int BasePhysicalResistance => 0;
         public override int BaseFireResistance => 15;
         public override int BaseColdResistance => 15;
         public override int BasePoisonResistance => 15;

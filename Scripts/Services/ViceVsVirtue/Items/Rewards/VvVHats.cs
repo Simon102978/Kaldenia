@@ -43,7 +43,7 @@ namespace Server.Engines.VvV
         }
     }
 
-    public class VvVGargishEarrings : GargishEarrings
+    public class VvVEarrings : Earrings
     {
         public override int BasePhysicalResistance => 6;
         public override int BaseFireResistance => 6;
@@ -54,7 +54,7 @@ namespace Server.Engines.VvV
         public override int InitMinHits => 255;
         public override int InitMaxHits => 255;
 
-        public VvVGargishEarrings()
+        public VvVEarrings()
         {
             Attributes.BonusHits = 5;
             Attributes.RegenMana = 3;
@@ -63,7 +63,7 @@ namespace Server.Engines.VvV
             Attributes.LowerRegCost = 20;
         }
 
-        public VvVGargishEarrings(Serial serial)
+        public VvVEarrings(Serial serial)
             : base(serial)
         {
         }

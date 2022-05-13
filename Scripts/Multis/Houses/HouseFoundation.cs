@@ -27,8 +27,8 @@ namespace Server.Multis
         SimpleMarble,
         PlainMarble,
         OrnateMarble,
-        GargishGreenMarble,
-        GargishTwoToneStone,
+        GreenMarble,
+        TwoToneStone,
         Gothic,
         Brick1,
         Brick2
@@ -436,13 +436,13 @@ namespace Server.Multis
                     south = 0x2BBA;
                     post = 0x2BB0;
                     break;
-                case FoundationType.GargishGreenMarble:
+                case FoundationType.GreenMarble:
                     corner = 0x41A6;
                     east = 0x41A8;
                     south = 0x41A7;
                     post = 0x419E;
                     break;
-                case FoundationType.GargishTwoToneStone:
+                case FoundationType.TwoToneStone:
                     corner = 0x415C;
                     east = 0x4166;
                     south = 0x4167;

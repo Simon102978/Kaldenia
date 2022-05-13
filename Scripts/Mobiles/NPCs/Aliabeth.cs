@@ -25,7 +25,7 @@ namespace Server.Engines.Quests
         //surprise when they arrive.<br><br>My sister absolutely adores white chocolate, but 
         //gargoyles don’t seem to care for it much, so I haven’t been able to find any here.
         //It was recently my mother’s birthday, and I know that she would love some finely 
-        //crafted gargish jewelry, but the jeweler hasn’t had her favorite jewel in stock for 
+        //crafted  jewelry, but the jeweler hasn’t had her favorite jewel in stock for 
         //quite some time. If you could help me obtain five pieces of white chocolate and one
         //dark sapphire, I will reward you with a bag of hard to obtain imbuing ingredients.
         public override object Description => 1113778;

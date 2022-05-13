@@ -83,7 +83,7 @@ namespace Server.Mobiles
 
             private static readonly Type[] m_ShipTypes = new Type[]
             {
-                typeof(TokunoGalleon),  typeof(GargishGalleon),
+                typeof(TokunoGalleon),  typeof(Galleon),
                 typeof(OrcishGalleon),  typeof(BritannianShip)
             };
 

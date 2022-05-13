@@ -466,7 +466,7 @@ namespace Server.Misc
             bag.DropItem(new DemonHuntersStandard());
             bag.DropItem(new WallOfHungryMouths());
             bag.DropItem(new HumanSignOfChaos());
-            bag.DropItem(new GargishSignOfChaos());
+            bag.DropItem(new SignOfChaos());
             bag.DropItem(new IronwoodCompositeBow());
             bag.DropItem(new ClawsOfTheBerserker());
             bag.DropItem(new StandardOfChaos());

@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class DragonJadeEarrings : GargishEarrings
+    public class DragonJadeEarrings : Earrings
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1113720;  // Dragon Jade Earrings

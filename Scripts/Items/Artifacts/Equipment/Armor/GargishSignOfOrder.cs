@@ -1,10 +1,10 @@
 namespace Server.Items
 {
-    public class GargishSignOfOrder : GargishOrderShield
+    public class SignOfOrder : OrderShield
     {
         public override bool IsArtifact => true;
         [Constructable]
-        public GargishSignOfOrder()
+        public SignOfOrder()
             : base()
         {
             SkillBonuses.SetValues(0, SkillName.Chivalry, 10.0);
@@ -14,7 +14,7 @@ namespace Server.Items
             Attributes.CastRecovery = 1;
         }
 
-        public GargishSignOfOrder(Serial serial)
+        public SignOfOrder(Serial serial)
             : base(serial)
         {
         }

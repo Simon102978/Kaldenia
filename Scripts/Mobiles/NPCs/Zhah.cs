@@ -30,12 +30,10 @@ namespace Server.Mobiles
         public override void InitOutfit()
         {
             ColorItem(new LeatherTalons()); // Bright Blue
-            ColorItem(new GargishLeatherChest()); // Bright Blue
-            ColorItem(new GargishLeatherLegs()); // Bright Blue
-            ColorItem(new GargishClothWingArmor()); // Bright Blue
-            ColorItem(new GargishLeatherArms()); // Bright Blue
-            ColorItem(new GargishLeatherKilt()); // Bright Blue
-
+            ColorItem(new LeatherChest()); // Bright Blue
+            ColorItem(new LeatherLegs()); // Bright Blue
+            ColorItem(new ClothWingArmor()); // Bright Blue
+            ColorItem(new LeatherArms()); // Bright Blue
             AddItem(new SerpentStoneStaff());
         }
 

@@ -14,7 +14,7 @@ namespace Server.Items
         public enum SmugglersLiquorType
         {
             AppleIsleWhiskey,
-            ArabellasGargishStout,
+            ArabellasStout,
             DiablosBlazePort,
             EldadorElvenWine,
             EquinoxWine,
@@ -54,7 +54,7 @@ namespace Server.Items
             {
                 default:
                 case SmugglersLiquorType.AppleIsleWhiskey: return BeverageType.Liquor;
-                case SmugglersLiquorType.ArabellasGargishStout: return BeverageType.Ale;
+                case SmugglersLiquorType.ArabellasStout: return BeverageType.Ale;
                 case SmugglersLiquorType.DiablosBlazePort: return BeverageType.Ale;
                 case SmugglersLiquorType.EldadorElvenWine: return BeverageType.Wine;
                 case SmugglersLiquorType.EquinoxWine: return BeverageType.Wine;
@@ -89,7 +89,7 @@ namespace Server.Items
                     Hue = 692; //Confirmed
                     m_Label = 1150020;
                     break;
-                case SmugglersLiquorType.ArabellasGargishStout:
+                case SmugglersLiquorType.ArabellasStout:
                     id = 2459;
                     Hue = 507;  //Confirmed
                     m_Label = 1150033;

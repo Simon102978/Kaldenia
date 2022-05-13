@@ -54,10 +54,7 @@ namespace Server.Mobiles
 
             wep.Attributes.SpellChanneling = 1;
             AddImmovableItem(wep);
-            AddImmovableItem(new GargishClothChest(Utility.RandomNeutralHue()));
-            AddImmovableItem(new GargishClothArms(Utility.RandomNeutralHue()));
-            AddImmovableItem(new GargishClothLegs(Utility.RandomNeutralHue()));
-            AddImmovableItem(new GargishClothKilt(Utility.RandomNeutralHue()));
+
 
             if (Utility.RandomBool())
                 AddImmovableItem(new GargishRobe());

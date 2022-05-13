@@ -150,8 +150,6 @@ namespace Server.Engines.Points
             Entries[typeof(VitaviRenowned)] = new Tuple<double, double>(50, 5);
             Entries[typeof(WyvernRenowned)] = new Tuple<double, double>(50, 5);
             Entries[typeof(MinionOfScelestus)] = new Tuple<double, double>(35, 3.5);
-            Entries[typeof(GargishRouser)] = new Tuple<double, double>(50, 5.0);
-            Entries[typeof(GargishOutcast)] = new Tuple<double, double>(25, 2.5);
             Entries[typeof(VoidManifestation)] = new Tuple<double, double>(50, 5);
             Entries[typeof(Navrey)] = new Tuple<double, double>(75, 7.5);
             Entries[typeof(Niporailem)] = new Tuple<double, double>(75, 7.5);
@@ -166,7 +164,7 @@ namespace Server.Engines.Points
             Entries[typeof(PuttingThePiecesTogetherQuest)] = new Tuple<double, double>(15, 1.5);
             Entries[typeof(ALittleSomething)] = new Tuple<double, double>(25, 2.5);
             Entries[typeof(TheExchangeQuest)] = new Tuple<double, double>(35, 3.5);
-            Entries[typeof(YeOldeGargishQuest)] = new Tuple<double, double>(50, 5.0);
+            Entries[typeof(YeOldeQuest)] = new Tuple<double, double>(50, 5.0);
             Entries[typeof(AWorthyPropositionQuest)] = new Tuple<double, double>(50, 5.0);
             Entries[typeof(UnusualGoods)] = new Tuple<double, double>(75, 7.5);
         }

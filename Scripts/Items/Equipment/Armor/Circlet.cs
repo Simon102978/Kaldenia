@@ -23,7 +23,7 @@ namespace Server.Items
         public override int InitMinHits => 50;
         public override int InitMaxHits => 65;
         public override int StrReq => 10;
-        public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
+        public override ArmorMaterialType MaterialType => ArmorMaterialType.Leather;
         public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.All;
 
 		public override void Serialize(GenericWriter writer)

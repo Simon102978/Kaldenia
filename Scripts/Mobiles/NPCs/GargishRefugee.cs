@@ -2,10 +2,10 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-    public class GargishRefugee : BaseCreature
+    public class Refugee : BaseCreature
     {
         [Constructable]
-        public GargishRefugee()
+        public Refugee()
             : base(AIType.AI_Melee, FightMode.None, 10, 1, 0.2, 0.4)
         {
             Name = "Refugee";
@@ -14,21 +14,21 @@ namespace Server.Mobiles
                 Body = 667;
                 HairItemID = 17067;
                 HairHue = 1762;
-                AddItem(new GargishClothChest());
-                AddItem(new GargishClothKilt(Utility.RandomNeutralHue()));
+                AddItem(new ClothChest());
+                AddItem(new ClothKilt(Utility.RandomNeutralHue()));
             }
             else
             {
                 Body = 666;
                 HairItemID = 16987;
                 HairHue = 1801;
-                AddItem(new GargishClothChest());
-                AddItem(new GargishClothKilt());
-                AddItem(new GargishClothLegs(Utility.RandomNeutralHue()));
+                AddItem(new ClothChest());
+                AddItem(new ClothKilt());
+                AddItem(new ClothLegs(Utility.RandomNeutralHue()));
             }
         }
 
-        public GargishRefugee(Serial serial)
+        public Refugee(Serial serial)
             : base(serial)
         {
         }

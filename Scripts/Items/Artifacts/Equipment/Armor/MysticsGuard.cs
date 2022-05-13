@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class MysticsGuard : GargishWoodenShield
+    public class MysticsGuard : WoodenShield
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1113536;

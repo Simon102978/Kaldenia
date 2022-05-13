@@ -34,7 +34,7 @@ namespace Server.Items
         }
     }
 
-    [Alterable(typeof(DefTailoring), typeof(GargishSash))]
+    [Alterable(typeof(DefTailoring), typeof(Sash))]
     [Flipable(0x1541, 0x1542)]
     public class BodySash : BaseMiddleTorso
     {
@@ -360,22 +360,22 @@ namespace Server.Items
     }
 
     [Flipable(0x46B4, 0x46B5)]
-    public class GargishSash : BaseClothing
+    public class Sash : BaseClothing
     {
         [Constructable]
-        public GargishSash()
+        public Sash()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishSash(int hue)
+        public Sash(int hue)
             : base(0x46B4, Layer.MiddleTorso, hue)
         {
             Weight = 1.0;
         }
 
-        public GargishSash(Serial serial)
+        public Sash(Serial serial)
             : base(serial)
         {
         }

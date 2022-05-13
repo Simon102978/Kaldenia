@@ -26,10 +26,10 @@ namespace Server.Engines.Quests
 
         private readonly Type[][] _Table =
         {
-            new Type[] { typeof(BritchesOfWarding), typeof(GargishBritchesOfWarding) },
-            new Type[] { typeof(GlovesOfFeudalGrip), typeof(GargishKiltOfFeudalVise) },
-            new Type[] { typeof(CuffsOfTheArchmage), typeof(GargishCuffsOfTheArchmage) },
-            new Type[] { typeof(BritchesOfWarding), typeof(GargishBritchesOfWarding) },
+            new Type[] { typeof(BritchesOfWarding), typeof(BritchesOfWarding) },
+            new Type[] { typeof(GlovesOfFeudalGrip), typeof(KiltOfFeudalVise) },
+            new Type[] { typeof(CuffsOfTheArchmage), typeof(CuffsOfTheArchmage) },
+            new Type[] { typeof(BritchesOfWarding), typeof(BritchesOfWarding) },
             new Type[] { typeof(BowOfTheInfiniteSwarm), typeof(GlaiveOfTheInfiniteSwarm) }
         };
 
@@ -97,9 +97,9 @@ namespace Server.Engines.Quests
         public override void InitOutfit()
         {
             AddItem(new SerpentStoneStaff());
-            AddItem(new GargishClothChest(902));
-            AddItem(new GargishClothArms(902));
-            AddItem(new GargishClothKilt(902));
+            AddItem(new ClothChest(902));
+            AddItem(new ClothArms(902));
+            AddItem(new ClothKilt(902));
         }
 
         public override void Serialize(GenericWriter writer)

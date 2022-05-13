@@ -1,11 +1,11 @@
 namespace Server.Items
 {
-    public class GargishFancyBearingTheCrestOfBlackthorn2 : GargishFancyRobe
+    public class FancyBearingTheCrestOfBlackthorn2 : FancyRobe
     {
         public override bool IsArtifact => true;
 
         [Constructable]
-        public GargishFancyBearingTheCrestOfBlackthorn2()
+        public FancyBearingTheCrestOfBlackthorn2()
             : base()
         {
             ReforgedSuffix = ReforgedSuffix.Blackthorn;
@@ -14,7 +14,7 @@ namespace Server.Items
             Hue = 1306;
         }
 
-        public GargishFancyBearingTheCrestOfBlackthorn2(Serial serial)
+        public FancyBearingTheCrestOfBlackthorn2(Serial serial)
             : base(serial)
         {
         }

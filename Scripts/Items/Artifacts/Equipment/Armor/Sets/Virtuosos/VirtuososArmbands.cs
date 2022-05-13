@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class VirtuososArmbands : GargishPlateArms
+    public class VirtuososArmbands : PlateArms
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1151558;  // Virtuoso's Armbands

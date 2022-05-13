@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefTinkering), typeof(GargishGlasses), true)]
+    [Alterable(typeof(DefTinkering), typeof(Glasses), true)]
     public class ElvenGlasses : BaseArmor, IRepairable, ICanBeElfOrHuman
     {
         public override int LabelNumber => 1032216;  // elven glasses

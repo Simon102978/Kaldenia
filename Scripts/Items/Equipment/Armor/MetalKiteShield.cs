@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefBlacksmithy), typeof(GargishKiteShield))]
+
     public class MetalKiteShield : BaseShield, IDyable
     {
         [Constructable]
@@ -17,7 +17,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 0;
+        public override int BasePhysicalResistance => 4;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 0;
         public override int BasePoisonResistance => 0;

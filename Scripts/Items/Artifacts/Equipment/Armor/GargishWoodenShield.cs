@@ -1,17 +1,17 @@
 namespace Server.Items
 {
     [Flipable(0x4200, 0x4207)]
-    public class GargishWoodenShield : BaseShield
+    public class WoodenShield : BaseShield
     {
         public override bool IsArtifact => true;
         [Constructable]
-        public GargishWoodenShield()
+        public WoodenShield()
             : base(0x4200)
         {
             Weight = 5.0;
         }
 
-        public GargishWoodenShield(Serial serial)
+        public WoodenShield(Serial serial)
             : base(serial)
         {
         }

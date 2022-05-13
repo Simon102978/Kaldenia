@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefBlacksmithy), typeof(GargishPlateArms))]
+
     [Flipable(0x1410, 0x1417)]
     public class PlateArms : BaseArmor
     {
@@ -18,7 +18,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 5;
+        public override int BasePhysicalResistance => 6;
         public override int BaseFireResistance => 3;
         public override int BaseColdResistance => 2;
         public override int BasePoisonResistance => 3;

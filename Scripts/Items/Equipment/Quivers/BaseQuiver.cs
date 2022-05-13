@@ -13,7 +13,7 @@ namespace Server.Items
         void AlterRangedDamage(ref int phys, ref int fire, ref int cold, ref int pois, ref int nrgy, ref int chaos, ref int direct);
     }
 
-    [Alterable(typeof(DefTailoring), typeof(GargishLeatherWingArmor), true)]
+    [Alterable(typeof(DefTailoring), typeof(Cyclone), true)]
     public class BaseQuiver : Container, ICraftable, ISetItem, IVvVItem, IOwnerRestricted, IRangeDamage, IArtifact, ICanBeElfOrHuman
     {
         private bool _VvVItem;
@@ -261,7 +261,7 @@ namespace Server.Items
                 quiver.m_SetSkillBonuses = new AosSkillBonuses(newItem, m_SetSkillBonuses);
             }
 
-            GargishLeatherWingArmor wing = newItem as GargishLeatherWingArmor;
+            Cyclone wing = newItem as Cyclone;
 
             if (wing != null)
             {

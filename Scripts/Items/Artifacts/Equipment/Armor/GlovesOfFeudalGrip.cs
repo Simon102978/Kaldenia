@@ -43,7 +43,7 @@ namespace Server.Items
         }
     }
 
-    public class GargishKiltOfFeudalVise : GargishPlateKilt
+    public class KiltOfFeudalVise : PlateLegs
     {
         public override int LabelNumber => 1157367;  // Kilt of Feudal Vise
         public override bool IsArtifact => true;
@@ -57,7 +57,7 @@ namespace Server.Items
         public override CraftResource DefaultResource => CraftResource.None;
 
         [Constructable]
-        public GargishKiltOfFeudalVise()
+        public KiltOfFeudalVise()
         {
             Resource = CraftResource.None;
 
@@ -68,7 +68,7 @@ namespace Server.Items
             Attributes.WeaponDamage = 30;
         }
 
-        public GargishKiltOfFeudalVise(Serial serial)
+        public KiltOfFeudalVise(Serial serial)
             : base(serial)
         {
         }

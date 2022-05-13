@@ -12,21 +12,21 @@ namespace Server
         #region SA equipment
 		private static readonly Type[] m_SAJewelryTypes = new[]
         {
-            typeof(GargishRing), typeof(GargishBracelet)
+            typeof(Ring), typeof(Bracelet)
         };
         public static Type[] SAJewelryTypes => m_SAJewelryTypes;
 		
 		public static readonly Type[] m_SAShieldTypes = new[] 
 		{
-            typeof(GargishChaosShield), typeof(GargishKiteShield), typeof(GargishOrderShield), typeof(GargishWoodenShield),
-            typeof(LargeStoneShield)
+            typeof(ChaosShield), typeof(OrderShield), typeof(WoodenShield),
+            typeof(MetalShield)
         };
         public static Type[] SAShieldTypes => m_SAShieldTypes;
 		
         private static readonly Type[] m_SAWeaponTypes = new[]
         {
-            typeof(DiscMace), typeof(GargishTalwar), typeof(Shortblade), typeof(DualPointedSpear), typeof(GlassStaff),
-            typeof(StoneWarSword), typeof(DualShortAxes), typeof(GlassSword), typeof(GargishDagger)
+            typeof(DiscMace), typeof(Shortblade), typeof(DualPointedSpear), typeof(GlassStaff),
+            typeof(StoneWarSword), typeof(DualShortAxes), typeof(GlassSword), typeof(Dagger)
         };
         public static Type[] SAWeaponTypes => m_SAWeaponTypes;
 
@@ -35,18 +35,14 @@ namespace Server
 
         private static readonly Type[] m_SAArmorTypes = new[]
         {
-            typeof(GargishLeatherChest), typeof(GargishLeatherLegs), typeof(GargishLeatherArms), typeof(GargishLeatherKilt),
-            typeof(GargishStoneChest), typeof(GargishStoneLegs), typeof(GargishStoneArms),
-            typeof(GargishStoneKilt), typeof(GargishPlateChest), typeof(GargishPlateLegs), typeof(GargishPlateArms),
-            typeof(GargishPlateKilt), typeof(GargishNecklace), typeof( GargishEarrings )
+            typeof(LeatherChest), typeof(LeatherLegs), typeof(LeatherArms),  typeof(PlateArms),
+            typeof(PlateChest), typeof(PlateLegs), typeof(PlateArms),
+            typeof(Necklace), typeof( Earrings )
         };
         public static Type[] SAArmorTypes => m_SAArmorTypes;
 
-        private static readonly Type[] m_SAClothingTypes = new[]
-        {
-            typeof(GargishClothChestArmor), typeof(GargishClothArmsArmor), typeof(GargishClothKiltArmor), typeof(GargishClothLegsArmor),
-        };
-        public static Type[] SAClothingTypes => m_SAClothingTypes;
+
+      
         #endregion
 
         #region ML equipment
@@ -380,11 +376,7 @@ namespace Server
 
         public static BaseClothing RandomClothing(bool inTokuno = false, bool isMondain = false, bool isStygian = false)
         {
-            if (isStygian)
-            {
-                return Construct(m_SAClothingTypes, m_ClothingTypes) as BaseClothing;
-            }
-
+           
             if (isMondain)
             {
                 return Construct(m_MLClothingTypes, m_ClothingTypes) as BaseClothing;

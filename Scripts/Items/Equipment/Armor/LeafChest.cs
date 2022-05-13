@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefTailoring), typeof(GargishLeatherChest))]
+
     [Flipable(0x2FC5, 0x317B)]
     public class LeafChest : BaseArmor
     {
@@ -18,7 +18,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 2;
+        public override int BasePhysicalResistance => 1;
         public override int BaseFireResistance => 3;
         public override int BaseColdResistance => 2;
         public override int BasePoisonResistance => 4;

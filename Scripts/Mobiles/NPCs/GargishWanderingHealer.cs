@@ -2,23 +2,23 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-    public class GargishWanderingHealer : BaseHealer
+    public class WanderingHealer : BaseHealer
     {
         [Constructable]
-        public GargishWanderingHealer()
+        public WanderingHealer()
         {
-            Title = "a Gargish wandering healer";
+            Title = "a  wandering healer";
             Body = 666;
 
             AddItem(new GnarledStaff());
-            //AddItem( new GargishRobe(5) );
+            //AddItem( new Robe(5) );
 
             SetSkill(SkillName.Camping, 80.0, 100.0);
             SetSkill(SkillName.Forensics, 80.0, 100.0);
             SetSkill(SkillName.SpiritSpeak, 80.0, 100.0);
         }
 
-        public GargishWanderingHealer(Serial serial)
+        public WanderingHealer(Serial serial)
             : base(serial)
         {
         }

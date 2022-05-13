@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class GargishEarrings : BaseArmor
+    public class Earrings : BaseArmor
     {
         public override ArmorMaterialType MaterialType => ArmorMaterialType.Chainmail;
         public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.All;
@@ -15,7 +15,7 @@ namespace Server.Items
         public override int InitMaxHits => 40;
 
         [Constructable]
-        public GargishEarrings()
+        public Earrings()
             : base(0x4213)
         {
             Layer = Layer.Earrings;
@@ -32,7 +32,7 @@ namespace Server.Items
         {
         }
 
-        public GargishEarrings(Serial serial)
+        public Earrings(Serial serial)
             : base(serial)
         {
         }

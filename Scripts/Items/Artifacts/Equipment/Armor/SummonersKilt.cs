@@ -3,7 +3,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    public class SummonersKilt : GargishClothKilt, IRepairable
+    public class SummonersKilt : ClothKilt, IRepairable
     {
         public CraftSystem RepairSystem => DefTailoring.CraftSystem;
 

@@ -40,7 +40,7 @@ namespace Server.Engines.VoidPool
             };
             PackItem(item);
 
-            item = new GargishHephaestus
+            item = new Hephaestus
             {
                 Movable = false
             };
@@ -52,7 +52,7 @@ namespace Server.Engines.VoidPool
             };
             PackItem(item);
 
-            item = new GargishBlightOfTheTundra
+            item = new BlightOfTheTundra
             {
                 Movable = false
             };

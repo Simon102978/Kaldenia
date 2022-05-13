@@ -57,10 +57,6 @@ namespace Server.Mobiles
             Hue = Race.RandomSkinHue();
 
             AddImmovableItem(new MysticBook((uint)0xFFF)); // Check
-            AddImmovableItem(new GargishClothChest(Utility.RandomNeutralHue()));
-            AddImmovableItem(new GargishClothArms(Utility.RandomNeutralHue()));
-            AddImmovableItem(new GargishClothLegs(Utility.RandomNeutralHue()));
-            AddImmovableItem(new GargishClothKilt(Utility.RandomNeutralHue()));
 
             if (Utility.RandomBool())
                 AddImmovableItem(new GargishRobe());

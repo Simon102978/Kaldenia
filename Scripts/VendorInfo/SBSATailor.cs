@@ -24,17 +24,9 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(DyeTub), 8, 20, 0xFAB, 0));
                 Add(new GenericBuyInfo(typeof(Dyes), 8, 20, 0xFA9, 0));
 
-                Add(new GenericBuyInfo(typeof(GargishRobe), 32, 20, 0x4000, 0));
-                Add(new GenericBuyInfo(typeof(GargishFancyRobe), 46, 20, 0x4002, 0));
+                Add(new GenericBuyInfo(typeof(Robe), 32, 20, 0x4000, 0));
+                Add(new GenericBuyInfo(typeof(FancyRobe), 46, 20, 0x4002, 0));
 
-                Add(new GenericBuyInfo(typeof(FemaleGargishClothArmsArmor), 62, 20, 0x403, 0));
-                Add(new GenericBuyInfo(typeof(GargishClothArmsArmor), 61, 20, 0x404, 0));
-                Add(new GenericBuyInfo(typeof(FemaleGargishClothChestArmor), 83, 20, 0x405, 0));
-                Add(new GenericBuyInfo(typeof(GargishClothChestArmor), 78, 20, 0x406, 0));
-                Add(new GenericBuyInfo(typeof(FemaleGargishClothLegsArmor), 71, 20, 0x409, 0));
-                Add(new GenericBuyInfo(typeof(GargishClothLegsArmor), 66, 20, 0x40A, 0));
-                Add(new GenericBuyInfo(typeof(FemaleGargishClothKiltArmor), 57, 20, 0x407, 0));
-                Add(new GenericBuyInfo(typeof(GargishClothKiltArmor), 56, 20, 0x408, 0));
             }
         }
 
@@ -51,16 +43,9 @@ namespace Server.Mobiles
                 Add(typeof(DyeTub), 4);
                 Add(typeof(Dyes), 4);
 
-                Add(typeof(GargishRobe), 16);
-                Add(typeof(GargishFancyRobe), 23);
-                Add(typeof(FemaleGargishClothArmsArmor), 30);
-                Add(typeof(GargishClothArmsArmor), 30);
-                Add(typeof(FemaleGargishClothChestArmor), 40);
-                Add(typeof(GargishClothChestArmor), 42);
-                Add(typeof(FemaleGargishClothLegsArmor), 30);
-                Add(typeof(GargishClothLegsArmor), 32);
-                Add(typeof(FemaleGargishClothKiltArmor), 30);
-                Add(typeof(GargishClothKiltArmor), 32);
+                Add(typeof(Robe), 16);
+                Add(typeof(FancyRobe), 23);
+
             }
         }
     }

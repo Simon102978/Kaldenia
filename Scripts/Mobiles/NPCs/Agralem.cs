@@ -76,9 +76,8 @@ namespace Server.Engines.Quests
         public override void InitOutfit()
         {
             AddItem(new Cyclone());
-            AddItem(new GargishLeatherKilt(2305));
-            AddItem(new GargishLeatherChest(2305));
-            AddItem(new GargishLeatherArms(2305));
+            AddItem(new LeatherChest(2305));
+            AddItem(new LeatherArms(2305));
         }
 
         public override void Serialize(GenericWriter writer)

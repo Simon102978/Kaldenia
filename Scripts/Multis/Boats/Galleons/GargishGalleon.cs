@@ -2,7 +2,7 @@ using Server.Items;
 
 namespace Server.Multis
 {
-    public class GargishGalleon : BaseGalleon
+    public class Galleon : BaseGalleon
     {
         public override int NorthID => 0x24 + (DamageValue * 4);
         public override int EastID => 0x25 + (DamageValue * 4);
@@ -22,13 +22,13 @@ namespace Server.Multis
 
         public override int ZSurface => 16;
 
-        public override BaseDockedBoat DockedBoat => new DockedGargishGalleon(this);
+        public override BaseDockedBoat DockedBoat => new DockedGalleon(this);
 
         [Constructable]
-        public GargishGalleon() : this(Direction.North) { }
+        public Galleon() : this(Direction.North) { }
 
         [Constructable]
-        public GargishGalleon(Direction facing)
+        public Galleon(Direction facing)
             : base(facing)
         {
         }
@@ -157,7 +157,7 @@ namespace Server.Multis
             }
         }
 
-        public GargishGalleon(Serial serial)
+        public Galleon(Serial serial)
             : base(serial)
         {
         }
@@ -175,18 +175,18 @@ namespace Server.Multis
         }
     }
 
-    public class GargishGalleonDeed : BaseBoatDeed
+    public class GalleonDeed : BaseBoatDeed
     {
         public override int LabelNumber => 1116739;
-        public override BaseBoat Boat => new GargishGalleon(BoatDirection);
+        public override BaseBoat Boat => new Galleon(BoatDirection);
 
         [Constructable]
-        public GargishGalleonDeed()
+        public GalleonDeed()
             : base(0x24, Point3D.Zero)
         {
         }
 
-        public GargishGalleonDeed(Serial serial)
+        public GalleonDeed(Serial serial)
             : base(serial)
         {
         }
@@ -206,17 +206,17 @@ namespace Server.Multis
         }
     }
 
-    public class DockedGargishGalleon : BaseDockedBoat
+    public class DockedGalleon : BaseDockedBoat
     {
         public override int LabelNumber => 1116748;  //Gargoyle Ship
-        public override BaseBoat Boat => new GargishGalleon(BoatDirection);
+        public override BaseBoat Boat => new Galleon(BoatDirection);
 
-        public DockedGargishGalleon(BaseBoat boat)
+        public DockedGalleon(BaseBoat boat)
             : base(0x24, Point3D.Zero, boat)
         {
         }
 
-        public DockedGargishGalleon(Serial serial)
+        public DockedGalleon(Serial serial)
             : base(serial)
         {
         }

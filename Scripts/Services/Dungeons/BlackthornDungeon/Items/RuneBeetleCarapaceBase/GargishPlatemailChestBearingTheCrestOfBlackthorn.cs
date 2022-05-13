@@ -1,11 +1,11 @@
 namespace Server.Items
 {
-    public class GargishPlatemailChestBearingTheCrestOfBlackthorn : GargishPlateChest
+    public class PlatemailChestBearingTheCrestOfBlackthorn : PlateChest
     {
         public override bool IsArtifact => true;
 
         [Constructable]
-        public GargishPlatemailChestBearingTheCrestOfBlackthorn()
+        public PlatemailChestBearingTheCrestOfBlackthorn()
         {
             ReforgedSuffix = ReforgedSuffix.Blackthorn;
             Hue = 1773;
@@ -24,7 +24,7 @@ namespace Server.Items
         public override int InitMinHits => 255;
         public override int InitMaxHits => 255;
 
-        public GargishPlatemailChestBearingTheCrestOfBlackthorn(Serial serial)
+        public PlatemailChestBearingTheCrestOfBlackthorn(Serial serial)
             : base(serial)
         {
         }

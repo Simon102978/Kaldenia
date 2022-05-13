@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    public class MantleOfTheFallen : GargishClothChest, IRepairable
+    public class MantleOfTheFallen : ClothChest, IRepairable
     {
         public CraftSystem RepairSystem => DefTailoring.CraftSystem;
 

@@ -82,7 +82,7 @@ namespace Server.Items
         }
     }
 
-    [Alterable(typeof(DefBlacksmithy), typeof(GargishKiltOfMining))]
+    [Alterable(typeof(DefBlacksmithy), typeof(KiltOfMining))]
     [Flipable(0x13eb, 0x13f2)]
     public class RingmailGlovesOfMining : BaseGlovesOfMining
     {
@@ -122,21 +122,21 @@ namespace Server.Items
     }
 
     [Flipable(0x13eb, 0x13f2)]
-    public class GargishKiltOfMining : BaseGlovesOfMining
+    public class KiltOfMining : BaseGlovesOfMining
     {
         [Constructable]
-        public GargishKiltOfMining() : this(5)
+        public KiltOfMining() : this(5)
         {
         }
 
         [Constructable]
-        public GargishKiltOfMining(int bonus)
+        public KiltOfMining(int bonus)
             : base(bonus, 0x030C)
         {
             Weight = 1;
         }
 
-        public GargishKiltOfMining(Serial serial)
+        public KiltOfMining(Serial serial)
             : base(serial)
         {
         }

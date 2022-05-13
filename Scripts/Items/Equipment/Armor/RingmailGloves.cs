@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefBlacksmithy), typeof(GargishPlateKilt))]
+ 
     [Flipable(0x13eb, 0x13f2)]
     public class RingmailGloves : BaseArmor
     {
@@ -18,7 +18,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 3;
+        public override int BasePhysicalResistance => 4;
         public override int BaseFireResistance => 3;
         public override int BaseColdResistance => 1;
         public override int BasePoisonResistance => 5;

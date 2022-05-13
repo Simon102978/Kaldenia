@@ -1,15 +1,15 @@
 namespace Server.Items
 {
-    public class GargishBracelet : BaseBracelet
+    public class Bracelet : BaseBracelet
     {
         [Constructable]
-        public GargishBracelet()
+        public Bracelet()
             : base(0x4211)
         {
             //Weight = 0.1;
         }
 
-        public GargishBracelet(Serial serial)
+        public Bracelet(Serial serial)
             : base(serial)
         {
         }

@@ -864,7 +864,7 @@ namespace Server.Items
         }
     }
 
-    public class RewardGargishRobe : BaseOuterTorso, IRewardItem
+    public class RewardFancyRobe : BaseOuterTorso, IRewardItem
     {
         private int m_LabelNumber;
         private bool m_IsRewardItem;
@@ -919,128 +919,19 @@ namespace Server.Items
         }
 
         [Constructable]
-        public RewardGargishRobe()
+        public RewardFancyRobe()
             : this(0)
         {
         }
 
         [Constructable]
-        public RewardGargishRobe(int hue)
+        public RewardFancyRobe(int hue)
             : this(hue, 0)
         {
         }
 
         [Constructable]
-        public RewardGargishRobe(int hue, int labelNumber)
-            : base(0x4000, hue)
-        {
-            Weight = 3.0;
-            LootType = LootType.Blessed;
-
-            m_LabelNumber = labelNumber;
-        }
-
-        public RewardGargishRobe(Serial serial)
-            : base(serial)
-        {
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-
-            writer.Write(0); // version
-
-            writer.Write(m_LabelNumber);
-            writer.Write(m_IsRewardItem);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-
-            int version = reader.ReadInt();
-
-            switch (version)
-            {
-                case 0:
-                    {
-                        m_LabelNumber = reader.ReadInt();
-                        m_IsRewardItem = reader.ReadBool();
-                        break;
-                    }
-            }
-        }
-    }
-
-    public class RewardGargishFancyRobe : BaseOuterTorso, IRewardItem
-    {
-        private int m_LabelNumber;
-        private bool m_IsRewardItem;
-
-        [CommandProperty(AccessLevel.GameMaster)]
-        public bool IsRewardItem { get { return m_IsRewardItem; } set { m_IsRewardItem = value; } }
-
-        [CommandProperty(AccessLevel.GameMaster)]
-        public int Number
-        {
-            get { return m_LabelNumber; }
-            set
-            {
-                m_LabelNumber = value;
-                InvalidateProperties();
-            }
-        }
-
-        public override int LabelNumber
-        {
-            get
-            {
-                if (m_LabelNumber > 0)
-                    return m_LabelNumber;
-
-                return base.LabelNumber;
-            }
-        }
-
-        public override int BasePhysicalResistance => 3;
-
-        public override bool Dye(Mobile from, DyeTub sender)
-        {
-            from.SendLocalizedMessage(sender.FailMessage);
-            return false;
-        }
-
-        public override void GetProperties(ObjectPropertyList list)
-        {
-            base.GetProperties(list);
-
-            if (m_IsRewardItem)
-                list.Add(RewardSystem.GetRewardYearLabel(this, new object[] { Hue, m_LabelNumber })); // X Year Veteran Reward
-        }
-
-        public override bool CanEquip(Mobile m)
-        {
-            if (!base.CanEquip(m))
-                return false;
-
-            return !m_IsRewardItem || RewardSystem.CheckIsUsableBy(m, this, new object[] { Hue, m_LabelNumber });
-        }
-
-        [Constructable]
-        public RewardGargishFancyRobe()
-            : this(0)
-        {
-        }
-
-        [Constructable]
-        public RewardGargishFancyRobe(int hue)
-            : this(hue, 0)
-        {
-        }
-
-        [Constructable]
-        public RewardGargishFancyRobe(int hue, int labelNumber)
+        public RewardFancyRobe(int hue, int labelNumber)
             : base(0x4002, hue)
         {
             Weight = 3.0;
@@ -1049,7 +940,7 @@ namespace Server.Items
             m_LabelNumber = labelNumber;
         }
 
-        public RewardGargishFancyRobe(Serial serial)
+        public RewardFancyRobe(Serial serial)
             : base(serial)
         {
         }
@@ -1622,40 +1513,5 @@ namespace Server.Items
         }
     }
 
-    public class GargishEpaulette : BaseClothing
-    {
-        public override int LabelNumber => 1123326;  // Gargish Epaulette
-
-        [Constructable]
-        public GargishEpaulette()
-            : this(0)
-        {
-        }
-
-        [Constructable]
-        public GargishEpaulette(int hue)
-            : base(0x9986, Layer.OuterTorso, hue)
-        {
-            Weight = 1.0;
-        }
-
-        public GargishEpaulette(Serial serial)
-            : base(serial)
-        {
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-
-            writer.Write(0); // version
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-
-            int version = reader.ReadInt();
-        }
-    }
+    
 }

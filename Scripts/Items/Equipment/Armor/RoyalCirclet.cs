@@ -15,7 +15,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 1;
+        public override int BasePhysicalResistance => 6;
         public override int BaseFireResistance => 5;
         public override int BaseColdResistance => 2;
         public override int BasePoisonResistance => 2;

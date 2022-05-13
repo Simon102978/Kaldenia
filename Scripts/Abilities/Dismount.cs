@@ -122,7 +122,7 @@ namespace Server.Items
             if (!attacker.Mounted && !attacker.Flying)
                 return false;
 
-            if ((attacker.Weapon is Lance || attacker.Weapon is GargishLance) && (defender.Weapon is Lance || defender.Weapon is GargishLance))
+            if ((attacker.Weapon is Lance || attacker.Weapon is Lance) && (defender.Weapon is Lance || defender.Weapon is Lance))
             {
                 return false;
             }

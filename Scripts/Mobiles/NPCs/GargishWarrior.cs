@@ -2,10 +2,10 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-    public class GargishWarrior : BaseCreature
+    public class Warrior : BaseCreature
     {
         [Constructable]
-        public GargishWarrior()
+        public Warrior()
             : base(AIType.AI_Melee, FightMode.None, 10, 1, 0.2, 0.4)
         {
             Name = "Warrior";
@@ -14,10 +14,7 @@ namespace Server.Mobiles
                 Body = 667;
                 HairItemID = 17067;
                 HairHue = 1762;
-                AddItem(new FemaleGargishPlateChest());
-                AddItem(new FemaleGargishPlateKilt());
-                AddItem(new FemaleGargishPlateLegs());
-                AddItem(new FemaleGargishPlateArms());
+                AddItem(new FemalePlateChest());           
                 AddItem(new PlateTalons());
 
                 AddItem(new GlassSword());
@@ -27,17 +24,16 @@ namespace Server.Mobiles
                 Body = 666;
                 HairItemID = 16987;
                 HairHue = 1801;
-                AddItem(new GargishPlateChest());
-                AddItem(new GargishPlateKilt());
-                AddItem(new GargishPlateLegs());
-                AddItem(new GargishPlateArms());
+                AddItem(new PlateChest());
+                AddItem(new PlateLegs());
+                AddItem(new PlateArms());
                 AddItem(new PlateTalons());
 
                 AddItem(new GlassSword());
             }
         }
 
-        public GargishWarrior(Serial serial)
+        public Warrior(Serial serial)
             : base(serial)
         {
         }

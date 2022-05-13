@@ -38,9 +38,9 @@ namespace Server.Engines.Quests
         public override void InitOutfit()
         {
             AddItem(new SerpentStoneStaff());
-            AddItem(new GargishClothChest(1428));
-            AddItem(new GargishClothArms(1445));
-            AddItem(new GargishClothKilt(1443));
+            AddItem(new ClothChest(1428));
+            AddItem(new ClothArms(1445));
+            AddItem(new ClothKilt(1443));
         }
 
         public override void Advertise()

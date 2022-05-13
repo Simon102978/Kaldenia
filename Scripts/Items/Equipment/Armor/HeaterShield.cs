@@ -2,7 +2,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [Alterable(typeof(DefBlacksmithy), typeof(LargePlateShield))]
+
     public class HeaterShield : BaseShield
     {
         [Constructable]
@@ -17,7 +17,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 0;
+        public override int BasePhysicalResistance => 5;
         public override int BaseFireResistance => 1;
         public override int BaseColdResistance => 0;
         public override int BasePoisonResistance => 0;

@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class VirtuososEarpieces : GargishEarrings, ISetItem
+    public class VirtuososEarpieces : Earrings, ISetItem
     {
         public override int LabelNumber => 1151557;  // Virtuoso's Earpieces
 

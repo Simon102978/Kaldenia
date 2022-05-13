@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class PillarOfStrength : LargeStoneShield
+    public class PillarOfStrength : MetalShield
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1113533; // Pillar Of Strength

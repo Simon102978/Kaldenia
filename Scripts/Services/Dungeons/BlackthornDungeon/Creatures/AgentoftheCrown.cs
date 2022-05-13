@@ -44,7 +44,7 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishClothWingArmorBearingTheCrestOfBlackthorn
+            item = new ClothWingArmorBearingTheCrestOfBlackthorn
             {
                 Movable = false
             };
@@ -58,7 +58,7 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishSashBearingTheCrestOfBlackthorn
+            item = new SashBearingTheCrestOfBlackthorn
             {
                 Movable = false
             };
@@ -90,17 +90,12 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishPlatemailChestBearingTheCrestOfBlackthorn
+            item = new PlatemailChestBearingTheCrestOfBlackthorn
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishStoneChestBearingTheCrestOfBlackthorn
-            {
-                Movable = false
-            };
-            PackItem(item);
 
             item = new PlatemailTunicBearingTheCrestOfBlackthorn
             {
@@ -134,19 +129,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn1
+            item = new EpauletteBearingTheCrestOfBlackthorn1
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn1
+            item = new FancyBearingTheCrestOfBlackthorn1
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn1
+            item = new RobeBearingTheCrestOfBlackthorn1
             {
                 Movable = false
             };
@@ -202,19 +197,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn2
+            item = new EpauletteBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn2
+            item = new FancyBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn2
+            item = new RobeBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };
@@ -270,19 +265,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn3
+            item = new EpauletteBearingTheCrestOfBlackthorn3
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn3
+            item = new FancyBearingTheCrestOfBlackthorn3
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn3
+            item = new RobeBearingTheCrestOfBlackthorn3
             {
                 Movable = false
             };
@@ -338,19 +333,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn4
+            item = new EpauletteBearingTheCrestOfBlackthorn4
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn4
+            item = new FancyBearingTheCrestOfBlackthorn4
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn4
+            item = new RobeBearingTheCrestOfBlackthorn4
             {
                 Movable = false
             };
@@ -406,19 +401,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn5
+            item = new EpauletteBearingTheCrestOfBlackthorn5
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn5
+            item = new FancyBearingTheCrestOfBlackthorn5
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn5
+            item = new RobeBearingTheCrestOfBlackthorn5
             {
                 Movable = false
             };
@@ -474,19 +469,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn6
+            item = new EpauletteBearingTheCrestOfBlackthorn6
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn6
+            item = new FancyBearingTheCrestOfBlackthorn6
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn6
+            item = new RobeBearingTheCrestOfBlackthorn6
             {
                 Movable = false
             };
@@ -542,19 +537,19 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEpauletteBearingTheCrestOfBlackthorn7
+            item = new EpauletteBearingTheCrestOfBlackthorn7
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishFancyBearingTheCrestOfBlackthorn7
+            item = new FancyBearingTheCrestOfBlackthorn7
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishRobeBearingTheCrestOfBlackthorn7
+            item = new RobeBearingTheCrestOfBlackthorn7
             {
                 Movable = false
             };
@@ -616,13 +611,13 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEarringsBearingTheCrestOfBlackthorn1
+            item = new EarringsBearingTheCrestOfBlackthorn1
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishGlassesBearingTheCrestOfBlackthorn1
+            item = new GlassesBearingTheCrestOfBlackthorn1
             {
                 Movable = false
             };
@@ -696,13 +691,13 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEarringsBearingTheCrestOfBlackthorn2
+            item = new EarringsBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishGlassesBearingTheCrestOfBlackthorn2
+            item = new GlassesBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };
@@ -776,13 +771,13 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GargishEarringsBearingTheCrestOfBlackthorn3
+            item = new EarringsBearingTheCrestOfBlackthorn3
             {
                 Movable = false
             };
             PackItem(item);
 
-            item = new GargishGlassesBearingTheCrestOfBlackthorn3
+            item = new GlassesBearingTheCrestOfBlackthorn3
             {
                 Movable = false
             };
@@ -832,7 +827,7 @@ namespace Server.Engines.Blackthorn
 
             // TangleBase
 
-            item = new GargishHalfApronBearingTheCrestOfBlackthorn1
+            item = new HalfApronBearingTheCrestOfBlackthorn1
             {
                 Movable = false
             };
@@ -858,7 +853,7 @@ namespace Server.Engines.Blackthorn
 
             // CrimsonCinctureBase
 
-            item = new GargishHalfApronBearingTheCrestOfBlackthorn2
+            item = new HalfApronBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };

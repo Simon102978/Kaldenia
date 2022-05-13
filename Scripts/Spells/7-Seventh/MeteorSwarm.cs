@@ -62,10 +62,7 @@ namespace Server.Spells.Seventh
                         ((MaskOfKhalAnkur)item).Charges--;
                     }
 
-                    if (item is PendantOfKhalAnkur)
-                    {
-                        ((PendantOfKhalAnkur)item).Charges--;
-                    }
+
                 }
 
                 SpellHelper.Turn(Caster, p);

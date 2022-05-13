@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class StoneDragonsTooth : GargishDagger
+    public class StoneDragonsTooth : Dagger
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1113523;  // Stone Dragon's Tooth

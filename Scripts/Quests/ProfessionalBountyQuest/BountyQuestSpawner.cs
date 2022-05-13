@@ -379,7 +379,7 @@ namespace Server.Engines.Quests
                 bool spawned = false;
 
                 if (garg)
-                    gal = new GargishGalleon(Direction.North);
+                    gal = new Galleon(Direction.North);
                 else
                     gal = new TokunoGalleon(Direction.North);
 

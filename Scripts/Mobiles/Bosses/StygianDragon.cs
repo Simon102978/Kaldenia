@@ -62,11 +62,11 @@ namespace Server.Mobiles
         public override Type[] UniqueSAList => new[]
                 {
                     typeof(BurningAmber), typeof(DraconisWrath), typeof(DragonHideShield), typeof(FallenMysticsSpellbook),
-                    typeof(LifeSyphon), typeof(GargishSignOfOrder), typeof(HumanSignOfOrder), typeof(VampiricEssence)
+                    typeof(LifeSyphon), typeof(SignOfOrder), typeof(HumanSignOfOrder), typeof(VampiricEssence)
                 };
         public override Type[] SharedSAList => new[]
                 {
-                    typeof(AxesOfFury), typeof(SummonersKilt), typeof(GiantSteps),
+                    typeof(AxesOfFury), typeof(SummonersKilt),
                     typeof(TokenOfHolyFavor)
                 };
 

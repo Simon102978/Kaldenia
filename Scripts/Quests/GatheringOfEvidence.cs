@@ -136,9 +136,9 @@ namespace Server.Engines.Quests
         {
             AddItem(new Backpack());
 
-            AddItem(new GargishClothChest(Utility.RandomNeutralHue()));
-            AddItem(new GargishClothKilt(Utility.RandomNeutralHue()));
-            AddItem(new GargishClothLegs(Utility.RandomNeutralHue()));
+            AddItem(new ClothChest(Utility.RandomNeutralHue()));
+            AddItem(new ClothKilt(Utility.RandomNeutralHue()));
+            AddItem(new ClothLegs(Utility.RandomNeutralHue()));
             AddItem(new SerpentStoneStaff());
         }
 

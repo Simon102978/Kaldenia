@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class DragonHideShield : GargishKiteShield
+    public class DragonHideShield : WoodenKiteShield
     {
         public override bool IsArtifact => true;
         [Constructable]

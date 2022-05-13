@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class SpinedBloodwormBracers : GargishClothArms
+    public class SpinedBloodwormBracers : ClothArms
     {
         public override bool IsArtifact => true;
         public override int LabelNumber => 1113865;  // Spined Bloodworm Bracers

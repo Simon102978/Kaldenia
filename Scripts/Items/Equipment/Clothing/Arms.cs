@@ -1,21 +1,21 @@
 namespace Server.Items
 {
-    public class GargishClothArms : BaseClothing
+    public class ClothArms : BaseClothing
     {
         [Constructable]
-        public GargishClothArms()
+        public ClothArms()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishClothArms(int hue)
+        public ClothArms(int hue)
             : base(0x0404, Layer.Arms, hue)
         {
             Weight = 2.0;
         }
 
-        public GargishClothArms(Serial serial)
+        public ClothArms(Serial serial)
             : base(serial)
         {
         }
@@ -46,22 +46,22 @@ namespace Server.Items
         }
     }
 
-    public class FemaleGargishClothArms : BaseClothing
+    public class FemaleClothArms : BaseClothing
     {
         [Constructable]
-        public FemaleGargishClothArms()
+        public FemaleClothArms()
             : this(0)
         {
         }
 
         [Constructable]
-        public FemaleGargishClothArms(int hue)
+        public FemaleClothArms(int hue)
             : base(0x0403, Layer.Arms, hue)
         {
             Weight = 2.0;
         }
 
-        public FemaleGargishClothArms(Serial serial)
+        public FemaleClothArms(Serial serial)
             : base(serial)
         {
         }
@@ -79,22 +79,22 @@ namespace Server.Items
         }
     }
 
-    public class MaleGargishClothArms : BaseClothing
+    public class MaleClothArms : BaseClothing
     {
         [Constructable]
-        public MaleGargishClothArms()
+        public MaleClothArms()
             : this(0)
         {
         }
 
         [Constructable]
-        public MaleGargishClothArms(int hue)
+        public MaleClothArms(int hue)
             : base(0x0404, Layer.Arms, hue)
         {
             Weight = 2.0;
         }
 
-        public MaleGargishClothArms(Serial serial)
+        public MaleClothArms(Serial serial)
             : base(serial)
         {
         }

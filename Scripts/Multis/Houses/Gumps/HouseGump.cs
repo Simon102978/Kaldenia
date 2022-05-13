@@ -1367,10 +1367,10 @@ namespace Server.Gumps
                                         newType = FoundationType.Shadow;
                                         break;
                                     case 12:
-                                        newType = FoundationType.GargishGreenMarble;
+                                        newType = FoundationType.GreenMarble;
                                         break;
                                     case 13:
-                                        newType = FoundationType.GargishTwoToneStone;
+                                        newType = FoundationType.TwoToneStone;
                                         break;
                                     case 14:
                                         newType = FoundationType.Gothic;

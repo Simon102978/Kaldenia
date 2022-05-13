@@ -2,7 +2,7 @@ namespace Server.Items
 {
     public class Bascinet : BaseArmor
     {
-        public override int BasePhysicalResistance => 7;
+        public override int BasePhysicalResistance => 4;
         public override int BaseFireResistance => 2;
         public override int BaseColdResistance => 2;
         public override int BasePoisonResistance => 2;

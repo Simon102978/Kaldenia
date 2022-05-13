@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    public class VirtuososKilt : GargishClothKilt, ISetItem
+    public class VirtuososKilt : ClothKilt, ISetItem
     {
         public override int LabelNumber => 1151559;  // Virtuoso's Kilt
 

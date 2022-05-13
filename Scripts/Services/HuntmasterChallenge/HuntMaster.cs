@@ -141,9 +141,9 @@ namespace Server.Engines.HuntsmasterChallenge
             if (i == null)
                 Backpack.DropItem(new RangersGuildSash());
 
-            i = Backpack.FindItemByType(typeof(GargishRangersGuildSash));
+            i = Backpack.FindItemByType(typeof(RangersGuildSash));
             if (i == null)
-                Backpack.DropItem(new GargishRangersGuildSash());
+                Backpack.DropItem(new RangersGuildSash());
         }
 
         public HuntMaster(Serial serial) : base(serial)

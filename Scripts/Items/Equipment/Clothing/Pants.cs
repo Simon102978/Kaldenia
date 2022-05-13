@@ -282,16 +282,16 @@ namespace Server.Items
         }
     }
 
-    public class GargishClothLegs : BaseClothing
+    public class ClothLegs : BaseClothing
     {
         [Constructable]
-        public GargishClothLegs()
+        public ClothLegs()
             : this(0)
         {
         }
 
         [Constructable]
-        public GargishClothLegs(int hue)
+        public ClothLegs(int hue)
             : base(0x040A, Layer.Pants, hue)
         {
             Weight = 2.0;
@@ -310,7 +310,7 @@ namespace Server.Items
             }
         }
 
-        public GargishClothLegs(Serial serial)
+        public ClothLegs(Serial serial)
             : base(serial)
         {
         }
@@ -328,22 +328,22 @@ namespace Server.Items
         }
     }
 
-    public class FemaleGargishClothLegs : BaseClothing
+    public class FemaleClothLegs : BaseClothing
     {
         [Constructable]
-        public FemaleGargishClothLegs()
+        public FemaleClothLegs()
             : this(0)
         {
         }
 
         [Constructable]
-        public FemaleGargishClothLegs(int hue)
+        public FemaleClothLegs(int hue)
             : base(0x0409, Layer.Pants, hue)
         {
             Weight = 2.0;
         }
 
-        public FemaleGargishClothLegs(Serial serial)
+        public FemaleClothLegs(Serial serial)
             : base(serial)
         {
         }
@@ -361,22 +361,22 @@ namespace Server.Items
         }
     }
 
-    public class MaleGargishClothLegs : BaseClothing
+    public class MaleClothLegs : BaseClothing
     {
         [Constructable]
-        public MaleGargishClothLegs()
+        public MaleClothLegs()
             : this(0)
         {
         }
 
         [Constructable]
-        public MaleGargishClothLegs(int hue)
+        public MaleClothLegs(int hue)
             : base(0x040A, Layer.Pants, hue)
         {
             Weight = 2.0;
         }
 
-        public MaleGargishClothLegs(Serial serial)
+        public MaleClothLegs(Serial serial)
             : base(serial)
         {
         }

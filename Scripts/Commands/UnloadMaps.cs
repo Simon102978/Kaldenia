@@ -329,7 +329,7 @@ namespace Server.Gumps
                         {
                             // Get the array of switches selected
                             ArrayList Selections = new ArrayList(info.Switches);
-                            string prefix = ".";
+                            string prefix = CommandSystem.Prefix;
 
                             // Now unloading any selected maps
 
@@ -715,7 +715,7 @@ namespace Server.Gumps
                         {
                             // Get the array of switches selected
                             ArrayList Selections = new ArrayList(info.Switches);
-                            string prefix = ".";
+                            string prefix = CommandSystem.Prefix;
 
                             // Now unloading any selected maps
 
@@ -980,7 +980,7 @@ namespace Server.Gumps
                         {
                             // Get the array of switches selected
                             ArrayList Selections = new ArrayList(info.Switches);
-                            string prefix = ".";
+                            string prefix = CommandSystem.Prefix;
 
                             // Now unloading any selected maps
 
@@ -1134,7 +1134,7 @@ namespace Server.Gumps
                         {
                             // Get the array of switches selected
                             ArrayList Selections = new ArrayList(info.Switches);
-                            string prefix = ".";
+                            string prefix = CommandSystem.Prefix;
 
                             // Now unloading any selected maps
 
@@ -1256,7 +1256,7 @@ namespace Server.Gumps
                         {
                             // Get the array of switches selected
                             ArrayList Selections = new ArrayList(info.Switches);
-                            string prefix = ".";
+                            string prefix = CommandSystem.Prefix;
 
                             // Now unloading any selected maps
 
@@ -1614,7 +1614,7 @@ namespace Server.Gumps
                         {
                             // Get the array of switches selected
                             ArrayList Selections = new ArrayList(info.Switches);
-                            string prefix = ".";
+                            string prefix = CommandSystem.Prefix;
 
                             // Now unloading any selected maps
 

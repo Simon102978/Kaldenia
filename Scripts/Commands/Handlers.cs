@@ -19,7 +19,7 @@ namespace Server.Commands
     {
         public static void Initialize()
         {
-            "." = "[";
+            CommandSystem.Prefix = ".";
 
             Register("Go", AccessLevel.Counselor, Go_OnCommand);
 

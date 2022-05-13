@@ -209,7 +209,7 @@ namespace Server.Gumps
             if (button < 0)
                 return;
 
-            CommandSystem.Handle(from, string.Format("{0}Add {1} {2}", ".", " Sign ", m_Types[button].m_BaseID));
+            CommandSystem.Handle(from, string.Format("{0}Add {1} {2}", CommandSystem.Prefix, " Sign ", m_Types[button].m_BaseID));
             from.SendGump(new AddSignGump());
         }
     }

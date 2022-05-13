@@ -3059,13 +3059,13 @@ namespace Server.Mobiles
                                     Mobile dummy = FindMobileByName(spawner, CommandMobileName, "Mobile");
                                     if (dummy != null)
                                     {
-                                        CommandSystem.Handle(dummy, string.Format("{0}{1}", ".", arglist[1]));
+                                        CommandSystem.Handle(dummy, string.Format("{0}{1}", CommandSystem.Prefix, arglist[1]));
                                     }
                                 }
                                 else
                                     if (triggermob != null && !triggermob.Deleted)
                                 {
-                                    CommandSystem.Handle(triggermob, string.Format("{0}{1}", ".", arglist[1]));
+                                    CommandSystem.Handle(triggermob, string.Format("{0}{1}", CommandSystem.Prefix, arglist[1]));
                                 }
                             }
                             else

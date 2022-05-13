@@ -2410,7 +2410,7 @@ namespace Server.Commands
 
                 first = false;
 
-                html.Write("{0}Add {1}", ".", t.Name);
+                html.Write("{0}Add {1}", CommandSystem.Prefix, t.Name);
 
                 ParameterInfo[] parms = ctor.GetParameters();
 

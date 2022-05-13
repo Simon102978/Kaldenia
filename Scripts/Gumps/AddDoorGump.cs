@@ -153,11 +153,16 @@ namespace Server.Gumps
                 if (button >= 0 && button < 8)
                 {
                     from.SendGump(new AddDoorGump(m_Type));
-                    CommandSystem.Handle(from, string.Format("{0}Add {1} {2}",".", m_Types[m_Type].m_Type.Name, (DoorFacing)button));
+                    CommandSystem.Handle(from, string.Format("{0}Add {1} {2}", CommandSystem.Prefix, m_Types[m_Type].m_Type.Name, (DoorFacing)button));
                 }
                 else if (button == 8)
                 {
+                    from.SendGump(new AddDoorGump(m_Type));
+<<<<<<< HEAD
+                    CommandSystem.Handle(from, string.Format("{0}Link", CommandSystem.Prefix));
+=======
                     CommandSystem.Handle(from, string.Format("{0}Link", "."));
+>>>>>>> parent of a8b7aca (Correction des prefix..)
                 }
                 else
                 {

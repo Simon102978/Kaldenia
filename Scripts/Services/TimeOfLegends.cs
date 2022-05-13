@@ -81,7 +81,7 @@ namespace Server
 
             MacawSpawner.Generate();
 
-            CommandSystem.Handle(e.Mobile, "." + "XmlLoad Spawns/Eodon.xml");
+            CommandSystem.Handle(e.Mobile, CommandSystem.Prefix + "XmlLoad Spawns/Eodon.xml");
 
             e.Mobile.SendMessage("Time Of Legends world generating complete.");
         }

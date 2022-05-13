@@ -17,8 +17,8 @@ namespace Server.Engines.Blackthorn
             Generate(Map.Trammel);
             Generate(Map.Felucca);
 
-            CommandSystem.Handle(m, CommandSystem.Prefix + "XmlLoad RevampedSpawns/BlackthornDungeonCreature.xml");
-            CommandSystem.Handle(m, CommandSystem.Prefix + "XmlLoad RevampedSpawns/BlackthornDungeonAgent.xml");
+            CommandSystem.Handle(m, "." + "XmlLoad RevampedSpawns/BlackthornDungeonCreature.xml");
+            CommandSystem.Handle(m, "." + "XmlLoad RevampedSpawns/BlackthornDungeonAgent.xml");
         }
 
         public static void Generate(Map map)

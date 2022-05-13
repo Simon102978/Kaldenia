@@ -32,8 +32,8 @@ namespace Server
             Decorate.Generate("sa", "Data/Decoration/Stygian Abyss/Felucca", Map.Felucca);
 
             NavreysController.GenNavery(e.Mobile);
-            CommandSystem.Handle(e.Mobile, CommandSystem.Prefix + "GenToK");
-            CommandSystem.Handle(e.Mobile, CommandSystem.Prefix + "GenSutek");
+            CommandSystem.Handle(e.Mobile, "." + "GenToK");
+            CommandSystem.Handle(e.Mobile, "." + "GenSutek");
 
             GenerateUnderworldRooms.Generate();
 

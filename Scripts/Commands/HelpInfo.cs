@@ -402,7 +402,7 @@ namespace Server.Commands
                     try
                     {
                         Mobile from = sender.Mobile;
-                        string command = CommandSystem.Prefix + m_Info.Name + " " + info.TextEntries[0].Text;
+                        string command = "." + m_Info.Name + " " + info.TextEntries[0].Text;
                         CommandSystem.Handle(from, command);
                     }
                     catch (Exception e)

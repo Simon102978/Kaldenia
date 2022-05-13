@@ -21,7 +21,7 @@ namespace Server.Engines.TreasuresOfKotlCity
 
         protected override void Generate()
         {
-            CommandSystem.Handle(null, CommandSystem.Prefix + "XmlLoad Spawns/TreasuresOfKotl.xml");
+            CommandSystem.Handle(null, "." + "XmlLoad Spawns/TreasuresOfKotl.xml");
 
             Map map = Map.TerMur;
 

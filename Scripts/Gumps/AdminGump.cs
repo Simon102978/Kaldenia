@@ -3110,7 +3110,7 @@ namespace Server.Gumps
 
         private void InvokeCommand(string c)
         {
-            CommandSystem.Handle(m_From, string.Format("{0}{1}", CommandSystem.Prefix, c));
+            CommandSystem.Handle(m_From, string.Format("{0}{1}", ".", c));
         }
 
         public static void GetAccountInfo(Account a, out AccessLevel accessLevel, out bool online)

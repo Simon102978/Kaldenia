@@ -166,7 +166,7 @@ namespace Server.Commands
         public static void DoCommands(int[] selections, GumpType type, Mobile from)
         {
             World.Broadcast(0x35, false, "The world is generating. This may take some time...");
-            string prefix = CommandSystem.Prefix;
+            string prefix = ".";
 
             string error = null;
             WorldCreating = true;

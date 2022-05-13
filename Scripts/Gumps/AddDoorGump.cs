@@ -157,7 +157,6 @@ namespace Server.Gumps
                 }
                 else if (button == 8)
                 {
-                    from.SendGump(new AddDoorGump(m_Type));
                     CommandSystem.Handle(from, string.Format("{0}Link", "."));
                 }
                 else

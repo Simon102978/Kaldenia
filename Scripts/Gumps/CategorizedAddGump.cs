@@ -46,7 +46,7 @@ namespace Server.Gumps
             }
             else
             {
-                CommandSystem.Handle(from, string.Format("{0}Add {1}", CommandSystem.Prefix, m_Type.Name));
+                CommandSystem.Handle(from, string.Format("{0}Add {1}", ".", m_Type.Name));
 
                 from.SendGump(new CategorizedAddGump(from, m_Parent, page));
             }

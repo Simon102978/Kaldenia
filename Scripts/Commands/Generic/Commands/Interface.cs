@@ -363,7 +363,7 @@ namespace Server.Commands.Generic
 
         private void InvokeCommand(string ip)
         {
-            CommandSystem.Handle(m_From, string.Format("{0}{1}", CommandSystem.Prefix, ip));
+            CommandSystem.Handle(m_From, string.Format("{0}{1}", ".", ip));
         }
     }
 
@@ -550,7 +550,7 @@ namespace Server.Commands.Generic
 
         private void InvokeCommand(string ip)
         {
-            CommandSystem.Handle(m_From, string.Format("{0}{1}", CommandSystem.Prefix, ip));
+            CommandSystem.Handle(m_From, string.Format("{0}{1}", ".", ip));
         }
     }
 }

@@ -327,7 +327,7 @@ namespace Server.Engines.Quests
         public virtual void GetContextMenuEntries(List<ContextMenuEntry> list)
         {
             if (m_Objectives.Count > 0)
-                list.Add(new QuestCallbackEntry(6154, ShowQuestLog)); // View Quest Log
+              list.Add(new QuestCallbackEntry(6154, ShowQuestLog)); // View Quest Log
 
             if (m_Conversations.Count > 0)
                 list.Add(new QuestCallbackEntry(6156, ShowQuestConversation)); // Quest Conversation
@@ -343,7 +343,7 @@ namespace Server.Engines.Quests
 
         public virtual void ShowQuestLog()
         {
-            if (m_Objectives.Count > 0)
+       /*     if (m_Objectives.Count > 0)
             {
                 m_From.CloseGump(typeof(QuestItemInfoGump));
                 m_From.CloseGump(typeof(QuestLogUpdatedGump));
@@ -356,7 +356,7 @@ namespace Server.Engines.Quests
 
                 if (last.Info != null)
                     m_From.SendGump(new QuestItemInfoGump(last.Info));
-            }
+            }*/
         }
 
         public virtual void ShowQuestConversation()

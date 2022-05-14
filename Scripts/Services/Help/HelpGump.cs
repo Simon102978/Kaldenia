@@ -302,8 +302,9 @@ namespace Server.Engines.Help
             if (PageQueue.Contains(e.Mobile))
                 e.Mobile.SendMenu(new ContainedMenu(e.Mobile));
             else
-                e.Mobile.SendGump(new HelpGump(e.Mobile));
-        }
+				e.Mobile.SendGump(new PagePromptGump(e.Mobile, PageType.Other));
+			//     e.Mobile.SendGump(new HelpGump(e.Mobile));
+		}
 
         private static bool IsYoung(Mobile m)
         {

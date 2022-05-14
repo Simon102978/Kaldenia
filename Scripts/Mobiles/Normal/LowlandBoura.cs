@@ -50,10 +50,20 @@ namespace Server.Mobiles
         }
 
         public override int Meat => 10;
-        public override int Hides => 20;
-        public override int DragonBlood => 8;
-        public override HideType HideType => HideType.Horned;
-        public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
+		// public override int Hides => 20;
+		// public override int DragonBlood => 8;
+		//  public override HideType HideType => HideType.Horned;
+
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Regular;
+
+		
+		public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
         public override int Fur => GatheredFur ? 0 : 30;
         public override FurType FurType => FurType.Green;
 

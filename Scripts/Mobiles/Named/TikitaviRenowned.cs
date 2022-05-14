@@ -53,8 +53,8 @@ namespace Server.Mobiles
         public override InhumanSpeech SpeechType => InhumanSpeech.Ratman;
         public override bool CanRummageCorpses => true;
         public override int Hides => 8;
-        public override HideType HideType => HideType.Spined;
-        public override void GenerateLoot()
+		public override HideType HideType => HideType.Regular;
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.FilthyRich, 3);
         }

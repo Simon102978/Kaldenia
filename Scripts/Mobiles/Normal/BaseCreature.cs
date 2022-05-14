@@ -88,7 +88,7 @@ namespace Server.Mobiles
         Equine = 0x0040,
         Bull = 0x0080
     }
-
+/*
     public enum ScaleType
     {
         Red,
@@ -100,7 +100,7 @@ namespace Server.Mobiles
         MedusaLight,
         MedusaDark,
         All
-    }
+    }*/
 
     public enum MeatType
     {
@@ -112,15 +112,33 @@ namespace Server.Mobiles
         SeaSerpentSteak
     }
 
-    public enum HideType
-    {
-        Regular,
-        Spined,
-        Horned,
-        Barbed
-    }
+	public enum HideType
+	{
+		Regular,
+		Lupus,
+		Reptilien,
+		Geant,
+		Ophidien,
+		Arachnide,
+		Dragonique,
+		Demoniaque,
+		Ancien
+	}
 
-    public enum FurType
+	public enum BoneType
+	{
+		Regular,
+		Lupus,
+		Reptilien,
+		Geant,
+		Ophidien,
+		Arachnide,
+		Dragonique,
+		Demoniaque,
+		Ancien
+	}
+
+	public enum FurType
     {
         None,
         Green,
@@ -1897,13 +1915,14 @@ namespace Server.Mobiles
             int wool = Wool;
             int meat = Meat;
             int hides = Hides;
-            int scales = Scales;
+			int bones = Bones;
+         //   int scales = Scales;
             int dragonblood = DragonBlood;
             int fur = Fur;
 
             bool special = with is HarvestersBlade;
 
-            if ((feathers == 0 && wool == 0 && meat == 0 && hides == 0 && scales == 0 && fur == 0) || Summoned || IsBonded || corpse.Animated)
+            if ((feathers == 0 && wool == 0 && meat == 0 && hides == 0 && bones == 0 && fur == 0) || Summoned || IsBonded || corpse.Animated)
             {
                 if (corpse.Animated)
                 {
@@ -1916,10 +1935,7 @@ namespace Server.Mobiles
             }
             else
             {
-                if (from.Race == Race.Human)
-                {
-                    hides = (int)Math.Ceiling(hides * 1.1); // 10% bonus only applies to hides, ore & logs
-                }
+               
 
                 if (corpse.Map == Map.Felucca && !Siege.SiegeShard)
                 {
@@ -1928,7 +1944,7 @@ namespace Server.Mobiles
                     hides *= 2;
                     fur *= 2;
                     meat *= 2;
-                    scales *= 2;
+                    bones *= 2;
                 }
 
                 if (special)
@@ -1937,7 +1953,7 @@ namespace Server.Mobiles
                     wool = (int)Math.Ceiling(wool * 1.1);
                     hides = (int)Math.Ceiling(hides * 1.1);
                     meat = (int)Math.Ceiling(meat * 1.1);
-                    scales = (int)Math.Ceiling(scales * 1.1);
+					bones = (int)Math.Ceiling(bones * 1.1);
                 }
 
                 new Blood(0x122D).MoveToWorld(corpse.Location, corpse.Map);
@@ -2003,28 +2019,48 @@ namespace Server.Mobiles
                     Item leather = null;
                     bool cutHides = (with is SkinningKnife && from.FindItemOnLayer(Layer.OneHanded) == with) || special || with is ButchersWarCleaver;
 
-                    switch (HideType)
-                    {
-                        default:
-                        case HideType.Regular:
-                            if (cutHides) leather = new Leather(hides);
-                            else leather = new Hides(hides);
-                            break;
- /*                       case HideType.:
-                            if (cutHides) leather = new SpinedLeather(hides);
-                            else leather = new SpinedHides(hides);
-                            break;
-                        case HideType.Horned:
-                            if (cutHides) leather = new HornedLeather(hides);
-                            else leather = new HornedHides(hides);
-                            break;
-                        case HideType.Barbed:
-                            if (cutHides) leather = new BarbedLeather(hides);
-                            else leather = new BarbedHides(hides);*/
-                         //   break;
-                    }
+					switch (HideType)
+					{
+						case HideType.Lupus:
+							if (cutHides) leather = new LupusLeather(hides);
+							else leather = new LupusHides(hides);
+							break;
+						case HideType.Reptilien:
+							if (cutHides) leather = new ReptilienLeather(hides);
+							else leather = new ReptilienHides(hides);
+							break;
+						case HideType.Geant:
+							if (cutHides) leather = new GeantLeather(hides);
+							else leather = new GeantHides(hides);
+							break;
+						case HideType.Ophidien:
+							if (cutHides) leather = new OphidienLeather(hides);
+							else leather = new OphidienHides(hides);
+							break;
+						case HideType.Arachnide:
+							if (cutHides) leather = new ArachnideLeather(hides);
+							else leather = new ArachnideHides(hides);
+							break;
+						case HideType.Dragonique:
+							if (cutHides) leather = new DragoniqueLeather(hides);
+							else leather = new DragoniqueHides(hides);
+							break;
+						case HideType.Demoniaque:
+							if (cutHides) leather = new DemoniaqueLeather(hides);
+							else leather = new DemoniaqueHides(hides);
+							break;
+						case HideType.Ancien:
+							if (cutHides) leather = new AncienLeather(hides);
+							else leather = new AncienHides(hides);
+							break;
+						default:
+						case HideType.Regular:
+							if (cutHides) leather = new Leather(hides);
+							else leather = new Hides(hides);
+							break;
+					}
 
-                    if (!cutHides || !from.AddToBackpack(leather))
+					if (!cutHides || !from.AddToBackpack(leather))
                     {
                         corpse.AddCarvedItem(leather, from);
                         from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
@@ -2033,9 +2069,57 @@ namespace Server.Mobiles
                     {
                         from.SendLocalizedMessage(1073555); // You skin it and place the cut-up hides in your backpack.
                     }
-                }
+				}
 
-                if (scales != 0)
+
+
+				if (bones != 0)
+				{
+					Item bone = null;
+
+					switch (BoneType)
+					{
+						case BoneType.Lupus:
+							 bone = new LupusBone(bones);
+							break;
+						case BoneType.Reptilien:
+							 bone = new ReptilienBone(bones);
+							break;
+						case BoneType.Geant:
+							 bone = new GeantBone(bones);
+							break;
+						case BoneType.Ophidien:
+							bone = new OphidienBone(bones);
+							break;
+						case BoneType.Arachnide:
+							bone = new ArachnideBone(bones);
+							break;
+						case BoneType.Dragonique:
+							bone = new DragoniqueBone(bones);
+							break;
+						case BoneType.Demoniaque:
+							bone = new DemoniaqueBone(bones);
+							break;
+						case BoneType.Ancien:
+							bone = new AncienBone(bones);
+							break;
+						default:
+						case BoneType.Regular:
+							bone = new Bone(bones);
+							break;
+					}
+						corpse.AddCarvedItem(bone, from);				
+				}
+
+
+
+
+
+
+
+
+
+		/*		if (scales != 0)
                 {
                     ScaleType sc = ScaleType;
                     List<Item> list = new List<Item>();
@@ -2099,6 +2183,35 @@ namespace Server.Mobiles
                     ColUtility.Free(list);
                 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				*/
+
+
+
+
                 if (dragonblood != 0)
                 {
                     Item dblood = new DragonBlood(dragonblood);
@@ -2128,10 +2241,10 @@ namespace Server.Mobiles
                 {
                     from.CriminalAction(true);
                 }
-            }
-        }
+			}
+		}
 
-        public const int DefaultRangePerception = 16;
+		public const int DefaultRangePerception = 16;
         public const int OldRangePerception = 10;
 
         public BaseCreature(AIType ai, FightMode mode, int iRangePerception, int iRangeFight)
@@ -3579,9 +3692,12 @@ namespace Server.Mobiles
         public virtual int Hides => 0;
         public virtual HideType HideType => HideType.Regular;
 
-        public virtual int Scales => 0;
+		public virtual int Bones => 0;
+		public virtual BoneType BoneType => BoneType.Regular;
+/*
+		public virtual int Scales => 0;
         public virtual ScaleType ScaleType => ScaleType.Red;
-
+*/
         public virtual int DragonBlood => 0;
         #endregion
 
@@ -7390,9 +7506,9 @@ namespace Server.Mobiles
 
         [CommandProperty(AccessLevel.GameMaster)]
         public bool RemoveOnSave { get { return m_RemoveOnSave; } set { m_RemoveOnSave = value; } }
-    }
+	}
 
-    public class LoyaltyTimer : Timer
+	public class LoyaltyTimer : Timer
     {
         private static readonly TimeSpan InternalDelay = TimeSpan.FromMinutes(5.0);
 

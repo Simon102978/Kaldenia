@@ -55,12 +55,19 @@ namespace Server.Mobiles
 
         public override double BonusPetDamageScalar => Controlled ? 1.0 : 3.0;
         public override bool AutoDispel => !Controlled;
-        public override HideType HideType => HideType.Barbed;
-        public override int Hides => 20;
-        public override int Meat => 19;
-        public override int Scales => 6;
 
-        public override ScaleType ScaleType => (Utility.RandomBool() ? ScaleType.Black : ScaleType.White);
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Dragonique;
+
+		public override int Meat => 19;
+  /*      public override int Scales => 6;
+
+        public override ScaleType ScaleType => (Utility.RandomBool() ? ScaleType.Black : ScaleType.White);*/
         public override int TreasureMapLevel => 4;
         public override bool CanAngerOnTame => true;
 

@@ -202,10 +202,19 @@ namespace Server.Mobiles
         public override bool AutoDispel => !Controlled;
         public override FoodType FavoriteFood => FoodType.Meat;
         public override int Meat => 19;
-        public override int Hides => 20;
-        public override int Scales => 5;
-        public override ScaleType ScaleType => ScaleType.Green;
-        public override bool CanAngerOnTame => true;
+        
+		/*     public override int Scales => 5;
+			 public override ScaleType ScaleType => ScaleType.Green;*/
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Dragonique;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+
+		public override bool CanAngerOnTame => true;
         public override bool OverrideBondingReqs()
         {
             return true;

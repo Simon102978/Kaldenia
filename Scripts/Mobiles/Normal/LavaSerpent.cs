@@ -48,10 +48,17 @@ namespace Server.Mobiles
 
         public override bool DeathAdderCharmable => true;
         public override int Meat => 4;
-        public override int Hides => 15;
-        public override HideType HideType => HideType.Spined;
+		/*      public override int Hides => 15;
+			  public override HideType HideType => HideType.Spined;*/
 
-        public override void GenerateLoot()
+
+		public override int Hides => 4;
+		public override HideType HideType => HideType.Reptilien;
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.LootItem<SulfurousAsh>(100.0, 1, false, true));

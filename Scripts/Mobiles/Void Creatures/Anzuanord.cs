@@ -58,11 +58,15 @@ namespace Server.Mobiles
 
         public override int Meat => 1;
 
-        public override int Hides => 7;
+        public override int Hides => 4;
 
-        public override HideType HideType => HideType.Spined;
+        public override HideType HideType => HideType.Demoniaque;
 
-        public override PackInstinct PackInstinct => PackInstinct.Daemon;
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Demoniaque;
+
+		public override PackInstinct PackInstinct => PackInstinct.Daemon;
 
         public override void GenerateLoot()
         {

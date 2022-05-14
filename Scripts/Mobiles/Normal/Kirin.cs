@@ -66,9 +66,16 @@ namespace Server.Mobiles
         public override TribeType Tribe => TribeType.Fey;
 
         public override int Meat => 3;
-        public override int Hides => 10;
-        public override HideType HideType => HideType.Horned;
-        public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
+		/*    public override int Hides => 10;
+			public override HideType HideType => HideType.Horned;*/
+
+
+		public override int Hides => 6;
+		public override HideType HideType => HideType.Regular;
+
+		public override int Bones => 6;
+		public override BoneType BoneType => BoneType.Regular;
+		public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override void OnDisallowedRider(Mobile m)
         {
             m.SendLocalizedMessage(1042319); // The Ki-Rin refuses your attempts to mount it.

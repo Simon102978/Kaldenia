@@ -60,11 +60,17 @@ namespace Server.Mobiles
         public override Poison HitPoison => Poison.Deadly;
         public override int TreasureMapLevel => 5;
         public override int Meat => 19;
-        public override int Hides => 20;
-        public override int Scales => 10;
-        public override ScaleType ScaleType => ScaleType.Black;
-        public override HideType HideType => HideType.Barbed;
-        public override bool CanFly => true;
+		//    public override int Hides => 20;
+		//     public override int Scales => 10;
+		//     public override ScaleType ScaleType => ScaleType.Black;
+		//      public override HideType HideType => HideType.Barbed;
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Dragonique;
+		public override bool CanFly => true;
 
         public override void GenerateLoot()
         {

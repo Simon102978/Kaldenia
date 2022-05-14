@@ -52,9 +52,12 @@ namespace Server.Mobiles
 
         public override int TreasureMapLevel => 2;
 
-        public override HideType HideType => HideType.Spined;
+        public override HideType HideType => HideType.Reptilien;
 
-        public override void GenerateLoot()
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
         }

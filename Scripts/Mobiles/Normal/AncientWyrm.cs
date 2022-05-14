@@ -48,12 +48,20 @@ namespace Server.Mobiles
 
         public override bool ReacquireOnMovement => true;
         public override bool AutoDispel => true;
-        public override HideType HideType => HideType.Barbed;
+/*        public override HideType HideType => HideType.Barbed;
         public override int Hides => 40;
         public override int Meat => 19;
-        public override int Scales => 12;
-        public override ScaleType ScaleType => (ScaleType)Utility.Random(4);
-        public override Poison PoisonImmune => Poison.Regular;
+		/*       public override int Scales => 12;
+			   public override ScaleType ScaleType => (ScaleType)Utility.Random(4);*/
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Dragonique;
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+
+		public override Poison PoisonImmune => Poison.Regular;
         public override Poison HitPoison => Utility.RandomBool() ? Poison.Lesser : Poison.Regular;
         public override int TreasureMapLevel => 5;
         public override bool CanFly => true;

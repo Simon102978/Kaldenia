@@ -104,9 +104,12 @@ namespace Server.Mobiles
         public override bool StatLossAfterTame => true;
         public override int Meat => 1;
         public override MeatType MeatType => MeatType.DinoRibs;
-        public override int Hides => 11;
-        public override HideType HideType => HideType.Spined;
-        public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
+        public override int Hides => 4;
+        public override HideType HideType => HideType.Reptilien;
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Reptilien;
+		public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
 
         public override void GenerateLoot()
         {

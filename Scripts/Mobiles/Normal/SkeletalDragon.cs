@@ -51,10 +51,13 @@ namespace Server.Mobiles
         public override bool BleedImmune => true;
         public override bool ReacquireOnMovement => !Controlled;
         public override double BonusPetDamageScalar => 3.0;
-        public override int Hides => 20;
+  //      public override int Hides => 20;
         public override int Meat => 19;  // where's it hiding these? :)
-        public override HideType HideType => HideType.Barbed;
-        public override Poison PoisonImmune => Poison.Lethal;
+										 //     public override HideType HideType => HideType.Barbed;
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+		public override Poison PoisonImmune => Poison.Lethal;
         public override TribeType Tribe => TribeType.Undead;
 
         public override void GenerateLoot()

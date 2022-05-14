@@ -50,9 +50,18 @@ namespace Server.Mobiles
         }
 
         public override int Meat => 1;
-        public override int Hides => 12;
-        public override HideType HideType => HideType.Spined;
-        public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+
+
+
+		public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override bool OverrideBondingReqs()
         {
             return true;

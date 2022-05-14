@@ -46,9 +46,16 @@ namespace Server.Mobiles
 
         public override bool DeathAdderCharmable => true;
         public override int Meat => 4;
-        public override int Hides => 15;
-        public override HideType HideType => HideType.Spined;
-        public override void GenerateLoot()
+		/*       public override int Hides => 15;
+			   public override HideType HideType => HideType.Spined;*/
+
+		public override int Hides => 8;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 8;
+		public override BoneType BoneType => BoneType.Reptilien;
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.LootItem<GlacialStaff>(2.5));

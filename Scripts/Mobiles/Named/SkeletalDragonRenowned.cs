@@ -60,9 +60,13 @@ namespace Server.Mobiles
         public override Poison PoisonImmune => Poison.Lethal;
         public override bool BleedImmune => true;
         public override int Meat => 19;// where's it hiding these? :)
-        public override int Hides => 20;
-        public override HideType HideType => HideType.Barbed;
-        public override void GenerateLoot()
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+		//     public override int Hides => 20;
+		//       public override HideType HideType => HideType.Barbed;
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich, 3);
         }

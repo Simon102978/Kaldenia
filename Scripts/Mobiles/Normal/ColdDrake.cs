@@ -65,9 +65,13 @@ namespace Server.Mobiles
         public override bool ReacquireOnMovement => !Controlled;
         public override int TreasureMapLevel => 3;
         public override int Meat => 10;
-        public override int Hides => 22;
-        public override HideType HideType => HideType.Horned;
-        public override int DragonBlood => 8;
+
+		public override int Hides => 8;
+		public override HideType HideType => HideType.Dragonique;
+		public override int Bones => 8;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+		public override int DragonBlood => 8;
         public override FoodType FavoriteFood => FoodType.Fish;
 
         public virtual void AuraEffect(Mobile m)

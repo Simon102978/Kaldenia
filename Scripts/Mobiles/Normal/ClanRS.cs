@@ -43,8 +43,12 @@ namespace Server.Mobiles
 
         public override bool CanRummageCorpses => true;
         public override int Hides => 8;
-        public override HideType HideType => HideType.Spined;
-        public override void GenerateLoot()
+        public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 8;
+		public override BoneType BoneType => BoneType.Regular;
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich, 3);
         }

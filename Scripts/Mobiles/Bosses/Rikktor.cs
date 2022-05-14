@@ -70,9 +70,18 @@ namespace Server.Mobiles
                     MonsterStatuetteType.OphidianWarrior
                 };
         public override Poison PoisonImmune => Poison.Lethal;
-        public override ScaleType ScaleType => ScaleType.All;
-        public override int Scales => 20;
-        public override void GenerateLoot()
+		/*     public override ScaleType ScaleType => ScaleType.All;
+			 public override int Scales => 20;*/
+
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Dragonique;
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.UltraRich, 4);
         }

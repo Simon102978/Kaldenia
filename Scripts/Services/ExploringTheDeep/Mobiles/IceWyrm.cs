@@ -99,8 +99,8 @@ namespace Server.Mobiles
         public override bool ReacquireOnMovement => true;
 
         public override int Meat => 0;
-		public override int Scales => 0;
-        public override int Hides => 0;
+	//	public override int Scales => 0;
+  //      public override int Hides => 0;
 		
 		public override void GenerateLoot()
         {

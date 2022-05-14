@@ -92,9 +92,12 @@ namespace Server.Mobiles
         public override int Meat => 3;
         public override MeatType MeatType => MeatType.DinoRibs;
         public override int Hides => 11;
-        public override HideType HideType => HideType.Horned;
+        public override HideType HideType => HideType.Reptilien;
 
-        public Allosaurus(Serial serial) : base(serial)
+		public override int Bones => 11;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		public Allosaurus(Serial serial) : base(serial)
         {
         }
 

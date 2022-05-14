@@ -46,12 +46,22 @@ namespace Server.Mobiles
 
         public override int TreasureMapLevel => 3;
         public override int Meat => 10;
-        public override int Hides => 11;
-        public override HideType HideType => HideType.Horned;
-        public override int Scales => 8;
-        public override ScaleType ScaleType => ScaleType.Blue;
 
-        public CrystalSeaSerpent(Serial serial)
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+
+
+		/*       public override int Hides => 11;
+			   public override HideType HideType => HideType.Horned;
+			   public override int Scales => 8;
+			   public override ScaleType ScaleType => ScaleType.Blue;*/
+
+		public CrystalSeaSerpent(Serial serial)
             : base(serial)
         {
         }

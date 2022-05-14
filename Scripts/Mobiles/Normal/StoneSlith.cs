@@ -52,9 +52,9 @@ namespace Server.Mobiles
 
         public override int Meat => 1;
 
-        public override int Hides => 12;
+/*        public override int Hides => 12;
 
-        public override HideType HideType => HideType.Spined;
+        public override HideType HideType => HideType.Spined;*/
 
         public override void GenerateLoot()
         {

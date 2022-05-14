@@ -24,8 +24,8 @@ namespace Server.Mobiles
 
         public override int Meat => 5;
 
-        public override ScaleType ScaleType => ScaleType.All;
-        public override int Scales => 20;
+ /*       public override ScaleType ScaleType => ScaleType.All;
+        public override int Scales => 20;*/
 
         public override double TreasureMapChance => .50;
         public override int TreasureMapLevel => 7;

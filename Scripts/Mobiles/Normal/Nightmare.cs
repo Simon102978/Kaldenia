@@ -88,10 +88,19 @@ namespace Server.Mobiles
         }
 
         public override int Meat => 5;
-        public override int Hides => 10;
-        public override HideType HideType => HideType.Barbed;
-        public override FoodType FavoriteFood => FoodType.Meat;
-        public override bool CanAngerOnTame => true;
+      //  public override int Hides => 10;
+		/*   public override HideType HideType => HideType.Barbed;
+		   public override FoodType FavoriteFood => FoodType.Meat;*/
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Demoniaque;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Demoniaque;
+
+
+		public override bool CanAngerOnTame => true;
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);

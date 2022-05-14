@@ -49,10 +49,20 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Hides => 10;
-        public override HideType HideType => HideType.Spined;
-        public override FoodType FavoriteFood => FoodType.Meat;
-        public override PackInstinct PackInstinct => PackInstinct.Feline;
+     //   public override int Hides => 10;
+		/*   public override HideType HideType => HideType.Spined;
+		   public override FoodType FavoriteFood => FoodType.Meat;*/
+
+
+		public override int Hides => 10;
+		public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 10;
+		public override BoneType BoneType => BoneType.Regular;
+
+
+		public override PackInstinct PackInstinct => PackInstinct.Feline;
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);

@@ -169,10 +169,13 @@ namespace Server.Mobiles
             return base.GetHurtSound();
         }
         public override int Meat => 9;
-        public override int Hides => 20;
-        public override HideType HideType => HideType.Horned;
+        public override int Hides => 4;
+        public override HideType HideType => HideType.Arachnide;
 
-        public override void Serialize(GenericWriter writer)
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0); // version

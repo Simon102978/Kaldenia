@@ -53,12 +53,24 @@ namespace Server.Mobiles
         public override int Meat => 5;
         public override MeatType MeatType => MeatType.SeaSerpentSteak;
         public override int TreasureMapLevel => Utility.RandomList(1, 2);
-        public override int Hides => 10;
-        public override HideType HideType => HideType.Horned;
-        public override int Scales => 8;
-        public override ScaleType ScaleType => ScaleType.Blue;
 
-        public override void GenerateLoot()
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+
+
+
+		/*       public override int Hides => 10;
+			   public override HideType HideType => HideType.Horned;
+			   public override int Scales => 8;
+			   public override ScaleType ScaleType => ScaleType.Blue;*/
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.LootItem<RawFishSteak>());

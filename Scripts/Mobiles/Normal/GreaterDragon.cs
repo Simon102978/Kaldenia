@@ -59,11 +59,18 @@ namespace Server.Mobiles
         public override bool AutoDispel => !Controlled;
         public override int TreasureMapLevel => 5;
         public override int Meat => 19;
-        public override int Hides => 30;
-        public override HideType HideType => HideType.Barbed;
-        public override int Scales => 7;
-        public override ScaleType ScaleType => (Body == 12 ? ScaleType.Yellow : ScaleType.Red);
-        public override FoodType FavoriteFood => FoodType.Meat;
+		/*        public override int Hides => 30;
+				public override HideType HideType => HideType.Barbed;
+				public override int Scales => 7;
+				public override ScaleType ScaleType => (Body == 12 ? ScaleType.Yellow : ScaleType.Red);*/
+
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Dragonique;
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+		public override FoodType FavoriteFood => FoodType.Meat;
         public override bool CanAngerOnTame => true;
         public override bool CanFly => true;
         public override void GenerateLoot()

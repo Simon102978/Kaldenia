@@ -50,10 +50,13 @@ namespace Server.Mobiles
         public override bool CanRummageCorpses => true;
         public override int TreasureMapLevel => 2;
         public override int Meat => 1;
-        public override int Hides => 8;
-        public override HideType HideType => HideType.Spined;
+		public override int Hides => 8;
+		public override HideType HideType => HideType.Regular;
 
-        public override void GenerateLoot()
+		public override int Bones => 8;
+		public override BoneType BoneType => BoneType.Regular;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.LowScrolls);

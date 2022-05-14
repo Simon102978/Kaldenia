@@ -67,7 +67,7 @@ namespace Server.Mobiles
         public override Poison PoisonImmune => Poison.Lethal;
         public override int Meat => 3;
         public override int Hides => 10;
-        public override HideType HideType => HideType.Horned;
+        public override HideType HideType => HideType.Regular;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override void OnDisallowedRider(Mobile m)
         {

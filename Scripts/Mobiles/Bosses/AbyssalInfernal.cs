@@ -66,10 +66,17 @@ namespace Server.Mobiles
 
         public override Poison PoisonImmune => Poison.Lethal;
 
-        public override ScaleType ScaleType => ScaleType.All;
-        public override int Scales => 20;
+		/*     public override ScaleType ScaleType => ScaleType.All;
+			 public override int Scales => 20;*/
 
-        public override int GetAttackSound() { return 0x5D4; }
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Demoniaque;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Demoniaque;
+
+		public override int GetAttackSound() { return 0x5D4; }
         public override int GetDeathSound() { return 0x5D5; }
         public override int GetHurtSound() { return 0x5D6; }
         public override int GetIdleSound() { return 0x5D7; }

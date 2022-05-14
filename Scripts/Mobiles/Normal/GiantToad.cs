@@ -60,9 +60,16 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Hides => 12;
-        public override HideType HideType => HideType.Spined;
-        public override FoodType FavoriteFood => FoodType.Fish | FoodType.Meat;
+		public override int Hides => 4;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		/*    public override int Hides => 12;
+			public override HideType HideType => HideType.Spined;*/
+		public override FoodType FavoriteFood => FoodType.Fish | FoodType.Meat;
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Poor);

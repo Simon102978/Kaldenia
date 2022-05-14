@@ -62,11 +62,19 @@ namespace Server.Mobiles
         public override bool AutoDispel => true;
         public override bool Uncalmable => true;
         public override int Meat => 19;
-        public override int Hides => 40;
-        public override HideType HideType => HideType.Barbed;
-        public override int Scales => 12;
-        public override ScaleType ScaleType => (ScaleType)Utility.Random(4);
-        public override FoodType FavoriteFood => FoodType.Meat;
+        public override int Hides => 12;
+        public override HideType HideType => HideType.Dragonique;
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Dragonique;
+
+
+
+		/*       public override int Scales => 12;
+		 *       
+			   public override ScaleType ScaleType => (ScaleType)Utility.Random(4);*/
+
+
+		public override FoodType FavoriteFood => FoodType.Meat;
         public override Poison PoisonImmune => Poison.Lethal;
         public override Poison HitPoison => Utility.RandomBool() ? Poison.Deadly : Poison.Lethal;
         public override int TreasureMapLevel => 5;

@@ -41,7 +41,7 @@ namespace Server.Services.Virtues
 
         public static void Initialize()
         {
-            EventSink.ItemDeleted += OnItemDeleted;
+  /*          EventSink.ItemDeleted += OnItemDeleted;
             EventSink.AfterWorldSave += OnAfterSave;
 
             VirtueGump.Register(106, OnVirtueUsed);
@@ -51,7 +51,7 @@ namespace Server.Services.Virtues
                 _Items.UnionWith(World.Items.Values.Where(item => item.HonestyItem));
 
                 GenerateHonestyItems();
-            }
+            }*/
         }
 
         public static bool IsHonestyItem(Item item)

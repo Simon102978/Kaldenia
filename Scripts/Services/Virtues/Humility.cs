@@ -15,12 +15,12 @@ namespace Server.Services.Virtues
 
         public static void Initialize()
         {
-            HuntTable = new Dictionary<Mobile, HumilityHuntContext>();
+  /*          HuntTable = new Dictionary<Mobile, HumilityHuntContext>();
             ActiveTable = new Dictionary<Mobile, Mobile>();
 
             VirtueGump.Register(108, OnVirtueUsed);
 
-            EventSink.Speech += EventSink_Speech;
+            EventSink.Speech += EventSink_Speech;*/
         }
 
         public static void EventSink_Speech(SpeechEventArgs e)

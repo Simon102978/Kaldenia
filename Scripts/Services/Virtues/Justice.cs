@@ -16,7 +16,7 @@ namespace Server.Services.Virtues
 
         public static void Initialize()
         {
-            VirtueGump.Register(109, OnVirtueUsed);
+  //          VirtueGump.Register(109, OnVirtueUsed);
         }
 
         public static bool CheckMapRegion(Mobile first, Mobile second)

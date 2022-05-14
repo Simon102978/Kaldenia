@@ -19,7 +19,7 @@ namespace Server.Services.Virtues
 
         public static void Initialize()
         {
-            VirtueGump.Register(107, OnVirtueUsed);
+//            VirtueGump.Register(107, OnVirtueUsed);
         }
 
         public static void ActivateEmbrace(PlayerMobile pm)

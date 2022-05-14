@@ -13,9 +13,9 @@ namespace Server.Services.Virtues
 
         public static void Initialize()
         {
-            ActiveTable = new Dictionary<Mobile, SpiritualityContext>();
+    /*        ActiveTable = new Dictionary<Mobile, SpiritualityContext>();
 
-            VirtueGump.Register(111, OnVirtueUsed);
+            VirtueGump.Register(111, OnVirtueUsed);*/
         }
 
         public static void OnVirtueUsed(Mobile from)

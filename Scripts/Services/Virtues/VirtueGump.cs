@@ -53,9 +53,9 @@ namespace Server.Services.Virtues
 
         public static void Initialize()
         {
-            EventSink.VirtueGumpRequest += EventSink_VirtueGumpRequest;
-            EventSink.VirtueItemRequest += EventSink_VirtueItemRequest;
-            EventSink.VirtueMacroRequest += EventSink_VirtueMacroRequest;
+   //         EventSink.VirtueGumpRequest += EventSink_VirtueGumpRequest;
+   //         EventSink.VirtueItemRequest += EventSink_VirtueItemRequest;
+  //          EventSink.VirtueMacroRequest += EventSink_VirtueMacroRequest;
         }
 
         public static void Register(int gumpID, OnVirtueUsed callback)

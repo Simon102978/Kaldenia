@@ -2193,12 +2193,12 @@ namespace Server.Mobiles
                     }
                 }
 
-                list.Add(new TitlesMenuEntry(this));
+//                list.Add(new TitlesMenuEntry(this));
 
-                if (Alive)
+      /*          if (Alive)
                 {
                     list.Add(new Engines.Points.LoyaltyRating(this));
-                }
+                }*/
 
                 list.Add(new OpenBackpackEntry(this));
 
@@ -2212,7 +2212,7 @@ namespace Server.Mobiles
                     list.Add(new CallbackEntry(3006168, SiegeBlessItem));
                 }
 
-                if (Alive)
+                /*if (Alive)
                 {
                     QuestHelper.GetContextMenuEntries(list);
                 }
@@ -2220,7 +2220,7 @@ namespace Server.Mobiles
                 if (m_Quest != null)
                 {
                     m_Quest.GetContextMenuEntries(list);
-                }
+                }*/
 
                 if (house != null)
                 {
@@ -2232,15 +2232,15 @@ namespace Server.Mobiles
                     list.Add(new CallbackEntry(6207, LeaveHouse));
                 }
 
-                list.Add(new CallbackEntry(RefuseTrades ? 1154112 : 1154113, ToggleTrades)); // Allow Trades / Refuse Trades				
+           //     list.Add(new CallbackEntry(RefuseTrades ? 1154112 : 1154113, ToggleTrades)); // Allow Trades / Refuse Trades				
 
-                if (m_JusticeProtectors.Count > 0)
+             /*   if (m_JusticeProtectors.Count > 0)
                 {
                     list.Add(new CallbackEntry(6157, CancelProtection));
-                }
+                }*/
 
                 #region Void Pool
-                if (VoidPool || Region.IsPartOf<VoidPoolRegion>())
+      /*          if (VoidPool || Region.IsPartOf<VoidPoolRegion>())
                 {
                     VoidPoolController controller = Map == Map.Felucca ? VoidPoolController.InstanceFel : VoidPoolController.InstanceTram;
 
@@ -2253,13 +2253,13 @@ namespace Server.Mobiles
 
                         list.Add(new VoidPoolInfo(this, controller));
                     }
-                }
+                }*/
                 #endregion
 
-                if (DisabledPvpWarning)
+        /*        if (DisabledPvpWarning)
                 {
                     list.Add(new CallbackEntry(1113797, EnablePvpWarning));
-                }
+                }*/
             }
             else
             {

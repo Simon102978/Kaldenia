@@ -10,14 +10,14 @@ namespace Server
         [CallPriority(int.MinValue)]
         public static void Configure()
         {
-            AccountGold.Enabled = true;
-            AccountGold.ConvertOnBank = true;
+            AccountGold.Enabled = false;
+            AccountGold.ConvertOnBank = false;
             AccountGold.ConvertOnTrade = false;
-            VirtualCheck.UseEditGump = true;
+            VirtualCheck.UseEditGump = false;
 
             TownCryerSystem.Enabled = true;
 
-            Mobile.InsuranceEnabled = !Siege.SiegeShard;
+            Mobile.InsuranceEnabled = false;
             Mobile.VisibleDamageType = VisibleDamageType.Related;
 
             AOS.DisableStatInfluences();

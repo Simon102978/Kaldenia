@@ -679,15 +679,19 @@ namespace Server.Guilds
             {
                 return;
             }
+			else
+			{
+				pm.SendMessage("Menu désactivé.");
+			}
 
-            if (pm.Guild == null)
+        /*    if (pm.Guild == null)
             {
                 pm.SendGump(new CreateGuildGump(pm));
             }
             else
             {
                 pm.SendGump(new GuildInfoGump(pm, pm.Guild as Guild));
-            }
+            }*/
         }
 
         public static void EventSink_CreateGuild(CreateGuildEventArgs args)

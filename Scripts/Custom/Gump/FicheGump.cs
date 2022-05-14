@@ -5,6 +5,8 @@ using Server.Network;
 using Server.Mobiles;
 using Server.Items;
 using Server.Misc;
+using System.Collections.Generic;
+
 
 
 namespace Server.Gumps
@@ -211,6 +213,18 @@ namespace Server.Gumps
 					AddButton(x + 550, y + 40 + line * 25, 5601, 5605, 200 + (int)item, GumpButtonType.Reply, 0);
 				}		
 
+				line++;
+			}
+
+
+			line = 0;
+
+			AddSection(x + 241, y + 443, 359, 220, "Dévotions");
+
+			foreach (KeyValuePair<MagieType, int> item in m_From.MagicAfinity)
+			{
+				AddHtmlTexte(x + 261, y + 483 + line * 25, 150, item.Key.ToString() );
+				AddLabel(x + 525, y + 483 + line * 25, 150, item.Value.ToString());
 				line++;
 			}
 

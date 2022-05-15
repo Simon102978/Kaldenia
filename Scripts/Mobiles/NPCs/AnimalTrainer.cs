@@ -68,7 +68,7 @@ namespace Server.Mobiles
         {
             base.GetProperties(list);
 
-            list.Add(1072269); // Quest Giver
+      //      list.Add(1072269); // Quest Giver
         }
 
         private DateTime _NextTalk;
@@ -84,9 +84,9 @@ namespace Server.Mobiles
             }
         }
 
-        private readonly Type[] _Quests = { typeof(TamingPetQuest), typeof(UsingAnimalLoreQuest), typeof(LeadingIntoBattleQuest), typeof(TeachingSomethingNewQuest) };
+//        private readonly Type[] _Quests = { typeof(TamingPetQuest), typeof(UsingAnimalLoreQuest), typeof(LeadingIntoBattleQuest), typeof(TeachingSomethingNewQuest) };
 
-        public override void OnDoubleClick(Mobile m)
+    /*    public override void OnDoubleClick(Mobile m)
         {
             if (m is PlayerMobile && m.InRange(Location, 5))
             {
@@ -94,7 +94,7 @@ namespace Server.Mobiles
             }
         }
 
-        public bool CheckQuest(PlayerMobile player)
+  /*      public bool CheckQuest(PlayerMobile player)
         {
             for (int i = 0; i < _Quests.Length; i++)
             {
@@ -132,7 +132,7 @@ namespace Server.Mobiles
             player.SendGump(new MondainQuestGump(questt));
 
             return true;
-        }
+        }*/
 
         public static int GetMaxStabled(Mobile from)
         {

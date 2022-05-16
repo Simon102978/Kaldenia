@@ -8,6 +8,7 @@ using Server.Custom.Misc;
 using System.Collections;
 using Server.Custom;
 using Server.Movement;
+using Server.Gumps;
 
 #endregion
 
@@ -230,6 +231,12 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public string customTitle { get; set; }
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public QuiOptions QuiOptions
+		{
+			get;
+			set;
+		}
 
 
 
@@ -1308,12 +1315,18 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 13:
+					{
+						QuiOptions = (QuiOptions)reader.ReadInt();
+
+						goto case 12;
+					}
 				case 12:
 					{
 						TitleCycle = reader.ReadInt();
 						customTitle = reader.ReadString();
 
-						goto case 12;
+						goto case 11;
 					}
 				case 11:
 					{
@@ -1433,7 +1446,9 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(12); // version
+            writer.Write(13); // version
+
+			writer.Write((int)QuiOptions);
 
 			writer.Write(TitleCycle);
 			writer.Write(customTitle);

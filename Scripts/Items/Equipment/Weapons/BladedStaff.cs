@@ -21,11 +21,11 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
         public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
         public override int StrengthReq => 40;
-        public override int MinDamage => 14;
-        public override int MaxDamage => 17;
+        public override int MinDamage => 10;
+        public override int MaxDamage => 12;
         public override float Speed => 3.00f;
-
-        public override int InitMinHits => 21;
+		public override int DefMaxRange => 2;
+		public override int InitMinHits => 21;
         public override int InitMaxHits => 110;
         public override SkillName DefSkill => SkillName.Swords;
         public override void Serialize(GenericWriter writer)

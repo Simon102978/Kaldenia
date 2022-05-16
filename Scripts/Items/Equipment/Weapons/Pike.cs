@@ -21,11 +21,13 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
         public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
         public override int StrengthReq => 50;
-        public override int MinDamage => 14;
-        public override int MaxDamage => 17;
+        public override int MinDamage => 10;
+        public override int MaxDamage => 12;
         public override float Speed => 3.00f;
 
-        public override int InitMinHits => 31;
+		public override int DefMaxRange => 2;
+
+		public override int InitMinHits => 31;
         public override int InitMaxHits => 110;
         public override void Serialize(GenericWriter writer)
         {

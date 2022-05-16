@@ -2,10 +2,10 @@ using System;
 
 namespace Server.Items
 {
-    public class CandleShort : BaseLight
+    public class CandleShort1 : BaseLight
     {
         [Constructable]
-        public CandleShort()
+        public CandleShort1()
             : base(0x142F)
         {
             if (Burnout)
@@ -18,7 +18,7 @@ namespace Server.Items
             Weight = 1.0;
         }
 
-        public CandleShort(Serial serial)
+        public CandleShort1(Serial serial)
             : base(serial)
         {
         }

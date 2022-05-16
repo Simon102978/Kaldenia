@@ -39,7 +39,7 @@ namespace Server
             if (dead == null)
                 return 240;
 
-            System.Collections.Generic.List<DamageStore> list = dead.GetLootingRights();
+           System.Collections.Generic.List<DamageStore> list = dead.GetLootingRights();
 
             DamageStore highest = null;
 
@@ -176,7 +176,15 @@ namespace Server
 
         public static readonly LootPackItem[] Gold = new[] { new LootPackItem(typeof(Gold), 1) };
 
-        public static readonly LootPackItem[] Instruments = new[] { new LootPackItem(typeof(BaseInstrument), 1) };
+		public static readonly LootPackItem[] RandomFoodRecipeItems = new[]
+	   {
+			new LootPackItem(typeof(RandomBakingRecipe), 1), new LootPackItem(typeof(RandomPreparationsRecipe), 1),
+			new LootPackItem(typeof(RandomBoilingRecipe), 1), new LootPackItem(typeof(RandomRawMeatPrepRecipe), 1),
+			new LootPackItem(typeof(RandomIngredientsRecipe), 1), new LootPackItem(typeof(RandomSaucesRecipe), 1),
+			new LootPackItem(typeof(RandomOilsRecipe), 1)
+		};
+
+		public static readonly LootPackItem[] Instruments = new[] { new LootPackItem(typeof(BaseInstrument), 1) };
 
         // Circles 1 - 3
         public static readonly LootPackItem[] LowScrollItems = new[]
@@ -526,8 +534,9 @@ namespace Server
                     new LootPackEntry(false, true, Gold, 100.00, "4d5+20"),
           //          new LootPackEntry(false, false, MagicItemsMeagerType1, 20.40, 1, 2, 0, 50, true),
              //       new LootPackEntry(false, false, MagicItemsMeagerType2, 10.20, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 0.10, 1)
-                });
+                    new LootPackEntry(false, false, Instruments, 0.10, 1),
+					new LootPackEntry(false, true, RandomFoodRecipeItems, 5.00, 1)
+				});
 
         public static readonly LootPack LootAverage =
             new LootPack(
@@ -537,8 +546,9 @@ namespace Server
    //                 new LootPackEntry(false, false, MagicItemsAverageType1, 32.80, 1, 3, 0, 50, true),
    //                 new LootPackEntry(false, false, MagicItemsAverageType1, 32.80, 1, 4, 0, 75, true),
    //                 new LootPackEntry(false, false, MagicItemsAverageType2, 19.50, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 0.40, 1)
-                });
+                    new LootPackEntry(false, false, Instruments, 0.40, 1),
+					new LootPackEntry(false, true, RandomFoodRecipeItems, 5.00, 1)
+				});
 
         public static readonly LootPack LootRich =
             new LootPack(
@@ -548,8 +558,9 @@ namespace Server
        //             new LootPackEntry(false, false, MagicItemsRichType1, 76.30, 1, 4, 0, 75, true),
        //             new LootPackEntry(false, false, MagicItemsRichType1, 76.30, 1, 4, 0, 75, true),
       //              new LootPackEntry(false, false, MagicItemsRichType2, 61.70, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 1.00, 1)
-                });
+                    new LootPackEntry(false, false, Instruments, 1.00, 1),
+					new LootPackEntry(false, true, RandomFoodRecipeItems, 5.00, 1)
+				});
 
         public static readonly LootPack LootFilthyRich =
             new LootPack(
@@ -559,8 +570,9 @@ namespace Server
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType2, 77.60, 1, 5, 25, 100, true),
-                    new LootPackEntry(false, false, Instruments, 2.00, 1)
-                });
+                    new LootPackEntry(false, false, Instruments, 2.00, 1),
+					new LootPackEntry(false, true, RandomFoodRecipeItems, 5.00, 1)
+				});
 
         public static readonly LootPack LootUltraRich =
             new LootPack(
@@ -573,8 +585,9 @@ namespace Server
         //            new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
           //          new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
             //        new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
-                    new LootPackEntry(false, false, Instruments, 2.00, 1)
-                });
+                    new LootPackEntry(false, false, Instruments, 2.00, 1),
+					new LootPackEntry(false, true, RandomFoodRecipeItems, 5.00, 1)
+				});
 
         public static readonly LootPack LootSuperBoss =
             new LootPack(
@@ -591,8 +604,9 @@ namespace Server
      //               new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
      //               new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 50, 100, true),
      //               new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 50, 100, true),
-                    new LootPackEntry(false, false, Instruments, 2.00, 1)
-                });
+                    new LootPackEntry(false, false, Instruments, 2.00, 1),
+					new LootPackEntry(false, true, RandomFoodRecipeItems, 5.00, 1)
+				});
         #endregion
 
         #region Generic accessors

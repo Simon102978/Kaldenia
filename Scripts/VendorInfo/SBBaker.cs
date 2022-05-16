@@ -27,7 +27,13 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(CheesePizza), 8, 10, 0x1040, 0)); // OSI just has Pizza
                 Add(new GenericBuyInfo(typeof(JarHoney), 3, 20, 0x9ec, 0));
                 Add(new GenericBuyInfo(typeof(BowlFlour), 7, 20, 0xA1E, 0));
-            }
+				Add(new GenericBuyInfo(typeof(BagOfSugarRecipe), 10, 20, 0x2831, 0));
+				Add(new GenericBuyInfo(typeof(CocoaButterRecipe), 10, 20, 0x2831, 0));
+				Add(new GenericBuyInfo(typeof(CocoaLiquorRecipe), 10, 20, 0x2831, 0));
+				Add(new GenericBuyInfo(typeof(DoughRecipe), 10, 20, 0x2831, 0));
+				Add(new GenericBuyInfo(typeof(SackFlourRecipe), 10, 20, 0x2831, 0));
+				Add(new GenericBuyInfo(typeof(SweetDoughRecipe), 10, 20, 0x2831, 0));
+			}
         }
 
         public class InternalSellInfo : GenericSellInfo

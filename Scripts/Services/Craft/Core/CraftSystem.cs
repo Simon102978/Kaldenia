@@ -365,8 +365,14 @@ namespace Server.Engines.Craft
             CraftItem craftItem = CraftItems.GetAt(index);
             craftItem.NeedMill = needMill;
         }
-
-        public void SetRequiresBasketWeaving(int index)
+		#region Cooking System
+		public void SetNeedSteamPoweredBeverageMaker(int index, bool needSteamPoweredBeverageMaker)
+		{
+			CraftItem craftItem = this.CraftItems.GetAt(index);
+			craftItem.NeedSteamPoweredBeverageMaker = needSteamPoweredBeverageMaker;
+		}
+		#endregion
+		public void SetRequiresBasketWeaving(int index)
         {
             CraftItem craftItem = CraftItems.GetAt(index);
             craftItem.RequiresBasketWeaving = true;

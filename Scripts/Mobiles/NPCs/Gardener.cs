@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
-    public class Gardener : BaseVendor
+    public class Gardener1 : BaseVendor
     {
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
-        public Gardener()
+        public Gardener1()
             : base("the gardener")
         {
         }
 
-        public Gardener(Serial serial)
+        public Gardener1(Serial serial)
             : base(serial)
         {
         }
@@ -20,7 +20,7 @@ namespace Server.Mobiles
         protected override List<SBInfo> SBInfos => m_SBInfos;
         public override void InitSBInfo()
         {
-            m_SBInfos.Add(new SBGardener());
+            m_SBInfos.Add(new SBGardener1());
         }
 
         public override int GetShoeHue()

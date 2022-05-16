@@ -184,10 +184,10 @@ namespace Knives.TownHouses
 			}
 		}
 
-		public override int GetVendorSystemMaxVendors()
-		{
-			return 50;
-		}
+		/// public override int GetVendorSystemMaxVendors()
+		/// {
+		///	return 50;
+		/// }
 
 		public override int GetAosMaxSecures()
 		{

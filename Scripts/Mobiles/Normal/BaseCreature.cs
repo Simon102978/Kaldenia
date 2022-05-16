@@ -109,8 +109,12 @@ namespace Server.Mobiles
         LambLeg,
         Rotworm,
         DinoRibs,
-        SeaSerpentSteak
-    }
+        SeaSerpentSteak,
+		Venison,
+		Chicken,
+		Duck,
+		Turkey
+	}
 
 	public enum HideType
 	{
@@ -2001,7 +2005,11 @@ namespace Server.Mobiles
                         case MeatType.Rotworm: m = new RawRotwormMeat(meat); break;
                         case MeatType.DinoRibs: m = new RawDinoRibs(meat); break;
                         case MeatType.SeaSerpentSteak: m = new RawSeaSerpentSteak(meat); break;
-                    }
+						case MeatType.Venison: m = new RawVenisonSteak(meat); break;
+						case MeatType.Chicken: m = new RawChickenExp(meat); break;
+						case MeatType.Duck: m = new RawDuck(meat); break;
+						case MeatType.Turkey: m = new RawTurkey(meat); break;
+					}
 
                     if (!special || !from.AddToBackpack(m))
                     {
@@ -2932,43 +2940,79 @@ namespace Server.Mobiles
 
         public override bool ShouldCheckStatTimers => false;
 
-        #region Food
-        private static readonly Type[] m_Eggs = new[] { typeof(FriedEggs), typeof(Eggs) };
+		#region Food
+		private static readonly Type[] m_Eggs = new[]
+		{
+			typeof(FriedDuckEggs), typeof(FriedChickenEggs), typeof(BrightEggsExp), typeof(BrightlyColoredEggs),
+			typeof(EasterEggsExp), typeof(HarpyEggs), typeof(FriedEggs), typeof(EggsExp)
+		};
 
-        private static readonly Type[] m_Fish = new[] { typeof(FishSteak), typeof(RawFishSteak) };
+		private static readonly Type[] m_Fish = new[] { typeof(FishSteakExp), typeof(RawFishSteakExp) };
 
-        private static readonly Type[] m_GrainsAndHay = new[] { typeof(BreadLoaf), typeof(FrenchBread), typeof(SheafOfHay) };
+		private static readonly Type[] m_GrainsAndHay = new[]
+		{
+			typeof(BananaBread), typeof(BlueberryMuffins), typeof(CornBread), typeof(GarlicBread), typeof(Hay),
+			typeof(OatSheath), typeof(PumpkinBread), typeof(PumpkinMuffins), typeof(RiceSheath), typeof(Wheat),
+			typeof(WheatSheaf), typeof(BreadLoaf), typeof(FrenchBread), typeof(SheafOfHay)
+		};
 
-        private static readonly Type[] m_Meat = new[]
-        {
+		private static readonly Type[] m_Meat = new[]
+		{
+            #region Game Meats
+            typeof(Venison), typeof(VenisonJerky), typeof(VenisonRoast), typeof(VenisonRoastSlices), typeof(VenisonSteak),
+			typeof(RawGroundVenison), typeof(RawVenisonRoast), typeof(RawVenisonSlice), typeof(RawVenisonSteak),
+            #endregion
+            #region Lean Ground Meats
+            typeof(BeefHock), typeof(BeefJerky), typeof(BeefPorterhouse), typeof(BeefPrimeRib), typeof(BeefRibeye), typeof(BeefRoast), typeof(BeefRibs),
+			typeof(BeefRoastSlices), typeof(BeefSirloin), typeof(BeefTBone), typeof(BeefTenderloin), typeof(GoatRoast), typeof(GoatRoastSlices), typeof(GoatSteak), typeof(BaconSlab),
+			typeof(HamSlices), typeof(PigHead), typeof(PorkChop), typeof(PorkRoast), typeof(PorkSpareRibs), typeof(RoastHam), typeof(RoastPig), typeof(SlabOfBacon),
+			typeof(Trotters), typeof(MuttonRoast), typeof(MuttonRoastSlices), typeof(MuttonSteak), typeof(CookedSteak),
+			typeof(RawBeefPorterhouse), typeof(RawBeefPrimeRib), typeof(RawBeefRibeye), typeof(RawBeefRibs), typeof(RawBeefRoast), typeof(RawBeefSirloin), typeof(RawBeefSlice), typeof(RawBeefTBone),
+			typeof(RawBeefTenderloin), typeof(RawGroundBeef), typeof(RawGoatRoast), typeof(RawGoatSteak), typeof(PorkHock), typeof(RawBacon), typeof(RawBaconSlab), typeof(RawGroundPork),
+			typeof(RawHam), typeof(RawHamSlices), typeof(RawPigHead), typeof(RawPorkChop), typeof(RawPorkRoast), typeof(RawPorkSlice), typeof(RawSpareRibs), typeof(RawTrotters),
+			typeof(RawMuttonRoast), typeof(RawMuttonSteak),
+            #endregion
+            #region Poulty
+            typeof(RoastChicken), typeof(RoastDuck), typeof(DuckLeg), typeof(RoastTurkey), typeof(SlicedTurkey), typeof(TurkeyHock), typeof(TurkeyLeg), typeof(TurkeyPlatter),
+	        typeof(RawDuck), typeof(RawDuckLeg), typeof(RawTurkey), typeof(RawTurkeyLeg),
+            #endregion
 			/* Cooked */
 			typeof(Bacon), typeof(CookedBird), typeof(Sausage), typeof(Ham), typeof(Ribs), typeof(LambLeg), typeof(ChickenLeg),
 			/* Uncooked */
-			typeof(RawBird), typeof(RawRibs), typeof(RawLambLeg), typeof(RawChickenLeg), /* Body Parts */
+			typeof(RawBirdExp), typeof(RawRibsExp), typeof(RawLambLegExp), typeof(RawChickenLegExp), /* Body Parts */
 			typeof(Head), typeof(LeftArm), typeof(LeftLeg), typeof(Torso), typeof(RightArm), typeof(RightLeg)
-        };
+		};
 
-        private static readonly Type[] m_FruitsAndVegies = new[]
-        {
-            typeof(HoneydewMelon), typeof(YellowGourd), typeof(GreenGourd), typeof(Banana), typeof(Bananas), typeof(Lemon),
-            typeof(Lime), typeof(Dates), typeof(Grapes), typeof(Peach), typeof(Pear), typeof(Apple), typeof(Watermelon),
-            typeof(Squash), typeof(Cantaloupe), typeof(Carrot), typeof(Cabbage), typeof(Onion), typeof(Lettuce), typeof(Pumpkin)
-        };
+		private static readonly Type[] m_FruitsAndVegies = new[]
+		{
+			typeof(Asparagus), typeof(Avocado), typeof(Beet), typeof(Broccoli), typeof(Cauliflower), typeof(Celery),
+			typeof(ChiliPepper), typeof(Cucumber), typeof(Eggplant), typeof(FieldCorn), typeof(GreenBean),
+			typeof(GreenPepper), typeof(GreenSquash), typeof(GreenSquash), typeof(Mushrooms), typeof(OrangePepper), typeof(Peas),
+			typeof(Potato), typeof(Radish), typeof(RedMushroom), typeof(RedPepper), typeof(SnowPeas), typeof(Soybean),
+			typeof(Spinach), typeof(SweetPotato), typeof(TanGinger), typeof(TanMushroom), typeof(TeaLeaves), typeof(Tomato),
+			typeof(Turnip), typeof(YellowPepper), typeof(Apricot), typeof(Blackberry), typeof(Blueberry), typeof(Cherry),
+			typeof(CoffeeBean), typeof(Cranberry), typeof(Elderberries), typeof(Grapefruit), typeof(Kiwi), typeof(Mango),
+			typeof(Orange), typeof(Pineapple), typeof(Plum), typeof(Pomegranate), typeof(Prune), typeof(RedRaspberry),
+			typeof(BlackRaspberry), typeof(Strawberries), typeof(Strawberry),
+			typeof(HoneydewMelon), typeof(YellowGourd), typeof(GreenGourd), typeof(Banana), typeof(Bananas), typeof(Lemon),
+			typeof(Lime), typeof(Dates), typeof(Grapes), typeof(Peach), typeof(Pear), typeof(Apple), typeof(Watermelon),
+			typeof(Squash), typeof(Cantaloupe), typeof(Carrot), typeof(Cabbage), typeof(Onion), typeof(Lettuce), typeof(Pumpkin)
+		};
 
-        private static readonly Type[] m_Gold = new[]
-        {
+		private static Type[] m_Gold = new[]
+		{
 			// white wyrms eat gold..
 			typeof(Gold)
-        };
+		};
 
-        private static readonly Type[] m_Metal = new[]
-        {
+		private static readonly Type[] m_Metal = new[]
+		{
 			// Some Stygian Abyss Monsters eat Metal..
 			typeof(IronIngot), typeof(DullCopperIngot), typeof(ShadowIronIngot), typeof(CopperIngot), typeof(BronzeIngot),
-            typeof(GoldIngot), typeof(AgapiteIngot), typeof(VeriteIngot), typeof(ValoriteIngot)
-        };
+			typeof(GoldIngot), typeof(AgapiteIngot), typeof(VeriteIngot), typeof(ValoriteIngot)
+		};
 
-        private static readonly Type[] m_BlackrockStew =
+		private static readonly Type[] m_BlackrockStew =
         {
             typeof(BowlOfBlackrockStew)
         };

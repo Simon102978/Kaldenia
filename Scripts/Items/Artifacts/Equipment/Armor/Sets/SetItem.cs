@@ -23,14 +23,15 @@ namespace Server
         Knights,
         Scout,
         Sorcerer,
-        Initiation,
+		Initiation,
         Fisherman,
         Luck2,
         Bestial,
         Virtuoso,
         Aloron,
-        Darden
-    }
+        Darden,
+		Chefs
+	}
 
     public interface ISetItem
     {

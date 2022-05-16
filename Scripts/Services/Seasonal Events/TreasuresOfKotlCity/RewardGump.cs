@@ -33,8 +33,8 @@ namespace Server.Engines.TreasuresOfKotlCity
                 {
                     default:
                     case 3: item = new RecipeScroll((int)CarpRecipes.KotlBlackRod); break;
-                    case 4: item = new RecipeScroll((int)TinkerRecipes.DrSpectorLenses); break;
-                    case 5: item = new RecipeScroll((int)TinkerRecipes.KotlAutomatonHead); break;
+ ///                   case 4: item = new RecipeScroll((int)TinkerRecipes.DrSpectorLenses); break;
+///                    case 5: item = new RecipeScroll((int)TinkerRecipes.KotlAutomatonHead); break;
                 }
             }
             else if (citem.Type == typeof(TreasuresOfKotlRewardDeed))

@@ -82,7 +82,12 @@ namespace Server.Engines.Craft
         public bool NeedOven { get; set; }
         public bool NeedMaker { get; set; }
         public bool NeedMill { get; set; }
-        public bool NeedWater { get; set; }
+		#region Cooking System
+		public bool NeedCauldron { get { return m_NeedCauldron; } set { m_NeedCauldron = value; } }
+		public bool NeedDistillery { get { return m_NeedDistillery; } set { m_NeedDistillery = value; } }
+		public bool NeedSteamPoweredBeverageMaker { get { return m_NeedSteamPoweredBeverageMaker; } set { m_NeedSteamPoweredBeverageMaker = value; } }
+		#endregion
+		public bool NeedWater { get; set; }
         public int ItemHue { get; set; }
 
         public Action<Mobile, Item, ITool> MutateAction { get; set; }
@@ -359,7 +364,22 @@ namespace Server.Engines.Craft
             0x1932, 0x1934
         };
 
-        private static readonly int[] m_WaterSources =
+		#region Cooking System
+		private static readonly int[] m_Cauldrons = new[]
+		{
+			0x0974, 0x0975
+		};
+		private static readonly int[] m_Distillerys = new[]
+		{
+			0x3DB8, 0x3DB9, 0x3DBA, 0x3DBB
+		};
+		private static readonly int[] m_SteamPoweredBeverageMakers = new[]
+		{
+			0x9A96, 0x9A96
+		};
+		#endregion
+
+		private static readonly int[] m_WaterSources =
         {
             0xB41, 0xB44,
             0xE7B, 0xE7B,
@@ -589,9 +609,20 @@ namespace Server.Engines.Craft
             }
 
             return contains;
-        }
+		}
 
-        private bool FindWater(Mobile m)
+
+
+
+		private bool m_NeedMill;
+		#region Cooking System
+		private bool m_NeedCauldron;
+		private bool m_NeedDistillery;
+		private bool m_NeedSteamPoweredBeverageMaker;
+		#endregion
+
+	
+	private bool FindWater(Mobile m)
         {
             Map map = m.Map;
 
@@ -934,8 +965,25 @@ namespace Server.Engines.Craft
                 message = 1044491; // You must be near a flour mill to do that.
                 return false;
             }
+		#region Cooking System
+		if (m_NeedCauldron && !Find(from, m_Cauldrons))
+		{
+			message = "You must be near a cauldron to do that.";
+			return false;
+		}
+		if (m_NeedDistillery && !Find(from, m_Distillerys))
+		{
+			message = "You must be near a distillery to do that.";
+			return false;
+		}
+		if (m_NeedSteamPoweredBeverageMaker && !Find(from, m_SteamPoweredBeverageMakers))
+		{
+			message = "You must be near a Steam Powered Beverage Maker to do that.";
+			return false;
+		}
+		#endregion
 
-            if (NeedWater && !Find(from, m_WaterSources) && !FindWater(from))
+		if (NeedWater && !Find(from, m_WaterSources) && !FindWater(from))
             {
                 message = 1158882; // You must be near a water source such as a water trough to craft this item.
                 return false;

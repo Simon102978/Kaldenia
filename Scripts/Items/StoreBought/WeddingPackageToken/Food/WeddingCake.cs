@@ -2,12 +2,12 @@ using Server.Network;
 
 namespace Server.Items
 {
-    public class WeddingCake : Item
+    public class WeddingCake1 : Item
     {
         public override int LabelNumber => 1124648; // Cake
 
         [Constructable]
-        public WeddingCake(int id)
+        public WeddingCake1(int id)
             : base(id)
         {
             Weight = 10;
@@ -20,7 +20,7 @@ namespace Server.Items
             from.AddToBackpack(new WeddingCakeSlice());
         }
 
-        public WeddingCake(Serial serial)
+        public WeddingCake1(Serial serial)
             : base(serial)
         {
         }

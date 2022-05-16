@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
-    public class SBGardener : SBInfo
+    public class SBGardener1 : SBInfo
     {
         private readonly List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
         private readonly IShopSellInfo m_SellInfo = new InternalSellInfo();

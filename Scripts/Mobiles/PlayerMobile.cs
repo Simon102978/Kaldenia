@@ -106,8 +106,9 @@ namespace Server.Mobiles
         TailorsGuild,
         FishermensGuild,
         BardsGuild,
-        BlacksmithsGuild
-    }
+        BlacksmithsGuild,
+		RanchersGuild
+	}
 
     public enum SolenFriendship
     {

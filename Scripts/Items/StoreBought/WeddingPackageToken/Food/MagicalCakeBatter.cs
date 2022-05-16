@@ -96,42 +96,42 @@ namespace Server.Items
                     }
                 case 1:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB0));
+                        from.AddToBackpack(new WeddingCake1(0x9EB0));
                         break;
                     }
                 case 2:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB1));
+                        from.AddToBackpack(new WeddingCake1(0x9EB1));
                         break;
                     }
                 case 3:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB2));
+                        from.AddToBackpack(new WeddingCake1(0x9EB2));
                         break;
                     }
                 case 4:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB3));
+                        from.AddToBackpack(new WeddingCake1(0x9EB3));
                         break;
                     }
                 case 5:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB4));
+                        from.AddToBackpack(new WeddingCake1(0x9EB4));
                         break;
                     }
                 case 6:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB5));
+                        from.AddToBackpack(new WeddingCake1(0x9EB5));
                         break;
                     }
                 case 7:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9EB6));
+                        from.AddToBackpack(new WeddingCake1(0x9EB6));
                         break;
                     }
                 case 8:
                     {
-                        from.AddToBackpack(new WeddingCake(0x9ED4));
+                        from.AddToBackpack(new WeddingCake1(0x9ED4));
                         break;
                     }
             }

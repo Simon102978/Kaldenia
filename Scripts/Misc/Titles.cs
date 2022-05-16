@@ -44,7 +44,7 @@ namespace Server.Misc
 
             m.Fame += offset;
 
-            if (message)
+      /*      if (message)
             {
                 if (offset > 40)
                     m.SendLocalizedMessage(1019054); // You have gained a lot of fame.
@@ -62,7 +62,7 @@ namespace Server.Misc
                     m.SendLocalizedMessage(1019056); // You have lost some fame.
                 else if (offset < 0)
                     m.SendLocalizedMessage(1019055); // You have lost a little fame.
-            }
+            }*/
         }
 
         public const int MinKarma = -32000;
@@ -120,7 +120,7 @@ namespace Server.Misc
 
             m.Karma += offset;
 
-            if (message)
+    /*        if (message)
             {
                 if (offset > 40)
                     m.SendLocalizedMessage(1019062); // You have gained a lot of karma.
@@ -138,7 +138,7 @@ namespace Server.Misc
                     m.SendLocalizedMessage(1019064); // You have lost some karma.
                 else if (offset < 0)
                     m.SendLocalizedMessage(1019063); // You have lost a little karma.
-            }
+            }*/
         }
 
         public static List<string> GetFameKarmaEntries(Mobile m)
@@ -175,7 +175,7 @@ namespace Server.Misc
 
         public static string ComputeFameTitle(Mobile beheld)
         {
-            int fame = beheld.Fame;
+  /*          int fame = beheld.Fame;
             int karma = beheld.Karma;
 
             for (int i = 0; i < m_FameEntries.Length; ++i)
@@ -198,45 +198,47 @@ namespace Server.Misc
 
                     return string.Empty;
                 }
-            }
-            return string.Empty;
+            }*/
+            return beheld.Name;
         }
 
         public static string ComputeTitle(Mobile beholder, Mobile beheld)
         {
-            StringBuilder title = new StringBuilder();
+			/*         StringBuilder title = new StringBuilder();
 
-            if (beheld.ShowFameTitle && beheld is PlayerMobile && ((PlayerMobile)beheld).FameKarmaTitle != null)
-            {
-                title.AppendFormat(((PlayerMobile)beheld).FameKarmaTitle, beheld.Name, beheld.Female ? "Lady" : "Lord");
-            }
-            else if (beheld.ShowFameTitle || (beholder == beheld))
-            {
-                title.Append(ComputeFameTitle(beheld));
-            }
-            else
-            {
-                title.Append(beheld.Name);
-            }
+					 if (beheld.ShowFameTitle && beheld is PlayerMobile && ((PlayerMobile)beheld).FameKarmaTitle != null)
+					 {
+						 title.AppendFormat(((PlayerMobile)beheld).FameKarmaTitle, beheld.Name, beheld.Female ? "Lady" : "Lord");
+					 }
+					 else if (beheld.ShowFameTitle || (beholder == beheld))
+					 {
+						 title.Append(ComputeFameTitle(beheld));
+					 }
+					 else
+					 {
+						 title.Append(beheld.Name);
+					 }
 
-            if (beheld is PlayerMobile && (((PlayerMobile)beheld).CurrentChampTitle != null) && ((PlayerMobile)beheld).DisplayChampionTitle)
-            {
-                title.AppendFormat(((PlayerMobile)beheld).CurrentChampTitle);
-            }
+					 if (beheld is PlayerMobile && (((PlayerMobile)beheld).CurrentChampTitle != null) && ((PlayerMobile)beheld).DisplayChampionTitle)
+					 {
+						 title.AppendFormat(((PlayerMobile)beheld).CurrentChampTitle);
+					 }
 
-            string customTitle = beheld.Title;
+					 string customTitle = beheld.Title;
 
-            if (beheld is PlayerMobile && ((PlayerMobile)beheld).PaperdollSkillTitle != null)
-                title.Append(", ").Append(((PlayerMobile)beheld).PaperdollSkillTitle);
-            else if (beheld is BaseVendor)
-                title.AppendFormat(" {0}", customTitle);
+					 if (beheld is PlayerMobile && ((PlayerMobile)beheld).PaperdollSkillTitle != null)
+						 title.Append(", ").Append(((PlayerMobile)beheld).PaperdollSkillTitle);
+					 else if (beheld is BaseVendor)
+						 title.AppendFormat(" {0}", customTitle);
 
-            return title.ToString();
+					 return title.ToString();*/
+
+			return beheld.Name;
         }
 
         public static string GetSkillTitle(Mobile mob)
         {
-            Skill highest = GetHighestSkill(mob);// beheld.Skills.Highest;
+  /*          Skill highest = GetHighestSkill(mob);// beheld.Skills.Highest;
 
             if (highest != null && highest.BaseFixedPoint >= 300)
             {
@@ -247,14 +249,14 @@ namespace Server.Misc
                     skillTitle = skillTitle.Substring(0, skillTitle.Length - 3) + "woman";
 
                 return string.Concat(skillLevel, " ", skillTitle);
-            }
+            }*/
 
             return null;
         }
 
         public static string GetSkillTitle(Mobile mob, Skill skill)
         {
-            if (skill != null && skill.BaseFixedPoint >= 300)
+      /*      if (skill != null && skill.BaseFixedPoint >= 300)
             {
                 string skillLevel = GetSkillLevel(skill);
                 string skillTitle = skill.Info.Title;
@@ -263,7 +265,7 @@ namespace Server.Misc
                     skillTitle = skillTitle.Substring(0, skillTitle.Length - 3) + "woman";
 
                 return string.Concat(skillLevel, " ", skillTitle);
-            }
+            }*/
 
             return null;
         }
@@ -404,12 +406,12 @@ namespace Server.Misc
 
         public static void Initialize()
         {
-            VeteranTitles = new VeteranTitle[9];
+       /*     VeteranTitles = new VeteranTitle[9];
 
             for (int i = 0; i < 9; i++)
             {
                 VeteranTitles[i] = new VeteranTitle(1154341 + i, 2 * (i + 1));
-            }
+            }*/
         }
 
         public static List<VeteranTitle> GetVeteranTitles(Mobile m)

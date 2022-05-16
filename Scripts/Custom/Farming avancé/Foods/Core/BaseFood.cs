@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Mobiles;
-using Server.Engines.XmlSpawner2;
+
 
 
 namespace Server.Items
@@ -398,7 +398,7 @@ namespace Server.Items
                 #endregion
 
                 #region stat and skill boost
-                if (m_StatBoostTime < 1)
+       /*         if (m_StatBoostTime < 1)
                 {
                     m_StatBoostTime = m_FillFactor * 1;//1 minutes, same as fillfactor time Stats are based on seconds
                     m_StatBoostDataTime = (m_StatBoostTime / 1) * 60;//converting seconds to minutes for same timeframe as m_StatBoostTime
@@ -466,7 +466,7 @@ namespace Server.Items
                     {
                         from.SendMessage(521, "You are already under a Str effect.");
                     }
-                }
+                }*/
                 #endregion
 
                 Consume();

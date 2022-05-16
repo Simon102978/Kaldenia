@@ -78,10 +78,10 @@ namespace Server.Spells.Fifth
             {
                 Caster.SendLocalizedMessage(1042402); // You cannot use incognito while wearing body paint
             }
-            else if (DisguiseTimers.IsDisguised(Caster))
+         /*   else if (DisguiseTimers.IsDisguised(Caster))
             {
                 Caster.SendLocalizedMessage(1061631); // You can't do that while disguised.
-            }
+            }*/
             else if (!Caster.CanBeginAction(typeof(PolymorphSpell)) || Caster.IsBodyMod)
             {
                 DoFizzle();
@@ -90,7 +90,7 @@ namespace Server.Spells.Fifth
             {
                 if (Caster.BeginAction(typeof(IncognitoSpell)))
                 {
-                    DisguiseTimers.StopTimer(Caster);
+               //     DisguiseTimers.StopTimer(Caster);
 
                     Caster.HueMod = Caster.Race.RandomSkinHue();
                     Caster.NameMod = Caster.Female ? NameList.RandomName("female") : NameList.RandomName("male");

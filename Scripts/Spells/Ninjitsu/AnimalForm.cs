@@ -67,11 +67,11 @@ namespace Server.Spells.Ninjitsu
                 Caster.SendLocalizedMessage(1063219); // You cannot mimic an animal while in that form.
                 return false;
             }
-            else if (DisguiseTimers.IsDisguised(Caster))
+    /*        else if (DisguiseTimers.IsDisguised(Caster))
             {
                 Caster.SendLocalizedMessage(1061631); // You can't do that while disguised.
                 return false;
-            }
+            }*/
 
             return base.CheckCast();
         }

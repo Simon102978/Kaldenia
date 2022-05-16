@@ -68,7 +68,7 @@ namespace Server.Items
         public CorpsNoctarius(int hue)
             : base(41505, hue)
         {
-            Name = "Elfe Noir";
+            Name = "Noctarius";
         }
 
         public CorpsNoctarius(Serial serial)

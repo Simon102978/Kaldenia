@@ -11,8 +11,8 @@ namespace Server.Items
 
         public static void Configure()
         {
-            EventSink.WorldSave += OnSave;
-            EventSink.WorldLoad += OnLoad;
+   //         EventSink.WorldSave += OnSave;
+   //         EventSink.WorldLoad += OnLoad;
         }
 
         private static void OnSave(WorldSaveEventArgs e)
@@ -23,14 +23,14 @@ namespace Server.Items
                 {
                     writer.Write(0); // version
 
-                    writer.Write(DisguiseTimers.Timers.Count);
+  /*                  writer.Write(DisguiseTimers.Timers.Count);
 
                     foreach (Mobile m in DisguiseTimers.Timers.Keys.OfType<Mobile>())
                     {
                         writer.Write(m);
                         writer.Write(DisguiseTimers.TimeRemaining(m));
                         writer.Write(m.NameMod);
-                    }
+                    }*/
                 });
         }
 
@@ -40,7 +40,7 @@ namespace Server.Items
                 FilePath,
                 reader =>
                 {
-                    int version = reader.ReadInt();
+             /*       int version = reader.ReadInt();
 
                     switch (version)
                     {
@@ -56,7 +56,7 @@ namespace Server.Items
                                 }
                             }
                             break;
-                    }
+                    }*/
                 });
         }
     }

@@ -57,11 +57,11 @@ namespace Server.Spells.Seventh
                 Caster.SendLocalizedMessage(1061633); // You cannot polymorph while in that form.
                 return false;
             }
-            if (DisguiseTimers.IsDisguised(Caster))
+    /*        if (DisguiseTimers.IsDisguised(Caster))
             {
                 Caster.SendLocalizedMessage(502167); // You cannot polymorph while disguised.
                 return false;
-            }
+            }*/
             if (Caster.BodyMod == 183 || Caster.BodyMod == 184)
             {
                 Caster.SendLocalizedMessage(1042512); // You cannot polymorph while wearing body paint
@@ -97,10 +97,10 @@ namespace Server.Spells.Seventh
             {
                 Caster.SendLocalizedMessage(1061633); // You cannot polymorph while in that form.
             }
-            else if (DisguiseTimers.IsDisguised(Caster))
+  /*          else if (DisguiseTimers.IsDisguised(Caster))
             {
                 Caster.SendLocalizedMessage(502167); // You cannot polymorph while disguised.
-            }
+            }*/
             else if (Caster.BodyMod == 183 || Caster.BodyMod == 184)
             {
                 Caster.SendLocalizedMessage(1042512); // You cannot polymorph while wearing body paint

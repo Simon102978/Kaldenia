@@ -5406,6 +5406,11 @@ namespace Server
 
 			switch (version)
 			{
+				case 39:
+					{
+						m_Deguise = reader.ReadBool();
+						goto case 38;
+					}
 				case 38:
 				case 37:
 					{
@@ -5893,7 +5898,11 @@ namespace Server
 
 		public virtual void Serialize(GenericWriter writer)
 		{
-			writer.Write(38); // version
+			writer.Write(39); // version
+
+
+			writer.Write(m_Deguise);
+
 
 			// 38 - Removed Disarm/Stun Ready
 
@@ -6106,7 +6115,29 @@ namespace Server
 		}
 
 		[CommandProperty(AccessLevel.Counselor, AccessLevel.GameMaster)]
-		public string Profile { get => m_Profile; set => m_Profile = value; }
+		public string Profile 
+		{
+			get
+			{
+				if (Deguise)
+				{
+					return DeguisementProfile();
+				}
+				else
+				{
+					return m_Profile;
+				}
+				
+				
+				
+			}
+
+
+			set => m_Profile = value; 
+		}
+
+
+
 
 		[CommandProperty(AccessLevel.Counselor, AccessLevel.GameMaster)]
 		public bool ProfileLocked { get => m_ProfileLocked; set => m_ProfileLocked = value; }
@@ -8788,6 +8819,12 @@ namespace Server
 			}
 		}
 
+		private bool m_Deguise = false;
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool Deguise { get { return m_Deguise; } set { m_Deguise = value; } }
+
+
 		private bool m_YellowHealthbar;
 
 		[CommandProperty(AccessLevel.Decorator)]
@@ -8816,6 +8853,11 @@ namespace Server
 				{
 					return m_NameMod;
 				}
+				else if (m_Deguise)
+				{
+					return DeguisementName();
+				}
+
 
 				return m_Name;
 			}
@@ -8834,6 +8876,17 @@ namespace Server
 
 		public virtual void OnAfterNameChange(string oldName, string newName)
 		{ }
+
+		public virtual string DeguisementName()
+		{
+			return m_Name;
+		}
+
+		public virtual string DeguisementProfile()
+		{
+			return m_Profile;
+		}
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastStrGain { get => m_LastStrGain; set => m_LastStrGain = value; }

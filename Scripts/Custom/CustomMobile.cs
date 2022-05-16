@@ -38,6 +38,12 @@ namespace Server.Mobiles
 		private God m_God = God.GetGod(-1);
 		private AffinityDictionary m_MagicAfinity;
 		private List<int> m_QuickSpells = new List<int>();
+		private Deguisement m_Deguisement = null;
+
+		private Race m_BaseRace;
+		private bool m_BaseFemale;
+		private int m_BaseHue;
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }
@@ -78,15 +84,15 @@ namespace Server.Mobiles
 
 					m_ClassePrimaire = value; // S'assurer que le metier, soit un metier...
 
-					
+
 				}
 			}
 
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Classe ClasseSecondaire { 
-			get => m_ClasseSecondaire; 
+		public Classe ClasseSecondaire {
+			get => m_ClasseSecondaire;
 			set
 			{
 				if (CheckClasseSecondaire(value))
@@ -113,7 +119,7 @@ namespace Server.Mobiles
 						m_Metier = value;  // S'assurer que le metier, soit un metier...
 					}
 
-				// S'assurer que le metier, soit un metier...
+					// S'assurer que le metier, soit un metier...
 				}
 			}
 
@@ -152,18 +158,18 @@ namespace Server.Mobiles
 		public Container Corps { get { return m_Corps; } set { m_Corps = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public God God 
-		{ 
+		public God God
+		{
 			get => m_God;
 			set
 			{
 
 				MagicAfinity.ChangeGod(value);
-		
+
 
 				m_God = value; // S'assurer que le metier, soit un metier...
 
-				
+
 			}
 		}
 
@@ -173,12 +179,57 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Item ChosenSpellbook { get; set; }
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Deguisement Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Race BaseRace 
+		{ 
+			get 
+			{ 
+				return m_BaseRace; 
+			} 
+			set 
+			{ 
+				m_BaseRace = value;
+				Race = value;
+			} 
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool BaseFemale
+		{
+			get
+			{
+				return m_BaseFemale;
+			}
+			set
+			{
+				m_BaseFemale = value;
+				Female = value;
+			}
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int BaseHue
+		{
+			get
+			{
+				return m_BaseHue;
+			}
+			set
+			{
+				m_BaseHue = value;
+				Hue = value;
+			}
+		}
+
+
 		public List<int> QuickSpells
 		{
 			get { return m_QuickSpells; }
 			set { m_QuickSpells = value; }
 		}
-
 
 		public CustomPlayerMobile()
 		{
@@ -193,11 +244,8 @@ namespace Server.Mobiles
 			if (Vulnerability)
 			{
 				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMÉE" : "ASSOMÉ") + "</basefont></h3>\t");
-
-
-				//		list.Add(1050045, "<BASEFONT COLOR =#80FFD4>"  ""); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      */
-
 			}
+
 
 			if (NameMod == null)
 			{
@@ -205,73 +253,18 @@ namespace Server.Mobiles
 				list.Add(1050045, "{0}, \t{1}\t", GrandeurString(), GrosseurString());
 			}
 
-			/*		Engines.JollyRoger.JollyRogerData.DisplayTitle(this, list);
 
-					if (m_SubtitleSkillTitle != null)
-						list.Add(1042971, m_SubtitleSkillTitle);
-
-					if (m_CurrentVeteranTitle > 0)
-						list.Add(m_CurrentVeteranTitle);
-
-					if (m_RewardTitles != null && m_SelectedTitle > -1)
-					{
-						if (m_SelectedTitle < m_RewardTitles.Count)
-						{
-							if (m_RewardTitles[m_SelectedTitle] is int)
-							{
-								string cust = null;
-
-								if ((int)m_RewardTitles[m_SelectedTitle] == 1154017 && CityLoyaltySystem.HasCustomTitle(this, out cust))
-								{
-									list.Add(1154017, cust); // ~1_TITLE~ of ~2_CITY~
-								}
-								else
-									list.Add((int)m_RewardTitles[m_SelectedTitle]);
-							}
-							else if (m_RewardTitles[m_SelectedTitle] is string)
-							{
-								list.Add(1070722, (string)m_RewardTitles[m_SelectedTitle]);
-							}
-						}
-					}
-
-					for (int i = AllFollowers.Count - 1; i >= 0; i--)
-					{
-						BaseCreature c = AllFollowers[i] as BaseCreature;
-
-						if (c != null && c.ControlOrder == OrderType.Guard)
-						{
-							list.Add(501129); // guarded
-							break;
-						}
-					}
-
-					if (TestCenter.Enabled)
-					{
-						VvVPlayerEntry entry = PointsSystem.ViceVsVirtue.GetPlayerEntry<VvVPlayerEntry>(this);
-
-						list.Add(string.Format("Kills: {0} / Deaths: {1} / Assists: {2}", // no cliloc for this!
-							entry == null ? "0" : entry.Kills.ToString(), entry == null ? "0" : entry.Deaths.ToString(), entry == null ? "0" : entry.Assists.ToString()));
-
-						list.Add(1060415, AosAttributes.GetValue(this, AosAttribute.AttackChance).ToString()); // hit chance increase ~1_val~%
-						list.Add(1060408, AosAttributes.GetValue(this, AosAttribute.DefendChance).ToString()); // defense chance increase ~1_val~%
-						list.Add(1060486, AosAttributes.GetValue(this, AosAttribute.WeaponSpeed).ToString()); // swing speed increase ~1_val~%
-						list.Add(1060401, AosAttributes.GetValue(this, AosAttribute.WeaponDamage).ToString()); // damage increase ~1_val~%
-						list.Add(1060483, AosAttributes.GetValue(this, AosAttribute.SpellDamage).ToString()); // spell damage increase ~1_val~%
-						list.Add(1060433, AosAttributes.GetValue(this, AosAttribute.LowerManaCost).ToString()); // lower mana cost
-					}
-
-					if (PlayerProperties != null)
-					{
-						PlayerProperties(new PlayerPropertiesEventArgs(this, list));
-					}*/
 		}
 
 		#region Apparence
 		public string Apparence()
 		{
-
 			AppearanceEnum gros = m_Beaute;
+
+			if (Deguise)
+			{
+				gros = Deguisement.Appearance;
+			}
 
 			if (gros < 0)
 			{
@@ -288,10 +281,17 @@ namespace Server.Mobiles
 			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
 		}
 
+
 		public string GrosseurString()
 		{
 
 			GrosseurEnum gros = m_Grosseur;
+
+			if (Deguise)
+			{
+				gros = Deguisement.Grosseur;
+			}
+
 
 			if (gros < 0)
 			{
@@ -317,14 +317,163 @@ namespace Server.Mobiles
                         return id.Grandeur.ToString();
                     }*/
 
+			GrandeurEnum gros = m_Grandeur;
+
+			if (Deguise)
+			{
+				gros = Deguisement.Grandeur;
+			}
+
+
+
+
 			var type = typeof(GrandeurEnum);
-			MemberInfo[] memberInfo = type.GetMember(m_Grandeur.ToString());
+			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
 			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
 			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
 
 
 
 		}
+		#endregion
+
+		#region Déguisement
+
+		public override string DeguisementName()
+		{
+			if (Deguise) // Devrais pas etre autre choses
+			{
+				return Deguisement.Name;
+
+			}
+			return base.DeguisementName();
+		}
+
+		public override string DeguisementProfile()
+		{
+			if (Deguise) // Devrais pas etre autre choses
+			{
+				return Deguisement.GetProfile();
+			}
+			return base.DeguisementName();
+		}
+
+		public bool DeguisementAction(DeguisementAction action)
+		{
+			double skill = Skills[SkillName.Hiding].Value;
+
+			switch (action)
+			{
+				case Server.DeguisementAction.Nom:
+					{
+						if (skill > 50)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Titre:
+					{
+						if (skill > 30)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Sexe:
+					{
+						if (skill > 75)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Race:
+					{
+						if (skill > 80)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Racehue:
+					{
+						if (skill > 80)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Apparence:
+					{
+						if (skill > 60)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Grandeur:
+					{
+						if (skill > 65)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Grosseur:
+					{
+						if (skill > 65)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.Paperdoll:
+					{
+						if (skill > 70)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				default:
+					return true;
+			}
+
+
+
+
+
+
+		}
+
 		#endregion
 
 		public CustomPlayerMobile(Serial s)
@@ -392,7 +541,6 @@ namespace Server.Mobiles
 		}
 
 		#region equitation
-
 		public virtual bool CheckEquitation(EquitationType type)
 		{
 			return CheckEquitation(type, Location);
@@ -521,9 +669,6 @@ namespace Server.Mobiles
 		{
 			return MagicAfinity.GetValue(affinity);
 		}
-
-
-
 
 		#region Classe
 
@@ -1030,6 +1175,13 @@ namespace Server.Mobiles
 				Frozen = true;
 				Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration), new TimerStateCallback(RessuciterOverTime_Callback), this);
 			}
+			else
+			{
+				if (Deguise)
+				{
+					Deguisement.RemoveDeguisement();
+				}
+			}
 
 			Vulnerability = true;
 			EndOfVulnerabilityTime = DateTime.Now + TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration);
@@ -1148,7 +1300,27 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 11:
+					{
+						m_BaseHue = reader.ReadInt();
+						goto case 10;
 
+					}
+				case 10:
+					{
+						m_BaseRace = Server.BaseRace.GetRace(reader.ReadInt());
+						m_BaseFemale = reader.ReadBool();
+
+						goto case 9;
+					}
+
+				case 9:
+					{
+						
+						m_Deguisement = Deguisement.Deserialize(reader);
+
+						goto case 8;
+					}
 				case 8:
 					{
 						ChosenSpellbook = reader.ReadItem();
@@ -1246,7 +1418,42 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(8); // version
+            writer.Write(11); // version
+
+			if (m_BaseHue == null)
+			{
+				m_BaseHue = Hue;
+			}
+
+			writer.Write(Hue);
+
+
+			if (m_BaseRace == null)
+			{
+				m_BaseRace = Race;
+			}
+
+			if (m_BaseFemale == null)
+			{
+				m_BaseFemale = Female;
+			}
+
+			writer.Write(m_BaseRace.RaceID);
+			writer.Write(m_BaseFemale);
+
+
+
+			if (m_Deguisement == null)
+			{
+				m_Deguisement = new Deguisement(this);
+			}
+
+			
+			m_Deguisement.Serialize(writer);
+			
+
+
+			
 
 			writer.Write(ChosenSpellbook);
 

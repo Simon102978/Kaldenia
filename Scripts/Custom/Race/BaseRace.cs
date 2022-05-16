@@ -82,7 +82,8 @@ namespace Server
             AddRace(m, hue);
         }
 
-        public override void RemoveRace(Mobile m)
+
+		public override void RemoveRace(Mobile m)
         {
 
             if (RaceGump.Count > 0)

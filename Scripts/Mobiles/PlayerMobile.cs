@@ -586,8 +586,8 @@ namespace Server.Mobiles
         public bool Spellweaving { get { return GetFlag(PlayerFlag.Spellweaving); } set { SetFlag(PlayerFlag.Spellweaving, value); } }
         #endregion
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public TimeSpan DisguiseTimeLeft => DisguiseTimers.TimeRemaining(this);
+/*        [CommandProperty(AccessLevel.GameMaster)]
+        public TimeSpan DisguiseTimeLeft => DisguiseTimers.TimeRemaining(this);*/
 
         [CommandProperty(AccessLevel.GameMaster)]
         public DateTime PeacedUntil { get; set; }
@@ -1534,7 +1534,7 @@ namespace Server.Mobiles
                 pm.LastOnline = DateTime.UtcNow;
             }
 
-            DisguiseTimers.StartTimer(e.Mobile);
+            //DisguiseTimers.StartTimer(e.Mobile);
 
             Timer.DelayCall(TimeSpan.Zero, new TimerStateCallback(ClearSpecialMovesCallback), e.Mobile);
         }
@@ -1597,7 +1597,7 @@ namespace Server.Mobiles
                 pm.AutoStablePets();
             }
 
-            DisguiseTimers.StopTimer(from);
+            //DisguiseTimers.StopTimer(from);
         }
 
         public override void RevealingAction()
@@ -3608,7 +3608,7 @@ namespace Server.Mobiles
 
             PolymorphSpell.StopTimer(this);
             IncognitoSpell.StopTimer(this);
-            DisguiseTimers.RemoveTimer(this);
+     //       DisguiseTimers.RemoveTimer(this);
 
             WeakenSpell.RemoveEffects(this);
             ClumsySpell.RemoveEffects(this);
@@ -4901,7 +4901,7 @@ namespace Server.Mobiles
 
             BaseHouse.HandleDeletion(this);
 
-            DisguiseTimers.RemoveTimer(this);
+            //DisguiseTimers.RemoveTimer(this);
         }
 
         public delegate void PlayerPropertiesEventHandler(PlayerPropertiesEventArgs e);

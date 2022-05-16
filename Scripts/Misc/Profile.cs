@@ -1,6 +1,9 @@
 using Server.Accounting;
 using Server.Network;
 using System;
+using Server.Mobiles;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Server.Misc
 {
@@ -12,7 +15,14 @@ namespace Server.Misc
             EventSink.ChangeProfileRequest += EventSink_ChangeProfileRequest;
         }
 
-        public static void EventSink_ChangeProfileRequest(ChangeProfileRequestEventArgs e)
+		static IEnumerable<string> Split(string str, int chunkSize)
+		{
+			return Enumerable.Range(0, str.Length / chunkSize)
+				.Select(i => str.Substring(i * chunkSize, chunkSize));
+		}
+
+
+		public static void EventSink_ChangeProfileRequest(ChangeProfileRequestEventArgs e)
         {
             if (e.Beholder != e.Beheld && e.Beholder.AccessLevel <= e.Beheld.AccessLevel)
             {
@@ -25,7 +35,47 @@ namespace Server.Misc
             if (from.ProfileLocked)
                 from.SendMessage("Your profile is locked. You may not change it.");
             else
-                from.Profile = e.Text;
+			{
+				if (from is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cp = (CustomPlayerMobile)from;
+
+					if (cp.Deguise && cp.DeguisementAction(DeguisementAction.Paperdoll))
+					{
+						String[] array = Split(e.Text, 200).ToArray();
+
+						Dictionary<int, string> dic = new Dictionary<int, string>();
+						int i = 0;
+
+
+						foreach (string item in array)
+						{
+							dic.Add(i, array[i]);
+
+
+							i++;
+						}
+
+						cp.Deguisement.Paperdoll = dic;
+
+					}
+					else if (cp.Deguise)
+					{
+						from.SendMessage("Vous êtes incapable de faire cela.");
+					}
+					else
+					{
+						from.Profile = e.Text;
+					}
+
+
+				}
+				else
+				{
+					from.Profile = e.Text;
+				}
+			}
+                
         }
 
         public static void EventSink_ProfileRequest(ProfileRequestEventArgs e)
@@ -100,4 +150,7 @@ namespace Server.Misc
             return "";
         }
     }
+
+
+
 }

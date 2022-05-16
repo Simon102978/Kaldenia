@@ -56,8 +56,8 @@ namespace Server.Items
         {
             base.GetContextMenuEntries(from, list);
 
-            if (from is PlayerMobile)
-                list.Add(new LockKarmaEntry((PlayerMobile)from, Addon as AnkhOfSacrificeAddon));
+    //        if (from is PlayerMobile)
+    //            list.Add(new LockKarmaEntry((PlayerMobile)from, Addon as AnkhOfSacrificeAddon));
 
             list.Add(new ResurrectEntry(from, Addon as AnkhOfSacrificeAddon));
         }

@@ -238,14 +238,22 @@ namespace Server.Gumps
 
     public void AddSection(int x, int y, int largeur, int hauteur, string titre, string[] texte)
     {
-      AddBackground(x, y, largeur, hauteur + (texte.Length * 20), 3500);
-      AddHorizontalLigne(x + 20, y + 20, largeur - 37);
-      AddHtmlTitre(x + 30, y + 15, largeur - 35, titre);
+ 	  AddBackground(x, y, largeur, hauteur, 9270);
+	  AddTitle(x + largeur / 2 - 70, y + 13, titre);
+
+	 string text = "";
+	
 
       for (int i = 0; i < texte.Length; i++)
       {
-        AddHtmlTexte(x + 15, (y + 43) + (i * 20), largeur - 35, texte[i]);
-      }
+				text = text + texte[i];
+
+  //      AddHtmlTexte(x + 15, (y + 43) + (i * 20), largeur - 35, texte[i]);
+	  }
+
+	  AddHtml(x + 15, y + 43, largeur - 35, hauteur - 60, String.Concat("<h3><basefont color=#241b0d>", text, "<basefont></h3>"), true, true);
+
+
     }
     public void AddInvisibleSection(int x, int y, int largeur, int hauteur)
     {

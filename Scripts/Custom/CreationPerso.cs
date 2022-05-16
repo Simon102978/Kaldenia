@@ -353,14 +353,15 @@ namespace Server
 
 		public void Valide()
         {
-			m_Player.Female = m_female;
-			m_Player.Race = m_Race;
+			m_Player.BaseFemale = m_female;
+			m_Player.BaseRace = m_Race;
 			m_Player.Race.RemoveRace(m_Player);	
 			Race.AddRace(m_Player, m_Hue);
 			m_Player.Name = m_Name;
 			m_Player.Beaute = m_Appearance;
 			m_Player.Grandeur = m_Grandeur;
 			m_Player.Grosseur = m_Grosseur;
+			m_Player.BaseHue = m_Hue;
 
 
 

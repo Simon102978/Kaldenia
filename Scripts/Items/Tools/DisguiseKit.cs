@@ -50,7 +50,7 @@ namespace Server.Items
                 // That must be in your pack for you to use it.
                 from.SendLocalizedMessage(1042001);
             }
-            else if (pm == null || pm.NpcGuild != NpcGuild.ThievesGuild)
+ /*           else if (pm == null || pm.NpcGuild != NpcGuild.ThievesGuild)
             {
                 // Only Members of the thieves guild are trained to use this item.
                 from.SendLocalizedMessage(501702);
@@ -59,7 +59,7 @@ namespace Server.Items
             {
                 // You are currently suspended from the thieves guild.  They would frown upon your actions.
                 from.SendLocalizedMessage(501703);
-            }
+            }*/
             else if (!from.CanBeginAction(typeof(IncognitoSpell)))
             {
                 // You cannot disguise yourself while incognitoed.
@@ -92,12 +92,34 @@ namespace Server.Items
         {
             if (ValidateUse(from))
             {
-                from.SendGump(new DisguiseGump(from, this, true, false));
+				if (from is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cm = (CustomPlayerMobile)from;
+
+
+					if (cm.Deguisement == null)
+					{
+						from.SendGump(new CustomDisguiseGump(cm, new Deguisement(cm)));
+					}
+					else
+					{
+						from.SendGump(new CustomDisguiseGump(cm, cm.Deguisement));
+					}
+
+					
+				}
+				else
+				{
+					//from.SendGump(new DisguiseGump(from, this, true, false));
+				}
+
+
+               
             }
         }
     }
 
-    public class DisguiseGump : Gump
+  /*  public class DisguiseGump : Gump
     {
         private static readonly DisguiseEntry[] m_HairEntries = {new DisguiseEntry(8251, 50700, 0, 5, 1011052), // Short
 			new DisguiseEntry(8261, 60710, 0, 3, 1011047), // Pageboy
@@ -222,10 +244,10 @@ namespace Server.Items
 
                 m_From.SendGump(new DisguiseGump(m_From, m_Kit, hair, true));
 
-                DisguiseTimers.RemoveTimer(m_From);
+   //             DisguiseTimers.RemoveTimer(m_From);
 
-                DisguiseTimers.CreateTimer(m_From, TimeSpan.FromHours(2.0));
-                DisguiseTimers.StartTimer(m_From);
+   //             DisguiseTimers.CreateTimer(m_From, TimeSpan.FromHours(2.0));
+ //               DisguiseTimers.StartTimer(m_From);
 
                 BuffInfo.AddBuff(m_From, new BuffInfo(BuffIcon.Disguised, 1075821, 1075820, TimeSpan.FromHours(2.0), m_From));
             }
@@ -283,7 +305,7 @@ namespace Server.Items
         }
     }
 
-    public class DisguiseTimers
+  /*  public class DisguiseTimers
     {
         private static readonly Dictionary<Mobile, InternalTimer> m_Timers = new Dictionary<Mobile, InternalTimer>();
 
@@ -395,5 +417,5 @@ namespace Server.Items
                 RemoveTimer(m_Player);
             }
         }
-    }
+    }*/
 }

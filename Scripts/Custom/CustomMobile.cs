@@ -224,6 +224,14 @@ namespace Server.Mobiles
 			}
 		}
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int TitleCycle { get; set; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string customTitle { get; set; }
+
+
+
 
 		public List<int> QuickSpells
 		{
@@ -1300,6 +1308,13 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 12:
+					{
+						TitleCycle = reader.ReadInt();
+						customTitle = reader.ReadString();
+
+						goto case 12;
+					}
 				case 11:
 					{
 						m_BaseHue = reader.ReadInt();
@@ -1418,7 +1433,10 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(11); // version
+            writer.Write(12); // version
+
+			writer.Write(TitleCycle);
+			writer.Write(customTitle);
 
 			if (m_BaseHue == null)
 			{

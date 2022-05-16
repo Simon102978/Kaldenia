@@ -204,36 +204,53 @@ namespace Server.Misc
 
         public static string ComputeTitle(Mobile beholder, Mobile beheld)
         {
-			/*         StringBuilder title = new StringBuilder();
+			        StringBuilder title = new StringBuilder();
 
-					 if (beheld.ShowFameTitle && beheld is PlayerMobile && ((PlayerMobile)beheld).FameKarmaTitle != null)
-					 {
-						 title.AppendFormat(((PlayerMobile)beheld).FameKarmaTitle, beheld.Name, beheld.Female ? "Lady" : "Lord");
-					 }
-					 else if (beheld.ShowFameTitle || (beholder == beheld))
-					 {
-						 title.Append(ComputeFameTitle(beheld));
-					 }
-					 else
-					 {
-						 title.Append(beheld.Name);
-					 }
+			/*			 if (beheld.ShowFameTitle && beheld is PlayerMobile && ((PlayerMobile)beheld).FameKarmaTitle != null)
+						 {
+							 title.AppendFormat(((PlayerMobile)beheld).FameKarmaTitle, beheld.Name, beheld.Female ? "Lady" : "Lord");
+						 }
+						 else if (beheld.ShowFameTitle || (beholder == beheld))
+						 {
+							 title.Append(ComputeFameTitle(beheld));
+						 }
+						 else
+						 {
+							 title.Append(beheld.Name);
+						 }
 
-					 if (beheld is PlayerMobile && (((PlayerMobile)beheld).CurrentChampTitle != null) && ((PlayerMobile)beheld).DisplayChampionTitle)
-					 {
-						 title.AppendFormat(((PlayerMobile)beheld).CurrentChampTitle);
-					 }
+						 if (beheld is PlayerMobile && (((PlayerMobile)beheld).CurrentChampTitle != null) && ((PlayerMobile)beheld).DisplayChampionTitle)
+						 {
+							 title.AppendFormat(((PlayerMobile)beheld).CurrentChampTitle);
+						 }
 
-					 string customTitle = beheld.Title;
+						 string customTitle = beheld.Title;
 
-					 if (beheld is PlayerMobile && ((PlayerMobile)beheld).PaperdollSkillTitle != null)
-						 title.Append(", ").Append(((PlayerMobile)beheld).PaperdollSkillTitle);
-					 else if (beheld is BaseVendor)
-						 title.AppendFormat(" {0}", customTitle);
+						 if (beheld is PlayerMobile && ((PlayerMobile)beheld).PaperdollSkillTitle != null)
+							 title.Append(", ").Append(((PlayerMobile)beheld).PaperdollSkillTitle);
+						 else if (beheld is BaseVendor)
+							 title.AppendFormat(" {0}", customTitle);
 
-					 return title.ToString();*/
+						 return title.ToString();*/
 
-			return beheld.Name;
+			title.Append(beheld.Name);
+
+			string customTitle = beheld.Title;
+
+			if (customTitle != null && (customTitle = customTitle.Trim()).Length > 0)
+			{
+				title.AppendFormat(", {0}", customTitle);
+			}
+
+
+
+			return title.ToString();
+
+
+
+
+
+	//		return beheld.Name;
         }
 
         public static string GetSkillTitle(Mobile mob)

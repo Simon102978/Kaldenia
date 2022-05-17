@@ -15,7 +15,7 @@ namespace Server.Scripts.Commands
         
         public static void Initialize()
 		{
-            CommandSystem.Register("Follow", AccessLevel.GameMaster, new CommandEventHandler(Follow_OnCommand));
+		   CommandSystem.Register( "Follow", AccessLevel.Counselor, new CommandEventHandler( Follow_OnCommand ) );
             EventSink.Logout += new LogoutEventHandler(OnLogout);
         }
 
@@ -99,10 +99,8 @@ namespace Server.Scripts.Commands
     public class FollowTimer : Timer
     {
         private Mobile m_From, m_Target;
-		private int m_LastX;
-		private readonly int m_LastY;
 
-		public FollowTimer(Mobile from, Mobile target): base(TimeSpan.FromSeconds(0.25), TimeSpan.FromSeconds(2.5))
+        public FollowTimer(Mobile from, Mobile target): base(TimeSpan.FromSeconds(0.25), TimeSpan.FromSeconds(2.5))
         {
             m_From = from;
             m_Target = target;

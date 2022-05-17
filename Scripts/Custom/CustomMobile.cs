@@ -10,6 +10,7 @@ using Server.Custom;
 using Server.Movement;
 using Server.Gumps;
 
+
 #endregion
 
 namespace Server.Mobiles
@@ -495,6 +496,13 @@ namespace Server.Mobiles
 			: base(s)
 		{
 			MagicAfinity = new AffinityDictionary(this);
+		}
+
+		public virtual void Tip(Mobile m, string tip)
+		{
+			SendGump(new TipGump(this, m, tip, true));
+
+			SendMessage("Un maître de jeu vous a envoyé un message, double cliquez le parchemin pour le lire.");
 		}
 
 		public override bool OnEquip(Item item)
@@ -1440,9 +1448,9 @@ namespace Server.Mobiles
                     }
             }
 
-        }
+		}
 
-        public override void Serialize(GenericWriter writer)
+		public override void Serialize(GenericWriter writer)
         {        
             base.Serialize(writer);
 

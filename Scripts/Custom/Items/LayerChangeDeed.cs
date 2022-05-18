@@ -281,9 +281,9 @@ namespace Server.Gumps
             AddPage(0);
             AddBackground(4, 4, 244, 404, 9200);
             AddItem(18, 138, m_cloth.ItemID, m_cloth.Hue);
-            AddLabel(49, 12, 0, @"Menu Changement Layer");
-            AddLabel(20, 39, 0, @"nom de l'Item: " + (String.IsNullOrEmpty(m_cloth.Name) ? m_cloth.GetType().Name : m_cloth.Name ));
-            AddLabel(13, 62, 0, @"Layer actuel: " + m_cloth.Layer.ToString());
+            AddLabel(49, 12, 0, @"Menu Changement de Layer");
+            AddLabel(20, 39, 0, @"Nom de l'Item: " + (String.IsNullOrEmpty(m_cloth.Name) ? m_cloth.GetType().Name : m_cloth.Name ));
+            AddLabel(13, 62, 0, @"Layer Actuel: " + m_cloth.Layer.ToString());
 
             if (m_selection != Layer.Invalid)
                 AddLabel(20, 87, 0, @"Changer Pour: " + m_selection.ToString());

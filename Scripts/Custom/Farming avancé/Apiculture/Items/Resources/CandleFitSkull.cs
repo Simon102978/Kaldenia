@@ -9,7 +9,7 @@ namespace Server.Items
 		[Constructable]
 		public CandleFitSkull() : base( 0x1AE3 )
 		{
-			Name = "A Candle Fit Skull";
+			Name = "Une bougie en forme de crane";
 			Weight = 0.5;
 		}
 

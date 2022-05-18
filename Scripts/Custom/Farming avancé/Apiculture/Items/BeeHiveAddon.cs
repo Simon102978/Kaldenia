@@ -410,7 +410,7 @@ namespace Server.Engines.Apiculture
 			
 			if( !IsAccessibleTo( from ) )
 			{
-				LabelTo( from,"You cannot pour potions on that.");
+				LabelTo( from, "Vous ne pouvez pas verser de potions là dessus.");
 				return;
 			}
 
@@ -433,7 +433,7 @@ namespace Server.Engines.Apiculture
 
 				if ( keg.Held <= 0 )
 				{
-					LabelTo( from, "You cannot use that on a beehive!");
+					LabelTo( from, "Vous ne pouvez pas l'utiliser sur une ruche !");
 					return;
 				}
 
@@ -447,7 +447,7 @@ namespace Server.Engines.Apiculture
 			}
 			else
 			{
-				LabelTo( from, "You cannot use that on a beehive!");
+				LabelTo( from, "Vous ne pouvez pas l'utiliser sur une ruche !");
 			}
 		}
 
@@ -494,23 +494,23 @@ namespace Server.Engines.Apiculture
 			else if ( effect == PotionEffect.PoisonLesser || effect == PotionEffect.Poison || effect == PotionEffect.CureLesser || effect == PotionEffect.Cure ||
 				effect == PotionEffect.HealLesser || effect == PotionEffect.Heal ||	effect == PotionEffect.Strength )
 			{
-				message = "This potion is not powerful enough to use on a beehive!";
+				message = "Cette potion n'est pas assez puissante pour être utilisée sur une ruche !";
 				return false;
 			}
 			else
 			{
-				message = "You cannot use that on a beehive!";
+				message = "Vous ne pouvez pas l'utiliser sur une ruche !";
 				return false;
 			}
 
 			if ( full )
 			{
-				message = "The beehive is already soaked with this type of potion!";
+				message = "La ruche est déjà imbibée de ce type de potion !";
 				return false;
 			}
 			else
 			{
-				message = "You pour the potion into the beehive.";
+				message = "Vous versez la potion sur la ruche.";
 				return true;
 			}
 		}
@@ -784,13 +784,13 @@ namespace Server.Engines.Apiculture
 		{
 			if( m_Hive == null )
 			{
-				LabelTo( from, "That beehive is invalid.  Use an axe to redeed it." );
+				LabelTo( from, "Cette ruche est invalide. Utilisez une hache pour la retirer.");
 				return;
 			}
 
 			if( m_Hive.HiveStage == HiveStatus.Empty )
 			{
-				LabelTo( from, "That beehive is empty.  Use an axe to redeed it." );
+				LabelTo( from, "Cette ruche est vide. Utilisez une hache pour la retirer.");
 				return;
 			}
 			from.SendGump( new apiBeeHiveMainGump( from, m_Hive ) );
@@ -800,14 +800,14 @@ namespace Server.Engines.Apiculture
 		{
 			if( m_Hive == null )
 			{//just in case
-				list.Add("Invalid Hive");
+				list.Add("Ruche invalide");
 				return;
 			}
 
 			if( m_Hive.HiveStage == HiveStatus.Empty )
-				list.Add( "BeeHive" );
+				list.Add( "Ruche" );
 			else
-				list.Add( m_Hive.OverallHealth.ToString()+" BeeHive" );
+				list.Add( m_Hive.OverallHealth.ToString()+" Ruche" );
 		}
 
 		public override void GetProperties(ObjectPropertyList list)
@@ -818,18 +818,18 @@ namespace Server.Engines.Apiculture
 				return;
 
 			if( m_Hive.HiveStage >= HiveStatus.Producing )
-				list.Add( 1049644 , "Producing" );
+				list.Add( 1049644 , "En production" );
 			else if( m_Hive.HiveStage >= HiveStatus.Brooding )
-				list.Add( 1049644 , "Brooding" );
+				list.Add( 1049644 , "Couvaison");
 			else if( m_Hive.HiveStage >= HiveStatus.Colonizing )
-				list.Add( 1049644 , "Colonizing" );
+				list.Add( 1049644 , "Colonisation en cours" );
 			else
-				list.Add( 1049644 , "Empty" );
+				list.Add( 1049644 , "Vide" );
 
 			if( m_Hive.HiveStage != HiveStatus.Empty )
-				list.Add( 1060663,"{0}\t{1}" ,"Age", m_Hive.HiveAge + (m_Hive.HiveAge==1 ? " day" : " days") );
+				list.Add( 1060663,"{0}\t{1}" ,"Age", m_Hive.HiveAge + (m_Hive.HiveAge==1 ? " Jour" : " Jours") );
 			if( m_Hive.HiveStage >= HiveStatus.Producing )
-				list.Add( 1060662,"{0}\t{1}" ,"Colony", m_Hive.Population + "0k bees" );
+				list.Add( 1060662,"{0}\t{1}" ,"Colonie", m_Hive.Population + "0k Abeilles" );
 		}
 
 		public apiBeeHiveComponent( Serial serial ) : base( serial )
@@ -858,7 +858,7 @@ namespace Server.Engines.Apiculture
 		[Constructable]
 		public apiBeeHiveDeed()
 		{
-			Name = "beehive deed";
+			Name = "Ruche deed";
 		}
 
 		public apiBeeHiveDeed( Serial serial ) : base( serial )

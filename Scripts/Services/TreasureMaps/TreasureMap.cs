@@ -403,15 +403,15 @@ namespace Server.Items
             switch (Utility.Random(8))
             {
                 default:
-                case 0: return Map.Trammel;
-                case 1: return Map.Felucca;
-                case 2:
-                case 3: return Map.Ilshenar;
-                case 4:
-                case 5: return Map.Malas;
-                case 6:
-                case 7: return Map.Tokuno;
-            }
+                case 0: return Map.Felucca;
+				case 1: return Map.Felucca;
+				case 2: return Map.Felucca;
+				case 3: return Map.Felucca;
+				case 4: return Map.Felucca;
+				case 5: return Map.Felucca;
+				case 6: return Map.Felucca;
+				case 7: return Map.Felucca;
+			}
         }
 
         public static Point2D GetRandomLocation(Map map)

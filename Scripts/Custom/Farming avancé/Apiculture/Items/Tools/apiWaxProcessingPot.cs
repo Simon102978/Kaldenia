@@ -46,7 +46,7 @@ namespace Server.Items
 		public apiWaxProcessingPot( int uses ) : base( 2532 )
 		{
 			m_UsesRemaining = uses;
-			Name = "Wax Processing Pot";
+			Name = "Pot de traitement de cire";
 			Weight = 3.0;
 			m_RawBeeswax = 0;
 			m_PureBeeswax = 0;
@@ -63,16 +63,16 @@ namespace Server.Items
 			list.Add( 1060584, m_UsesRemaining.ToString() ); // uses remaining: ~1_val~
 
 			if( PureBeeswax < 1 && RawBeeswax < 1 )
-				list.Add( 1049644 , "Empty" );
+				list.Add( 1049644 , "Vide" );
 			else if( PureBeeswax > 0 )
 			{
-				list.Add( 1060663,"{0}\t{1}" ,"Wax", PureBeeswax.ToString() );
-				list.Add( 1049644 , "Rendered" );
+				list.Add( 1060663,"{0}\t{1}" ,"Cire", PureBeeswax.ToString() );
+				list.Add( 1049644 , "Fabrication" );
 			}
 			else
 			{
-				list.Add( 1060663,"{0}\t{1}" ,"Wax", RawBeeswax.ToString() );
-				list.Add( 1049644 , "Raw" );
+				list.Add( 1060663,"{0}\t{1}" ,"Cire", RawBeeswax.ToString() );
+				list.Add( 1049644 , "Brute" );
 			}
 		}
 
@@ -81,13 +81,13 @@ namespace Server.Items
 			LabelToAffix( m, 1017323, AffixType.Append, ": " + m_UsesRemaining.ToString() ); // Durability
 		}
 
-///		public override void OnSingleClick( Mobile from )
-///		{
-///			DisplayDurabilityTo( from );
+				public virtual void OnAosSingleClick( Mobile from )
+				{
+					DisplayDurabilityTo( from );
 
-///			base.OnSingleClick( from );
-///		}
-
+				base.OnAosSingleClick( from );
+				}
+		
 		public override void OnDoubleClick(Mobile from)
 		{
 			from.SendGump( new apiBeeHiveSmallPotGump( from, this ) );
@@ -98,7 +98,7 @@ namespace Server.Items
 			if ( m_RawBeeswax < MaxWax )
 				from.Target = new AddWaxTarget( this );
 			else
-				from.PrivateOverheadMessage( 0, 1154, false,  "The pot cannot hold any more raw beeswax.", from.NetState );
+				from.PrivateOverheadMessage( 0, 1154, false, "Le pot ne peut plus contenir de cire d'abeille brute.", from.NetState );
 		}
 
 		public void EndAdd( Mobile from, object o )
@@ -120,7 +120,7 @@ namespace Server.Items
 						wax.Delete();
 					}
 					
-					from.PrivateOverheadMessage( 0, 1154, false,  "You put raw beeswax in the pot.", from.NetState );
+					from.PrivateOverheadMessage( 0, 1154, false, "Vous mettez de la cire d'abeille brute dans le pot.", from.NetState );
 					
 					if( from.HasGump( typeof(apiBeeHiveSmallPotGump)) )
 						from.CloseGump( typeof(apiBeeHiveSmallPotGump) );
@@ -131,11 +131,11 @@ namespace Server.Items
 						BeginAdd( from );
 				}
 				else
-					from.PrivateOverheadMessage( 0, 1154, false,  "You can only put raw beeswax in the pot.", from.NetState );
+					from.PrivateOverheadMessage( 0, 1154, false, "Vous ne pouvez mettre que de la cire d'abeille brute dans le pot.", from.NetState );
 			}
 			else
 			{
-				from.PrivateOverheadMessage( 0, 1154, false,  "The wax must be in your pack to target it.", from.NetState );
+				from.PrivateOverheadMessage( 0, 1154, false, "La cire doit être dans votre sac pour la cibler.", from.NetState );
 			}
 		}
 
@@ -220,9 +220,9 @@ namespace Server.Items
 				AddItem(231, 105, 2532);
 
 			//labels
-			AddLabel(76 , 71 , 1153, "Render Beeswax");
-			AddLabel(76 , 40 , 1153, "Add Raw Beeswax");
-			AddLabel(76 , 101, 1153, "Empty Pot");
+			AddLabel(76 , 71 , 1153, "Fabrication de la cire d'abeille");
+			AddLabel(76 , 40 , 1153, "Ajouter de la cire d'abeille brute");
+			AddLabel(76 , 101, 1153, "Pot Vide");
 			AddLabel(331, 110, 1153, "?");
 
 			//buttons
@@ -232,8 +232,8 @@ namespace Server.Items
 			AddButton(326, 110, 212, 212, (int)Buttons.cmdHelp, GumpButtonType.Reply, 0);
 
 			//wax amounts
-			AddLabel(207, 40, 1153, "Raw Beeswax: " + m_pot.RawBeeswax );
-			AddLabel(207, 71, 1153, "Pure Beeswax: " + m_pot.PureBeeswax );
+			AddLabel(207, 40, 1153, "Cire d'abeille brute: " + m_pot.RawBeeswax );
+			AddLabel(207, 71, 1153, "Cire d'abeille pure: " + m_pot.PureBeeswax );
 		}
 		
 		public enum Buttons
@@ -253,7 +253,7 @@ namespace Server.Items
 
 			if( !m_pot.IsAccessibleTo( from ) )
 			{
-				from.PrivateOverheadMessage( 0, 1154, false, "I cannot use that.", from.NetState );
+				from.PrivateOverheadMessage( 0, 1154, false, "Je ne peux pas utiliser ça.", from.NetState );
 				return;
 			}
 
@@ -271,11 +271,11 @@ namespace Server.Items
 
 					if ( m_pot.PureBeeswax > 0 )
 					{
-						from.PrivateOverheadMessage( 0, 1154, false,  "You cannot mix raw beeswax with rendered wax.  Please empty the pot first.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Vous ne pouvez pas mélanger de la cire d'abeille brute avec de la cire fondue. Veuillez d'abord vider le pot.", from.NetState );
 						return;
 					}
 
-					from.PrivateOverheadMessage( 0, 1154, false,  "Choose the raw beeswax you wish to add to the pot.", from.NetState );
+					from.PrivateOverheadMessage( 0, 1154, false, "Choisissez la cire d'abeille brute que vous souhaitez ajouter au pot.", from.NetState );
 					m_pot.BeginAdd( from );
 					
 					break;
@@ -284,7 +284,7 @@ namespace Server.Items
 				{
 					if( m_pot.PureBeeswax < 1 && m_pot.RawBeeswax < 1 )
 					{
-						from.PrivateOverheadMessage( 0, 1154, false, "There is no wax in the pot.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Il n'y a pas de cire dans le pot.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from,m_pot) );
 						return;
 					}
@@ -303,7 +303,7 @@ namespace Server.Items
 					if ( !from.PlaceInBackpack( wax ) )
 					{
 						wax.Delete();
-						from.PrivateOverheadMessage( 0, 1154, false,  "There is not enough room in your backpack for the wax!", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Il n'y a pas assez de place dans votre sac pour la cire !", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump( from, m_pot ) );
 						break;
 					}
@@ -314,7 +314,7 @@ namespace Server.Items
 					m_pot.ItemID = 2532; //empty pot
 
 					from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
-					from.PrivateOverheadMessage( 0, 1154, false,  "You place the beeswax in your pack.", from.NetState );
+					from.PrivateOverheadMessage( 0, 1154, false, "Vous placez la cire d'abeille dans votre sac.", from.NetState );
 						
 					break;
 				}
@@ -322,25 +322,25 @@ namespace Server.Items
 				{
 					if( m_pot.UsesRemaining < 1 )
 					{//no uses remaining
-						from.PrivateOverheadMessage( 0, 1154, false,  "The pot is too damamged to render beeswax.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est trop endommagé pour rendre la cire d'abeille.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}
 					else if( m_pot.PureBeeswax > 1 )
 					{//already rendered
-						from.PrivateOverheadMessage( 0, 1154, false,  "The pot is already full of rendered beeswax.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est déjà plein de cire d'abeille fondue.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}
 					else if( m_pot.RawBeeswax < 1 )
 					{//not enough raw beeswax
-						from.PrivateOverheadMessage( 0, 1154, false,  "There is not enough raw beeswax in the pot.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Il n'y a pas assez de cire d'abeille brute dans le pot.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}
 					else if( !BeeHiveHelper.Find( from, BeeHiveHelper.m_HeatSources ) )
 					{//need a heat source to melt the wax
-						from.PrivateOverheadMessage( 0, 1154, false,  "You must be near a heat source to render beeswax.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Vous devez être près d'une source de chaleur pour fabriquer la cire d'abeille.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}
@@ -362,7 +362,7 @@ namespace Server.Items
 					}
 
 					from.PlaySound( 0x21 );
-					from.PrivateOverheadMessage( 0, 1154, false,  "You slowly melt the raw beeswax and remove the impurities.", from.NetState );
+					from.PrivateOverheadMessage( 0, 1154, false, "Vous faites fondre lentement la cire d'abeille brute et enlevez les impuretés.", from.NetState );
 					
 					m_pot.PureBeeswax = m_pot.RawBeeswax - waste;
 					m_pot.RawBeeswax = 0;

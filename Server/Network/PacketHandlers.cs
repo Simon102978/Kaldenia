@@ -1602,7 +1602,7 @@ namespace Server.Network
 			{
 				if (Utility.InUpdateRange(m, tm))
 				{
-					tm.OnAosSingleClick(m);
+///					m.OnAosSingleClick(m);
 				}
 			}
 		}

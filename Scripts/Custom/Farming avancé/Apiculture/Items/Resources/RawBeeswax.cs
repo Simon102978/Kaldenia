@@ -12,7 +12,7 @@ namespace Server.Items
 		[Constructable]
 		public RawBeeswax( int amount ) : base( 0x1422 )
 		{
-            Name = "Raw Beeswax";
+            Name = "Cire d'abeille brute";
 			Weight = 1.0;
 			Stackable = true;
 			Amount = amount;

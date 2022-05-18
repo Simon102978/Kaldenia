@@ -18,7 +18,7 @@ namespace Server.Items
 
 			Burning = false;
 			Light = LightType.Circle150;
-			Name = "long candle";
+			Name = "Bougie Longue";
 			Weight = 1.0;
 		}
 

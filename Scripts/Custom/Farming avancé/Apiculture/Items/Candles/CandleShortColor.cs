@@ -19,7 +19,7 @@ namespace Server.Items
 			Burning = false;
 			Light = LightType.Circle150;
 			Weight = 1.0;
-			Name = "short candle";
+			Name = "Bougie Courte";
 			Hue = GetRandomHue();
 		}
 

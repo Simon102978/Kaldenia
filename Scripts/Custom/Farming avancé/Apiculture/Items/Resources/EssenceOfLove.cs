@@ -9,7 +9,7 @@ namespace Server.Items
 		[Constructable]
 		public EssenceOfLove() : base( 0x1C18 )
 		{
-			Name = "Essence Of Love";
+			Name = "Essence de l'amour";
 			Weight = 0.5;
 			Hue = 1157;
 		}

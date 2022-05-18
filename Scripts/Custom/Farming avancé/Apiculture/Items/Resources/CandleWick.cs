@@ -13,7 +13,7 @@ namespace Server.Items
 		[Constructable]
 		public CandleWick( int amount ) : base( 0x979 )
 		{
-			Name = "Candle Wick";
+			Name = "Meche de Bougie";
 			Stackable = true;
 			Weight = 0.5;
 			Amount = amount;

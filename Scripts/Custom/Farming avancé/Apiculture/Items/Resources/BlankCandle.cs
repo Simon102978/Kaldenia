@@ -9,7 +9,7 @@ namespace Server.Items
 		[Constructable]
 		public BlankCandle() : base( 0x1433 )
 		{
-			Name = "Blank Candle";
+			Name = "Bougie Vierge";
 			Weight = 0.5;
 			Hue = 1150;
 		}

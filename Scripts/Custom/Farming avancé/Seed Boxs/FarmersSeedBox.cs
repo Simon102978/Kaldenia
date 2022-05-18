@@ -77,7 +77,7 @@ namespace Server.Items
             Movable = true;
             Weight = 1.0;
             Hue = 88;
-            Name = "Farmers Seed Box";
+            Name = "Boite de semences";
             //LootType = LootType.Blessed;
             StorageLimit = 60000;
             WithdrawIncrement = 100;
@@ -89,7 +89,7 @@ namespace Server.Items
             Movable = true;
             Weight = 1.0;
             Hue = 88;
-            Name = "Farmers Seed Box";
+            Name = "Boite de semences";
             //LootType = LootType.Blessed;
             StorageLimit = storageLimit;
             WithdrawIncrement = withdrawIncrement;
@@ -102,7 +102,7 @@ namespace Server.Items
 			if (IsChildOf(from.Backpack))
                 from.SendGump(new FarmersSeedBoxGump((PlayerMobile)from, this));
 			else
-				from.SendMessage("This must be in your backpack.");
+				from.SendMessage("L'item doit être dans votre sac.");
         }
         public void BeginCombine(Mobile from)
         {
@@ -116,7 +116,7 @@ namespace Server.Items
 				if (curItem is CottonSeed)
 				{
 					if (CottonSeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (CottonSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (CottonSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						CottonSeed += curItem.Amount;
@@ -129,7 +129,7 @@ namespace Server.Items
 				else if (curItem is FlaxSeed)
 				{
 					if (FlaxSeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (FlaxSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (FlaxSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						FlaxSeed += curItem.Amount;
@@ -142,7 +142,7 @@ namespace Server.Items
 				else if (curItem is HaySeed)
 				{
 					if (HaySeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (HaySeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (HaySeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						HaySeed += curItem.Amount;
@@ -154,7 +154,7 @@ namespace Server.Items
 				else if (curItem is OatsSeed)
 				{
 					if (OatsSeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (OatsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (OatsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						OatsSeed += curItem.Amount;
@@ -167,7 +167,7 @@ namespace Server.Items
 				else if (curItem is RiceSeed)
 				{
 					if (RiceSeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (RiceSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (RiceSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						RiceSeed += curItem.Amount;
@@ -179,7 +179,7 @@ namespace Server.Items
 				else if (curItem is SugarcaneSeed)
 				{
 					if (SugarcaneSeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (SugarcaneSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (SugarcaneSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						SugarcaneSeed += curItem.Amount;
@@ -191,7 +191,7 @@ namespace Server.Items
 				else if (curItem is WheatSeed)
 				{
 					if (WheatSeed + curItem.Amount > StorageLimit)
-						from.SendMessage("You are trying to add "+ ( (WheatSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+						from.SendMessage("Vous essayez d'ajouter " + ( (WheatSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
 					else
 					{
 						WheatSeed += curItem.Amount;
@@ -203,7 +203,7 @@ namespace Server.Items
 				else if (curItem is BitterHopsSeed)
                 {
                     if (BitterHopsSeed + curItem.Amount > StorageLimit)
-                        from.SendMessage("You are trying to add "+ ( (BitterHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+                        from.SendMessage("Vous essayez d'ajouter " + ( (BitterHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
                     else
                     {
                         BitterHopsSeed += curItem.Amount;
@@ -215,7 +215,7 @@ namespace Server.Items
                 else if (curItem is ElvenHopsSeed)
                 {
                     if (ElvenHopsSeed + curItem.Amount > StorageLimit)
-                        from.SendMessage("You are trying to add "+ ( (ElvenHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+                        from.SendMessage("Vous essayez d'ajouter " + ( (ElvenHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
                     else
                     {
                         ElvenHopsSeed += curItem.Amount;
@@ -227,7 +227,7 @@ namespace Server.Items
                 else if (curItem is SnowHopsSeed)
                 {
                     if (SnowHopsSeed + curItem.Amount > StorageLimit)
-                        from.SendMessage("You are trying to add "+ ( (SnowHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+                        from.SendMessage("Vous essayez d'ajouter " + ( (SnowHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
                     else
                     {
                         SnowHopsSeed += curItem.Amount;
@@ -239,7 +239,7 @@ namespace Server.Items
                 else if (curItem is SweetHopsSeed)
                 {
                     if (SweetHopsSeed + curItem.Amount > StorageLimit)
-                        from.SendMessage("You are trying to add "+ ( (SweetHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
+                        from.SendMessage("Vous essayez d'ajouter " + ( (SweetHopsSeed + curItem.Amount) - m_StorageLimit ) +" too much! The warehouse can store only "+ m_StorageLimit +" of this resource.");
                     else
                     {
                         SweetHopsSeed += curItem.Amount;
@@ -328,7 +328,7 @@ namespace Server.Items
 			AddImageTiled(58, 20, 438, 210, 2624);
 			AddAlphaRegion(58, 20, 438, 210);
 
-            AddLabel(200, 25, 88, "Farmers Seed Box");
+            AddLabel(200, 25, 88, "Boite de semences");
 
             AddLabel(125, 50, 0x486, "Cotton Seed");
             AddLabel(225, 50, 0x480, key.CottonSeed.ToString());

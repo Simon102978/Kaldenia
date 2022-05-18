@@ -9,12 +9,12 @@ namespace Server.Items
 		public EmptyWineBottle() : this( 1 ){}
 
 		[Constructable]
-		public EmptyWineBottle( int amount ) : base( 3854 )
+		public EmptyWineBottle( int amount ) : base(0x099B)
 		{
 			Stackable = true;
 			Name = "Empty Wine Bottle";
 			Amount = amount;
-			Hue = 2948;
+			Hue = 0;
 		}
 
 		public EmptyWineBottle( Serial serial ) : base( serial ) { }

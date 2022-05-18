@@ -25,11 +25,11 @@ namespace Server.Items
             ac = new
 
             AddonComponent(0x489);
-            ac.Name = "Sandstone Fireplace";
+            ac.Name = "Cheminée en grès";
             AddComponent(ac, 0, 0, 0);
 
             ac = new AddonComponent(0x45D);
-            ac.Name = "Sandstone Fireplace";
+            ac.Name = "Cheminée en grès";
             AddComponent(ac, 0, 1, 0);
              
         }
@@ -57,18 +57,18 @@ namespace Server.Items
                             {
                                 case 0:
                                     {
-                                        from.SendMessage("You must have 3 logs to put in the fireplace");
+                                        from.SendMessage("Vous devez avoir 3 bûches à mettre dans la cheminée");
                                         break;
                                     }
                                 case 1:
                                     {
-                                        from.SendMessage("You must have a match to light a fire in the fireplace");
+                                        from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la cheminée");
                                         break;
                                     }
                                 default:
                                     {
                                         Effects.PlaySound(from.Location, from.Map, 0x137);
-                                        from.SendMessage("You light a fire in the fireplace.");
+                                        from.SendMessage("Vous allumez un feu dans la cheminée.");
                                         ac.ItemID = 0x475;
                                         ac.Light = LightType.Circle225;
                                         Effects.PlaySound(from.Location, from.Map, 0x4BA);
@@ -84,11 +84,11 @@ namespace Server.Items
                 {
                     ac.ItemID = 0x45D;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("You put out the fire in the fireplace!");
+                    from.SendMessage("Vous éteignez le feu dans la cheminée !");
                 }
             }
             else
-                from.SendMessage("You are too far away to use that!");
+                from.SendMessage("Vous êtes trop loin pour l'utiliser !");
         }
 
         public override void Serialize(GenericWriter writer)

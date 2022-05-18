@@ -13,7 +13,7 @@ namespace Server.Items
       [Constructable] 
       public HoneycombProcessingKettle() : base( 0x9ED ) 
       { 
-         Name = "Honeycomb Processing Kettle"; 
+         Name = "Bouilloire pour le miel"; 
          Weight = 10.0;             
       } 
 
@@ -26,7 +26,7 @@ namespace Server.Items
 
          if (pack != null && pack.ConsumeTotal( typeof( HoneyComb ), 1 ) ) 
          { 
-            from.SendMessage( "*You centrifuge the honeycomb and separate honey and wax*" ); 
+            from.SendMessage("*Vous centrifugez le produit et séparez le miel et la cire*"); 
                 
                { 
 					
@@ -37,7 +37,7 @@ namespace Server.Items
 
          else 
          { 
-            from.SendMessage( "You need a honeycomb to use in this kettle" ); 
+            from.SendMessage("Vous avez besoin d'un rayon de miel pour utiliser cette bouilloire"); 
             return; 
          } 
       } 
@@ -46,7 +46,7 @@ namespace Server.Items
 
          else 
          { 
-            from.SendMessage( "You are too far away from this" ); 
+            from.SendMessage( "Vous êtes trop loin." ); 
             return; 
          } 
 

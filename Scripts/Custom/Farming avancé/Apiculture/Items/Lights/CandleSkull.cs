@@ -38,7 +38,7 @@ namespace Server.Items
 			Burning = false;
 			Light = LightType.Circle150;
 			Weight = 5.0;
-			Name = "Skull Candle";
+			Name = "Bougie Crane";
 		}
 
 		public CandleSkull( Serial serial ) : base( serial )

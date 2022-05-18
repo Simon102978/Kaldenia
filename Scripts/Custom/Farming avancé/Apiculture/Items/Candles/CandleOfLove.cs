@@ -19,7 +19,7 @@ namespace Server.Items
 			Burning = false;
 			Light = LightType.Circle150;
 			Weight = 1.0;
-			Name = "Candle Of Love";
+			Name = "Bougie de l'Amour";
 		}
 
 		public CandleOfLove( Serial serial ) : base( serial )

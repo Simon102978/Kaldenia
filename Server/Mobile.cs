@@ -1058,7 +1058,8 @@ namespace Server
 			from.Send(PropertyList);
 		}
 
-		public virtual void OnAosSingleClick(Mobile from)
+		public virtual void OnAos
+			(Mobile from)
 		{
 			var opl = PropertyList;
 

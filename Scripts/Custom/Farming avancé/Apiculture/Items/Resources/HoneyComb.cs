@@ -13,7 +13,7 @@ namespace Server.Items
 		[Constructable]
 		public HoneyComb( int amount ) : base( 0x1762 )
 		{
-			Name = "HoneyComb";
+			Name = "Rayon de Miel";
 			Stackable = true;
 			Weight = 2.0;
 			Amount = amount;

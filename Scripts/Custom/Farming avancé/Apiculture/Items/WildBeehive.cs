@@ -25,7 +25,7 @@ namespace Server.Items
 		[Constructable]
 		public WildBeehive() : base( 0x91A )
 		{
-			Name = "Wild Beehive";
+			Name = "Ruche Sauvage";
 			Movable = false;
 		}
 		public override void OnDoubleClick( Mobile from )
@@ -37,7 +37,7 @@ namespace Server.Items
 				{
 					from.AddToBackpack( new HoneyComb() );
 					InvalidateProperties();
-					from.SendMessage( "As you pull out the last honeycomb the beehive collapses" );
+					from.SendMessage( "Vous retirez le dernier rayon de Miel, la ruche s'effondre." );
 					this.Delete();
 				}
 				else
@@ -45,13 +45,13 @@ namespace Server.Items
 					from.AddToBackpack( new HoneyComb() );
 					m_UsesRemaining -= 1;
 					InvalidateProperties();
-					from.SendMessage( "You take a honeycomb out of the beehive." );
+					from.SendMessage("Vous sortez un rayon de miel de la ruche.");
 					
 				}
 			}
 			else 
   			{ 
-			from.SendMessage( "You are too far away from the beehive." ); 
+			from.SendMessage("Vous êtes trop loin de la ruche."); 
 			return; 
   			} 
 		}

@@ -23,7 +23,7 @@ namespace Server.Items
 		[Constructable]
 		public HiveTool( int uses ) : base( 2549 )
 		{
-            Name = "Hive Tool";
+            Name = "Outil Ruche";
 			m_UsesRemaining = uses;
 		}
 

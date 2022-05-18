@@ -600,12 +600,13 @@ namespace Server.Mobiles
             {
                 string name;
 
-                if (Fame >= 10000)
-                    name = string.Format("{0} {1}", Female ? "Lady" : "Lord", RawName);
-                else
-                    name = RawName;
+				if (Fame >= 10000)
+					name = string.Format("{0} {1}", Female ? "Lady" : "Lord", RawName);
+				else
+					name = RawName;
 
-                return name;
+
+				return name;
             }
         }
 

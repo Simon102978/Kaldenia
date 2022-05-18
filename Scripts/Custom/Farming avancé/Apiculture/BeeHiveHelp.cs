@@ -19,7 +19,7 @@ namespace Server.Engines.Apiculture
 
 			AddPage(0);
 			AddBackground(37, 25, 386, 353, 3600);
-			AddLabel(177, 42, 92, @"Apiculture Help");
+			AddLabel(177, 42, 92, @"Aide Apiculture");
 
 			AddItem(32, 277, 3311);
 			AddItem(30, 193, 3311);

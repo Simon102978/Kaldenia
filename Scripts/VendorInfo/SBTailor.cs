@@ -15,12 +15,13 @@ namespace Server.Mobiles
         {
             public InternalBuyInfo()
             {
-                Add(new GenericBuyInfo(typeof(SewingKit), 3, 20, 0xF9D, 0));
-                Add(new GenericBuyInfo(typeof(Scissors), 11, 20, 0xF9F, 0));
+                Add(new GenericBuyInfo(typeof(SewingKit), 5, 20, 0xF9D, 0));
+                Add(new GenericBuyInfo(typeof(Scissors), 10, 20, 0xF9F, 0));
                 Add(new GenericBuyInfo(typeof(DyeTub), 8, 20, 0xFAB, 0));
                 Add(new GenericBuyInfo(typeof(Dyes), 8, 20, 0xFA9, 0));
+				Add(new GenericBuyInfo(typeof(LayerChangeDeed), 10, 100, 0x1F23, 0));
 
-                Add(new GenericBuyInfo(typeof(Shirt), 12, 20, 0x1517, 0));
+				Add(new GenericBuyInfo(typeof(Shirt), 12, 20, 0x1517, 0));
                 Add(new GenericBuyInfo(typeof(ShortPants), 7, 20, 0x152E, 0));
                 Add(new GenericBuyInfo(typeof(FancyShirt), 21, 20, 0x1EFD, 0));
                 Add(new GenericBuyInfo(typeof(LongPants), 10, 20, 0x1539, 0));
@@ -54,10 +55,7 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Cloth), 2, 20, 0x1766, Utility.RandomDyedHue(), true));
                 Add(new GenericBuyInfo(typeof(UncutCloth), 2, 20, 0x1767, Utility.RandomDyedHue(), true));
 
-                Add(new GenericBuyInfo(typeof(Cotton), 102, 20, 0xDF9, 0, true));
-                Add(new GenericBuyInfo(typeof(Wool), 62, 20, 0xDF8, 0, true));
-                Add(new GenericBuyInfo(typeof(Flax), 102, 20, 0x1A9C, 0, true));
-                Add(new GenericBuyInfo(typeof(SpoolOfThread), 18, 20, 0xFA0, 0, true));
+               
             }
         }
 

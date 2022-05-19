@@ -1,5 +1,6 @@
 using Server.Items;
 using System.Collections.Generic;
+using Server.Scripts;
 
 namespace Server.Mobiles
 {
@@ -24,7 +25,8 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(WoodenBox), 14, 20, 0x9AA, 0));
                 Add(new GenericBuyInfo(typeof(Key), 2, 20, 0x100E, 0));
                 Add(new GenericBuyInfo(typeof(HairDye), 37, 20, 0xEFF, 0));
-            }
+				Add(new GenericBuyInfo(typeof(DisguiseKit), 500, 10, 0xE05, 0));
+			}
         }
 
         public class InternalSellInfo : GenericSellInfo

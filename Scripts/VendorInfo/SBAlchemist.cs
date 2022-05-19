@@ -34,23 +34,23 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(LesserExplosionPotion), 21, 10, 0xF0D, 0, true));
                 Add(new GenericBuyInfo(typeof(MortarPestle), 8, 10, 0xE9B, 0));
 
-                Add(new GenericBuyInfo(typeof(BlackPearl), 5, 20, 0xF7A, 0));
-                Add(new GenericBuyInfo(typeof(Bloodmoss), 5, 20, 0xF7B, 0));
-                Add(new GenericBuyInfo(typeof(Garlic), 3, 20, 0xF84, 0));
-                Add(new GenericBuyInfo(typeof(Ginseng), 3, 20, 0xF85, 0));
-                Add(new GenericBuyInfo(typeof(MandrakeRoot), 3, 20, 0xF86, 0));
-                Add(new GenericBuyInfo(typeof(Nightshade), 3, 20, 0xF88, 0));
-                Add(new GenericBuyInfo(typeof(SpidersSilk), 3, 20, 0xF8D, 0));
-                Add(new GenericBuyInfo(typeof(SulfurousAsh), 3, 20, 0xF8C, 0));
+                Add(new GenericBuyInfo(typeof(BlackPearl), 5, 999, 0xF7A, 0));
+                Add(new GenericBuyInfo(typeof(Bloodmoss), 5, 999, 0xF7B, 0));
+                Add(new GenericBuyInfo(typeof(Garlic), 5, 999, 0xF84, 0));
+                Add(new GenericBuyInfo(typeof(Ginseng), 5, 999, 0xF85, 0));
+                Add(new GenericBuyInfo(typeof(MandrakeRoot), 5, 999, 0xF86, 0));
+                Add(new GenericBuyInfo(typeof(Nightshade), 5, 999, 0xF88, 0));
+                Add(new GenericBuyInfo(typeof(SpidersSilk), 5, 999, 0xF8D, 0));
+                Add(new GenericBuyInfo(typeof(SulfurousAsh), 5, 999, 0xF8C, 0));
 
                 Add(new GenericBuyInfo(typeof(Bottle), 5, 100, 0xF0E, 0, true));
                 Add(new GenericBuyInfo(typeof(HeatingStand), 2, 100, 0x1849, 0));
-                Add(new GenericBuyInfo(typeof(SkinTingeingTincture), 1255, 20, 0xEFF, 90));
+                
 
                 if (m.Map != Map.TerMur)
                 {
-                    Add(new GenericBuyInfo(typeof(HairDye), 37, 10, 0xEFF, 0));
-                }
+					Add(new GenericBuyInfo(typeof(Bottle), 5, 100, 0xF0E, 0, true));
+				}
                 else if (m is Zosilem)
                 {
                     Add(new GenericBuyInfo(typeof(GlassblowingBook), 10637, 30, 0xFF4, 0));

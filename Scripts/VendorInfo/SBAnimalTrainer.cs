@@ -1,6 +1,10 @@
+using System;
 using System.Collections.Generic;
+using Server.Items;
+using Xanthos.ShrinkSystem;
 
 namespace Server.Mobiles
+	
 {
     public class SBAnimalTrainer : SBInfo
     {
@@ -20,7 +24,9 @@ namespace Server.Mobiles
                 Add(new AnimalBuyInfo(1, typeof(PackHorse), 631, 10, 291, 0));
                 Add(new AnimalBuyInfo(1, typeof(PackLlama), 565, 10, 292, 0));
                 Add(new AnimalBuyInfo(1, typeof(Rabbit), 106, 10, 205, 0));
-            }
+				Add(new GenericBuyInfo("2001111", typeof(HitchingPostSouthDeed), 10000, 10, 0x14F0, 0));
+				Add(new GenericBuyInfo(typeof(HitchingRope), 500, 20, 0x14F8, 0));
+			}
         }
 
         public class InternalSellInfo : GenericSellInfo

@@ -15,24 +15,10 @@ namespace Server.Mobiles
         {
             public InternalBuyInfo()
             {
-                Add(new GenericBuyInfo(typeof(RawFishSteak), 3, 20, 0x97A, 0, true));
-                Add(new GenericBuyInfo(typeof(SmallFish), 3, 20, 0xDD6, 0));
-                Add(new GenericBuyInfo(typeof(SmallFish), 3, 20, 0xDD7, 0));
-                Add(new GenericBuyInfo(typeof(Fish), 6, 80, 0x9CC, 0, true));
-                Add(new GenericBuyInfo(typeof(Fish), 6, 80, 0x9CD, 0, true));
-                Add(new GenericBuyInfo(typeof(Fish), 6, 80, 0x9CE, 0, true));
-                Add(new GenericBuyInfo(typeof(Fish), 6, 80, 0x9CF, 0, true));
-                Add(new GenericBuyInfo(typeof(FishingPole), 15, 20, 0xDC0, 0));                
-                Add(new GenericBuyInfo(typeof(AquariumFood), 62, 20, 0xEFC, 0));
-                Add(new GenericBuyInfo(typeof(FishBowl), 6312, 20, 0x241C, 0x482));
-                Add(new GenericBuyInfo(typeof(VacationWafer), 67, 20, 0x971, 0));
-                Add(new GenericBuyInfo(typeof(AquariumNorthDeed), 250002, 20, 0x14F0, 0));
-                Add(new GenericBuyInfo(typeof(AquariumEastDeed), 250002, 20, 0x14F0, 0));
-                Add(new GenericBuyInfo(typeof(AquariumFishNet), 250, 20, 0xDC8, 0x240));
-                Add(new GenericBuyInfo(typeof(NewAquariumBook), 15, 20, 0xFF2, 0));                
-                Add(new GenericBuyInfo(typeof(SmallElegantAquariumRecipeScroll), 375000, 500, 0x2831, 0));
-                Add(new GenericBuyInfo(typeof(WallMountedAquariumRecipeScroll), 750000, 500, 0x2831, 0));
-                Add(new GenericBuyInfo(typeof(LargeElegantAquariumRecipeScroll), 1250000, 500, 0x2831, 0));
+                
+
+                Add(new GenericBuyInfo(typeof(FishingPole), 15, 20, 0xDC0, 0));
+				Add(new GenericBuyInfo("empty lobster trap", typeof(LobsterTrap), 100, 500, 17615, 0));
             }
         }
 
@@ -44,7 +30,33 @@ namespace Server.Mobiles
                 Add(typeof(Fish), 1);
                 Add(typeof(SmallFish), 1);
                 Add(typeof(FishingPole), 7);
-            }
+				Add(typeof(LobsterTrap), 10);
+				Add(typeof(AppleCrab), 1);
+				Add(typeof(BlueCrab), 1);
+				Add(typeof(DungeonessCrab), 1);
+				Add(typeof(KingCrab), 1);
+				Add(typeof(RockCrab), 1);
+				Add(typeof(SnowCrab), 1);
+				Add(typeof(StoneCrab), 1);
+				Add(typeof(SpiderCrab), 1);
+				Add(typeof(TunnelCrab), 100);
+				Add(typeof(VoidCrab), 100);
+
+				Add(typeof(CrustyLobster), 1);
+				Add(typeof(FredLobster), 1);
+				Add(typeof(HummerLobster), 1);
+				Add(typeof(RockLobster), 1);
+				Add(typeof(ShovelNoseLobster), 1);
+				Add(typeof(SpineyLobster), 1);
+				Add(typeof(BlueLobster), 25);
+				Add(typeof(BloodLobster), 250);
+				Add(typeof(DreadLobster), 250);
+				Add(typeof(VoidLobster), 250);
+
+				Add(typeof(StoneCrabMeat), 10);
+				Add(typeof(SpiderCrabMeat), 10);
+				Add(typeof(BlueLobsterMeat), 10);
+			}
         }
     }
 }

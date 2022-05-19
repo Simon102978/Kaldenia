@@ -37,13 +37,15 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo("1024115", typeof(Key), 8, 20, 0x1013, 0));
                 Add(new GenericBuyInfo(typeof(KeyRing), 8, 20, 0x1010, 0));
                 Add(new GenericBuyInfo(typeof(Lockpick), 12, 20, 0x14FC, 0, true));
+				this.Add(new GenericBuyInfo(typeof(DisguiseKit), 500, 10, 0xE05, 0));
 
-                Add(new GenericBuyInfo(typeof(TinkersTools), 7, 20, 0x1EBC, 0));
+				Add(new GenericBuyInfo(typeof(TinkersTools), 7, 20, 0x1EBC, 0));
                 Add(new GenericBuyInfo(typeof(Board), 3, 20, 0x1BD7, 0, true));
                 Add(new GenericBuyInfo(typeof(IronIngot), 5, 16, 0x1BF2, 0, true));
                 Add(new GenericBuyInfo(typeof(SewingKit), 3, 20, 0xF9D, 0));
+				Add(new GenericBuyInfo(typeof(BoneSewingKit), 3, 20, 0xF9D, 1109));
 
-                Add(new GenericBuyInfo(typeof(DrawKnife), 10, 20, 0x10E4, 0));
+				Add(new GenericBuyInfo(typeof(DrawKnife), 10, 20, 0x10E4, 0));
                 Add(new GenericBuyInfo(typeof(Froe), 10, 20, 0x10E5, 0));
                 Add(new GenericBuyInfo(typeof(Scorp), 10, 20, 0x10E7, 0));
                 Add(new GenericBuyInfo(typeof(Inshave), 10, 20, 0x10E6, 0));
@@ -73,8 +75,9 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Tambourine), 21, 20, 0x0E9E, 0));
                 Add(new GenericBuyInfo(typeof(LapHarp), 21, 20, 0x0EB2, 0));
                 Add(new GenericBuyInfo(typeof(Lute), 21, 20, 0x0EB3, 0));
-               
-            }
+				
+
+			}
         }
 
         public class InternalSellInfo : GenericSellInfo

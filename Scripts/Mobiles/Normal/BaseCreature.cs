@@ -912,34 +912,34 @@ namespace Server.Mobiles
 
         [CommandProperty(AccessLevel.GameMaster)]
         public int DirectDamage { get; set; }
-        #endregion
+		#endregion
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public bool IsParagon
-        {
-            get { return m_Paragon; }
-            set
-            {
-                if (m_Paragon == value)
-                {
-                    return;
-                }
-                else if (value)
-                {
-                    Paragon.Convert(this);
-                }
-                else
-                {
-                    Paragon.UnConvert(this);
-                }
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool IsParagon
+		{
+			get { return m_Paragon; }
+			set
+			{
+				if (m_Paragon == value)
+				{
+					return;
+				}
+				else if (value)
+				{
+					Paragon.Convert(this);
+				}
+				else
+				{
+					Paragon.UnConvert(this);
+				}
 
-                m_Paragon = value;
+				m_Paragon = value;
 
-                InvalidateProperties();
-            }
-        }
+				InvalidateProperties();
+			}
+		}
 
-        [CommandProperty(AccessLevel.GameMaster)]
+		[CommandProperty(AccessLevel.GameMaster)]
         public bool IsChampionSpawn
         {
             get { return m_IsChampionSpawn; }

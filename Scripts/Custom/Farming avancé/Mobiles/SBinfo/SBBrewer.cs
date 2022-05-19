@@ -33,6 +33,7 @@ namespace Server.Mobiles
                 this.Add(new GenericBuyInfo(typeof(EmptyAleBottle), 10, 20, 0x99B, 0));
                 this.Add(new GenericBuyInfo(typeof(EmptyMeadBottle), 10, 20, 0x99B, 0));
                 this.Add(new GenericBuyInfo(typeof(EmptyJug), 10, 20, 0x9C8, 0));
+				this.Add(new GenericBuyInfo(typeof(BeerBreweringTools), 3000, 90, 0xE7F, 0));
 			}
 		}
 

@@ -90,7 +90,7 @@ namespace Xanthos.ShrinkSystem
 		{
 			AddComponent( new HitchingPost( 0x14E7 ), 0, 0, 0);
 		}
-
+		
 		public HitchingPostEastAddon( Serial serial ) : base( serial )
 		{
 		}
@@ -110,6 +110,7 @@ namespace Xanthos.ShrinkSystem
 
 	public class HitchingPostEastDeed : BaseAddonDeed
 	{
+		public override int LabelNumber => 2001111;  // HitchingPost
 		public override BaseAddon Addon{ get{ return new HitchingPostEastAddon(); }}
 
 		[Constructable]

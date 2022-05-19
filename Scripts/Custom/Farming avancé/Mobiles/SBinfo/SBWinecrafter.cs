@@ -44,6 +44,9 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( ShirazGrapes ), 2, 20, 0x9D1, 0x2CE ) );
 				Add( new GenericBuyInfo( typeof( ViognierGrapes ), 2, 20, 0x9D1, 0x16B ) );
 				Add( new GenericBuyInfo( typeof( ZinfandelGrapes ), 2, 20, 0x9D1, 0 ) );
+				Add(new GenericBuyInfo(typeof(BottleOfWine), 30, 20, 0x9C7, 0));
+				this.Add(new GenericBuyInfo(typeof(JuicersTools), 500, 20, 0xE4F, 0));
+				this.Add(new GenericBuyInfo(typeof(EmptyJuiceBottle), 20, 50, 0x99B, 0));
 			} 
 		} 
 

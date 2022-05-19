@@ -131,9 +131,9 @@ namespace Server.Engines.CityLoyalty
                     Item item = Loot.RandomArmorOrShieldOrWeaponOrJewelry(false, false, true);
 
                     int min, max;
-                    TreasureMapChest.GetRandomItemStat(out min, out max, 1.0);
+      ///              TreasureMapChest.GetRandomItemStat(out min, out max, 1.0);
 
-                    RunicReforging.GenerateRandomItem(item, 0, min, max, Map);
+      ///              RunicReforging.GenerateRandomItem(item, 0, min, max, Map);
                     return item;
                 case 2:
                     return ScrollOfTranscendence.CreateRandom(1, 10);

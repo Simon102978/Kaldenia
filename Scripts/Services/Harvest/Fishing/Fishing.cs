@@ -462,18 +462,18 @@ namespace Server.Engines.Harvest
                         {
                             switch (sos.Level)
                             {
-                                case 0: chest = new SOSChest(Utility.RandomBool() ? 0xE43 : 0xE41); break;
-                                case 1: chest = new SOSChest(0xA306); break;
-                                case 2: chest = new SOSChest(Utility.RandomBool() ? 0xE43 : 0xE41); break;
-                                case 3: chest = new SOSChest(0xA308); break;
+                                case 0: chest = new SOSChest(Utility.RandomBool() ? 0xE40 : 0xE40); break;
+                                case 1: chest = new SOSChest(0xE40); break;
+                                case 2: chest = new SOSChest(Utility.RandomBool() ? 0xE40 : 0xE40); break;
+                                case 3: chest = new SOSChest(0xE40); break;
                                 default:
                                     if (.33 > Utility.RandomDouble())
                                     {
-                                        chest = new SOSChest(0xA30A);
+                                        chest = new SOSChest(0xE40);
                                     }
                                     else
                                     {
-                                        chest = new SOSChest(Utility.RandomBool() ? 0xE41 : 0xE43)
+                                        chest = new SOSChest(Utility.RandomBool() ? 0xE40 : 0xE40)
                                         {
                                             Hue = 0x481
                                         };

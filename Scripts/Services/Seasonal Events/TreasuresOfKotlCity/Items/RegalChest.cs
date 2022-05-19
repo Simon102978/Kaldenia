@@ -70,9 +70,9 @@ namespace Server.Engines.TreasuresOfKotlCity
                 {
                     int min, max;
 
-                    TreasureMapChest.GetRandomItemStat(out min, out max, 1.0);
+    ///                TreasureMapChest.GetRandomItemStat(out min, out max, 1.0);
 
-                    RunicReforging.GenerateRandomItem(item, null, Utility.RandomMinMax(min, max), 0, ReforgedPrefix.None, ReforgedSuffix.Kotl, Map);
+     ///               RunicReforging.GenerateRandomItem(item, null, Utility.RandomMinMax(min, max), 0, ReforgedPrefix.None, ReforgedSuffix.Kotl, Map);
 
                     DropItem(item);
                 }

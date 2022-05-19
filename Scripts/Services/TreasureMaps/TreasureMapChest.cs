@@ -11,21 +11,21 @@ namespace Server.Items
 {
     public class TreasureMapChest : LockableContainer
     {
-        public static Type[] Artifacts => m_Artifacts;
-        private static readonly Type[] m_Artifacts = new Type[]
-        {
-            typeof(CandelabraOfSouls), typeof(GoldBricks), typeof(PhillipsWoodenSteed),
-            typeof(ArcticDeathDealer), typeof(BlazeOfDeath), typeof(BurglarsBandana),
-            typeof(CavortingClub), typeof(DreadPirateHat),
-            typeof(EnchantedTitanLegBone), typeof(GwennosHarp), typeof(IolosLute),
-            typeof(LunaLance), typeof(NightsKiss), typeof(NoxRangersHeavyCrossbow),
-            typeof(PolarBearMask), typeof(VioletCourage), typeof(HeartOfTheLion),
-            typeof(ColdBlood), typeof(AlchemistsBauble), typeof(CaptainQuacklebushsCutlass),
-            typeof(ShieldOfInvulnerability), typeof(AncientShipModelOfTheHMSCape),
-            typeof(AdmiralsHeartyRum)
-        };
-
-        public static Type[] ArtifactsLevelFiveToSeven => m_LevelFiveToSeven;
+		/*      public static Type[] Artifacts => m_Artifacts;
+			  private static readonly Type[] m_Artifacts = new Type[]
+			  {
+				  typeof(CandelabraOfSouls), typeof(GoldBricks), typeof(PhillipsWoodenSteed),
+				  typeof(ArcticDeathDealer), typeof(BlazeOfDeath), typeof(BurglarsBandana),
+				  typeof(CavortingClub), typeof(DreadPirateHat),
+				  typeof(EnchantedTitanLegBone), typeof(GwennosHarp), typeof(IolosLute),
+				  typeof(LunaLance), typeof(NightsKiss), typeof(NoxRangersHeavyCrossbow),
+				  typeof(PolarBearMask), typeof(VioletCourage), typeof(HeartOfTheLion),
+				  typeof(ColdBlood), typeof(AlchemistsBauble), typeof(CaptainQuacklebushsCutlass),
+				  typeof(ShieldOfInvulnerability), typeof(AncientShipModelOfTheHMSCape),
+				  typeof(AdmiralsHeartyRum)
+			  };
+		
+		public static Type[] ArtifactsLevelFiveToSeven => m_LevelFiveToSeven;
         private static readonly Type[] m_LevelFiveToSeven = new Type[]
         {
             typeof(ForgedPardon), typeof(ManaPhasingOrb), typeof(RunedSashOfWarding), typeof(SurgeShield)
@@ -59,8 +59,8 @@ namespace Server.Items
             typeof(EssenceControl), typeof(EssenceDiligence), typeof(EssenceDirection),   typeof(EssenceFeeling),
             typeof(EssenceOrder),   typeof(EssencePassion),   typeof(EssencePersistence), typeof(EssenceSingularity)
         };
-
-        private static readonly TimeSpan _DeleteTime = TimeSpan.FromHours(3);
+		*/
+		private static readonly TimeSpan _DeleteTime = TimeSpan.FromHours(3);
 
         private List<Item> m_Lifted = new List<Item>();
 
@@ -131,9 +131,9 @@ namespace Server.Items
 
                     switch (_Quality)
                     {
-                        case ChestQuality.Rusty: ItemID = 0xA306; break;
-                        case ChestQuality.Standard: ItemID = 0xA304; break;
-                        case ChestQuality.Gold: ItemID = 0xA308; break;
+                        case ChestQuality.Rusty: ItemID = 0xE40; break;
+                        case ChestQuality.Standard: ItemID = 0xE40; break;
+                        case ChestQuality.Gold: ItemID = 0xE40; break;
                     }
                 }
             }
@@ -219,7 +219,7 @@ namespace Server.Items
                     cont.DropItem(Loot.RandomScroll(0, 63, SpellbookType.Regular));
                 #endregion
 
-                #region Magical Items
+  /*              #region Magical Items
                 double propsScale = 1.0;
 
                 switch (level)
@@ -321,7 +321,7 @@ namespace Server.Items
                 }
             }
             #endregion
-
+  */
             #region Reagents
             if (isSos)
             {
@@ -353,160 +353,162 @@ namespace Server.Items
             for (int i = 0; i < count; i++)
             {
                 cont.DropItem(Loot.RandomGem());
-            }
-            #endregion
+				}
+			}
+		}
+		#endregion
 
-            #region Imbuing Ingreds
-            if (level > 1)
-            {
-                Item item = Loot.Construct(m_ImbuingIngreds[Utility.Random(m_ImbuingIngreds.Length)]);
+		/*          #region Imbuing Ingreds
+				  if (level > 1)
+				  {
+					  Item item = Loot.Construct(m_ImbuingIngreds[Utility.Random(m_ImbuingIngreds.Length)]);
 
-                item.Amount = level;
-                cont.DropItem(item);
-            }
-            #endregion
+					  item.Amount = level;
+					  cont.DropItem(item);
+				  }
+				  #endregion
+		*/
+		/*          Item arty = null;
+				  Item special = null;
+				  Item newSpecial = null;
 
-            Item arty = null;
-            Item special = null;
-            Item newSpecial = null;
+				  if (isSos)
+				  {
+					  if (0.004 * level > Utility.RandomDouble())
+						  arty = Loot.Construct(m_SOSArtifacts);
+					  if (0.006 * level > Utility.RandomDouble())
+						  special = Loot.Construct(m_SOSDecor);
+					  else if (0.009 * level > Utility.RandomDouble())
+						  special = new TreasureMap(Utility.RandomMinMax(level, Math.Min(7, level + 1)), cont.Map);
 
-            if (isSos)
-            {
-                if (0.004 * level > Utility.RandomDouble())
-                    arty = Loot.Construct(m_SOSArtifacts);
-                if (0.006 * level > Utility.RandomDouble())
-                    special = Loot.Construct(m_SOSDecor);
-                else if (0.009 * level > Utility.RandomDouble())
-                    special = new TreasureMap(Utility.RandomMinMax(level, Math.Min(7, level + 1)), cont.Map);
+					  if (level >= 4)
+					  {
+						  switch (Utility.Random(4))
+						  {
+							  case 0: newSpecial = new AncientAquariumFishNet(); break;
+							  case 1: newSpecial = new LiveRock(); break;
+							  case 2: newSpecial = new SaltedSerpentSteaks(); break;
+							  case 3: newSpecial = new OceanSapphire(); break;
+						  }
+					  }
+				  }
+				  else
+				  {
+					  if (level >= 7)
+					  {
+						  if (0.025 > Utility.RandomDouble())
+							  special = Loot.Construct(m_LevelSevenOnly);
+						  else if (0.10 > Utility.RandomDouble())
+							  special = Loot.Construct(m_LevelFiveToSeven);
+						  else if (0.25 > Utility.RandomDouble())
+							  special = GetRandomSpecial(level, cont.Map);
 
-                if (level >= 4)
-                {
-                    switch (Utility.Random(4))
-                    {
-                        case 0: newSpecial = new AncientAquariumFishNet(); break;
-                        case 1: newSpecial = new LiveRock(); break;
-                        case 2: newSpecial = new SaltedSerpentSteaks(); break;
-                        case 3: newSpecial = new OceanSapphire(); break;
-                    }
-                }
-            }
-            else
-            {
-                if (level >= 7)
-                {
-                    if (0.025 > Utility.RandomDouble())
-                        special = Loot.Construct(m_LevelSevenOnly);
-                    else if (0.10 > Utility.RandomDouble())
-                        special = Loot.Construct(m_LevelFiveToSeven);
-                    else if (0.25 > Utility.RandomDouble())
-                        special = GetRandomSpecial(level, cont.Map);
+						  arty = Loot.Construct(m_Artifacts);
+					  }
+					  else if (level >= 6)
+					  {
+						  if (0.025 > Utility.RandomDouble())
+							  special = Loot.Construct(m_LevelFiveToSeven);
+						  else if (0.20 > Utility.RandomDouble())
+							  special = GetRandomSpecial(level, cont.Map);
 
-                    arty = Loot.Construct(m_Artifacts);
-                }
-                else if (level >= 6)
-                {
-                    if (0.025 > Utility.RandomDouble())
-                        special = Loot.Construct(m_LevelFiveToSeven);
-                    else if (0.20 > Utility.RandomDouble())
-                        special = GetRandomSpecial(level, cont.Map);
+						  arty = Loot.Construct(m_Artifacts);
+					  }
+					  else if (level >= 5)
+					  {
+						  if (0.005 > Utility.RandomDouble())
+							  special = Loot.Construct(m_LevelFiveToSeven);
+						  else if (0.15 > Utility.RandomDouble())
+							  special = GetRandomSpecial(level, cont.Map);
+					  }
+					  else if (0.10 > Utility.RandomDouble())
+					  {
+						  special = GetRandomSpecial(level, cont.Map);
+					  }
+				  }
 
-                    arty = Loot.Construct(m_Artifacts);
-                }
-                else if (level >= 5)
-                {
-                    if (0.005 > Utility.RandomDouble())
-                        special = Loot.Construct(m_LevelFiveToSeven);
-                    else if (0.15 > Utility.RandomDouble())
-                        special = GetRandomSpecial(level, cont.Map);
-                }
-                else if (0.10 > Utility.RandomDouble())
-                {
-                    special = GetRandomSpecial(level, cont.Map);
-                }
-            }
+				  if (arty != null)
+				  {
+					  Container pack = new Backpack
+					  {
+						  Hue = 1278
+					  };
 
-            if (arty != null)
-            {
-                Container pack = new Backpack
-                {
-                    Hue = 1278
-                };
+					  pack.DropItem(arty);
+					  cont.DropItem(pack);
+				  }
 
-                pack.DropItem(arty);
-                cont.DropItem(pack);
-            }
+				  if (special != null)
+					  cont.DropItem(special);
 
-            if (special != null)
-                cont.DropItem(special);
+				  if (newSpecial != null)
+					  cont.DropItem(newSpecial);
 
-            if (newSpecial != null)
-                cont.DropItem(newSpecial);
+				  int rolls = 2;
 
-            int rolls = 2;
+				  if (level >= 5)
+					  rolls += level - 2;
 
-            if (level >= 5)
-                rolls += level - 2;
+				  RefinementComponent.Roll(cont, rolls, 0.10);
+			  }
 
-            RefinementComponent.Roll(cont, rolls, 0.10);
-        }
+			  private static Item GetRandomSpecial(int level, Map map)
+			  {
+				  Item special;
 
-        private static Item GetRandomSpecial(int level, Map map)
-        {
-            Item special;
+				  switch (Utility.Random(8))
+				  {
+					  default:
+					  case 0: special = new CreepingVine(); break;
+					  case 1: special = new MessageInABottle(); break;
+					  case 2: special = new ScrollOfAlacrity(PowerScroll.Skills[Utility.Random(PowerScroll.Skills.Count)]); break;
+					  case 3: special = new Skeletonkey(); break;
+					  case 4: special = new TastyTreat(5); break;
+					  case 5: special = new TreasureMap(Utility.RandomMinMax(level, Math.Min(7, level + 1)), map); break;
+					  case 6: special = GetRandomRecipe(); break;
+					  case 7: special = ScrollOfTranscendence.CreateRandom(1, 5); break;
+				  }
 
-            switch (Utility.Random(8))
-            {
-                default:
-                case 0: special = new CreepingVine(); break;
-                case 1: special = new MessageInABottle(); break;
-                case 2: special = new ScrollOfAlacrity(PowerScroll.Skills[Utility.Random(PowerScroll.Skills.Count)]); break;
-                case 3: special = new Skeletonkey(); break;
-                case 4: special = new TastyTreat(5); break;
-                case 5: special = new TreasureMap(Utility.RandomMinMax(level, Math.Min(7, level + 1)), map); break;
-                case 6: special = GetRandomRecipe(); break;
-                case 7: special = ScrollOfTranscendence.CreateRandom(1, 5); break;
-            }
+				  return special;
+			  }
 
-            return special;
-        }
+			  public static void GetRandomItemStat(out int min, out int max, double scale = 1.0)
+			  {
+				  int rnd = Utility.Random(100);
 
-        public static void GetRandomItemStat(out int min, out int max, double scale = 1.0)
-        {
-            int rnd = Utility.Random(100);
+				  if (rnd <= 1)
+				  {
+					  min = 500; max = 1300;
+				  }
+				  else if (rnd < 5)
+				  {
+					  min = 400; max = 1100;
+				  }
+				  else if (rnd < 25)
+				  {
+					  min = 350; max = 900;
+				  }
+				  else if (rnd < 50)
+				  {
+					  min = 250; max = 800;
+				  }
+				  else
+				  {
+					  min = 100; max = 600;
+				  }
 
-            if (rnd <= 1)
-            {
-                min = 500; max = 1300;
-            }
-            else if (rnd < 5)
-            {
-                min = 400; max = 1100;
-            }
-            else if (rnd < 25)
-            {
-                min = 350; max = 900;
-            }
-            else if (rnd < 50)
-            {
-                min = 250; max = 800;
-            }
-            else
-            {
-                min = 100; max = 600;
-            }
+				  min = (int)(min * scale);
+				  max = (int)(max * scale);
+			  }
 
-            min = (int)(min * scale);
-            max = (int)(max * scale);
-        }
+			  public static Item GetRandomRecipe()
+			  {
+				  List<Engines.Craft.Recipe> recipes = new List<Engines.Craft.Recipe>(Engines.Craft.Recipe.Recipes.Values);
 
-        public static Item GetRandomRecipe()
-        {
-            List<Engines.Craft.Recipe> recipes = new List<Engines.Craft.Recipe>(Engines.Craft.Recipe.Recipes.Values);
-
-            return new RecipeScroll(recipes[Utility.Random(recipes.Count)]);
-        }
-
-        public override bool CheckLocked(Mobile from)
+				  return new RecipeScroll(recipes[Utility.Random(recipes.Count)]);
+			  }
+		*/
+		public override bool CheckLocked(Mobile from)
         {
             if (from.AccessLevel > AccessLevel.Player)
             {

@@ -208,7 +208,7 @@ namespace Server.Items
             }
         }
 
-        public static SkillName[] GetTranscendenceList(TreasureLevel level, TreasurePackage package)
+  /*      public static SkillName[] GetTranscendenceList(TreasureLevel level, TreasurePackage package)
         {
             if (level == TreasureLevel.Supply || level == TreasureLevel.Cache)
             {
@@ -260,7 +260,7 @@ namespace Server.Items
 
             return null;
         }
-
+  */
         public static Type[] GetDecorativeList(TreasureLevel level, TreasurePackage package, TreasureFacet facet)
         {
             Type[] list = null;
@@ -576,7 +576,7 @@ namespace Server.Items
                 null, // ilsh
                 new Type[] { typeof(LuminescentFungi), typeof(BarkFragment), typeof(Blight), typeof(Corruption), typeof(Muculent), typeof(Putrefaction), typeof(Scourge), typeof(Taint)  }, // malas
                 null, // tokuno
-                TreasureMapChest.ImbuingIngreds, // ter
+  ///              TreasureMapChest.ImbuingIngreds, // ter
                 null, // eodon
             };
 
@@ -764,107 +764,107 @@ namespace Server.Items
 
                 chest.DropItem(lootBag);
             }
-            #endregion
+			#endregion
 
-            #region Crafting Resources
-            // TODO: DO each drop, or do only 1 drop?
-            list = GetCraftingMaterials(level, package, quality);
+			/*         #region Crafting Resources
+					 // TODO: DO each drop, or do only 1 drop?
+					 list = GetCraftingMaterials(level, package, quality);
 
-            if (list != null)
-            {
-                amount = GetResourceAmount(level);
+					 if (list != null)
+					 {
+						 amount = GetResourceAmount(level);
 
-                foreach (Type type in list)
-                {
-                    Item craft = Loot.Construct(type);
-                    craft.Amount = amount;
+						 foreach (Type type in list)
+						 {
+							 Item craft = Loot.Construct(type);
+							 craft.Amount = amount;
 
-                    chest.DropItem(craft);
-                }
+							 chest.DropItem(craft);
+						 }
 
-                list = null;
-            }
-            #endregion
+						 list = null;
+					 }
+					 #endregion
 
-            #region Special Resources
-            // TODO: DO each drop, or do only 1 drop?
-            list = GetSpecialMaterials(level, package, facet);
+					 #region Special Resources
+					 // TODO: DO each drop, or do only 1 drop?
+					 list = GetSpecialMaterials(level, package, facet);
 
-            if (list != null)
-            {
-                amount = GetSpecialResourceAmount(quality);
+					 if (list != null)
+					 {
+						 amount = GetSpecialResourceAmount(quality);
 
-                foreach (Type type in list)
-                {
-                    Item specialCraft = Loot.Construct(type);
-                    specialCraft.Amount = amount;
+						 foreach (Type type in list)
+						 {
+							 Item specialCraft = Loot.Construct(type);
+							 specialCraft.Amount = amount;
 
-                    chest.DropItem(specialCraft);
-                }
+							 chest.DropItem(specialCraft);
+						 }
 
-                list = null;
-            }
-            #endregion
+						 list = null;
+					 }
+					 #endregion
+			*/
+			/*         #region Special Scrolls
+					 amount = (int)level + 1;
 
-            #region Special Scrolls
-            amount = (int)level + 1;
+					 if (dropMap)
+					 {
+						 amount--;
+					 }
 
-            if (dropMap)
-            {
-                amount--;
-            }
+					 if (amount > 0)
+					 {
+						 SkillName[] transList = GetTranscendenceList(level, package);
+						 SkillName[] alacList = GetAlacrityList(level, package, facet);
+						 SkillName[] pscrollList = GetPowerScrollList(level, package, facet);
 
-            if (amount > 0)
-            {
-                SkillName[] transList = GetTranscendenceList(level, package);
-                SkillName[] alacList = GetAlacrityList(level, package, facet);
-                SkillName[] pscrollList = GetPowerScrollList(level, package, facet);
+						 List<Tuple<int, SkillName>> scrollList = new List<Tuple<int, SkillName>>();
 
-                List<Tuple<int, SkillName>> scrollList = new List<Tuple<int, SkillName>>();
+						 if (transList != null)
+						 {
+							 foreach (SkillName sk in transList)
+							 {
+								 scrollList.Add(new Tuple<int, SkillName>(1, sk));
+							 }
+						 }
 
-                if (transList != null)
-                {
-                    foreach (SkillName sk in transList)
-                    {
-                        scrollList.Add(new Tuple<int, SkillName>(1, sk));
-                    }
-                }
+						 if (alacList != null)
+						 {
+							 foreach (SkillName sk in alacList)
+							 {
+								 scrollList.Add(new Tuple<int, SkillName>(2, sk));
+							 }
+						 }
 
-                if (alacList != null)
-                {
-                    foreach (SkillName sk in alacList)
-                    {
-                        scrollList.Add(new Tuple<int, SkillName>(2, sk));
-                    }
-                }
+						 if (pscrollList != null)
+						 {
+							 foreach (SkillName sk in pscrollList)
+							 {
+								 scrollList.Add(new Tuple<int, SkillName>(3, sk));
+							 }
+						 }
 
-                if (pscrollList != null)
-                {
-                    foreach (SkillName sk in pscrollList)
-                    {
-                        scrollList.Add(new Tuple<int, SkillName>(3, sk));
-                    }
-                }
+						 if (scrollList.Count > 0)
+						 {
+							 for (int i = 0; i < amount; i++)
+							 {
+								 Tuple<int, SkillName> random = scrollList[Utility.Random(scrollList.Count)];
 
-                if (scrollList.Count > 0)
-                {
-                    for (int i = 0; i < amount; i++)
-                    {
-                        Tuple<int, SkillName> random = scrollList[Utility.Random(scrollList.Count)];
-
-                        switch (random.Item1)
-                        {
-                            case 1: chest.DropItem(new ScrollOfTranscendence(random.Item2, Utility.RandomMinMax(1.0, chest.Map == Map.Felucca ? 7.0 : 5.0) / 10)); break;
-                            case 2: chest.DropItem(new ScrollOfAlacrity(random.Item2)); break;
-                            case 3: chest.DropItem(new PowerScroll(random.Item2, 110.0)); break;
-                        }
-                    }
-                }
-            }
-            #endregion
-
-            #region Decorations
-            switch (level)
+								 switch (random.Item1)
+								 {
+									 case 1: chest.DropItem(new ScrollOfTranscendence(random.Item2, Utility.RandomMinMax(1.0, chest.Map == Map.Felucca ? 7.0 : 5.0) / 10)); break;
+									 case 2: chest.DropItem(new ScrollOfAlacrity(random.Item2)); break;
+									 case 3: chest.DropItem(new PowerScroll(random.Item2, 110.0)); break;
+								 }
+							 }
+						 }
+					 }
+					 #endregion
+			*/
+			#region Decorations
+			switch (level)
             {
                 case TreasureLevel.Stash: dropChance = 0.00; break;
                 case TreasureLevel.Supply: dropChance = 0.10; break;
@@ -912,7 +912,7 @@ namespace Server.Items
                 case TreasureLevel.Trove: dropChance = 0.75; break;
             }
 
-            if (Utility.RandomDouble() < dropChance)
+ /*           if (Utility.RandomDouble() < dropChance)
             {
                 list = GetSpecialLootList(level, package);
 
@@ -920,7 +920,7 @@ namespace Server.Items
                 {
                     if (list.Length > 0)
                     {
-                        Type type = MutateType(list[Utility.Random(list.Length)], facet);
+  ///                      Type type = MutateType(list[Utility.Random(list.Length)], facet);
                         Item deco;
 
                         if (type == null)
@@ -930,14 +930,15 @@ namespace Server.Items
                         else
                         {
                             deco = Loot.Construct(type);
-                        }
+                        
 
-                        if (deco is SkullGnarledStaff || deco is SkullLongsword)
+/*                       if (deco is SkullGnarledStaff || deco is SkullLongsword)
                         {
                             if (package == TreasurePackage.Artisan)
                             {
                                 ((IQuality)deco).Quality = ItemQuality.Exceptional;
                             }
+
                             else
                             {
                                 int min, max;
@@ -953,7 +954,7 @@ namespace Server.Items
                                 Hue = 1278
                             };
 
-                            pack.DropItem(deco);
+   ///                         pack.DropItem(deco);
                             chest.DropItem(pack);
                         }
                         else
@@ -967,7 +968,7 @@ namespace Server.Items
             }
             #endregion
 
-            #region Magic Equipment
+  /*          #region Magic Equipment
             amount = GetEquipmentAmount(from, level, package);
 
             foreach (Type type in GetRandomEquipment(level, package, facet, amount))
@@ -985,6 +986,7 @@ namespace Server.Items
 
             list = null;
             #endregion
+
         }
 
         private static Type MutateType(Type type, TreasureFacet facet)
@@ -999,7 +1001,11 @@ namespace Server.Items
             }
 
             return type;
+  */
         }
     }
 }
+
+#endregion
+
 

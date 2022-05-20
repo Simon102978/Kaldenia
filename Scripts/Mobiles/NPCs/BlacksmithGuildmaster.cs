@@ -78,10 +78,10 @@ namespace Server.Mobiles
             return (item is SmallSmithBOD || item is LargeSmithBOD);
         }
 
-        public override bool SupportsBulkOrders(Mobile from)
-        {
-            return (from is PlayerMobile && from.Skills[SkillName.Blacksmith].Base > 0);
-        }
+ ///       public override bool SupportsBulkOrders(Mobile from)
+  ///      {
+   ///         return (from is PlayerMobile && from.Skills[SkillName.Blacksmith].Base > 0);
+   ///     }
 
         public override TimeSpan GetNextBulkOrder(Mobile from)
         {

@@ -33,10 +33,10 @@ namespace Server.Engines.Quests
             return (item is SmallAlchemyBOD || item is LargeAlchemyBOD);
         }
 
-        public override bool SupportsBulkOrders(Mobile from)
-        {
-            return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Alchemy].Base > 0;
-        }
+   ///     public override bool SupportsBulkOrders(Mobile from)
+ ///       {
+  ///          return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Alchemy].Base > 0;
+  ///      }
 
         public override void OnSuccessfulBulkOrderReceive(Mobile from)
         {

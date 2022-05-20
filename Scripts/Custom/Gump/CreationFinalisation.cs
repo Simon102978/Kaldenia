@@ -56,19 +56,19 @@ namespace Server.Gumps
 				switch (Utility.Random(3))
 				{
 					case 0:
-						p = new Point3D(1365, 797, 20);
+						p = new Point3D(1536, 920, 9);
 						break;
 					case 1:
-						p = new Point3D(1368, 800, 20);
+						p = new Point3D(1536, 945, 9);
 						break;
 					case 2:
-						p = new Point3D(1365, 803, 20);
+						p = new Point3D(1532, 931, 9);
 						break;
 					case 3:
-						p = new Point3D(1362, 800, 20);
+						p = new Point3D(1532, 925, 9);
 						break;
 					default:
-						p = new Point3D(1365, 803, 20);
+						p = new Point3D(1530, 945, 9);
 						break;
 				}
 

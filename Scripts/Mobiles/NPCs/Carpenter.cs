@@ -47,10 +47,10 @@ namespace Server.Mobiles
             return (item is SmallCarpentryBOD || item is LargeCarpentryBOD);
         }
 
-        public override bool SupportsBulkOrders(Mobile from)
-        {
-            return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Carpentry].Base > 0;
-        }
+ ///       public override bool SupportsBulkOrders(Mobile from)
+  ///      {
+  ///          return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Carpentry].Base > 0;
+  ///      }
 
         public override void OnSuccessfulBulkOrderReceive(Mobile from)
         {

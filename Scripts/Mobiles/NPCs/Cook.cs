@@ -45,10 +45,10 @@ namespace Server.Mobiles
             return (item is SmallCookingBOD || item is LargeCookingBOD);
         }
 
-        public override bool SupportsBulkOrders(Mobile from)
-        {
-            return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Cooking].Base > 0;
-        }
+ ///       public override bool SupportsBulkOrders(Mobile from)
+ ///       {
+ ///           return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Cooking].Base > 0;
+  ///      }
 
         public override void OnSuccessfulBulkOrderReceive(Mobile from)
         {

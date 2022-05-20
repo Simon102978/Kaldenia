@@ -39,10 +39,10 @@ namespace Server.Mobiles
             return (item is SmallTinkerBOD || item is LargeTinkerBOD);
         }
 
-        public override bool SupportsBulkOrders(Mobile from)
-        {
-            return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Tinkering].Base > 0;
-        }
+ ///       public override bool SupportsBulkOrders(Mobile from)
+ ///       {
+  ///          return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Tinkering].Base > 0;
+   ///     }
 
         public override void OnSuccessfulBulkOrderReceive(Mobile from)
         {

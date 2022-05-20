@@ -43,10 +43,10 @@ namespace Server.Mobiles
             return (item is SmallInscriptionBOD || item is LargeInscriptionBOD);
         }
 
-        public override bool SupportsBulkOrders(Mobile from)
-        {
-            return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Inscribe].Base > 0;
-        }
+ ///       public override bool SupportsBulkOrders(Mobile from)
+ ///       {
+  ///          return BulkOrderSystem.NewSystemEnabled && from is PlayerMobile && from.Skills[SkillName.Inscribe].Base > 0;
+  ///      }
 
         public override void OnSuccessfulBulkOrderReceive(Mobile from)
         {

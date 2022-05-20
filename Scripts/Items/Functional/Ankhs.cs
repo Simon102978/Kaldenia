@@ -13,11 +13,11 @@ namespace Server.Items
         public static void GetContextMenuEntries(Mobile from, Item item, List<ContextMenuEntry> list)
         {
             if (from is PlayerMobile)
-                list.Add(new LockKarmaEntry((PlayerMobile)from));
+ ///               list.Add(new LockKarmaEntry((PlayerMobile)from));
 
             list.Add(new ResurrectEntry(from, item));
 
-            list.Add(new TitheEntry(from));
+ ///           list.Add(new TitheEntry(from));
         }
 
         public static void Resurrect(Mobile m, Item item)

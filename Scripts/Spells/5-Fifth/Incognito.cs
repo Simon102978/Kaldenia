@@ -82,10 +82,11 @@ namespace Server.Spells.Fifth
             {
                 Caster.SendLocalizedMessage(1061631); // You can't do that while disguised.
             }*/
-            else if (!Caster.CanBeginAction(typeof(PolymorphSpell)) || Caster.IsBodyMod)
+          /*  else if (!Caster.CanBeginAction(typeof(PolymorphSpell)) || Caster.IsBodyMod)
             {
                 DoFizzle();
             }
+		  */
             else if (CheckSequence())
             {
                 if (Caster.BeginAction(typeof(IncognitoSpell)))

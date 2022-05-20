@@ -92,6 +92,14 @@ namespace Server.SkillHandlers
 					m.RevealingAction();
 					BuffInfo.RemoveBuff(m, BuffIcon.HidingAndOrStealth);
 				}
+				if (m.Mounted)
+					{
+						m.SendMessage("Vous ne pouvez pas vous déplacer étant caché sur une monture."); // You are busy doing something else and cannot hide.
+					m.RevealingAction();
+					BuffInfo.RemoveBuff(m, BuffIcon.HidingAndOrStealth);
+					return TimeSpan.FromSeconds(2.0);
+					}
+				
 				else
 				{
 					int armorRating = GetArmorRating(m);
@@ -145,11 +153,19 @@ namespace Server.SkillHandlers
 				{
 					Targeting.Target.Cancel(m);
 				}
+				if (m.Mounted)
+				{
+					m.SendMessage("Vous ne pouvez pas vous cacher sur une monture."); // You are busy doing something else and cannot hide.
+					m.RevealingAction();
+					BuffInfo.RemoveBuff(m, BuffIcon.HidingAndOrStealth);
+					return TimeSpan.FromSeconds(2.0);
+				}
+				
 
 				double bonus = 0.0;
 
 				BaseHouse house = BaseHouse.FindHouseAt(m);
-
+				
 				if (house != null && house.IsFriend(m))
 				{
 					bonus = 100.0;
@@ -215,3 +231,4 @@ namespace Server.SkillHandlers
         }
     }
 }
+

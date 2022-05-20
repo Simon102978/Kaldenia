@@ -915,14 +915,14 @@ namespace Server
         {
             if (item != null)
             {
-             /*   if (item is BaseWeapon && 1 > Utility.Random(100))
+                if (item is BaseWeapon && 1 > Utility.Random(100))
                 {
                     item.Delete();
                     item = new FireHorn();
                     return item;
                 }
 
-                if (StandardLootItem && (item is BaseWeapon || item is BaseArmor || item is BaseJewel || item is BaseHat))
+                if (StandardLootItem && (item is BaseWeapon || item is BaseArmor || item is BaseJewel /* || item is BaseHat */))
                 {
                     // Try to generate a new random item based on the creature killed
                     if (RandomItemGenerator.Enabled && from is BaseCreature)
@@ -961,10 +961,10 @@ namespace Server
                     {
                         BaseRunicTool.ApplyAttributesTo((BaseJewel)item, false, luckChance, props, MinIntensity, MaxIntensity);
                     }
-                    else if (item is BaseHat)
-                    {
-                        BaseRunicTool.ApplyAttributesTo((BaseHat)item, false, luckChance, props, MinIntensity, MaxIntensity);
-                    }
+   ///                 else if (item is BaseHat)
+      ///              {
+         ///               BaseRunicTool.ApplyAttributesTo((BaseHat)item, false, luckChance, props, MinIntensity, MaxIntensity);
+            ///        }
                 }
                 else if (item is BaseInstrument)
                 {
@@ -983,7 +983,7 @@ namespace Server
                     instr.Quality = ItemQuality.Normal;
                     instr.Slayer = slayer;
                 }
-		 */
+		 
                 if (item.Stackable)
                 {
                     item.Amount = Quantity.Roll();

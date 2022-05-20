@@ -166,6 +166,8 @@ namespace Server.Misc
 
 
 			newChar.MoveToWorld(new Point3D(6135,3200,55), Map.Felucca);
+			newChar.Blessed = true;
+
 
 			Utility.PushColor(ConsoleColor.Green);
             Console.WriteLine("Login: {0}: New character being created (account={1})", state, args.Account.Username);

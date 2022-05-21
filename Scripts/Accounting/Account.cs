@@ -169,8 +169,9 @@ namespace Server.Accounting
         private List<AccountTag> m_Tags;
         private TimeSpan m_TotalGameTime;
         private Timer m_YoungTimer;
+		private List<Reroll> m_Reroll = new List<Reroll>();
 
-        public Account(string username, string password)
+		public Account(string username, string password)
         {
             Username = username;
 
@@ -338,14 +339,71 @@ namespace Server.Accounting
 
             LoadSecureAccounts(node);
 
-            Accounts.Add(this);
+			LoadReroll(node);
+
+			Accounts.Add(this);
         }
 
-        /// <summary>
-        /// Deserializes a list of secure account balances, and converts it to a dictionary containing the account characters
-        /// </summary>
-        /// <param name="node"></param>
-        public void LoadSecureAccounts(XmlElement node)
+		public void LoadReroll(XmlElement node)
+		{
+			XmlElement transferts = node["Transferts"];
+
+			if (transferts != null)
+			{
+				int count = Utility.GetXMLInt32(Utility.GetAttribute(transferts, "count", "0"), 0);
+
+				foreach (XmlElement ele in transferts.GetElementsByTagName("Transfert"))
+				{
+					try
+					{
+						Reroll re = new Reroll();
+						re.Id = Utility.GetXMLInt32(Utility.GetText(ele, "0"), 0);
+						re.Name = Utility.GetText(ele["Name"], "empty");
+						re.Experience = Utility.GetXMLInt32(Utility.GetText(ele["Experience"], "0"), 0);
+						AddReroll(re);
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex);
+					}
+				}
+			}
+		}
+
+		public void AddReroll(Reroll re)
+		{
+			re.Id = m_Reroll.Count();
+
+
+
+
+			m_Reroll.Add(re);
+		}
+
+		public void RemoveReroll(Reroll re)
+		{
+			List<Reroll> newReroll = new List<Reroll>();
+
+
+			foreach (Reroll item in m_Reroll)
+			{
+				if (item.Id != re.Id)
+				{
+					newReroll.Add(item);
+				}
+			}
+
+
+			m_Reroll = newReroll;
+
+		}
+
+
+		/// <summary>
+		/// Deserializes a list of secure account balances, and converts it to a dictionary containing the account characters
+		/// </summary>
+		/// <param name="node"></param>
+		public void LoadSecureAccounts(XmlElement node)
         {
             int[] list = new int[7];
             XmlElement chars = node["SecureAccounts"];
@@ -1494,7 +1552,45 @@ namespace Server.Accounting
                 xml.WriteEndElement();
             }
 
-            xml.WriteEndElement();
+
+			xml.WriteStartElement("Transferts");
+			xml.WriteAttributeString("count", m_Reroll.Count.ToString());
+
+			for (int i = 0; i < m_Reroll.Count; ++i)
+			{
+				Reroll m = m_Reroll[i];
+
+				if (m != null)
+				{
+					xml.WriteStartElement("Transfert");
+
+
+					xml.WriteStartElement("Serial");
+					xml.WriteValue(m.Id);
+					xml.WriteEndElement();
+
+					xml.WriteStartElement("Name");
+					xml.WriteString(m.Name);
+					xml.WriteEndElement();
+
+					xml.WriteStartElement("Experience");
+					xml.WriteValue(m.Experience);
+					xml.WriteEndElement();
+
+					xml.WriteEndElement();
+				}
+			}
+
+			xml.WriteEndElement();
+
+
+
+
+
+
+
+
+			xml.WriteEndElement();
         }
 
         public override string ToString()
@@ -1933,7 +2029,10 @@ namespace Server.Accounting
         [CommandProperty(AccessLevel.Administrator, true)]
         public int Sovereigns { get; private set; }
 
-        public void SetSovereigns(int amount)
+		public List<Reroll> Reroll { get => m_Reroll; set => m_Reroll = value; }
+
+
+		public void SetSovereigns(int amount)
         {
             Sovereigns = amount;
         }

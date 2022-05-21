@@ -5,6 +5,7 @@ using System.Reflection;
 using Server.Items;
 using Server.Misc;
 using System.Collections.Generic;
+using Server.Accounting;
 #endregion
 
 namespace Server
@@ -18,13 +19,15 @@ namespace Server
         private bool m_female;
 		private string m_Name;
 
+
+
 		private int m_Str = 25;
 		private int m_Dex = 25;
 		private int m_Int = 25;
 
 		private CustomPlayerMobile m_Player;
 
-		//        private Reroll m_Reroll;
+		private Reroll m_Reroll;
 
 
 		private AppearanceEnum m_Appearance = (AppearanceEnum)(-1);
@@ -194,7 +197,9 @@ namespace Server
                 m_female = value;
             }
        }
- 
+
+		public Reroll Reroll { get => m_Reroll; set => m_Reroll = value; }
+
 		public CreationPerso(CustomPlayerMobile player)
         {
 			m_female = player.Female;
@@ -418,6 +423,29 @@ namespace Server
 			m_Player.Skills[SkillName.Lumberjacking].Base = 30;
 			m_Player.Skills[SkillName.Fishing].Base = 30;
 			m_Player.Skills[SkillName.MagicResist].Base = 30;
+
+
+
+
+			if (m_Reroll != null)
+			{
+				m_Player.FE +=  (int)Math.Round(m_Reroll.Experience * 0.75);
+				m_Player.FETotal += (int)Math.Round(m_Reroll.Experience * 0.75);
+
+				Account acc = (Account)m_Player.Account;
+
+				acc.RemoveReroll(m_Reroll);
+
+
+				
+			}
+
+
+
+
+
+
+
 
 
 

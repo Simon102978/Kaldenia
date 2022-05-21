@@ -7,6 +7,7 @@ using Server.Network;
 using System.Reflection;
 using Server.HuePickers;
 using System.Collections.Generic;
+using Server.Accounting;
 
 namespace Server.Gumps
 {
@@ -79,7 +80,22 @@ namespace Server.Gumps
 
 			else if (info.ButtonID == 1001)
 			{
-				from.SendGump(new CreationValidationGump(m_from, m_Creation));
+				Account acc = (Account)from.Account;
+
+				if (acc.Reroll.Count > 0)
+				{
+					from.SendGump(new CreationRerollGump(from, m_Creation));
+
+				}
+				else
+				{
+
+					from.SendGump(new CreationValidationGump(m_from, m_Creation));
+				}
+
+
+
+				
 			}
 			else if (info.ButtonID == 1000 || info.ButtonID == 0)
 			{

@@ -85,10 +85,10 @@ namespace Server.Gumps
 			info = info + "\nDextérité: " + creationPerso.Dex;
 			info = info + "\nIntelligence: " + creationPerso.Int;
 
-			/*  if (m_Creation.Reroll != null)
+			   if (m_Creation.Reroll != null)
 			  {
-				  info = info + "\n<h3><basefont color=#5A4A31> Transfert: " + m_Creation.Reroll.Name + "<basefont></h3 >";
-			  }*/
+				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpériences: " + Math.Round(creationPerso.Reroll.Experience * 0.75);
+			  }
 
 			AddSection(x - 10, y, 303, 508, "Information", info);
 
@@ -108,7 +108,7 @@ namespace Server.Gumps
             }
             else if (info.ButtonID == 1000 || info.ButtonID == 0)
             {
-				/*      Account acc = (Account)from.Account;
+				        Account acc = (Account)from.Account;
 
 						 if (acc.Reroll.Count > 0)
 						 {
@@ -116,12 +116,10 @@ namespace Server.Gumps
 
 						 }
 						 else
-						 {*/
+						 {
 
-						m_from.SendGump(new CreationGodGump(m_from, m_Creation));
-
-
-				//       }              
+						    m_from.SendGump(new CreationGodGump(m_from, m_Creation));
+				         }              
 			}
         }
 

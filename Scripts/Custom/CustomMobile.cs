@@ -1314,6 +1314,26 @@ namespace Server.Mobiles
 		}
 		#endregion
 
+		public override void OnDelete()
+		{
+
+			Reroll(); // Ok, c'est un peu bizard de faire quand on delete le perso, que sa reroll automatique, mais ca facilite la pierre de reroll (fait juste deleter le personnage) et ca diminue aussi l'impacte d'un Rage Quit, puisque si le joueur a deleter son perso, il va automatiquement recevoir l'experience et va pouvoir revenir en rerollant.
+
+			base.OnDelete();
+
+
+
+
+		}
+
+		public void Reroll()
+		{
+			Server.Accounting.Account accFrom = (Server.Accounting.Account)this.Account;
+
+			accFrom.AddReroll(new Reroll(this));
+		}
+
+
 		public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);

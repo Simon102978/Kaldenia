@@ -20,7 +20,7 @@ namespace Server.Gumps
 
 
         public CreationFinalisationGump(CustomPlayerMobile from)
-			: base("Finalisation de la création", 300, 300,false)
+			: base("Finalisation de la création", 400, 350,false)
         {
 			m_from = from;
             int x = XBase;
@@ -32,12 +32,18 @@ namespace Server.Gumps
 
 			string context = "Le bateau continuera de voger en direction de la ville principale, et vous allez perdre tous les objets présents dans votre sac. \n\nEtes-vous certain de vouloir continuer?";
 
-			AddSection(x - 5 , y, 345, 280, "Contexte", context);
+			AddSection(x - 5 , y, 445, 160, "Contexte", context);
 
-			AddBackground(x - 5, y + 281, 345, 60, 9270);
+			AddBackground(x - 5, y + 161, 445, 60, 9270);
 
-			AddButton(x + 60,y + 292, 1, 1147);
-			AddButton(x + 200, y + 292, 0, 1144);
+			AddButton(x + 110,y + 172, 1, 1147);
+			AddButton(x + 250, y + 172, 0, 1144);
+
+			AddSection(x - 5, y + 222, 445, 108, "Retour", "Vous pouvez aussi retourner dans la salle de création, pour modifier votre personnage.");
+
+			AddBackground(x - 5, y + 331, 445, 60, 9270);
+
+			AddButton(x + 180, y + 342, 2, 1147);
 
 		}
         public override void OnResponse(NetState sender, RelayInfo info)
@@ -74,10 +80,13 @@ namespace Server.Gumps
 
 				from.MoveToWorld(p, Map.Felucca);		
 			}
+			if (info.ButtonID == 2)
+			{
+				from.Blessed = true;
+				from.MoveToWorld(new Point3D(6135, 3200, 55), Map.Felucca);
+			}
 
-        }
+		}
 
-     
-
-    }
+	}
 }

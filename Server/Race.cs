@@ -328,7 +328,7 @@ namespace Server
 
 		//   public virtual Type Skin => null;
 
-		public virtual List<Type> RaceGump => new List<Type>();
+	//	public virtual List<Type> RaceGump => new List<Type>();
 
 		public virtual bool StaticHue => false;
 
@@ -336,6 +336,6 @@ namespace Server
 
 		public virtual bool Barbe => true;
 
-		public virtual List<Type> VetementDepart => new List<Type>();
+	
 	}
 }

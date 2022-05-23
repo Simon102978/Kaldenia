@@ -48,17 +48,8 @@ namespace Server.Gumps
 
                 m_Creation.Hue = creationPerso.Hue == -1 ? creationPerso.Race.RandomSkinHue() : creationPerso.Hue;
 
-                List<int> m_GumpToAdd = creationPerso.Race.GetGump(creationPerso.Female, m_Creation.Hue);
-
-                if (creationPerso.Race.StaticHue)
-                {
-                    m_Creation.Hue = 0;
-                }
-
-                foreach (int gumpId in m_GumpToAdd)
-                {
-                    AddImage(x + 355, y + 30, gumpId, m_Creation.Hue);
-                }
+                AddImage(x + 355, y + 30, creationPerso.Race.GetGump(creationPerso.Female, m_Creation.Hue), m_Creation.Hue);
+                
 
                 AddColorChoice(x + 435 - creationPerso.Race.SkinHues.Length * 9, y + 275, 10, creationPerso.Race.SkinHues);
             }

@@ -11,21 +11,25 @@ using Server.Mobiles;
 
 namespace Server
 {
-    [Parsable]
-    public abstract class BaseRace : Race
-    {
-        public virtual string Background => "À venir.";
+	[Parsable]
+	public abstract class BaseRace : Race
+	{
+		public virtual string Background => "À venir.";
 
-        public virtual AppearanceEnum AppearanceMin => AppearanceEnum.Monstrueux; // Pour NPC
-        public virtual AppearanceEnum AppearanceMax => AppearanceEnum.Angelique; // Pour NPC
+		public virtual AppearanceEnum AppearanceMin => AppearanceEnum.Monstrueux; // Pour NPC
+		public virtual AppearanceEnum AppearanceMax => AppearanceEnum.Angelique; // Pour NPC
 
-        public virtual GrandeurEnum GrandeurMin => GrandeurEnum.tresPetit;
-        public virtual GrandeurEnum GrandeurMax => GrandeurEnum.Colossale;
+		public virtual GrandeurEnum GrandeurMin => GrandeurEnum.tresPetit;
+		public virtual GrandeurEnum GrandeurMax => GrandeurEnum.Colossale;
 
-        public virtual GrosseurEnum GrosseurMin => GrosseurEnum.Fluet;
-        public virtual GrosseurEnum GrosseurMax => GrosseurEnum.Corpulent;
+		public virtual GrosseurEnum GrosseurMin => GrosseurEnum.Fluet;
+		public virtual GrosseurEnum GrosseurMax => GrosseurEnum.Corpulent;
 
-		public virtual int GumpId => 52081;
+
+		public virtual int GetGumpId(int hue)
+		{
+			return 52081;
+		}
 
 
 		public virtual List<string> NomMasculin => new List<string>() {
@@ -53,11 +57,8 @@ namespace Server
         {
             m.Hue = hue;
 
-            if (RaceGump.Count > 0)
-            {
-                foreach (Type item in RaceGump)
-                {
-                    BaseRaceGumps skin = (BaseRaceGumps)Activator.CreateInstance(item, hue);
+          
+                    BaseRaceGumps skin = GetCorps(hue);
 
                     Item Present = m.FindItemOnLayer(skin.Layer);
 
@@ -67,9 +68,19 @@ namespace Server
                     }
 
                     m.EquipItem(skin);
-                }
-            }
+                
+            
         }
+
+		public virtual BaseRaceGumps GetCorps(Mobile m)
+		{
+			return GetCorps(m.Hue);
+		}
+
+		public virtual BaseRaceGumps GetCorps(int hue)
+		{
+			return (BaseRaceGumps)Activator.CreateInstance(typeof(BaseRaceGumps), 41509);
+		}
 
         public override void ChangeHue(Mobile m)
         {
@@ -82,70 +93,38 @@ namespace Server
             AddRace(m, hue);
         }
 
-
 		public override void RemoveRace(Mobile m)
         {
-
-            if (RaceGump.Count > 0)
-            {
-
-                foreach (Type item in RaceGump)
-                {
-
-                    BaseRaceGumps baseGump = (BaseRaceGumps)Activator.CreateInstance(item, 0);
+                    BaseRaceGumps baseGump = GetCorps(m);
 
                     Item itemEquip = m.FindItemOnLayer(baseGump.Layer);
 
                     if (itemEquip != null)
                     {
-                        if (itemEquip.GetType() == item)
+                        if (itemEquip.GetType() == baseGump.GetType())
                         {
                             itemEquip.Delete();
                         }
 
                         baseGump.Delete();
-                    }
-                }
-
-            }
+                    }          
         }
 
-
-        public virtual List<int> GetGump(bool female, int hue)
+        public virtual int GetGump(bool female, int hue)
         {
-            List<int> GumpID = new List<int>();
+			int gumpid = 52090;
 
-            if (RaceGump.Count != 0)
-            {
-                foreach (Type item in RaceGump)
-                {
-                    BaseRaceGumps baseGump = (BaseRaceGumps)Activator.CreateInstance(item, 0);
+			if (female)
+			{
+				gumpid += 10000;
+			}
 
-					GumpID.Add(female ? 10000 + GumpId : GumpId) ;
-
-                    baseGump.Delete();
-                }
-
-            }
-            else
-            {
-                GumpID.Add(female ? 13 : 12);
-            }
-
-            return GumpID;
-
-
+            return gumpid;
         }
 
         public override void CheckGump(Mobile m)
-        {
-
-
-            if (RaceGump.Count != 0)
-            {
-                foreach (Type item in RaceGump)
-                {
-                    BaseRaceGumps baseGump = (BaseRaceGumps)Activator.CreateInstance(item, 0);
+        {       
+                    BaseRaceGumps baseGump = GetCorps(m);
 
                     if (m.FindItemOnLayer(baseGump.Layer).GetType() == baseGump.GetType())
                     {
@@ -157,23 +136,13 @@ namespace Server
                     }
 
                     baseGump.Delete();
-                }
-
-            }
         }
-
-
-
-
 
         public override int ClipSkinHue(int hue)
         {
 			return RandomSkinHue();
 		//    throw new NotImplementedException();
 		}
-
-
-
 
 		public override bool ValidateHair(bool female, int itemID)
 		{
@@ -233,7 +202,6 @@ namespace Server
 
 			return false;
 		}
-
 		public override int RandomFacialHair(bool female)
 		{
 			if (female)
@@ -243,7 +211,6 @@ namespace Server
 
 			return ((rand < 4) ? 0x203E : 0x2047) + rand;
 		}
-
 		public override bool ValidateFace(bool female, int itemID)
 		{
 			if (itemID.Equals(0))
@@ -254,7 +221,6 @@ namespace Server
 
 			return false;
 		}
-
 		public override int RandomFace(bool female)
 		{
 			int rand = Utility.Random(9);
@@ -266,7 +232,6 @@ namespace Server
 		{
 			return true;
 		}
-
 
 		public override int RandomSkinHue()
 		{
@@ -282,7 +247,6 @@ namespace Server
 			else
 				return hue;
 		}
-
 		public override int RandomHairHue()
 		{
 			return Utility.Random(1102, 48);
@@ -297,8 +261,6 @@ namespace Server
 		{
 			return RandomSkinHue();
 		}
-
-
 
 		public string RandomName(bool Female = false)
         {

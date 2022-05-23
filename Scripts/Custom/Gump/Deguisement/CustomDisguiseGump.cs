@@ -101,17 +101,9 @@ namespace Server.Gumps
 
 				m_Deg.Hue = m_Deg.Hue == -1 ? m_Deg.Race.RandomSkinHue() : m_Deg.Hue;
 
-				List<int> m_GumpToAdd = m_Deg.Race.GetGump(m_Deg.Female, m_Deg.Hue);
 
-				if (m_Deg.Race.StaticHue)
-				{
-					m_Deg.Hue = 0;
-				}
-
-				foreach (int gumpId in m_GumpToAdd)
-				{
-					AddImage(x + 355, y + 106, gumpId, m_Deg.Hue);
-				}
+				AddImage(x + 355, y + 106, m_Deg.Race.GetGump(m_Deg.Female, m_Deg.Hue), m_Deg.Hue);
+				
 
 				if (from.DeguisementAction(DeguisementAction.Racehue))
 				{

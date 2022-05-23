@@ -6,9 +6,7 @@ using System.Collections.Generic;
 
 namespace Server.Misc
 {
- 
-
- 		
+	
         class Korain : BaseRace
         {
 
@@ -118,13 +116,7 @@ namespace Server.Misc
 
 			return gumpid;
 		}
-
-
-
 	}
-
-    
-    
 }
 
 namespace Server.Items
@@ -166,3 +158,41 @@ namespace Server.Items
     }
 }
 
+namespace Server.Items
+{
+	public class CorpsSylvishs : BaseRaceGumps
+	{
+		[Constructable]
+		public CorpsSylvishs()
+			: this(0)
+		{
+		}
+
+		[Constructable]
+		public CorpsSylvishs(int Id, int hue)
+			: base(Id, hue)
+		{
+			Name = "Korain";
+		}
+
+		public CorpsSylvishs(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+}

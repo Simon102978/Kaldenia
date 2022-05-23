@@ -296,10 +296,14 @@ namespace Server.Engines.Craft
             AddCraft(typeof(RingmailLegs), 1111704, 1025104, 19.4, 69.4, typeof(IronIngot), 1044036, 16, 1044037);
             AddCraft(typeof(RingmailArms), 1111704, 1025103, 16.9, 66.9, typeof(IronIngot), 1044036, 14, 1044037);
             AddCraft(typeof(RingmailChest), 1111704, 1025100, 21.9, 71.9, typeof(IronIngot), 1044036, 18, 1044037);
-            #endregion
 
-            #region Chainmail
-            AddCraft(typeof(ChainCoif), 1111704, 1025051, 14.5, 64.5, typeof(IronIngot), 1044036, 10, 1044037);
+			AddCraft(typeof(PlastronMaille2), 1111704, "Plastron de Maille2", 21.9, 71.9, typeof(IronIngot), 1044036, 18, 1044037);
+			AddCraft(typeof(JambiereMaille2), 1111704, "Jambière de Maille2", 19.4, 69.4, typeof(IronIngot), 1044036, 16, 1044037);
+			AddCraft(typeof(BrassardMaille), 1111704, "Brassard de Maille", 16.9, 66.9, typeof(IronIngot), 1044036, 14, 1044037);
+			#endregion
+
+			#region Chainmail
+			AddCraft(typeof(ChainCoif), 1111704, 1025051, 14.5, 64.5, typeof(IronIngot), 1044036, 10, 1044037);
             AddCraft(typeof(ChainLegs), 1111704, 1025054, 36.7, 86.7, typeof(IronIngot), 1044036, 18, 1044037);
             AddCraft(typeof(ChainChest), 1111704, 1025055, 39.1, 89.1, typeof(IronIngot), 1044036, 20, 1044037);
 

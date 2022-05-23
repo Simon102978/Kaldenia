@@ -27,7 +27,7 @@ namespace Server.Engines.Craft
 
     public class DefBowFletching : CraftSystem
     {
-        public override SkillName MainSkill => SkillName.Fletching;
+        public override SkillName MainSkill => SkillName.Carpentry;
 
         public override int GumpTitleNumber => 1044006;
 
@@ -131,7 +131,22 @@ namespace Server.Engines.Craft
             AddCraft(typeof(Crossbow), 1044566, 1023919, 60.0, 100.0, typeof(Board), 1044041, 7, 1044351);
             AddCraft(typeof(HeavyCrossbow), 1044566, 1025117, 80.0, 120.0, typeof(Board), 1044041, 10, 1044351);
 
-            AddCraft(typeof(CompositeBow), 1044566, 1029922, 70.0, 110.0, typeof(Board), 1044041, 7, 1044351);
+
+
+
+			AddCraft(typeof(Percemurs), 1044566, "Percemurs", 60.0, 100.0, typeof(Board), 1044041, 7, 1044351);
+			AddCraft(typeof(Arbavive), 1044566, "Arbavive", 60.0, 100.0, typeof(Board), 1044041, 7, 1044351);
+			AddCraft(typeof(Lumitrait), 1044566, "Lumitrait", 80.0, 120.0, typeof(Board), 1044041, 10, 1044351);
+			AddCraft(typeof(ArbaletteChasse), 1044566, "Arbaletes de chasse", 80.0, 120.0, typeof(Board), 1044041, 10, 1044351);
+
+			AddCraft(typeof(Legarc), 1044566, "Legarc", 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
+			AddCraft(typeof(Tarkarc), 1044566, "Arc court renforcit", 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
+			AddCraft(typeof(Souplecorde), 1044566, "Souplecorde", 70.0, 110.0, typeof(Board), 1044041, 7, 1044351);
+			AddCraft(typeof(Sombrevent), 1044566, "Sombrevent", 70.0, 110.0, typeof(Board), 1044041, 7, 1044351);
+
+
+
+			AddCraft(typeof(CompositeBow), 1044566, 1029922, 70.0, 110.0, typeof(Board), 1044041, 7, 1044351);
             AddCraft(typeof(RepeatingCrossbow), 1044566, 1029923, 90.0, 130.0, typeof(Board), 1044041, 10, 1044351);
 
             index = AddCraft(typeof(Yumi), 1044566, 1030224, 90.0, 130.0, typeof(Board), 1044041, 10, 1044351);
@@ -140,7 +155,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(MagicalShortbow), 1044566, 1031551, 85.0, 135.0, typeof(Board), 1044041, 15, 1044351);
 
-            index = AddCraft(typeof(BlightGrippedLongbow), 1044566, 1072907, 75.0, 125.0, typeof(Board), 1044041, 20, 1044351);
+  /*          index = AddCraft(typeof(BlightGrippedLongbow), 1044566, 1072907, 75.0, 125.0, typeof(Board), 1044041, 20, 1044351);
             AddRes(index, typeof(LardOfParoxysmus), 1032681, 1, 1053098);
             AddRes(index, typeof(Blight), 1032675, 10, 1053098);
             AddRes(index, typeof(Corruption), 1032676, 10, 1053098);
@@ -205,7 +220,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(AssassinsShortbow), 1044566, 1073512, 75.0, 125.0, typeof(Board), 1044041, 15, 1044351);
             AddRes(index, typeof(DarkSapphire), 1026249, 1, 1053098);
-            AddRecipe(index, (int)BowRecipes.AssassinsShortbow);
+            AddRecipe(index, (int)BowRecipes.AssassinsShortbow);*/
 
             SetSubRes(typeof(Board), 1072643);
 

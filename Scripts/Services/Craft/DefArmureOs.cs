@@ -112,10 +112,24 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(OrcHelm), "Armure d'os", 1027947, 90.0, 115.0, typeof(Bone), "Os", 6, 1044463);
 
-            #endregion
 
-            // Set the overridable material
-            SetSubRes(typeof(Bone), "Os");
+
+
+			index = AddCraft(typeof(CasqueOS), "Armure d'os", "Casque d'Os", 85.0, 110.0, typeof(Bone), "Os", 4, 1044463);
+
+			index = AddCraft(typeof(GantsOS), "Armure d'os", "Gants d'Os", 89.0, 114.0, typeof(Bone), "Os", 6, 1044463);
+
+			index = AddCraft(typeof(BrassardOs), "Armure d'os", "Brassard d'Os", 92.0, 117.0, typeof(Bone), "Os", 8, 1044463);
+
+			index = AddCraft(typeof(JambiereOs), "Armure d'os", "Jambiere d'Os", 95.0, 120.0, typeof(Bone), "Os", 10, 1044463);
+
+			index = AddCraft(typeof(PlastronOs), "Armure d'os", "Plastron d'Os", 96.0, 121.0, typeof(Bone), "Os", 12, 1044463);
+
+
+			#endregion
+
+			// Set the overridable material
+			SetSubRes(typeof(Bone), "Os");
 
             // Add every material you want the player to be able to choose from
             // This will override the overridable material

@@ -473,7 +473,7 @@ namespace Server.Engines.Craft
 
             #region Leather Armor
 
-            index = AddCraft(typeof(SpellWovenBritches), 1015293, 1072929, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
+       /*     index = AddCraft(typeof(SpellWovenBritches), 1015293, 1072929, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
             AddRes(index, typeof(EyeOfTheTravesty), 1032685, 1, 1044253);
             AddRes(index, typeof(Putrefaction), 1032678, 10, 1044253);
             AddRes(index, typeof(Scourge), 1032677, 10, 1044253);
@@ -492,7 +492,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
             AddRes(index, typeof(Taint), 1032679, 10, 1044253);
             AddRecipe(index, (int)TailorRecipe.StitchersMittens);
-            ForceNonExceptional(index);
+            ForceNonExceptional(index);*/
 
             AddCraft(typeof(LeatherGorget), 1015293, 1025063, 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
             AddCraft(typeof(LeatherCap), 1015293, 1027609, 6.2, 31.2, typeof(Leather), 1044462, 2, 1044463);
@@ -501,7 +501,47 @@ namespace Server.Engines.Craft
             AddCraft(typeof(LeatherLegs), 1015293, 1025067, 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
             AddCraft(typeof(LeatherChest), 1015293, 1025068, 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
 
-            index = AddCraft(typeof(LeatherJingasa), 1015293, 1030177, 45.0, 70.0, typeof(Leather), 1044462, 4, 1044463);
+
+
+
+			AddCraft(typeof(BrassardCuirSombre), 1015293, "Brassard de Cuir Sombre", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(JambiereCuirSombre), 1015293, "Jambiere de Cuir Sombre", 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(PlastronCuirSombre), 1015293, "Plastron de Cuir Sombre", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(BottesBarbare), 1015293, "Bottes Barbare", 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(BrassardBarbare), 1015293, "Brassard Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(BrassardBarbare2), 1015293, "Brassard Barbare2", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(CasqueBarbare), 1015293, "Casque Barbare", 6.2, 31.2, typeof(Leather), 1044462, 2, 1044463);
+			AddCraft(typeof(EpauliereBarbare), 1015293, "Épaulière Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(GantsBarbare), 1015293, "Gants Barbare", 51.8, 76.8, typeof(Leather), 1044462, 3, 1044463);
+			AddCraft(typeof(GorgetBarbare), 1015293, "Gorget Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(JambiereBarbare), 1015293, "Jambiere Barbare", 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(JambiereBarbare2), 1015293, "Jambière Barbare2", 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(JambiereBarbare3), 1015293, "Jambière Barbare3", 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(PlastronBarbare), 1015293, "Plastron Barbare", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(PlastronBarbare2), 1015293, "Plastron Barbare2", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(PlastronBarbare3), 1015293, "Plastron Barbare3", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(PlastronBarbare4), 1015293, "Plastron Barbare4", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(PlastronBarbare5), 1015293, "Plastron Barbare5", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(PlastronBarbare6), 1015293, "Plastron Barbare5", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(PlastronBarbare7), 1015293, "Plastron Barbare7", 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			index = AddCraft(typeof(LeatherJingasa), 1015293, 1030177, 45.0, 70.0, typeof(Leather), 1044462, 4, 1044463);
 
             index = AddCraft(typeof(LeatherMempo), 1015293, 1030181, 80.0, 105.0, typeof(Leather), 1044462, 8, 1044463);
 
@@ -593,7 +633,19 @@ namespace Server.Engines.Craft
             AddCraft(typeof(StuddedLegs), 1015300, 1025082, 91.2, 116.2, typeof(Leather), 1044462, 12, 1044463);
             AddCraft(typeof(StuddedChest), 1015300, 1025083, 94.0, 119.0, typeof(Leather), 1044462, 14, 1044463);
 
-            index = AddCraft(typeof(StuddedMempo), 1015300, 1030216, 80.0, 105.0, typeof(Leather), 1044462, 8, 1044463);
+
+
+
+			AddCraft(typeof(BrassardCloute), 1015300, "Brassard Clouté", 87.1, 112.1, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(JupeCloute), 1015300, "Jupe Clouté", 91.2, 116.2, typeof(Leather), 1044462, 12, 1044463);
+
+			AddCraft(typeof(PlastronCloute), 1015300, "Plastron Clouté", 94.0, 119.0, typeof(Leather), 1044462, 14, 1044463);
+			AddCraft(typeof(PlastronCloute2), 1015300, "Plastron Clouté2", 94.0, 119.0, typeof(Leather), 1044462, 14, 1044463);
+			AddCraft(typeof(PlastronCloute3), 1015300, "Plastron Clouté3", 94.0, 119.0, typeof(Leather), 1044462, 14, 1044463);
+			AddCraft(typeof(PlastronCloute4), 1015300, "Plastron Clouté4", 94.0, 119.0, typeof(Leather), 1044462, 14, 1044463);
+
+
+			index = AddCraft(typeof(StuddedMempo), 1015300, 1030216, 80.0, 105.0, typeof(Leather), 1044462, 8, 1044463);
 
             index = AddCraft(typeof(StuddedDo), 1015300, 1030183, 95.0, 120.0, typeof(Leather), 1044462, 14, 1044463);
 

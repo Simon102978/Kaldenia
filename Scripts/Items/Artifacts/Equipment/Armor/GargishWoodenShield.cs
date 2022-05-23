@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    [Flipable(0x4200, 0x4207)]
+   
     public class WoodenShield : BaseShield
     {
         public override bool IsArtifact => true;
@@ -16,7 +16,7 @@ namespace Server.Items
         {
         }
 
-        public override int BasePhysicalResistance => 0;
+        public override int BasePhysicalResistance => 2;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 0;
         public override int BasePoisonResistance => 0;
@@ -25,7 +25,9 @@ namespace Server.Items
         public override int InitMaxHits => 25;
         public override int StrReq => 20;
 
-        public override void Deserialize(GenericReader reader)
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Leather;
+
+		public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();

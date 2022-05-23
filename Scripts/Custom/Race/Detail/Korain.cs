@@ -74,7 +74,7 @@ namespace Server.Misc
 				default:
 					break;
 			}
-			return new CorpsKorain(itemId, hue);
+			return new CorpsHuman(itemId, hue);
 		}
 
 		public override int GetGump(bool female, int hue)
@@ -129,22 +129,22 @@ namespace Server.Misc
 
 namespace Server.Items
 {
-    public class CorpsKorain : BaseRaceGumps
+    public class CorpsHuman : BaseRaceGumps
     {
         [Constructable]
-        public CorpsKorain()
+        public CorpsHuman()
             : this(0)
         {
         }
 
         [Constructable]
-        public CorpsKorain(int Id, int hue)
+        public CorpsHuman(int Id, int hue)
             : base(Id, hue)
         {
             Name = "Korain";
         }
 
-        public CorpsKorain(Serial serial)
+        public CorpsHuman(Serial serial)
             : base(serial)
         {
         }

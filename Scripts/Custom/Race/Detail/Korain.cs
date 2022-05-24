@@ -72,7 +72,7 @@ namespace Server.Misc
 				default:
 					break;
 			}
-			return new CorpsHuman(itemId, hue);
+			return new CorpsKorain(itemId, hue);
 		}
 
 		public override int GetGump(bool female, int hue)
@@ -121,22 +121,22 @@ namespace Server.Misc
 
 namespace Server.Items
 {
-    public class CorpsHuman : BaseRaceGumps
+    public class CorpsKorain : BaseRaceGumps
     {
         [Constructable]
-        public CorpsHuman()
+        public CorpsKorain()
             : this(0)
         {
         }
 
         [Constructable]
-        public CorpsHuman(int Id, int hue)
+        public CorpsKorain(int Id, int hue)
             : base(Id, hue)
         {
             Name = "Korain";
         }
 
-        public CorpsHuman(Serial serial)
+        public CorpsKorain(Serial serial)
             : base(serial)
         {
         }
@@ -158,41 +158,3 @@ namespace Server.Items
     }
 }
 
-namespace Server.Items
-{
-	public class CorpsSylvishs : BaseRaceGumps
-	{
-		[Constructable]
-		public CorpsSylvishs()
-			: this(0)
-		{
-		}
-
-		[Constructable]
-		public CorpsSylvishs(int Id, int hue)
-			: base(Id, hue)
-		{
-			Name = "Korain";
-		}
-
-		public CorpsSylvishs(Serial serial)
-			: base(serial)
-		{
-		}
-
-		public override void Serialize(GenericWriter writer)
-		{
-			base.Serialize(writer);
-
-			writer.Write((int)0); // version
-		}
-
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize(reader);
-
-			int version = reader.ReadInt();
-
-		}
-	}
-}

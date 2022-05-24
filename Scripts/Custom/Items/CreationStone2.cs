@@ -29,6 +29,9 @@ namespace Server.Items
       {
 				CustomPlayerMobile cPlayer = from as CustomPlayerMobile;
 
+				from.CloseGump(typeof(CreationFinalisationGump));
+
+
                 from.SendGump(new CreationFinalisationGump(cPlayer));
       }
       else

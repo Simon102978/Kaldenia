@@ -1226,7 +1226,17 @@ namespace Server.Mobiles
                 pm.ValidateEquipment();
 
                 ReportMurdererGump.CheckMurderer(pm);
-            }
+
+				if (pm is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cp = (CustomPlayerMobile)pm;
+
+					if (cp.MissiveEnAttente.Count > 0)
+					{
+						cp.SendMessage(72, string.Format("Vous avez {0} missive(s) en attente.", cp.MissiveEnAttente.Count));
+					}
+				}
+			}
 
             if (Siege.SiegeShard && from.Map == Map.Trammel && from.AccessLevel == AccessLevel.Player)
             {
@@ -1534,6 +1544,17 @@ namespace Server.Mobiles
                 pm.BedrollLogout = false;
                 pm.BlanketOfDarknessLogout = false;
                 pm.LastOnline = DateTime.UtcNow;
+
+
+				
+
+
+
+
+
+
+
+
             }
 
             //DisguiseTimers.StartTimer(e.Mobile);

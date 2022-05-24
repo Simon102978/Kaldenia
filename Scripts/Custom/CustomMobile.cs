@@ -46,6 +46,7 @@ namespace Server.Mobiles
 		private bool m_BaseFemale;
 		private int m_BaseHue;
 
+		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }
@@ -239,6 +240,8 @@ namespace Server.Mobiles
 			set;
 		}
 
+		public List<MissiveContent> MissiveEnAttente { get { return m_MissiveEnAttente; } set { m_MissiveEnAttente = value; } }
+	
 
 
 		public List<int> QuickSpells
@@ -271,6 +274,54 @@ namespace Server.Mobiles
 
 
 		}
+
+		#region Missive
+		public virtual void AddMissive(Missive missive)
+		{
+			if (missive == null || missive.Deleted)
+				return;
+
+			MissiveEnAttente.Add(missive.Content);
+
+			missive.Delete();
+
+
+
+			SendMessage("Vous avez reçu une missive.");
+		}
+
+		public virtual void GetMissive()
+		{
+			for (int i = 0; i < MissiveEnAttente.Count; ++i)
+			{
+			     	MissiveContent entry = MissiveEnAttente[i];
+		
+					if (entry != null)
+					{
+						AddToBackpack( new Missive(entry));
+						
+					}	
+			}
+
+			MissiveEnAttente = new List<MissiveContent>();
+
+
+		}
+
+
+
+		#endregion
+
+		private static void OnLogin(LoginEventArgs e)
+		{
+
+
+
+			
+
+
+		}
+
 
 		#region Apparence
 		public string Apparence()
@@ -1343,6 +1394,23 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 14:
+					{
+						MissiveEnAttente = new List<MissiveContent>();
+
+						int count = reader.ReadInt();
+
+						for (int i = 0; i < count; i++)
+						{
+							MissiveEnAttente.Add(MissiveContent.Deserialize(reader));
+						}
+
+
+
+						goto case 13;
+					}
+
+
 				case 13:
 					{
 						QuiOptions = (QuiOptions)reader.ReadInt();
@@ -1474,7 +1542,15 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(13); // version
+            writer.Write(14); // version
+
+
+			writer.Write(MissiveEnAttente.Count);
+
+			foreach (MissiveContent item in MissiveEnAttente)
+			{
+				item.Serialize(writer);
+			}
 
 			writer.Write((int)QuiOptions);
 

@@ -5193,7 +5193,7 @@ namespace Server.Mobiles
 
             GenerateLoot();
 
-            if (m_Paragon)
+          /*  if (m_Paragon)
             {
                 if (Fame < 1250)
                 {
@@ -5215,7 +5215,7 @@ namespace Server.Mobiles
                 {
                     AddLoot(LootPack.UltraRich);
                 }
-            }
+            }*/
 
             KillersLuck = 0;
         }

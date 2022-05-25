@@ -159,7 +159,9 @@ namespace Server.Mobiles
 
         public static bool CheckArtifactChance(Mobile m, BaseCreature bc)
         {
-            double fame = bc.Fame;
+			return false;
+
+       /*     double fame = bc.Fame;
 
             if (fame > 32000)
                 fame = 32000;
@@ -168,17 +170,17 @@ namespace Server.Mobiles
 
             double chance = 1 / (Math.Max(10, 100 * (0.83 - Math.Round(Math.Log(Math.Round(fame / 6000, 3) + 0.001, 10), 3))) * (100 - Math.Sqrt(luck)) / 100.0);
 
-            return chance > Utility.RandomDouble();
+            return chance > Utility.RandomDouble();*/
         }
 
         public static void GiveArtifactTo(Mobile m)
         {
-            Item item = (Item)Activator.CreateInstance(Artifacts[Utility.Random(Artifacts.Length)]);
+     /*       Item item = (Item)Activator.CreateInstance(Artifacts[Utility.Random(Artifacts.Length)]);
 
             if (m.AddToBackpack(item))
                 m.SendMessage("As a reward for slaying the mighty paragon, an artifact has been placed in your backpack.");
             else
-                m.SendMessage("As your backpack is full, your reward for destroying the legendary paragon has been placed at your feet.");
+                m.SendMessage("As your backpack is full, your reward for destroying the legendary paragon has been placed at your feet.");*/
         }
     }
 }

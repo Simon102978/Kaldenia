@@ -21,13 +21,10 @@ namespace Server.Items
 			{
 				if (Content == null)
 				{
-					return true;
+					Content = new MissiveContent();					
 				}
-				else
-				{
+							
 					return Content.Vierge; ;
-				}
-
 			}
 			set
 			{

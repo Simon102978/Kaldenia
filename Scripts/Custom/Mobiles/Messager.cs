@@ -15,16 +15,22 @@ namespace Server.Mobiles
 		protected override List<SBInfo> SBInfos { get { return m_SBInfos; } }
 
         public override bool IsActiveBuyer { get { return false; } } // response to vendor SELL
-        public override bool IsActiveSeller { get { return false; } } // repsonse to vendor BUY
+																	 //      public override bool IsActiveSeller { get { return false; } } // repsonse to vendor BUY
+
+
+		public override void InitSBInfo()
+		{
+			m_SBInfos.Add(new SBMessager());
+		}
+
+
+
 
 		[Constructable]
 		public Messager() : base( "Messager" )
 		{
         }
 
-		public override void InitSBInfo()
-		{
-		}
 
 		public Messager( Serial serial ) : base( serial )
 		{

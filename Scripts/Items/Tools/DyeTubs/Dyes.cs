@@ -1,5 +1,7 @@
 using Server.HuePickers;
 using Server.Targeting;
+using Server.Gumps;
+using Server.Mobiles;
 
 namespace Server.Items
 {
@@ -50,10 +52,17 @@ namespace Server.Items
 
                     if (tub.Redyable)
                     {
-                        if (tub.CustomHuePicker == null)
-                            from.SendHuePicker(new InternalPicker(tub));
-                        else
-                            from.SendGump(new CustomHuePickerGump(from, tub.CustomHuePicker, SetTubHue, tub));
+						if (tub.CustomHuePicker == null)
+						{
+							if (from is CustomPlayerMobile)
+							{
+								from.SendGump(new CustomDyeGump((CustomPlayerMobile)from, tub, tub.DyedHue));
+							}
+
+						//	                       from.SendHuePicker(new InternalPicker(tub));
+						}
+						else
+							from.SendGump(new CustomHuePickerGump(from, tub.CustomHuePicker, SetTubHue, tub));
                     }
                     else if (tub is BlackDyeTub)
                     {

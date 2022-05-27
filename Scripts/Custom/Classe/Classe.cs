@@ -20,7 +20,7 @@ namespace Server.Misc
 						Classe.RegisterClasse(new Classe(4, "Archer", ClasseType.Guerrier, new List<SkillName>() { SkillName.Archery, SkillName.Tactics, SkillName.Focus }, 3));
 						Classe.RegisterClasse(new Classe(5, "Gardien", ClasseType.Guerrier, new List<SkillName>() { SkillName.Parry, SkillName.Healing, SkillName.Anatomy }, 3));
 
-						Classe.RegisterClasse(new Classe(6, "Sorcier", ClasseType.Mage, new List<SkillName>() { SkillName.Magery, SkillName.Meditation, SkillName.Anatomy }, 1));
+						Classe.RegisterClasse(new Classe(6, "Sorcier", ClasseType.Mage, new List<SkillName>() { SkillName.Magery, SkillName.Meditation, SkillName.EvalInt }, 1));
 
 						Classe.RegisterClasse(new Classe(7,  "Ménéstrel", ClasseType.Roublard, new List<SkillName>() { SkillName.Musicianship, SkillName.Peacemaking, SkillName.Provocation,SkillName.Discordance }, 2));
 						Classe.RegisterClasse(new Classe(8,  "Cambrioleur", ClasseType.Roublard, new List<SkillName>() { SkillName.Stealing, SkillName.Snooping, SkillName.Lockpicking }, 2));

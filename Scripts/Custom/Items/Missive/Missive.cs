@@ -175,6 +175,7 @@ namespace Server.Items
         {
             Name = "missive";
             Weight = 0.3;
+			m_content = new MissiveContent();
           
         }
 

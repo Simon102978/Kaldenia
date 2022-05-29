@@ -199,15 +199,15 @@ namespace Server.Items
 			int h = e.Mobile.Hunger; // Variable to hold the hunger value of the player
 			// these values are taken from Food.cs and relate directly to the message
 			// you get when you eat.
-			if (h <= 0 )
+			if (h <= 0)
 				e.Mobile.SendMessage( "Vous avez extrêmement faim." );
-			else if ( h <= 4 )
+			else if ( h <= 5 )
 			       	e.Mobile.SendMessage( "Vous avez très faim." );
-			else if ( h <= 8 )
+			else if ( h <= 10)
 				e.Mobile.SendMessage( "Vous avez faim." );
-			else if ( h <= 12 )
+			else if ( h <= 15 )
 				e.Mobile.SendMessage( "Vous avez légèrement faim." );
-			else if ( h <= 16 )
+			else if ( h <= 20)
 				e.Mobile.SendMessage( "Vous n'avez pas faim." );
 			else
 				e.Mobile.SendMessage("Vous n'avez pas faim.");
@@ -216,13 +216,13 @@ namespace Server.Items
 			// read the comments above to see where these values came from
 			if ( t <= 0 )
 				e.Mobile.SendMessage( "Vous avez extrêmement soif." );
-			else if ( t <= 4 )
+			else if ( t <= 5 )
 			       	e.Mobile.SendMessage( "Vous avez très soif." );
-			else if ( t <= 8 )
+			else if ( t <= 10 )
 				e.Mobile.SendMessage( "Vous avez soif." );
-			else if ( t <= 12 )
+			else if ( t <= 15 )
 				e.Mobile.SendMessage( "Vous avez légèrement soif." );
-			else if ( t <= 16 )
+			else if ( t <= 20 )
 				e.Mobile.SendMessage( "Vous n'avez pas soif." );
 			else
 				e.Mobile.SendMessage("Vous n'avez pas soif.");

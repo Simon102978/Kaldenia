@@ -1015,6 +1015,9 @@ namespace Server
 		public int[] Keywords => m_Keywords;
 		public bool Handled { get; set; }
 		public bool Blocked { get; set; }
+		public object mobile { get; set; }
+		public object Skills { get; set; }
+		public object CheckSkill { get; set; }
 
 		public bool HasKeyword(int keyword)
 		{
@@ -1027,6 +1030,11 @@ namespace Server
 			}
 
 			return false;
+		}
+
+		public void SendMessage(string v)
+		{
+			throw new NotImplementedException();
 		}
 
 		public SpeechEventArgs(Mobile mobile, string speech, MessageType type, int hue, int[] keywords)

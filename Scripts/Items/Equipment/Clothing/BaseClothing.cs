@@ -55,7 +55,9 @@ namespace Server.Items
             set { _OwnerName = value; InvalidateProperties(); }
         }
 
-        public virtual bool CanFortify => !IsImbued && NegativeAttributes.Antique < 4;
+		public virtual bool Disguise { get { return false; } }
+
+		public virtual bool CanFortify => !IsImbued && NegativeAttributes.Antique < 4;
         public virtual bool CanRepair => m_NegativeAttributes.NoRepair == 0;
         public virtual bool CanAlter => true;
 

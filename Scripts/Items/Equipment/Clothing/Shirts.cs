@@ -8,7 +8,7 @@ namespace Server.Items
         }
 
         public BaseShirt(int itemID, int hue)
-            : base(itemID, Layer.Shirt, hue)
+            : base(itemID, Layer.MiddleTorso, hue)
         {
         }
 

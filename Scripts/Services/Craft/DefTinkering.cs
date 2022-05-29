@@ -604,11 +604,33 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(OceanSapphire), 1159162, 3, 1044253);
             SetItemHue(index, 1265);
             ForceNonExceptional(index);
-            #endregion
+			#endregion
 
-            #region Traps
-            // Dart Trap
-            index = AddCraft(typeof(DartTrapCraft), 1044052, 1024396, 30.0, 80.0, typeof(IronIngot), 1044036, 1, 1044037);
+
+			index = AddCraft(typeof(Collier), "Bijoux", "Collier", 49.2, 69.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier2), "Bijoux", "Collier2", 49.8, 69.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Couronne2), "Bijoux", "Couronne2", 87.2, 107.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier3), "Bijoux", "Collier3", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Couronne3), "Bijoux", "Couronne3", 74.5, 94.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier4), "Bijoux", "Collier4", 60.1, 80.1, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier5), "Bijoux", "Collier5", 63.4, 83.4, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier6), "Bijoux", "Collier6", 81.2, 101.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier7), "Bijoux", "Collier7", 90.2, 110.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Lunettes), "Bijoux", "Lunettes", 86.9, 106.9, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Couronne4), "Bijoux", "Couronne4", 96.0, 116.0, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier8), "Bijoux", "Collier8", 68.8, 88.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Tiare), "Bijoux", "Tiare", 50.9, 70.9, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier9), "Bijoux", "Collier9", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier10), "Bijoux", "Collier10", 96.8, 116.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier11), "Bijoux", "Collier11", 71.7, 91.7, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier12), "Bijoux", "Collier12", 65.6, 85.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+
+
+
+
+			#region Traps
+			// Dart Trap
+			index = AddCraft(typeof(DartTrapCraft), 1044052, 1024396, 30.0, 80.0, typeof(IronIngot), 1044036, 1, 1044037);
             AddRes(index, typeof(Bolt), 1044570, 1, 1044253);
 
             // Poison Trap

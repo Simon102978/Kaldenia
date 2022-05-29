@@ -621,7 +621,7 @@ namespace Server.Multis
                             case 0x42: SetName(e); break;
                             case 0x43: RemoveName(e.Mobile); break;
                             case 0x44: GiveName(e.Mobile); break;
-							/*                      case 0x45: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
+							                      case 0x45: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
 												  case 0x46: Order = BoatOrder.PlayerControlled; StartMove(Backward, true); break;
 												  case 0x47: Order = BoatOrder.PlayerControlled; StartMove(Left, true); break;
 												  case 0x48: Order = BoatOrder.PlayerControlled; StartMove(Right, true); break;
@@ -653,7 +653,7 @@ namespace Server.Multis
 												  case 0x67: Order = BoatOrder.PlayerControlled; StartTurn(-4, true); break; // turn around, come about
 												  case 0x68: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
 												case 0x69: Order = BoatOrder.PlayerControlled; StopMove(true); break;
-							*/
+							
 							case 0x6A: break; // Lower Anchor
                             case 0x6B: break; // Raise Anchor
                             case 0x60: GiveNavPoint(); break; // nav
@@ -956,6 +956,29 @@ namespace Server.Multis
 
         public virtual bool CanCommand(Mobile m)
         {
+
+			if (m is CustomPlayerMobile)
+			{
+				CustomPlayerMobile cm = (CustomPlayerMobile)m;
+
+				if (cm.Skills[SkillName.Cartography].Value >= 50)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+
+
+
+
+
+
+
             return true;
         }
 
@@ -1573,7 +1596,7 @@ namespace Server.Multis
                 else
                 {
                     //m_Boat.Location = new Point3D(m_Boat.X, m_Boat.Y, m_Boat.Z - 1);
-                    m_Boat.Teleport(0, 0, -1);
+                     m_Boat.Teleport(0, 0, -1);
 
                     if (m_Boat.TillerMan != null)
                         m_Boat.TillerManSay(1007168 + m_Count);
@@ -2553,7 +2576,7 @@ namespace Server.Multis
                 }
             }
 
-            if (Math.Abs(xOffset) > 1 || Math.Abs(yOffset) > 1)
+          if (Math.Abs(xOffset) > 1 || Math.Abs(yOffset) > 1)
             {
                 Teleport(xOffset, yOffset, 0);
             }
@@ -2604,7 +2627,7 @@ namespace Server.Multis
 
                 eable.Free();
                 smooth.Release();
-            }
+             }
 
             return true;
         }

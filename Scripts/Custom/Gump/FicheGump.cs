@@ -186,6 +186,12 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 10, y + 560, 150, "En attente :");
 			AddLabel(x + 130, y + 560, 150, m_From.StatAttente.ToString());
 
+			AddHtmlTexte(x + 10, y + 600, 150, "Faim :");
+			AddLabel(x + 130, y + 600, 150, m_From.Hunger + " / 20".ToString());
+
+			AddHtmlTexte(x + 10, y + 620, 150, "Soif :");
+			AddLabel(x + 130, y + 620, 150, m_From.Thirst + " / 20".ToString());
+
 
 
 

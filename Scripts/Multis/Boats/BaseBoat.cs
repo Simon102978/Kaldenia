@@ -621,39 +621,40 @@ namespace Server.Multis
                             case 0x42: SetName(e); break;
                             case 0x43: RemoveName(e.Mobile); break;
                             case 0x44: GiveName(e.Mobile); break;
-                            case 0x45: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
-                            case 0x46: Order = BoatOrder.PlayerControlled; StartMove(Backward, true); break;
-                            case 0x47: Order = BoatOrder.PlayerControlled; StartMove(Left, true); break;
-                            case 0x48: Order = BoatOrder.PlayerControlled; StartMove(Right, true); break;
-                            case 0x4B: Order = BoatOrder.PlayerControlled; StartMove(ForwardLeft, true); break;
-                            case 0x4C: Order = BoatOrder.PlayerControlled; StartMove(ForwardRight, true); break;
-                            case 0x4D: Order = BoatOrder.PlayerControlled; StartMove(BackwardLeft, true); break;
-                            case 0x4E: Order = BoatOrder.PlayerControlled; StartMove(BackwardRight, true); break;
-                            case 0x4F: Order = BoatOrder.PlayerControlled; StopMove(true); break;
-                            case 0x50: Order = BoatOrder.PlayerControlled; StartMove(Left, false); break;
-                            case 0x51: Order = BoatOrder.PlayerControlled; StartMove(Right, false); break;
-                            case 0x52: Order = BoatOrder.PlayerControlled; StartMove(Forward, false); break;
-                            case 0x53: Order = BoatOrder.PlayerControlled; StartMove(Backward, false); break;
-                            case 0x54: Order = BoatOrder.PlayerControlled; StartMove(ForwardLeft, false); break;
-                            case 0x55: Order = BoatOrder.PlayerControlled; StartMove(ForwardRight, false); break;
-                            case 0x56: Order = BoatOrder.PlayerControlled; StartMove(BackwardRight, false); break;
-                            case 0x57: Order = BoatOrder.PlayerControlled; StartMove(BackwardLeft, false); break;
-                            case 0x58: Order = BoatOrder.PlayerControlled; OneMove(Left); break;
-                            case 0x59: Order = BoatOrder.PlayerControlled; OneMove(Right); break;
-                            case 0x5A: Order = BoatOrder.PlayerControlled; OneMove(Forward); break;
-                            case 0x5B: Order = BoatOrder.PlayerControlled; OneMove(Backward); break;
-                            case 0x5C: Order = BoatOrder.PlayerControlled; OneMove(ForwardLeft); break;
-                            case 0x5D: Order = BoatOrder.PlayerControlled; OneMove(ForwardRight); break;
-                            case 0x5E: Order = BoatOrder.PlayerControlled; OneMove(BackwardRight); break;
-                            case 0x5F: Order = BoatOrder.PlayerControlled; OneMove(BackwardLeft); break;
-                            case 0x49:
-                            case 0x65: Order = BoatOrder.PlayerControlled; StartTurn(2, true); break; // turn right
-                            case 0x4A:
-                            case 0x66: Order = BoatOrder.PlayerControlled; StartTurn(-2, true); break; // turn left
-                            case 0x67: Order = BoatOrder.PlayerControlled; StartTurn(-4, true); break; // turn around, come about
-                            case 0x68: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
-                            case 0x69: Order = BoatOrder.PlayerControlled; StopMove(true); break;
-                            case 0x6A: break; // Lower Anchor
+							/*                      case 0x45: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
+												  case 0x46: Order = BoatOrder.PlayerControlled; StartMove(Backward, true); break;
+												  case 0x47: Order = BoatOrder.PlayerControlled; StartMove(Left, true); break;
+												  case 0x48: Order = BoatOrder.PlayerControlled; StartMove(Right, true); break;
+												  case 0x4B: Order = BoatOrder.PlayerControlled; StartMove(ForwardLeft, true); break;
+												  case 0x4C: Order = BoatOrder.PlayerControlled; StartMove(ForwardRight, true); break;
+												  case 0x4D: Order = BoatOrder.PlayerControlled; StartMove(BackwardLeft, true); break;
+												  case 0x4E: Order = BoatOrder.PlayerControlled; StartMove(BackwardRight, true); break;
+												  case 0x4F: Order = BoatOrder.PlayerControlled; StopMove(true); break;
+												  case 0x50: Order = BoatOrder.PlayerControlled; StartMove(Left, false); break;
+												  case 0x51: Order = BoatOrder.PlayerControlled; StartMove(Right, false); break;
+												  case 0x52: Order = BoatOrder.PlayerControlled; StartMove(Forward, false); break;
+												  case 0x53: Order = BoatOrder.PlayerControlled; StartMove(Backward, false); break;
+												  case 0x54: Order = BoatOrder.PlayerControlled; StartMove(ForwardLeft, false); break;
+												  case 0x55: Order = BoatOrder.PlayerControlled; StartMove(ForwardRight, false); break;
+												  case 0x56: Order = BoatOrder.PlayerControlled; StartMove(BackwardRight, false); break;
+												  case 0x57: Order = BoatOrder.PlayerControlled; StartMove(BackwardLeft, false); break;
+												  case 0x58: Order = BoatOrder.PlayerControlled; OneMove(Left); break;
+												  case 0x59: Order = BoatOrder.PlayerControlled; OneMove(Right); break;
+												  case 0x5A: Order = BoatOrder.PlayerControlled; OneMove(Forward); break;
+												  case 0x5B: Order = BoatOrder.PlayerControlled; OneMove(Backward); break;
+												  case 0x5C: Order = BoatOrder.PlayerControlled; OneMove(ForwardLeft); break;
+												  case 0x5D: Order = BoatOrder.PlayerControlled; OneMove(ForwardRight); break;
+												  case 0x5E: Order = BoatOrder.PlayerControlled; OneMove(BackwardRight); break;
+												  case 0x5F: Order = BoatOrder.PlayerControlled; OneMove(BackwardLeft); break;
+												  case 0x49:
+												  case 0x65: Order = BoatOrder.PlayerControlled; StartTurn(2, true); break; // turn right
+												  case 0x4A:
+												  case 0x66: Order = BoatOrder.PlayerControlled; StartTurn(-2, true); break; // turn left
+												  case 0x67: Order = BoatOrder.PlayerControlled; StartTurn(-4, true); break; // turn around, come about
+												  case 0x68: Order = BoatOrder.PlayerControlled; StartMove(Forward, true); break;
+												case 0x69: Order = BoatOrder.PlayerControlled; StopMove(true); break;
+							*/
+							case 0x6A: break; // Lower Anchor
                             case 0x6B: break; // Raise Anchor
                             case 0x60: GiveNavPoint(); break; // nav
                             case 0x61: NextNavPoint = 0; StartCourse(false, true); break; // start

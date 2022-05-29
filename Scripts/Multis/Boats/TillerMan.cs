@@ -8,7 +8,8 @@ namespace Server.Items
 {
     public class TillerMan : Item
     {
-        public virtual bool Babbles => true;
+		public static double CartographyRequirement => 50.0;
+		public virtual bool Babbles => true;
         public BaseBoat Boat { get; private set; }
         private DateTime _NextBabble;
 
@@ -72,6 +73,7 @@ namespace Server.Items
         }
 
         public override void OnDoubleClick(Mobile from)
+			
         {
             from.RevealingAction();
 
@@ -90,7 +92,12 @@ namespace Server.Items
             {
                 from.SendLocalizedMessage(1116615); // You cannot pilot a ship while flying!
             }
-            else if (from.Mounted && !(mount is BoatMountItem))
+		    else if (from.Skills[SkillName.Cartography].Base < CartographyRequirement)
+				{
+				from.SendMessage("Vous n'êtes pas assez doué en cartographie pour pouvoir naviguer!"); // Cartographie < 50 
+			}
+
+			else if (from.Mounted && !(mount is BoatMountItem))
             {
                 from.SendLocalizedMessage(1010097); // You cannot use this while mounted or flying.
             }

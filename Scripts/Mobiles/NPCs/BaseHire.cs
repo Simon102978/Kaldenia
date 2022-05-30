@@ -7,128 +7,162 @@ using System.Linq;
 
 namespace Server.Mobiles
 {
-    public class BaseHire : BaseCreature
-    {
-        public override bool IsBondable => false;
-        public override bool CanAutoStable => false;
-        public override bool CanDetectHidden => false;
-        public override bool KeepsItemsOnDeath => true;
+	public class BaseHire : BaseCreature
+	{
+		public override bool IsBondable => false;
+		public override bool CanAutoStable => false;
+		public override bool CanDetectHidden => false;
+		public override bool KeepsItemsOnDeath => true;
 
-        private bool _IsHired;
+		private bool _IsHired;
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public DateTime NextPay { get; set; }
+		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime NextPay { get; set; }
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public int Pay => PerDayCost();
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int Pay => PerDayCost();
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public int HoldGold { get; set; }
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int HoldGold { get; set; }
 
-        public int GoldOnDeath { get; set; }
+		public int GoldOnDeath { get; set; }
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public bool IsHired
-        {
-            get { return _IsHired; }
-            set
-            {
-                _IsHired = value;
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool IsHired
+		{
+			get { return _IsHired; }
+			set
+			{
+				_IsHired = value;
 
-                Delta(MobileDelta.Noto);
-                InvalidateProperties();
-            }
-        }
+				Delta(MobileDelta.Noto);
+				InvalidateProperties();
+			}
+		}
 
-        public BaseHire(AIType AI)
-            : base(AI, FightMode.Aggressor, 10, 1, 0.1, 4.0)
-        {
-            ControlSlots = 2;
-            HoldGold = 8;
-        }
+		public BaseHire(AIType AI)
+			: base(AI, FightMode.Aggressor, 10, 1, 0.1, 4.0)
+		{
 
-        public BaseHire()
-            : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.1, 4.0)
-        {
-            ControlSlots = 2;
-        }
+			Race.AddRace(this);
+			ControlSlots = 2;
+			HoldGold = 8;
+		}
 
-        public BaseHire(Serial serial)
-            : base(serial)
-        {
-        }
+		public BaseHire()
+			: base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.1, 4.0)
+		{
+			ControlSlots = 2;
+			Race.AddRace(this);
+		}
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
+		public BaseHire(Serial serial)
+			: base(serial)
+		{
+		}
 
-            writer.Write(1);// version
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
 
-            writer.Write(NextPay);
-            writer.Write(IsHired);
-            writer.Write(HoldGold);
-        }
+			writer.Write(1);// version
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
+			writer.Write(NextPay);
+			writer.Write(IsHired);
+			writer.Write(HoldGold);
+		}
 
-            int version = reader.ReadInt();
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
 
-            switch (version)
-            {
-                case 1:
-                    NextPay = reader.ReadDateTime();
-                    goto case 0;
-                case 0:
-                    IsHired = reader.ReadBool();
-                    HoldGold = reader.ReadInt();
-                    break;
-            }
+			int version = reader.ReadInt();
 
-            if (IsHired)
-            {
-                PayTimer.RegisterTimer(this);
-            }
-        }
+			switch (version)
+			{
+				case 1:
+					NextPay = reader.ReadDateTime();
+					goto case 0;
+				case 0:
+					IsHired = reader.ReadBool();
+					HoldGold = reader.ReadInt();
+					break;
+			}
 
-        public override bool OnBeforeDeath()
-        {
-            if (Backpack != null)
-            {
-                Item[] AllGold = Backpack.FindItemsByType(typeof(Gold), true);
+			if (IsHired)
+			{
+				PayTimer.RegisterTimer(this);
+			}
+		}
 
-                if (AllGold != null)
-                {
-                    foreach (Gold g in AllGold)
-                    {
-                        GoldOnDeath += g.Amount;
-                    }
-                }
-            }
+		public override bool OnBeforeDeath()
+		{
+			if (Backpack != null)
+			{
+				Item[] AllGold = Backpack.FindItemsByType(typeof(Gold), true);
 
-            return base.OnBeforeDeath();
-        }
+				if (AllGold != null)
+				{
+					foreach (Gold g in AllGold)
+					{
+						GoldOnDeath += g.Amount;
+					}
+				}
+			}
 
-        public override void Delete()
-        {
-            base.Delete();
+			return base.OnBeforeDeath();
+		}
 
-            PayTimer.RemoveTimer(this);
-        }
+		public override void Delete()
+		{
+			base.Delete();
 
-        public override void OnDeath(Container c)
-        {
-            if (GoldOnDeath > 0)
-            {
-                c.DropItem(new Gold(GoldOnDeath));
-            }
+			PayTimer.RemoveTimer(this);
+		}
 
-            base.OnDeath(c);
-        }
+		public override void OnDeath(Container c)
+		{
+			if (GoldOnDeath > 0)
+			{
+				c.DropItem(new Gold(GoldOnDeath));
+			}
 
-        #region [ GetOwner ]
-        public virtual Mobile GetOwner()
+			base.OnDeath(c);
+		}
+
+		public override bool AllowEquipFrom(Mobile from)
+		{
+			if (from == GetOwner())
+				return true;
+
+			return base.AllowEquipFrom(from);
+		}
+
+
+		public override bool CheckNonlocalLift(Mobile from, Item item)
+		{
+			if (IsOwner(from))
+			{
+				return true;
+			}
+
+			return base.CheckNonlocalLift(from, item);
+		}
+
+		public override bool IsSnoop(Mobile from)
+		{
+			return IsOwner(from);
+		}
+
+
+		public bool IsOwner(Mobile from)
+		{
+			return from == GetOwner();
+
+		}
+
+		#region [ GetOwner ]
+		public virtual Mobile GetOwner()
         {
             if (!Controlled)
             {

@@ -49,7 +49,7 @@ namespace Server.Mobiles
 
         private DateTime m_LastRestock;
 
-        public override bool CanTeach => true;
+        public override bool CanTeach => false;
 
         public override bool BardImmune => true;
 
@@ -317,6 +317,10 @@ namespace Server.Mobiles
                 Visible = false
             };
             AddItem(pack);
+
+
+
+			Race.AddRace(this);
 
             BribeMultiplier = Utility.Random(10);
 

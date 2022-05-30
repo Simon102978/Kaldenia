@@ -240,6 +240,9 @@ namespace Server.Mobiles
             Owner = owner;
             House = house;
 
+			Race.AddRace(this);
+	
+
             BankAccount = 0;
             HoldGold = 3;
 

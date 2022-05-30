@@ -33,9 +33,12 @@ namespace Server.Commands
 
                 try
                 {
-                    if (!(item is Backpack))
-                        from.PlaceInBackpack(item);
-                }
+                    if (!(item is Backpack) & (item.Movable))
+					{
+
+						from.PlaceInBackpack(item);
+					}
+				}
                 catch
                 {
                     from.SendMessage("L'item {0} n'a pas été déplacé dans votre sac à cause d'une erreur.");

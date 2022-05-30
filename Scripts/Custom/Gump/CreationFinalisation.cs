@@ -55,7 +55,21 @@ namespace Server.Gumps
 
 				from.Backpack.Delete();
 
+
+				var holding = from.Holding;
+
+				if (holding != null)
+				{
+					from.Holding.Delete();
+					from.Holding = null;
+
+				}
+
+
+
 				CharacterCreation.AddBackpack(from);
+
+				from.AddToBackpack(new Gold(500));
 
 				Point3D p = new Point3D();
 
@@ -83,6 +97,22 @@ namespace Server.Gumps
 			if (info.ButtonID == 2)
 			{
 				from.Blessed = true;
+				from.Backpack.Delete();
+
+				var holding = from.Holding;
+
+				if (holding != null)
+				{
+					from.Holding.Delete();
+					from.Holding = null;
+
+				}
+
+
+
+
+
+
 				from.MoveToWorld(new Point3D(6135, 3200, 55), Map.Felucca);
 			}
 

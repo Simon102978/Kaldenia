@@ -446,11 +446,11 @@ namespace Server.Engines.Harvest
 
                 if (check.Validate(tileID))
                     def = check;
-				else
+			/*	else
 				{
 					Console.WriteLine(tool.Name + "Tile non valide: " + tileID);
 
-				}
+				}*/
             }
 
             return def;

@@ -123,7 +123,7 @@ namespace Server.Engines.Harvest
               
             }
 
-            Console.WriteLine( Skill.ToString() + " Zone Harvest : Map = "+ map.ToString() +", X = " + x + ", Y = " + y );
+      //      Console.WriteLine( Skill.ToString() + " Zone Harvest : Map = "+ map.ToString() +", X = " + x + ", Y = " + y );
 
             return null;
 

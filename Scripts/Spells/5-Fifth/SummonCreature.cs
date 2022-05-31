@@ -82,7 +82,7 @@ namespace Server.Spells.Fifth
 
         public override TimeSpan GetCastDelay()
         {
-            return TimeSpan.FromTicks(base.GetCastDelay().Ticks * 5);
+            return TimeSpan.FromTicks(base.GetCastDelay().Ticks * 3);
         }
     }
 }

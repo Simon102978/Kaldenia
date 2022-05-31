@@ -110,8 +110,7 @@ namespace Server.Engines.Harvest
                 OnBadHarvestTarget(from, tool, toHarvest);
                 return;
             }
-
-            if (!def.Validate(tileID) && !def.ValidateSpecial(tileID))
+            else if (!def.Validate(tileID) && !def.ValidateSpecial(tileID))
             {
                 OnBadHarvestTarget(from, tool, toHarvest);
                 return;
@@ -119,9 +118,9 @@ namespace Server.Engines.Harvest
 
             if (!CheckRange(from, tool, def, map, loc, true))
                 return;
-            if (!CheckResources(from, tool, def, map, loc, true))
+            else if (!CheckResources(from, tool, def, map, loc, true))
                 return;
-            if (!CheckHarvest(from, tool, def, toHarvest))
+            else if (!CheckHarvest(from, tool, def, toHarvest))
                 return;
 
             if (SpecialHarvest(from, tool, def, map, loc))
@@ -134,8 +133,8 @@ namespace Server.Engines.Harvest
 
             HarvestVein vein = bank.Vein;
 
-            if (vein != null)
-                vein = MutateVein(from, tool, def, bank, toHarvest, vein);
+   /*         if (vein != null)
+                vein = MutateVein(from, tool, def, bank, toHarvest, vein);*/
 
             if (vein == null)
                 return;
@@ -152,8 +151,8 @@ namespace Server.Engines.Harvest
             {
                 type = GetResourceType(from, tool, def, map, loc, resource);
 
-                if (type != null)
-                    type = MutateType(type, from, tool, def, map, loc, resource);
+          /*      if (type != null)
+                    type = MutateType(type, from, tool, def, map, loc, resource);*/
 
                 if (type != null)
                 {
@@ -192,7 +191,7 @@ namespace Server.Engines.Harvest
                                 item.Amount = amount;
 
                             // Void Pool Rewards
-                            item.Amount += WoodsmansTalisman.CheckHarvest(from, type, this);
+                     //       item.Amount += WoodsmansTalisman.CheckHarvest(from, type, this);
                         }
 
                         if (from.AccessLevel == AccessLevel.Player)
@@ -289,7 +288,7 @@ namespace Server.Engines.Harvest
             }
             catch (Exception e)
             {
-                Diagnostics.ExceptionLogging.LogException(e);
+                Console.WriteLine(e);
                 return null;
             }
         }
@@ -360,7 +359,9 @@ namespace Server.Engines.Harvest
 
         public virtual HarvestResource MutateResource(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestVein vein, HarvestResource primary, HarvestResource fallback)
         {
-            if (vein.ChanceToFallback > (Utility.RandomDouble()))
+    //        bool racialBonus = def.RaceBonus && from.Race == Race.Elf;
+
+            if (vein.ChanceToFallback > (Utility.RandomDouble() + (/*racialBonus ? .20 :*/ 0)))
                 return fallback;
 
             double skillValue = from.Skills[def.Skill].Value;
@@ -385,27 +386,23 @@ namespace Server.Engines.Harvest
                 OnBadHarvestTarget(from, tool, toHarvest);
                 return false;
             }
-
-            if (!def.Validate(tileID) && !def.ValidateSpecial(tileID))
+            else if (!def.Validate(tileID) && !def.ValidateSpecial(tileID))
             {
                 from.EndAction(locked);
                 OnBadHarvestTarget(from, tool, toHarvest);
                 return false;
             }
-
-            if (!CheckRange(from, tool, def, map, loc, true))
+            else if (!CheckRange(from, tool, def, map, loc, true))
             {
                 from.EndAction(locked);
                 return false;
             }
-
-            if (!CheckResources(from, tool, def, map, loc, true))
+            else if (!CheckResources(from, tool, def, map, loc, true))
             {
                 from.EndAction(locked);
                 return false;
             }
-
-            if (!CheckHarvest(from, tool, def, toHarvest))
+            else if (!CheckHarvest(from, tool, def, toHarvest))
             {
                 from.EndAction(locked);
                 return false;
@@ -449,6 +446,11 @@ namespace Server.Engines.Harvest
 
                 if (check.Validate(tileID))
                     def = check;
+				else
+				{
+					Console.WriteLine(tool.Name + "Tile non valide: " + tileID);
+
+				}
             }
 
             return def;
@@ -492,9 +494,9 @@ namespace Server.Engines.Harvest
 
             if (!CheckRange(from, tool, def, map, loc, false))
                 return;
-            if (!CheckResources(from, tool, def, map, loc, false))
+            else if (!CheckResources(from, tool, def, map, loc, false))
                 return;
-            if (!CheckHarvest(from, tool, def, toHarvest))
+            else if (!CheckHarvest(from, tool, def, toHarvest))
                 return;
 
             object toLock = GetLock(from, tool, def, toHarvest);
@@ -523,7 +525,7 @@ namespace Server.Engines.Harvest
             {
                 StaticTarget obj = (StaticTarget)toHarvest;
 
-                tileID = (obj.ItemID & 0x3FFF) | 0x4000;
+                tileID = (obj.ItemID & 0x3FFF) /*| 0x4000*/;
                 map = from.Map;
                 loc = obj.Location;
             }
@@ -599,7 +601,7 @@ namespace Server.Engines.Harvest
             Map map = m.Map;
             toHarvest = null;
 
-            if (map == null || map == Map.Internal)
+            if (m == null || map == null || map == Map.Internal)
                 return false;
 
             for (int x = m.X - 1; x <= m.X + 1; x++)
@@ -745,12 +747,12 @@ namespace Server
 
         private static readonly Type[] _NotChoppables =
         {
-            typeof(CommodityDeedBox), typeof(ChinaCabinet), typeof(PieSafe), typeof(AcademicBookCase), typeof(JewelryBox),
-            typeof(WoodenBookcase), typeof(Countertop), typeof(Mailbox), typeof(DecorativeMagesCrystalBall), typeof(DecorativeMageThrone),
-            typeof(DecorativeMagicBookStand), typeof(DecorativeSpecimenShelve), typeof(Feedbag), typeof(ChestOfDrawers), typeof(BarrelMailbox),
-            typeof(DolphinMailbox), typeof(ScarecrowMailbox), typeof(SquirrelMailbox), typeof(FootedChestOfDrawers), typeof(CustomizableRoundedDoorMat),
-            typeof(CowStatue), typeof(DecorativeStableFencing), typeof(OrnateBedDeed), typeof(FourPostBedDeed), typeof(FormalDiningTableDeed)
-        };
+		   typeof(CommodityDeedBox), typeof(ChinaCabinet), typeof(PieSafe), typeof(AcademicBookCase), typeof(JewelryBox),
+			typeof(WoodenBookcase), typeof(Countertop), typeof(Mailbox), typeof(DecorativeMagesCrystalBall), typeof(DecorativeMageThrone),
+			typeof(DecorativeMagicBookStand), typeof(DecorativeSpecimenShelve), typeof(Feedbag), typeof(ChestOfDrawers), typeof(BarrelMailbox),
+			typeof(DolphinMailbox), typeof(ScarecrowMailbox), typeof(SquirrelMailbox), typeof(FootedChestOfDrawers), typeof(CustomizableRoundedDoorMat),
+			typeof(CowStatue), typeof(DecorativeStableFencing), typeof(OrnateBedDeed), typeof(FourPostBedDeed), typeof(FormalDiningTableDeed)
+		};
 
         public static bool Check(Item item)
         {
@@ -769,8 +771,8 @@ namespace Server
                 return true;
             }
 
-            if ((item as AddonComponent)?.Addon != null && ((AddonComponent)item).Addon.GetType().IsDefined(typeof(FurnitureAttribute), false))
-            {
+			if ((item as AddonComponent)?.Addon != null && ((AddonComponent)item).Addon.GetType().IsDefined(typeof(FurnitureAttribute), false))
+			{
                 return true;
             }
 

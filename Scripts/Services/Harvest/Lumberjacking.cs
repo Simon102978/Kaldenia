@@ -30,71 +30,71 @@ namespace Server.Engines.Harvest
             HarvestVein[] veins;
 
             #region Lumberjacking
-            HarvestDefinition lumber = new HarvestDefinition
-            {
+            HarvestDefinition lumber = new HarvestDefinition();
 
-                // Resource banks are every 4x3 tiles
-                BankWidth = 4,
-                BankHeight = 3,
+            // Resource banks are every 4x3 tiles
+            lumber.BankWidth = 1;
+            lumber.BankHeight = 1;
 
-                // Every bank holds from 20 to 45 logs
-                MinTotal = 20,
-                MaxTotal = 45,
+            // Every bank holds from 20 to 45 logs
+            lumber.MinTotal = 15;
+            lumber.MaxTotal = 30;
 
-                // A resource bank will respawn its content every 20 to 30 minutes
-                MinRespawn = TimeSpan.FromMinutes(20.0),
-                MaxRespawn = TimeSpan.FromMinutes(30.0),
+            // A resource bank will respawn its content every 20 to 30 minutes
+            lumber.MinRespawn = TimeSpan.FromMinutes(30.0);
+            lumber.MaxRespawn = TimeSpan.FromMinutes(60.0);
 
-                // Skill checking is done on the Lumberjacking skill
-                Skill = SkillName.Lumberjacking,
+            // Skill checking is done on the Lumberjacking skill
+            lumber.Skill = SkillName.Lumberjacking;
 
-                // Set the list of harvestable tiles
-                Tiles = m_TreeTiles,
+            // Set the list of harvestable tiles
+            lumber.Tiles = m_TreeTiles;
 
-                // Players must be within 2 tiles to harvest
-                MaxRange = 2,
+            // Players must be within 2 tiles to harvest
+            lumber.MaxRange = 1;
 
-                // Ten logs per harvest action
-                ConsumedPerHarvest = 10,
-                ConsumedPerFeluccaHarvest = 20,
+            // Ten logs per harvest action
+            lumber.ConsumedPerHarvest = 7;
+            lumber.ConsumedPerFeluccaHarvest = 7;
 
-                // The chopping effect
-                EffectActions = new int[] { 7 },
-                EffectSounds = new int[] { 0x13E },
-                EffectCounts = (new int[] { 1 }),
-                EffectDelay = TimeSpan.FromSeconds(1.6),
-                EffectSoundDelay = TimeSpan.FromSeconds(0.9),
+            // The chopping effect
+            lumber.EffectActions = new int[] { 7 };
+            lumber.EffectSounds = new int[] { 0x13E };
+            lumber.EffectCounts = (new int[] { 1 });
+            lumber.EffectDelay = TimeSpan.FromSeconds(1.6);
+            lumber.EffectSoundDelay = TimeSpan.FromSeconds(0.9);
 
-                NoResourcesMessage = 500493, // There's not enough wood here to harvest.
-                FailMessage = 500495, // You hack at the tree for a while, but fail to produce any useable wood.
-                OutOfRangeMessage = 500446, // That is too far away.
-                PackFullMessage = 500497, // You can't place any wood into your backpack!
-                ToolBrokeMessage = 500499 // You broke your axe.
-            };
+            lumber.NoResourcesMessage = 500493; // There's not enough wood here to harvest.
+            lumber.FailMessage = 500495; // You hack at the tree for a while, but fail to produce any useable wood.
+            lumber.OutOfRangeMessage = 500446; // That is too far away.
+            lumber.PackFullMessage = 500497; // You can't place any wood into your backpack!
+            lumber.ToolBrokeMessage = 500499; // You broke your axe.
 
-            res = new HarvestResource[]
+            res = HarvestZone.Resources;
+
+   /*         res = new HarvestResource[]
             {
                 new HarvestResource(00.0, 00.0, 100.0, 1072540, typeof(Log)),
-                new HarvestResource(65.0, 25.0, 105.0, 1072541, typeof(OakLog)),
+               new HarvestResource(65.0, 25.0, 105.0, 1072541, typeof(OakLog)),
                 new HarvestResource(80.0, 40.0, 120.0, 1072542, typeof(AshLog)),
                 new HarvestResource(95.0, 55.0, 135.0, 1072543, typeof(YewLog)),
                 new HarvestResource(100.0, 60.0, 140.0, 1072544, typeof(HeartwoodLog)),
                 new HarvestResource(100.0, 60.0, 140.0, 1072545, typeof(BloodwoodLog)),
                 new HarvestResource(100.0, 60.0, 140.0, 1072546, typeof(FrostwoodLog)),
-            };
+            };*/
 
             veins = new HarvestVein[]
             {
-                new HarvestVein(49.0, 0.0, res[0], null), // Ordinary Logs
-                new HarvestVein(30.0, 0.5, res[1], res[0]), // Oak
-                new HarvestVein(10.0, 0.5, res[2], res[0]), // Ash
-                new HarvestVein(05.0, 0.5, res[3], res[0]), // Yew
-                new HarvestVein(03.0, 0.5, res[4], res[0]), // Heartwood
-                new HarvestVein(02.0, 0.5, res[5], res[0]), // Bloodwood
-                new HarvestVein(01.0, 0.5, res[6], res[0]), // Frostwood
+				new HarvestVein(49.0, 0.0, res[9], null), // Ordinary Logs
+                new HarvestVein(30.0, 0.5, res[10], res[9]), // Oak
+                new HarvestVein(10.0, 0.5, res[11], res[9]), // Ash
+                new HarvestVein(05.0, 0.5, res[12], res[9]), // Yew
+                new HarvestVein(03.0, 0.5, res[13], res[9]), // Heartwood
+                new HarvestVein(02.0, 0.5, res[14], res[9]), // Bloodwood
+                new HarvestVein(01.0, 0.5, res[15], res[9]), // Frostwood
             };
 
-            lumber.BonusResources = new BonusHarvestResource[]
+     /*       lumber.BonusResources = new BonusHarvestResource[]
             {
                 new BonusHarvestResource(0, 82.0, null, null), //Nothing
                 new BonusHarvestResource(100, 10.0, 1072548, typeof(BarkFragment)),
@@ -103,13 +103,13 @@ namespace Server.Engines.Harvest
                 new BonusHarvestResource(100, 01.0, 1072549, typeof(ParasiticPlant)),
                 new BonusHarvestResource(100, 01.0, 1072551, typeof(BrilliantAmber)),
                 new BonusHarvestResource(100, 01.0, 1113756, typeof(CrystalShards), Map.TerMur),
-            };
+            };*/
 
             lumber.Resources = res;
             lumber.Veins = veins;
 
-            lumber.RaceBonus = true;
-            lumber.RandomizeVeins = true;
+      //      lumber.RaceBonus = true;
+            lumber.RandomizeVeins = false;
 
             m_Definition = lumber;
             Definitions.Add(lumber);
@@ -120,7 +120,7 @@ namespace Server.Engines.Harvest
         {
             Type newType = type;
 
-            if (tool is HarvestersAxe axe && axe.Charges > 0 || tool is HarvestersAxe gaxe && gaxe.Charges > 0)
+    /*        if (tool is HarvestersAxe && ((HarvestersAxe)tool).Charges > 0)
             {
                 if (type == typeof(Log))
                     newType = typeof(Board);
@@ -139,16 +139,9 @@ namespace Server.Engines.Harvest
 
                 if (newType != type)
                 {
-                    if (tool is HarvestersAxe)
-                    {
-                        ((HarvestersAxe)tool).Charges--;
-                    }
-                    else if (tool is HarvestersAxe)
-                    {
-                        ((HarvestersAxe)tool).Charges--;
-                    }
+                    ((HarvestersAxe)tool).Charges--;
                 }
-            }
+            }*/
 
             return newType;
         }
@@ -157,12 +150,12 @@ namespace Server.Engines.Harvest
         {
             if (item != null)
             {
-                if (item != null && item.GetType().IsSubclassOf(typeof(BaseWoodBoard)))
+         /*       if (item != null && item.GetType().IsSubclassOf(typeof(BaseWoodBoard)))
                 {
                     from.SendLocalizedMessage(1158776); // The axe magically creates boards from your logs.
                     return;
                 }
-                else
+                else*/
                 {
                     foreach (HarvestResource res in m_Definition.Resources.Where(r => r.Types != null))
                     {
@@ -208,7 +201,7 @@ namespace Server.Engines.Harvest
             #region Void Pool Items
             HarvestMap hmap = HarvestMap.CheckMapOnHarvest(from, loc, def);
 
-            if (hmap != null && hmap.Resource >= CraftResource.RegularWood && hmap.Resource <= CraftResource.Frostwood)
+     /*       if (hmap != null && hmap.Resource >= CraftResource.RegularWood && hmap.Resource <= CraftResource.Frostwood)
             {
                 hmap.UsesRemaining--;
                 hmap.InvalidateProperties();
@@ -217,7 +210,7 @@ namespace Server.Engines.Harvest
 
                 if (info != null)
                     return info.ResourceTypes[0];
-            }
+            }*/
             #endregion
 
             return base.GetResourceType(from, tool, def, map, loc, resource);
@@ -277,8 +270,12 @@ namespace Server.Engines.Harvest
             0x4D97, 0x4D99, 0x4D9A, 0x4D9B, 0x4D9D, 0x4D9E, 0x4D9F, 0x4DA1,
             0x4DA2, 0x4DA3, 0x4DA5, 0x4DA6, 0x4DA7, 0x4DA9, 0x4DAA, 0x4DAB,
             0x52BE, 0x52BF, 0x52C0, 0x52C1, 0x52C2, 0x52C3, 0x52C4, 0x52C5,
-            0x52C6, 0x52C7
-        };
+            0x52C6, 0x52C7,
+
+			3480, 3288,3302, 3275, 3299,3230, 3296, 3286,  3283,  3293,  3476, 3287, 3304,
+			3280,3274, 3395, 3461, 3160, 3326,3323,3320, 3440,3395, 3423,3326,3329,3234,3242,3221,3222,3383,
+			3277, 4794,4792,4795
+		};
         #endregion
     }
 }

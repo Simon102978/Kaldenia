@@ -68,29 +68,118 @@ namespace Server.Engines.Harvest
             banks.TryGetValue(key, out HarvestBank bank);
 
             if (bank == null)
-                banks[key] = bank = new HarvestBank(this, GetVeinAt(map, x, y));
+            {
+                HarvestZone zone = GetZoneAt(map, x * BankWidth, y * BankHeight);
+
+                if (zone != null)
+                {
+                    banks[key] = bank = new HarvestBank(this, zone);
+                }
+                else
+                {
+                    banks[key] = bank = new HarvestBank(this);  
+                }
+
+           
+            }
+                
 
             return bank;
         }
 
+        public HarvestZone GetZoneAt(Map map, int x, int y)
+        {
+
+        /*    if (Skill == SkillName.Fishing)
+            {
+                return null;
+            }*/
+
+            
+
+            HarvestZone zone;
+
+            for (int i = 0; i < HarvestZone.HarvestZones.Count; ++i)
+            {
+                zone = (HarvestZone)HarvestZone.HarvestZones[i];
+
+
+           
+                    if (zone != null && zone.CheckValide(Skill) && zone.Map == map)
+                    {
+                        foreach (Rectangle3D rect in zone.Area)
+                        {
+                            Rectangle2D rectangle = new Rectangle2D((IPoint2D)(rect.Start), (IPoint2D)(rect.End));
+
+                            if (rectangle.Contains(new Point2D(x, y)))
+                            {
+                                //from.SendMessage(zone.GetType().Name);
+                                return zone;
+                            }
+                        }
+                    }
+                
+
+              
+            }
+
+            Console.WriteLine( Skill.ToString() + " Zone Harvest : Map = "+ map.ToString() +", X = " + x + ", Y = " + y );
+
+            return null;
+
+
+        }
+
+
+
         public HarvestVein GetVeinAt(Map map, int x, int y)
         {
-            if (Veins.Length == 1)
+            if (Skill == SkillName.Mining || Skill == SkillName.Lumberjacking || Skill == SkillName.Fishing)
+            {
+                HarvestZone zone =   GetZoneAt(map, x, y);
+
+                if (zone != null)
+                {
+                    return zone.RandomVein();
+                }
+
                 return Veins[0];
 
-            double randomValue;
-
-            if (RandomizeVeins)
-            {
-                randomValue = Utility.RandomDouble();
-            }
-            else
-            {
-                Random random = new Random((x * 17) + (y * 11) + (map.MapID * 3));
-                randomValue = random.NextDouble();
             }
 
-            return GetVeinFrom(randomValue);
+
+
+            
+                if (Veins.Length == 1)
+                    return Veins[0];
+
+                double randomValue;
+
+                if (RandomizeVeins)
+                {
+                    randomValue = Utility.RandomDouble();
+                }
+                else
+                {
+                    Random random = new Random((x * 17) + (y * 11) + (map.MapID * 3));
+                    randomValue = random.NextDouble();
+                }
+
+                return GetVeinFrom(randomValue); 
+            
+
+
+
+
+
+
+
+
+
+
+
+
+           
         }
 
         public HarvestVein GetVeinFrom(double randomValue)
@@ -135,8 +224,13 @@ namespace Server.Engines.Harvest
             {
                 bool contains = false;
 
-                for (int i = 0; !contains && i < Tiles.Length; i += 2)
-                    contains = tileID >= Tiles[i] && tileID <= Tiles[i + 1];
+                //  for (int i = 0; !contains && i < Tiles.Length; i += 2)
+                //    contains = tileID >= Tiles[i] && tileID <= Tiles[i + 1];
+
+                for (int i = 0; !contains && i < Tiles.Length; i++)
+                {
+                    contains = tileID == Tiles[i];
+                }
 
                 return contains;
             }

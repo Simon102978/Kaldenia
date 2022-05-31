@@ -9,14 +9,27 @@ namespace Server.Engines.Harvest
         private int m_Current;
         private DateTime m_NextRespawn;
         private HarvestVein m_Vein, m_DefaultVein;
-        public HarvestBank(HarvestDefinition def, HarvestVein defaultVein)
+        private HarvestZone m_Zone;
+
+        public HarvestBank(HarvestDefinition def, HarvestZone zone = null)
         {
             m_Maximum = Utility.RandomMinMax(def.MinTotal, def.MaxTotal);
             m_Current = m_Maximum;
-            m_DefaultVein = defaultVein;
-            m_Vein = m_DefaultVein;
-
+            m_Zone = zone;
             m_Definition = def;
+
+            if (zone != null)
+            {
+                m_DefaultVein = m_Zone.RandomVein();
+            }
+            else
+            {
+                m_DefaultVein = m_Definition.Veins[0];
+            }
+
+            m_Vein = m_DefaultVein;
+            
+        
         }
 
         public HarvestDefinition Definition => m_Definition;
@@ -55,12 +68,22 @@ namespace Server.Engines.Harvest
 
             m_Current = m_Maximum;
 
-            if (m_Definition.RandomizeVeins)
+            if (m_Zone != null)
             {
-                m_DefaultVein = m_Definition.GetVeinFrom(Utility.RandomDouble());
+                m_Vein = m_Zone.RandomVein();
+            }
+            else
+            {         
+             /*   if (m_Definition.RandomizeVeins)
+                {
+                    m_DefaultVein = m_Definition.GetVeinFrom(Utility.RandomDouble());
+                }*/
+
+                m_Vein = m_DefaultVein;
             }
 
-            m_Vein = m_DefaultVein;
+
+
         }
 
         public void Consume(int amount, Mobile from)
@@ -76,7 +99,8 @@ namespace Server.Engines.Harvest
                 m_Current = m_Maximum - amount;
 
                 double minutes = min + (rnd * (max - min));
-
+    /*            if (m_Definition.RaceBonus && from.Race == Race.Elf)
+                    minutes *= .75;	//25% off the time.  */
 
                 m_NextRespawn = DateTime.UtcNow + TimeSpan.FromMinutes(minutes);
             }

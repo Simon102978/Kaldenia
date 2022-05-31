@@ -67,7 +67,7 @@ namespace Server.Items
                 return;
             }
 
-            HarvestBank bank = def.GetBank(map, loc.X, loc.Y);
+            HarvestBank bank = def.GetBank(from, map, loc.X, loc.Y);
 
             if (bank == null)
             {

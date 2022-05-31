@@ -19,13 +19,13 @@ namespace Server.Engines.Harvest
             //            Map = Map.Ilshenar;
             //            Map = Map.Trammel;
 
-                          Area.Add(new Rectangle3D(new Point3D(744, 751, 0), new Point3D(771, 736, 0)));
-            //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
-            //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
-            //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
-            //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+                          Area.Add(new Rectangle3D(new Point3D(730,738 , 0), new Point3D(776, 751, 0))); 
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
 
-            Veins = new HarvestVein[]
+			Veins = new HarvestVein[]
                 {
 					new HarvestVein( 60.0, 0.0, Resources[0], null ), // Iron
 	   			//	new HarvestVein( 40.0, 0.0, Resources[1], Resources[0]), // DullCopperOre - 65 

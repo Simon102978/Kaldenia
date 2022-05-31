@@ -55,7 +55,7 @@ namespace Server.Engines.Harvest
 
         public virtual bool CheckResources(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, bool timed)
         {
-            HarvestBank bank = def.GetBank(map, loc.X, loc.Y);
+            HarvestBank bank = def.GetBank(from,map, loc.X, loc.Y);
             bool available = bank != null && bank.Current >= def.ConsumedPerHarvest;
 
             if (!available)
@@ -126,7 +126,7 @@ namespace Server.Engines.Harvest
             if (SpecialHarvest(from, tool, def, map, loc))
                 return;
 
-            HarvestBank bank = def.GetBank(map, loc.X, loc.Y);
+            HarvestBank bank = def.GetBank(from, map, loc.X, loc.Y);
 
             if (bank == null)
                 return;

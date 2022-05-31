@@ -19,7 +19,7 @@ namespace Server.Engines.Harvest
             //            Map = Map.Ilshenar;
             //            Map = Map.Trammel;
 
-                          Area.Add(new Rectangle3D(new Point3D(2113, 1196, 0), new Point3D(2206, 1201, 0)));
+                          Area.Add(new Rectangle3D(new Point3D(2113, 1196, 0), new Point3D(2206, 1205, 0)));
             //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
             //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
             //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));

@@ -160,7 +160,7 @@ namespace Server.Mobiles
             if (!def.Validate(tileId))
                 return;
 
-            HarvestBank bank = def.GetBank(map, loc.X, loc.Y);
+            HarvestBank bank = def.GetBank(this, map, loc.X, loc.Y);
 
             if (bank == null || bank.Current < def.ConsumedPerHarvest)
                 return;

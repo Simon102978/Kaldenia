@@ -51,7 +51,7 @@ namespace Server.Engines.Harvest
                 from.SendMessage((string)message);
         }
 
-        public HarvestBank GetBank(Map map, int x, int y)
+        public HarvestBank GetBank(Mobile from, Map map, int x, int y)
         {
             if (map == null || map == Map.Internal)
                 return null;
@@ -69,7 +69,7 @@ namespace Server.Engines.Harvest
 
             if (bank == null)
             {
-                HarvestZone zone = GetZoneAt(map, x * BankWidth, y * BankHeight);
+                HarvestZone zone = GetZoneAt(from, map, x * BankWidth, y * BankHeight);
 
                 if (zone != null)
                 {
@@ -87,13 +87,13 @@ namespace Server.Engines.Harvest
             return bank;
         }
 
-        public HarvestZone GetZoneAt(Map map, int x, int y)
+        public HarvestZone GetZoneAt(Mobile from, Map map, int x, int y)
         {
 
-        /*    if (Skill == SkillName.Fishing)
+            if (Skill == SkillName.Fishing)
             {
                 return null;
-            }*/
+            }
 
             
 
@@ -113,7 +113,11 @@ namespace Server.Engines.Harvest
 
                             if (rectangle.Contains(new Point2D(x, y)))
                             {
-                                //from.SendMessage(zone.GetType().Name);
+								if (from.AccessLevel > AccessLevel.Player)
+								{
+								from.SendMessage("Zone : " + zone.GetType().Name);
+								}
+                  
                                 return zone;
                             }
                         }
@@ -123,7 +127,13 @@ namespace Server.Engines.Harvest
               
             }
 
-      //      Console.WriteLine( Skill.ToString() + " Zone Harvest : Map = "+ map.ToString() +", X = " + x + ", Y = " + y );
+			if (from.AccessLevel > AccessLevel.Player)
+			{
+				from.SendMessage("Zone : Sans Zone");
+
+			}
+
+      
 
             return null;
 
@@ -131,7 +141,7 @@ namespace Server.Engines.Harvest
         }
 
 
-
+/*
         public HarvestVein GetVeinAt(Map map, int x, int y)
         {
             if (Skill == SkillName.Mining || Skill == SkillName.Lumberjacking || Skill == SkillName.Fishing)
@@ -181,7 +191,7 @@ namespace Server.Engines.Harvest
 
            
         }
-
+*/
         public HarvestVein GetVeinFrom(double randomValue)
         {
             if (Veins.Length == 1)

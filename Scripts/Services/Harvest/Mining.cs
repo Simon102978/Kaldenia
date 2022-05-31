@@ -401,7 +401,7 @@ namespace Server.Engines.Harvest
         #region High Seas
         public override bool SpecialHarvest(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc)
         {
-            HarvestBank bank = def.GetBank(map, loc.X, loc.Y);
+            HarvestBank bank = def.GetBank(from, map, loc.X, loc.Y);
 
             if (bank == null)
                 return false;
@@ -529,6 +529,7 @@ namespace Server.Engines.Harvest
 			575, 576, 577, 578, 579, 581, 582, 583, 584, 585,
 			586, 587, 588, 589, 590, 591, 592, 593, 594, 595,
 			596, 597, 598, 599, 600, 601, 610, 611, 612, 613,
+			1339,1340,1341,1342,
 			1010, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748, 1749,
 			1750, 1751, 1752, 1753, 1754, 1755, 1756, 1757, 1771, 1772,
 			1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782,

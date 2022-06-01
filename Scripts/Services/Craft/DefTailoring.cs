@@ -532,7 +532,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(AbyssalCloth), 1113350, 6, 1044253);
             ForceNonExceptional(index);
 
-            index = AddCraft(typeof(GuildedKilt), "Haut", 1109619, 82.8, 97.8, typeof(Cloth), 1044455, 8, 1044287);
+    /*        index = AddCraft(typeof(GuildedKilt), "Haut", "Kilt", 82.8, 97.8, typeof(Cloth), 1044455, 8, 1044287);
             AddRecipe(index, (int)TailorRecipe.GuildedKilt);
 
             index = AddCraft(typeof(CheckeredKilt), "Haut", 1109620, 41.4, 56.4, typeof(Cloth), 1044455, 8, 1044287);
@@ -546,7 +546,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(EveningGown), "Haut", 1109625, 75, 90.0, typeof(Cloth), 1044455, 18, 1044287);
             AddRecipe(index, (int)TailorRecipe.EveningGown);
-
+	*/
             #endregion
 
             #region Misc

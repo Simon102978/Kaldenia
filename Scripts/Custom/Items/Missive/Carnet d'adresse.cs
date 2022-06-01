@@ -249,7 +249,9 @@ namespace Server.Items
         {
             if (IsChildOf(from.Backpack))
             {
-                from.SendGump(new CarnetAdresseGump(from, this));
+				from.CloseGump(typeof(CarnetAdresseGump));
+
+				from.SendGump(new CarnetAdresseGump(from, this));
             }
             else
             {

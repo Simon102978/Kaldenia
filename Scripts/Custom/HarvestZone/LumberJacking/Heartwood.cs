@@ -33,7 +33,7 @@ namespace Server.Engines.Harvest
 		//			new HarvestVein( 10.0, 0.0, Resources[10], Resources[9]), // OakLog
 		//			new HarvestVein( 10.0, 0.0, Resources[11], Resources[9]), // AshLog 
 		//			new HarvestVein( 70.0, 0.0, Resources[12], Resources[9]), // YewLog 
-					new HarvestVein( 10.0, 0.0, Resources[13], Resources[9]), // HeartwoodLog 
+					new HarvestVein( 70.0, 0.0, Resources[13], Resources[9]), // HeartwoodLog 
 		//			new HarvestVein( 70.0, 0.0, Resources[14], Resources[9]), // BloodwoodLog 
 		//			new HarvestVein( 10.0, 0.0, Resources[15], Resources[9]), // FrostwoodLog 
 

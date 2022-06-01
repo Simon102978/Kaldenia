@@ -21,7 +21,7 @@ namespace Server.Engines.Harvest
 //            Map = Map.Trammel;
 
 
-              Area.Add(new Rectangle3D(new Point3D(1896,227 , 0), new Point3D(2589 ,227, 0)));
+              Area.Add(new Rectangle3D(new Point3D(1896,227 , 0), new Point3D(2589 ,311, 0)));
 //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
 //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
 //            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));

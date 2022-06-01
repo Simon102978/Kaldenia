@@ -21,13 +21,14 @@ namespace Server.Engines.Harvest
 //            Map = Map.Trammel;
 
 
-              Area.Add(new Rectangle3D(new Point3D(3226, 453, 0), new Point3D(3525 , 384, 0)));
-//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
-//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
-//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
-//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+              Area.Add(new Rectangle3D(new Point3D(3320, 264, 0), new Point3D(3584 , 828, 0)));
+			Area.Add(new Rectangle3D(new Point3D(3216, 360, 0), new Point3D(3424, 536, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
+			//            Area.Add(new Rectangle3D(new Point3D(0, 0, 0), new Point3D(9999, 9999, 0)));
 
-            Veins = new HarvestVein[]
+			Veins = new HarvestVein[]
                 {
 					new HarvestVein( 30.0, 0.0, Resources[9], null ), // Log 
 		//			new HarvestVein( 10.0, 0.0, Resources[10], Resources[9]), // OakLog

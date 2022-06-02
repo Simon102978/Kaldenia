@@ -85,7 +85,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(SeaChart), 1044448, 1015232, 35.0, 95.0, typeof(BlankMap), 1044449, 1, 1044450);
             AddCraft(typeof(WorldMap), 1044448, 1015233, 39.5, 99.5, typeof(BlankMap), 1044449, 1, 1044450);
 
-            int index = AddCraft(typeof(TatteredWallMapSouth), 1044448, 1072891, 90.0, 150.0, typeof(TreasureMap), 1073494, 10, 1073495);
+  /*          int index = AddCraft(typeof(TatteredWallMapSouth), 1044448, 1072891, 90.0, 150.0, typeof(TreasureMap), 1073494, 10, 1073495);
             AddRes(index, typeof(TreasureMap), 1073498, 5, 1073499);
             AddRes(index, typeof(TreasureMap), 1073500, 3, 1073501);
             AddRes(index, typeof(TreasureMap), 1073502, 1, 1073503);
@@ -103,6 +103,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(StarChart), 1044448, 1158493, 0.0, 60.0, typeof(BlankMap), 1044449, 1, 1044450);
             SetForceSuccess(index, 75);
+  */
         }
 
         public int ConsumeTatteredWallMapRes(Mobile from, ConsumeType type)

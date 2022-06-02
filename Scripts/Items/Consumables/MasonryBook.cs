@@ -11,6 +11,7 @@ namespace Server.Items
             : base(0xFBE)
         {
             Weight = 1.0;
+			Name = "Livre du tailleur de pierre";
         }
 
         public MasonryBook(Serial serial)

@@ -338,9 +338,12 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(SweetDough), 1044495, 1041340, 10.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
             AddRes(index, typeof(JarHoney), 1044472, 1, 1044253);
-            ////AddRecipe(index, (int)CookRecipesExp.SweetDough);
+			////AddRecipe(index, (int)CookRecipesExp.SweetDough);
+			
+			index = AddCraft(typeof(PotatoStrings), 1044495, "Potato Strings", 90.0, 100.0, typeof(Potato), "Potato", 1, 1044253);
+			SetNeedOven(index, true);
 
-            if (Core.ML)
+			if (Core.ML)
             {
                 index = AddCraft(typeof(CocoaButter), 1044495, 1079998, 15.0, 100.0, typeof(CocoaPulp), 1080530, 1, 1044253);
                 ////AddRecipe(index, (int)CookRecipesExp.CocoaButter);
@@ -1277,8 +1280,7 @@ namespace Server.Engines.Craft
             //AddRecipe(index, (int)CookRecipesExp.BlackrockStew);
             ForceNonExceptional(index);
 
-            index = AddCraft(typeof(PotatoStrings), "Food", "Potato Strings", 90.0, 100.0, typeof(Potato), "Potato", 1, 1044253);
-            SetNeedOven(index, true);
+           
 
             index = AddCraft(typeof(FriedEggs), 1044498, 1022486, 90.0, 100.0, typeof(Eggs), 1044477, 1, 1044253);
             SetNeedHeat(index, true);
@@ -1443,7 +1445,7 @@ namespace Server.Engines.Craft
             SetNeedOven(index, true);
             #endregion
 
-            #region Begin Chocolatiering
+        /*    #region Begin Chocolatiering
             if (Core.ML)
             {
                 index = AddCraft(typeof(DarkChocolate), 1080001, 1079994, 15.0, 100.0, typeof(SackOfSugar), 1079997, 1, 1044253);
@@ -1465,30 +1467,31 @@ namespace Server.Engines.Craft
                 SetBeverageType(index, BeverageType.Milk);
                 SetItemHue(index, 0x47E);
             }
-            #endregion/* End Chocolatiering */
+			#endregion End Chocolatiering */
+			
+			/*      #region Begin Enchanted
+				  if (Core.ML)
+				  {
+					  index = AddCraft(typeof(FoodEngraver), 1073108, 1072951, 75.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
+					  AddRes(index, typeof(JarHoney), 1044472, 1, 1044253);
 
-            #region Begin Enchanted
-            if (Core.ML)
-            {
-                index = AddCraft(typeof(FoodEngraver), 1073108, 1072951, 75.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
-                AddRes(index, typeof(JarHoney), 1044472, 1, 1044253);
+					  index = AddCraft(typeof(EnchantedApple), 1073108, 1072952, 60.0, 110.0, typeof(Apple), 1044479, 1, 1044253);
+					  AddRes(index, typeof(GreaterHealPotion), 1073467, 1, 1044253);
 
-                index = AddCraft(typeof(EnchantedApple), 1073108, 1072952, 60.0, 110.0, typeof(Apple), 1044479, 1, 1044253);
-                AddRes(index, typeof(GreaterHealPotion), 1073467, 1, 1044253);
+					  index = AddCraft(typeof(GrapesOfWrath), 1073108, 1072953, 95.0, 145.0, typeof(Grapes), 1073468, 1, 1044253);
+					  AddRes(index, typeof(GreaterStrengthPotion), 1073466, 1, 1044253);
 
-                index = AddCraft(typeof(GrapesOfWrath), 1073108, 1072953, 95.0, 145.0, typeof(Grapes), 1073468, 1, 1044253);
-                AddRes(index, typeof(GreaterStrengthPotion), 1073466, 1, 1044253);
-
-                index = AddCraft(typeof(FruitBowl), 1073108, 1072950, 55.0, 105.0, typeof(EmptyWoodenBowl), 1073472, 1, 1044253);
-                AddRes(index, typeof(Pear), 1044481, 3, 1044253);
-                AddRes(index, typeof(Apple), 1044479, 3, 1044253);
-                AddRes(index, typeof(Banana), 1073470, 3, 1044253);
-            }
-            /* End Enchanted */
-            #endregion
-
-            #region High Seas
-            if (Core.HS)
+					  index = AddCraft(typeof(FruitBowl), 1073108, 1072950, 55.0, 105.0, typeof(EmptyWoodenBowl), 1073472, 1, 1044253);
+					  AddRes(index, typeof(Pear), 1044481, 3, 1044253);
+					  AddRes(index, typeof(Apple), 1044479, 3, 1044253);
+					  AddRes(index, typeof(Banana), 1073470, 3, 1044253);
+				  }
+				   End Enchanted 
+				#endregion
+			*/
+		
+			#region High Seas
+			if (Core.HS)
             {
                 // Fish Oil Flask ( Oléo de peixe )
                 index = AddCraft(typeof(FishOil), 1044496, 1150863, 60.0, 120.0, typeof(BaseBeverage), 1046458, 1, 1044253);

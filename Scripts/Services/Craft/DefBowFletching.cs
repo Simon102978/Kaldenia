@@ -106,9 +106,9 @@ namespace Server.Engines.Craft
             int index = -1;
 
             // Materials
-            index = AddCraft(typeof(ElvenFletching), 1044457, 1113346, 90.0, 130.0, typeof(Feather), 1044562, 20, 1044563);
+  /*          index = AddCraft(typeof(ElvenFletching), 1044457, 1113346, 90.0, 130.0, typeof(Feather), 1044562, 20, 1044563);
             AddRes(index, typeof(FaeryDust), 1113358, 1, 1044253);
-
+  */
             AddCraft(typeof(Kindling), 1044457, 1023553, 0.0, 00.0, typeof(Board), 1044041, 1, 1044351);
 
             index = AddCraft(typeof(Shaft), 1044457, 1027124, 0.0, 40.0, typeof(Board), 1044041, 1, 1044351);
@@ -122,14 +122,14 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(Bolt), 1044565, 1027163, 0.0, 40.0, typeof(Shaft), 1044560, 1, 1044561);
             AddRes(index, typeof(Feather), 1044562, 1, 1044563);
             SetUseAllRes(index, true);
-
+/*
             index = AddCraft(typeof(FukiyaDarts), 1044565, 1030246, 50.0, 73.8, typeof(Board), 1044041, 1, 1044351);
             SetUseAllRes(index, true);
-
+*/
             // Weapons
             AddCraft(typeof(Bow), 1044566, 1025042, 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
-            AddCraft(typeof(Crossbow), 1044566, 1023919, 60.0, 100.0, typeof(Board), 1044041, 7, 1044351);
-            AddCraft(typeof(HeavyCrossbow), 1044566, 1025117, 80.0, 120.0, typeof(Board), 1044041, 10, 1044351);
+            AddCraft(typeof(Crossbow), 1044566, 1023919, 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
+            AddCraft(typeof(HeavyCrossbow), 1044566, 1025117, 45.0, 65.0, typeof(Board), 1044041, 10, 1044351);
 
 
 
@@ -139,7 +139,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(Lumitrait), 1044566, "Lumitrait", 80.0, 120.0, typeof(Board), 1044041, 10, 1044351);
 			AddCraft(typeof(ArbaletteChasse), 1044566, "Arbaletes de chasse", 80.0, 120.0, typeof(Board), 1044041, 10, 1044351);
 
-			AddCraft(typeof(Legarc), 1044566, "Legarc", 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
+			AddCraft(typeof(Legarc), 1044566, "Legarc", 60.0, 80.0, typeof(Board), 1044041, 7, 1044351);
 			AddCraft(typeof(Tarkarc), 1044566, "Arc court renforcit", 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
 			AddCraft(typeof(Souplecorde), 1044566, "Souplecorde", 70.0, 110.0, typeof(Board), 1044041, 7, 1044351);
 			AddCraft(typeof(Sombrevent), 1044566, "Sombrevent", 70.0, 110.0, typeof(Board), 1044041, 7, 1044351);
@@ -153,7 +153,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(ElvenCompositeLongbow), 1044566, 1031562, 95.0, 145.0, typeof(Board), 1044041, 20, 1044351);
 
-            index = AddCraft(typeof(MagicalShortbow), 1044566, 1031551, 85.0, 135.0, typeof(Board), 1044041, 15, 1044351);
+            index = AddCraft(typeof(MagicalShortbow), 1044566, 1031551, 90.0, 135.0, typeof(Board), 1044041, 15, 1044351);
 
   /*          index = AddCraft(typeof(BlightGrippedLongbow), 1044566, 1072907, 75.0, 125.0, typeof(Board), 1044041, 20, 1044351);
             AddRes(index, typeof(LardOfParoxysmus), 1032681, 1, 1053098);

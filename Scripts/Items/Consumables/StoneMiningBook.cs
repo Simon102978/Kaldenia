@@ -11,6 +11,7 @@ namespace Server.Items
             : base(0xFBE)
         {
             Weight = 1.0;
+			Name = "Livre du Mineur de Granite";
         }
 
         public StoneMiningBook(Serial serial)

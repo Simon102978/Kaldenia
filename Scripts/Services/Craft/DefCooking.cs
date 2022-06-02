@@ -133,7 +133,7 @@ namespace Server.Engines.Craft
             SetItemHue(index, 0x46A);
             SetNeedOven(index, true);
 
-            index = AddCraft(typeof(WheatWort), 1044495, 1150275, 30.0, 100.0, typeof(Bottle), 1023854, 1, 1044253);
+/*            index = AddCraft(typeof(WheatWort), 1044495, 1150275, 30.0, 100.0, typeof(Bottle), 1023854, 1, 1044253);
             AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
             AddRes(index, typeof(SackFlourOpen), 1044468, 1, 1151092);
             SetItemHue(index, 1281);
@@ -144,6 +144,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(FreshSeasoning), 1044495, 1159200, 75.0, 125.0, typeof(DriedHerbs), 1023137, 1, 1044253);
             AddRes(index, typeof(Salt), 1159201, 3, 1044253);
+			*/
             #endregion
 
             #region Preparations
@@ -214,12 +215,13 @@ namespace Server.Engines.Craft
             SetUseAllRes(index, true);
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(Bait), 1044496, 1159164, 100.0, 140.0, typeof(SamuelsSecretSauce), 1116338, 1, 1044253);
+    /*        index = AddCraft(typeof(Bait), 1044496, 1159164, 100.0, 140.0, typeof(SamuelsSecretSauce), 1116338, 1, 1044253);
             AddRes(index, typeof(RawFishSteak), 1044476, 50, 1044253);
             AddRes(index, typeof(SaltedSerpentSteaks), 1159163, 3, 1044253);
             AddCreateItem(index, CraftCharydbisBait);
             SetForceSuccess(index, 5);
             SetNeedHeat(index, true);
+	*/
             #endregion
 
             #region Baking
@@ -280,9 +282,10 @@ namespace Server.Engines.Craft
             AddRecipe(index, (int)CookRecipes.GingerbreadCookie);
             SetNeedOven(index, true);
 
-            index = AddCraft(typeof(ThreeTieredCake), 1044497, 1154465, 60.0, 110.0, typeof(CakeMix), 1044471, 3, 1044253);
+   /*         index = AddCraft(typeof(ThreeTieredCake), 1044497, 1154465, 60.0, 110.0, typeof(CakeMix), 1044471, 3, 1044253);
             AddRecipe(index, (int)CookRecipes.ThreeTieredCake);
             SetNeedOven(index, true);
+   */
             #endregion
 
             #region Barbecue
@@ -316,7 +319,7 @@ namespace Server.Engines.Craft
             SetUseAllRes(index, true);
             ForceNonExceptional(index);
 
-            index = AddCraft(typeof(BowlOfRotwormStew), 1044498, 1031706, 0.0, 100.0, typeof(RawRotwormMeat), 1031705, 1, 1044253);
+     /*       index = AddCraft(typeof(BowlOfRotwormStew), 1044498, 1031706, 0.0, 100.0, typeof(RawRotwormMeat), 1031705, 1, 1044253);
             SetNeedHeat(index, true);
             SetUseAllRes(index, true);
             AddRecipe(index, (int)CookRecipes.RotWormStew);
@@ -369,6 +372,7 @@ namespace Server.Engines.Craft
             SetNeedHeat(index, true);
             SetUseAllRes(index, true);
             AddRecipe(index, (int)CookRecipes.WakuChicken);
+	 */
             #endregion
 
             #region Enchanted
@@ -390,11 +394,11 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Chocolatiering
-            index = AddCraft(typeof(SweetCocoaButter), 1080001, 1156401, 15.0, 100.0, typeof(SackOfSugar), 1079997, 1, 1044253);
+        /*    index = AddCraft(typeof(SweetCocoaButter), 1080001, 1156401, 15.0, 100.0, typeof(SackOfSugar), 1079997, 1, 1044253);
             AddRes(index, typeof(CocoaButter), 1079998, 1, 1044253);
             SetItemHue(index, 0x457);
             SetNeedOven(index, true);
-
+		*/
             index = AddCraft(typeof(DarkChocolate), 1080001, 1079994, 15.0, 100.0, typeof(SackOfSugar), 1079997, 1, 1044253);
             AddRes(index, typeof(CocoaButter), 1079998, 1, 1044253);
             AddRes(index, typeof(CocoaLiquor), 1079999, 1, 1044253);
@@ -414,7 +418,7 @@ namespace Server.Engines.Craft
             SetBeverageType(index, BeverageType.Milk);
             SetItemHue(index, 0x47E);
 
-            index = AddCraft(typeof(ChocolateNutcracker), 1080001, 1156390, 15.0, 100.0, typeof(SweetCocoaButter), 1156401, 1, 1044253);
+  /*          index = AddCraft(typeof(ChocolateNutcracker), 1080001, 1156390, 15.0, 100.0, typeof(SweetCocoaButter), 1156401, 1, 1044253);
             AddRes(index, typeof(SweetCocoaButter), 1124032, 1, 1156402);
             AddRes(index, typeof(CocoaLiquor), 1079999, 1, 1044253);
             AddRecipe(index, (int)CookRecipes.DarkChocolateNutcracker);
@@ -431,6 +435,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(CocoaLiquor), 1079999, 1, 1044253);
             AddRecipe(index, (int)CookRecipes.WhiteChocolateNutcracker);
             SetData(index, ChocolateNutcracker.ChocolateType.White);
+  */
             #endregion
 
             #region fish pies
@@ -528,31 +533,33 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(FreshGinger), 1031235, 1, 1044253);
             AddRes(index, typeof(MentoSeasoning), 1116299, 1, 1044253);
             SetNeedOven(index, true);
-            #endregion
+			#endregion
 
-            #region Bevereages
-            index = AddCraft(typeof(CoffeeMug), 1155736, 1155737, 0.0, 28.58, typeof(CoffeeGrounds), 1155735, 1, 1155734);
-            AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
-            SetBeverageType(index, BeverageType.Water);
-            SetNeedMaker(index, true);
-            ForceNonExceptional(index);
+			/*        #region Bevereages
+					index = AddCraft(typeof(CoffeeMug), 1155736, 1155737, 0.0, 28.58, typeof(CoffeeGrounds), 1155735, 1, 1155734);
+					AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
+					SetBeverageType(index, BeverageType.Water);
+					SetNeedMaker(index, true);
+					ForceNonExceptional(index);
 
-            index = AddCraft(typeof(BasketOfGreenTeaMug), 1155736, 1030315, 0.0, 28.58, typeof(GreenTeaBasket), 1155735, 1, 1044253);
-            AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
-            SetBeverageType(index, BeverageType.Water);
-            SetNeedMaker(index, true);
-            ForceNonExceptional(index);
+					index = AddCraft(typeof(BasketOfGreenTeaMug), 1155736, 1030315, 0.0, 28.58, typeof(GreenTeaBasket), 1155735, 1, 1044253);
+					AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
+					SetBeverageType(index, BeverageType.Water);
+					SetNeedMaker(index, true);
+					ForceNonExceptional(index);
 
-            index = AddCraft(typeof(HotCocoaMug), 1155736, 1155738, 0.0, 28.58, typeof(CocoaLiquor), 1080007, 1, 1080006);
-            AddRes(index, typeof(SackOfSugar), 1080003, 1, 1080002);
-            AddRes(index, typeof(BaseBeverage), 1080011, 1, 1080010);
-            SetBeverageType(index, BeverageType.Milk);
-            SetNeedMaker(index, true);
-            ForceNonExceptional(index);
-            #endregion
-        }
+					index = AddCraft(typeof(HotCocoaMug), 1155736, 1155738, 0.0, 28.58, typeof(CocoaLiquor), 1080007, 1, 1080006);
+					AddRes(index, typeof(SackOfSugar), 1080003, 1, 1080002);
+					AddRes(index, typeof(BaseBeverage), 1080011, 1, 1080010);
+					SetBeverageType(index, BeverageType.Milk);
+					SetNeedMaker(index, true);
+					ForceNonExceptional(index);
 
-        private Item CraftCharydbisBait(Mobile m, CraftItem craftItem, ITool tool)
+					#endregion
+			*/
+		}
+
+		private Item CraftCharydbisBait(Mobile m, CraftItem craftItem, ITool tool)
         {
             var bait = new Bait
             {

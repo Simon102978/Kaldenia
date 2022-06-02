@@ -165,7 +165,7 @@ namespace Server.Misc
             int totalMinutes = (int)(timeSpan.TotalSeconds / Time.SecondsPerUOMinute);
             int totalDays = totalMinutes / (24 * 60);
 
-            year = totalDays / 365 + 190;
+            year = totalDays / 365 - 3 ;
             month = GetMonth(totalDays);
             day = GetDay(totalDays);
         }

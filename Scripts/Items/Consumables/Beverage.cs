@@ -1087,53 +1087,154 @@ namespace Server.Items
                     from.SendLocalizedMessage(1080197); // You fill the container with milk.
                 }
             }
-            else if (targ is LandTarget)
-            {
-                int tileID = ((LandTarget)targ).TileID;
+			else if (targ is LandTarget)
+			{
+				int tileID = ((LandTarget)targ).TileID;
 
-                PlayerMobile player = from as PlayerMobile;
+				PlayerMobile player = from as PlayerMobile;
 
-                if (player != null)
-                {
-                    QuestSystem qs = player.Quest;
+				if (player != null)
+				{
+					//QuestSystem qs = player.Quest;
 
-                    if (qs is WitchApprenticeQuest)
-                    {
-                        FindIngredientObjective obj = qs.FindObjective(typeof(FindIngredientObjective)) as FindIngredientObjective;
+					bool contains = false;
 
-                        if (obj != null && !obj.Completed && obj.Ingredient == Ingredient.SwampWater)
-                        {
-                            bool contains = false;
+					/*if( qs is WitchApprenticeQuest )
+					{
+						FindIngredientObjective obj = qs.FindObjective( typeof( FindIngredientObjective ) ) as FindIngredientObjective;
 
-                            for (int i = 0; !contains && i < m_SwampTiles.Length; i += 2)
-                                contains = (tileID >= m_SwampTiles[i] && tileID <= m_SwampTiles[i + 1]);
+						if( obj != null && !obj.Completed && obj.Ingredient == Ingredient.SwampWater )
+						{
+							for( int i = 0; !contains && i < m_SwampTiles.Length; i += 2 )
+								contains = ( tileID >= m_SwampTiles[ i ] && tileID <= m_SwampTiles[ i + 1 ] );
 
-                            if (contains)
-                            {
-                                Delete();
+							if( contains )
+							{
+								Delete();
 
-                                player.SendLocalizedMessage(1055035); // You dip the container into the disgusting swamp water, collecting enough for the Hag's vile stew.
-                                obj.Complete();
-                            }
-                        }
-                    }
-                }
-            }
-        }
+								player.SendLocalizedMessage( 1055035 ); // You dip the container into the disgusting swamp water, collecting enough for the Hag's vile stew.
+								obj.Complete();
+							}
+						}
+					}*/
 
-        private static readonly int[] m_SwampTiles = new int[]
-        {
-            0x9C4, 0x9EB,
-            0x3D65, 0x3D65,
-            0x3DC0, 0x3DD9,
-            0x3DDB, 0x3DDC,
-            0x3DDE, 0x3EF0,
-            0x3FF6, 0x3FF6,
-            0x3FFC, 0x3FFE,
-        };
+					for (int i = 0; !contains && i < m_WaterTiles.Length; i++)
+						if (tileID == m_WaterTiles[i])
+							contains = true;
 
-        #region Effects of achohol
-        private static readonly Hashtable m_Table = new Hashtable();
+					if (contains)
+					{
+						this.Content = BeverageType.Water;
+						this.Poison = null;
+						this.Poisoner = null;
+						this.Quantity = this.MaxQuantity;
+					}
+				}
+			}
+			else if (targ is StaticTarget)
+			{
+				bool contains = false;
+
+				StaticTarget target = (StaticTarget)targ;
+
+				for (int i = 0; !contains && i < m_StaticTiles.Length; i += 2)
+					if (target.ItemID == m_StaticTiles[i])
+						contains = true;
+
+				if (contains)
+				{
+					this.Content = BeverageType.Water;
+					this.Poison = null;
+					this.Poisoner = null;
+					this.Quantity = this.MaxQuantity;
+				}
+			}
+		}
+
+		private static int[] m_SwampTiles = new int[]
+			{
+				0x9C4, 0x9EB,
+				0x3D65, 0x3D65,
+				0x3DC0, 0x3DD9,
+				0x3DDB, 0x3DDC,
+				0x3DDE, 0x3EF0,
+				0x3FF6, 0x3FF6,
+				0x3FFC, 0x3FFE,
+			};
+
+		private static int[] m_WaterTiles = new int[]
+			{
+				168, 169, 170, 171,
+				0xA8, 0xAB,
+				0x136, 0x137,
+				0xA8, 0xAB,
+				0x136, 0x137,
+					0x00A8, 0x0B44, 0x179A,
+				0x00A9, 0x0E7B, 0x179B,
+				0x00AA, 0x0FFA, 0x179C,
+				0x00AB, 0x154D,
+				0x0136, 0x1559,
+				0x0137, 0x1796,
+				0x0B41, 0x1797,
+				0x0B42, 0x1798,
+				0x0B43, 0x1799,
+					0xA8, 0xAB,
+				0x136, 0x137,
+					0x00A8, 0x0B44, 0x179A,
+				0x00A9, 0x0E7B, 0x179B,
+				0x00AA, 0x0FFA, 0x179C,
+				0x00AB, 0x154D,
+				0x0136, 0x1559,
+				0x0137, 0x1796,
+				0x0B41, 0x1797,
+				0x0B42, 0x1798,
+				0x0B43, 0x1799,
+			};
+
+		private static int[] m_StaticTiles = new int[]
+			{
+				2881, 2882, 2883, 2884, 3707, 4088, 4089, 5453,
+				6038, 6039, 6040, 6041, 6042, 6043, 6044, 6044,
+				6046, 6047, 6048, 6049, 6050, 6051, 6052, 6053,
+				6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061,
+				6062, 6063, 6064, 6065, 6066, 8093, 8094, 8196,
+				4090,
+					0x1796, 0x17B2,
+				0x346E, 0x3485,
+				0x3490, 0x34AB,
+				0x34B5, 0x34D5,
+				0x34ED, 0x3530,
+				0x3B63, 0x3B7F,
+				0x1559, 0x1559,
+				0x1796, 0x17B2,
+				0x1FA3, 0x1FCA,
+				0x00A8, 0x0B44, 0x179A,
+				0x00A9, 0x0E7B, 0x179B,
+				0x00AA, 0x0FFA, 0x179C,
+				0x00AB, 0x154D,
+				0x0136, 0x1559,
+				0x0137, 0x1796,
+				0x0B41, 0x1797,
+				0x0B42, 0x1798,
+				0x0B43, 0x1799,
+				168, 169, 170, 171,
+				0xA8, 0xAB,
+				0x136, 0x137,
+				0xA8, 0xAB,
+				0x136, 0x137,
+					0x00A8, 0x0B44, 0x179A,
+				0x00A9, 0x0E7B, 0x179B,
+				0x00AA, 0x0FFA, 0x179C,
+				0x00AB, 0x154D,
+				0x0136, 0x1559,
+				0x0137, 0x1796,
+				0x0B41, 0x1797,
+				0x0B42, 0x1798,
+				0x0B43, 0x1799,
+			};
+
+		#region Effects of achohol
+		private static readonly Hashtable m_Table = new Hashtable();
 
         public static void Initialize()
         {

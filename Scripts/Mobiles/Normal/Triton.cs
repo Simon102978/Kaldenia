@@ -120,8 +120,13 @@ namespace Server.Mobiles
 
         public override bool DeleteOnRelease => true;
         public override int Meat => 3;
-        public override int Hides => 10;
-        public override FoodType FavoriteFood => FoodType.Meat;
+		public override int Hides => 7;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 7;
+		public override BoneType BoneType => BoneType.Reptilien;
+		public override FoodType FavoriteFood => FoodType.Meat;
 
         public override void Serialize(GenericWriter writer)
         {

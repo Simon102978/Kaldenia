@@ -46,9 +46,6 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Gems, Utility.RandomMinMax(1, 4));
-            AddLoot(LootPack.LootItem<ZoogiFungus>(0.05 > Utility.RandomDouble() ? 13 : 3));
-            AddLoot(LootPack.LootItemCallback(SolenHelper.PackPicnicBasket, 1.0, 1, false, false));
-            AddLoot(LootPack.LootItem<BraceletOfBinding>(5.0));
         }
 
         public BlackSolenWarrior(Serial serial)

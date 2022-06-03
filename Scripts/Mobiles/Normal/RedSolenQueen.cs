@@ -43,12 +43,16 @@ namespace Server.Mobiles
             Karma = -4500;
         }
 
-        public override void GenerateLoot()
+		public override int Hides => 10;
+		public override HideType HideType => HideType.Arachnide;
+
+
+		public override int Bones => 10;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.LootItem<ZoogiFungus>(0.05 > Utility.RandomDouble() ? 25 : 5));
-            AddLoot(LootPack.LootItemCallback(SolenHelper.PackPicnicBasket, 1.0, 1, false, false));
-            AddLoot(LootPack.LootItem<BallOfSummoning>(5.0));
         }
 
         public RedSolenQueen(Serial serial)

@@ -56,7 +56,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.LootItemCallback(AddLootContainer));
+        
         }
 
         private Item AddLootContainer(IEntity e)
@@ -67,8 +67,7 @@ namespace Server.Mobiles
             pack.DropItem(new Arrow(Utility.RandomMinMax(25, 35)));
             pack.DropItem(new Bandage(Utility.RandomMinMax(5, 15)));
             pack.DropItem(new Bandage(Utility.RandomMinMax(5, 15)));
-            pack.DropItem(Loot.RandomGem());
-            pack.DropItem(new ArcaneGem());
+
 
             return pack;
         }

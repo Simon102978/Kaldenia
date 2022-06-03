@@ -52,11 +52,11 @@ namespace Server.Mobiles
         public override int Meat => 10;
         public override int DragonBlood => 8;
 
-		public override int Hides => 12;
+		public override int Hides => 6;
 		public override HideType HideType => HideType.Dragonique;
 
 
-		public override int Bones => 12;
+		public override int Bones => 6;
 		public override BoneType BoneType => BoneType.Dragonique;
 
 

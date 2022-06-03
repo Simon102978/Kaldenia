@@ -61,7 +61,13 @@ namespace Server.Mobiles
             }
         }
         public override int Meat => 3;
-        public override MeatType MeatType => MeatType.LambLeg;
+		public override int Hides => 4;
+		public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Regular;
+		public override MeatType MeatType => MeatType.LambLeg;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override int Wool => (Body == 0xCF ? 3 : 0);
         public bool Carve(Mobile from, Item item)

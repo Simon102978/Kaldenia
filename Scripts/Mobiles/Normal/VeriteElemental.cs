@@ -79,8 +79,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<VeriteOre>(25));
+            AddLoot(LootPack.LootItem<VeriteOre>(5));
         }
 
         public override void Serialize(GenericWriter writer)

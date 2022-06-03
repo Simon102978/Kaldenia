@@ -102,8 +102,14 @@ namespace Server.Mobiles
         }
 
         public override bool TeleportsTo => true;
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Ancien;
 
-        public override void GenerateLoot()
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Ancien;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.SuperBoss, 2);
             AddLoot(LootPack.HighScrolls, Utility.RandomMinMax(6, 60));

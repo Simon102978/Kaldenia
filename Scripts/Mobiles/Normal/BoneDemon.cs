@@ -44,8 +44,10 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
-
-        public override bool Unprovokable => true;
+	
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Demoniaque;
+		public override bool Unprovokable => true;
         public override bool AreaPeaceImmune => true;
         public override Poison PoisonImmune => Poison.Lethal;
         public override int TreasureMapLevel => 1;

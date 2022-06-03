@@ -136,8 +136,14 @@ namespace Server.Mobiles
 
         public override int Meat => 1;
         public override PackInstinct PackInstinct => PackInstinct.Canine;
-        public override int Hides => 7;
-        public override FoodType FavoriteFood => FoodType.Meat;
+
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Lupus;
+
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Lupus;
+		public override FoodType FavoriteFood => FoodType.Meat;
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager, 2);

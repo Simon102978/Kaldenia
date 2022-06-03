@@ -70,7 +70,6 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average);
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.MageryRegs, 6);
-            AddLoot(LootPack.RandomLootItem(new[] { typeof(BloodOathScroll), typeof(CurseWeaponScroll), typeof(StrangleScroll) }, 16.6, 1, false, true));
         }
 
         public override void Serialize(GenericWriter writer)

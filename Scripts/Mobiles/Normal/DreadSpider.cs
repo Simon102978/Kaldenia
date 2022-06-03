@@ -52,8 +52,13 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Arachnide;
 
-        public override bool CanAngerOnTame => true;
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Arachnide;
+		public override bool CanAngerOnTame => true;
         public override Poison PoisonImmune => Poison.Lethal;
         public override Poison HitPoison => Poison.Lethal;
         public override int TreasureMapLevel => 3;

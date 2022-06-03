@@ -42,9 +42,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average, 2);
-            AddLoot(LootPack.Gems, Utility.RandomMinMax(1, 4));
-            AddLoot(LootPack.LootItem<ZoogiFungus>(0.05 > Utility.RandomDouble() ? 16 : 4));
-            AddLoot(LootPack.LootItemCallback(SolenHelper.PackPicnicBasket, 1.0, 1, false, false));
+
         }
 
         public BlackSolenInfiltratorWarrior(Serial serial)

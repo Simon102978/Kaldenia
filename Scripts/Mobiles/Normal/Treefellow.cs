@@ -64,7 +64,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.LootItem<Log>(23, 34));
+            AddLoot(LootPack.LootItem<Log>(5, 11));
         }
 
         public override void Serialize(GenericWriter writer)

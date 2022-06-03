@@ -40,8 +40,14 @@ namespace Server.Mobiles
 
             SetWeaponAbility(WeaponAbility.ArmorIgnore);
         }
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Arachnide;
 
-        public override void GenerateLoot()
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.Poor);

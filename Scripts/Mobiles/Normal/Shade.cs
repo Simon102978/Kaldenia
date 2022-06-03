@@ -9,7 +9,7 @@ namespace Server.Mobiles
         {
             Name = "a shade";
             Body = 26;
-            Hue = 0x4001;
+            Hue = -1;
             BaseSoundID = 0x482;
 
             SetStr(76, 100);

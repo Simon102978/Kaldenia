@@ -57,7 +57,7 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.LootItem<Arrow>(50, 70, true));
+            AddLoot(LootPack.LootItem<Arrow>(10, 25, true));
         }
 
         public override void Serialize(GenericWriter writer)

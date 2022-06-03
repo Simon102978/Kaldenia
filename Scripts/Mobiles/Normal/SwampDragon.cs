@@ -201,16 +201,16 @@ namespace Server.Mobiles
         public override bool ReacquireOnMovement => true;
         public override bool AutoDispel => !Controlled;
         public override FoodType FavoriteFood => FoodType.Meat;
-        public override int Meat => 19;
+        public override int Meat => 12;
         
 		/*     public override int Scales => 5;
 			 public override ScaleType ScaleType => ScaleType.Green;*/
 
-		public override int Hides => 12;
+		public override int Hides => 8;
 		public override HideType HideType => HideType.Dragonique;
 
 
-		public override int Bones => 12;
+		public override int Bones => 8;
 		public override BoneType BoneType => BoneType.Dragonique;
 
 

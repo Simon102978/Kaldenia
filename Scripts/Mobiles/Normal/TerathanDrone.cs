@@ -48,7 +48,15 @@ namespace Server.Mobiles
 
         public override TribeType Tribe => TribeType.Terathan;
 
-        public override void GenerateLoot()
+		public override int Hides => 3;
+		public override HideType HideType => HideType.Arachnide;
+
+
+		public override int Bones => 3;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.LootItem<SpidersSilk>(2));

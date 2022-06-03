@@ -46,8 +46,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 10;
-        public override int Hides => 15;
+        public override int Meat => 5;
+        public override int Hides => 8;
         public override FoodType FavoriteFood => FoodType.GrainsAndHay;
         public override int GetAngerSound()
         {

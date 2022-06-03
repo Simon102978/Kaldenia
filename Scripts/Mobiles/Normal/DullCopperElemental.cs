@@ -86,7 +86,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<DullCopperOre>(2));
+            AddLoot(LootPack.LootItem<DullCopperOre>(5));
         }
 
         public override void Serialize(GenericWriter writer)

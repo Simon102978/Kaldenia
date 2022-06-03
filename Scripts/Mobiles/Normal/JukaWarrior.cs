@@ -53,8 +53,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Meager);
-            AddLoot(LootPack.Gems, 1);
-            AddLoot(LootPack.LootItem<ArcaneGem>(10.0));
+
         }
 
         public override int GetIdleSound()

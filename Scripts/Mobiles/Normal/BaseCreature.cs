@@ -26,6 +26,7 @@ using Custom.Jerbal.Jako;
 #endregion
 
 namespace Server.Mobiles
+
 {
     #region Enums
     /// <summary>
@@ -2293,12 +2294,12 @@ namespace Server.Mobiles
 
                 if (corpse.Map == Map.Felucca && !Siege.SiegeShard)
                 {
-                    feathers *= 2;
-                    wool *= 2;
-                    hides *= 2;
-                    fur *= 2;
-                    meat *= 2;
-                    bones *= 2;
+                    feathers *= 1;
+                    wool *= 1;
+                    hides *= 1;
+                    fur *= 1;
+                    meat *= 1;
+                    bones *= 1;
                 }
 
                 if (special)

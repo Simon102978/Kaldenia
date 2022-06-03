@@ -54,7 +54,6 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.MedScrolls);
-            AddLoot(LootPack.LootItem<GargoylesPickaxe>(20.0));
         }
 
         public override void Serialize(GenericWriter writer)

@@ -50,7 +50,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<CopperOre>(25));
+            AddLoot(LootPack.LootItem<CopperOre>(5));
         }
 
         public override void CheckReflect(Mobile caster, ref bool reflect)

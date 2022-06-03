@@ -136,7 +136,7 @@ namespace Server.Engines.Craft
             AddSubRes(typeof(Bone), "Os", 0.0, 1049312);
 			AddSubRes(typeof(LupusBone), "Lupus", 65.0, 1049312);
 			AddSubRes(typeof(ReptilienBone), "Reptilien", 70.0, 1049312);
-			AddSubRes(typeof(GeantBone), "Géant", 75.0, 1049312);
+			AddSubRes(typeof(GeantBone), "Geant", 75.0, 1049312);
 			AddSubRes(typeof(OphidienBone), "Ophidien", 80.0, 1049312);
 			AddSubRes(typeof(ArachnideBone), "Arachnide", 85.0, 1049312);
 			AddSubRes(typeof(DragoniqueBone), "Dragonique", 90.0, 1049312);

@@ -58,11 +58,11 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 2;
         public override int Meat => 10;
 
-		public override int Hides => 12;
+		public override int Hides => 8;
 		public override HideType HideType => HideType.Reptilien;
 
 
-		public override int Bones => 12;
+		public override int Bones => 8;
 		public override BoneType BoneType => BoneType.Reptilien;
 
 

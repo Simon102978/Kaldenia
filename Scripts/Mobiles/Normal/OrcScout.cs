@@ -77,7 +77,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.LootItem<Yeast>(50.0));
             AddLoot(LootPack.LootItem<Apple>(3, 5));
-            AddLoot(LootPack.LootItem<Arrow>(60, 70));
+            AddLoot(LootPack.LootItem<Arrow>(15, 28));
             AddLoot(LootPack.LootItem<Bandage>(1, 15));
         }
 

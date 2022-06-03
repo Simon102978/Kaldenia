@@ -53,8 +53,11 @@ namespace Server.Mobiles
         public override Poison HitPoison => Utility.RandomBool() ? Poison.Deadly : Poison.Lethal;
         public override int TreasureMapLevel => 5;
         public override int Hides => 20;
+		public override HideType HideType => HideType.Ancien;
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Ancien;
 
-        public override void GenerateLoot()
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.UltraRich);
             AddLoot(LootPack.FilthyRich, 2);

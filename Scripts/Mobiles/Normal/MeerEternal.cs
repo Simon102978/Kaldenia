@@ -60,7 +60,6 @@ namespace Server.Mobiles
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.MedScrolls, 2);
             AddLoot(LootPack.HighScrolls, 2);
-            AddLoot(LootPack.RandomLootItem(new[] { typeof(StrangleScroll), typeof(WitherScroll), typeof(VampiricEmbraceScroll) }, 25.0, 1, false, true));
         }
 
         public override int GetHurtSound()

@@ -53,7 +53,6 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
-            AddLoot(LootPack.LootItem<BolaBall>(20.0));
             AddLoot(LootPack.LootItem<Yeast>(50.0, true));
             AddLoot(LootPack.LootItem<ThighBoots>());
         }

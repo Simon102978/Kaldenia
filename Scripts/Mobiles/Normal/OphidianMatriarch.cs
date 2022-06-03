@@ -48,7 +48,14 @@ namespace Server.Mobiles
 
         public override TribeType Tribe => TribeType.Ophidian;
 
-        public override void GenerateLoot()
+		public override int Hides => 6;
+		public override HideType HideType => HideType.Ophidien;
+
+
+		public override int Bones => 6;
+		public override BoneType BoneType => BoneType.Ophidien;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Average, 2);

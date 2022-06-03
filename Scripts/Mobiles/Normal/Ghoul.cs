@@ -48,7 +48,6 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
-            AddLoot(LootPack.LootItemCallback(e => Loot.RandomWeapon()));
         }
 
         public override void Serialize(GenericWriter writer)

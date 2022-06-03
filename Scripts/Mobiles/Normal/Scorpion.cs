@@ -49,8 +49,17 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
-        public override FoodType FavoriteFood => FoodType.Meat;
+        public override int Meat => 3;
+
+		public override int Hides => 3;
+		public override HideType HideType => HideType.Arachnide;
+
+
+		public override int Bones => 3;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+
+		public override FoodType FavoriteFood => FoodType.Meat;
         public override PackInstinct PackInstinct => PackInstinct.Arachnid;
         public override Poison PoisonImmune => Poison.Greater;
         public override Poison HitPoison => (0.8 >= Utility.RandomDouble() ? Poison.Greater : Poison.Deadly);

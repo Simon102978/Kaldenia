@@ -48,7 +48,14 @@ namespace Server.Mobiles
         public override Poison HitPoison => Poison.Lesser;
         public override bool DeathAdderCharmable => true;
         public override int Meat => 1;
-        public override FoodType FavoriteFood => FoodType.Eggs;
+
+		public override int Hides => 2;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 2;
+		public override BoneType BoneType => BoneType.Reptilien;
+		public override FoodType FavoriteFood => FoodType.Eggs;
 
         public override void Serialize(GenericWriter writer)
         {

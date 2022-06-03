@@ -58,8 +58,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.LootItem<Bolt>(10, 20));
             AddLoot(LootPack.LootItem<Arrow>(10, 20));
-            AddLoot(LootPack.LootItemCallback(DropWeapons));
-            AddLoot(LootPack.LootItemCallback(DropRegs));
+  
         }
 
         private static Item DropWeapons(IEntity e)

@@ -44,8 +44,8 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.LootGold(500, 600));
-        }
+			AddLoot(LootPack.Meager);
+		}
 
         public override void OnActionCombat()
         {

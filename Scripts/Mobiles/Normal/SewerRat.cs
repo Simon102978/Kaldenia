@@ -44,7 +44,14 @@ namespace Server.Mobiles
         }
 
         public override int Meat => 1;
-        public override FoodType FavoriteFood => FoodType.Meat | FoodType.Eggs | FoodType.FruitsAndVegies;
+		public override int Hides => 2;
+		public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 2;
+		public override BoneType BoneType => BoneType.Regular;
+
+		public override FoodType FavoriteFood => FoodType.Meat | FoodType.Eggs | FoodType.FruitsAndVegies;
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Poor);

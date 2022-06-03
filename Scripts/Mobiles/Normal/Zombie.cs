@@ -44,10 +44,12 @@ namespace Server.Mobiles
 		
         public override TribeType Tribe => TribeType.Undead;
 
-        public override void GenerateLoot()
+		public override int TreasureMapLevel => 1;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
-        }
+		}
 
         public override bool IsEnemy(Mobile m)
         {

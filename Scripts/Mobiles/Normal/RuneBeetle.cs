@@ -60,7 +60,15 @@ namespace Server.Mobiles
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override bool CanAngerOnTame => true;
 
-        public override void GenerateLoot()
+
+		public override int Hides => 6;
+		public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 6;
+		public override BoneType BoneType => BoneType.Regular;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.MedScrolls, 1);

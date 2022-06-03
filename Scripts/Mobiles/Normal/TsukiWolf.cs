@@ -68,8 +68,11 @@ namespace Server.Mobiles
 
         public override int TreasureMapLevel => 3;
         public override int Meat => 4;
-        public override int Hides => 25;
-        public override FoodType FavoriteFood => FoodType.Meat;
+		public override int Hides => 10;
+		public override HideType HideType => HideType.Lupus;
+		public override int Bones => 10;
+		public override BoneType BoneType => BoneType.Lupus;
+		public override FoodType FavoriteFood => FoodType.Meat;
 
         public override void GenerateLoot()
         {

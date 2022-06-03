@@ -52,12 +52,19 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 3;
         public override int Meat => 2;
 
-        public override TribeType Tribe => TribeType.Terathan;
+		public override int Hides => 4;
+		public override HideType HideType => HideType.Arachnide;
+
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override TribeType Tribe => TribeType.Terathan;
 
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich, 2);
-            AddLoot(LootPack.LootItem<TerathanAvengerArms>(25.0));
+            
         }
 
         public override void Serialize(GenericWriter writer)

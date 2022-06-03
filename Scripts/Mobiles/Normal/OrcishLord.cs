@@ -58,7 +58,7 @@ namespace Server.Mobiles
 
             AddLoot(LootPack.LootItem<RingmailChest>());
             AddLoot(LootPack.MageryRegs, 30.0);
-            AddLoot(LootPack.LootItem<BolaBall>(20.0));
+    
             AddLoot(LootPack.LootItem<Yeast>(50.0));
         }
 

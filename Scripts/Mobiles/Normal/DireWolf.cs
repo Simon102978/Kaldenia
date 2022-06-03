@@ -59,10 +59,10 @@ namespace Server.Mobiles
         }
 
         public override int Meat => 1;
-        public override int Hides => 8;
+        public override int Hides => 5;
         public override HideType HideType => HideType.Lupus;
 
-		public override int Bones => 12;
+		public override int Bones => 5;
 		public override BoneType BoneType => BoneType.Lupus;
 
 

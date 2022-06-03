@@ -45,11 +45,9 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 2;
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.Average, 2);
-            AddLoot(LootPack.Gems, 1);
+            AddLoot(LootPack.Average, 2);           
             AddLoot(LootPack.Potions);
-            AddLoot(LootPack.LootItem<IronIngot>(12));
-            AddLoot(LootPack.LootItem<GargoylesPickaxe>(5.0));
+           
         }
 
         public override void Serialize(GenericWriter writer)

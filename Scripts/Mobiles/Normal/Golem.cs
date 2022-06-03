@@ -92,12 +92,6 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.LootItem<IronIngot>(Utility.RandomMinMax(13, 21), true));
-            AddLoot(LootPack.LootItem<PowerCrystal>(1.0));
-            AddLoot(LootPack.LootItem<ClockworkAssembly>(15.0));
-            AddLoot(LootPack.LootItem<ArcaneGem>(20.0, 1, false, true));
-            AddLoot(LootPack.LootItem<Gears>(25.0));
-
-            AddLoot(LootPack.LootItemCallback(SpawnGears, 5.0, 1, false, false));
         }
 
         public static Item SpawnGears(IEntity e)

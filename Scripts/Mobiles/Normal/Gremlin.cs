@@ -45,7 +45,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.LootItem<Arrow>(60, 80));
             AddLoot(LootPack.LootItem<Apple>(5));
-            AddLoot(LootPack.LootItem<LuckyCoin>(1.0));
+   
         }
 
         public override void Serialize(GenericWriter writer)

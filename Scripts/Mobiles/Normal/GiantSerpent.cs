@@ -54,11 +54,11 @@ namespace Server.Mobiles
 			 public override HideType HideType => HideType.Spined;*/
 
 
-		public override int Hides => 8;
+		public override int Hides => 4;
 		public override HideType HideType => HideType.Reptilien;
 
 
-		public override int Bones => 8;
+		public override int Bones => 4;
 		public override BoneType BoneType => BoneType.Reptilien;
 
 

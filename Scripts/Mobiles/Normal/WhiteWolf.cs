@@ -44,9 +44,14 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
+		public override int Hides => 3;
+		public override HideType HideType => HideType.Lupus;
 
-        public override int Meat => 1;
-        public override int Hides => 6;
+
+		public override int Bones => 3;
+		public override BoneType BoneType => BoneType.Lupus;
+
+		
         public override FoodType FavoriteFood => FoodType.Meat;
         public override PackInstinct PackInstinct => PackInstinct.Canine;
         public override void Serialize(GenericWriter writer)

@@ -46,7 +46,14 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
+		public override int Hides => 6;
+		public override HideType HideType => HideType.Ophidien;
+
+
+		public override int Bones => 6;
+		public override BoneType BoneType => BoneType.Ophidien;
+
+		public override int Meat => 1;
         public override int TreasureMapLevel => 1;
 
         public override TribeType Tribe => TribeType.Ophidian;

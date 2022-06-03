@@ -51,8 +51,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<ShadowIronOre>(25));
+            AddLoot(LootPack.LootItem<ShadowIronOre>(5));
         }
 
         public override void AlterMeleeDamageFrom(Mobile from, ref int damage)

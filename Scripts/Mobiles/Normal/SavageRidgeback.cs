@@ -49,13 +49,13 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
+        public override int Meat => 3;
 
-		public override int Hides => 12;
+		public override int Hides => 4;
 		public override HideType HideType => HideType.Reptilien;
 
 
-		public override int Bones => 12;
+		public override int Bones => 4;
 		public override BoneType BoneType => BoneType.Reptilien;
 
 

@@ -46,8 +46,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 2;
-        public override int Hides => 8;
+        public override int Meat => 3;
+        public override int Hides => 3;
         public override FoodType FavoriteFood => FoodType.GrainsAndHay | FoodType.FruitsAndVegies;
 
         private static readonly Type[] _FeedTypes = new[]

@@ -43,8 +43,13 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Arachnide;
 
-        public override FoodType FavoriteFood => FoodType.Meat;
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Arachnide;
+		public override FoodType FavoriteFood => FoodType.Meat;
         public override Poison PoisonImmune => Poison.Deadly;
         public override Poison HitPoison => Poison.Deadly;
         public override void GenerateLoot()

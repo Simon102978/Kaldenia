@@ -42,10 +42,10 @@ namespace Server.Mobiles
             SetWeaponAbility(WeaponAbility.Dismount);
         }
 
-        public override int Meat => 1;
+        public override int Meat => 5;
         public override MeatType MeatType => MeatType.Bird;
         public override FoodType FavoriteFood => FoodType.GrainsAndHay;
-        public override int Feathers => 25;
+        public override int Feathers => 35;
 
         public override void GenerateLoot()
         {

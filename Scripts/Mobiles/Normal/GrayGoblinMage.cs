@@ -63,7 +63,6 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
-            AddLoot(LootPack.LootItem<BolaBall>(20.0));
         }
 
         public override void Serialize(GenericWriter writer)

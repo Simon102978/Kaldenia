@@ -9,7 +9,7 @@ namespace Server.Mobiles
         {
             Name = "a shadow dweller";
             Body = 740;
-            Hue = 1;
+            Hue = -1;
             BaseSoundID = 0x5F1;
 
             SetStr(171, 200);

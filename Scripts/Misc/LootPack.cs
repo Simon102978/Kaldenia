@@ -174,7 +174,16 @@ namespace Server
             }
         }
 
-        public static readonly LootPackItem[] Gold = new[] { new LootPackItem(typeof(Gold), 1) };
+		       public static readonly LootPackItem[] Gold5 = new[] { new LootPackItem(typeof(Citrine), 1) };
+		       public static readonly LootPackItem[] Gold10 = new[] { new LootPackItem(typeof(Amber), 1) };
+		       public static readonly LootPackItem[] Gold25 = new[] { new LootPackItem(typeof(Tourmaline), 1) };
+		       public static readonly LootPackItem[] Gold50 = new[] { new LootPackItem(typeof(Ruby), 1) };
+				public static readonly LootPackItem[] Gold75 = new[] { new LootPackItem(typeof(Amethyst), 1) };
+				public static readonly LootPackItem[] Gold100 = new[] { new LootPackItem(typeof(Sapphire), 1) };
+		       public static readonly LootPackItem[] Gold150 = new[] { new LootPackItem(typeof(StarSapphire), 1) };
+		      public static readonly LootPackItem[] Gold200 = new[] { new LootPackItem(typeof(Emerald), 1) };
+		       public static readonly LootPackItem[] Gold250 = new[] { new LootPackItem(typeof(Diamond), 1) };
+
 
 		public static readonly LootPackItem[] RandomFoodRecipeItems = new[]
 	   {
@@ -522,7 +531,10 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "2d5"),
+					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold5, 50.0, 1, true),
+					new LootPackEntry(false, false, Gold10, 20.0, 1, true),
+              ///      new LootPackEntry(false, true, Gold, 100.00, "2d5"),
               //     new LootPackEntry(false, false, MagicItemsPoor, 1.00, 1, 5, 0, 100, true),
                     new LootPackEntry(false, false, Instruments, 0.02, 1, true)
                 });
@@ -531,7 +543,11 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "4d5+20"),
+					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold10, 50.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 1, true),
+					
+					
           //          new LootPackEntry(false, false, MagicItemsMeagerType1, 20.40, 1, 2, 0, 50, true),
              //       new LootPackEntry(false, false, MagicItemsMeagerType2, 10.20, 1, 5, 0, 100, true),
                     new LootPackEntry(false, false, Instruments, 0.10, 1),
@@ -542,7 +558,14 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "8d5+30"),
+					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold10, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold25, 15.0, 1, true),
+					new LootPackEntry(false, false, Gold50, 5.0, 1, true),
+				
+
+               //     new LootPackEntry(false, true, Gold, 100.00, "8d5+30"),
    //                 new LootPackEntry(false, false, MagicItemsAverageType1, 32.80, 1, 3, 0, 50, true),
    //                 new LootPackEntry(false, false, MagicItemsAverageType1, 32.80, 1, 4, 0, 75, true),
    //                 new LootPackEntry(false, false, MagicItemsAverageType2, 19.50, 1, 5, 0, 100, true),
@@ -554,7 +577,18 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "8d5+50"),
+
+						new LootPackEntry(false, false, Gold5, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold10, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 75.0, 1, true),
+					new LootPackEntry(false, false, Gold50, 25.0, 1, true),
+					new LootPackEntry(false, false, Gold75, 25.0, 1, true),
+					new LootPackEntry(false, false, Gold100, 20.0, 1, true),
+					new LootPackEntry(false, false, Gold150, 15.0, 1, true),
+					new LootPackEntry(false, false, Gold200, 10.0, 1, true),
+					new LootPackEntry(false, false, Gold250, 1.0, 1, true),
+                //    new LootPackEntry(false, true, Gold, 100.00, "8d5+50"),
        //             new LootPackEntry(false, false, MagicItemsRichType1, 76.30, 1, 4, 0, 75, true),
        //             new LootPackEntry(false, false, MagicItemsRichType1, 76.30, 1, 4, 0, 75, true),
       //              new LootPackEntry(false, false, MagicItemsRichType2, 61.70, 1, 5, 0, 100, true),
@@ -566,7 +600,17 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "3d25+60"),
+						new LootPackEntry(false, false, Gold5, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold10, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 75.0, 1, true),
+					new LootPackEntry(false, false, Gold50, 75.0, 1, true),
+					new LootPackEntry(false, false, Gold75, 75.0, 1, true),
+					new LootPackEntry(false, false, Gold100, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold150, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold200, 50.0, 1, true),
+					new LootPackEntry(false, false, Gold250, 50.0, 1, true),
+               //     new LootPackEntry(false, true, Gold, 100.00, "3d25+60"),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType2, 77.60, 1, 5, 25, 100, true),
@@ -578,7 +622,17 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "3d40+80"),
+						new LootPackEntry(false, false, Gold5, 100.0, 10, true),
+					new LootPackEntry(false, false, Gold10, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold50, 75.0, 2, true),
+					new LootPackEntry(false, false, Gold75, 75.0, 2, true),
+					new LootPackEntry(false, false, Gold100, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold150, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold200, 50.0, 2, true),
+					new LootPackEntry(false, false, Gold250, 50.0, 2, true),
+               //     new LootPackEntry(false, true, Gold, 100.00, "3d40+80"),
   //                  new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
     //                new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
       //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
@@ -593,7 +647,17 @@ namespace Server
             new LootPack(
                 new[]
                 {
-                    new LootPackEntry(false, true, Gold, 100.00, "5d50+300"),
+						new LootPackEntry(false, false, Gold5, 100.0, 10, true),
+					new LootPackEntry(false, false, Gold10, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 5, true),
+					new LootPackEntry(false, false, Gold50, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold75, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold100, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold150, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold200, 100.0, 2, true),
+					new LootPackEntry(false, false, Gold250, 100.0, 2, true),
+                //    new LootPackEntry(false, true, Gold, 100.00, "5d50+300"),
     //                new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
       //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
         //            new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),

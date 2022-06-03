@@ -55,10 +55,10 @@ namespace Server.Mobiles
 			   public override ScaleType ScaleType => (ScaleType)Utility.Random(4);*/
 
 		public override int Hides => 12;
-		public override HideType HideType => HideType.Dragonique;
+		public override HideType HideType => HideType.Ancien;
 
 		public override int Bones => 12;
-		public override BoneType BoneType => BoneType.Dragonique;
+		public override BoneType BoneType => BoneType.Ancien;
 
 
 		public override Poison PoisonImmune => Poison.Regular;

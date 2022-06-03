@@ -57,7 +57,6 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Meager);
-            AddLoot(LootPack.Gems);
             AddLoot(LootPack.LootItem<SulfurousAsh>(3, true));
         }
 

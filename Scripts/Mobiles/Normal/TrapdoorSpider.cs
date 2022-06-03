@@ -59,8 +59,14 @@ namespace Server.Mobiles
         }
 
         public override int TreasureMapLevel => 2;
+		public override int Hides => 3;
+		public override HideType HideType => HideType.Arachnide;
 
-        public override void GenerateLoot()
+
+		public override int Bones => 3;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
         }

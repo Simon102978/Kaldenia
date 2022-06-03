@@ -16,7 +16,7 @@ namespace Server.Mobiles
         {
             Name = "a revenant";
             Body = 400;
-            Hue = 1;
+            Hue = -1;
 
             double scalar = caster.Skills[SkillName.SpiritSpeak].Value * 0.01;
 

@@ -81,9 +81,9 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.UltraRich, 3);
-            AddLoot(LootPack.MedScrolls, 2);
-            AddLoot(LootPack.HighScrolls, 3);
+            AddLoot(LootPack.UltraRich, 2);
+            AddLoot(LootPack.MedScrolls, 1);
+            AddLoot(LootPack.HighScrolls, 1);
         }
 
         private DateTime m_NextSummon;

@@ -44,9 +44,8 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.FilthyRich);
-            AddLoot(LootPack.LootItem<LuckyCoin>(2.0));
-            AddLoot(LootPack.RandomLootItem(new[] { typeof(Board), typeof(Log) }, 100.0, 10, false, true));
+            AddLoot(LootPack.FilthyRich);         
+            AddLoot(LootPack.RandomLootItem(new[] { typeof(Board), typeof(Log) }, 100.0, 5, false, true));
             AddLoot(LootPack.LootItem<MandrakeRoot>(3, true));
         }
 

@@ -49,8 +49,13 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Demoniaque;
 
-        public override bool CanRummageCorpses => true;
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Demoniaque;
+		public override bool CanRummageCorpses => true;
         public override Poison PoisonImmune => Poison.Regular;
         public override int TreasureMapLevel => 4;
         public override int Meat => 1;

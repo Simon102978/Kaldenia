@@ -45,7 +45,6 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<DecorativeVines>(10.0));
             AddLoot(LootPack.LootItem<FertileDirt>(1, 10, false, true));
             AddLoot(LootPack.LootItem<Vines>());
-            AddLoot(LootPack.LootItem<ExecutionersCap>(20.0));
         }
 
         public WhippingVine(Serial serial)

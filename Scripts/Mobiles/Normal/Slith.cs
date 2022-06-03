@@ -46,9 +46,14 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 2;
         public override int Meat => 6;
 
-        public override int Hides => 10;
+		public override int Hides => 6;
+		public override HideType HideType => HideType.Reptilien;
 
-        public override void GenerateLoot()
+
+		public override int Bones => 6;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Average, 2);
         }

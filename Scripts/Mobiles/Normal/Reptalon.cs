@@ -36,7 +36,7 @@ namespace Server.Mobiles
 
             Tamable = true;
             ControlSlots = 4;
-            MinTameSkill = 101.1;
+            MinTameSkill = 80.0;
 
             SetWeaponAbility(WeaponAbility.ParalyzingBlow);
             SetSpecialAbility(SpecialAbility.DragonBreath);

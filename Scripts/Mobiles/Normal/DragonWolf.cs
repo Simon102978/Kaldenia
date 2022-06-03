@@ -50,8 +50,14 @@ namespace Server.Mobiles
 
         public override bool CanAngerOnTame => true;
 
-        public override int Meat => 4;
-        public override int Hides => 25;
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Lupus;
+
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Lupus;
+
+		public override int Meat => 4;
         public override FoodType FavoriteFood => FoodType.Meat;
 
         public override void GenerateLoot()

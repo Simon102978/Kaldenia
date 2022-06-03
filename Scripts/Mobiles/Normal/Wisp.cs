@@ -58,7 +58,6 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.PeculiarSeed4);
         }
 
         public override void Serialize(GenericWriter writer)

@@ -44,8 +44,9 @@ namespace Server.Mobiles
         }
 
         public override int Meat => 4;
-        public override int Hides => 32;
-        public override PackInstinct PackInstinct => PackInstinct.Bear;
+        public override int Hides => 7;
+		public override int Bones => 7;
+		public override PackInstinct PackInstinct => PackInstinct.Bear;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

@@ -54,8 +54,6 @@ namespace Server.Mobiles
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.MedScrolls);
-            AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<GargoylesPickaxe>(20.0));
         }
 
         public override void OnDamagedBySpell(Mobile from)

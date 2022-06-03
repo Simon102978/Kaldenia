@@ -64,7 +64,6 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<BlackPearl>(6, 10));
             AddLoot(LootPack.LootItem<MortarPestle>(20.0));
             AddLoot(LootPack.LootItem<LesserExplosionPotion>(20.0));
-            AddLoot(LootPack.LootItem<BolaBall>(20.0));
             AddLoot(LootPack.LootItem<Yeast>(5.0));
         }
 

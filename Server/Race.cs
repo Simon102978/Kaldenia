@@ -77,8 +77,8 @@ namespace Server
 					return m_Races[index];
 				}
 			}
-
-			throw new ArgumentException("Invalid race name");
+			return m_Races[0];
+			//		throw new ArgumentException("Invalid race name");
 		}
 
 		private static void CheckNamesAndValues()

@@ -881,39 +881,39 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(RecallScroll), 1044445, 1, 1044253);
 			AddRes(index, typeof(GateTravelScroll), 1044446, 1, 1044253);
 
-			AddCraft(typeof(BulkOrders.BulkOrderBook), "Autres", 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(BulkOrders.BulkOrderBook), "Autres", 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
-			AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
-
-
+			index = AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
 
 
-/*			index = AddCraft(typeof(ScrappersCompendium), 1044294, 1072940, 75.0, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
-			AddRes(index, typeof(DreadHornMane), 1032682, 1, 1044253);
-			AddRes(index, typeof(Taint), 1032679, 10, 1044253);
-			AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
-			AddRecipe(index, (int)TinkerRecipes.ScrappersCompendium);
-			ForceNonExceptional(index);
 
-			index = AddCraft(typeof(SpellbookEngraver), 1044294, 1072151, 75.0, 100.0, typeof(Feather), 1044562, 1, 1044563);
-			AddRes(index, typeof(BlackPearl), 1015001, 7, 1044253);
 
-			AddCraft(typeof(MysticBook), 1044294, 1031677, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
+			/*			index = AddCraft(typeof(ScrappersCompendium), 1044294, 1072940, 75.0, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
+						AddRes(index, typeof(DreadHornMane), 1032682, 1, 1044253);
+						AddRes(index, typeof(Taint), 1032679, 10, 1044253);
+						AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
+						AddRecipe(index, (int)TinkerRecipes.ScrappersCompendium);
+						ForceNonExceptional(index);
 
-			AddCraft(typeof(NecromancerSpellbook), 1044294, 1074909, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
+						index = AddCraft(typeof(SpellbookEngraver), 1044294, 1072151, 75.0, 100.0, typeof(Feather), 1044562, 1, 1044563);
+						AddRes(index, typeof(BlackPearl), 1015001, 7, 1044253);
 
-			index = AddCraft(typeof(ExodusSummoningRite), 1044294, 1153498, 95.0, 120.0, typeof(DaemonBlood), 1023965, 5, 1044253);
-			AddRes(index, typeof(Taint), 1032679, 1, 1044253);
-			AddRes(index, typeof(DaemonBone), 1017412, 5, 1044253);
-			AddRes(index, typeof(SummonDaemonScroll), 1016017, 1, 1044253);
+						AddCraft(typeof(MysticBook), 1044294, 1031677, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
-			index = AddCraft(typeof(PropheticManuscript), 1044294, 1155631, 90.0, 115.0, typeof(AncientParchment), 1155627, 10, 1044253);
-			AddRes(index, typeof(AntiqueDocumentsKit), 1155630, 1, 1044253);
-			AddRes(index, typeof(WoodPulp), 1113136, 10, 1113289);
-			AddRes(index, typeof(Beeswax), 1025154, 5, 1044253);*/
+						AddCraft(typeof(NecromancerSpellbook), 1044294, 1074909, 50.0, 100.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
-			AddCraft(typeof(BlankScroll), "Autres", 1023636, 50.0, 100.0, typeof(WoodPulp), 1113136, 1, 1044378);
-			AddCraft(typeof(Missive), "Autres", 1023636, 15.0, 50.0, typeof(WoodPulp), 1113136, 1, 1044378);
+						index = AddCraft(typeof(ExodusSummoningRite), 1044294, 1153498, 95.0, 120.0, typeof(DaemonBlood), 1023965, 5, 1044253);
+						AddRes(index, typeof(Taint), 1032679, 1, 1044253);
+						AddRes(index, typeof(DaemonBone), 1017412, 5, 1044253);
+						AddRes(index, typeof(SummonDaemonScroll), 1016017, 1, 1044253);
+
+						index = AddCraft(typeof(PropheticManuscript), 1044294, 1155631, 90.0, 115.0, typeof(AncientParchment), 1155627, 10, 1044253);
+						AddRes(index, typeof(AntiqueDocumentsKit), 1155630, 1, 1044253);
+						AddRes(index, typeof(WoodPulp), 1113136, 10, 1113289);
+						AddRes(index, typeof(Beeswax), 1025154, 5, 1044253);*/
+
+			index = AddCraft(typeof(BlankScroll), "Autres", 1023636, 50.0, 100.0, typeof(WoodPulp), 1113136, 1, 1044378);
+			index = AddCraft(typeof(Missive), "Autres", "Missive", 15.0, 50.0, typeof(WoodPulp), 1113136, 1, 1044378);
 
 			/*			index = AddCraft(typeof(ScrollBinderDeed), 1044294, 1113135, 75.0, 125.0, typeof(WoodPulp), 1113136, 1, 1044253);
 						SetItemHue(index, 1641);*/
@@ -924,8 +924,10 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(GargoyleBook200), "Autres", 1113291, 72.0, 100.0, typeof(BlankScroll), 1044377, 40, 1044378);
 			AddRes(index, typeof(Beeswax), 1025154, 4, 1053098);
 
-			index = AddCraft(typeof(CarnetAdresse), "Autres", 1113291, 25.0, 50.0, typeof(BlankScroll), 1044377, 40, 1044378);
+			index = AddCraft(typeof(CarnetAdresse), "Autres", "Carnet d'Adresse", 25.0, 50.0, typeof(BlankScroll), 1044377, 40, 1044378);
 			AddRes(index, typeof(Beeswax), 1025154, 4, 1053098);
+
+			index = AddCraft(typeof(Calendrier), "Autres", "Calendrier", 0.0, 25.0, typeof(BlankScroll), 1044377, 20, 1044378);
 
 			MarkOption = true;
         }

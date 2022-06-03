@@ -40,8 +40,13 @@ namespace Server.Mobiles
 
             ControlSlots = 4;
         }
+		public override int Hides => 8;
+		public override HideType HideType => HideType.Demoniaque;
 
-        public override void GenerateLoot()
+
+		public override int Bones => 8;
+		public override BoneType BoneType => BoneType.Demoniaque;
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Average, 2);

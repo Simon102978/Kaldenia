@@ -22,9 +22,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Custom.Jerbal.Jako;
 #endregion
 
 namespace Server.Mobiles
+
 {
     #region Enums
     /// <summary>
@@ -1086,8 +1088,357 @@ namespace Server.Mobiles
         public virtual bool TaintedLifeAura => false;
         public virtual bool BreathImmune => false;
 
-        #region Spill Acid
-        public void SpillAcid(int Amount)
+		#region Jako Taming
+		private uint m_level = 1;
+		private uint m_realLevel = 1;
+		private uint m_experience = 0;
+		private uint m_maxLevel = (uint)Utility.RandomMinMax(8, 17);
+		private uint m_traits = 0;
+		private DateTime m_nextMate = DateTime.Now;
+		protected virtual TimeSpan NextMateDelay(uint atLevel)
+		{
+			if (Female)
+			{
+				return (atLevel == AbsMaxLevel ? TimeSpan.FromDays(7) : TimeSpan.FromDays(3));
+			}
+			else
+			{
+				return (atLevel == AbsMaxLevel ? TimeSpan.FromDays(3) : TimeSpan.FromDays(2));
+			}
+		}
+
+		public virtual uint ExpNeeded(uint atLevel)
+		{
+			double baseexp = 1;
+
+			if (this.Fame < 80)
+				baseexp = 1;
+			else
+				baseexp = (double)this.Fame / 80;
+
+			uint baseexpuint = Convert.ToUInt32(baseexp);
+
+			return (uint)(baseexpuint * Math.Pow(atLevel, 2) + 50);
+		}
+
+		public virtual uint TraitsGiven(uint atLevel) { return (atLevel == 10) ? (uint)3 : (uint)1; }
+		public string SexString { get { return (Female ? "Female" : "Male"); } }
+		public JakoAttributes m_jakoAttributes = new JakoAttributes();
+
+
+		#region GM Commands & Getters/Setters
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public JakoAttributes JakoAttributes
+		{
+			get { return m_jakoAttributes; }
+		}
+		[CommandProperty(AccessLevel.GameMaster)]
+		public uint Level
+		{
+			get { return m_level; }
+			set { setLevel(value); }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public uint RealLevel
+		{
+			get { return m_realLevel; }
+			set { m_realLevel = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public uint MaxLevel
+		{
+			get { return m_maxLevel; }
+			set { m_maxLevel = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual uint AbsMaxLevel
+		{
+			get { return 55; }
+		}
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public uint Experience
+		{
+			get { return m_experience; }
+			set { m_experience = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public uint Traits
+		{
+			get { return m_traits; }
+			set { m_traits = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime NextMate
+		{
+			get { return m_nextMate; }
+			set { m_nextMate = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual int MatingLevel
+		{
+			get { return 10; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual bool JakoIsEnabled { get { return true; } }
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual double ExpDecayPerc { get { return .05; } }
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual uint ExpGiven
+		{
+			get
+			{
+				double exper = (Math.Abs((double)Fame / 35)) * (m_Loyalty / MaxLoyalty);
+				uint experu = Convert.ToUInt32(exper);
+				return experu;
+			}
+		}
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual uint ExpToNextLevel { get { return ExpNeeded(m_level); } }
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual TimeSpan NextMateIn { get { return NextMateDelay(m_level); } }
+		#endregion
+		/// <summary>
+		/// Informs both the friends of the creature and the owner of a pet's death by calling DeathNitification(controller,friend).  Overridable to change defaults.</summary>
+		public virtual void DeathNotification()
+		{
+			DeathNotification(true, true);
+		}
+
+		/// <summary>
+		/// Preforms the SendMessage notification informing the controller/friends that this pet is dead.</summary>
+		/// <param name="controller">Inform the ControlMaster of the death.</param>
+		/// <param name="friend">Inform the Friend(s) of the death.</param>
+		public virtual void DeathNotification(bool controller, bool friend)
+		{
+			if (controller && ControlMaster != null)
+				ControlMaster.SendMessage("Your pet {0} has died!", Name);
+
+			if (!friend || Friends == null)
+				return;
+			foreach (PlayerMobile f in Friends)
+			{
+				f.SendMessage("Your friend {0}'s pet {1} has died!", ControlMaster, Name);
+			}
+		}
+
+		/// <summary>
+		/// Increase the Pet's experience and tells owner.  If above exp to next level, increase the level.</summary>
+		/// <param name="exp">The amount of Experience Gained.</param>
+		public virtual void GainExp(Mobile killed, uint exp)
+		{
+			GainExp(killed, exp, true);
+		}
+
+		/// <summary>
+		/// Increase the Pet's experience.  If above exp to next level, increase the level.</summary>
+		/// <param name="killer">The Mobile who was killed.</param>
+		/// <param name="exp">The amount of Experience Gained.</param>
+		/// <param name="tellOwner">SendMessage to Owner about the changes.</param>
+		public virtual void GainExp(Mobile killed, uint exp, bool tellOwner)
+		{
+		//	if (this.Summoned || this is HenchmanArcher || this is HenchmanFighter || this is HenchmanMonster || this is HenchmanWizard || this is Squire || !this.JakoIsEnabled || (killed is BaseCreature && (((BaseCreature)killed).Controlled && ((BaseCreature)killed).ControlMaster != null) || !((BaseCreature)killed).JakoIsEnabled) || Level == MaxLevel)
+			//	return;
+
+			if (tellOwner && ControlMaster != null)
+				ControlMaster.SendMessage("Your pet {0} has gained {1} experience!", Name, exp);
+			if ((m_experience + exp) < ExpToNextLevel)
+			{
+				m_experience += exp;
+				return;
+			}
+			else if ((m_experience + exp) > ExpToNextLevel)
+			{
+				uint oldExp = setLevel(m_level + 1, tellOwner);
+				m_experience = oldExp + exp - ExpNeeded(m_level - 1);
+			}
+		}
+
+		/// <summary>
+		/// Decrease's Pet's Experience and inform the user.  If the exp is less then the current earned, decrease the level.</summary>
+		/// <param name="exp">The last mobile to kill this.</param>
+		/// <param name="exp">The amount of Experience Lost.</param>
+		public virtual void LoseExp(Mobile killer, uint exp)
+		{
+			LoseExp(killer, exp, true);
+		}
+
+		/// <summary>
+		/// Decrease's Pet's Experience.  If the exp is less then the current earned, decrease the level.</summary>
+		/// <param name="exp">The amount of Experience Lost.</param>
+		/// <param name="tellOwner">SendMessage to Owner about the loss.</param>
+		public virtual void LoseExp(Mobile killer, uint exp, bool tellOwner)
+		{
+		///	if (killer == null || killer is PlayerMobile || this is HenchmanArcher || this is HenchmanFighter || this is HenchmanMonster || this is HenchmanWizard || this is Squire || !this.JakoIsEnabled || (killer is BaseCreature && ((BaseCreature)killer).Controlled && ((BaseCreature)killer).ControlMaster != null || !((BaseCreature)killer).JakoIsEnabled))
+		///		return;
+
+			if (tellOwner && ControlMaster != null)
+				ControlMaster.SendMessage("Your pet {0} has lost {1} experience!", Name, exp);
+			if (exp < m_experience)
+			{
+				m_experience -= exp;
+				return;
+			}
+
+			if (m_level == 1)
+			{
+				m_experience = 0;
+				return;
+			}
+
+			uint oldExp = setLevel(m_level - 1, tellOwner);
+			m_experience = oldExp + ExpNeeded(m_level + 1) - exp;
+		}
+
+		/// <summary>
+		/// Calculate the distrubution of attackers and ExpGiven, and increase the Pet's Exp.</summary>
+		/// <param name="m">The creature to calcaulte the EXP From (typically dead).</param>
+		private void CalculateExpDist(Mobile m)
+		{
+			if (!(m is BaseCreature) || ((BaseCreature)m).ExpGiven == 5 || !((BaseCreature)m).JakoIsEnabled || ((BaseCreature)m).Summoned)
+				return;
+
+			double herdingbonus = 1;
+			if (this.Controlled && this.ControlMaster != null)
+			{
+				if (this.ControlMaster is PlayerMobile)
+				{
+					PlayerMobile owner = (PlayerMobile)this.ControlMaster;
+					herdingbonus += owner.Skills[SkillName.Herding].Value / 500; // max of 25%
+				}
+			}
+
+			List<DamageEntry> rights = m.DamageEntries;
+			foreach (DamageEntry entry in rights)
+			{
+				if (entry.Damager is BaseCreature)
+				{
+					BaseCreature bc = (BaseCreature)entry.Damager;
+					if (bc.Controlled == true && bc.ControlMaster != null)
+					{
+						uint exp = (uint)((double)(((BaseCreature)m).ExpGiven / rights.Count) * herdingbonus);
+						Region region = Region.Find(this.Location, this.Map);
+
+			///			if (region.IsPartOf(typeof(ChampionSpawnRegion)) || region is ChampionSpawnRegion)
+						{
+							exp /= 3;
+						}
+						bc.GainExp(m, exp, true);
+					}
+
+				}
+			}
+
+		}
+
+		/// <summary>
+		/// Decrease the Experience by ExpDecayPerc.  This function is called OnBeforeDeath.</summary>
+		/// <returns>The amount of experience the mobile had before the change.</returns>
+		public virtual void DecayExperience(Mobile killer)
+		{
+			uint expLost = (uint)(m_experience * ExpDecayPerc);
+			LoseExp(killer, expLost);
+		}
+
+		/// <summary>
+		/// Increase the traits of the Pet, and informs the owner.</summary>
+		/// <param name="bonus">The number of traits to increase by.</param>
+		public void increaseTraits(uint bonus)
+		{
+			increaseTraits(bonus, true);
+		}
+
+		/// <summary>
+		/// Increases the traits of the Pet.</summary>
+		/// <param name="bonus">The number of traits to increase by.</param>
+		/// <param name="tellOwner">SendMessage to Owner about the loss.</param>
+		public void increaseTraits(uint bonus, bool tellOwner)
+		{
+			if (tellOwner && ControlMaster != null)
+				ControlMaster.SendMessage("Your pet has gained {0} trait{1}!", bonus, (bonus == 1 ? "" : "s"));
+			m_traits += bonus;
+		}
+
+		/// <summary>
+		/// Sets the Mobile's Level to the level given and resets the current Experience and tells the owner.  Increases the traits correctly.</summary>
+		/// <param name="newLevel">The level the mobile will now be.</param>
+		/// <returns>The amount of experience the mobile had before the change.</returns>        
+		public uint setLevel(uint newLevel)
+		{
+			return setLevel(newLevel, true);
+		}
+
+		/// <summary>
+		/// Sets the Mobile's Level to the level given and resets the current Experience.</summary>
+		/// <param name="newLevel">The level the mobile will now be.</param>
+		/// <param name="tellOwner">SendMessage to Owner about the loss.</param>
+		/// <returns>The amount of experience the mobile had before the change.</returns>
+		public uint setLevel(uint newLevel, bool tellOwner)
+		{
+			uint oldExp = m_experience;
+			if (newLevel < m_level)
+			{
+
+				if (tellOwner && ControlMaster != null)
+					ControlMaster.SendMessage("Your pet has decreased in level!");
+				m_level = newLevel;
+
+			}
+			else if (newLevel > m_realLevel)
+			{
+				for (uint x = m_level + 1; x <= newLevel && x <= m_maxLevel; x++)
+				{
+					increaseTraits(TraitsGiven(x), false);
+				}
+
+				if (m_realLevel < 25 && newLevel >= 25 && this.ControlSlots >= 2)
+					this.ControlSlots -= 1;
+
+				if (m_realLevel < 50 && newLevel >= 50 && this.ControlSlots >= 2)
+					this.ControlSlots -= 1;
+
+				if (Utility.RandomDouble() <= ((double)newLevel / 80) && this.MinTameSkill > 5)
+					this.MinTameSkill -= 1;
+
+				m_level = m_realLevel = newLevel;
+			}
+
+			Effects.SendLocationParticles(EffectItem.Create(Location, Map, EffectItem.DefaultDuration), 0x20F6, 10, 5, 5023);
+			if (tellOwner && ControlMaster != null)
+				ControlMaster.SendMessage("Your pet is now level {0}.", newLevel);
+			m_experience = 0;
+			InvalidateProperties();
+
+			if (this.Level != null && ControlMaster != null)
+			{
+				if (this.ControlMaster is PlayerMobile)
+				{
+					int amount = Convert.ToInt32(this.Level) * Utility.RandomMinMax(1, 4);
+					double difficulty = this.MinTameSkill * ((double)this.Loyalty / 100);
+
+					while (amount > 0)
+					{
+						ControlMaster.CheckTargetSkill(SkillName.AnimalTaming, this, difficulty - 25.0, difficulty + 25.0);
+						amount -= 1;
+					}
+				}
+			}
+
+			return oldExp;
+		}
+		#endregion
+
+		#region Spill Acid
+		public void SpillAcid(int Amount)
         {
             SpillAcid(null, Amount);
         }
@@ -1943,12 +2294,12 @@ namespace Server.Mobiles
 
                 if (corpse.Map == Map.Felucca && !Siege.SiegeShard)
                 {
-                    feathers *= 2;
-                    wool *= 2;
-                    hides *= 2;
-                    fur *= 2;
-                    meat *= 2;
-                    bones *= 2;
+                    feathers *= 1;
+                    wool *= 1;
+                    hides *= 1;
+                    fur *= 1;
+                    meat *= 1;
+                    bones *= 1;
                 }
 
                 if (special)
@@ -2319,9 +2670,13 @@ namespace Server.Mobiles
             }
 
             InitializeAbilities();
-        }
+      
+		#region Jako Taming Added
+		Female = Utility.RandomBool();
+			#endregion
 
-        public BaseCreature(Serial serial)
+		}
+		public BaseCreature(Serial serial)
             : base(serial)
         {
             m_arSpellAttack = new List<Type>();
@@ -2334,7 +2689,7 @@ namespace Server.Mobiles
         {
             GenerateLoot(LootStage.Spawning);
         }
-
+		
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
@@ -5579,9 +5934,13 @@ namespace Server.Mobiles
                 {
                     list.Add(502006); // (tame)
                 }
-            }
+				#region Jako Taming
+				if (!Summoned && JakoIsEnabled)
+					list.Add("Level {0} {1}", m_realLevel, SexString);
+				#endregion
+			}
 
-            if (IsSoulBound)
+			if (IsSoulBound)
             {
                 list.Add(1159188); // <BASEFONT COLOR=#FF8300>Soulbound<BASEFONT COLOR=#FFFFFF>
             }
@@ -5671,8 +6030,15 @@ namespace Server.Mobiles
             {
                 m_ReceivedHonorContext.OnTargetKilled();
             }
-
-            return base.OnBeforeDeath();
+			#region Jako Taming
+			if (IsBonded && JakoIsEnabled)
+				DecayExperience(LastKiller);
+			if (ControlMaster != null && JakoIsEnabled)
+				DeathNotification();
+			else if (!Summoned && JakoIsEnabled)
+				CalculateExpDist(this);
+			#endregion
+			return base.OnBeforeDeath();
         }
 
         private bool m_NoKillAwards;

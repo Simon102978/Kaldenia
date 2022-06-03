@@ -43,7 +43,7 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 2;
+        public override int Meat => 8;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override void Serialize(GenericWriter writer)
         {

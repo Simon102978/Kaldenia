@@ -50,7 +50,6 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.MedScrolls, 2);
-            AddLoot(LootPack.RandomLootItem(new[] { typeof(StrangleScroll), typeof(WitherScroll) }, 25.0, 1));
         }
 
         public MeerMage(Serial serial)

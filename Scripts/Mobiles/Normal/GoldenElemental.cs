@@ -50,7 +50,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<GoldOre>(25, true));
+            AddLoot(LootPack.LootItem<GoldOre>(5, true));
         }
 
         public override void Serialize(GenericWriter writer)

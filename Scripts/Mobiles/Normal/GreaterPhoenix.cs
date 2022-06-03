@@ -42,8 +42,8 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.LootGold(500, 700));
-        }
+			AddLoot(LootPack.Rich);
+		}
 
         public GreaterPhoenix(Serial serial) : base(serial)
         {

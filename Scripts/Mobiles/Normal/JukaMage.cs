@@ -62,8 +62,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average, 2);
             AddLoot(LootPack.MedScrolls, 2);
             AddLoot(LootPack.PeculiarSeed2);
-            AddLoot(LootPack.LootItem<ArcaneGem>());
-            AddLoot(LootPack.LootItemCallback(RegBag));
+
         }
 
         private Item RegBag(IEntity e)

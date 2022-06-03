@@ -119,15 +119,15 @@ namespace Server.Engines.Craft
             AddCraft(typeof(GargoylePainting), 1044501, 1095317, 83.0, 133.0, typeof(Granite), 1044514, 3, 1044513);
           
             AddCraft(typeof(GargoyleVase), 1044501, 1095322, 80.0, 126.0, typeof(Granite), 1044514, 3, 1044513);
+			/*
+						index = AddCraft(typeof(AnniversaryVaseTall), 1044501, 1156147, 60.0, 110.0, typeof(Granite), 1044514, 6, 1044513);
+						AddRecipe(index, (int)MasonryRecipes.AnniversaryVaseTall);
 
-            index = AddCraft(typeof(AnniversaryVaseTall), 1044501, 1156147, 60.0, 110.0, typeof(Granite), 1044514, 6, 1044513);
-            AddRecipe(index, (int)MasonryRecipes.AnniversaryVaseTall);
-
-            index = AddCraft(typeof(AnniversaryVaseShort), 1044501, 1156148, 60.0, 110.0, typeof(Granite), 1044514, 6, 1044513);
-            AddRecipe(index, (int)MasonryRecipes.AnniversaryVaseShort);
-
-            // Furniture
-            AddCraft(typeof(StoneChair), 1044502, 1024635, 55.0, 105.0, typeof(Granite), 1044514, 4, 1044513);
+						index = AddCraft(typeof(AnniversaryVaseShort), 1044501, 1156148, 60.0, 110.0, typeof(Granite), 1044514, 6, 1044513);
+						AddRecipe(index, (int)MasonryRecipes.AnniversaryVaseShort);
+			*/
+			// Furniture
+			AddCraft(typeof(StoneChair), 1044502, 1024635, 55.0, 105.0, typeof(Granite), 1044514, 4, 1044513);
             AddCraft(typeof(MediumStoneTableEastDeed), 1044502, 1044508, 65.0, 115.0, typeof(Granite), 1044514, 6, 1044513);
             AddCraft(typeof(MediumStoneTableSouthDeed), 1044502, 1044509, 65.0, 115.0, typeof(Granite), 1044514, 6, 1044513);
             AddCraft(typeof(LargeStoneTableEastDeed), 1044502, 1044511, 75.0, 125.0, typeof(Granite), 1044514, 9, 1044513);
@@ -144,10 +144,10 @@ namespace Server.Engines.Craft
 
             // Misc Addons
             index = AddCraft(typeof(StoneAnvilSouthDeed), 1044290, 1072876, 78.0, 128.0, typeof(Granite), 1044514, 20, 1044513);
-            AddRecipe(index, (int)CarpRecipes.StoneAnvilSouth);
+           
 
             index = AddCraft(typeof(StoneAnvilEastDeed), 1044290, 1073392, 78.0, 128.0, typeof(Granite), 1044514, 20, 1044513);
-            AddRecipe(index, (int)CarpRecipes.StoneAnvilEast);
+            
 
             index = AddCraft(typeof(LargeGargoyleBedSouthDeed), 1044290, 1111761, 76.0, 126.0, typeof(Granite), 1044514, 3, 1044513);
             AddSkill(index, SkillName.Tailoring, 70.0, 75.0);
@@ -158,11 +158,11 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
 
          
-
+/*
             // Stone Weapons
             AddCraft(typeof(StoneWarSword), 1111719, 1022304, 55.0, 105.0, typeof(Granite), 1044514, 18, 1044513);
-
-            // Stone Walls
+*/
+  /*          // Stone Walls
             index = AddCraft(typeof(CraftableHouseItem), 1155792, 1155794, 60.0, 110.0, typeof(Granite), 1044514, 10, 1044513);
             SetData(index, CraftableItemType.RoughWindowless);
             SetDisplayID(index, 464);
@@ -252,7 +252,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(CraftableHouseItem), 1155877, 1155880, 60.0, 110.0, typeof(Granite), 1044514, 5, 1044513);
             SetData(index, CraftableItemType.DarkPaver);
             SetDisplayID(index, 1313);
-
+*/
             MarkOption = true;
             Repair = true;
             CanEnhance = true;

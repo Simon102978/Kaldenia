@@ -54,7 +54,15 @@ namespace Server.Mobiles
         public override PackInstinct PackInstinct => PackInstinct.Arachnid;
         public override Poison PoisonImmune => Poison.Regular;
         public override Poison HitPoison => Poison.Regular;
-        public override void GenerateLoot()
+
+		public override int Hides => 3;
+		public override HideType HideType => HideType.Arachnide;
+		public override int Bones => 3;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override int TreasureMapLevel => 1;
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Gems, 2);

@@ -46,7 +46,14 @@ namespace Server.Mobiles
 
         public override int TreasureMapLevel => 4;
 
-        public override TribeType Tribe => TribeType.Terathan;
+		public override int Hides => 10;
+		public override HideType HideType => HideType.Arachnide;
+
+
+		public override int Bones => 10;
+		public override BoneType BoneType => BoneType.Arachnide;
+
+		public override TribeType Tribe => TribeType.Terathan;
 
         public override void GenerateLoot()
         {

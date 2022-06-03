@@ -57,8 +57,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool AllowMaleRider => false;
-        public override bool AllowMaleTamer => false;
+        public override bool AllowMaleRider => true;
+        public override bool AllowMaleTamer => true;
         public override bool InitialInnocent => true;
         public override TimeSpan MountAbilityDelay => TimeSpan.FromHours(1.0);
 
@@ -66,7 +66,7 @@ namespace Server.Mobiles
 
         public override Poison PoisonImmune => Poison.Lethal;
         public override int Meat => 3;
-        public override int Hides => 10;
+        public override int Hides => 5;
         public override HideType HideType => HideType.Regular;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override void OnDisallowedRider(Mobile m)

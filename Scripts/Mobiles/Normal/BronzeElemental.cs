@@ -53,7 +53,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Gems, 2);
-            AddLoot(LootPack.LootItem<BronzeOre>(25));
+            AddLoot(LootPack.LootItem<BronzeOre>(5));
         }
 
         public override void Serialize(GenericWriter writer)

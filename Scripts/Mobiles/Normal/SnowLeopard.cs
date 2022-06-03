@@ -45,9 +45,14 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
-        public override int Hides => 8;
-        public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish;
+        public override int Meat => 3;
+		public override int Hides => 5;
+		public override HideType HideType => HideType.Regular;
+
+
+		public override int Bones => 5;
+		public override BoneType BoneType => BoneType.Regular;
+		public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish;
         public override PackInstinct PackInstinct => PackInstinct.Feline;
         public override void Serialize(GenericWriter writer)
         {

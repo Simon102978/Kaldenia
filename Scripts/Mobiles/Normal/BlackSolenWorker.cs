@@ -40,10 +40,7 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.Gems, 1, 2);
-            AddLoot(LootPack.LootGold(100, 180));
-            AddLoot(LootPack.LootItem<ZoogiFungus>(100.0, 1, false, true));
-            AddLoot(LootPack.LootItemCallback(SolenHelper.PackPicnicBasket, 1.0, 1, false, false));
+            AddLoot(LootPack.Gems, 1, 2);     
         }
 
         public BlackSolenWorker(Serial serial)

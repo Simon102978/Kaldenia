@@ -56,10 +56,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.LootItem<ShadowIronOre>(25));
-            AddLoot(LootPack.LootItem<IronIngot>(10));
-            AddLoot(LootPack.LootItem<OrcishKinMask>(5.0));
-            AddLoot(LootPack.LootItem<BolaBall>(20.0));
+            AddLoot(LootPack.LootItem<ShadowIronOre>(3));
+            AddLoot(LootPack.LootItem<IronIngot>(5));
             AddLoot(LootPack.LootItem<Yeast>());
         }
 

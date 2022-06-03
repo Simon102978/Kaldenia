@@ -53,10 +53,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.UltraRich, 2);
             AddLoot(LootPack.Parrot);
             AddLoot(LootPack.HighScrolls, 2);
-            AddLoot(LootPack.MedScrolls);
-            AddLoot(LootPack.LootItem<BrokenCrystals>(60.0));
-            AddLoot(LootPack.Parrot);
-            AddLoot(LootPack.ArcanistScrolls, 0, 2);
+            AddLoot(LootPack.MedScrolls);          
+            AddLoot(LootPack.Parrot);      
         }
 
         public override void Serialize(GenericWriter writer)

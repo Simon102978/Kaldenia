@@ -49,16 +49,19 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Hides => 40;
-        public override int Meat => 19;
+		public override int Hides => 12;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		public override int Meat => 19;
         public override int TreasureMapLevel => 5;
         public override void GenerateLoot()
         {
             AddLoot(LootPack.UltraRich, 3);
             AddLoot(LootPack.ArcanistScrolls, 0, 1);
-            AddLoot(LootPack.LootItem<HydraScale>());
-            AddLoot(LootPack.LootItem<ParrotItem>(20.0));
-            AddLoot(LootPack.LootItem<ThorvaldsMedallion>(5.0));
         }
 
         public override void Serialize(GenericWriter writer)

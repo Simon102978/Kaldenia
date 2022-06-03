@@ -47,8 +47,16 @@ namespace Server.Mobiles
         }
 
         public override bool DeathAdderCharmable => true;
-        public override int Meat => 1;
-        public override Poison PoisonImmune => Poison.Lethal;
+        public override int Meat => 5;
+
+		public override int Hides => 4;
+		public override HideType HideType => HideType.Reptilien;
+
+
+		public override int Bones => 4;
+		public override BoneType BoneType => BoneType.Reptilien;
+
+		public override Poison PoisonImmune => Poison.Lethal;
         public override Poison HitPoison => Poison.Lethal;
 
         public override void GenerateLoot()

@@ -45,12 +45,12 @@ namespace Server.Mobiles
 
         public override int Meat => 6;
 
-        public override int Hides => 8;
+        public override int Hides => 6;
 
         public override HideType HideType => HideType.Reptilien;
 
 
-		public override int Bones => 8;
+		public override int Bones => 6;
 		public override BoneType BoneType => BoneType.Reptilien;
 
 		public override void GenerateLoot()

@@ -1122,7 +1122,7 @@ namespace Server.Mobiles
 		}
 
 		public virtual uint TraitsGiven(uint atLevel) { return (atLevel == 10) ? (uint)3 : (uint)1; }
-		public string SexString { get { return (Female ? "Female" : "Male"); } }
+		public string SexString { get { return (Female ? "" : ""); } }
 		public JakoAttributes m_jakoAttributes = new JakoAttributes();
 
 
@@ -7916,6 +7916,8 @@ namespace Server.Mobiles
 
         [CommandProperty(AccessLevel.GameMaster)]
         public bool RemoveOnSave { get { return m_RemoveOnSave; } set { m_RemoveOnSave = value; } }
+
+		public bool BaseHire { get; internal set; }
 	}
 
 	public class LoyaltyTimer : Timer

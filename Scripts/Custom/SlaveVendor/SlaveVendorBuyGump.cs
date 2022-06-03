@@ -38,8 +38,8 @@ namespace Server.Custom.Gumps
 
 		private static readonly SlaveEntry[] m_Entries = new[]
 		{
-			new SlaveEntry(typeof(HireMaleSlave), "Esclave mâle", 0x2106, -10, -10),
-			new SlaveEntry(typeof(HireFemaleSlave), "Esclave femelle", 0x2107, -10, -10),
+			new SlaveEntry(typeof(HireMaleSlave), "Esclave mâle", 0x2106, -20, -25),
+			new SlaveEntry(typeof(HireFemaleSlave), "Esclave femelle", 0x2107, -20, -25),
 		};
 
 		public static SlaveEntry[] Entries => m_Entries;

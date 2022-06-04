@@ -1,6 +1,6 @@
 namespace Server.Items
 {
-    [Flipable(0xA333, 0xA334)]
+    [Flipable(0xE76, 0xE76)]
     public class BagOfGems : Bag
     {
         public override int LabelNumber => 1048032;  // a bag
@@ -8,7 +8,7 @@ namespace Server.Items
         [Constructable]
         public BagOfGems()
         {
-            ItemID = 0xA333;
+            ItemID = 0xE76;
         }
 
         public BagOfGems(Serial serial)
@@ -29,7 +29,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0xA331, 0xA332)]
+    [Flipable(0xE76, 0xE76)]
     public class BagOfGold : Bag
     {
         public override int LabelNumber => 1048032;  // a bag
@@ -37,7 +37,7 @@ namespace Server.Items
         [Constructable]
         public BagOfGold()
         {
-            ItemID = 0xA331;
+            ItemID = 0xE76;
         }
 
         public BagOfGold(Serial serial)
@@ -58,7 +58,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0xA32F, 0xA330)]
+    [Flipable(0xE76, 0xE76)]
     public class BagOfRegs : Bag
     {
         public override int LabelNumber => 1048032;  // a bag
@@ -66,7 +66,7 @@ namespace Server.Items
         [Constructable]
         public BagOfRegs()
         {
-            ItemID = 0xA32F;
+            ItemID = 0xE76;
         }
 
         public BagOfRegs(Serial serial)

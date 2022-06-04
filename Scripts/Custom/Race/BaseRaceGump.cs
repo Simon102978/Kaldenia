@@ -42,12 +42,16 @@ namespace Server.Items
 
         public override void OnRemoved(object parent)
         {
-            Mobile mob = parent as Mobile;
+
+			Delete();
+
+
+       /*     Mobile mob = parent as Mobile;
 
             if (mob != null)
                 RemoveProperties(mob);
 
-            base.OnRemoved(parent);
+            base.OnRemoved(parent);*/
         }
 
         public override void AddNameProperty(ObjectPropertyList list)

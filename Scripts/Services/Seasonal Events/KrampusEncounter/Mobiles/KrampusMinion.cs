@@ -30,7 +30,7 @@ namespace Server.Mobiles
 
             SetSkill(SkillName.Tactics, 110, 120);
             SetSkill(SkillName.Wrestling, 100, 110);
-            SetSkill(SkillName.DetectHidden, 60.0, 70.0);
+            SetSkill(SkillName.Tracking, 60.0, 70.0);
             SetSkill(SkillName.MagicResist, 120);
             SetSkill(SkillName.Parry, 60, 70);
 

@@ -31,12 +31,16 @@ namespace Server.SkillHandlers
 
         public static TimeSpan OnUse(Mobile src)
         {
+
+			src.SendMessage("Skill désactivé.");
+
+			/*
             src.SendLocalizedMessage(500819);//Where will you search?
-            src.Target = new InternalTarget();
+            src.Target = new InternalTarget();*/
 
-            return TimeSpan.FromSeconds(10.0);
+            return TimeSpan.FromSeconds(5.0);
         }
-
+/*
         public class InternalTarget : Target
         {
             public InternalTarget()
@@ -73,9 +77,9 @@ namespace Server.SkillHandlers
 
                 if (range > 0)
                 {
-                    IPooledEnumerable inRange = src.Map.GetMobilesInRange(p, range);
+     /*               IPooledEnumerable inRange = src.Map.GetMobilesInRange(p, range);
 
-                    foreach (Mobile trg in inRange)
+                   foreach (Mobile trg in inRange)
                     {
                         if (trg.Hidden && src != trg)
                         {
@@ -98,8 +102,8 @@ namespace Server.SkillHandlers
                         }
                     }
 
-                    inRange.Free();
-
+                    inRange.Free();*/
+/*
                     IPooledEnumerable itemsInRange = src.Map.GetItemsInRange(p, range);
 
                     foreach (Item item in itemsInRange)
@@ -133,39 +137,48 @@ namespace Server.SkillHandlers
                 }
             }
         }
-
+*/
         public static void DoPassiveDetect(Mobile src)
         {
             if (src == null || src.Map == null || src.Location == Point3D.Zero || src.IsStaff())
                 return;
 
-            double ss = src.Skills[SkillName.DetectHidden].Value;
+            double ss = src.Skills[SkillName.Tracking].Value;
 
             if (ss <= 0)
                 return;
 
-            IPooledEnumerable eable = src.Map.GetMobilesInRange(src.Location, 4);
+          //  src.CheckSkill(SkillName.DetectHidden, 0); // Juste pour augmenter le skills - Va donc monter passivement a tout les 7 minutes.
 
-            if (eable == null)
-                return;
+            src.JetDetection(-10);
 
-            foreach (Mobile m in eable)
-            {
-                if (m == null || m == src || m is ShadowKnight || !CanDetect(src, m, false))
-                    continue;
+            // Je laisse ca la, au cas ou... la detection d'items, j'ai retirer la dectection mobile, car elle va se faire autrement.
 
-                double ts = (m.Skills[SkillName.Hiding].Value);
+            /*            IPooledEnumerable eable = src.Map.GetMobilesInRange(src.Location, 4);
 
-                if (src.AccessLevel >= m.AccessLevel && Utility.Random(1000) < (ss - ts) + 1)
-                {
-                    m.RevealingAction();
-                    m.SendLocalizedMessage(500814); // You have been revealed!
-                }
-            }
+                        if (eable == null)
+                            return;
 
-            eable.Free();
+                        foreach (Mobile m in eable)
+                        {
+                            if (m == null || m == src || m is ShadowKnight || !CanDetect(src, m, false))
+                                continue;
 
-            eable = src.Map.GetItemsInRange(src.Location, 8);
+                            double ts = (m.Skills[SkillName.Hiding].Value + m.Skills[SkillName.Stealth].Value) / 2;
+
+                  /*          if (src.Race == Race.Elf)
+                                ss += 20;*/
+
+            /*             if (src.AccessLevel >= m.AccessLevel && Utility.Random(1000) < (ss - ts) + 1)
+                         {
+                             m.RevealingAction();
+                             m.SendLocalizedMessage(500814); // You have been revealed!
+                         }
+                     }
+
+                     eable.Free();*/
+
+            IPooledEnumerable eable = src.Map.GetItemsInRange(src.Location, 8);
 
             foreach (Item item in eable)
             {
@@ -195,12 +208,6 @@ namespace Server.SkillHandlers
             {
                 return false;
             }
-			
-			// pets shouldn't reveal their masters
-			if (src is BaseCreature sbc && sbc.ControlMaster == target)
-			{
-				return false;
-			}
 
             SpellHelper.CheckResponsible(ref src);
             SpellHelper.CheckResponsible(ref target);

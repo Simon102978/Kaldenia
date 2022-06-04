@@ -32,7 +32,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 50.0, 85.0);
             SetSkill(SkillName.Tactics, 70.0, 105.0);
             SetSkill(SkillName.Wrestling, 70.0, 110.0);
-            SetSkill(SkillName.DetectHidden, 60.0, 80.0);
+            SetSkill(SkillName.Tracking, 60.0, 80.0);
             SetSkill(SkillName.Focus, 100.0, 115.0);
 
             Tamable = true;

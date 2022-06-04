@@ -32,7 +32,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Necromancy, 20.0);
             SetSkill(SkillName.SpiritSpeak, 20.0);
             SetSkill(SkillName.Wrestling, 50.1, 65.0);
-            SetSkill(SkillName.DetectHidden, 41.2);
+            SetSkill(SkillName.Tracking, 41.2);
 
             Fame = 2500;
             Karma = -2500;

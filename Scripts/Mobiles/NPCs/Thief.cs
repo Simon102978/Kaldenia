@@ -10,7 +10,7 @@ namespace Server.Mobiles
             : base("Voleur")
         {
             SetSkill(SkillName.Camping, 55.0, 78.0);
-            SetSkill(SkillName.DetectHidden, 65.0, 88.0);
+            SetSkill(SkillName.Tracking, 65.0, 88.0);
             SetSkill(SkillName.Hiding, 45.0, 68.0);
             SetSkill(SkillName.Archery, 65.0, 88.0);
             SetSkill(SkillName.Tracking, 65.0, 88.0);

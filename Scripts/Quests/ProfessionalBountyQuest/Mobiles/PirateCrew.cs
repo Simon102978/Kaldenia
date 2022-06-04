@@ -120,7 +120,7 @@ namespace Server.Mobiles
                 AddItem(bow);
             }
 
-            SetSkill(SkillName.DetectHidden, 40.0, 45.0);
+            SetSkill(SkillName.Tracking, 40.0, 45.0);
 
             Fame = 8000;
             Karma = -8000;

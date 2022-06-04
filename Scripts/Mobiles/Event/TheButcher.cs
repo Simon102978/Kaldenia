@@ -35,7 +35,7 @@ namespace Server.Mobiles
             SetResistance(ResistanceType.Poison, 60, 70);
             SetResistance(ResistanceType.Energy, 35, 40);
 
-            SetSkill(SkillName.DetectHidden, 80.0);
+            SetSkill(SkillName.Tracking, 80.0);
             SetSkill(SkillName.Meditation, 120.0);
             SetSkill(SkillName.Poisoning, 160.0);
             SetSkill(SkillName.MagicResist, 180.0, 200.0);

@@ -35,7 +35,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Fencing, 46.0, 77.5);
             SetSkill(SkillName.Macing, 35.0, 57.5);
             SetSkill(SkillName.Poisoning, 60.0, 82.5);
-            SetSkill(SkillName.DetectHidden, 100);
+            SetSkill(SkillName.Tracking, 100);
             SetSkill(SkillName.MagicResist, 83.5, 92.5);
             SetSkill(SkillName.Swords, 125.0);
             SetSkill(SkillName.Tactics, 125.0);

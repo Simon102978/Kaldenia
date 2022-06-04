@@ -33,7 +33,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 86.0, 135.0);
             SetSkill(SkillName.Tactics, 80.1, 90.0);
             SetSkill(SkillName.Wrestling, 90.1, 100.0);
-            SetSkill(SkillName.DetectHidden, 70.0, 80.0);
+            SetSkill(SkillName.Tracking, 70.0, 80.0);
 
             Fame = 15000;
             Karma = 0;

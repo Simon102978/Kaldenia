@@ -1581,7 +1581,7 @@ namespace Server.Mobiles
 
                 NextCastTime = DateTime.UtcNow + GetDelay(spell);
             }
-            else if (m_Mobile.CanDetectHidden)
+        /*    else if (m_Mobile.CanDetectHidden)
             {
                 DetectHidden.OnUse(m_Mobile);
 
@@ -1591,7 +1591,7 @@ namespace Server.Mobiles
                 }
 
                 NextCastTime = DateTime.UtcNow + TimeSpan.FromSeconds(1);
-            }
+            }*/
         }
     }
 }

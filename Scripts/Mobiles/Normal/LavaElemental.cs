@@ -36,7 +36,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 80.3, 94.0);
             SetSkill(SkillName.Wrestling, 71.7, 85.4);
             SetSkill(SkillName.Poisoning, 90.0, 100.0);
-            SetSkill(SkillName.DetectHidden, 75.1);
+            SetSkill(SkillName.Tracking, 75.1);
         }
 
         public LavaElemental(Serial serial)

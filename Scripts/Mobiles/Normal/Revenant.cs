@@ -35,7 +35,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 100.0 * scalar); // magic resist is absolute value of spiritspeak
             SetSkill(SkillName.Tactics, 100.0); // always 100
             SetSkill(SkillName.Swords, 100.0 * scalar); // not displayed in animal lore but tests clearly show this is influenced
-            SetSkill(SkillName.DetectHidden, 75.0 * scalar);
+            SetSkill(SkillName.Tracking, 75.0 * scalar);
 
             scalar /= 1.2;
 

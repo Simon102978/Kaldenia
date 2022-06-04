@@ -348,7 +348,7 @@ namespace Server.Engines.VeteranRewards
             SetSkill(SkillName.Tactics, 100.0);
             SetSkill(SkillName.Wrestling, 100.0);
             SetSkill(SkillName.Parry, 100.0);
-            SetSkill(SkillName.DetectHidden, 48.4);
+            SetSkill(SkillName.Tracking, 48.4);
 
             SetDamage(13, 24);
 

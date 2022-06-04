@@ -33,7 +33,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 100.0);
             SetSkill(SkillName.MagicResist, 100.0);
             SetSkill(SkillName.Poisoning, 160.0);
-            SetSkill(SkillName.DetectHidden, 100.0);
+            SetSkill(SkillName.Tracking, 100.0);
             SetSkill(SkillName.Necromancy, 110.0, 120.0);
             SetSkill(SkillName.SpiritSpeak, 100.0, 110.0);
 

@@ -37,7 +37,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 50.1, 70.0);
             SetSkill(SkillName.Necromancy, 100.0, 110.0);
             SetSkill(SkillName.SpiritSpeak, 95.0, 105.0);
-            SetSkill(SkillName.DetectHidden, 55.0, 60.0);
+            SetSkill(SkillName.Tracking, 55.0, 60.0);
 
             Fame = 5000;
             Karma = -5000;

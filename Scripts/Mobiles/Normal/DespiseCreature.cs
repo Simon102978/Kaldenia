@@ -180,7 +180,7 @@ namespace Server.Engines.Despise
             SetSkill(SkillName.MagicResist, SkillStart);
             SetSkill(SkillName.Anatomy, SkillStart);
             SetSkill(SkillName.Poisoning, SkillStart);
-            SetSkill(SkillName.DetectHidden, SkillStart);
+            SetSkill(SkillName.Tracking, SkillStart);
             SetSkill(SkillName.Parry, SkillStart);
             SetSkill(SkillName.Magery, SkillStart);
             SetSkill(SkillName.EvalInt, SkillStart);

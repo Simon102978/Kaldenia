@@ -52,7 +52,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 150);
             SetSkill(SkillName.Tactics, 110, 120);
             SetSkill(SkillName.Wrestling, 120.0, 125.0);
-            SetSkill(SkillName.DetectHidden, 60.0, 70.0);
+            SetSkill(SkillName.Tracking, 60.0, 70.0);
             SetSkill(SkillName.Parry, 60, 70);
 
             Fame = 30000;

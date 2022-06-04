@@ -42,7 +42,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Wrestling, skillvalue);
             SetSkill(SkillName.Anatomy, skillvalue);
             SetSkill(SkillName.Mysticism, skillvalue);
-            SetSkill(SkillName.DetectHidden, 70.0);
+            SetSkill(SkillName.Tracking, 70.0);
             SetSkill(SkillName.EvalInt, skillvalue);
             SetSkill(SkillName.Mysticism, m.Skills[SkillName.Mysticism].Value);
             SetSkill(SkillName.Focus, m.Skills[SkillName.Focus].Value);

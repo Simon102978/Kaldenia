@@ -32,7 +32,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Anatomy, 65.0, 75.0);
             SetSkill(SkillName.Tactics, 90.0, 100.0);
             SetSkill(SkillName.Wrestling, 95.0, 105.0);
-            SetSkill(SkillName.DetectHidden, 75.0);
+            SetSkill(SkillName.Tracking, 75.0);
             SetSkill(SkillName.Focus, 95.0, 105.0);
             SetSkill(SkillName.Parry, 0.0, 105.0);
 

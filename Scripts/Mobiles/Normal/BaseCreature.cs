@@ -596,8 +596,8 @@ namespace Server.Mobiles
             if (Skills[SkillName.Focus].Value == 0)
                 SetSkill(SkillName.Focus, 2, 20);
 
-            if (Skills[SkillName.DetectHidden].Value == 0 && !(this is BaseVendor))
-                SetSkill(SkillName.DetectHidden, Utility.RandomList(10, 60));
+            if (Skills[SkillName.Tracking].Value == 0 && !(this is BaseVendor))
+                SetSkill(SkillName.Tracking, Utility.RandomList(10, 60));
         }
 
         public void SetMagicalAbility(MagicalAbility ability)
@@ -7439,7 +7439,7 @@ namespace Server.Mobiles
                 return;
             }
 
-            double srcSkill = Skills[SkillName.DetectHidden].Value;
+  /*          double srcSkill = Skills[SkillName.DetectHidden].Value;
 
             if (srcSkill <= 0)
             {
@@ -7456,7 +7456,7 @@ namespace Server.Mobiles
             else
             {
                 DebugSay("Failed Checking for hidden players");
-            }
+            }*/
         }
         #endregion
 

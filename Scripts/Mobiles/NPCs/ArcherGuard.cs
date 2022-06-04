@@ -73,7 +73,7 @@ namespace Server.Mobiles
             Skills[SkillName.Tactics].Base = 120.0;
             Skills[SkillName.Archery].Base = 120.0;
             Skills[SkillName.MagicResist].Base = 120.0;
-            Skills[SkillName.DetectHidden].Base = 100.0;
+            Skills[SkillName.Tracking].Base = 100.0;
 
             NextCombatTime = Core.TickCount + 500;
             Focus = target;

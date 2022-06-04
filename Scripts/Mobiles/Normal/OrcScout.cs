@@ -44,7 +44,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Parry, 40.1, 60.0);
             SetSkill(SkillName.Healing, 80.1, 100.0);
             SetSkill(SkillName.Anatomy, 50.1, 90.0);
-            SetSkill(SkillName.DetectHidden, 100.1, 120.0);
+            SetSkill(SkillName.Tracking, 100.1, 120.0);
             SetSkill(SkillName.Hiding, 100.0, 120.0);
    //         SetSkill(SkillName.Stealth, 80.1, 120.0);
 

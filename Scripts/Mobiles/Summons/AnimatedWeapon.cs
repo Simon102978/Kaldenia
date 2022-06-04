@@ -57,7 +57,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, caster.Skills[SkillName.Tactics].Value / 2);
             SetSkill(SkillName.Wrestling, level);
             SetSkill(SkillName.Anatomy, caster.Skills[SkillName.Anatomy].Value / 2);
-            SetSkill(SkillName.DetectHidden, 40, 50);
+            SetSkill(SkillName.Tracking, 40, 50);
 
             Fame = 0;
             Karma = 0;

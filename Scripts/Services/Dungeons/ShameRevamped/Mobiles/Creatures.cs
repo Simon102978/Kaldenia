@@ -182,7 +182,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 70, 90);
             SetSkill(SkillName.Tactics, 80, 110);
             SetSkill(SkillName.Wrestling, 80, 110);
-            SetSkill(SkillName.DetectHidden, 100.0);
+            SetSkill(SkillName.Tracking, 100.0);
 
             Fame = 3500;
             Karma = -3500;
@@ -261,7 +261,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 80, 120);
             SetSkill(SkillName.Wrestling, 80, 110);
             SetSkill(SkillName.Parry, 70, 80);
-            SetSkill(SkillName.DetectHidden, 70.0, 80.0);
+            SetSkill(SkillName.Tracking, 70.0, 80.0);
 
             Fame = 4500;
             Karma = -4500;
@@ -1516,7 +1516,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Magery, 110, 120);
             SetSkill(SkillName.EvalInt, 115, 130);
             SetSkill(SkillName.Meditation, 130, 155);
-            SetSkill(SkillName.DetectHidden, 80.0);
+            SetSkill(SkillName.Tracking, 80.0);
             SetSkill(SkillName.Parry, 90.0, 100.0);
 
             int scrolls = Utility.RandomMinMax(4, 6);
@@ -1648,7 +1648,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Magery, 90, 110);
             SetSkill(SkillName.EvalInt, 90, 100);
             SetSkill(SkillName.Meditation, 100, 120);
-            SetSkill(SkillName.DetectHidden, 85.1);
+            SetSkill(SkillName.Tracking, 85.1);
             SetSkill(SkillName.Parry, 80, 100);
         }
 

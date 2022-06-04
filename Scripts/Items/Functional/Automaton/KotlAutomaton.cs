@@ -67,7 +67,7 @@ namespace Server.Items
             SetSkill(SkillName.MagicResist, 121.0, 126.7);
             SetSkill(SkillName.Tactics, 82.0, 94.8);
             SetSkill(SkillName.Wrestling, 94.4, 108.4);
-            SetSkill(SkillName.DetectHidden, 40.0);
+            SetSkill(SkillName.Tracking, 40.0);
             SetSkill(SkillName.Parry, 70.0, 80.0);
 
             Fame = 14000;

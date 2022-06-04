@@ -2855,14 +2855,150 @@ namespace Server
 		{
 			if (m_Hidden && m_AccessLevel == AccessLevel.Player)
 			{
-				if (m_AllowedStealthSteps-- <= 0 || (d & Direction.Running) != 0 || Mounted)
-				{
-					RevealingAction();
-				}
+				JetDetection();
+
 			}
+
+			/*	if (m_Hidden && m_AccessLevel == AccessLevel.Player)
+				{
+					if (m_AllowedStealthSteps-- <= 0 || (d & Direction.Running) != 0 || Mounted)
+					{
+						RevealingAction();
+					}
+				}*/
 
 			return true;
 		}
+
+
+		public virtual void JetDetection(int bonus = 0)
+		{
+			foreach (Mobile m in this.GetMobilesInRange(10))
+			{
+				bool cansee = m.CanSee(this);
+
+
+				if (m != this && m.AccessLevel == AccessLevel.Player && !cansee)
+				{
+					m.Detection(this, bonus);
+				}
+
+
+			}
+		}
+
+		public virtual void Detection(Mobile mobile)
+		{
+			Detection(mobile, 0);
+		}
+
+		public virtual void Detection(Mobile mobile, int boni)
+		{
+			int bonus = boni + 50;  // donne 50% de chances de base a detecter la personne... le reste depends des bonus malus.
+
+
+			bonus += GetDetectionBonus(mobile);
+
+			bonus -= mobile.GetHideBonus();
+
+			int chance = Utility.Random(100);
+
+			if (chance <= bonus)
+			{
+				mobile.Reveal(this);
+			}
+		}
+
+		public virtual int GetHideBonus()
+		{
+			int bonus = (int)(Skills[SkillName.Hiding].Value);
+
+			return bonus;
+
+		}
+
+		public virtual int GetDetectionBonus(Mobile mobile)
+		{
+			int bonus = (int)Skills[SkillName.Tracking].Value;
+
+			double Range = GetDistanceToSqrt(mobile.Location);
+
+			if (Range >= 8)
+			{
+				bonus -= 20;
+			}
+			else if (Range >= 6)
+			{
+				bonus -= 10;
+			}
+			else if (Range >= 4)
+			{
+				bonus += 5;
+			}
+			else if (Range >= 3)
+			{
+				bonus += 20;
+			}
+			else
+			{
+				bonus += 30;
+			}
+
+			ComputeLightLevels(out int global, out int personal);
+
+			int lightLevel = global + personal;
+
+			if (lightLevel >= 20)
+			{
+				bonus -= 20;
+			}
+			else if (lightLevel >= 10)
+			{
+				//   bonus -= 0;
+			}
+			else
+			{
+				bonus += 20;
+			}
+
+			return bonus;
+		}
+
+		public virtual void Reveal(Mobile m)
+		{
+			// pour les mobs...
+
+			RevealingAction();
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		private static readonly Packet[][] m_MovingPacketCache =
 		{
@@ -3324,10 +3460,24 @@ namespace Server
 					{
 						if (Stam == StamMax)
 						{
-							number = shoved.m_Hidden ? 1019043 : 1019042;
-							Stam -= 10;
+						//	number = shoved.m_Hidden ? 1019043 : 1019042;
 
-							RevealingAction();
+							if (shoved.Hidden)
+							{
+								Detection(shoved, 50);
+							}
+							else
+							{
+								Stam -= 10; // Fait comme ca, sinon ca donnerait le jeux que la personne est cacher et j'ai pas envie que le monde marche toute les tiles pour detecter.
+								SendLocalizedMessage(1019042);
+							}
+
+							if (Hidden)
+							{
+								Reveal(shoved);
+							}
+
+							//	RevealingAction();
 						}
 						else
 						{
@@ -3335,7 +3485,7 @@ namespace Server
 						}
 					}
 
-					SendLocalizedMessage(number);
+	//				SendLocalizedMessage(number);
 				}
 			}
 			return true;
@@ -4737,20 +4887,24 @@ namespace Server
 			{
 				case MessageType.Regular:
 				m_SpeechHue = hue;
+				this.RevealingAction();
 				break;
 				case MessageType.Emote:
 				m_EmoteHue = hue;
 				break;
 				case MessageType.Whisper:
 				m_WhisperHue = hue;
+				text = "- " + text;
 				range = 1;
 				break;
 				case MessageType.Yell:
 				m_YellHue = hue;
+				this.RevealingAction();
 				range = 18;
 				break;
 				default:
 				type = MessageType.Regular;
+				this.RevealingAction();
 				break;
 			}
 
@@ -6697,6 +6851,7 @@ namespace Server
 			if (m_Hidden && IsPlayer())
 			{
 				Hidden = false;
+				SendMessage(this.Female ? "Vous avez été découverte." : "Vous avez été découvert.");
 			}
 
 			m_IsStealthing = false;
@@ -7124,10 +7279,10 @@ namespace Server
 				e.Blocked = true;
 			}
 
-			if (!e.Blocked)
+	/*		if (!e.Blocked)
 			{
 				RevealingAction();
-			}
+			}*/
 		}
 
 		public virtual bool HandlesOnSpeech(Mobile from)

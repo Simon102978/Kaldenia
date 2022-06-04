@@ -216,7 +216,7 @@ namespace Server.Engines.Shadowguard
             SetSkill(SkillName.Magery, 95.0, 110.0);
             SetSkill(SkillName.EvalInt, 95.0, 110.0);
             SetSkill(SkillName.Parry, 95.0, 110.0);
-            SetSkill(SkillName.DetectHidden, 63.0);
+            SetSkill(SkillName.Tracking, 63.0);
         }
 
         public HurricaneElemental(Serial serial)
@@ -257,7 +257,7 @@ namespace Server.Engines.Shadowguard
             SetSkill(SkillName.Tactics, 65.1, 90.0);
             SetSkill(SkillName.Wrestling, 65.1, 105.0);
             SetSkill(SkillName.Poisoning, 100.0);
-            SetSkill(SkillName.DetectHidden, 40.0, 45.0);
+            SetSkill(SkillName.Tracking, 40.0, 45.0);
             SetSkill(SkillName.Parry, 55.0, 60.0);
 
             SetWeaponAbility(WeaponAbility.Dismount);
@@ -446,7 +446,7 @@ namespace Server.Engines.Shadowguard
             SetSkill(SkillName.MagicResist, 65.0, 80.0);
             SetSkill(SkillName.Tactics, 65.0, 90.0);
             SetSkill(SkillName.Wrestling, 110.0, 130.0);
-            SetSkill(SkillName.DetectHidden, 50.6);
+            SetSkill(SkillName.Tracking, 50.6);
             SetSkill(SkillName.Parry, 65.0, 75.0);
 
             SetWeaponAbility(WeaponAbility.DoubleStrike);
@@ -504,7 +504,7 @@ namespace Server.Engines.Shadowguard
             SetSkill(SkillName.MagicResist, 110.0, 150.0);
             SetSkill(SkillName.Tactics, 110.0, 155.0);
             SetSkill(SkillName.Wrestling, 115.0, 155.0);
-            SetSkill(SkillName.DetectHidden, 120.0);
+            SetSkill(SkillName.Tracking, 120.0);
             SetSkill(SkillName.Parry, 120.0);
         }
 

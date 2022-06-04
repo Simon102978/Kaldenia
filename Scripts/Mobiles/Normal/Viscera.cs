@@ -34,7 +34,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 85.0, 100.0);
             SetSkill(SkillName.Wrestling, 85.0, 100.0);
             SetSkill(SkillName.Poisoning, 20.0, 30.0);
-            SetSkill(SkillName.DetectHidden, 50.0);
+            SetSkill(SkillName.Tracking, 50.0);
 
             Fame = 2000;
             Karma = -2000;

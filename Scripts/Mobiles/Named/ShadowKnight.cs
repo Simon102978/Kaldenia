@@ -39,7 +39,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 100.0);
             SetSkill(SkillName.MagicResist, 120.0);
             SetSkill(SkillName.Poisoning, 75.0, 85.0);
-            SetSkill(SkillName.DetectHidden, 100.0);
+            SetSkill(SkillName.Tracking, 100.0);
             SetSkill(SkillName.Hiding, 100.0);
             SetSkill(SkillName.Magery, 100.0);
             SetSkill(SkillName.EvalInt, 100.0);

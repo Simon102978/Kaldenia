@@ -35,7 +35,7 @@
             SetSkill(SkillName.Tactics, 84.9, 112.9);
             SetSkill(SkillName.Wrestling, 82.7, 119.8);
             SetSkill(SkillName.Parry, 90.0, 100.0);
-            SetSkill(SkillName.DetectHidden, 42.9);
+            SetSkill(SkillName.Tracking, 42.9);
 
             Fame = 3500;
             Karma = -3500;

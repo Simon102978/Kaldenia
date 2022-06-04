@@ -3098,7 +3098,9 @@ namespace Server.Items
             }
 
             SkillMasterySpell.OnMiss(attacker, defender);
-        }
+
+			attacker.JetDetection(-50);
+		}
 
         public virtual void GetBaseDamageRange(Mobile attacker, out int min, out int max)
         {

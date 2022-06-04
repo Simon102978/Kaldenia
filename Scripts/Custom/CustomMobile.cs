@@ -323,6 +323,196 @@ namespace Server.Mobiles
 		}
 
 
+		#region Hiding
+
+
+		public override void Reveal(Mobile m)
+		{
+			if (m is CustomPlayerMobile)
+			{
+				if (VisibilityList.Contains(m))
+				{
+
+				}
+				else
+				{
+					VisibilityList.Add(m);
+					m.SendMessage("Vous avez detecté " + Name + ".");
+				}
+
+				if (Utility.InUpdateRange(m, this))
+				{
+					NetState ns = m.NetState;
+
+					if (ns != null)
+					{
+						if (m.CanSee(this))
+						{
+							ns.Send(new MobileIncoming(m, this));
+
+							ns.Send(this.OPLPacket);
+
+							foreach (Item item in this.Items)
+								ns.Send(item.OPLPacket);
+						}
+						else
+						{
+							ns.Send(this.RemovePacket);
+						}
+					}
+				}
+			}
+			else if (m is BaseCreature && ((BaseCreature)m).IsBonded) // Grosso modo ici, c'est pour permettre de detecter sans revealer avec les familiers, car certains on du DH.
+			{
+
+				BaseCreature sd = (BaseCreature)m;
+
+				Mobile cm = sd.ControlMaster;
+
+				if (VisibilityList.Contains(cm))
+				{
+
+				}
+				else
+				{
+					VisibilityList.Add(cm);
+					cm.SendMessage(sd.Name + " vous indique la présence de " + Name + ".");
+				}
+
+				if (Utility.InUpdateRange(cm, this))
+				{
+					NetState ns = cm.NetState;
+
+					if (ns != null)
+					{
+						if (cm.CanSee(this))
+						{
+							ns.Send(new MobileIncoming(cm, this));
+
+							ns.Send(this.OPLPacket);
+
+							foreach (Item item in this.Items)
+								ns.Send(item.OPLPacket);
+						}
+						else
+						{
+							ns.Send(this.RemovePacket);
+						}
+					}
+				}
+			}
+			else
+			{
+				RevealingAction();
+			}
+		}
+
+		public override void RevealingAction()
+		{
+			if (Hidden)
+			{
+				VisibilityList = new List<Mobile>();
+			}
+			base.RevealingAction();
+		}
+
+
+		public override int GetHideBonus()
+		{
+			int bonus = 0;
+
+			double chance = 0.80 * GetBagFilledRatio(this);
+
+			if (chance >= Utility.RandomDouble())
+				bonus -= 10;
+
+			int ar = Server.SkillHandlers.Hiding.GetArmorRating(this);
+
+
+			if (ar >= 90)
+			{
+				bonus -= 50;
+			}
+			else if (ar >= 75)
+			{
+				bonus -= 40;
+			}
+			else if (ar >= 60)
+			{
+				bonus -= 30;
+			}
+			else if (ar >= 40)
+			{
+				bonus -= 20;
+			}
+			else if (ar >= 20)
+			{
+				bonus -= 10;
+			}
+
+			return base.GetHideBonus() + bonus;
+		}
+
+
+		public override int GetDetectionBonus(Mobile mobile)
+		{
+			int bonus = 0;
+
+			if (FindItemOnLayer(Layer.TwoHanded) is BaseEquipableLight)
+			{
+				BaseEquipableLight Light = (BaseEquipableLight)FindItemOnLayer(Layer.TwoHanded);
+
+				ComputeLightLevels(out int global, out int personal);
+
+				int lightLevel = global + personal;
+
+
+				if (lightLevel >= 20 && Light.Burning)
+				{
+					bonus += 10;
+				}
+			}
+
+
+		//	bonus += GetAptitudeValue(AptitudeEnum.Predation) * 3;
+			// Mettre l'aptitude de rodeur ici
+
+			return base.GetDetectionBonus(mobile) + bonus;
+		}
+
+		public static double GetBagFilledRatio(CustomPlayerMobile pm)
+		{
+			Container pack = pm.Backpack;
+
+			if (pm.AccessLevel >= AccessLevel.GameMaster)
+				return 0;
+
+			if (pack != null)
+			{
+				//        int maxweight = WeightOverloading.GetMaxWeight(pm);
+
+				int maxweight = pm.MaxWeight;
+
+				double value = (pm.TotalWeight / maxweight) - 0.50;
+
+				if (value < 0)
+					value = 0;
+
+				if (value > 0.50)
+					value = 0.50;
+
+				return value;
+			}
+
+			return 0;
+		}
+
+		#endregion
+
+
+
+
+
 		#region Apparence
 		public string Apparence()
 		{

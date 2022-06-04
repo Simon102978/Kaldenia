@@ -32,7 +32,7 @@ namespace Server.Mobiles
             SetResistance(ResistanceType.Poison, 65);
             SetResistance(ResistanceType.Energy, 80);
 
-            SetSkill(SkillName.DetectHidden, 100.0);
+            SetSkill(SkillName.Tracking, 100.0);
             SetSkill(SkillName.Meditation, 120.0);
             SetSkill(SkillName.Necromancy, 100.0);
             SetSkill(SkillName.SpiritSpeak, 120.0);

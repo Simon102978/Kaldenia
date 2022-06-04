@@ -46,7 +46,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Necromancy, 20.0);
             SetSkill(SkillName.SpiritSpeak, 20.0);
             SetSkill(SkillName.Anatomy, 40.0, 50.0);
-            SetSkill(SkillName.DetectHidden, 100.0);
+            SetSkill(SkillName.Tracking, 100.0);
             SetSkill(SkillName.Parry, 90.0, 100.0);
 
             Fame = 8500;

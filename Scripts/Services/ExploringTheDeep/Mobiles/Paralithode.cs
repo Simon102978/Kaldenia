@@ -39,7 +39,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Wrestling, 100.2, 109.0);
             SetSkill(SkillName.Parry, 100.0, 110.0);
             SetSkill(SkillName.Ninjitsu, 100.2, 109.0);
-            SetSkill(SkillName.DetectHidden, 50.0);
+            SetSkill(SkillName.Tracking, 50.0);
 
             Fame = 2500;
             Karma = -2500;

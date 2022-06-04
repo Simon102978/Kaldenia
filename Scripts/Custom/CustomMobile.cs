@@ -1238,6 +1238,19 @@ namespace Server.Mobiles
 
 		#region Mort
 
+		public override bool OnBeforeDeath()
+		{
+			if (Server.Commands.ControlCommand.UncontrolDeath((Mobile)this))
+			{
+				return base.OnBeforeDeath();
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+
 		public override void OnDeath(Container c)
 		{
 			base.OnDeath(c);

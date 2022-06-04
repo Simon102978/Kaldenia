@@ -46,8 +46,7 @@ namespace Server.Mobiles
 			ControlSlots = 1;
 			Tamable = false;
 		}
-
-        public HireMaleSlave(Serial serial) : base(serial)
+		public HireMaleSlave(Serial serial) : base(serial)
         {
         }
 

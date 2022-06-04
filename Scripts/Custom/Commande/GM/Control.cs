@@ -321,6 +321,8 @@ namespace Server.Commands
 			
 			if ( controlItem != null )
 			{
+				
+
 				//Backup NPC
 				Mobile NPC = (Mobile)controlItem.NPC;
 				
@@ -329,7 +331,9 @@ namespace Server.Commands
 				from.Hits = from.HitsMax;
 				from.Stam = from.StamMax;
 				from.Mana = from.StamMax;
-				
+				from.Hidden = true;
+
+
 				//Kill NPC as normal
 				NPC.Kill();
 				
@@ -346,7 +350,7 @@ namespace Server.Commands
 			for ( int i = 0; i < m_DesiredLayerOrder.Length; ++i )
 			{
 				item = to.FindItemOnLayer( m_DesiredLayerOrder[i] );
-				if ( item != null ) 
+				if ( item != null && !(item is BaseRaceGumps)) 
 					item.Bounce(to);
 	
 				item = from.FindItemOnLayer( m_DesiredLayerOrder[i] );

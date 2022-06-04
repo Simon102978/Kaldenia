@@ -25,9 +25,9 @@ namespace Server.Mobiles
 		private GrosseurEnum m_Grosseur;
 		private AppearanceEnum m_Beaute;
 
-		private Classe m_ClassePrimaire;
-		private Classe m_ClasseSecondaire;
-		private Classe m_Metier;
+		private Classe m_ClassePrimaire = Classe.GetClasse(-1);
+		private Classe m_ClasseSecondaire = Classe.GetClasse(-1);
+		private Classe m_Metier = Classe.GetClasse(-1);
 
 		private Container m_Corps;
 		private int m_StatAttente;

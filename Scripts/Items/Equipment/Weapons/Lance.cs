@@ -25,7 +25,9 @@ namespace Server.Items
         public override int MaxDamage => 22;
         public override float Speed => 4.25f;
 
-        public override int DefHitSound => 0x23C;
+
+
+		public override int DefHitSound => 0x23C;
         public override int DefMissSound => 0x238;
         public override int InitMinHits => 31;
         public override int InitMaxHits => 110;

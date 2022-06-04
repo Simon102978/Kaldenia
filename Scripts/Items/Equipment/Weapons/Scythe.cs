@@ -22,11 +22,12 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
         public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
         public override int StrengthReq => 45;
-        public override int MinDamage => 16;
-        public override int MaxDamage => 19;
+        public override int MinDamage => 11;
+        public override int MaxDamage => 13;
         public override float Speed => 3.50f;
 
-        public override int InitMinHits => 31;
+		public override int DefMaxRange => 2;
+		public override int InitMinHits => 31;
         public override int InitMaxHits => 100;
         public override HarvestSystem HarvestSystem => null;
         public override void Serialize(GenericWriter writer)

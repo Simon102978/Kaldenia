@@ -18,11 +18,13 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
         public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
         public override int StrengthReq => 20;
-        public override int MinDamage => 15;
-        public override int MaxDamage => 18;
+		public override int MinDamage => 11;
+        public override int MaxDamage => 12;
         public override float Speed => 3.25f;
 
-        public override int InitMinHits => 30;
+		public override int DefMaxRange => 2;
+
+		public override int InitMinHits => 30;
         public override int InitMaxHits => 60;
 
         public override void GetDamageTypes(Mobile wielder, out int phys, out int fire, out int cold, out int pois, out int nrgy, out int chaos, out int direct)

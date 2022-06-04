@@ -19,8 +19,11 @@ namespace Server.Items
 		public override WeaponAbility PrimaryAbility => WeaponAbility.DefenseMastery;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
 		public override int StrengthReq => 30;
-		public override int MinDamage => 11;
-		public override int MaxDamage => 14;
+		public override int MinDamage => 8;
+		public override int MaxDamage => 10;
+
+		public override int DefMaxRange => 2;
+
 		public override float Speed => 2.25f;
 
 		public override int InitMinHits => 31;
@@ -56,10 +59,11 @@ namespace Server.Items
 		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
 		public override int StrengthReq => 20;
-		public override int MinDamage => 15;
-		public override int MaxDamage => 18;
+		public override int MinDamage => 11;
+		public override int MaxDamage => 13;
 		public override float Speed => 3.25f;
 
+		public override int DefMaxRange => 2;
 		public override int InitMinHits => 31;
 		public override int InitMaxHits => 50;
 		public override void Serialize(GenericWriter writer)
@@ -97,11 +101,12 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
         public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
         public override int StrengthReq => 35;
-        public override int MinDamage => 13;
-        public override int MaxDamage => 16;
+        public override int MinDamage => 9;
+        public override int MaxDamage => 11;
         public override float Speed => 2.75f;
 
-        public override int InitMinHits => 31;
+		public override int DefMaxRange => 2;
+		public override int InitMinHits => 31;
         public override int InitMaxHits => 70;
 		
         public override void Serialize(GenericWriter writer)
@@ -135,9 +140,11 @@ namespace Server.Items
 		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
 		public override int StrengthReq => 20;
-		public override int MinDamage => 13;
-		public override int MaxDamage => 16;
+		public override int MinDamage => 9;
+		public override int MaxDamage => 11;
 		public override float Speed => 2.75f;
+
+		public override int DefMaxRange => 2;
 
 		public override int InitMinHits => 31;
 		public override int InitMaxHits => 50;
@@ -174,9 +181,11 @@ namespace Server.Items
 		public override WeaponAbility PrimaryAbility => WeaponAbility.ShadowStrike;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.Bladeweave;
 		public override int StrengthReq => 20;
-		public override int MinDamage => 15;
-		public override int MaxDamage => 18;
+		public override int MinDamage => 11;
+		public override int MaxDamage => 13;
 		public override float Speed => 3.25f;
+
+		public override int DefMaxRange => 2;
 
 		public override int InitMinHits => 31;
 		public override int InitMaxHits => 50;
@@ -211,9 +220,11 @@ namespace Server.Items
 		public override WeaponAbility PrimaryAbility => WeaponAbility.Disarm;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.WhirlwindAttack;
 		public override int StrengthReq => 35;
-		public override int MinDamage => 13;
-		public override int MaxDamage => 16;
+		public override int MinDamage => 9;
+		public override int MaxDamage => 11;
 		public override float Speed => 2.75f;
+
+		public override int DefMaxRange => 2;
 
 		public override int InitMinHits => 31;
 		public override int InitMaxHits => 70;
@@ -249,9 +260,11 @@ namespace Server.Items
 		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
 		public override int StrengthReq => 30;
-		public override int MinDamage => 11;
-		public override int MaxDamage => 14;
+		public override int MinDamage => 8;
+		public override int MaxDamage => 10;
 		public override float Speed => 2.25f;
+
+		public override int DefMaxRange => 2;
 
 		public override int InitMinHits => 31;
 		public override int InitMaxHits => 60;

@@ -18,11 +18,13 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
         public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
         public override int StrengthReq => 15;
-        public override int MinDamage => 10;
-        public override int MaxDamage => 13;
+        public override int MinDamage => 7;
+        public override int MaxDamage => 9;
         public override float Speed => 2.25f;
 
-        public override int InitMinHits => 30;
+		public override int DefMaxRange => 2;
+
+		public override int InitMinHits => 30;
         public override int InitMaxHits => 60;
         public override void Serialize(GenericWriter writer)
         {

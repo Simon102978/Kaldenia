@@ -80,11 +80,11 @@ namespace Server.Items
         {
             switch (package)
             {
-                case TreasurePackage.Artisan: return 1158989;
-                case TreasurePackage.Assassin: return 1158987;
-                case TreasurePackage.Mage: return 1158986;
-                case TreasurePackage.Ranger: return 1158990;
-                case TreasurePackage.Warrior: return 1158988;
+                case TreasurePackage.Artisan: return 0;
+                case TreasurePackage.Assassin: return 0;
+                case TreasurePackage.Mage: return 0;
+                case TreasurePackage.Ranger: return 0;
+                case TreasurePackage.Warrior: return 0;
             }
 
             return 0;
@@ -240,7 +240,7 @@ namespace Server.Items
 
             return null;
         }
-
+  */
         public static Type[] GetCraftingMaterials(TreasureLevel level, TreasurePackage package, ChestQuality quality)
         {
             if (package == TreasurePackage.Artisan && level <= TreasureLevel.Supply && quality != ChestQuality.None)
@@ -251,6 +251,7 @@ namespace Server.Items
             return null;
         }
 
+  /*
         public static Type[] GetSpecialMaterials(TreasureLevel level, TreasurePackage package, TreasureFacet facet)
         {
             if (package == TreasurePackage.Artisan && level == TreasureLevel.Supply)
@@ -289,8 +290,8 @@ namespace Server.Items
 
             switch (facet)
             {
-                case TreasureFacet.Felucca:
-                case TreasureFacet.Trammel: return Loot.RegTypes;
+                case TreasureFacet.Felucca: return Loot.RegTypes;
+				case TreasureFacet.Trammel: return Loot.RegTypes;
                 case TreasureFacet.Malas: return Loot.NecroRegTypes;
                 case TreasureFacet.TerMur: return Loot.MysticRegTypes;
             }
@@ -343,7 +344,7 @@ namespace Server.Items
                 case ChestQuality.Gold: baseAmount = Utility.RandomList(7, 9, 11); break;
             }
 
-            return baseAmount + ((int)level * 5);
+            return baseAmount + ((int)level * 2);
         }
 
         public static int GetGoldCount(TreasureLevel level)
@@ -351,11 +352,11 @@ namespace Server.Items
             switch (level)
             {
                 default:
-                case TreasureLevel.Stash: return Utility.RandomMinMax(10000, 40000);
-                case TreasureLevel.Supply: return Utility.RandomMinMax(20000, 50000);
-                case TreasureLevel.Cache: return Utility.RandomMinMax(30000, 60000);
-                case TreasureLevel.Hoard: return Utility.RandomMinMax(40000, 70000);
-                case TreasureLevel.Trove: return Utility.RandomMinMax(50000, 70000);
+                case TreasureLevel.Stash: return Utility.RandomMinMax(100, 600);
+                case TreasureLevel.Supply: return Utility.RandomMinMax(600, 1200);
+                case TreasureLevel.Cache: return Utility.RandomMinMax(1200, 2000);
+                case TreasureLevel.Hoard: return Utility.RandomMinMax(2000, 4000);
+                case TreasureLevel.Trove: return Utility.RandomMinMax(4000, 6000);
             }
         }
 

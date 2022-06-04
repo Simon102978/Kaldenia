@@ -11,55 +11,60 @@ namespace Server.Items
 {
     public class TreasureMapChest : LockableContainer
     {
-		/*      public static Type[] Artifacts => m_Artifacts;
+		     public static Type[] Artifacts => m_Artifacts;
 			  private static readonly Type[] m_Artifacts = new Type[]
 			  {
-				  typeof(CandelabraOfSouls), typeof(GoldBricks), typeof(PhillipsWoodenSteed),
-				  typeof(ArcticDeathDealer), typeof(BlazeOfDeath), typeof(BurglarsBandana),
-				  typeof(CavortingClub), typeof(DreadPirateHat),
-				  typeof(EnchantedTitanLegBone), typeof(GwennosHarp), typeof(IolosLute),
-				  typeof(LunaLance), typeof(NightsKiss), typeof(NoxRangersHeavyCrossbow),
-				  typeof(PolarBearMask), typeof(VioletCourage), typeof(HeartOfTheLion),
-				  typeof(ColdBlood), typeof(AlchemistsBauble), typeof(CaptainQuacklebushsCutlass),
-				  typeof(ShieldOfInvulnerability), typeof(AncientShipModelOfTheHMSCape),
-				  typeof(AdmiralsHeartyRum)
-			  };
-		
-		public static Type[] ArtifactsLevelFiveToSeven => m_LevelFiveToSeven;
-        private static readonly Type[] m_LevelFiveToSeven = new Type[]
-        {
-            typeof(ForgedPardon), typeof(ManaPhasingOrb), typeof(RunedSashOfWarding), typeof(SurgeShield)
-        };
+				  typeof(CandelabraOfSouls),typeof(AdmiralsHeartyRum), typeof(AncientShipModelOfTheHMSCape), typeof(GoldBricks),
+				  typeof(GrapeVine),
 
-        public static Type[] ArtifactsLevelSeven => m_LevelSevenOnly;
-        private static readonly Type[] m_LevelSevenOnly = new Type[]
-        {
-            typeof(CoffinPiece), typeof(MasterSkeletonKey)
-        };
+				  };
 
-        public static Type[] SOSArtifacts => m_SOSArtifacts;
-        private static readonly Type[] m_SOSArtifacts = new Type[]
-        {
-            typeof(AntiqueWeddingDress),
-            typeof(KelpWovenLeggings),
-            typeof(RunedDriftwoodBow),
-            typeof(ValkyrieArmor)
-        };
-        public static Type[] SOSDecor => m_SOSDecor;
-        private static readonly Type[] m_SOSDecor = new Type[]
-        {
-            typeof(GrapeVine),
-            typeof(LargeFishingNet)
-        };
+		/* 	typeof(GoldBricks), typeof(PhillipsWoodenSteed),
+					  typeof(ArcticDeathDealer), typeof(BlazeOfDeath), typeof(BurglarsBandana),
+					  typeof(CavortingClub), typeof(DreadPirateHat),
+					  typeof(EnchantedTitanLegBone), typeof(GwennosHarp), typeof(IolosLute),
+					  typeof(LunaLance), typeof(NightsKiss), typeof(NoxRangersHeavyCrossbow),
+					  typeof(PolarBearMask), typeof(VioletCourage), typeof(HeartOfTheLion),
+					  typeof(ColdBlood), typeof(AlchemistsBauble), typeof(CaptainQuacklebushsCutlass),
+					  typeof(ShieldOfInvulnerability)
 
-        public static Type[] ImbuingIngreds => m_ImbuingIngreds;
-        private static readonly Type[] m_ImbuingIngreds =
-        {
-            typeof(AbyssalCloth),   typeof(EssencePrecision), typeof(EssenceAchievement), typeof(EssenceBalance),
-            typeof(EssenceControl), typeof(EssenceDiligence), typeof(EssenceDirection),   typeof(EssenceFeeling),
-            typeof(EssenceOrder),   typeof(EssencePassion),   typeof(EssencePersistence), typeof(EssenceSingularity)
-        };
-		*/
+
+
+			public static Type[] ArtifactsLevelFiveToSeven => m_LevelFiveToSeven;
+			private static readonly Type[] m_LevelFiveToSeven = new Type[]
+			{
+				typeof(ForgedPardon), typeof(ManaPhasingOrb), typeof(RunedSashOfWarding), typeof(SurgeShield)
+			};
+
+			public static Type[] ArtifactsLevelSeven => m_LevelSevenOnly;
+			private static readonly Type[] m_LevelSevenOnly = new Type[]
+			{
+				typeof(CoffinPiece), typeof(MasterSkeletonKey)
+			};
+
+			public static Type[] SOSArtifacts => m_SOSArtifacts;
+			private static readonly Type[] m_SOSArtifacts = new Type[]
+			{
+				typeof(AntiqueWeddingDress),
+				typeof(KelpWovenLeggings),
+				typeof(RunedDriftwoodBow),
+				typeof(ValkyrieArmor)
+			};
+			public static Type[] SOSDecor => m_SOSDecor;
+			private static readonly Type[] m_SOSDecor = new Type[]
+			{
+				
+				typeof(LargeFishingNet)
+			};
+
+			public static Type[] ImbuingIngreds => m_ImbuingIngreds;
+			private static readonly Type[] m_ImbuingIngreds =
+			{
+				typeof(AbyssalCloth),   typeof(EssencePrecision), typeof(EssenceAchievement), typeof(EssenceBalance),
+				typeof(EssenceControl), typeof(EssenceDiligence), typeof(EssenceDirection),   typeof(EssenceFeeling),
+				typeof(EssenceOrder),   typeof(EssencePassion),   typeof(EssencePersistence), typeof(EssenceSingularity)
+			};
+			*/
 		private static readonly TimeSpan _DeleteTime = TimeSpan.FromHours(3);
 
         private List<Item> m_Lifted = new List<Item>();
@@ -196,11 +201,11 @@ namespace Server.Items
                 cont.MaxLockLevel = cont.RequiredSkill + 40;
 
                 #region Gold
-                cont.DropItem(new Gold(isSos ? level * 10000 : level * 5000));
-                #endregion
+                cont.DropItem(new Gold(level * 1000)); // Edit de cont.DropItem(new Gold(isSos ? level * 10000 : level * 5000));
+				#endregion
 
-                #region Scrolls
-                if (isSos)
+				#region Scrolls
+				if (isSos)
                 {
                     switch (level)
                     {

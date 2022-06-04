@@ -435,14 +435,14 @@ namespace Server
 
 			Mobile.AddItem(Container);
 
-			VirtualCheck = new VirtualCheck(0, 0);
-			Container.DropItem(VirtualCheck);
+	/*		VirtualCheck = new VirtualCheck(0, 0);
+			Container.DropItem(VirtualCheck);*/
 		}
 
 		public void Dispose()
 		{
-			VirtualCheck.Delete();
-			VirtualCheck = null;
+/*			VirtualCheck.Delete();
+			VirtualCheck = null;*/
 
 			Container.Delete();
 			Container = null;

@@ -22,7 +22,7 @@ namespace Server.Accounting
 		/// Enables or Disables automatic conversion of Gold and Checks to Bank Currency
 		/// when they are added to a bank box container.
 		/// </summary>
-		public static bool ConvertOnBank = true;
+		public static bool ConvertOnBank = false;
 
 		/// <summary>
 		/// Enables or Disables automatic conversion of Gold and Checks to Bank Currency

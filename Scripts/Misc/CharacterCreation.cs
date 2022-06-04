@@ -103,8 +103,9 @@ namespace Server.Misc
 
 
 			newChar.Hunger = 20;
+			newChar.Thirst = 20;
 
-            if (newChar is CustomPlayerMobile)
+			if (newChar is CustomPlayerMobile)
             {
                 CustomPlayerMobile pm = (CustomPlayerMobile)newChar;
 
@@ -119,6 +120,9 @@ namespace Server.Misc
 				pm.Metier = Classe.GetClasse(-1);
 				pm.ClassePrimaire = Classe.GetClasse(-1);
 				pm.ClasseSecondaire = Classe.GetClasse(-1);
+
+			
+		
 
 
 			}

@@ -22,8 +22,8 @@ namespace Server.Items
 			: base(serial)
 		{
 		}
-		public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ConcussionBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
 		public override int StrengthReq => 35;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 19;
@@ -60,18 +60,18 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
 
 		public override int StrengthReq => 35;
-
-		public override int MinDamage => 14;
-		public override int MaxDamage => 17;
-
+		public override int MinDamage => 12;
+		public override int MaxDamage => 16;
 		public override float Speed => 3.00f;
 
+		public override int DefHitSound => 0x233;
+		public override int DefMissSound => 0x239;
 		public override int InitMinHits => 31;
-		public override int InitMaxHits => 110;
+		public override int InitMaxHits => 80;
 
 		public override void Serialize(GenericWriter writer)
 		{
@@ -139,15 +139,17 @@ namespace Server.Items
 		}
 
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.WhirlwindAttack;
-		public override int StrengthReq => 45;
-		public override int MinDamage => 15;
-		public override int MaxDamage => 18;
-		public override float Speed => 3.25f;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.NerveStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
+		public override int StrengthReq => 35;
+		public override int MinDamage => 12;
+		public override int MaxDamage => 16;
+		public override float Speed => 3.00f;
 
+		public override int DefHitSound => 0x233;
+		public override int DefMissSound => 0x239;
 		public override int InitMinHits => 31;
-		public override int InitMaxHits => 110;
+		public override int InitMaxHits => 80;
 		public override void Serialize(GenericWriter writer)
 		{
 			base.Serialize(writer);
@@ -178,8 +180,8 @@ namespace Server.Items
 		}
 
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.WhirlwindAttack;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.WhirlwindAttack;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Block;
 		public override int StrengthReq => 45;
 		public override int MinDamage => 15;
 		public override int MaxDamage => 18;
@@ -216,18 +218,17 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
-
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
 		public override int StrengthReq => 35;
-
-		public override int MinDamage => 14;
-		public override int MaxDamage => 17;
-
+		public override int MinDamage => 12;
+		public override int MaxDamage => 16;
 		public override float Speed => 3.00f;
 
+		public override int DefHitSound => 0x233;
+		public override int DefMissSound => 0x239;
 		public override int InitMinHits => 31;
-		public override int InitMaxHits => 110;
+		public override int InitMaxHits => 80;
 
 		public override void Serialize(GenericWriter writer)
 		{

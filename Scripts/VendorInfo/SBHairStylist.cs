@@ -18,17 +18,17 @@ namespace Server.Mobiles
                
                 Add(new GenericBuyInfo("1041060", typeof(HairDye), 60, 20, 0xEFF, 0));
 
-				Add(new GenericBuyInfo("Long", typeof(LongHair), 25, Utility.RandomMinMax(35, 45), 0x203C, 0));
+			/*	Add(new GenericBuyInfo("Long", typeof(LongHair), 25, Utility.RandomMinMax(35, 45), 0x203C, 0));
 				Add(new GenericBuyInfo("Short", typeof(ShortHair), 25, Utility.RandomMinMax(35, 45), 0x203B, 0));
 				Add(new GenericBuyInfo("Mohawk", typeof(Mohawk), 25, Utility.RandomMinMax(35, 45), 0x2044, 0));
 				Add(new GenericBuyInfo("Pageboy Hair", typeof(PageboyHair), 25, Utility.RandomMinMax(35, 45), 0x2045, 0));
-				Add(new GenericBuyInfo("Buns Hair", typeof(BunsHair), 25, Utility.RandomMinMax(35, 45), 0x2046, 0));
-				Add(new GenericBuyInfo("Pony Tail", typeof(PonyTail), 25, Utility.RandomMinMax(35, 45), 0x203D, 0));
+			*//*	Add(new GenericBuyInfo("Buns Hair", typeof(BunsHair), 25, 35, 0x2046, 0));
+			/*	Add(new GenericBuyInfo("Pony Tail", typeof(PonyTail), 25, Utility.RandomMinMax(35, 45), 0x203D, 0));
 				Add(new GenericBuyInfo("Afro", typeof(Afro), 25, Utility.RandomMinMax(35, 45), 0x2047, 0));
 				Add(new GenericBuyInfo("Receeding Hair", typeof(ReceedingHair), 25, Utility.RandomMinMax(35, 45), 0x2048, 0));
 				Add(new GenericBuyInfo("Two Pig Tails", typeof(TwoPigTails), 25, Utility.RandomMinMax(35, 45), 0x2049, 0));
 				Add(new GenericBuyInfo("Krisna Hair", typeof(KrisnaHair), 25, Utility.RandomMinMax(35, 45), 0x204A, 0));
-				Add(new GenericBuyInfo("Cheveuxcourt1", typeof(Cheveuxcourt1), 25, Utility.RandomMinMax(35, 45), 0xA385, 0));
+			/*	Add(new GenericBuyInfo("Cheveuxcourt1", typeof(Cheveuxcourt1), 25, Utility.RandomMinMax(35, 45), 0xA385, 0));
 				Add(new GenericBuyInfo("Cheveuxcourt2", typeof(Cheveuxcourt2), 25, Utility.RandomMinMax(35, 45), 0xA386, 0));
 				Add(new GenericBuyInfo("Cheveuxcourt3", typeof(Cheveuxcourt3), 25, Utility.RandomMinMax(35, 45), 0xA387, 0));
 				Add(new GenericBuyInfo("Cheveuxcourt4", typeof(Cheveuxcourt4), 25, Utility.RandomMinMax(35, 45), 0xA388, 0));
@@ -55,7 +55,7 @@ namespace Server.Mobiles
 				Add(new GenericBuyInfo("Barbe7", typeof(Barbe7), 25, Utility.RandomMinMax(35, 45), 0xA3BA, 0));
 				Add(new GenericBuyInfo("LongueBarbe6", typeof(LongueBarbe6), 25, Utility.RandomMinMax(35, 45), 0xA3BB, 0));
 				Add(new GenericBuyInfo("Barbe8", typeof(Barbe8), 25, Utility.RandomMinMax(35, 45), 0xA3BC, 0));
-				Add(new GenericBuyInfo("LongueBarbe7", typeof(LongueBarbe7), 25, Utility.RandomMinMax(35, 45), 0xA3BD, 0));
+				Add(new GenericBuyInfo("LongueBarbe7", typeof(LongueBarbe7), 25, Utility.RandomMinMax(35, 45), 0xA3BD, 0));*/
 
 			}
         }
@@ -65,8 +65,8 @@ namespace Server.Mobiles
             public InternalSellInfo()
             {
                 Add(typeof(HairDye), 30);
-                Add(typeof(SpecialBeardDye), 250000);
-                Add(typeof(SpecialHairDye), 250000);
+            //    Add(typeof(SpecialBeardDye), 250000);
+             //   Add(typeof(SpecialHairDye), 250000);
             }
         }
     }

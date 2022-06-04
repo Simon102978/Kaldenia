@@ -12,8 +12,8 @@ namespace Server.Items
 		public override int EffectID => 0xF42;
 		public override Type AmmoType => typeof(Arrow);
 		public override Item Ammo => new Arrow();
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.MovingShot;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleShot;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 17;
 		public override int MaxDamage => 21;
@@ -56,7 +56,7 @@ namespace Server.Items
 		public override int EffectID => 0xF42;
 		public override Type AmmoType => typeof(Arrow);
 		public override Item Ammo => new Arrow();
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 17;
@@ -102,7 +102,7 @@ namespace Server.Items
 		public override Type AmmoType => typeof(Arrow);
 		public override Item Ammo => new Arrow();
 		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MovingShot;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
 		public override int StrengthReq => 45;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -146,8 +146,8 @@ namespace Server.Items
 		public override int EffectID => 0xF42;
 		public override Type AmmoType => typeof(Arrow);
 		public override Item Ammo => new Arrow();
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MovingShot;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.CrushingBlow;
 		public override int StrengthReq => 45;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;

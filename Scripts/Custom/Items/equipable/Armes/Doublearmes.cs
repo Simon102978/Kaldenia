@@ -9,8 +9,8 @@ namespace Server.Items
 
 	public class DoubleEpee : BaseSword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.DefenseMastery;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Block;
 		public override int StrengthReq => 40;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 16;
@@ -52,8 +52,8 @@ namespace Server.Items
 
 	public class DoubleHachette : BaseSword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.InfectiousStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.BleedAttack;
 		public override int StrengthReq => 40;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 16;

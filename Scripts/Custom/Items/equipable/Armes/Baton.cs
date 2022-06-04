@@ -16,8 +16,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ConcussionBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.DefenseMastery;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 11;
 		public override int MaxDamage => 14;
@@ -53,8 +53,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ConcussionBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
 		public override int StrengthReq => 20;
 		public override int MinDamage => 15;
 		public override int MaxDamage => 18;
@@ -94,8 +94,8 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility => WeaponAbility.WhirlwindAttack;
-        public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+        public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
         public override int StrengthReq => 35;
         public override int MinDamage => 13;
         public override int MaxDamage => 16;
@@ -132,8 +132,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
 		public override int StrengthReq => 20;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 16;
@@ -171,8 +171,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ConcussionBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ShadowStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Bladeweave;
 		public override int StrengthReq => 20;
 		public override int MinDamage => 15;
 		public override int MaxDamage => 18;
@@ -208,8 +208,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.WhirlwindAttack;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Disarm;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.WhirlwindAttack;
 		public override int StrengthReq => 35;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 16;
@@ -246,8 +246,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ConcussionBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 11;
 		public override int MaxDamage => 14;

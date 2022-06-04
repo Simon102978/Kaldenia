@@ -9,8 +9,8 @@ namespace Server.Items
 
 	public class Runire : BaseSword // Katana
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Disarm;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
 		public override int StrengthReq => 25;
 		public override int MinDamage => 10;
 		public override int MaxDamage => 14;
@@ -52,12 +52,16 @@ namespace Server.Items
 
 	public class Rapiere : BaseSword // Broadsword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DualWield;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 17;
 		public override float Speed => 3.25f;
+
+		public override SkillName DefSkill => SkillName.Fencing;
+		public override WeaponType DefType => WeaponType.Piercing;
+		public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
 
 		public override int DefHitSound => 0x237;
 		public override int DefMissSound => 0x23A;
@@ -96,12 +100,16 @@ namespace Server.Items
 
 	public class RapiereLuxe : BaseSword // Broadsword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 17;
 		public override float Speed => 3.25f;
+
+		public override SkillName DefSkill => SkillName.Fencing;
+		public override WeaponType DefType => WeaponType.Piercing;
+		public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
 
 		public override int DefHitSound => 0x237;
 		public override int DefMissSound => 0x23A;
@@ -140,12 +148,16 @@ namespace Server.Items
 
 	public class RapiereDecoree : BaseSword // Broadsword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ShadowStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
 		public override int StrengthReq => 30;
 		public override int MinDamage => 13;
 		public override int MaxDamage => 17;
 		public override float Speed => 3.25f;
+
+		public override SkillName DefSkill => SkillName.Fencing;
+		public override WeaponType DefType => WeaponType.Piercing;
+		public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
 
 		public override int DefHitSound => 0x237;
 		public override int DefMissSound => 0x23A;
@@ -185,8 +197,8 @@ namespace Server.Items
 	public class EpeeBatarde : BaseSword // NoDachi
 	{
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.RidingSwipe;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ShadowStrike;
 		public override int StrengthReq => 40;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 19;
@@ -229,17 +241,17 @@ namespace Server.Items
 
 	public class EpeeBatardeLuxe : BaseSword // VikingSword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Bladeweave;
 		public override int StrengthReq => 40;
-		public override int MinDamage => 15;
+		public override int MinDamage => 16;
 		public override int MaxDamage => 19;
-		public override float Speed => 3.75f;
+		public override float Speed => 3.50f;
 
-		public override int DefHitSound => 0x237;
+		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 31;
-		public override int InitMaxHits => 100;
+		public override int InitMaxHits => 90;
 
 		[Constructable]
 		public EpeeBatardeLuxe()
@@ -248,7 +260,7 @@ namespace Server.Items
 
 			Name = "Épée bâtarde de luxe";
 			Weight = 8.0;
-		//	Layer = Layer.TwoHanded;
+			Layer = Layer.TwoHanded;
 		}
 
 		public EpeeBatardeLuxe(Serial serial)
@@ -273,17 +285,17 @@ namespace Server.Items
 
 	public class EpeeDoubleTranchant : BaseSword // Vicking sword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.FrenziedWhirlwind;
 		public override int StrengthReq => 40;
-		public override int MinDamage => 15;
+		public override int MinDamage => 16;
 		public override int MaxDamage => 19;
-		public override float Speed => 3.75f;
+		public override float Speed => 3.50f;
 
-		public override int DefHitSound => 0x237;
+		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 31;
-		public override int InitMaxHits => 100;
+		public override int InitMaxHits => 90;
 
 		[Constructable]
 		public EpeeDoubleTranchant()
@@ -292,7 +304,7 @@ namespace Server.Items
 
 			Name = "Épée à Double Tranchants";
 			Weight = 8.0;
-	//		Layer = Layer.TwoHanded;
+			Layer = Layer.TwoHanded;
 		}
 
 		public EpeeDoubleTranchant(Serial serial)
@@ -317,8 +329,8 @@ namespace Server.Items
 
 	public class EpeeCourte : BaseSword  // Katana
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
 		public override int StrengthReq => 25;
 		public override int MinDamage => 10;
 		public override int MaxDamage => 14;
@@ -362,8 +374,8 @@ namespace Server.Items
 	public class EpeeDeuxMains : BaseSword // No Dachi
 	{
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.RidingSwipe;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.DualWield;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
 		public override int StrengthReq => 40;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 19;
@@ -406,8 +418,8 @@ namespace Server.Items
 
 	public class EpeeLongue : BaseSword // VikingSword
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.InfectiousStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.WhirlwindAttack;
 		public override int StrengthReq => 40;
 		public override int MinDamage => 15;
 		public override int MaxDamage => 19;
@@ -450,12 +462,17 @@ namespace Server.Items
 
 	public class Astoria : BaseSword // Scimitar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
 		public override int StrengthReq => 25;
 		public override int MinDamage => 12;
 		public override int MaxDamage => 16;
 		public override float Speed => 3.00f;
+
+
+		public override SkillName DefSkill => SkillName.Fencing;
+		public override WeaponType DefType => WeaponType.Piercing;
+		public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
 
 		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
@@ -494,8 +511,8 @@ namespace Server.Items
 
 	public class SabreLuxe : BaseSword // Scimitar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Feint;
 		public override int StrengthReq => 25;
 		public override int MinDamage => 12;
 		public override int MaxDamage => 16;

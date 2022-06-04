@@ -18,14 +18,16 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility => WeaponAbility.ShadowStrike;
-        public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+        public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
         public override int StrengthReq => 40;
-        public override int MinDamage => 10;
-        public override int MaxDamage => 13;
+        public override int MinDamage => 7;
+        public override int MaxDamage => 9;
         public override float Speed => 2.00f;
 
-        public override int InitMinHits => 31;
+		public override int DefMaxRange => 2;
+
+		public override int InitMinHits => 31;
         public override int InitMaxHits => 70;
         public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
         public override void Serialize(GenericWriter writer)

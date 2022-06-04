@@ -11,8 +11,8 @@ namespace Server.Items
 		public override int EffectID => 0x1BFE;
 		public override Type AmmoType => typeof(Bolt);
 		public override Item Ammo => new Bolt();
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ConcussionBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ShadowStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
 		public override int StrengthReq => 35;
 		public override int MinDamage => 18;
 		public override int MaxDamage => 22;
@@ -58,8 +58,8 @@ namespace Server.Items
 		public override int EffectID => 0x1BFE;
 		public override Type AmmoType => typeof(Bolt);
 		public override Item Ammo => new Bolt();
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ConcussionBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Block;
 		public override int StrengthReq => 35;
 		public override int MinDamage => 18;
 		public override int MaxDamage => 22;
@@ -102,8 +102,8 @@ namespace Server.Items
 		public override int EffectID => 0x1BFE;
 		public override Type AmmoType => typeof(Bolt);
 		public override Item Ammo => new Bolt();
-		public override WeaponAbility PrimaryAbility => WeaponAbility.MovingShot;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.SerpentArrow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ForceArrow;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 20;
 		public override int MaxDamage => 24;
@@ -148,7 +148,7 @@ namespace Server.Items
 		public override Type AmmoType => typeof(Bolt);
 		public override Item Ammo => new Bolt();
 		public override WeaponAbility PrimaryAbility => WeaponAbility.MovingShot;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.PsychicAttack;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 20;
 		public override int MaxDamage => 24;

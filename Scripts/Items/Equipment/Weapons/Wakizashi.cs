@@ -16,8 +16,8 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility => WeaponAbility.FrenziedWhirlwind;
-        public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+        public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.BleedAttack;
         public override int StrengthReq => 20;
         public override int MinDamage => 10;
         public override int MaxDamage => 14;

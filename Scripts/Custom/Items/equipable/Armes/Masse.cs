@@ -22,7 +22,7 @@ namespace Server.Items
 		}
 
 		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.BleedAttack;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -58,8 +58,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.FrenziedWhirlwind;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -135,8 +135,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ForceOfNature;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -173,8 +173,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Disarm;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -212,7 +212,7 @@ namespace Server.Items
 		}
 
 		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ShadowStrike;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -249,8 +249,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;
@@ -287,8 +287,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DualWield;
 		public override int StrengthReq => 80;
 		public override int MinDamage => 16;
 		public override int MaxDamage => 20;

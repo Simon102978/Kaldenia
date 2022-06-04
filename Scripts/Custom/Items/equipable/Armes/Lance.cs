@@ -21,8 +21,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Feint;
 		public override int StrengthReq => 50;
 		public override int MinDamage => 9;
 		public override int MaxDamage => 11;
@@ -61,8 +61,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Block;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorIgnore;
 		public override int StrengthReq => 50;
 		public override int MinDamage => 9;
 		public override int MaxDamage => 11;
@@ -100,8 +100,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.CrushingBlow;
 		public override int StrengthReq => 50;
 		public override int MinDamage => 9;
 		public override int MaxDamage => 11;
@@ -131,7 +131,7 @@ namespace Server.Items
 			: base(41591)
 		{
 			Weight = 7.0;
-			Name = "Javelot de Luxe";
+			Name = "Javelot de Guerre";
 		}
 
 		public JavelotLuxe(Serial serial)
@@ -139,11 +139,11 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.MortalStrike;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
 		public override int StrengthReq => 50;
-		public override int MinDamage => 9;
-		public override int MaxDamage => 11;
+		public override int MinDamage => 6;
+		public override int MaxDamage => 8;
 		public override float Speed => 2.75f;
 
 		public override int DefMaxRange => 2;
@@ -178,8 +178,8 @@ namespace Server.Items
 		{
 		}
 
-		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Dismount;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.ForceOfNature;
 		public override int StrengthReq => 50;
 		public override int MinDamage => 9;
 		public override int MaxDamage => 11;

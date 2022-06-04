@@ -86,8 +86,8 @@ namespace Server.Items
 				pm.RevealingAction();
 
 
-				if (!pm.Mounted)
-					return;
+		/*		if (!pm.Mounted)
+					return;*/
 
 				SpellHelper.Turn(from, receveur);
 
@@ -103,7 +103,13 @@ namespace Server.Items
 				int chance_de_voler = (int)((snooping + stealing) / 20) * 2;
 				int chance = (int)((snooping + stealing) / 15) * 2;
 
-				bool goodtarget = !(receveur is OrderGuard) && !(receveur is Copie) && !(receveur is Fetichisme);
+				bool goodtarget = true;       /* !(receveur is OrderGuard) && !(receveur is Copie) && !(receveur is Fetichisme);*/
+
+				if (receveur is BaseCreature && !(receveur is BaseHire))
+				{
+					goodtarget = false;
+				}
+
 
 				if (receveur.Spell != null)
 				{
@@ -117,8 +123,10 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 
+
+					
 					if (from is PlayerMobile)
-						AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
+						AOS.Damage(receveur, from,10,100,0,0,0,0);
 				}
 				else if (handOne != null && handTwo == null)
 				{
@@ -146,7 +154,8 @@ namespace Server.Items
 						from.SendMessage("Vous échouez à voler ou à faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
-						AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
+						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
+					//AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
 
 				}
 				else if (handOne == null && handTwo != null)
@@ -161,7 +170,8 @@ namespace Server.Items
 						from.SendMessage("Vous échouez à faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
-						AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
+						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
+					//	AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
 				}
 				else
 				{
@@ -169,7 +179,8 @@ namespace Server.Items
 					receveur.PlaySound(0x238);
 
 					if (from is PlayerMobile)
-						AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
+						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
+					//AOS.Damage(receveur, from, (int)((PlayerMobile)from).Skills[SkillName.Wrestling].Value, 100);
 				}
 			}
 		}
@@ -253,9 +264,9 @@ namespace Server.Items
 					{
 						from.SendMessage("Votre fouet n'est pas assez long.");
 					}
-					else if (from is OrderGuard)
+					else if (from is BaseCreature && !(from is BaseHire))
 					{
-						from.SendMessage("Vous ne pouvez pas fouetter un garde.");
+						from.SendMessage("Vous ne pouvez pas fouetter cette cible.");
 					}
 					else
 					{
@@ -279,18 +290,6 @@ namespace Server.Items
 					from.SendMessage("Vous ne pouvez pas foueter cette cible.");
 				}
 			}
-		}
-
-		private class Fetichisme : Mobile
-		{
-		}
-
-		private class Copie : Mobile
-		{
-		}
-
-		private class OrderGuard : Mobile
-		{
 		}
 	}
 }

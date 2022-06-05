@@ -49,8 +49,8 @@ namespace Server.Engines.Craft
 
             AddPage(0);
 
-            AddBackground(0, 0, 830, 537, 5054);
-            AddImageTiled(10, 10, 810, 22, 2624);
+            AddBackground(0, 0, 830, 537, 5120); //5054
+			AddImageTiled(10, 10, 810, 22, 2624);
             AddImageTiled(10, 37, 200, 350, 2624);
             AddImageTiled(215, 37, 605, 350, 2624);
             AddImageTiled(10, 392, 150, 45, 2624);

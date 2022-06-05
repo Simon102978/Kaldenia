@@ -134,7 +134,7 @@ namespace Server.Items
         {
             base.GetProperties(list);
 
-            list.Add(1071345, string.Format("{0:F1}", m_SkillLevel)); // Skill: ~1_val~
+      //      list.Add(1071345, string.Format("{0:F1}", m_SkillLevel)); // Skill: ~1_val~
 
             TextDefinition desc = RepairSkillInfo.GetInfo(m_Skill).Description;
 

@@ -519,35 +519,39 @@ namespace Server.Engines.Craft
 
 			// Instruments
 			index = AddCraft(typeof(LapHarp), 1044293, 1023762, 63.1, 88.1, typeof(Board), 1044041, 20, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+         //   AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 
-            index = AddCraft(typeof(Harp), 1044293, 1023761, 78.9, 103.9, typeof(Board), 1044041, 35, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+			index = AddCraft(typeof(RuneLute), "Instruments", "Lute fin", 55.0, 70.0, typeof(Board), 1044041, 6, 1044351);
+			AddRes(index, typeof(Cloth), "Cloth", 6, "You do not have enough cloth to make that.");
+
+
+			index = AddCraft(typeof(Harp), 1044293, 1023761, 78.9, 103.9, typeof(Board), 1044041, 35, 1044351);
+           // AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
 
             index = AddCraft(typeof(Drums), 1044293, 1023740, 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+           // AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 
             index = AddCraft(typeof(Lute), 1044293, 1023763, 68.4, 93.4, typeof(Board), 1044041, 25, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+           // AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 
             index = AddCraft(typeof(Tambourine), 1044293, 1023741, 57.8, 82.8, typeof(Board), 1044041, 15, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+    //        AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 
             index = AddCraft(typeof(TambourineTassel), 1044293, 1044320, 57.8, 82.8, typeof(Board), 1044041, 15, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+      //      AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
 
             index = AddCraft(typeof(BambooFlute), 1044293, 1030247, 80.0, 105.0, typeof(Board), 1044041, 15, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+//            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
 
             index = AddCraft(typeof(AudChar), 1044293, 1095315, 78.9, 103.9, typeof(Board), 1044041, 35, 1044351);
-            AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
-            AddRes(index, typeof(Granite), 1044514, 3, 1044513);
+       //     AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+         //   AddRes(index, typeof(Granite), 1044514, 3, 1044513);
 /*
             index = AddCraft(typeof(SnakeCharmerFlute), 1044293, 1112174, 80.0, 105.0, typeof(Board), 1044041, 15, 1044351);
             AddSkill(index, SkillName.Musicianship, 45.0, 50.0);

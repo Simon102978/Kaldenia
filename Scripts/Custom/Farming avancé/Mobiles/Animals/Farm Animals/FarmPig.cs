@@ -43,12 +43,12 @@ namespace Server.Mobiles
 		}
 		
 		[Constructable]
-		public FarmPig() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmPig() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Eats = EatType.Omnivore;
 			Animal = AnimalType.Farm;
 
-			Name = "a pig";
+			Name = "Un Cochon";
 			Body = 0xCB;
 			BaseSoundID = 0xC4;
 			

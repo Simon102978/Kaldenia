@@ -18,13 +18,13 @@ namespace Server.Mobiles
     {
         AI_Use_Default,
         AI_Melee,
-		AI_UNUSED1,
-        AI_Archer,
+		AI_WildAnimal,
+		AI_Archer,
         AI_Healer,
         AI_Vendor,
         AI_Mage,
-        AI_UNUSED2,
-        AI_UNUSED3,
+		AI_Animal,
+		AI_UNUSED3,
         AI_UNUSED4,
         AI_NecroMage,
         AI_OrcScout,
@@ -36,8 +36,7 @@ namespace Server.Mobiles
         AI_Mystic,
         AI_Paladin,
         AI_Necro,
-		AI_Wildanimal,
-		AI_Animal
+		
 	}
 
     public enum ActionType

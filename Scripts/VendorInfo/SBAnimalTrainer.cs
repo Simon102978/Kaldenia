@@ -23,7 +23,17 @@ namespace Server.Mobiles
                 Add(new AnimalBuyInfo(1, typeof(Horse), 550, 10, 204, 0));
                 Add(new AnimalBuyInfo(1, typeof(PackHorse), 631, 10, 291, 0));
                 Add(new AnimalBuyInfo(1, typeof(PackLlama), 565, 10, 292, 0));
-                Add(new AnimalBuyInfo(1, typeof(Rabbit), 106, 10, 205, 0));
+                
+
+				Add(new AnimalBuyInfo(1, typeof(FarmBull), 500, 10, 233, 0));
+				Add(new AnimalBuyInfo(1, typeof(FarmChicken), 50, 10, 208, 0));
+				Add(new AnimalBuyInfo(1, typeof(FarmCow), 400, 10, 231, 0));
+				Add(new AnimalBuyInfo(1, typeof(FarmGoat), 300, 10, 209, 0));
+				Add(new AnimalBuyInfo(1, typeof(FarmHen), 300, 10, 208, 0));
+				Add(new AnimalBuyInfo(1, typeof(FarmPig), 200, 10, 203, 0));
+				Add(new AnimalBuyInfo(1, typeof(FarmSheep), 100, 10, 207, 0));
+	
+
 				Add(new GenericBuyInfo("2001111", typeof(HitchingPostSouthDeed), 10000, 10, 0x14F0, 0));
 				Add(new GenericBuyInfo(typeof(HitchingRope), 500, 20, 0x14F8, 0));
 			}

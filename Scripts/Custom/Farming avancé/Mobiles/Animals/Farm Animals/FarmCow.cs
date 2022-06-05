@@ -72,7 +72,7 @@ namespace Server.Mobiles
 		}
 		
 		[Constructable]
-		public FarmCow() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmCow() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Grouping = GroupingType.Herd;
 			Eats = EatType.Herbivore;
@@ -83,7 +83,7 @@ namespace Server.Mobiles
             LitterSize = 2;
 			MatingSeason = Seasons.Any;
 
-			Name = "a cow";
+			Name = "Une Vache";
 			Body = Utility.RandomList( 0xD8, 0xE7 );
 			BaseSoundID = 0x78;
 

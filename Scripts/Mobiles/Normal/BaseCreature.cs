@@ -1122,7 +1122,7 @@ namespace Server.Mobiles
 		}
 
 		public virtual uint TraitsGiven(uint atLevel) { return (atLevel == 10) ? (uint)3 : (uint)1; }
-		public string SexString { get { return (Female ? "" : ""); } }
+		public string SexString { get { return (Female ? "Femelle" : "Mâle"); } }
 		public JakoAttributes m_jakoAttributes = new JakoAttributes();
 
 
@@ -3234,7 +3234,7 @@ namespace Server.Mobiles
                 AdjustTameRequirements();
             }
 
-            if (AI == AIType.AI_UNUSED1 || AI == AIType.AI_UNUSED2)
+       //     if (AI == AIType.AI_UNUSED1 || AI == AIType.AI_UNUSED2)
                 AI = AIType.AI_Melee; // Can be safely removed on 1/1/2021 - Dan
         }
 
@@ -3581,7 +3581,15 @@ namespace Server.Mobiles
 
             switch (NewAI)
             {
-                case AIType.AI_Melee:
+				case AIType.AI_WildAnimal:
+					if (!(this is BaseAnimal))
+					{
+						m_AI = new AnimalAI(this);
+						m_CurrentAI = AIType.AI_Animal;
+					}
+					else m_AI = new WildAnimalAI(this);
+					break;
+				case AIType.AI_Melee:
                     m_AI = new MeleeAI(this);
                     break;
                 case AIType.AI_Archer:
@@ -7918,6 +7926,13 @@ namespace Server.Mobiles
         public bool RemoveOnSave { get { return m_RemoveOnSave; } set { m_RemoveOnSave = value; } }
 
 		public bool BaseHire { get; internal set; }
+
+		private class AnimalAI : BaseAI
+		{
+			public AnimalAI(BaseCreature m) : base(m)
+			{
+			}
+		}
 	}
 
 	public class LoyaltyTimer : Timer

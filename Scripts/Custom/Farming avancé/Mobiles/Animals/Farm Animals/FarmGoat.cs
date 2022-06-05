@@ -69,7 +69,7 @@ namespace Server.Mobiles
 		}
 	
 		[Constructable]
-		public FarmGoat() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmGoat() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Activity = ActivityType.Day;
 			Eats = EatType.Herbivore;
@@ -80,7 +80,7 @@ namespace Server.Mobiles
             LitterSize = 2;
 			MatingSeason = Seasons.Any;
 
-			Name = "a goat";
+			Name = "Une Chèvre";
 			Body = 0xD1;
 			BaseSoundID = 0x99;
 

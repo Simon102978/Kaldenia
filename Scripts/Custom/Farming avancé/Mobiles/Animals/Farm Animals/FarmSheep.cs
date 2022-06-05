@@ -70,7 +70,7 @@ namespace Server.Mobiles
 		}
 		
 		[Constructable]
-		public FarmSheep() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmSheep() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Grouping = GroupingType.Herd;
 			Eats = EatType.Herbivore;
@@ -81,7 +81,7 @@ namespace Server.Mobiles
             LitterSize = 2;
             MatingSeason = Seasons.Spring;
 			
-			Name = "a sheep";
+			Name = "Un Mouton";
 			Body = 0xCF;
 			BaseSoundID = 0xD6;
 

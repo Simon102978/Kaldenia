@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace Server.Items
 {
-    public class Dices : Item, ITelekinesisable, ISecurable
+    public class Dices1 : Item, ITelekinesisable, ISecurable
     {
         [CommandProperty(AccessLevel.GameMaster)]
         public SecureLevel Level { get; set; }
 
         [Constructable]
-        public Dices()
+        public Dices1()
             : base(0xFA7)
         {
             Weight = 1.0;
@@ -26,7 +26,7 @@ namespace Server.Items
             SetSecureLevelEntry.AddTo(from, this, list);
         }
 
-        public Dices(Serial serial)
+        public Dices1(Serial serial)
             : base(serial)
         {
         }

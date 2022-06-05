@@ -26,7 +26,7 @@ namespace Server.Mobiles
 		}
 		
 		[Constructable]
-		public FarmBull() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmBull() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Eats = EatType.Herbivore;
 			Animal = AnimalType.Farm;
@@ -36,7 +36,7 @@ namespace Server.Mobiles
             LitterSize = 2;
 			MatingSeason = Seasons.Any;
 
-			Name = "a bull";
+			Name = "Un Boeuf";
 			Body = Utility.RandomList( 0xE8, 0xE9 );
 			BaseSoundID = 0x64;
 

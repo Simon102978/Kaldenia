@@ -9,9 +9,9 @@ namespace Server.Mobiles
 		private Timer m_Timer;
 
 		[Constructable]
-		public FarmHen() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmHen() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a hen";
+			Name = "Une Poule";
 			Body = 0xD0;
 			BaseSoundID = 0x6E;
 

@@ -45,7 +45,7 @@ namespace Server.Engines.Craft
             from.CloseGump(typeof(CraftGumpItem));
 
             AddPage(0);
-            AddBackground(0, 0, 530, 417, 5054);
+            AddBackground(0, 0, 530, 417, 5120);
             AddImageTiled(10, 10, 510, 22, 2624);
             AddImageTiled(10, 37, 150, 148, 2624);
             AddImageTiled(165, 37, 355, 90, 2624);
@@ -65,7 +65,7 @@ namespace Server.Engines.Craft
      /*       if (craftSystem.GumpTitleNumber > 0)
                 AddHtmlLocalized(10, 12, 510, 20, craftSystem.GumpTitleNumber, LabelColor, false, false);
             else*/
-                AddHtml(10, 12, 510, 20, craftSystem.GumpTitleString, false, false);
+                AddHtml(10, 12, 510, 20, "<h3><basefont color=#FFFFFF><center>" + craftSystem.GumpTitleString+ "</center><basefont></h3>", false, false);
 
             bool needsRecipe = (craftItem.Recipe != null && from is PlayerMobile && !((PlayerMobile)from).HasRecipe(craftItem.Recipe));
 

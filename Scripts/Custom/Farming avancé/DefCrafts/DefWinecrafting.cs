@@ -13,11 +13,11 @@ namespace Server.Engines.Craft
 	{
 		public override SkillName MainSkill { get { return SkillName.Alchemy; } }
 
-		public override int GumpTitleNumber { get { return 0; } }
+//		public override int GumpTitleNumber { get { return 0; } }
 
 		public override string GumpTitleString
 		{
-			get { return "<basefont color=#FFFFFF><CENTER>Winecrafting Menu</CENTER></basefont>"; }
+			get { return "Winecrafting Menu"; }
 		}
 
 		private static CraftSystem m_CraftSystem;

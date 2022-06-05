@@ -29,9 +29,13 @@ namespace Server.Engines.Craft
     {
         public override SkillName MainSkill => SkillName.Carpentry;
 
-        public override int GumpTitleNumber => 1044006;
+		//  public override int GumpTitleNumber => 1044006;
 
-        private static CraftSystem m_CraftSystem;
+
+		public override string GumpTitleString => "Fabrication d'Arc";
+
+
+		private static CraftSystem m_CraftSystem;
 
         public static CraftSystem CraftSystem
         {

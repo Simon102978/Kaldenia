@@ -18,9 +18,9 @@ namespace Server.Engines.Craft
         }
         public override SkillName MainSkill { get { return SkillName.Cooking; } }
 
-		public override int GumpTitleNumber { get { return 0; } }
+	//	public override int GumpTitleNumber { get { return 0; } }
 
-		public override string GumpTitleString { get { return "<basefont color=#FFFFFF><CENTER>Brewing Menu</CENTER></basefont>"; } }
+		public override string GumpTitleString { get { return "Brewing Menu"; } }
 
 		private static CraftSystem m_CraftSystem;
 

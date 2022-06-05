@@ -136,7 +136,7 @@ namespace Server.Engines.Craft
         #endregion
 
         #region Virtual
-        public virtual int GumpTitleNumber => 0;
+   //     public virtual int GumpTitleNumber => 0;
 
         public virtual string GumpTitleString => "";
 

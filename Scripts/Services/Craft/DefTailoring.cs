@@ -104,9 +104,10 @@ namespace Server.Engines.Craft
         #region Overrides
         public override SkillName MainSkill => SkillName.Tailoring;
 
-        public override int GumpTitleNumber => 1044005;
+		//    public override int GumpTitleNumber => 1044005;
 
-        public override CraftECA ECA => CraftECA.ChanceMinusSixtyToFourtyFive;
+		public override string GumpTitleString => "Couture";
+		public override CraftECA ECA => CraftECA.ChanceMinusSixtyToFourtyFive;
 
         public override double GetChanceAtMin(CraftItem item)
         {

@@ -23,8 +23,11 @@ namespace Server.Engines.Craft
             }
         }
         public override SkillName MainSkill => SkillName.Alchemy;
-        public override int GumpTitleNumber => 1044622;
-        public override double GetChanceAtMin(CraftItem item)
+		//   public override int GumpTitleNumber => 1044622;
+
+		public override string GumpTitleString => "Soufflage de verre";
+
+		public override double GetChanceAtMin(CraftItem item)
         {
             if (item.ItemType == typeof(HollowPrism))
                 return 0.5; // 50%

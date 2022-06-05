@@ -48,9 +48,11 @@ namespace Server.Engines.Craft
 
         public override SkillName MainSkill => SkillName.Tinkering;
 
-        public override int GumpTitleNumber => 1044007;
+		//   public override int GumpTitleNumber => 1044007;
 
-        private static CraftSystem m_CraftSystem;
+		public override string GumpTitleString => "Bricoler";
+
+		private static CraftSystem m_CraftSystem;
 
         public static CraftSystem CraftSystem
         {

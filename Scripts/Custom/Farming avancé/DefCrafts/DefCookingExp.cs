@@ -232,13 +232,15 @@ namespace Server.Engines.Craft
             }
         }
 
-        public override int GumpTitleNumber
+		public override string GumpTitleString => "Cuisine";
+
+/*        public override int GumpTitleNumber
         {
             get
             {
                 return 1044003;
             }// <CENTER>COOKING MENU</CENTER>
-        }
+        }*/
 
         private static CraftSystem m_CraftSystem;
 

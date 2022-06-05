@@ -20,14 +20,14 @@ namespace Server.Engines.Craft
 			get	{ return SkillName.Cooking;	}
 		}
 
-		public override int GumpTitleNumber
+/*		public override int GumpTitleNumber
 		{
 			get { return 0; } // Use String
 		}
-
+*/
 		public override string GumpTitleString
 		{
-			get { return "<basefont color=#FFFFFF><CENTER>WITCH FOOD CRAFT</CENTER></basefont>"; } 
+			get { return "WITCH FOOD CRAFT"; } 
 		}
 
 		private static CraftSystem m_CraftSystem;

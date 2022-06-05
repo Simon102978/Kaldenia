@@ -12,9 +12,12 @@ namespace Server.Engines.Craft
     {
         public override SkillName MainSkill => SkillName.Inscribe;
 
-        public override int GumpTitleNumber => 1044009;
+		//    public override int GumpTitleNumber => 1044009;
 
-        private static CraftSystem m_CraftSystem;
+
+		public override string GumpTitleString => "Écriture";
+
+		private static CraftSystem m_CraftSystem;
 
         public static CraftSystem CraftSystem
         {

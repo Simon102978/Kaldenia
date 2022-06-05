@@ -68,10 +68,10 @@ namespace Server.Engines.Craft
             AddImageTiled(215, 37, 305, 250, 2624);
             AddAlphaRegion(10, 10, 510, 477);*/
 
-            if (craftSystem.GumpTitleNumber > 0)
+/*            if (craftSystem.GumpTitleNumber > 0)
                 AddHtmlLocalized(10, 12, 510, 20, craftSystem.GumpTitleNumber, LabelColor, false, false);
-            else
-             AddHtml(10, 12, 500, 20, "<h3><basefont color=#FFFFFF>" + craftSystem.GumpTitleString + "<basefont></h3>", false, false);
+            else*/
+             AddHtml(10, 12, 810, 20, "<h3><basefont color=#FFFFFF><center>" + craftSystem.GumpTitleString + "</center><basefont></h3>", false, false);
               //  AddHtml(10, 12, 510, 20, craftSystem.GumpTitleString, false, false);
 
  //           AddHtmlLocalized(10, 37, 200, 22, 1044010, LabelColor, false, false); // <CENTER>CATEGORIES</CENTER>
@@ -91,11 +91,11 @@ namespace Server.Engines.Craft
 
 
 
-            AddButton(215, 442, 4017, 4019, GetButtonID(6, 11), GumpButtonType.Reply, 0);
-            AddHtmlLocalized(250, 445, 150, 18, 1112698, LabelColor, false, false); // CANCEL MAKE
+            AddButton(270, 442, 4017, 4019, GetButtonID(6, 11), GumpButtonType.Reply, 0);
+            AddHtmlLocalized(305, 445, 150, 18, 1112698, LabelColor, false, false); // CANCEL MAKE
 
-            
-            AddHtml(685, 485, 200, 20, "<h3><basefont color=#FFFFFF>Refaire<basefont></h3>", false, false);
+			AddButton(650, 485, 4005, 4007, GetButtonID(6, 2), GumpButtonType.Reply, 0);
+			AddHtml(685, 485, 200, 20, "<h3><basefont color=#FFFFFF>Refaire<basefont></h3>", false, false);
 
 
             // Repair option
@@ -191,9 +191,9 @@ namespace Server.Engines.Craft
             // ****************************************
 
             if (notice is int && (int)notice > 0)
-                AddHtmlLocalized(170, 395, 350, 40, (int)notice, LabelColor, false, false);
+                AddHtmlLocalized(170, 395, 810, 40, (int)notice, LabelColor, false, false);
             else if (notice is string)
-                 AddHtml(170, 345, 350, 40, "<h3><basefont color=#FFFFFF>" + notice + "<basefont></h3>", false, false);
+                 AddHtml(170, 395, 810, 40, "<h3><basefont color=#FFFFFF>" + notice + "<basefont></h3>", false, false);
 
               //  AddHtml(170, 295, 350, 40, string.Format("<BASEFONT COLOR=#{0:X6}>{1}</BASEFONT>", FontColor, notice), false, false);
 
@@ -501,7 +501,7 @@ namespace Server.Engines.Craft
                         AddHtmlLocalized(255, 63 + (index * 20), 220, 18, craftItem.NameNumber, LabelColor, false, false);
                     else
                         //AddLabel( 255, 60 + (index * 20), LabelHue, craftItem.NameString );
-                        AddHtml(255, 60 + (index * 20), 200, 20, "<h3><basefont color=#FFFFFF>" + (i + 1) + ". " + craftItem.NameString + "<basefont></h3>", false, false);
+                        AddHtml(255, 60 + (index * 20), 200, 20, "<h3><basefont color=#FFFFFF>" + craftItem.NameString + "<basefont></h3>", false, false);
 
                     AddButton(480, 60 + (index * 20), 4011, 4012, GetButtonID(2, i), GumpButtonType.Reply, 0);
                 }
@@ -513,7 +513,7 @@ namespace Server.Engines.Craft
                         AddHtmlLocalized(555, 63 + ((index - maxItemPerPage / 2) * 20), 220, 18, craftItem.NameNumber, LabelColor, false, false);
                     else
                         //AddLabel( 255, 60 + (index * 20), LabelHue, craftItem.NameString );
-                        AddHtml(555, 60 + ((index - maxItemPerPage / 2) * 20), 200, 20, "<h3><basefont color=#FFFFFF>" + (i + 1) + ". " + craftItem.NameString + "<basefont></h3>", false, false);
+                        AddHtml(555, 60 + ((index - maxItemPerPage / 2) * 20), 200, 20, "<h3><basefont color=#FFFFFF>" + craftItem.NameString + "<basefont></h3>", false, false);
 
                     AddButton(780, 60 + ((index - maxItemPerPage / 2) * 20), 4011, 4012, GetButtonID(2, i), GumpButtonType.Reply, 0);
                 }

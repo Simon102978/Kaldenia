@@ -28,8 +28,11 @@ namespace Server.Engines.Craft
             }
         }
         public override SkillName MainSkill => SkillName.Cartography;
-        public override int GumpTitleNumber => 1044008;
-        public override double GetChanceAtMin(CraftItem item)
+		//   public override int GumpTitleNumber => 1044008;
+
+		public override string GumpTitleString => "Cartographie";
+
+		public override double GetChanceAtMin(CraftItem item)
         {
             return 0.0; // 0%
         }

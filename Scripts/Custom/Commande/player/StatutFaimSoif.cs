@@ -128,7 +128,7 @@ namespace Server.Items
 					case 0:
 					{
 						m.Hits -= 10;
-						m.SendMessage( "Vous mourrez de faim!" );
+//					m.SendMessage("Vous mourrez de faim!");  TimeSpan.FromSeconds(15) ;
 						break;
 					}
 				}
@@ -175,7 +175,7 @@ namespace Server.Items
 					case 0:
 					{
 						m.Stam -= 10;
-						m.SendMessage( "Vous êtes complètement déshydraté!" );
+//					m.SendMessage("Vous êtes complètement déshydraté!"); TimeSpan.FromSeconds(15);
 						break;
 					}
 				}

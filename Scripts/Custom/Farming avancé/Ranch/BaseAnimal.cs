@@ -339,7 +339,7 @@ namespace Server.Mobiles
 		
 		//protected override BaseAI ForcedAI { get { return new WildAnimalAI( this ); } }
 
-		public BaseAnimal() : base( AIType.AI_Animal, FightMode.Aggressor, 15, 1, 0.2, 0.4 )
+		public BaseAnimal() : base( AIType.AI_WildAnimal, FightMode.Aggressor, 15, 1, 0.2, 0.4 )
 		{
 		}
 
@@ -1646,8 +1646,8 @@ namespace Server.Mobiles
 			else if (m is BaseCreature)
 			{
 				BaseCreature bc = (BaseCreature) m;
-///				if ((bc is BaseHealer) || (bc is BaseEscortable)) return false;
-				if (bc.FightMode == FightMode.None) return false;
+				if (bc is BaseHealer) return false;
+				else if (bc.FightMode == FightMode.None) return false;
 				else if ((bc.Str / 2 + 10) < m_Size + 6) return true;
 				else return false;
 			}
@@ -1899,7 +1899,7 @@ namespace Server.Mobiles
 			LastMinuteCheck = DateTime.UtcNow;
 			//General Consistancy Check.  Make sure all animals are on same page.
 			if (Size == 0) Size = (int)(Math.Round(((double)Str / 2) + 10 ));
-			if (AI != AIType.AI_Animal) AI = AIType.AI_Animal;
+			if (AI != AIType.AI_WildAnimal) AI = AIType.AI_WildAnimal;
 			if (m_TypeName == null || m_TypeName == "") m_TypeName = Name;
 			
 			//Maintenance

@@ -60,7 +60,7 @@ namespace Server.Mobiles
 		}
 		
 		[Constructable]
-		public FarmChicken() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public FarmChicken() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Eats = EatType.Herbivore;
 			Animal = AnimalType.Farm;
@@ -72,7 +72,7 @@ namespace Server.Mobiles
 			MatingSeason = Seasons.Any;
             Hunger = 100;
 			
-			Name = "a chicken";
+			Name = "Un Poulet";
 			Body = 0xD0;
 			BaseSoundID = 0x6E;
 

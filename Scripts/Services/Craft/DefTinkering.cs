@@ -328,11 +328,25 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Diamond), 1062608, 1, 1044240);
 
             AddCraft(typeof(Pitchfork), 1044046, 1023719, 40.0, 90.0, typeof(IronIngot), 1044036, 4, 1044037);
-            //TODO: focus of theurgy - 20th Anniversary Event 
-            #endregion
 
-            #region Parts
-            AddCraft(typeof(Gears), 1044047, 1024179, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(BeerBreweringTools), 1044046, "Outil fabrication de bière", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(BrewersTools), 1044046, "Outil Brasseur", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(BreweryLabelMaker), 1044046, "Marqueur de bière", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(FarmLabelMaker), 1044046, "Farm Label Maker", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(GrapevinePlacementTool), 1044046, "Outil placement de vignes", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(GrinderExp), 1044046, "Broyeur à café", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(JuicersTools), 1044046, "Fabrication de Jus", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(RollingPinExp), 1044046, "Rouleau à pâte avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(SkilletExp), 1044046, "Poelon Avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(VinyardLabelMaker), 1044046, "Marqueur de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(WinecraftersTools), 1044046, "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+
+
+			//TODO: focus of theurgy - 20th Anniversary Event 
+			#endregion
+
+			#region Parts
+			AddCraft(typeof(Gears), 1044047, 1024179, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(ClockParts), 1044047, 1024175, 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);
             AddCraft(typeof(BarrelTap), 1044047, 1024100, 35.0, 85.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(Springs), 1044047, 1024189, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
@@ -363,10 +377,15 @@ namespace Server.Engines.Craft
             AddCraft(typeof(Cleaver), 1044048, 1097478, 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
 
             AddCraft(typeof(ButcherKnife), 1044048, 1097486, 25.0, 75.0, typeof(IronIngot), 1044036, 2, 1044037);
-            #endregion
 
-            #region Misc
-            AddCraft(typeof(KeyRing), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(Tray), 1044048, "Un plateau", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
+			index = AddCraft(typeof(Silverware), 1044048, "Coutellerie", 25.0, 75.0, typeof(IronIngot), 1044036, 4, 1044037);
+			index = AddCraft(typeof(FoodPlate), 1044048, "Plateau de Nourriture", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			
+			#endregion
+
+			#region Misc
+			AddCraft(typeof(KeyRing), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(Candelabra), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Scales), 1044050, 1026225, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Key), 1044050, 1024112, 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
@@ -374,8 +393,11 @@ namespace Server.Engines.Craft
             AddCraft(typeof(Spyglass), 1044050, 1025365, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Lantern), 1044050, 1022597, 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(HeatingStand), 1044050, 1026217, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
+			index = AddCraft(typeof(Fouet4), 1044050, "Fouet 4 mètres", 50.0, 70.0, typeof(Leather), 1044462, 3, 1044463);
+			index = AddCraft(typeof(Fouet6), 1044050, "Fouet 6 mètres", 65.0, 85.0, typeof(Leather), 1044462, 4, 1044463);
+			index = AddCraft(typeof(Fouet8), 1044050, "Fouet 8 mètres", 85.0, 105.0, typeof(Leather), 1044462, 5, 1044463);
 
-            index = AddCraft(typeof(ShojiLantern), 1044050, 1029404, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
+			index = AddCraft(typeof(ShojiLantern), 1044050, 1029404, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
             AddRes(index, typeof(Board), 1044041, 5, 1044351);
 
             index = AddCraft(typeof(PaperLantern), 1044050, 1029406, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
@@ -625,6 +647,8 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Collier12), "Bijoux", "Collier12", 65.6, 85.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 
 			#endregion
+
+			
 
 
 			#region Traps

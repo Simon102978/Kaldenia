@@ -40,6 +40,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Server.Engines.ArenaSystem;
+using Server.Poker; // Poker edit
 using RankDefinition = Server.Guilds.RankDefinition;
 #endregion
 
@@ -307,6 +308,13 @@ namespace Server.Mobiles
 			return false;
 		}
 		#endregion
+
+		private PokerGame m_PokerGame; //Edit for Poker System
+		public PokerGame PokerGame
+		{
+			get { return m_PokerGame; }
+			set { m_PokerGame = value; }
+		}
 
 		#region Getters & Setters
 		public List<Mobile> RecentlyReported { get { return m_RecentlyReported; } set { m_RecentlyReported = value; } }
@@ -4990,7 +4998,14 @@ namespace Server.Mobiles
                     RevealingAction();
                 }
             }
-
+			if (m_PokerGame != null) //Start Edit For Poker
+			{
+				if (!HasGump(typeof(PokerLeaveGump)))
+				{
+					SendGump(new PokerLeaveGump(this, m_PokerGame));
+					return false;
+				}
+			} //End Edit For Poker
 
 			if (Hidden) // Si tu as ete reveler dans les précédente actions, inutile de passer la dedans.
 			{

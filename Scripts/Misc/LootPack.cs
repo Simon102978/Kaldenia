@@ -386,8 +386,13 @@ namespace Server
             new LootPackItem(typeof(MandrakeRoot), 1),
             new LootPackItem(typeof(Nightshade), 1),
             new LootPackItem(typeof(SulfurousAsh), 1),
-            new LootPackItem(typeof(SpidersSilk), 1)
-        };
+            new LootPackItem(typeof(SpidersSilk), 1),
+			new LootPackItem(typeof(BatWing), 1),
+			new LootPackItem(typeof(GraveDust), 1),
+			new LootPackItem(typeof(DaemonBlood), 1),
+			new LootPackItem(typeof(NoxCrystal), 1),
+			new LootPackItem(typeof(PigIron), 1)
+		};
 
         public static readonly LootPackItem[] NecroRegItems = new[]
         {
@@ -454,8 +459,16 @@ namespace Server
             new LootPackItem(typeof(BustEast), 1)
         };
 
-        #region Magic Items
-        public static readonly LootPackItem[] MagicItemsPoor = new[]
+		public static readonly LootPackItem[] ItemsNormaux = new[]
+	  {
+			new LootPackItem(typeof(BaseWeapon), 1), new LootPackItem(typeof(BaseRanged), 1),
+			new LootPackItem(typeof(BaseArmor), 1), new LootPackItem(typeof(BaseShield), 1),
+			new LootPackItem(typeof(BaseJewel), 1)
+		};
+
+
+		#region Magic Items
+		public static readonly LootPackItem[] MagicItemsPoor = new[]
         {
             new LootPackItem(typeof(BaseWeapon), 3), new LootPackItem(typeof(BaseRanged), 1),
             new LootPackItem(typeof(BaseArmor), 4), new LootPackItem(typeof(BaseShield), 1),
@@ -534,10 +547,19 @@ namespace Server
 					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
 					new LootPackEntry(false, false, Gold5, 50.0, 1, true),
 					new LootPackEntry(false, false, Gold10, 20.0, 1, true),
-              ///      new LootPackEntry(false, true, Gold, 100.00, "2d5"),
-              //     new LootPackEntry(false, false, MagicItemsPoor, 1.00, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 0.02, 1, true)
-                });
+             
+
+                    new LootPackEntry(false, false, Instruments, 1.0, 1, true),
+					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
+					new LootPackEntry(false, false, MageryRegItems, 90.0, 5, true),
+					new LootPackEntry(false, false, MageryRegItems, 90.0, 5, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+					new LootPackEntry(false, false, LowScrollItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
+
+				});
 
         public static readonly LootPack LootMeager =
             new LootPack(
@@ -548,10 +570,22 @@ namespace Server
 					new LootPackEntry(false, false, Gold25, 100.0, 1, true),
 					
 					
-          //          new LootPackEntry(false, false, MagicItemsMeagerType1, 20.40, 1, 2, 0, 50, true),
-             //       new LootPackEntry(false, false, MagicItemsMeagerType2, 10.20, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 0.10, 1),
-					
+                   new LootPackEntry(false, false, Instruments, 5.0, 1, true),
+					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
+
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 10, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 9, true),				
+					new LootPackEntry(false, false, MageryRegItems, 50.0, 15, true),
+
+					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+					new LootPackEntry(false, false, LowScrollItems, 75.0, 1, true),
+					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
+
 				});
 
         public static readonly LootPack LootAverage =
@@ -565,12 +599,33 @@ namespace Server
 					new LootPackEntry(false, false, Gold50, 5.0, 1, true),
 				
 
-               //     new LootPackEntry(false, true, Gold, 100.00, "8d5+30"),
-   //                 new LootPackEntry(false, false, MagicItemsAverageType1, 32.80, 1, 3, 0, 50, true),
-   //                 new LootPackEntry(false, false, MagicItemsAverageType1, 32.80, 1, 4, 0, 75, true),
-   //                 new LootPackEntry(false, false, MagicItemsAverageType2, 19.50, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 0.40, 1),
-					
+
+                       new LootPackEntry(false, false, Instruments, 10.0, 1, true),
+					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
+
+
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 9, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 7, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 8, true),
+					new LootPackEntry(false, false, MageryRegItems, 75.0, 10, true),
+
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+
+					new LootPackEntry(false, false, LowScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, LowScrollItems, 25.0, 1, true),
+
+					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MedScrollItems, 25.0, 1, true),
+
+					new LootPackEntry(false, false, NecroScrollItems, 25.0, 1, true),
+					new LootPackEntry(false, false, ArcanistScrollItems, 25.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 25.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
+
 				});
 
         public static readonly LootPack LootRich =
@@ -588,12 +643,33 @@ namespace Server
 					new LootPackEntry(false, false, Gold150, 15.0, 1, true),
 					new LootPackEntry(false, false, Gold200, 10.0, 1, true),
 					new LootPackEntry(false, false, Gold250, 1.0, 1, true),
-                //    new LootPackEntry(false, true, Gold, 100.00, "8d5+50"),
-       //             new LootPackEntry(false, false, MagicItemsRichType1, 76.30, 1, 4, 0, 75, true),
-       //             new LootPackEntry(false, false, MagicItemsRichType1, 76.30, 1, 4, 0, 75, true),
-      //              new LootPackEntry(false, false, MagicItemsRichType2, 61.70, 1, 5, 0, 100, true),
-                    new LootPackEntry(false, false, Instruments, 1.00, 1),
-					
+   
+
+                    new LootPackEntry(false, false, Instruments, 15.0, 1, true),
+					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
+
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 13, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 15, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 18, true),
+					new LootPackEntry(false, false, MageryRegItems, 50.0, 20, true),
+
+					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 25.0, 1, true),
+					new LootPackEntry(false, false, NecroScrollItems, 25.0, 1, true),
+					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
+
 				});
 
         public static readonly LootPack LootFilthyRich =
@@ -606,16 +682,33 @@ namespace Server
 					new LootPackEntry(false, false, Gold25, 75.0, 1, true),
 					new LootPackEntry(false, false, Gold50, 75.0, 1, true),
 					new LootPackEntry(false, false, Gold75, 75.0, 1, true),
-			//		new LootPackEntry(false, false, Gold100, 100.0, 1, true),
-			//		new LootPackEntry(false, false, Gold150, 100.0, 1, true),
-			//		new LootPackEntry(false, false, Gold200, 50.0, 1, true),
-			//		new LootPackEntry(false, false, Gold250, 50.0, 1, true),
-               //     new LootPackEntry(false, true, Gold, 100.00, "3d25+60"),
-        //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
-        //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
-        //            new LootPackEntry(false, false, MagicItemsFilthyRichType2, 77.60, 1, 5, 25, 100, true),
-                    new LootPackEntry(false, false, Instruments, 2.00, 1),
-					
+
+                    new LootPackEntry(false, false, Instruments, 20.0, 1, true),
+					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
+
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 12, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 10, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 9, true),
+					new LootPackEntry(false, false, MageryRegItems, 50.0, 15, true),
+
+					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, MedScrollItems, 100.0, 1, true),			
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, NecroScrollItems, 75.0, 1, true),
+					new LootPackEntry(false, false, ArcanistScrollItems, 75.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 75.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+				
+
 				});
 
         public static readonly LootPack LootUltraRich =
@@ -632,15 +725,34 @@ namespace Server
 					new LootPackEntry(false, false, Gold150, 100.0, 2, true),
 					new LootPackEntry(false, false, Gold200, 50.0, 2, true),
 					new LootPackEntry(false, false, Gold250, 50.0, 2, true),
-               //     new LootPackEntry(false, true, Gold, 100.00, "3d40+80"),
-  //                  new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-    //                new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-      //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-        //            new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-          //          new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-            //        new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
-                    new LootPackEntry(false, false, Instruments, 2.00, 1),
-					
+
+
+                    new LootPackEntry(false, false, MageryRegItems, 100.0, 27, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 22, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 25, true),
+					new LootPackEntry(false, false, MageryRegItems, 50.0, 30, true),
+
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 50.0, 2, true),
+
+			
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, NecroScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
 				});
 
         public static readonly LootPack LootSuperBoss =
@@ -657,19 +769,34 @@ namespace Server
 					new LootPackEntry(false, false, Gold150, 100.0, 2, true),
 					new LootPackEntry(false, false, Gold200, 100.0, 2, true),
 					new LootPackEntry(false, false, Gold250, 100.0, 2, true),
-                //    new LootPackEntry(false, true, Gold, 100.00, "5d50+300"),
-    //                new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-      //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-        //            new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-      //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 25, 100, true),
-      //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
-      //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
-      //              new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
-     //               new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 33, 100, true),
-     //               new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 50, 100, true),
-     //               new LootPackEntry(false, false, MagicItemsUltraRich, 100.00, 1, 5, 50, 100, true),
-                    new LootPackEntry(false, false, Instruments, 2.00, 1),
-					
+
+			        new LootPackEntry(false, false, MageryRegItems, 100.0, 30, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 20, true),
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 25, true),
+					new LootPackEntry(false, false, MageryRegItems, 50.0, 30, true),
+
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 90.0, 2, true),
+					new LootPackEntry(false, false, PotionItems, 50.0, 2, true),
+
+
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, NecroScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),
+
+					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
+
 				});
         #endregion
 

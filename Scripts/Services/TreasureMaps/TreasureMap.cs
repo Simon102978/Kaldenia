@@ -637,6 +637,7 @@ namespace Server.Items
 
         public virtual void OnMapComplete(Mobile from, TreasureMapChest chest)
         {
+			Delete();
         }
 
         public virtual void OnChestOpened(Mobile from, TreasureMapChest chest)
@@ -696,7 +697,7 @@ namespace Server.Items
                     if (!TreasureMapInfo.NewSystem && level == 0)
                     {
                         bc.Name = "a chest guardian";
-                        bc.Hue = 0x835;
+                     //   bc.Hue = 0x835;
                     }
 
                     if (BaseCreature.IsSoulboundEnemies && !bc.Tamable)
@@ -1469,7 +1470,7 @@ namespace Server.Items
 
                         if (bc != null && guardian)
                         {
-                            bc.Hue = 2725;
+                        //    bc.Hue = 2725;
                             m_Chest.Guardians.Add(bc);
                         }
                     }

@@ -174,7 +174,46 @@ namespace Server
             }
         }
 
-		       public static readonly LootPackItem[] Gold5 = new[] { new LootPackItem(typeof(Citrine), 1) };
+		public void GenerateCoffre(BaseContainer cont)
+		{
+			if (cont == null)
+			{
+				return;
+			}
+
+			bool checkLuck = true;
+
+			for (int i = 0; i < m_Entries.Length; ++i)
+			{
+				LootPackEntry entry = m_Entries[i];
+
+				Item item = entry.ConstructCoffre();
+
+				if (item != null)
+				{
+					 if (item.Stackable)
+					{
+						cont.DropItemStacked(item);
+					}
+					else
+					{
+						cont.DropItem(item);
+					}
+				}
+
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+		public static readonly LootPackItem[] Gold5 = new[] { new LootPackItem(typeof(Citrine), 1) };
 		       public static readonly LootPackItem[] Gold10 = new[] { new LootPackItem(typeof(Amber), 1) };
 		       public static readonly LootPackItem[] Gold25 = new[] { new LootPackItem(typeof(Tourmaline), 1) };
 		       public static readonly LootPackItem[] Gold50 = new[] { new LootPackItem(typeof(Ruby), 1) };
@@ -1102,7 +1141,38 @@ namespace Server
             return null;
         }
 
-        public Item Mutate(IEntity from, int luckChance, Item item)
+		public Item ConstructCoffre()
+		{
+			int totalChance = 0;
+
+			for (int i = 0; i < Items.Length; ++i)
+			{
+				totalChance += Items[i].Chance;
+			}
+
+			int rnd = Utility.Random(totalChance);
+
+			for (int i = 0; i < Items.Length; ++i)
+			{
+				LootPackItem item = Items[i];
+
+				if (rnd < item.Chance)
+				{
+					Item loot = item.Construct(false, false, false);
+					
+					if (loot != null)
+					{
+						return loot;
+					}
+				}
+
+				rnd -= item.Chance;
+			}
+
+			return null;
+		}
+
+		public Item Mutate(IEntity from, int luckChance, Item item)
         {
             if (item != null)
             {

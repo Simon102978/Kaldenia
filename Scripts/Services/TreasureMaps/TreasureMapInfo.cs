@@ -638,7 +638,39 @@ namespace Server.Items
                 new SkillName[] { SkillName.Bushido, SkillName.Chivalry, SkillName.Focus, SkillName.Healing, SkillName.Parry, SkillName.Swords, SkillName.Tactics },
             };
 
-        public static void Fill(Mobile from, TreasureMapChest chest, TreasureMap tMap)
+
+
+		public static void AddlootPack(TreasureMapChest chest, LootPack pack, int amount, double chance)
+		{
+			if (pack == null || (chance < 100.0 && Utility.RandomDouble() > chance / 100) || chest == null)
+			{
+				return;
+			}
+
+			for (int i = 0; i < amount; ++i)
+			{
+				pack.GenerateCoffre(chest);
+			}		
+		}
+
+		public static void AddGold(TreasureMapChest chest, int min, int max)
+		{
+			if (chest == null)
+			{
+				return;
+			}
+
+			Gold gold = new Gold(Utility.RandomMinMax(min, max));
+
+			chest.AddItem(gold);
+		}
+
+
+
+
+
+
+		public static void Fill(Mobile from, TreasureMapChest chest, TreasureMap tMap)
         {
             TreasureLevel level = tMap.TreasureLevel;
             TreasurePackage package = tMap.Package;
@@ -708,63 +740,100 @@ namespace Server.Items
             int amount = 0;
             double dropChance = 0.0;
 
-            #region Gold
-            int goldAmount = GetGoldCount(level);
-            Bag lootBag = new BagOfGold();
 
-            while (goldAmount > 0)
-            {
-                if (goldAmount <= 20000)
-                {
-                    lootBag.DropItem(new Gold(goldAmount));
-                    goldAmount = 0;
-                }
-                else
-                {
-                    lootBag.DropItem(new Gold(20000));
-                    goldAmount -= 20000;
-                }
+			switch (level)
+			{
+				case TreasureLevel.Stash:
+					{
+						AddlootPack(chest, LootPack.MageryRegs, 2, 100);
+						AddlootPack(chest, LootPack.LowScrolls, 2, 100);
+						AddGold(chest, 500, 1000);
+						break;
+					}				
+				case TreasureLevel.Supply:
+					{
 
-                chest.DropItem(lootBag);
-            }
-            #endregion
+						break;
+					}
+				case TreasureLevel.Cache:
+					{
 
-            #region Regs
-            list = GetReagentList(level, package, facet);
+						break;
+					}
+				case TreasureLevel.Hoard:
+					{
 
-            if (list != null)
-            {
-                amount = GetRegAmount(quality);
-                lootBag = new BagOfRegs();
+						break;
+					}
+				case TreasureLevel.Trove:
+					{
 
-                for (int i = 0; i < amount; i++)
-                {
-                    lootBag.DropItemStacked(Loot.Construct(list));
-                }
+						break;
+					}
+				default:
+					{
 
-                chest.DropItem(lootBag);
-                list = null;
-            }
-            #endregion
+						break;
+					}
+			}
 
-            #region Gems
-            amount = GetGemCount(quality, level);
+			#region Gold
+			/*     int goldAmount = GetGoldCount(level);
+				  Bag lootBag = new BagOfGold();
 
-            if (amount > 0)
-            {
-                lootBag = new BagOfGems();
+				  while (goldAmount > 0)
+				  {
+					  if (goldAmount <= 20000)
+					  {
+						  lootBag.DropItem(new Gold(goldAmount));
+						  goldAmount = 0;
+					  }
+					  else
+					  {
+						  lootBag.DropItem(new Gold(20000));
+						  goldAmount -= 20000;
+					  }
 
-                foreach (Type gemType in Loot.GemTypes)
-                {
-                    Item gem = Loot.Construct(gemType);
-                    gem.Amount = amount;
+					  chest.DropItem(lootBag);
+				  }*/
+			#endregion
 
-                    lootBag.DropItem(gem);
+			#region Regs
+			/*        list = GetReagentList(level, package, facet);
 
-                }
+					  if (list != null)
+					  {
+						  amount = GetRegAmount(quality);
+						  Bag lootBag = new BagOfRegs();
 
-                chest.DropItem(lootBag);
-            }
+						  for (int i = 0; i < amount; i++)
+						  {
+							  lootBag.DropItemStacked(Loot.Construct(list));
+						  }
+
+						  chest.DropItem(lootBag);
+						  list = null;
+					  }*/
+			#endregion
+
+			#region Gems
+			/*         amount = GetGemCount(quality, level);
+
+					   if (amount > 0)
+					   {
+						   Bag lootBag = new BagOfGems();
+
+						   foreach (Type gemType in Loot.GemTypes)
+						   {
+							   Item gem = Loot.Construct(gemType);
+							   gem.Amount = amount;
+
+							   lootBag.DropItem(gem);
+
+						   }
+
+						   chest.DropItem(lootBag);
+					   }*/
 			#endregion
 
 			/*         #region Crafting Resources
@@ -864,8 +933,8 @@ namespace Server.Items
 					 }
 					 #endregion
 			*/
-			#region Decorations
-			switch (level)
+		
+	/*		switch (level)
             {
                 case TreasureLevel.Stash: dropChance = 0.00; break;
                 case TreasureLevel.Supply: dropChance = 0.10; break;
@@ -1007,6 +1076,6 @@ namespace Server.Items
     }
 }
 
-#endregion
+
 
 

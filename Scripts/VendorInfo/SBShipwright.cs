@@ -32,12 +32,11 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo("1041209", typeof(LargeBoatDeed), 12927, 20, 0x14F2, 0));
                 Add(new GenericBuyInfo("1041210", typeof(LargeDragonBoatDeed), 12927, 20, 0x14F2, 0));
 
-                if (m.Region is SeaMarketRegion || m.Region is TokunoDocksRegion)
-                {
+ 
                     Add(new GenericBuyInfo("1116740", typeof(TokunoGalleonDeed), 150002, 20, 0x14F2, 0));
                     Add(new GenericBuyInfo("1116739", typeof(GalleonDeed), 200002, 20, 0x14F2, 0));
                     Add(new GenericBuyInfo("1116491", typeof(RowBoatDeed), 6252, 20, 0x14F2, 0));
-                }
+                
 
                 Add(new GenericBuyInfo(typeof(Spyglass), 3, 20, 0x14F5, 0));
             }

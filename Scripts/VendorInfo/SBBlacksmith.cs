@@ -110,7 +110,7 @@ namespace Server.Mobiles
             public InternalSellInfo()
             {
                 Add(typeof(Tongs), 7);
-                Add(typeof(IronIngot), 4);
+                Add(typeof(IronIngot), 2);
                 Add(typeof(Buckler), 25);
                 Add(typeof(BronzeShield), 33);
                 Add(typeof(MetalShield), 60);

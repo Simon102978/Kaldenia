@@ -115,23 +115,27 @@ namespace Server.Mobiles
                 Add(typeof(BlueBook), 7);
                 Add(typeof(TanBook), 7);
                 Add(typeof(WoodenBox), 7);
-                Add(typeof(Kindling), 1);
+         ///       Add(typeof(Kindling), 1);
                 Add(typeof(HairDye), 30);
                 Add(typeof(Chessboard), 1);
                 Add(typeof(CheckerBoard), 1);
                 Add(typeof(Backgammon), 1);
                 Add(typeof(Dices), 1);
                 Add(typeof(Beeswax), 1);
-                Add(typeof(Amber), 25);
-                Add(typeof(Amethyst), 50);
-                Add(typeof(Citrine), 25);
-                Add(typeof(Diamond), 100);
-                Add(typeof(Emerald), 50);
-                Add(typeof(Ruby), 37);
-                Add(typeof(Sapphire), 50);
-                Add(typeof(StarSapphire), 62);
-                Add(typeof(Tourmaline), 47);
-                Add(typeof(GoldRing), 13);
+
+
+				Add(typeof(Citrine), 5);
+				Add(typeof(Amber), 10);
+				Add(typeof(Tourmaline), 25);
+				Add(typeof(Ruby), 50);
+				Add(typeof(Amethyst), 75);
+				Add(typeof(Sapphire), 100);
+				Add(typeof(StarSapphire), 150);
+				Add(typeof(Emerald), 200);
+				Add(typeof(Diamond), 250);
+
+
+				Add(typeof(GoldRing), 13);
                 Add(typeof(SilverRing), 10);
                 Add(typeof(Necklace), 13);
                 Add(typeof(GoldNecklace), 13);

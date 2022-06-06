@@ -83,7 +83,8 @@ namespace Server.Mobiles
                 Add(typeof(Drums), 10);
 
                 Add(typeof(Log), 1);
-            }
+				Add(typeof(Board), 2);
+			}
         }
     }
 }

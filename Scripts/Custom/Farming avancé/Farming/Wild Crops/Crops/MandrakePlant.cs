@@ -43,7 +43,7 @@ namespace Server.Items.Crops
 				} 
 				else 
 				{ 
-					from.SendMessage( "You are too far away to harvest anything." ); 
+					from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." ); 
 				} 
 			}
 		} 

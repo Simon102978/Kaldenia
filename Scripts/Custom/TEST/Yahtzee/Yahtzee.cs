@@ -187,7 +187,7 @@ namespace Capt.MiniGames
 
         public void GiveReward(Mobile from, int total)
         {
-            int toGive = (total - 200) * 10;
+			int toGive = 0; /*(total - 200) * 10;*/
             if (toGive < 0)
                 toGive = 0;
 

@@ -14,14 +14,15 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Sapphire Étoilé";
+		}
 
         public StarSapphire(Serial serial)
             : base(serial)
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

@@ -61,7 +61,7 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
-			if ( from != m_sower ) { from.SendMessage( "You do not own this plant !!!" ); return; }
+			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !!!" ); return; }
 
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "You cannot harvest a crop while mounted." ); return; }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )
@@ -89,7 +89,7 @@ namespace Server.Items.Crops
 						if ( !regrowTimer.Running ) { regrowTimer.Start(); }
 					}
 				}
-				else { from.SendMessage( "You are too far away to harvest anything." ); }
+				else { from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." ); }
 			}
 		}
 
@@ -143,7 +143,7 @@ namespace Server.Items.Crops
 						this.Delete();
 						from.SendMessage( "You chop the plant up" );
 				}
-				else from.SendMessage( "You do not own this plant !!!" );
+				else from.SendMessage( "Ce plant ne vous appartient pas !!!" );
 			}
 			else from.SendLocalizedMessage( 500446 );
 		}

@@ -29,16 +29,18 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Amber), 10);
-                Add(typeof(Amethyst), 75);
-                Add(typeof(Citrine), 5);
-                Add(typeof(Diamond), 250);
-                Add(typeof(Emerald), 200);
-                Add(typeof(Ruby), 50);
-                Add(typeof(Sapphire), 100);
-                Add(typeof(StarSapphire), 150);
-                Add(typeof(Tourmaline), 25);
-                Add(typeof(GoldRing), 13);
+
+				Add(typeof(Citrine), 5);
+				Add(typeof(Amber), 10);
+				Add(typeof(Tourmaline), 25);
+				Add(typeof(Ruby), 50);
+				Add(typeof(Amethyst), 75);
+				Add(typeof(Sapphire), 100);
+				Add(typeof(StarSapphire), 150);
+				Add(typeof(Emerald), 200);
+				Add(typeof(Diamond), 250);
+
+				Add(typeof(GoldRing), 13);
                 Add(typeof(SilverRing), 10);
                 Add(typeof(Necklace), 13);
                 Add(typeof(GoldNecklace), 13);

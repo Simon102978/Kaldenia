@@ -2011,7 +2011,7 @@ namespace Server.Items
                 var props = new List<int>(ItemPropertyInfo.LookupLootTable(item));
                 bool powerful = IsPowerful(budget);
 
-                ApplyReforgedProperties(item, props, prefix, suffix, budget, perclow, perchigh, mods, luckchance);
+         //       ApplyReforgedProperties(item, props, prefix, suffix, budget, perclow, perchigh, mods, luckchance);
 
                 int addonbudget = 0;
 

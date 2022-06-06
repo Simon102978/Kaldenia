@@ -606,10 +606,10 @@ namespace Server
 					new LootPackEntry(false, false, Gold25, 75.0, 1, true),
 					new LootPackEntry(false, false, Gold50, 75.0, 1, true),
 					new LootPackEntry(false, false, Gold75, 75.0, 1, true),
-					new LootPackEntry(false, false, Gold100, 100.0, 1, true),
-					new LootPackEntry(false, false, Gold150, 100.0, 1, true),
-					new LootPackEntry(false, false, Gold200, 50.0, 1, true),
-					new LootPackEntry(false, false, Gold250, 50.0, 1, true),
+			//		new LootPackEntry(false, false, Gold100, 100.0, 1, true),
+			//		new LootPackEntry(false, false, Gold150, 100.0, 1, true),
+			//		new LootPackEntry(false, false, Gold200, 50.0, 1, true),
+			//		new LootPackEntry(false, false, Gold250, 50.0, 1, true),
                //     new LootPackEntry(false, true, Gold, 100.00, "3d25+60"),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
         //            new LootPackEntry(false, false, MagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100, true),
@@ -1252,14 +1252,14 @@ namespace Server
                 {
                     item = Loot.RandomInstrument();
                 }
-                else if (Type == typeof(Amber)) // gem
+           /*     else if (Type == typeof(Amber)) // gem
                 {
                     item = Loot.RandomGem();
                 }
                 else if (Type == typeof(BlueDiamond)) // rare gem
                 {
                     item = Loot.RandomRareGem();
-                }
+                }*/
                 else
                 {
                     item = Activator.CreateInstance(Type) as Item;

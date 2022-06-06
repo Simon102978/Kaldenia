@@ -117,6 +117,15 @@ namespace Server.Gumps
 				AddImage(x + 375, y + 80, 495); // Mettre en else du if suivant..
 			}
 
+			if (from.DeguisementAction(DeguisementAction.StatutSocial))
+			{
+				AddButtonHtlml(x + 10, y + 151 + line * scale, 10, 2117, 2118, "Statut Social: " + m_Deg.GetStatutSocial(), "#ffffff");
+			}
+			else
+			{
+				AddHtmlTexteColored(x + 28, y + 151 + line * scale, 500, "Apparence: " + m_Deg.GetStatutSocial(), "#ffffff");
+			}
+			line++;
 
 
 			if (from.DeguisementAction(DeguisementAction.Apparence))
@@ -155,10 +164,7 @@ namespace Server.Gumps
 			AddButtonHtlml(x + 10, y + 151 + line * scale, 7, 2117, 2118, "Changer le paperdoll", "#ffffff");
 			line++;
 			}
-			else
-			{
-			
-			}
+
 
 			line++;
 
@@ -257,6 +263,16 @@ namespace Server.Gumps
 							{
 								cm.Deguisement.RemoveDeguisement();
 							}
+
+							break;
+						}
+					case 10:
+						{
+							if (cm.DeguisementAction(DeguisementAction.StatutSocial))
+							{
+								m_From.SendGump(new DegStatutSocialGump(m_From, m_Deg));
+							}
+							break;
 
 							break;
 						}

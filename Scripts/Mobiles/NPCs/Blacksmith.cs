@@ -11,7 +11,11 @@ namespace Server.Mobiles
 
         public override NpcGuild NpcGuild => NpcGuild.BlacksmithsGuild;
 
-        [Constructable]
+
+		public override StatutSocialEnum MinBuyClasse => StatutSocialEnum.Peregrin;
+
+
+		[Constructable]
         public Blacksmith()
             : base("Forgeron")
         {

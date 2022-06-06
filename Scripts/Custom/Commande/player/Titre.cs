@@ -38,7 +38,7 @@ namespace Server.Scripts.Commands
 					pm.TitleCycle += 1;
 				}
 
-				if (pm.TitleCycle > 5)
+				if (pm.TitleCycle > 6)
                     pm.TitleCycle = 0;
 
 	
@@ -63,25 +63,33 @@ namespace Server.Scripts.Commands
                             pm.Title = metier;
                             pm.SendMessage("Vous affichez désormais le titre de métier: {0}", metier);
                             break;
-                        }
-                    case 3:
+						}
+					case 3:
+					{
+							pm.Title = pm.StatutSocialString();
+							pm.SendMessage("Vous affichez désormais le titre de statut social : {0}", pm.StatutSocialString());
+							break;
+					}
+					case 4:
                         {
                             pm.Title = customTitle;
                             pm.SendMessage("Vous affichez désormais le titre personnalisé: {0}", customTitle);
                             break;
                         }
-                    case 4:
+                    case 5:
                         {
                             pm.Title = DegTitle;
                             pm.SendMessage("Vous affichez désormais le titre de votre déguisement: {0}", DegTitle);
                             break;
                         }
-					case 5:
+					
+					case 6:
 						{
 							pm.Title = "";
 							pm.SendMessage("Vous affichez désormais aucun titre.");
 							break;
 						}
+
 						/*       case 5:
 								   {
 									   string titreGuilde = "";

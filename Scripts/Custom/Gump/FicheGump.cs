@@ -91,7 +91,7 @@ namespace Server.Gumps
             Resizable = false;
 
 
-			AddSection(x - 10, y, 250, 160, "Informations");
+			AddSection(x - 10, y, 250, 180, "Informations");
 
 			AddHtmlTexte(x +10, y + 40, 100, "Nom:");
 			AddHtmlTexte(x + 125, y + 40, 150, from.Name);
@@ -99,106 +99,111 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 10, y + 60, 100, "Race:");
 			AddHtmlTexte(x + 125, y + 60, 150, from.Race.Name);
 
-			AddHtmlTexte(x + 10, y + 80, 100, "Apparence:");
-			AddHtmlTexte(x + 125, y + 80, 150, from.Apparence());
+			AddHtmlTexte(x + 10, y + 80, 100, "Statut Social:");
+			AddHtmlTexte(x + 125, y + 80, 150, from.StatutSocialString());
 
-			AddHtmlTexte(x + 10, y + 100, 100, "Grandeur:");
-			AddHtmlTexte(x + 125, y + 100, 150, from.GrandeurString());
+			AddHtmlTexte(x + 10, y + 100, 100, "Apparence:");
+			AddHtmlTexte(x + 125, y + 100, 150, from.Apparence());
 
-			AddHtmlTexte(x + 10, y + 120, 100, "Grosseur:");
-			AddHtmlTexte(x + 125, y + 120, 150, from.GrosseurString());
+			AddHtmlTexte(x + 10, y + 120, 100, "Grandeur:");
+			AddHtmlTexte(x + 125, y + 120, 150, from.GrandeurString());
+
+			AddHtmlTexte(x + 10, y + 140, 100, "Grosseur:");
+			AddHtmlTexte(x + 125, y + 140, 150, from.GrosseurString());
+
+
 
 			//201
 
-			AddSection(x - 10, y+ 161, 250, 140, "Classes");
+			AddSection(x - 10, y+ 181, 250, 135, "Classes");
 
 
-			AddHtmlTexte(x + 10, y + 200, 150, "Primaire:");
-			AddHtmlTexte(x + 10, y + 220, 150, "Secondaire: ");
-			AddHtmlTexte(x + 10, y + 240, 150, "Métier: ");
-			AddHtmlTexte(x + 10, y + 260, 150, "Armure: ");
-			AddHtmlTexte(x + 125, y + 200, 100,  m_From.ClassePrimaire.Name);
-			AddHtmlTexte(x + 125, y + 220, 100,  m_From.ClasseSecondaire.Name);
-			AddHtmlTexte(x + 125, y + 240, 100,  m_From.Metier.Name);
-			AddHtmlTexte(x + 125, y + 260, 100, m_From.Armure.ToString());
+			AddHtmlTexte(x + 10, y + 220, 150, "Primaire:");
+			AddHtmlTexte(x + 10, y + 240, 150, "Secondaire: ");
+			AddHtmlTexte(x + 10, y + 260, 150, "Métier: ");
+			AddHtmlTexte(x + 10, y + 280, 150, "Armure: ");
+			AddHtmlTexte(x + 125, y + 220, 100,  m_From.ClassePrimaire.Name);
+			AddHtmlTexte(x + 125, y + 240, 100,  m_From.ClasseSecondaire.Name);
+			AddHtmlTexte(x + 125, y + 260, 100,  m_From.Metier.Name);
+			AddHtmlTexte(x + 125, y + 280, 100, m_From.Armure.ToString());
 
 			// 402
 
-			AddSection(x - 10, y + 302, 250, 140, "Expériences");
+			AddSection(x - 10, y + 317, 250, 135, "Expériences");
 
-			AddHtmlTexte(x + 10, y + 340, 150, "FE Disponible:");
-			AddHtmlTexte(x + 125, y + 340, 100, m_From.FE.ToString());
-			AddHtmlTexte(x + 10, y + 360, 150, "FE Attentes:");
-			AddHtmlTexte(x + 125, y + 360, 100, m_From.FEAttente.ToString());
-			AddHtmlTexte(x + 10, y + 380, 150, "FE Total:");
-			AddHtmlTexte(x + 125, y + 380, 100, m_From.FETotal.ToString());
-			AddHtmlTexte(x + 10, y + 400, 150, "Heures jouées:");
-			AddHtmlTexte(x + 125, y + 400, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours,2).ToString());
-
-
-			AddSection(x - 10, y + 443, 250, 220, "Statistique");
+			AddHtmlTexte(x + 10, y + 355, 150, "FE Disponible:");
+			AddHtmlTexte(x + 125, y + 355, 100, m_From.FE.ToString());
+			AddHtmlTexte(x + 10, y + 375, 150, "FE Attentes:");
+			AddHtmlTexte(x + 125, y + 375, 100, m_From.FEAttente.ToString());
+			AddHtmlTexte(x + 10, y + 395, 150, "FE Total:");
+			AddHtmlTexte(x + 125, y + 395, 100, m_From.FETotal.ToString());
+			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouées:");
+			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours,2).ToString());
 
 
-			AddHtmlTexte(x + 10, y + 480, 150, "Force :");
+			AddSection(x - 10, y + 453, 250, 210, "Statistique");
+
+
+			AddHtmlTexte(x + 10, y + 490, 150, "Force :");
 
 			if (m_From.CanDecreaseStat(StatType.Str))
 			{
-				AddButton(x + 100, y + 482, 5603, 5607, 300, GumpButtonType.Reply, 0);
+				AddButton(x + 100, y + 492, 5603, 5607, 300, GumpButtonType.Reply, 0);
 			}
 
 			if (m_From.CanIncreaseStat(StatType.Str))
 			{
-				AddButton(x + 160, y + 482, 5601, 5605, 301, GumpButtonType.Reply, 0);
+				AddButton(x + 160, y + 492, 5601, 5605, 301, GumpButtonType.Reply, 0);
 			}
 
-			AddLabel(x + 130, y + 480, 150, m_From.Str.ToString());
+			AddLabel(x + 130, y + 490, 150, m_From.Str.ToString());
 
-			AddHtmlTexte(x + 10, y + 500, 150, "Dextérité :");
+			AddHtmlTexte(x + 10, y + 510, 150, "Dextérité :");
 
 			if (m_From.CanDecreaseStat(StatType.Dex))
 			{
-				AddButton(x + 100, y + 502, 5603, 5607, 302, GumpButtonType.Reply, 0);
+				AddButton(x + 100, y + 512, 5603, 5607, 302, GumpButtonType.Reply, 0);
 			}
 
 			if (m_From.CanIncreaseStat(StatType.Dex))
 			{
-			  AddButton(x + 160, y + 502, 5601, 5605, 303, GumpButtonType.Reply, 0);
+			  AddButton(x + 160, y + 512, 5601, 5605, 303, GumpButtonType.Reply, 0);
 			}
-			AddLabel(x + 130, y + 500, 150, m_From.Dex.ToString());
+			AddLabel(x + 130, y + 510, 150, m_From.Dex.ToString());
 
-			AddHtmlTexte(x + 10, y + 520, 150, "Intelligence :");
+			AddHtmlTexte(x + 10, y + 530, 150, "Intelligence :");
 		
 			if (m_From.CanDecreaseStat(StatType.Int))
 			{
-			AddButton(x + 100, y + 522, 5603, 5607, 304, GumpButtonType.Reply, 0);
+			AddButton(x + 100, y + 532, 5603, 5607, 304, GumpButtonType.Reply, 0);
 			}
 
 			if (m_From.CanIncreaseStat(StatType.Int))
 			{
-				AddButton(x + 160, y + 522, 5601, 5605, 305, GumpButtonType.Reply, 0);
+				AddButton(x + 160, y + 532, 5601, 5605, 305, GumpButtonType.Reply, 0);
 			}
 
-			AddLabel(x + 130, y + 520, 150, m_From.Int.ToString());
+			AddLabel(x + 130, y + 530, 150, m_From.Int.ToString());
 
-			AddHtmlTexte(x + 10, y + 540, 150, "À placer :");
-			AddLabel(x + 130, y + 540, 150, (225 - m_From.RawStr - m_From.RawDex - m_From.RawInt - m_From.StatAttente).ToString());
+			AddHtmlTexte(x + 10, y + 550, 150, "À placer :");
+			AddLabel(x + 130, y + 550, 150, (225 - m_From.RawStr - m_From.RawDex - m_From.RawInt - m_From.StatAttente).ToString());
 
-			AddHtmlTexte(x + 10, y + 560, 150, "En attente :");
-			AddLabel(x + 130, y + 560, 150, m_From.StatAttente.ToString());
+			AddHtmlTexte(x + 10, y + 570, 150, "En attente :");
+			AddLabel(x + 130, y + 570, 150, m_From.StatAttente.ToString());
 
-			AddHtmlTexte(x + 10, y + 600, 150, "Faim :");
-			AddLabel(x + 130, y + 600, 150, m_From.Hunger * 5 + " / 100".ToString());
+			AddHtmlTexte(x + 10, y + 610, 150, "Faim :");
+			AddLabel(x + 130, y + 610, 150, m_From.Hunger * 5 + " / 100".ToString());
 
-			AddHtmlTexte(x + 10, y + 620, 150, "Soif :");
-			AddLabel(x + 130, y + 620, 150, m_From.Thirst * 5 + " / 100".ToString());
-
-
+			AddHtmlTexte(x + 10, y + 630, 150, "Soif :");
+			AddLabel(x + 130, y + 630, 150, m_From.Thirst * 5 + " / 100".ToString());
 
 
 
 
 
-			AddSection(x + 241, y, 359, 442, "Talents");
+
+
+			AddSection(x + 241, y, 359, 452, "Talents");
 
 			int line = 0;
 
@@ -225,12 +230,12 @@ namespace Server.Gumps
 
 			line = 0;
 
-			AddSection(x + 241, y + 443, 359, 220, "Dévotions");
+			AddSection(x + 241, y + 453, 359, 210, "Dévotions");
 
 			foreach (KeyValuePair<MagieType, int> item in m_From.MagicAfinity)
 			{
-				AddHtmlTexte(x + 261, y + 483 + line * 25, 150, item.Key.ToString() );
-				AddLabel(x + 525, y + 483 + line * 25, 150, item.Value.ToString());
+				AddHtmlTexte(x + 261, y + 493 + line * 25, 150, item.Key.ToString() );
+				AddLabel(x + 525, y + 493 + line * 25, 150, item.Value.ToString());
 				line++;
 			}
 

@@ -20,10 +20,12 @@ namespace Server
 		private string m_Title;
 		private Dictionary<int, string> m_Paperdoll = new Dictionary<int, string>();
 
+
 		private CustomPlayerMobile m_Player;
 		private AppearanceEnum m_Appearance = (AppearanceEnum)(-1);
 		private GrandeurEnum m_Grandeur = (GrandeurEnum)(-1);
 		private GrosseurEnum m_Grosseur = (GrosseurEnum)(-1);
+		private StatutSocialEnum m_StatutSocial = StatutSocialEnum.Aucun;
 
 		public BaseRace Race
         {
@@ -51,6 +53,8 @@ namespace Server
 
 		public GrosseurEnum Grosseur { get => m_Grosseur; set => m_Grosseur = value; }
 
+		public StatutSocialEnum StatutSocial { get => m_StatutSocial; set => m_StatutSocial = value; }
+
 		public Dictionary<int, string> Paperdoll { get => m_Paperdoll; set => m_Paperdoll = value; }
 
 		public bool Female
@@ -77,6 +81,7 @@ namespace Server
 			m_Appearance = player.Beaute;
 			m_Grandeur = m_Player.Grandeur;
 			m_Grosseur = m_Player.Grosseur;
+			m_StatutSocial = m_Player.StatutSocial;
 			m_Race = (BaseRace) m_Player.Race;
 		}
 
@@ -173,6 +178,19 @@ namespace Server
 		}
 
 
+		public string GetStatutSocial()
+		{
+			if (m_StatutSocial != (StatutSocialEnum)(-1))
+			{
+				var type = typeof(StatutSocialEnum);
+				MemberInfo[] memberInfo = type.GetMember(m_StatutSocial.ToString());
+				Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
+				return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
+			}
+
+			return "Aucunwe";
+		}
+
 		public string GetApparence()
 		{
 			if (m_Appearance != (AppearanceEnum)(-1))
@@ -228,7 +246,9 @@ namespace Server
 		public void Serialize(GenericWriter writer)
 		{
 
-			writer.Write((int)0);
+			writer.Write((int)1);
+
+			writer.Write((int)m_StatutSocial);
 			writer.Write(m_Race.RaceID);
 			writer.Write(m_Hue);
 			writer.Write(m_female);
@@ -261,7 +281,11 @@ namespace Server
 
 			switch (version)
 			{
-
+				case 1:
+					{
+						mc.StatutSocial = (StatutSocialEnum)reader.ReadInt();
+						goto case 0;
+					}
 				case 0:
 					{
 						mc.Race = (BaseRace)BaseRace.GetRace(reader.ReadInt());

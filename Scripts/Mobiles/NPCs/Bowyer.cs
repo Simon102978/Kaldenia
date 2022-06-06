@@ -20,8 +20,8 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
-
-        public override VendorShoeType ShoeType => Female ? VendorShoeType.ThighBoots : VendorShoeType.Boots;
+		public override StatutSocialEnum MinBuyClasse => StatutSocialEnum.Peregrin;
+		public override VendorShoeType ShoeType => Female ? VendorShoeType.ThighBoots : VendorShoeType.Boots;
         protected override List<SBInfo> SBInfos => m_SBInfos;
         public override int GetShoeHue()
         {

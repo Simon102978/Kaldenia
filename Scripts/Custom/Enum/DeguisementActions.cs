@@ -15,6 +15,7 @@ namespace Server
 		Apparence,
 		Grandeur,
 		Grosseur,
-		Paperdoll
+		Paperdoll,
+		StatutSocial
   }
 }

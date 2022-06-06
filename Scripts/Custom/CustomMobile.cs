@@ -29,6 +29,8 @@ namespace Server.Mobiles
 		private Classe m_ClasseSecondaire = Classe.GetClasse(-1);
 		private Classe m_Metier = Classe.GetClasse(-1);
 
+		private StatutSocialEnum m_StatutSocial = StatutSocialEnum.Aucun;
+
 		private Container m_Corps;
 		private int m_StatAttente;
 		private int m_fe;
@@ -127,6 +129,16 @@ namespace Server.Mobiles
 			}
 
 		}
+
+
+
+
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public StatutSocialEnum StatutSocial { get => m_StatutSocial; set => m_StatutSocial = value; }
+
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastLoginTime
@@ -512,8 +524,137 @@ namespace Server.Mobiles
 
 
 
+		#region statutsocial	
+
+		public string StatutSocialString()
+		{
+
+			StatutSocialEnum gros = m_StatutSocial;
+
+			if (Deguise)
+			{
+				gros = Deguisement.StatutSocial;
+			}
+
+
+			if (gros < 0)
+			{
+				gros = 0;
+			}
+			else if ((int)gros > 8)
+			{
+				gros = (StatutSocialEnum)8;
+			}
+
+			var type = typeof(StatutSocialEnum);
+			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
+			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
+			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
+		}
+
+		public int GainGold(int gold, bool bank = false)
+		{
+			int GainGold = gold;
+			int taxesGold = 0;
+
+			switch (m_StatutSocial)
+			{
+				case StatutSocialEnum.Aucun:
+					break;
+				case StatutSocialEnum.Dechet:
+					taxesGold = (int)(GainGold * 0.5);
+
+					GainGold -= taxesGold;
+					break;
+				case StatutSocialEnum.Possession:
+					taxesGold = (int)(GainGold * 0.5);
+					GainGold -= taxesGold;
+					break;
+				case StatutSocialEnum.Peregrin:
+					taxesGold = (int)(GainGold * 0.5);
+					GainGold -= taxesGold;
+					break;
+				case StatutSocialEnum.Civenien:
+					taxesGold = (int)(GainGold * 0.25);
+					GainGold -= taxesGold;
+					break;
+				case StatutSocialEnum.Equite:
+					taxesGold = (int)(GainGold * 0.1);
+					GainGold -= taxesGold;
+					break;
+				case StatutSocialEnum.Patre:
+					taxesGold = (int)(GainGold * 0.05);
+					GainGold -= taxesGold;
+					break;
+				case StatutSocialEnum.Magistrat:
+					break;
+				case StatutSocialEnum.Empereur:
+					break;
+				default:
+					break;
+			}
+
+			if (bank)
+			{
+
+			}
+			else
+			{
+				while (GainGold > 60000)
+				{
+					AddToBackpack(new Gold(60000));
+					GainGold -= 60000;
+				}
+
+				AddToBackpack(new Gold(GainGold));
+
+				PlaySound(0x0037); //Gold dropping sound
+			}
+
+
+			if (AccessLevel == AccessLevel.Player)
+			{
+
+				CustomPersistence.TaxesMoney += taxesGold;
+			}
+
+
+
+			return GainGold;
+
+
+
+
+		}
+
+		#endregion
+
+
+
+
+
 
 		#region Apparence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		public string Apparence()
 		{
 			AppearanceEnum gros = m_Beaute;
@@ -712,6 +853,17 @@ namespace Server.Mobiles
 				case Server.DeguisementAction.Paperdoll:
 					{
 						if (skill > 70)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				case Server.DeguisementAction.StatutSocial:
+					{
+						if (skill > 90)
 						{
 							return true;
 						}
@@ -1597,6 +1749,14 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 15:
+					{
+						StatutSocial = (StatutSocialEnum)reader.ReadInt();
+
+
+						goto case 14;
+					}
+
 				case 14:
 					{
 						MissiveEnAttente = new List<MissiveContent>();
@@ -1745,8 +1905,9 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(14); // version
+            writer.Write(15); // version
 
+			writer.Write((int)m_StatutSocial);
 
 			writer.Write(MissiveEnAttente.Count);
 

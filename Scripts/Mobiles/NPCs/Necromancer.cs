@@ -23,7 +23,9 @@ namespace Server.Mobiles
         {
         }
 
-        protected override List<SBInfo> SBInfos => m_SBInfos;
+		public virtual StatutSocialEnum MinBuyClasse => StatutSocialEnum.Equite;
+
+		protected override List<SBInfo> SBInfos => m_SBInfos;
 
         public override void InitSBInfo()
         {

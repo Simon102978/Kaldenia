@@ -378,6 +378,8 @@ namespace Server
 
 			m_Player.God = God;
 
+			m_Player.StatutSocial = StatutSocialEnum.Peregrin;
+
 	//		Dictionary<SkillName, int> m_skills = new Dictionary<SkillName, int>();
 
 

@@ -19,7 +19,9 @@ namespace Server.Mobiles
             SetSkill(SkillName.Veterinary, 90.0, 100.0);
         }
 
-        public override void InitSBInfo()
+		public override StatutSocialEnum MinBuyClasse => StatutSocialEnum.Civenien;
+
+		public override void InitSBInfo()
         {
             m_SBInfos.Add(new SBVeterinarian());
         }

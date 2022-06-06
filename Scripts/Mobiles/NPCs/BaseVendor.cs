@@ -64,7 +64,11 @@ namespace Server.Mobiles
         public virtual bool IsActiveSeller => IsActiveVendor; // repsonse to vendor BUY
         public virtual bool HasHonestyDiscount => true;
 
-        public virtual NpcGuild NpcGuild => NpcGuild.None;
+		public virtual StatutSocialEnum MinBuyClasse => StatutSocialEnum.Aucun;
+
+
+
+		public virtual NpcGuild NpcGuild => NpcGuild.None;
 
         public virtual bool ChangeRace => false;
 
@@ -870,7 +874,19 @@ namespace Server.Mobiles
                 Restock();
             }
 
-            UpdateBuyInfo();
+			if (from is CustomPlayerMobile)
+			{
+				CustomPlayerMobile cm = (CustomPlayerMobile)from;
+
+				if (cm.StatutSocial < MinBuyClasse)
+				{
+					Say("Seul les " + MinBuyClasse + "s et les classes supérieurs peuvent acheter ici");
+					return;
+				}
+			}
+
+
+			UpdateBuyInfo();
 
             int count = 0;
             List<BuyItemState> list;
@@ -1603,7 +1619,8 @@ namespace Server.Mobiles
                 return false;
             }
 
-            UpdateBuyInfo();
+
+			UpdateBuyInfo();
 
             //var buyInfo = GetBuyInfo();
             IShopSellInfo[] info = GetSellInfo();
@@ -2202,15 +2219,53 @@ namespace Server.Mobiles
 
             if (GiveGold > 0)
             {
-                while (GiveGold > 60000)
-                {
-                    seller.AddToBackpack(new Gold(60000));
-                    GiveGold -= 60000;
-                }
 
-                seller.AddToBackpack(new Gold(GiveGold));
+				if (seller is CustomPlayerMobile)
+				{
 
-                seller.PlaySound(0x0037); //Gold dropping sound
+					CustomPlayerMobile pSeller = (CustomPlayerMobile)seller;
+
+
+					int taxespaye = GiveGold - pSeller.GainGold(GiveGold);
+
+					switch (Utility.Random(4))
+					{
+						case 0:
+							{
+								Say("Merci de votre contribution de " + taxespaye.ToString() + " à l'empire.");
+								break;
+							}
+						case 1:
+							{
+								Say("Malheureusement, je dois retenir " + taxespaye.ToString() + " pour financer l'empire.");
+								break;
+							}
+						case 2:
+							{
+								Say("Vous avez payé " + taxespaye.ToString() + " pour aider à défendre notre glorieur et puissant empire.");
+								break;
+							}
+						default:
+							{
+								Say("Vous avez payé " + taxespaye.ToString() + " en taxe à l'empire.");
+								break;
+							}
+					}
+
+				}
+				else
+				{
+					while (GiveGold > 60000)
+					{
+						seller.AddToBackpack(new Gold(60000));
+						GiveGold -= 60000;
+					}
+
+					seller.AddToBackpack(new Gold(GiveGold));
+
+					seller.PlaySound(0x0037); //Gold dropping sound
+				}
+
 
                 if (SupportsBulkOrders(seller))
                 {
@@ -2457,7 +2512,10 @@ namespace Server.Mobiles
 
         private bool CheckConvertArmor(Mobile from, BaseArmor armor)
         {
-            PendingConvert convert = GetConvert(from, armor);
+
+			return false;
+
+  /*          PendingConvert convert = GetConvert(from, armor);
 
             if (convert == null || !(from is PlayerMobile))
                 return false;
@@ -2498,13 +2556,15 @@ namespace Server.Mobiles
                     }
                 }));
 
-            return true;
+            return true;*/
         }
 
         protected virtual bool CanConvertArmor(Mobile from, BaseArmor armor)
         {
-            if (armor == null || armor is BaseShield/*|| armor.ArtifactRarity != 0 || armor.IsArtifact*/)
-            {
+			return false;
+
+       /*    if (armor == null || armor is BaseShield/*|| armor.ArtifactRarity != 0 || armor.IsArtifact)
+           {
                 from.SendLocalizedMessage(1113044); // You can't convert that.
                 return false;
             }
@@ -2516,7 +2576,7 @@ namespace Server.Mobiles
                 return false;
             }
 
-            return true;
+            return true;*/
         }
 
         public void TryConvertArmor(Mobile from, BaseArmor armor)

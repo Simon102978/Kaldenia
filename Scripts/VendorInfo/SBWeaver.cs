@@ -58,14 +58,14 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Scissors), 6);
-                Add(typeof(Dyes), 4);
-                Add(typeof(DyeTub), 4);
+                Add(typeof(Scissors), 1);
+                Add(typeof(Dyes), 1);
+                Add(typeof(DyeTub), 1);
                 Add(typeof(UncutCloth), 1);
-                Add(typeof(BoltOfCloth), 50);
-                Add(typeof(LightYarnUnraveled), 9);
-                Add(typeof(LightYarn), 9);
-                Add(typeof(DarkYarn), 9);
+                Add(typeof(BoltOfCloth), 10);
+                Add(typeof(LightYarnUnraveled), 1);
+                Add(typeof(LightYarn), 1);
+                Add(typeof(DarkYarn), 1);
             }
         }
     }

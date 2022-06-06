@@ -30,7 +30,7 @@ namespace Server.Items.Crops
         {
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {
-                from.SendMessage("You cannot plant a seed while mounted.");
+                from.SendMessage("Vous ne pouvez pas planter une graine lorsque vous êtes sur votre monture.");
                 return;
             }
 
@@ -43,7 +43,7 @@ namespace Server.Items.Crops
             }
             else if (!CropHelper.CheckCanGrow(this, m_map, m_pnt.X, m_pnt.Y))
             {
-                from.SendMessage("This seed will not grow here.");
+                from.SendMessage("Cette graine ne poussera pas ici.");
                 return;
 
             }
@@ -51,14 +51,14 @@ namespace Server.Items.Crops
             ArrayList cropshere = CropHelper.CheckCrop(m_pnt, m_map, 0);
             if (cropshere.Count > 0)
             {
-                from.SendMessage("There is already a crop growing here.");
+                from.SendMessage("Il y a déjà un plant qui pousse ici.");
                 return;
             }
 
             ArrayList cropsnear = CropHelper.CheckCrop(m_pnt, m_map, 1);
             if ((cropsnear.Count > 2))
             {
-                from.SendMessage("There are too many crops nearby.");
+                from.SendMessage("Il y a trop de plants à proximité.");
                 return;
             }
 
@@ -66,7 +66,7 @@ namespace Server.Items.Crops
 
             if (!from.Mounted) from.Animate(32, 5, 1, true, false, 0);
             {
-                from.SendMessage("You plant the seed.");
+                from.SendMessage("Vous plantez la graine.");
                 this.Consume();
                 Item item = new CottonSeedling(from);
                 item.Location = m_pnt;

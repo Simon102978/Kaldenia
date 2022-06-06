@@ -15,6 +15,7 @@ namespace Server.Mobiles
         {
             public InternalBuyInfo()
             {
+				/*
                 Add(new GenericBuyInfo(typeof(GoldRing), 27, 20, 0x108A, 0));
                 Add(new GenericBuyInfo(typeof(Necklace), 26, 20, 0x1085, 0));
                 Add(new GenericBuyInfo(typeof(GoldNecklace), 27, 20, 0x1088, 0));
@@ -35,6 +36,7 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Tourmaline), 75, 20, 0x0F18, 0, true));
                 Add(new GenericBuyInfo(typeof(Amber), 50, 20, 0xF25, 0, true));
                 Add(new GenericBuyInfo(typeof(Diamond), 200, 20, 0xF26, 0, true));
+				*/
             }
         }
 
@@ -42,7 +44,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Board), 1);
+       /*         Add(typeof(Board), 1);
                 Add(typeof(IronIngot), 3);
 
                 Add(typeof(Amber), 25);
@@ -66,6 +68,7 @@ namespace Server.Mobiles
                 Add(typeof(SilverBracelet), 10);
                 Add(typeof(GoldEarrings), 13);
                 Add(typeof(SilverEarrings), 10);
+	   */
             }
         }
     }

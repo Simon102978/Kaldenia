@@ -1,30 +1,29 @@
 namespace Server.Items
 {
-    public class Amber : Item, ICommodity
+    public class Citrine : Item, IGem
     {
         [Constructable]
-        public Amber()
+        public Citrine()
             : this(1)
         {
         }
 
         [Constructable]
-        public Amber(int amount)
-            : base(0xF25)
+        public Citrine(int amount)
+            : base(0xF15)
         {
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Citrine";
 
-        public Amber(Serial serial)
+		}
+
+        public Citrine(Serial serial)
             : base(serial)
         {
         }
 
-        TextDefinition ICommodity.Description => LabelNumber;
-        bool ICommodity.IsDeedable => true;
-
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

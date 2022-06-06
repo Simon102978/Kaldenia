@@ -1,27 +1,28 @@
 namespace Server.Items
 {
-    public class Amethyst : Item, IGem
+    public class Diamond : Item, IGem
     {
         [Constructable]
-        public Amethyst()
+        public Diamond()
             : this(1)
         {
         }
 
         [Constructable]
-        public Amethyst(int amount)
-            : base(0xF16)
+        public Diamond(int amount)
+            : base(0xF26)
         {
             Stackable = true;
             Amount = amount;
+			Name = "Diamant";
         }
 
-        public Amethyst(Serial serial)
+        public Diamond(Serial serial)
             : base(serial)
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

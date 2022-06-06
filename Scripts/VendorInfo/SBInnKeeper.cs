@@ -36,13 +36,13 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(BeverageBottle), 3);
-                Add(typeof(Jug), 6);
-                Add(typeof(Pitcher), 5);
+                Add(typeof(BeverageBottle), 1);
+                Add(typeof(Jug), 1);
+                Add(typeof(Pitcher), 1);
                 Add(typeof(GlassMug), 1);
-                Add(typeof(BreadLoaf), 3);
-                Add(typeof(CheeseWheel), 12);
-                Add(typeof(Ribs), 6);
+                Add(typeof(BreadLoaf), 1);
+                Add(typeof(CheeseWheel), 1);
+                Add(typeof(Ribs), 1);
                 Add(typeof(Peach), 1);
                 Add(typeof(Pear), 1);
                 Add(typeof(Grapes), 1);

@@ -286,7 +286,7 @@ namespace Server.Items.Crops
 			{
 				if ( from.Mounted && !CropHelper.CanWorkMounted )
 				{
-					from.SendMessage( "You cannot pull up a weed while mounted." );
+					from.SendMessage( "Vous ne pouvez pas arracher un plant lorsque vous êtes sur votre monture." );
 					return;
 				}
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
@@ -295,16 +295,16 @@ namespace Server.Items.Crops
 					{
 						from.Direction = from.GetDirectionTo( this );
 						from.Animate( from.Mounted ? 29:32, 5, 1, true, false, 0 );
-						from.SendMessage("You pull up the weed.");
+						from.SendMessage("Vous retirez le plant.");
 						DandelionSeed fruit = new DandelionSeed();
 						from.AddToBackpack( fruit );
 						this.Delete();
 					}
-					else from.SendMessage("The weed is still too tough to pull.");
+					else from.SendMessage("L'herbe est encore trop dure à arracher.");
 				}
 				else
 				{
-					from.SendMessage( "You are too far away to harvest anything." );
+					from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." );
 				}
 			}
 

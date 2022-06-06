@@ -1,32 +1,33 @@
 namespace Server.Items
 {
-    public class Tourmaline : Item, IGem
+    public class Amethyst : Item, IGem
     {
         [Constructable]
-        public Tourmaline()
+        public Amethyst()
             : this(1)
         {
         }
 
         [Constructable]
-        public Tourmaline(int amount)
-            : base(0x0F18)
+        public Amethyst(int amount)
+            : base(0xF16)
         {
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Améthyste";
+		}
 
-        public Tourmaline(Serial serial)
+        public Amethyst(Serial serial)
             : base(serial)
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
-            writer.Write(1); // version
+            writer.Write(0); // version
         }
 
         public override void Deserialize(GenericReader reader)
@@ -34,9 +35,6 @@ namespace Server.Items
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
-
-            if (version == 0)
-                ItemID = 0x0F18;
         }
     }
 }

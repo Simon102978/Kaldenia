@@ -48,14 +48,14 @@ namespace Server.Mobiles
 				Add(typeof(RockLobster), 1);
 				Add(typeof(ShovelNoseLobster), 1);
 				Add(typeof(SpineyLobster), 1);
-				Add(typeof(BlueLobster), 25);
-				Add(typeof(BloodLobster), 250);
-				Add(typeof(DreadLobster), 250);
-				Add(typeof(VoidLobster), 250);
+				Add(typeof(BlueLobster), 5);
+				Add(typeof(BloodLobster), 50);
+				Add(typeof(DreadLobster), 50);
+				Add(typeof(VoidLobster), 50);
 
-				Add(typeof(StoneCrabMeat), 10);
-				Add(typeof(SpiderCrabMeat), 10);
-				Add(typeof(BlueLobsterMeat), 10);
+				Add(typeof(StoneCrabMeat), 5);
+				Add(typeof(SpiderCrabMeat), 5);
+				Add(typeof(BlueLobsterMeat), 5);
 			}
         }
     }

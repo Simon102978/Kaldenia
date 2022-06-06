@@ -1,32 +1,33 @@
 namespace Server.Items
 {
-    public class Citrine : Item, IGem
+    public class Tourmaline : Item, IGem
     {
         [Constructable]
-        public Citrine()
+        public Tourmaline()
             : this(1)
         {
         }
 
         [Constructable]
-        public Citrine(int amount)
-            : base(0xF15)
+        public Tourmaline(int amount)
+            : base(0x0F18)
         {
             Stackable = true;
             Amount = amount;
+			Name = "Tourmaline";
         }
 
-        public Citrine(Serial serial)
+        public Tourmaline(Serial serial)
             : base(serial)
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
-            writer.Write(0); // version
+            writer.Write(1); // version
         }
 
         public override void Deserialize(GenericReader reader)
@@ -34,6 +35,9 @@ namespace Server.Items
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
+
+            if (version == 0)
+                ItemID = 0x0F18;
         }
     }
 }

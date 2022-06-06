@@ -1,32 +1,34 @@
 namespace Server.Items
 {
-    public class Diamond : Item, IGem
+    public class Sapphire : Item, IGem
     {
         [Constructable]
-        public Diamond()
+        public Sapphire()
             : this(1)
         {
         }
 
         [Constructable]
-        public Diamond(int amount)
-            : base(0xF26)
+        public Sapphire(int amount)
+            : base(0xF11)
         {
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Sapphire";
 
-        public Diamond(Serial serial)
+		}
+
+        public Sapphire(Serial serial)
             : base(serial)
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
-            writer.Write(0); // version
+            writer.Write(1); // version
         }
 
         public override void Deserialize(GenericReader reader)
@@ -34,6 +36,9 @@ namespace Server.Items
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
+
+            if (version == 0)
+                ItemID = 0xF11;
         }
     }
 }

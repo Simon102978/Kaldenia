@@ -33,12 +33,12 @@ namespace Server.Items.Crops
         {
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {
-                from.SendMessage("The crop is too small to harvest while mounted.");
+                from.SendMessage("Le plant est trop petit pour pouvoir être récolté sur votre monture.");
                 return;
             }
             else
             {
-                from.SendMessage("This crop is too young to harvest.");
+                from.SendMessage("Votre ressource est trop jeune pour être récoltée.");
             }
         }
         public CottonSeedling(Serial serial) : base(serial)

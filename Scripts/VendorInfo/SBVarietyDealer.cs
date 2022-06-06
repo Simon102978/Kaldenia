@@ -79,11 +79,11 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Bandage), 1);
+           //     Add(typeof(Bandage), 1);
 
-                Add(typeof(BlankScroll), 3);
+                Add(typeof(BlankScroll), 1);
 
-                Add(typeof(NightSightPotion), 7);
+     /*           Add(typeof(NightSightPotion), 7);
                 Add(typeof(AgilityPotion), 7);
                 Add(typeof(StrengthPotion), 7);
                 Add(typeof(RefreshPotion), 7);
@@ -91,36 +91,37 @@ namespace Server.Mobiles
                 Add(typeof(LesserHealPotion), 7);
                 Add(typeof(LesserPoisonPotion), 7);
                 Add(typeof(LesserExplosionPotion), 10);
-
-                Add(typeof(Bolt), 3);
+	 */
+                Add(typeof(Bolt), 2);
                 Add(typeof(Arrow), 2);
 
-                Add(typeof(BlackPearl), 3);
-                Add(typeof(Bloodmoss), 3);
-                Add(typeof(MandrakeRoot), 2);
-                Add(typeof(Garlic), 2);
-                Add(typeof(Ginseng), 2);
-                Add(typeof(Nightshade), 2);
-                Add(typeof(SpidersSilk), 2);
-                Add(typeof(SulfurousAsh), 2);
+                Add(typeof(BlackPearl), 1);
+                Add(typeof(Bloodmoss), 1);
+                Add(typeof(MandrakeRoot), 1);
+                Add(typeof(Garlic), 1);
+                Add(typeof(Ginseng), 1);
+                Add(typeof(Nightshade), 1);
+                Add(typeof(SpidersSilk), 1);
+                Add(typeof(SulfurousAsh), 1);
 
                 Add(typeof(BreadLoaf), 3);
                 Add(typeof(Backpack), 7);
                 Add(typeof(RecallRune), 8);
                 Add(typeof(Spellbook), 9);
                 Add(typeof(BlankScroll), 3);
+				/*
+								Add(typeof(BatWing), 1);
+								Add(typeof(GraveDust), 1);
+								Add(typeof(DaemonBlood), 1);
+								Add(typeof(NoxCrystal), 1);
+								Add(typeof(PigIron), 1);
 
-                Add(typeof(BatWing), 2);
-                Add(typeof(GraveDust), 2);
-                Add(typeof(DaemonBlood), 3);
-                Add(typeof(NoxCrystal), 3);
-                Add(typeof(PigIron), 3);
+								Type[] types = Loot.MageryScrollTypes;
 
-                Type[] types = Loot.MageryScrollTypes;
-
-                for (int i = 0; i < types.Length; ++i)
-                    Add(types[i], ((i / 8) + 2) * 5);
-            }
-        }
+								for (int i = 0; i < types.Length; ++i)
+									Add(types[i], ((i / 8) + 2) * 5);
+				*/
+			}
+		}
     }
 }

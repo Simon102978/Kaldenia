@@ -1,32 +1,36 @@
 namespace Server.Items
 {
-    public class Sapphire : Item, IGem
+    public class Amber : Item, ICommodity
     {
         [Constructable]
-        public Sapphire()
+        public Amber()
             : this(1)
         {
         }
 
         [Constructable]
-        public Sapphire(int amount)
-            : base(0xF11)
+        public Amber(int amount)
+            : base(0xF25)
         {
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Ambre";
+		}
 
-        public Sapphire(Serial serial)
+        public Amber(Serial serial)
             : base(serial)
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        TextDefinition ICommodity.Description => LabelNumber;
+        bool ICommodity.IsDeedable => true;
+
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
-            writer.Write(1); // version
+            writer.Write(0); // version
         }
 
         public override void Deserialize(GenericReader reader)
@@ -34,9 +38,6 @@ namespace Server.Items
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
-
-            if (version == 0)
-                ItemID = 0xF11;
         }
     }
 }

@@ -97,7 +97,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(BattleAxe), 13);
+     /*           Add(typeof(BattleAxe), 13);
                 Add(typeof(DoubleAxe), 26);
                 Add(typeof(ExecutionersAxe), 15);
                 Add(typeof(LargeBattleAxe), 16);
@@ -160,6 +160,7 @@ namespace Server.Mobiles
 
                 Add(typeof(Hatchet), 13);
                 Add(typeof(WarFork), 16);
+	 */
             }
         }
     }

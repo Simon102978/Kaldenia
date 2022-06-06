@@ -14,6 +14,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
+			Name = "Émeraude";
         }
 
         public Emerald(Serial serial)
@@ -21,7 +22,7 @@ namespace Server.Items
         {
         }
 
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 1.0;
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

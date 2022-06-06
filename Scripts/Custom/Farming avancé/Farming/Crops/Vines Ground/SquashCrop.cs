@@ -26,18 +26,18 @@ namespace Server.Items.Crops
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "You cannot plant a seed while mounted." ); return; }
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez pas planter une graine lorsque vous êtes sur votre monture." ); return; }
 			Point3D m_pnt = from.Location;
 			Map m_map = from.Map;
 			if ( !IsChildOf( from.Backpack ) ) { from.SendLocalizedMessage( 1042010 ); return; }
-			else if ( !CropHelper.CheckCanGrow( this, m_map, m_pnt.X, m_pnt.Y ) ) { from.SendMessage( "This seed will not grow here." ); return; }
+			else if ( !CropHelper.CheckCanGrow( this, m_map, m_pnt.X, m_pnt.Y ) ) { from.SendMessage( "Cette graine ne poussera pas ici." ); return; }
 			ArrayList cropshere = CropHelper.CheckCrop( m_pnt, m_map, 0 );
-			if ( cropshere.Count > 0 ) { from.SendMessage( "There is already a crop growing here." ); return; }
+			if ( cropshere.Count > 0 ) { from.SendMessage( "Il y a déjà un plant qui pousse ici." ); return; }
 			ArrayList cropsnear = CropHelper.CheckCrop( m_pnt, m_map, 1 );
-			if ( ( cropsnear.Count > 1 ) ) { from.SendMessage( "There are too many crops nearby." ); return; }
+			if ( ( cropsnear.Count > 1 ) ) { from.SendMessage( "Il y a trop de plants à proximité." ); return; }
 			if ( this.BumpZ ) ++m_pnt.Z;
 			if ( !from.Mounted ) from.Animate( 32, 5, 1, true, false, 0 );
-			from.SendMessage("You plant the seed.");
+			from.SendMessage("Vous plantez la graine.");
 			this.Consume();
 			Item item = new SquashSeedling( from );
 			item.Location = m_pnt;
@@ -74,8 +74,8 @@ namespace Server.Items.Crops
 		}
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "The crop is too small to harvest while mounted." ); return; }
-			else from.SendMessage( "This crop is too young to harvest." );
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être récolté sur votre monture." ); return; }
+			else from.SendMessage( "Votre ressource est trop jeune pour être récoltée." );
 		}
 		public SquashSeedling( Serial serial ) : base( serial ) { }
 
@@ -145,7 +145,7 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
-			if ( from != m_sower ) { from.SendMessage( "You do not own this plant !!!" ); return; }
+			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !!!" ); return; }
 
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "You cannot harvest a crop while mounted." ); return; }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )
@@ -173,7 +173,7 @@ namespace Server.Items.Crops
 						if ( !regrowTimer.Running ) { regrowTimer.Start(); }
 					}
 				}
-				else { from.SendMessage( "You are too far away to harvest anything." ); }
+				else { from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." ); }
 			}
 		}
 
@@ -228,7 +228,7 @@ namespace Server.Items.Crops
 						this.Delete();
 						from.SendMessage( "You chop the plant up" );
 				}
-				else from.SendMessage( "You do not own this plant !!!" );
+				else from.SendMessage( "Ce plant ne vous appartient pas !!!" );
 			}
 			else from.SendLocalizedMessage( 500446 );
 		}

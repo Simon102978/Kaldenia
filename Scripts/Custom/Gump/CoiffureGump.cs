@@ -13,12 +13,12 @@ namespace Server.Gumps
 	public class CoiffureConfirmationGump : Gump
 	{
 		CustomPlayerMobile m_from;
-		CustomPlayerMobile m_to;
+		Mobile m_to;
 		Coiffure m_coif;
 		BarberScissorsBase m_scissor;
 
 
-		public CoiffureConfirmationGump(CustomPlayerMobile from, CustomPlayerMobile m, Coiffure coiffure, BarberScissorsBase scissor)
+		public CoiffureConfirmationGump(CustomPlayerMobile from, Mobile m, Coiffure coiffure, BarberScissorsBase scissor)
 		   : base(25, 25)
 		{
 			m_from = from;
@@ -82,12 +82,12 @@ namespace Server.Gumps
     {
     
         public CustomPlayerMobile m_From;
-        public CustomPlayerMobile m_to;
+        public Mobile m_to;
         public int m_Page;
 		public bool m_Barbe = false;
 		public BarberScissorsBase m_Item;
 
-        public CoiffureGump(CustomPlayerMobile from,CustomPlayerMobile to,int page,BarberScissorsBase itemid, bool barbe = false)
+        public CoiffureGump(CustomPlayerMobile from, Mobile to,int page,BarberScissorsBase itemid, bool barbe = false)
             : base(!barbe ? "Choix de cheveux" : "Choix de Barbe", 560, 622, false)
         {
             m_From = from;
@@ -196,7 +196,7 @@ namespace Server.Gumps
 				}
 				else
 				{
-					if (m_From == m_to)
+					if (m_From == m_to || m_From.AccessLevel > AccessLevel.Player)
 					{
 						if (co.Barbe)
 						{
@@ -208,7 +208,7 @@ namespace Server.Gumps
 						}
 
 
-						m_From.SendMessage("Vous vous coiffez.");
+						m_From.SendMessage("Vous coiffez.");
 
 						if (m_From.AccessLevel > AccessLevel.Player)
 						{

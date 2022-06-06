@@ -562,28 +562,27 @@ namespace Server.Mobiles
 				case StatutSocialEnum.Aucun:
 					break;
 				case StatutSocialEnum.Dechet:
-					taxesGold = (int)(GainGold * 0.5);
-
+					taxesGold = (int)Math.Round((GainGold * 0.5),0,MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Possession:
-					taxesGold = (int)(GainGold * 0.5);
+					taxesGold = (int)Math.Round((GainGold * 0.5), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Peregrin:
-					taxesGold = (int)(GainGold * 0.5);
+					taxesGold = (int)Math.Round((GainGold * 0.5), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Civenien:
-					taxesGold = (int)(GainGold * 0.25);
+					taxesGold = (int)Math.Round((GainGold * 0.25), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Equite:
-					taxesGold = (int)(GainGold * 0.1);
+					taxesGold = (int)Math.Round((GainGold * 0.1), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Patre:
-					taxesGold = (int)(GainGold * 0.05);
+					taxesGold = (int)Math.Round((GainGold * 0.05), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Magistrat:

@@ -98,7 +98,8 @@ namespace Server.Misc
 			Coiffure.Register(new Coiffure(41915, 35, true));
 			Coiffure.Register(new Coiffure(41916, 25, true));
 			Coiffure.Register(new Coiffure(41917, 10, true));
-
+			Coiffure.Register(new Coiffure(0, 0, true));
+			Coiffure.Register(new Coiffure(0, 0, false));
 
 
 

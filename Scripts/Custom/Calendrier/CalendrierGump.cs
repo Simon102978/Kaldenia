@@ -45,9 +45,9 @@ namespace Server.Gumps
 					//Background Principal
             		AddBackground(22, 16, 700, 570, 9270);
 			
-					//Label pour Calendrier de Teilia
+					//Label pour Calendrier 
 					AddBackground(55, 43, 635, 28, 3000);
-					AddLabel(317, 47, 0, "Calendrier de Teilia");
+					AddLabel(317, 47, 0, "Calendrier");
 			
 					//Saison : Été
 					AddBackground(70, 86, 605, 28, 3000);
@@ -320,9 +320,9 @@ namespace Server.Gumps
 					//Background Principal
             		AddBackground(22, 16, 700, 570, 9270);
 			
-					//Label pour Calendrier de Teilia
+					//Label pour Calendrier 
 					AddBackground(55, 43, 635, 28, 3000);
-					AddLabel(317, 47, 0, "Calendrier de Teilia");
+					AddLabel(317, 47, 0, "Calendrier ");
 			
 					//Saison : Automne
 					AddBackground(70, 86, 605, 28, 3000);
@@ -600,9 +600,9 @@ namespace Server.Gumps
 					//Background Principal
             		AddBackground(22, 16, 700, 570, 9270);
 			
-					//Label pour Calendrier de Teilia
+					//Label pour Calendrier 
 					AddBackground(55, 43, 635, 28, 3000);
-					AddLabel(317, 47, 0, "Calendrier de Teilia");
+					AddLabel(317, 47, 0, "Calendrier");
 			
 					//Saison : Hiver
 					AddBackground(70, 86, 605, 28, 3000);
@@ -880,9 +880,9 @@ namespace Server.Gumps
 					//Background Principal
             		AddBackground(22, 16, 700, 570, 9270);
 			
-					//Label pour Calendrier de Teilia
+					//Label pour Calendrier 
 					AddBackground(55, 43, 635, 28, 3000);
-					AddLabel(317, 47, 0, "Calendrier de Teilia");
+					AddLabel(317, 47, 0, "Calendrier ");
 			
 					//Saison : Abysse
 					AddBackground(70, 86, 605, 28, 3000);
@@ -1160,9 +1160,9 @@ namespace Server.Gumps
 					//Background Principal
             		AddBackground(22, 16, 700, 570, 9270);
 			
-					//Label pour Calendrier de Teilia
+					//Label pour Calendrier 
 					AddBackground(55, 43, 635, 28, 3000);
-					AddLabel(317, 47, 0, "Calendrier de Teilia");
+					AddLabel(317, 47, 0, "Calendrier ");
 			
 					//Saison : Printemps
 					AddBackground(70, 86, 605, 28, 3000);

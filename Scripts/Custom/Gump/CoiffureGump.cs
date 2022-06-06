@@ -55,11 +55,11 @@ namespace Server.Gumps
 			{
 				if (m_coif.Barbe)
 				{
-					m_to.HairItemID = m_coif.ItemId;
+					m_to.FacialHairItemID = m_coif.ItemId;
 				}
 				else
 				{
-					m_to.FacialHairItemID = m_coif.ItemId;
+					m_to.HairItemID = m_coif.ItemId;
 				}
 
 				m_to.SendMessage("Vous vous faites coiffer par " + m_from.Name + ".");
@@ -200,11 +200,11 @@ namespace Server.Gumps
 					{
 						if (co.Barbe)
 						{
-							m_to.HairItemID = co.ItemId;
+							m_to.FacialHairItemID = co.ItemId;
 						}
 						else
 						{
-							m_to.FacialHairItemID = co.ItemId;
+							m_to.HairItemID = co.ItemId;
 						}
 
 

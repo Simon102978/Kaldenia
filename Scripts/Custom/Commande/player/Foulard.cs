@@ -24,25 +24,29 @@ namespace Server.Scripts.Commands
             if (!from.Alive)
                 return;
 
-            Item item = from.FindItemOnLayer(Layer.Earrings);
+			foreach (Layer Laitem in Enum.GetValues(typeof(Layer)))
+			{
+				Item item = from.FindItemOnLayer(Laitem);
 
-            if (item is Foulard2)
-            {
-                if (item.ItemID == 41799)
-                {
-                    item.ItemID = 41800;
-                    from.SendMessage("Vous remontez votre foulard.");
-                }
-                else
-                {
-                    item.ItemID = 41799;
-                    from.SendMessage("Vous abaissez votre foulard.");
-                }
-            }
-            else
-            {
+				if (item is Foulard2 || item is Foulard3)
+				{
+					if (item.ItemID == 41799)
+					{
+						item.ItemID = 41800;
+						from.SendMessage("Vous remontez votre foulard.");
+						return;
+					}
+					else
+					{
+						item.ItemID = 41799;
+						from.SendMessage("Vous abaissez votre foulard.");
+						return;
+					}
+				}
+			}
+
                 from.SendMessage("Vous devez avoir un foulard autour du cou.");
-            }
+            
         }
     }
 }

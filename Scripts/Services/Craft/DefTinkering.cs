@@ -342,6 +342,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(SkilletExp), 1044046, "Poelon Avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(VinyardLabelMaker), 1044046, "Marqueur de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WinecraftersTools), 1044046, "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(WitchsBookofFoodCrafts), 1044046, "Livre de recette enchantées", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);
 
 
 			//TODO: focus of theurgy - 20th Anniversary Event 
@@ -576,18 +577,20 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(HitchingPost), 1044051, 1071127, 90.0, 160.0, typeof(IronIngot), 1044036, 50, 1044253);
             AddRes(index, typeof(HitchingRope), 1071124, 2, 1044253);
-            
- /*           index = AddCraft(typeof(ArcanicRuneStone), 1044051, 1113352, 90.0, 140.0, typeof(CrystalShards), 1073161, 1, 1044253);
-            AddRes(index, typeof(PowerCrystal), 1112811, 5, 502910);
-            AddSkill(index, SkillName.Magery, 80.0, 85.0);
-            ForceNonExceptional(index);
 
-            index = AddCraft(typeof(VoidOrb), 1044051, 1113354, 90.0, 104.3, typeof(DarkSapphire), 1032690, 1, 1044253);
-            AddSkill(index, SkillName.Magery, 80.0, 100.0);
-            AddRes(index, typeof(BlackPearl), 1015001, 50, 1044253);
-            ForceNonExceptional(index);
- */
-            index = AddCraft(typeof(AdvancedTrainingDummySouthDeed), 1044051, 1150595, 90.0, 120.0, typeof(TrainingDummySouthDeed), 1044336, 1, 1044253);
+			index = AddCraft(typeof(HagCauldron), 1044051, "Chaudron", 50.0, 120.0, typeof(IronIngot), 1044036, 10, 1044253);
+
+			/*           index = AddCraft(typeof(ArcanicRuneStone), 1044051, 1113352, 90.0, 140.0, typeof(CrystalShards), 1073161, 1, 1044253);
+					   AddRes(index, typeof(PowerCrystal), 1112811, 5, 502910);
+					   AddSkill(index, SkillName.Magery, 80.0, 85.0);
+					   ForceNonExceptional(index);
+
+					   index = AddCraft(typeof(VoidOrb), 1044051, 1113354, 90.0, 104.3, typeof(DarkSapphire), 1032690, 1, 1044253);
+					   AddSkill(index, SkillName.Magery, 80.0, 100.0);
+					   AddRes(index, typeof(BlackPearl), 1015001, 50, 1044253);
+					   ForceNonExceptional(index);
+			*/
+			index = AddCraft(typeof(AdvancedTrainingDummySouthDeed), 1044051, 1150595, 90.0, 120.0, typeof(TrainingDummySouthDeed), 1044336, 1, 1044253);
             AddRes(index, typeof(PlateChest), 1025141, 1, 1044253);
             AddRes(index, typeof(CloseHelm), 1025128, 1, 1044253);
             AddRes(index, typeof(Broadsword), 1015055, 1, 1044253);

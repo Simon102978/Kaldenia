@@ -4,17 +4,17 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    [FlipableAttribute(0x9981, 0x9982)]
+    [FlipableAttribute(0x0EFA, 0x0EFA)]
 	public class WitchsBookofFoodCrafts : BaseTool
 	{
 		public override CraftSystem CraftSystem{ get{ return DefWitchcraft.CraftSystem; } }
 
 		[Constructable]
-		public WitchsBookofFoodCrafts() : base( 0x9981 )
+		public WitchsBookofFoodCrafts() : base(0x0EFA)
 		{
             Weight = 1.0;
             Hue = 0x3CC;
-            Name = "Witch's Book of Food Crafts";
+            Name = "Livre de Recettes Enchantées";
 		}
 
 		[Constructable]
@@ -22,7 +22,7 @@ namespace Server.Items
 		{
             Weight = 1.0;
             Hue = 0x3CC;
-            Name = "Witch's Book of Food Crafts";
+            Name = "Livre de Recettes Enchantées";
 		}
 
         public WitchsBookofFoodCrafts(Serial serial)

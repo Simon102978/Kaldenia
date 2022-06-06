@@ -23,7 +23,10 @@ namespace Server.Mobiles
             : base(serial)
         { }
 
-        public override NpcGuild NpcGuild => NpcGuild.MerchantsGuild;
+
+		public static StatutSocialEnum MinBankClasse => StatutSocialEnum.Civenien;
+
+		public override NpcGuild NpcGuild => NpcGuild.MerchantsGuild;
 
         protected override List<SBInfo> SBInfos => m_SBInfos;
 
@@ -412,6 +415,16 @@ namespace Server.Mobiles
                                     vendor.Say(500378);
                                     break;
                                 }
+								else if (e.Mobile is CustomPlayerMobile)
+								{
+									CustomPlayerMobile cm = (CustomPlayerMobile)e.Mobile;
+
+									if (cm.StatutSocial < MinBankClasse)
+									{						
+										vendor.Say("Seul les " + MinBankClasse + "s et les classes supérieurs peuvent avoir une banque ici");
+										break;
+									}								
+								}
 
                                 e.Mobile.BankBox.Open();
                             }
@@ -490,12 +503,29 @@ namespace Server.Mobiles
         {
             if (from.Alive)
             {
-                OpenBankEntry entry = new OpenBankEntry(this)
-                {
-                    Enabled = from.Map.Rules == MapRules.FeluccaRules || CheckVendorAccess(from)
-                };
+				bool AcessBank = true;
 
-                list.Add(entry);
+
+			   if (from is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cm = (CustomPlayerMobile)from;
+
+					if (cm.StatutSocial < MinBankClasse)
+					{
+
+						AcessBank = false;
+					}
+				}
+
+				if (AcessBank)
+				{
+					OpenBankEntry entry = new OpenBankEntry(this)
+					{
+						Enabled = from.Map.Rules == MapRules.FeluccaRules || CheckVendorAccess(from)
+					};
+
+					list.Add(entry);
+				}				
             }
 
             base.AddCustomContextEntries(from, list);

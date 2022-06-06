@@ -14,7 +14,8 @@ namespace Server.Mobiles
             SetSkill(SkillName.Macing, 36.0, 68.0);
         }
 
-        public Shipwright(Serial serial)
+		public override StatutSocialEnum MinBuyClasse => StatutSocialEnum.Civenien;
+		public Shipwright(Serial serial)
             : base(serial)
         {
         }

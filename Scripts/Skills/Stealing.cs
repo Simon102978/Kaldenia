@@ -32,7 +32,9 @@ namespace Server.SkillHandlers
 
         public static bool IsInGuild(Mobile m)
         {
-            return (m is PlayerMobile && ((PlayerMobile)m).NpcGuild == NpcGuild.ThievesGuild);
+
+			return true;
+          //  return (m is PlayerMobile && ((PlayerMobile)m).NpcGuild == NpcGuild.ThievesGuild);
         }
 
         public static bool IsInnocentTo(Mobile from, Mobile to)

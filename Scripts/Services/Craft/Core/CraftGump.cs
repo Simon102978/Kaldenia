@@ -235,7 +235,7 @@ namespace Server.Engines.Craft
                     }
                 }
 
-                AddButton(15, 362, 4005, 4007, GetButtonID(6, 0), GumpButtonType.Reply, 0);
+                AddButton(15, 442, 4005, 4007, GetButtonID(6, 0), GumpButtonType.Reply, 0);
 
                 if (nameNumber > 0)
                 {
@@ -245,7 +245,7 @@ namespace Server.Engines.Craft
                     AddHtmlLocalized(50 + (context.DoNotColor ? 13 : 0), 445, 250, 18, nameNumber, resourceCount.ToString(), LabelColor, false, false);
                 }
                 else
-                     AddHtml(50, 462, 450, 40, "<h3><basefont color=#FFFFFF>" + nameString + " " + resourceCount + "<basefont></h3>", false, false);
+                     AddHtml(50, 445, 450, 40, "<h3><basefont color=#FFFFFF>" + nameString + " " + resourceCount + "<basefont></h3>", false, false);
                    // AddLabel(50, 362, LabelHue, (context.DoNotColor ? "*" : "") + string.Format("{0} ({1} Available)", nameString, resourceCount));
             }
             // ****************************************
@@ -279,12 +279,12 @@ namespace Server.Engines.Craft
                         resourceCount += items[i].Amount;
                 }
 
-                AddButton(15, 382, 4005, 4007, GetButtonID(6, 7), GumpButtonType.Reply, 0);
+                AddButton(15, 470, 4005, 4007, GetButtonID(6, 7), GumpButtonType.Reply, 0);
 
                 if (nameNumber > 0)
-                    AddHtmlLocalized(50, 385, 250, 18, nameNumber, resourceCount.ToString(), LabelColor, false, false);
+                    AddHtmlLocalized(50, 470, 250, 18, nameNumber, resourceCount.ToString(), LabelColor, false, false);
                 else
-                    AddHtml(50, 442, 450, 40, "<h3><basefont color=#FFFFFF>" + nameString + " " + resourceCount + "<basefont></h3>", false, false);
+                    AddHtml(50, 470, 450, 40, "<h3><basefont color=#FFFFFF>" + nameString + " " + resourceCount + "<basefont></h3>", false, false);
                   //  AddLabel(50, 385, LabelHue, string.Format("{0} ({1} Available)", nameString, resourceCount));
             }
             // ****************************************

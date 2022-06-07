@@ -61,7 +61,7 @@ namespace Server.Items
         public override int DefHitSound => 0x5D3;
         public override int DefMissSound => 0x5D4;
 
-        public override SkillName DefSkill => SkillName.Throwing;
+        public override SkillName DefSkill => SkillName.Archery;
 
         public override WeaponAnimation DefAnimation => WeaponAnimation.Throwing;
 

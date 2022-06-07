@@ -745,29 +745,43 @@ namespace Server.Items
 			{
 				case TreasureLevel.Stash:
 					{
-						AddlootPack(chest, LootPack.MageryRegs, 2, 100);
-						AddlootPack(chest, LootPack.LowScrolls, 2, 100);
+						AddlootPack(chest, LootPack.MageryRegs, 50, 100);
+						AddlootPack(chest, LootPack.MageryScrolls, 3, 100);
+						AddlootPack(chest, LootPack.Gems, 5, 100);
+
 						AddGold(chest, 500, 1000);
 						break;
 					}				
 				case TreasureLevel.Supply:
 					{
-
+						AddlootPack(chest, LootPack.MageryRegs, 100, 100);
+						AddlootPack(chest, LootPack.MageryScrolls, 7, 100);
+						AddlootPack(chest, LootPack.Gems, 10, 100);
+						AddGold(chest, 1000, 1500);
 						break;
 					}
 				case TreasureLevel.Cache:
 					{
-
+						AddlootPack(chest, LootPack.MageryRegs, 150, 100);
+						AddlootPack(chest, LootPack.MageryScrolls, 10, 100);
+						AddlootPack(chest, LootPack.Gems, 15, 100);
+						AddGold(chest, 1500, 2000);
 						break;
 					}
 				case TreasureLevel.Hoard:
 					{
-
+						AddlootPack(chest, LootPack.MageryRegs, 200, 100);
+						AddlootPack(chest, LootPack.MageryScrolls, 10, 100);
+						AddlootPack(chest, LootPack.Gems, 20, 100);
+						AddGold(chest, 2000, 3000);
 						break;
 					}
 				case TreasureLevel.Trove:
 					{
-
+						AddlootPack(chest, LootPack.MageryRegs, 250, 100);
+						AddlootPack(chest, LootPack.MageryScrolls, 15, 100);
+						AddlootPack(chest, LootPack.Gems, 25, 100);
+						AddGold(chest, 3000, 5000);
 						break;
 					}
 				default:

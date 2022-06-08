@@ -452,10 +452,10 @@ namespace Server.Items
 
         public override bool CanEquip(Mobile m)
         {
-            if (m.Race.ValidateEquipment(this))
+     /*       if (m.Race.ValidateEquipment(this))
             { 
                 return false;
-            }
+            }*/
 
             if (m.IsPlayer())
             {

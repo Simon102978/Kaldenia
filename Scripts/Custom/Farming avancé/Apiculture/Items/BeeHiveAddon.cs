@@ -7,6 +7,8 @@ using Server.Multis;
 using Server.Targeting;
 using Server.ContextMenus;
 using System.Collections;
+using Server.Mobiles;
+using Server.Guilds;
 
 namespace Server.Engines.Apiculture
 {	
@@ -19,6 +21,8 @@ namespace Server.Engines.Apiculture
 		public static readonly bool LessWax = true; //wax production is slower then honey (realistic)
 
 		public override BaseAddonDeed Deed{ get{ return new apiBeeHiveDeed(); } }
+
+
 
 		apiBeesComponent m_Bees; //for displaying bee swarm
 
@@ -410,7 +414,7 @@ namespace Server.Engines.Apiculture
 			
 			if( !IsAccessibleTo( from ) )
 			{
-				LabelTo( from, "Vous ne pouvez pas verser de potions là dessus.");
+				LabelTo( from,"Vous ne pouvez pas utiliser des potions sur ceci");
 				return;
 			}
 
@@ -433,7 +437,7 @@ namespace Server.Engines.Apiculture
 
 				if ( keg.Held <= 0 )
 				{
-					LabelTo( from, "Vous ne pouvez pas l'utiliser sur une ruche !");
+					LabelTo( from, "Vous ne pouvez pas utiliser ceci sur une ruche!");
 					return;
 				}
 
@@ -447,7 +451,7 @@ namespace Server.Engines.Apiculture
 			}
 			else
 			{
-				LabelTo( from, "Vous ne pouvez pas l'utiliser sur une ruche !");
+                LabelTo(from, "Vous ne pouvez pas utiliser ceci sur une ruche!");
 			}
 		}
 
@@ -494,23 +498,23 @@ namespace Server.Engines.Apiculture
 			else if ( effect == PotionEffect.PoisonLesser || effect == PotionEffect.Poison || effect == PotionEffect.CureLesser || effect == PotionEffect.Cure ||
 				effect == PotionEffect.HealLesser || effect == PotionEffect.Heal ||	effect == PotionEffect.Strength )
 			{
-				message = "Cette potion n'est pas assez puissante pour être utilisée sur une ruche !";
+				message = "Cette potion n'est pas assez puissante!";
 				return false;
 			}
 			else
 			{
-				message = "Vous ne pouvez pas l'utiliser sur une ruche !";
+                message = "Vous ne pouvez pas utiliser ceci sur une ruche!";
 				return false;
 			}
 
 			if ( full )
 			{
-				message = "La ruche est déjà imbibée de ce type de potion !";
+				message = "The beehive is already soaked with this type of potion!";
 				return false;
 			}
 			else
 			{
-				message = "Vous versez la potion sur la ruche.";
+				message = "Vous placez la potion dans la ruche.";
 				return true;
 			}
 		}
@@ -556,7 +560,7 @@ namespace Server.Engines.Apiculture
 			{
 				string iName = item.ItemData.Name.ToUpper();
 				
-				if( iName.IndexOf("FLOWER") != -1 || iName.IndexOf("SNOWDROP") != -1 || iName.IndexOf("POPPIE") != -1 ) 
+				if( iName.IndexOf("FLOWER") != -1 || iName.IndexOf("TREE") != -1 || iName.IndexOf("FLEUR") != -1 ) 
 					FlowersInRange++;				 
 			}
 
@@ -772,6 +776,7 @@ namespace Server.Engines.Apiculture
 	public class apiBeeHiveComponent : AddonComponent
 	{
 		apiBeeHive m_Hive;
+        int m_Owner=-1;
 
 		public override bool ForceShowProperties{ get{ return true;} }
 		
@@ -781,26 +786,33 @@ namespace Server.Engines.Apiculture
 		}
 
 		public override void OnDoubleClick(Mobile from)
-		{
-			if( m_Hive == null )
-			{
-				LabelTo( from, "Cette ruche est invalide. Utilisez une hache pour la retirer.");
-				return;
-			}
+		
+            {
+                if (m_Hive == null)
+                {
+                    LabelTo(from, "La ruche est invalide, utilisez une hache pour changer d'endroit.");
+                    return;
+                }
 
-			if( m_Hive.HiveStage == HiveStatus.Empty )
-			{
-				LabelTo( from, "Cette ruche est vide. Utilisez une hache pour la retirer.");
-				return;
+                if (m_Hive.HiveStage == HiveStatus.Empty)
+                {
+                    LabelTo(from, "La ruche est vide, utilisez une hache pour changer d'endroit.");
+                    return;
+                }
+				from.SendGump(new apiBeeHiveMainGump(from, m_Hive));
 			}
-			from.SendGump( new apiBeeHiveMainGump( from, m_Hive ) );
-		}
+			
+
+	
+
+
+
 
 		public override void AddNameProperty( ObjectPropertyList list )
 		{
 			if( m_Hive == null )
 			{//just in case
-				list.Add("Ruche invalide");
+				list.Add("Ruche non valide");
 				return;
 			}
 
@@ -818,18 +830,18 @@ namespace Server.Engines.Apiculture
 				return;
 
 			if( m_Hive.HiveStage >= HiveStatus.Producing )
-				list.Add( 1049644 , "En production" );
+				list.Add( 1049644 , "Fabrication" );
 			else if( m_Hive.HiveStage >= HiveStatus.Brooding )
-				list.Add( 1049644 , "Couvaison");
+				list.Add( 1049644 , "Couvée" );
 			else if( m_Hive.HiveStage >= HiveStatus.Colonizing )
-				list.Add( 1049644 , "Colonisation en cours" );
+				list.Add( 1049644 , "Colonisation" );
 			else
 				list.Add( 1049644 , "Vide" );
 
 			if( m_Hive.HiveStage != HiveStatus.Empty )
-				list.Add( 1060663,"{0}\t{1}" ,"Age", m_Hive.HiveAge + (m_Hive.HiveAge==1 ? " Jour" : " Jours") );
+				list.Add( 1060663,"{0}\t{1}" ,"Age", m_Hive.HiveAge + (m_Hive.HiveAge==1 ? " jour" : " jours") );
 			if( m_Hive.HiveStage >= HiveStatus.Producing )
-				list.Add( 1060662,"{0}\t{1}" ,"Colonie", m_Hive.Population + "0k Abeilles" );
+				list.Add( 1060662,"{0}\t{1}" ,"Colonie", m_Hive.Population + "0000 abbaies" );
 		}
 
 		public apiBeeHiveComponent( Serial serial ) : base( serial )
@@ -840,6 +852,7 @@ namespace Server.Engines.Apiculture
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
+            writer.Write( (int) m_Owner );
 			writer.Write( (Item) m_Hive );
 		}
 
@@ -847,6 +860,7 @@ namespace Server.Engines.Apiculture
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
+            int m_Owner = reader.ReadInt();
 			m_Hive = (apiBeeHive)reader.ReadItem();
 		}
 	}
@@ -858,8 +872,9 @@ namespace Server.Engines.Apiculture
 		[Constructable]
 		public apiBeeHiveDeed()
 		{
-			Name = "Ruche deed";
+			Name = "contrat pour une ruche";
 		}
+        
 
 		public apiBeeHiveDeed( Serial serial ) : base( serial )
 		{

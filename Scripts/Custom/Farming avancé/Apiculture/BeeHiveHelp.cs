@@ -19,7 +19,7 @@ namespace Server.Engines.Apiculture
 
 			AddPage(0);
 			AddBackground(37, 25, 386, 353, 3600);
-			AddLabel(177, 42, 92, @"Aide Apiculture");
+			AddLabel(177, 42, 92, @"Aide sur l'apiculture");
 
 			AddItem(32, 277, 3311);
 			AddItem(30, 193, 3311);
@@ -43,45 +43,45 @@ namespace Server.Engines.Apiculture
 				case 0:
 				{
 			
-					text += "<p><b>Apiculture</b> is the science (and some say art) of raising honey bees, also know as <b>beekeeping</b>.  Bees live together in groups called <b>colonies</b> and make their homes in <b>beehives</b>.  Tending a hive is not as easy as it may sound, although it can be a very rewarding experience.  To start on the path of the <b>apiculturist</b>, all one needs is a <b>beehive deed</b> and an area with plenty of <b>flowers</b> and <b>water</b>.</p>";
-					text += "<p>There are 3 distinct stages in a beehive's development:</p>";
-					text += "<p><b>Colonizing</b> - the hive sends out scouts to survey the area and find sources of flowers and water.</p>";
-					text += "<p><b>Brooding</b> - egg laying begins in full force as the hive gets ready to begin full scale production.</p>";
-					text += "<p><b>Producing</b> - after a hive reaches maturity, it begins producing excess amounts of honey and wax.</p>";
-					text += "<p>The health of a hive is measured in two ways: <b>over all health</b> and <b>bee population</b>.</p>";
-					text += "<p><b>Over all health</b> offers an indication of the average bee's well being:</p>";
-					text += "<p><b>Thriving</b> - the bees are extremely healthy.  A thriving colony produces honey and wax at an increased rate.</p>";
-					text += "<p><b>Healthy</b> - the bees are healthy and producing excess honey and wax.</p>";
-					text += "<p><b>Sickly</b> - the bees are sickly and no longer producing excess resources.</p>";
-					text += "<p><b>Dying</b> - if something isn't done quickly, bee population will begin to drop.</p>";
-					text += "<p><b>Bee population </b>is a rough estimate of the number of bees in a hive.  More bees does not always mean better for a large hive is more difficult to maintain.  More water and flowers are needed in the area to support a large hive (the range a hive can check for flowers and water is increased as the hive gets larger).  If the conditions get bad enough, a colony of bees will <b>abscond</b>, leaving an empty hive behind.</p>";
-					text += "<p>Like any living thing, bees are susceptible to attacks from outside forces.  Be it parasites or disease, the apiculturist has a plethora of tools at their disposal.</p>";
-					text += "<p><b>Greater Cure</b> potions can be used to combat diseases such as foulbrood and dysentery.  These potions can also be used to neutralize excess poison.</p>";
-					text += "<p><b>Greater Poison</b> potions can be used to combat insects (such as the wax moth) or parasites (such as the bee louse) that infest a hive.  Care must be used!  Too many poison potions can harm the bees.</p>";
-					text += "<p><b>Greater Strength </b>potions can be used to build up a hive's immunity to infestation and disease.</p>";
-					text += "<p><b>Greater Heal potions </b>can be used to help heal the bees.</p>";
-					text += "<p><b>Greater Agility</b> potions give the bees extra energy allowing them to work harder.  This will boost honey and wax output as well as increase the range the bees can search for flowers and water.</p>";
-					text += "<p>Managing and caring for the hive is done using the <b>Apiculture gump</b>.  Almost every aspect of the hive can be monitored from here.  Down the left side of the gump are the status icons:</p>";
-					text += "<p><b>Production</b> - this button brings up the <b>production gump </b>where the beekeeper can harvest the goods the hive has to offer.</p>";
-					text += "<p><b>Infestation</b> - a red or yellow hyphen here means the hive is infested by parasites or other insects.  Use <b>poisons</b> to kill the pests.</p>";
-					text += "<p><b>Disease</b> - a red or yellow hyphen here means the hive is currently diseased.  Using <b>cure potions</b> will help the bees fight off the sickness.</p>";
-					text += "<p><b>Water</b> - this icon displays the availability of water in the area.  Be warned, water breeds disease carrying bacteria, so too much water can make a hive more susceptible to disease.</p>";
-					text += "<p><b>Flowers</b> - this icon provides an indication of the amount of flowers available to the hive.  Bees use flowers and their by-products for almost every function of the hive including building and food.  Too many flowers in the area, however, can bring the bees into contact with more parasites and insects.</p>";
-					text += "<p><b>Notes: </b>a single bee hive can support up to 100 thousand bees.  A healthy hive can live indefinitely, however, an older hive is more susceptible to infestation and disease.</p>";
-					text += "<p>A hive's <b>growth check</b> is performed once a day during a world save. The upper right hand corner of the <b>Apiculture gump</b> displays the results of the last growth check:</p>";
-					text += "<p><b><basefont color=#FF0000>! </basefont></b>Not healthy</p>";
-					text += "<p><b><basefont color=#FFFF00>! </basefont></b>Low resources</p>";
-					text += "<p><b><basefont color=#FF0000>- </basefont></b>Population decrease</p>";
-					text += "<p><b><basefont color=#00FF00>+ </basefont></b>Population growth</p>";
-					text += "<p><b><basefont color=#0000FF>+ </basefont></b>Stage increase/Resource production</p>";
-					break;
-				}
-				case 1:
-				{
-					text +="<p>Beeswax in its raw form straight from hive is full of impurities making it diffiuclt to work with.  The process of purifying raw wax is called <b>rendering</b>.</p>";
-					text +="<p>Once a beehive has matured and begins producing excess wax, the <b>Apiculturist</b> can scrape the wax from the hive using a <b>hive tool</b>.</p>";
-					text +="<p>This raw beeswax can be placed in a <b>small wax pot</b>. When applied to a heat source, the raw wax will melt allowing the apiculturist to remove the impurities, know as <b>slumgum</b>.</p>";
-					text +="<p>With the purities removed, the remaining rendered wax can be formed into pure beeswax.  This wax is suitable for use in any number of applications.</p>";
+                text += "<p>L'<b>Apiculture</b> L'<b>apiculture</b> est la science (certains diront l'art) d'élever des abeilles. Les abeilles vivent ensemble dans des groupes nommés <b>colonies</b> et ont ériger leurs maisons à l'intérieur de <b>ruches</b>.Garder une ruche n'est pas aussi simple que ça peut laisser paraître, quoique ça peut être une expérience des plus gratifiantes. Pour débuter dans le chemin de l'<b>apiculture</b>, il faut posseder un <b>contrat de ruche</b> ainsi qu'un endroit avec des <b>fleurs</b> et de l'<b>eau</b> en abondance.</p>";
+                text += "<p>Il y a trois phases distinctes dans le développement d'une ruche:</p>";
+                text += "<p><b>Colonisation</b> - la ruche envoit des éclaireurs pour surveiller l'endroit, trouver des fleurs et trouver de l'eau.</p>";
+                text += "<p><b>Couvée</b> - les oeufs pondues débutent en pleine force comme la ruche se prépare à commençer la production d'envergure.</p>";
+                text += "<p><b>Production</b> - après que la ruche a atteint la maturité, elle débute à produire en grande quantité du miel et de la cire.</p>";
+                text += "<p>La vie d'une ruche est mesurée en deux états: <b>la vie de l'ensemble</b> et le <b>nombre d'abeilles</b>.</p>";
+                text += "<p><b>Vie globale</b> - indique l'état des abeilles en général:</p>";
+                text += "<p><b>Prospèration</b> - les abeilles sont en excellente santé. Une colonie prospère produira le miel et la cire en plus grosse quantitérate.</p>";
+                text += "<p><b>Sain</b> - les abeilles sont en santé et produices le miel et la cire.</p>";
+                text += "<p><b>Malade</b> - les abeilles sont maladives, elles ne produises plus de miel et de cire.</p>";
+                text += "<p><b>Mourrante</b> - si quelque chose ne se fait pas rapidement, la population de la ruche va commençer à diminuer.</p>";
+                text += "<p><b>Population</b> - nombre aproximatif de la population d'abeilles.  Avoir plus d'abeilles ne signifie pas toujours être le mieux car une ruche plus grosse sera plus difficile à maintenire. Elle nécessitera davantage d'eau et de fleurs à proximité (plus que la ruche est grosse, plus que les abeilles peuvent aller chercher les ressources plus loin. Si les conditions sont mauvaises, une colonie d'abeilles va <b>partir</b>, laissant une ruche vide derrière eux.</p>";
+                text += "<p>Comme n'importe quelle chose vivante, les abeilles peuvent être attaquées par des forçes extérieures. De parasites à maladie, l'apiculturiste possède une multitude d'outils à sa disposition pour contrer cela.</p>";
+                text += "<p><b>Antidote Majeure</b> - des potions peuvent être utilisées pour combattre les maladies telles que la disenterie. Ces potions peuvent également neutraliser le poison.</p>";
+                text += "<p><b>Poison Majeur</b> - ces potions peuvent être utilisées pour combattre les insectes (comme les mites) et les parasites qui infeste une ruche. Mais faites attention, du poison en trop grande quantité risquerait d'affecter les abeilles.</p>";
+                text += "<p><b>Potion de Force Majeure</b> - ces potions sont utilisées pour développer l'immunité d'une ruche aux infestations et diverses maladies</p>";
+                text += "<p><b>Potion de Santé Majeure</b> - elles sont utilisées pour guérrir les abeilles</p>";
+                text += "<p><b>Potion d'Agilité Majeure</b> - ces potions peuvent donner de l'énergie aux abeilles pour qu'elles travaillent encore plus dûr. Cela va donc augmenter la quantité de miel et de cire ainsi qu'augmenter la distance que les abeilles peuvent chercher les fleurs et l'eau.</p>";
+                text += "<p>On administre une ruche en choisissant le <b>gump d'apiculture.</b>. Quasiment chaques aspects de la ruche peuvent être suivis ici. Les icônes de status sont au bas du côté gauche du gump.:</p>";
+                text += "<p><b>Production</b> - ce bouton t'emmene au <b>gump de production</b>, où le gardien de la ruche peut récolter les ressources qu'ont produit les abeilles.</p>";
+                text += "<p><b>Infestation</b> - un trait d'union jaune ou rouge signifie que la ruche est infestée par des parasites ou d'autres insectes. Utilise du <b>poison</b> pour tuer la menaçe.</p>";
+                text += "<p><b>Maladie</b> - un trait d'union jaune ou rouge signifie que la ruche est présentement maladive. Utilise un <b>antidote</b> pour combattre la maladie.</p>";
+                text += "<p><b>Eau</b> - cette icône démontre la disponibilité d'eau dans le domaine des abeilles. Faites attention, l'eau pourrait transporter des bactéries. Une ruche avec trop d'eau est une ruche plus susceptible aux maladies.</p>";
+                text += "<p><b>Fleurs</b> - cette icône indique la somme de fleurs disponibles à la ruche. Les abeilles utilisent les fleurs et leurs sous-produits pour presque chaqu'une des fonctions de la ruche, la construction et la nourriture étant inclu. Posséder trop de fleurs peut mettre en contact les abeilles avec les parasites ou les insectes.</p>";
+                text += "<p><b>Notes:</b> une ruche à elle seule peut contenir jusqu'à 100 mille abeilles. Une ruche en santé peut vivre indéfiniment, mais une vieille ruche est plus susceptible aux infestations et aux maladies.";
+                text += "<p>La<b>vérification de la croissance</b> d'une ruche est performée une fois par jour durant une sauvegarde du shard. Le coin supérieur droit du <b>gump d'apiculture</b> démontre le résultat de la dernière vérificaton.:</p>";
+                text += "<p><b><basefont color=#FF0000>! </basefont></b>Mauvaise santé</p>";
+                text += "<p><b><basefont color=#FFFF00>! </basefont></b>Ressources basses</p>";
+                text += "<p><b><basefont color=#FF0000>- </basefont></b>Population en baisse</p>";
+                text += "<p><b><basefont color=#00FF00>+ </basefont></b>Population en accroissement</p>";
+                text += "<p><b><basefont color=#0000FF>+ </basefont></b>Augmentation de phase/Production des ressources</p>";
+                break;
+                }
+                case 1:
+                {
+                text +="<p>La cire d'abeille dans son état brut est remplit d'impuretés ce qui la rend difficile à travailler avec. La procédure de purification du cire est appelée <b>mélange</b>.</p>";
+                text +="<p>Une fois que la ruche a atteint la maturité et peut produire de la cire, l'apiculturiste peut gratter la cire de la ruche à l'aide d'un <b>outil pour ruche</b>.</p>";
+                text +="<p>Cette cire à l'état brut peut être placer à l'intérieur d'un <b>petit pot de cire</b>. Une fois appliqué dans une sourçe de chaleur, la cire fond pour permettre à l'apiculturiste de retirer les impuretés, aussi connu en tant que <b>slumgum</b>.</p>";
+                text +="<p>Une fois les impuretés de retirer, la cire peut être formée en cire pure. Cette nouvelle cire est appropriée à beaucoup d'applications.</p>";
 					break;
 				}
 			}

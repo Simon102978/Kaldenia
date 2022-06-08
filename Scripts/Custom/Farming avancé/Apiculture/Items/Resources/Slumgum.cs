@@ -2,7 +2,7 @@ using System;
 
 namespace Server.Items
 {
-	public class Slumgum : Item
+	public class Slumgum: Item
 	{
 		[Constructable]
 		public Slumgum() : this( 1 )
@@ -12,16 +12,18 @@ namespace Server.Items
 		[Constructable]
 		public Slumgum( int amount ) : base( 5927 )
 		{
-            Name = "Slumgum";
 			Weight = 1.0;
 			Stackable = true;
 			Amount = amount;
 			Hue = 1126;
+			Name = "Slumgum";
 		}
 
 		public Slumgum( Serial serial ) : base( serial )
 		{
 		}
+
+	
 
 		public override void Serialize( GenericWriter writer )
 		{

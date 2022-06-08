@@ -72,9 +72,9 @@ namespace Server.Items
 			}
 		}
 
-		/*public override void OnSingleClick( Mobile from )
+		/*public override void OnAosSingleClick( Mobile from )
 		{
-			base.OnSingleClick( from );
+			base.OnAosSingleClick( from );
 
 			if ( Stone != null && !Stone.Deleted )
 			{

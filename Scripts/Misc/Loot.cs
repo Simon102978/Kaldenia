@@ -117,8 +117,7 @@ namespace Server
             typeof(WizardsHat), typeof(BodySash), typeof(Doublet), typeof(Boots), typeof(FullApron), typeof(JesterSuit),
             typeof(Sandals), typeof(Tunic), typeof(Shoes), typeof(Shirt), typeof(Kilt), typeof(Skirt), typeof(FancyShirt),
             typeof(FancyDress), typeof(ThighBoots), typeof(LongPants), typeof(PlainDress), typeof(Robe), typeof(ShortPants),
-            typeof(HalfApron), typeof(FurSarong), typeof(FurCape), typeof(FlowerGarland), typeof(GildedDress), typeof(FurBoots), 
-			typeof(FormalShirt)
+            typeof(HalfApron)
         };
         public static Type[] ClothingTypes => m_ClothingTypes;
 		
@@ -126,7 +125,7 @@ namespace Server
         {
             typeof(SkullCap), typeof(Bandana), typeof(FloppyHat), typeof(Cap), typeof(WideBrimHat), typeof(StrawHat),
             typeof(TallStrawHat), typeof(WizardsHat), typeof(Bonnet), typeof(FeatheredHat), typeof(TricorneHat),
-            typeof(JesterHat), typeof(OrcMask), typeof(TribalMask), typeof(FlowerGarland), typeof(BearMask), typeof(DeerMask)
+            typeof(JesterHat), typeof(OrcMask), typeof(TribalMask), typeof(BearMask), typeof(DeerMask)
         };
         public static Type[] HatTypes => m_HatTypes;
 		

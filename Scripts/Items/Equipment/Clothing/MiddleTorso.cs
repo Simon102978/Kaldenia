@@ -250,7 +250,7 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
-
+/*
 	[Flipable(0x2310, 0x230F)]
     public class FormalShirt : BaseMiddleTorso
     {
@@ -285,7 +285,7 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
-    }
+    }*/
 
     [Flipable(0x1f9f, 0x1fa0)]
     public class JesterSuit : BaseMiddleTorso

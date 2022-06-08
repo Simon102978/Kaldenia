@@ -28,7 +28,7 @@ namespace Server.Scripts.Commands
 			{
 				Item item = from.FindItemOnLayer(Laitem);
 
-				if (item is Foulard2 || item is Foulard3)
+				if (item is Foulard2)
 				{
 					if (item.ItemID == 41799)
 					{

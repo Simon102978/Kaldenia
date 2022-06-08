@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Server.Network;
 
 namespace Server.Misc
 {
@@ -78,6 +79,7 @@ namespace Server.Misc
 		public static void Initialize()
 		{
 			m_ServerStart = DateTime.Now;
+			CheckSeason();
 		}
 
         public class CalendrierEntry
@@ -211,29 +213,24 @@ namespace Server.Misc
 
             Map.Felucca.Season = Convert.ToInt32(Months[month - 1].Season);
 
-    ///        OnSeasonChange(Months[month - 1].Season);
+            OnSeasonChange(Months[month - 1].Season);
         }
 
-  /*      public static void OnSeasonChange(Season season)
+       public static void OnSeasonChange(Season season)
         {
-            ArrayList items = new ArrayList(World.Items.Values);
+			Map map = Map.Felucca;
+			map.Season = (int)season;
 
-            for (int i = 0; i < items.Count; ++i)
-            {
-                if (items[i] is Item)
-                {
-                    Item item = (Item)items[i];
+			foreach (NetState ns in NetState.Instances)
+			{
+				if (ns.Mobile == null || ns.Mobile.Map != map)
+					continue;
 
-                    if (item is PlantSpawner)
-                    {
-                        PlantSpawner ps = (PlantSpawner)item;
-
-                        ps.Respawn();
-                    }
-                }
-            }
-        }
-  */
+				ns.Send(SeasonChange.Instantiate(ns.Mobile.GetSeason(), true));
+				ns.Mobile.SendEverything();
+			}
+		}
+  
 
 
         /* OSI times:

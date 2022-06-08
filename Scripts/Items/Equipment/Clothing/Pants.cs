@@ -224,7 +224,9 @@ namespace Server.Items
             : base(0x279B, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Pantalon ample";
+
+		}
 
         public TattsukeHakama(Serial serial)
             : base(serial)

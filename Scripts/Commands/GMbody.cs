@@ -146,18 +146,6 @@ namespace Server.Commands
                                 }
                             }
 
-                            if (from.IsStaff() && from.AccessLevel <= AccessLevel.Spawner)
-                                EquipItem(new FurBoots(color));
-                            else if (from.AccessLevel == AccessLevel.GameMaster)
-                                EquipItem(new FurBoots(color));
-                            if (from.AccessLevel == AccessLevel.Seer)
-                                EquipItem(new FurBoots(color));
-                            if (from.AccessLevel == AccessLevel.Administrator)
-                                EquipItem(new FurBoots(color));
-                            if (from.AccessLevel == AccessLevel.Developer)
-                                EquipItem(new FurBoots(color));
-                            if (from.AccessLevel >= AccessLevel.CoOwner)
-                                EquipItem(new FurBoots(color));
                         }
                     }
                 }

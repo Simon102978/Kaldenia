@@ -413,7 +413,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0x230E, 0x230D)]
+  /*  [Flipable(0x230E, 0x230D)]
     public class GildedDress : BaseOuterTorso
     {
         [Constructable]
@@ -447,7 +447,7 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
-    }
+    }*/
 
     [Flipable(0x1F00, 0x1EFF)]
     public class FancyDress : BaseOuterTorso

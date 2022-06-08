@@ -27,7 +27,7 @@ namespace Server.Engines.Shadowguard
         {
             typeof(AnonsBoots),                 typeof(AnonsSpellbook),         typeof(BalakaisShamanStaff),
             typeof(EnchantressCameo),           typeof(GrugorsShield),          typeof(WamapsBoneEarrings),
-            typeof(HalawasHuntingBow),          typeof(HawkwindsRobe),          typeof(JumusSacredHide),
+            typeof(HalawasHuntingBow),          typeof(HawkwindsRobe),          
             typeof(JuonarsGrimoire),            typeof(LereisHuntingSpear),     typeof(UnstableTimeRift),
             typeof(MinaxsSandles),              typeof(MocapotlsObsidianSword), typeof(OzymandiasObi),
             typeof(ShantysWaders),              typeof(TotemOfTheTribe),        typeof(BalakaisShamanStaffGargoyle)

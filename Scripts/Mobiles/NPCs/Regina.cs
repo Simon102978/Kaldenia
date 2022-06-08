@@ -33,7 +33,7 @@ namespace Server.Engines.Quests
         {
             AddItem(new Backpack());
             AddItem(new Boots());
-            AddItem(new GildedDress());
+            AddItem(new FancyDress());
         }
 
         public override void Serialize(GenericWriter writer)

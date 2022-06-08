@@ -423,44 +423,7 @@ namespace Server.Items
         }
     }
 
-    [Alterable(typeof(DefTailoring), typeof(JumusSacredHideGargoyle))]
-    public class JumusSacredHide : FurCape
-    {
-        public override int LabelNumber => 1156130;
-
-        public override bool IsArtifact => true;
-
-        public override int InitMinHits => 255;
-        public override int InitMaxHits => 255;
-
-        [Constructable]
-        public JumusSacredHide()
-        {
-            Attributes.SpellDamage = 5;
-            Attributes.CastRecovery = 1;
-            Attributes.WeaponDamage = 20;
-
-            SAAbsorptionAttributes.EaterPoison = 15;
-            Resistances.Fire = 5;
-        }
-
-        public JumusSacredHide(Serial serial) : base(serial)
-        {
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write(0);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
-    }
-
+   
     public class JumusSacredHideGargoyle : Cyclone
     {
         public override int LabelNumber => 1156130;

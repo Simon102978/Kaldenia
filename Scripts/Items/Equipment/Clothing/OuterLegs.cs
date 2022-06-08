@@ -32,7 +32,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0x230C, 0x230B)]
+ /*   [Flipable(0x230C, 0x230B)]
     public class FurSarong : BaseOuterLegs
     {
         [Constructable]
@@ -66,7 +66,7 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
-    }
+    }*/
 
     [Flipable(0x1516, 0x1531)]
     public class Skirt : BaseOuterLegs

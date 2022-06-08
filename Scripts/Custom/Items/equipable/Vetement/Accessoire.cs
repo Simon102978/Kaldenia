@@ -405,7 +405,7 @@ namespace Server.Items
 					int version = reader.ReadInt();
 				}
 		}
-	public class Foulard3 :  BaseFoulards
+/*	public class Foulard3 :  BaseFoulards
 			{
 				[Constructable]
 				public Foulard3()
@@ -441,7 +441,9 @@ namespace Server.Items
 
 					int version = reader.ReadInt();
 				}
-			}
+			}*/
+
+
 	public class Foulard4 :  BaseFoulards
 			{
 				[Constructable]

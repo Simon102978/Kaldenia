@@ -35,7 +35,6 @@ namespace Server.Engines.Blackthorn
             Rewards.Add(new CollectionItem(typeof(EpauletteBearingTheCrestOfBlackthorn1), 0x9985, 0, 0, 25));
             Rewards.Add(new CollectionItem(typeof(RobeBearingTheCrestOfBlackthorn1), 0x4000, 0, 0, 25));
             Rewards.Add(new CollectionItem(typeof(PlainDressBearingTheCrestOfBlackthorn1), 0x1F01, 0, 0, 25));
-            Rewards.Add(new CollectionItem(typeof(GildedDressBearingTheCrestOfBlackthorn1), 0x230E, 0, 0, 25));
             Rewards.Add(new CollectionItem(typeof(FancyDressBearingTheCrestOfBlackthorn1), 0x1F00, 0, 0, 25));
             Rewards.Add(new CollectionItem(typeof(FemaleKimonoBearingTheCrestOfBlackthorn1), 0x2783, 0, 0, 25));
             Rewards.Add(new CollectionItem(typeof(MaleKimonoBearingTheCrestOfBlackthorn1), 0x2782, 0, 0, 25));
@@ -47,7 +46,6 @@ namespace Server.Engines.Blackthorn
             Rewards.Add(new CollectionItem(typeof(EpauletteBearingTheCrestOfBlackthorn2), 0x9985, 0, 0, 50));
             Rewards.Add(new CollectionItem(typeof(RobeBearingTheCrestOfBlackthorn2), 0x4000, 0, 0, 50));
             Rewards.Add(new CollectionItem(typeof(PlainDressBearingTheCrestOfBlackthorn2), 0x1F01, 0, 0, 50));
-            Rewards.Add(new CollectionItem(typeof(GildedDressBearingTheCrestOfBlackthorn2), 0x230E, 0, 0, 50));
             Rewards.Add(new CollectionItem(typeof(FancyDressBearingTheCrestOfBlackthorn2), 0x1F00, 0, 0, 50));
             Rewards.Add(new CollectionItem(typeof(FemaleKimonoBearingTheCrestOfBlackthorn2), 0x2783, 0, 0, 50));
             Rewards.Add(new CollectionItem(typeof(MaleKimonoBearingTheCrestOfBlackthorn2), 0x2782, 0, 0, 50));
@@ -104,7 +102,6 @@ namespace Server.Engines.Blackthorn
             Rewards.Add(new CollectionItem(typeof(EpauletteBearingTheCrestOfBlackthorn3), 0x9985, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(RobeBearingTheCrestOfBlackthorn3), 0x4000, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(PlainDressBearingTheCrestOfBlackthorn3), 0x1F01, 0, 0, 75));
-            Rewards.Add(new CollectionItem(typeof(GildedDressBearingTheCrestOfBlackthorn3), 0x230E, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(FancyDressBearingTheCrestOfBlackthorn3), 0x1F00, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(FemaleKimonoBearingTheCrestOfBlackthorn3), 0x2783, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(MaleKimonoBearingTheCrestOfBlackthorn3), 0x2782, 0, 0, 75));
@@ -116,7 +113,6 @@ namespace Server.Engines.Blackthorn
             Rewards.Add(new CollectionItem(typeof(EpauletteBearingTheCrestOfBlackthorn4), 0x9985, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(RobeBearingTheCrestOfBlackthorn4), 0x4000, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(PlainDressBearingTheCrestOfBlackthorn4), 0x1F01, 0, 0, 75));
-            Rewards.Add(new CollectionItem(typeof(GildedDressBearingTheCrestOfBlackthorn4), 0x230E, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(FancyDressBearingTheCrestOfBlackthorn4), 0x1F00, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(FemaleKimonoBearingTheCrestOfBlackthorn4), 0x2783, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(MaleKimonoBearingTheCrestOfBlackthorn4), 0x2782, 0, 0, 75));
@@ -128,7 +124,6 @@ namespace Server.Engines.Blackthorn
             Rewards.Add(new CollectionItem(typeof(EpauletteBearingTheCrestOfBlackthorn5), 0x9985, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(RobeBearingTheCrestOfBlackthorn5), 0x4000, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(PlainDressBearingTheCrestOfBlackthorn5), 0x1F01, 0, 0, 75));
-            Rewards.Add(new CollectionItem(typeof(GildedDressBearingTheCrestOfBlackthorn5), 0x230E, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(FancyDressBearingTheCrestOfBlackthorn5), 0x1F00, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(FemaleKimonoBearingTheCrestOfBlackthorn5), 0x2783, 0, 0, 75));
             Rewards.Add(new CollectionItem(typeof(MaleKimonoBearingTheCrestOfBlackthorn5), 0x2782, 0, 0, 75));
@@ -146,7 +141,7 @@ namespace Server.Engines.Blackthorn
             Rewards.Add(new CollectionItem(typeof(EpauletteBearingTheCrestOfBlackthorn7), 0x9985, 0, 0, 100));
             Rewards.Add(new CollectionItem(typeof(RobeBearingTheCrestOfBlackthorn7), 0x4000, 0, 0, 100));
             Rewards.Add(new CollectionItem(typeof(PlainDressBearingTheCrestOfBlackthorn7), 0x1F01, 0, 0, 100));
-            Rewards.Add(new CollectionItem(typeof(GildedDressBearingTheCrestOfBlackthorn7), 0x230E, 0, 0, 100));
+          
             Rewards.Add(new CollectionItem(typeof(FancyDressBearingTheCrestOfBlackthorn7), 0x1F00, 0, 0, 100));
             Rewards.Add(new CollectionItem(typeof(FemaleKimonoBearingTheCrestOfBlackthorn7), 0x2783, 0, 0, 100));
             Rewards.Add(new CollectionItem(typeof(MaleKimonoBearingTheCrestOfBlackthorn7), 0x2782, 0, 0, 100));

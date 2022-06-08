@@ -189,6 +189,7 @@ namespace Server.Items
             : base(0x3176, hue)
         {
             Weight = 2.0;
+			Name = "Gilet Elfique sombre";
         }
 
         public ElvenDarkShirt(Serial serial)

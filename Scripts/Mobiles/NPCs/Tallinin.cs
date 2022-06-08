@@ -116,7 +116,7 @@ namespace Server.Engines.Quests
         public FeyHeadgearQuest()
             : base()
         {
-            AddObjective(new ObtainObjective(typeof(FlowerGarland), "flower garlands", 10, 0x2306));
+          
 
             AddReward(new BaseReward(typeof(TailorsCraftsmanSatchel), 1074282));
         }

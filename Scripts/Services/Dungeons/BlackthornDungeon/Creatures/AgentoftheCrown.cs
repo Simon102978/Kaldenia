@@ -147,11 +147,6 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GildedDressBearingTheCrestOfBlackthorn1
-            {
-                Movable = false
-            };
-            PackItem(item);
 
             item = new HoodedRobeBearingTheCrestOfBlackthorn1
             {
@@ -210,12 +205,6 @@ namespace Server.Engines.Blackthorn
             PackItem(item);
 
             item = new RobeBearingTheCrestOfBlackthorn2
-            {
-                Movable = false
-            };
-            PackItem(item);
-
-            item = new GildedDressBearingTheCrestOfBlackthorn2
             {
                 Movable = false
             };
@@ -283,12 +272,6 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GildedDressBearingTheCrestOfBlackthorn3
-            {
-                Movable = false
-            };
-            PackItem(item);
-
             item = new HoodedRobeBearingTheCrestOfBlackthorn3
             {
                 Movable = false
@@ -346,12 +329,6 @@ namespace Server.Engines.Blackthorn
             PackItem(item);
 
             item = new RobeBearingTheCrestOfBlackthorn4
-            {
-                Movable = false
-            };
-            PackItem(item);
-
-            item = new GildedDressBearingTheCrestOfBlackthorn4
             {
                 Movable = false
             };
@@ -419,11 +396,7 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GildedDressBearingTheCrestOfBlackthorn5
-            {
-                Movable = false
-            };
-            PackItem(item);
+
 
             item = new HoodedRobeBearingTheCrestOfBlackthorn5
             {
@@ -487,11 +460,7 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GildedDressBearingTheCrestOfBlackthorn6
-            {
-                Movable = false
-            };
-            PackItem(item);
+         
 
             item = new HoodedRobeBearingTheCrestOfBlackthorn6
             {
@@ -555,11 +524,6 @@ namespace Server.Engines.Blackthorn
             };
             PackItem(item);
 
-            item = new GildedDressBearingTheCrestOfBlackthorn7
-            {
-                Movable = false
-            };
-            PackItem(item);
 
             item = new HoodedRobeBearingTheCrestOfBlackthorn7
             {

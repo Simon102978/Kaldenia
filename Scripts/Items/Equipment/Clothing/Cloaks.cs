@@ -278,7 +278,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0x230A, 0x2309)]
+   /* [Flipable(0x230A, 0x2309)]
     public class FurCape : BaseCloak
     {
         [Constructable]
@@ -310,7 +310,7 @@ namespace Server.Items
             base.Deserialize(reader);
             int version = reader.ReadInt();
         }
-    }
+    }*/
 
     [Flipable(0x45A4, 0x45A5)]
     public class ClothWingArmor : BaseClothing

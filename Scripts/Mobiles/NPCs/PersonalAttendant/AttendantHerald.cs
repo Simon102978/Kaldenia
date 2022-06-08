@@ -579,10 +579,10 @@ namespace Server.Mobiles
 
         public override void InitOutfit()
         {
-            AddItem(new FurBoots());
+
             AddItem(new LongPants(0x901));
             AddItem(new TricorneHat());
-            AddItem(new FormalShirt(Utility.RandomBlueHue()));
+
         }
 
         public override void Serialize(GenericWriter writer)

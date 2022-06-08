@@ -498,7 +498,7 @@ namespace Server.Misc
             bag.DropItem(new HalawasHuntingBow());
             bag.DropItem(new HalawasHuntingBowGargoyle());
             bag.DropItem(new HawkwindsRobe());
-            bag.DropItem(new JumusSacredHide());
+          
             bag.DropItem(new JumusSacredHideGargoyle());
             bag.DropItem(new JuonarsGrimoire());
             bag.DropItem(new LereisHuntingSpear());

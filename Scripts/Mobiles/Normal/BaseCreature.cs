@@ -445,7 +445,7 @@ namespace Server.Mobiles
         public const bool BondingEnabled = true;
 
         public virtual bool IsBondable => (BondingEnabled && !Summoned && !m_Allured && !(this is IRepairableMobile));
-        public virtual TimeSpan BondingDelay => TimeSpan.FromDays(7.0);
+        public virtual TimeSpan BondingDelay => TimeSpan.FromDays(3.0);
         public virtual TimeSpan BondingAbandonDelay => TimeSpan.FromDays(1.0);
 
         public override bool CanRegenHits => !m_IsDeadPet && !Summoned && base.CanRegenHits;

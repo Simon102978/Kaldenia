@@ -179,7 +179,7 @@ namespace Server.Items
         //        receveur.Animate(20, 5, 1, true, false, 0);
         //}
 
-        //public override void OnSingleClick(Mobile from)
+        //public override void OnAosSingleClick(Mobile from)
         //{
         //    LabelTo(from, Name);
         //    LabelTo(from, String.Format("[{0} mêtres]", MaxRange));

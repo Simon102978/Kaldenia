@@ -115,17 +115,17 @@ namespace Server.Engines.Apiculture
 
 			//misc labels
 			if( hive.HiveStage >= HiveStatus.Producing )
-				AddLabel(100, 42, 92, "Colony : "+hive.Population.ToString()+"0k" );
+				AddLabel(100, 42, 92, "Colonie : "+hive.Population.ToString()+"0k" );
 			else if( hive.HiveStage >= HiveStatus.Brooding )
-				AddLabel(100, 42, 92, "   Brooding");
+                AddLabel(100, 42, 92, "Couvée");
 			else
-				AddLabel(100, 42, 92, "  Colonizing");
+				AddLabel(100, 42, 92, "Colonisation");
 			switch( hive.OverallHealth ) //overall health
 			{
-				case HiveHealth.Dying: AddLabel(116, 146, 37, "Dying"); break;
-				case HiveHealth.Sickly: AddLabel(116, 146, 52, "Sickly"); break;
-				case HiveHealth.Healthy: AddLabel(116, 146, 67, "Healthy"); break;
-				case HiveHealth.Thriving: AddLabel(116, 146, 92, "Thriving"); break;
+				case HiveHealth.Dying: AddLabel(116, 146, 37, "Mourrant"); break;
+				case HiveHealth.Sickly: AddLabel(116, 146, 52, "Malade"); break;
+				case HiveHealth.Healthy: AddLabel(116, 146, 67, "Sain"); break;
+                case HiveHealth.Thriving: AddLabel(116, 146, 92, "Prospération"); break;
 			}  
 
 			//resource
@@ -168,7 +168,7 @@ namespace Server.Engines.Apiculture
 
 			if( !m_hive.IsAccessibleTo( from ) )
 			{
-				m_hive.LabelTo( from, "You cannot use that." );
+				m_hive.LabelTo( from, "Vous ne pouvez pas utiliser ceci." );
 				return;
 			}
 
@@ -351,7 +351,7 @@ namespace Server.Engines.Apiculture
 
 			if( !m_hive.IsAccessibleTo( from ) )
 			{
-				m_hive.LabelTo( from, "You cannot use that." );
+				m_hive.LabelTo( from, "Vous ne pouvez pas utiliser ceci." );
 				return;
 			}
 
@@ -372,7 +372,7 @@ namespace Server.Engines.Apiculture
 					{
 						if( hivetool == null || !(hivetool is HiveTool) )
 						{
-							m_hive.LabelTo( from, "You need a hive tool to extract the excess honey!" );
+							m_hive.LabelTo( from, "Vous avez besoin d'une fourchette pour extraire du miel!" );
 							from.SendGump( new apiBeeHiveProductionGump( from, m_hive ) );
 							return;
 						}
@@ -380,7 +380,7 @@ namespace Server.Engines.Apiculture
 
 					if( m_hive.Honey < 3 )
 					{
-						m_hive.LabelTo( from, "There isn't enough honey in the hive to fill a bottle!" );
+						m_hive.LabelTo( from, "Il n'y a pas assez de miel pour remplir une bouteille!" );
 						from.SendGump( new apiBeeHiveProductionGump( from, m_hive ) );
 						break;
 					}
@@ -395,7 +395,7 @@ namespace Server.Engines.Apiculture
 						{
 							honey.Delete();
 							from.PlaceInBackpack( new Bottle() ); //add the consumed bottle
-							m_hive.LabelTo( from, "There is not enough room in your backpack for the honey!" );
+							m_hive.LabelTo( from, "Vous n'avez pas assez de place dans le sac!" );
 							from.SendGump( new apiBeeHiveProductionGump( from, m_hive ) );
 							break;
 						}
@@ -405,19 +405,19 @@ namespace Server.Engines.Apiculture
 							((HiveTool)hivetool).UsesRemaining--;
 							if( ((HiveTool)hivetool).UsesRemaining < 1 )
 							{
-								from.SendMessage("You wear out the hive tool.");
+								from.SendMessage("La fourchette s'est usée.");
 								hivetool.Delete();
 							}
 						}
 
 						m_hive.Honey -= 3;
-						m_hive.LabelTo( from, "You fill a bottle with golden honey and place it in your pack." );
+						m_hive.LabelTo( from, "Vous remplissez la bouteille avec le miel." );
 						from.SendGump( new apiBeeHiveProductionGump(from,m_hive) );
 						break;
 					}
 					else
 					{
-						m_hive.LabelTo( from, "You need a bottle to fill with honey!" );
+						m_hive.LabelTo( from, "Vous avez besoin d'une bouteille!" );
 						from.SendGump( new apiBeeHiveProductionGump( from, m_hive ) );
 						break;
 					}
@@ -432,7 +432,7 @@ namespace Server.Engines.Apiculture
 					{
 						if( hivetool == null || !(hivetool is HiveTool) )
 						{
-							m_hive.LabelTo( from, "You need a hive tool to scrape the excess beeswax!" );
+							m_hive.LabelTo( from, "Vous avez besoin d'une fourchette pour ceci!" );
 							from.SendGump( new apiBeeHiveProductionGump( from, m_hive ) );
 							return;
 						}
@@ -440,7 +440,7 @@ namespace Server.Engines.Apiculture
 
 					if( m_hive.Wax < 1 )
 					{
-						m_hive.LabelTo( from, "There isn't enough excess wax in the hive to harvest!" );
+						m_hive.LabelTo( from, "Il n'y a pas assez de cire!" );
 						return;
 					}
 
@@ -459,7 +459,7 @@ namespace Server.Engines.Apiculture
 					{
 						wax.Delete();
 
-						m_hive.LabelTo( from, "There is not enough room in your backpack for the wax!" );
+						m_hive.LabelTo( from, "Il n'y a pas de place dans votre sac!" );
 						from.SendGump( new apiBeeHiveProductionGump( from, m_hive ) );
 						break;
 					}
@@ -469,13 +469,13 @@ namespace Server.Engines.Apiculture
 						((HiveTool)hivetool).UsesRemaining--;
 						if( ((HiveTool)hivetool).UsesRemaining < 1 )
 						{
-							from.SendMessage("You wear out the hive tool.");
+							from.SendMessage("La fourchette s'est usée.");
 							hivetool.Delete();
 						}
 					}
 
 					m_hive.Wax = 0;
-					m_hive.LabelTo( from, "You collect the excess beeswax and place it in your pack." );
+					m_hive.LabelTo( from, "Vous collectez le cire." );
 					from.SendGump( new apiBeeHiveProductionGump(from,m_hive) );
 					break;
 				}
@@ -518,7 +518,7 @@ namespace Server.Engines.Apiculture
 			AddItem(12, 65, 3307);
 			AddItem(206, 69, 3307);
 
-			AddLabel(84, 43, 92, "Destory the hive?");
+			AddLabel(84, 43, 92, "Detruire la ruche?");
 					
 			AddItem(73, 68, 2330);
 			AddItem(160, 68, 5359);	

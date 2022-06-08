@@ -2,7 +2,7 @@ using System;
 
 namespace Server.Items
 {
-	public class RawBeeswax : Item
+	public class RawBeeswax: Item
 	{
 		[Constructable]
 		public RawBeeswax() : this( 1 )
@@ -12,16 +12,17 @@ namespace Server.Items
 		[Constructable]
 		public RawBeeswax( int amount ) : base( 0x1422 )
 		{
-            Name = "Cire d'abeille brute";
 			Weight = 1.0;
 			Stackable = true;
 			Amount = amount;
 			Hue = 1126;
+			Name = "Cire cru";
 		}
 
 		public RawBeeswax( Serial serial ) : base( serial )
 		{
 		}
+
 
 		public override void Serialize( GenericWriter writer )
 		{

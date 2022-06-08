@@ -86,7 +86,7 @@ namespace Server.Engines.Apiculture
 				return;
 
 			//make sure it is time for update
-			if ( DateTime.UtcNow < hive.NextCheck )
+			if (DateTime.UtcNow < hive.NextCheck)
 			{
 				//m_GrowthIndicator = PlantGrowthIndicator.Delay;
 				return;
@@ -153,7 +153,7 @@ namespace Server.Engines.Apiculture
 					int vx = from.X + x;
 					int vy = from.Y + y;
 
-                    StaticTile[] tiles = map.Tiles.GetStaticTiles(vx, vy, true);
+					StaticTile[] tiles = map.Tiles.GetStaticTiles(vx, vy, true);
 
 					for ( int i = 0; i < tiles.Length; ++i )
 					{

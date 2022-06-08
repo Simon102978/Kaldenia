@@ -412,7 +412,9 @@ namespace Server
         };
 
 
-        public static readonly LootPackItem[] GemItems = new[] { new LootPackItem(typeof(Amber), 1) };
+        public static readonly LootPackItem[] GemItems = new[] { new LootPackItem(typeof(Amber), 1), new LootPackItem(typeof(Diamond), 1), new LootPackItem(typeof(StarSapphire), 1), new LootPackItem(typeof(Sapphire), 1),
+		new LootPackItem(typeof(Emerald), 1),new LootPackItem(typeof(Ruby), 1), new LootPackItem(typeof(Tourmaline), 1), new LootPackItem(typeof(Citrine), 1) };
+
         public static readonly LootPackItem[] RareGemItems = new[] { new LootPackItem(typeof(BlueDiamond), 1) };
 
 

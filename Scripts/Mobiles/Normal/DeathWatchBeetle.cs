@@ -54,8 +54,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.LowScrolls, 1);
             AddLoot(LootPack.Potions, 1);
-            AddLoot(LootPack.BonsaiSeed);
-        }
+			AddLoot(LootPack.LootPoor, 1);
+		}
 
         public override int Hides => 8;
 

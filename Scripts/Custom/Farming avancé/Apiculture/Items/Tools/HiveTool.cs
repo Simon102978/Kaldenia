@@ -4,7 +4,7 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class HiveTool : Item
+	public class HiveTool: Item
 	{
 		private int m_UsesRemaining;
 
@@ -23,8 +23,8 @@ namespace Server.Items
 		[Constructable]
 		public HiveTool( int uses ) : base( 2549 )
 		{
-            Name = "Outil Ruche";
 			m_UsesRemaining = uses;
+			Name = "Fourchette";
 		}
 
 		public HiveTool( Serial serial ) : base( serial )
@@ -37,17 +37,25 @@ namespace Server.Items
 
 			list.Add( 1060584, m_UsesRemaining.ToString() ); // uses remaining: ~1_val~
 		}
-			public virtual void DisplayDurabilityTo(Mobile m)
-			{
+
+		public virtual void DisplayDurabilityTo(Mobile m)
+		{
 			LabelToAffix(m, 1017323, AffixType.Append, ": " + m_UsesRemaining.ToString()); // Durability
 		}
 
-	///		public override void OnDoubleClick(Mobile from)
-	///		{
-	///			from.PrivateOverheadMessage( 0, 1154, false,  "This tool is used to harvest resources from a beehive.", from.NetState );				
-	///		}
+		public override void OnAosSingleClick( Mobile from )
+		{
+			DisplayDurabilityTo( from );
 
-	public override void Serialize( GenericWriter writer )
+			base.OnAosSingleClick( from );
+		}
+
+		public override void OnDoubleClick(Mobile from)
+		{
+			from.PrivateOverheadMessage( 0, 1154, false,  "Cet outil est utilisé pour collecter des ressources à partir d'une ruche d'abeilles.", from.NetState );				
+		}
+
+		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 

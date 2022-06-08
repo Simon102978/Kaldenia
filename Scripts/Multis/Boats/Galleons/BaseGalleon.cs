@@ -102,56 +102,56 @@ namespace Server.Multis
             Timer.DelayCall(TimeSpan.FromSeconds(2), MarkRunes);
         }
 
-        private void AddFixtures(bool fromConstruct)
-        {
-            MultiComponentList mcl = MultiData.GetComponents(ItemID);
+		private void AddFixtures(bool fromConstruct)
+		{
+			MultiComponentList mcl = MultiData.GetComponents(ItemID);
 
-            foreach (MultiTileEntry mte in mcl.List.Where(e => e.m_Flags == TileFlag.None || e.m_Flags == TileFlag.Generic))
-            {
-                ushort itemID = mte.m_ItemID;
-                short x = mte.m_OffsetX;
-                short y = mte.m_OffsetY;
-                short z = mte.m_OffsetZ;
+			foreach (MultiTileEntry mte in mcl.List)
+			{
+				ushort itemID = mte.m_ItemID;
+				short x = mte.m_OffsetX;
+				short y = mte.m_OffsetY;
+				short z = mte.m_OffsetZ;
 
-                if (itemID == 0x14F8 || itemID == 0x14FA)
-                {
-                    AddMooringLine(itemID, x, y, z);
-                }
-                else if (IsMainHold(itemID))
-                {
-                    if (!fromConstruct)
-                        continue;
+				if (IsMooringLine(itemID))
+				{
+					AddMooringLine(itemID, x, y, z);
+				}
+				else if (IsMainHold(itemID))
+				{
+					if (!fromConstruct)
+						continue;
 
-                    AddMainHold(itemID, x, y, z);
-                }
-                else if (IsHold(itemID))
-                {
-                    AddHoldItem(itemID, x, y, z);
-                }
-                else if (IsWheel(itemID))
-                {
-                    if (!fromConstruct)
-                        continue;
+					AddMainHold(itemID, x, y, z);
+				}
+				else if (IsHold(itemID))
+				{
+					AddHoldItem(itemID, x, y, z);
+				}
+				else if (IsWheel(itemID))
+				{
+					if (!fromConstruct)
+						continue;
 
-                    AddWheel(itemID, x, y, z);
-                }
-                else if (IsWeaponPad(itemID))
-                {
-                    AddWeaponPad(itemID, x, y, z);
-                }
-                else
-                {
-                    AddFillerItem(itemID, x, y, z);
-                }
-            }
+					AddWheel(itemID, x, y, z);
+				}
+				else if (IsWeaponPad(itemID))
+				{
+					AddWeaponPad(itemID, x, y, z);
+				}
+				else if (mte.m_Flags == TileFlag.None || mte.m_Flags == TileFlag.Generic)
+				{
+					AddFillerItem(itemID, x, y, z);
+				}
+			}
 
-            if (!fromConstruct && Hue != 0)
-            {
-                PaintComponents();
-            }
-        }
+			if (!fromConstruct && Hue != 0)
+			{
+				PaintComponents();
+			}
+		}
 
-        protected void AddMooringLine(int id, int x, int y, int z)
+		protected void AddMooringLine(int id, int x, int y, int z)
         {
             MooringLine line = new MooringLine(this);
             AddFixture(line);
@@ -225,7 +225,12 @@ namespace Server.Multis
             Cannons.Add(item);
         }
 
-        private bool IsMainHold(int id)
+		private bool IsMooringLine(int id)
+		{
+			return id == 0x14F8 || id == 0x14FA;
+		}
+
+		private bool IsMainHold(int id)
         {
             return HoldItemIDs.Any(listID => listID == id);
         }
@@ -911,8 +916,8 @@ namespace Server.Multis
 
             MultiComponentList mcl = MultiData.GetComponents(ItemID);
 
-            foreach (MultiTileEntry mte in mcl.List.Where(e => e.m_Flags == TileFlag.None))
-            {
+			foreach (MultiTileEntry mte in mcl.List.Where(e => e.m_Flags == TileFlag.None))
+			{
                 foreach (Item fixture in Fixtures.Where(f => f.X - X == mte.m_OffsetX && f.Y - Y == mte.m_OffsetY && f.Z - Z == mte.m_OffsetZ))
                 {
                     fixture.ItemID = mte.m_ItemID;
@@ -1839,5 +1844,10 @@ namespace Server.Multis
 
             m_Clicker.SendGump(new GrantAccessGump(m_From, m_Galleon));
         }
-    }
-}
+
+	
+
+		}
+	}
+
+

@@ -45,7 +45,7 @@ namespace Server.Scripts.Commands
 				}
 			}
 
-                from.SendMessage("Vous devez avoir un foulard autour du cou.");
+                from.SendMessage("Vous devez avoir un foulard2 autour du cou.");
             
         }
     }

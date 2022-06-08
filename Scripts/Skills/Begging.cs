@@ -18,13 +18,19 @@ namespace Server.SkillHandlers
 
         public static TimeSpan OnUse(Mobile m)
         {
-            m.RevealingAction();
+
+			m.SendMessage("Skill désactivé");
+			return TimeSpan.FromSeconds(5);
+
+
+
+       /*     m.RevealingAction();
 
             m.SendLocalizedMessage(500397); // To whom do you wish to grovel?
 
             Timer.DelayCall(() => m.Target = new InternalTarget());
 
-            return TimeSpan.FromHours(1.0);
+            return TimeSpan.FromHours(1.0);*/
         }
 
         private class InternalTarget : Target

@@ -62,7 +62,7 @@ namespace Server.Items
                 }
 
               
-                from.SendGump(new ChangeHairstyleGump(!from.Female, from, null, 0, true, ChangeHairstyleEntry.BeardEntries, this));
+              //  from.SendGump(new ChangeHairstyleGump(!from.Female, from, null, 0, true, ChangeHairstyleEntry.BeardEntries, this));
                 
             }
         }
@@ -80,7 +80,7 @@ namespace Server.Items
             {
                 if (from.Female)
                 {
-                    from.SendGump(new ChangeHairstyleGump(!from.Female, from, null, 0, true,  ChangeHairstyleEntry.BeardEntries, this));
+        //            from.SendGump(new ChangeHairstyleGump(!from.Female, from, null, 0, true,  ChangeHairstyleEntry.BeardEntries, this));
                 }
                 else
                 {
@@ -174,16 +174,16 @@ namespace Server.Items
                 }
                 else
                 {
-                    User.SendGump(new ChangeHairstyleGump(!User.Female, User, null, 0, false, GetHairstyleEntries(User), Token));
+        //            User.SendGump(new ChangeHairstyleGump(!User.Female, User, null, 0, false, GetHairstyleEntries(User), Token));
                 }
             }
         }
 
-        public static ChangeHairstyleEntry[] GetHairstyleEntries(Mobile m)
+    /*    public static ChangeHairstyleEntry[] GetHairstyleEntries(Mobile m)
         {
-            ChangeHairstyleEntry[] entries = ChangeHairstyleEntry.HairEntries;
+     //       ChangeHairstyleEntry[] entries = ChangeHairstyleEntry.HairEntries;
 
             return entries;
-        }
+        }*/
     }
 }

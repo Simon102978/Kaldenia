@@ -15,6 +15,8 @@ namespace Server.Misc
 		private int m_itemId;
 		private double m_Skill;
 		private bool m_Barbe = false;
+		private bool m_Sellable = false;
+		private int m_Price = 0;
 
 
 		public int Id { get => m_Id; set => m_Id = value; }
@@ -23,6 +25,10 @@ namespace Server.Misc
 		public double SkillRequis { get => m_Skill; set => m_Skill = value; }
 
 		public bool Barbe { get => m_Barbe; set => m_Barbe = value; }
+
+		public bool Sellable { get => m_Sellable; set => m_Sellable = value; }
+
+		public int Price { get => m_Price; set => m_Price = value; }
 
 		public static Coiffure GetCoiffure(int itemId)
 		{
@@ -38,21 +44,20 @@ namespace Server.Misc
 
 		}
 
-
 		public static void Configure()
 		{
-			Coiffure.Register(new Coiffure(41861, 0, false));
-			Coiffure.Register(new Coiffure(41862, 15, false));
-			Coiffure.Register(new Coiffure(41863, 20, false));
-			Coiffure.Register(new Coiffure(41864, 20, false));
-			Coiffure.Register(new Coiffure(41865, 75, false));
-			Coiffure.Register(new Coiffure(41866, 50, false));
+			Coiffure.Register(new Coiffure(41861, 0, false, true, 50));
+			Coiffure.Register(new Coiffure(41862, 15, false, true, 50));
+			Coiffure.Register(new Coiffure(41863, 20, false, true, 50));
+			Coiffure.Register(new Coiffure(41864, 20, false, true, 50));
+			Coiffure.Register(new Coiffure(41865, 75, false, true, 50));
+			Coiffure.Register(new Coiffure(41866, 50, false, true, 50));
 			Coiffure.Register(new Coiffure(41867, 65, false));
 			Coiffure.Register(new Coiffure(41868, 60, false));
-			Coiffure.Register(new Coiffure(41869, 20, false));
-			Coiffure.Register(new Coiffure(41870, 30, false));
+			Coiffure.Register(new Coiffure(41869, 20, false, true, 50));
+			Coiffure.Register(new Coiffure(41870, 30, false, true, 50));
 			Coiffure.Register(new Coiffure(41871, 72, false));
-			Coiffure.Register(new Coiffure(41872, 33, false));
+			Coiffure.Register(new Coiffure(41872, 33, false, true, 50));
 			Coiffure.Register(new Coiffure(41873, 67, false));
 			Coiffure.Register(new Coiffure(41874, 74, false));
 			Coiffure.Register(new Coiffure(41875, 63, false));
@@ -60,23 +65,23 @@ namespace Server.Misc
 			Coiffure.Register(new Coiffure(41877, 51, false));
 			Coiffure.Register(new Coiffure(41878, 53, false));
 			Coiffure.Register(new Coiffure(41879, 54, false));
-			Coiffure.Register(new Coiffure(41880, 45, false));
+			Coiffure.Register(new Coiffure(41880, 45, false, true, 50));
 			Coiffure.Register(new Coiffure(41881, 66, false));
 			Coiffure.Register(new Coiffure(41882, 57, false));
 			Coiffure.Register(new Coiffure(41883, 59, false));
-			Coiffure.Register(new Coiffure(41884, 47, false));
+			Coiffure.Register(new Coiffure(41884, 47, false, true, 50));
 			Coiffure.Register(new Coiffure(41885, 75, false));
 			Coiffure.Register(new Coiffure(41886, 55, false));
 			Coiffure.Register(new Coiffure(41887, 72, false));
-			Coiffure.Register(new Coiffure(41888, 42, false));
-			Coiffure.Register(new Coiffure(41889, 49, false));
+			Coiffure.Register(new Coiffure(41888, 42, false, true, 50));
+			Coiffure.Register(new Coiffure(41889, 49, false, true, 50));
 			Coiffure.Register(new Coiffure(41890, 120, false));
 			Coiffure.Register(new Coiffure(41891, 68, false));
-			Coiffure.Register(new Coiffure(41892, 43, false));
-			Coiffure.Register(new Coiffure(41893, 46, false));
+			Coiffure.Register(new Coiffure(41892, 43, false, true, 50));
+			Coiffure.Register(new Coiffure(41893, 46, false, true, 50));
 			Coiffure.Register(new Coiffure(41894, 64, false));
-			Coiffure.Register(new Coiffure(41895, 43, true));
-			Coiffure.Register(new Coiffure(41896, 45, true));
+			Coiffure.Register(new Coiffure(41895, 43, true, true, 50));
+			Coiffure.Register(new Coiffure(41896, 45, true, true, 50));
 			Coiffure.Register(new Coiffure(41897, 51, true));
 			Coiffure.Register(new Coiffure(41898, 55, true));
 			Coiffure.Register(new Coiffure(41899, 59, true));
@@ -93,37 +98,37 @@ namespace Server.Misc
 			Coiffure.Register(new Coiffure(41910, 67, true));
 			Coiffure.Register(new Coiffure(41911, 66, true));
 			Coiffure.Register(new Coiffure(41912, 65, true));
-			Coiffure.Register(new Coiffure(41913, 45, true));
-			Coiffure.Register(new Coiffure(41914, 40, true));
-			Coiffure.Register(new Coiffure(41915, 35, true));
-			Coiffure.Register(new Coiffure(41916, 25, true));
-			Coiffure.Register(new Coiffure(41917, 10, true));
-			Coiffure.Register(new Coiffure(0, 0, true));
-			Coiffure.Register(new Coiffure(0, 0, false));
+			Coiffure.Register(new Coiffure(41913, 45, true, true, 50));
+			Coiffure.Register(new Coiffure(41914, 40, true, true, 50));
+			Coiffure.Register(new Coiffure(41915, 35, true, true, 50));
+			Coiffure.Register(new Coiffure(41916, 25, true, true, 50));
+			Coiffure.Register(new Coiffure(41917, 10, true, true, 50));
+			Coiffure.Register(new Coiffure(0, 0, true, true, 20));
+			Coiffure.Register(new Coiffure(0, 0, false, true, 20));
 
 
 
-			Coiffure.Register(new Coiffure(0x2044, 30, false));
-			Coiffure.Register(new Coiffure(0x2045, 30, false));
-			Coiffure.Register(new Coiffure(0x2046, 30, false));
-			Coiffure.Register(new Coiffure(0x203C, 30, false));
-			Coiffure.Register(new Coiffure(0x203B, 30, false));
-			Coiffure.Register(new Coiffure(0x203D, 30, false));
-			Coiffure.Register(new Coiffure(0x2047, 30, false));
-			Coiffure.Register(new Coiffure(0x2048, 30, false));
-			Coiffure.Register(new Coiffure(0x2049, 30, false));
-			Coiffure.Register(new Coiffure(0x204A, 30, false));
+			Coiffure.Register(new Coiffure(0x2044, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x2045, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x2046, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x203C, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x203B, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x203D, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x2047, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x2048, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x2049, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0x204A, 30, false, true, 50));
 
 
 
 
-			Coiffure.Register(new Coiffure(0x203E, 30, true));
-			Coiffure.Register(new Coiffure(0x203f, 30, true));
-			Coiffure.Register(new Coiffure(0x2040, 30, true));
-			Coiffure.Register(new Coiffure(0x2041, 30, true));
-			Coiffure.Register(new Coiffure(0x204B, 30, true));
-			Coiffure.Register(new Coiffure(0x204C, 30, true));
-			Coiffure.Register(new Coiffure(0x204D, 30, true));
+			Coiffure.Register(new Coiffure(0x203E, 30, true, true, 50));
+			Coiffure.Register(new Coiffure(0x203f, 30, true, true, 50));
+			Coiffure.Register(new Coiffure(0x2040, 30, true, true, 50));
+			Coiffure.Register(new Coiffure(0x2041, 30, true, true, 50));
+			Coiffure.Register(new Coiffure(0x204B, 30, true, true, 50));
+			Coiffure.Register(new Coiffure(0x204C, 30, true, true, 50));
+			Coiffure.Register(new Coiffure(0x204D, 30, true,true,50));
 
 
 
@@ -131,19 +136,13 @@ namespace Server.Misc
 
 		}
 
-
-
-
-
-
-
-
-
-		public Coiffure(int itemId, double skillsRequis, bool barbe)
+		public Coiffure(int itemId, double skillsRequis, bool barbe, bool sellable = false, int price = 0)
 		{	
 			m_itemId = itemId;
 			m_Skill = skillsRequis;
 			m_Barbe = barbe;
+			m_Sellable = sellable;
+			m_Price = price;
 		}
 
 		public static void Register(Coiffure coif)
@@ -152,8 +151,6 @@ namespace Server.Misc
 
 			Coiffure.coiffure.Add(coif);
 		}
-
-
 
 	}
 

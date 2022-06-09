@@ -361,17 +361,17 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Bottes8), 1015288,  "Bottes8", 69.6,89.6, typeof(Leather), 1044462, 15, 1044463);
 			index = AddCraft(typeof(Bottes9), 1015288,  "Bottes9", 86.9,106.9, typeof(Leather), 1044462, 15, 1044463);
 			index = AddCraft(typeof(Bottes10), 1015288,  "Bottes10", 62.8,82.8, typeof(Leather), 1044462, 15, 1044463);
-			index = AddCraft(typeof(Cape), "Cape0", 1025397, 51.9,71.9, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape2), "Cape1", 1025397, 59.7,79.7, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape3), "Cape2", 1025397,   98.5,118.5, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape4), "Cape3", 1025397,   85.7,105.7, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape5), "Cape4", 1025397,   77.4,97.4, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape6), "Cape5", 1025397,   65.6,85.6, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape7), "Cape6", 1025397,   56.5,76.5, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape8), "Cape7", 1025397,   92.0,112.0, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape9), "Cape8", 1025397,   72.6,92.6, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape10), "Cape9", 1025397,   49.1,69.1, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
-			index = AddCraft(typeof(Cape11), "Cape10", 1025397,   83.2,103.2, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape), "Capes", "Cape0",  51.9,71.9, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape2), "Capes", "Cape1",  59.7,79.7, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape3), "Capes", "Cape2",    98.5,118.5, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape4), "Capes", "Cape3",    85.7,105.7, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape5), "Capes", "Cape4",    77.4,97.4, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape6), "Capes", "Cape5",    65.6,85.6, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape7), "Capes", "Cape6",    56.5,76.5, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape8), "Capes", "Cape7",    92.0,112.0, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape9), "Capes", "Cape8",    72.6,92.6, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape10), "Capes", "Cape9",   49.1,69.1, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
+			index = AddCraft(typeof(Cape11), "Capes", "Cape10",   83.2,103.2, typeof(Cloth),"Tissues", 12, "Vous n'avez pas assez de tissue.");
 
 			index = AddCraft(typeof(ChapeauPirate), 1011375,  "Chapeau de Pirate", 53.3,73.3, typeof(Cloth),"Tissues", 6, "Vous n'avez pas assez de tissue.");
 
@@ -405,10 +405,8 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(CombineCloth), "Autres", 1044459, 0.0, 0.0, typeof(Cloth), 1044455, 1, 1044253);
             AddCraftAction(index, CombineCloth);
 
-    /*        index = AddCraft(typeof(PowderCharge), 1015283, 1116160, 0.0, 50.0, typeof(Cloth), 1044455, 1, 1044253);
-            AddRes(index, typeof(BlackPowder), 1095826, 4, 1044253);
-            SetUseAllRes(index, true);
-
+            
+/*
             index = AddCraft(typeof(AbyssalCloth), 1015283, 1113350, 110.0, 160.0, typeof(Cloth), 1044455, 50, 1044253);
             AddRes(index, typeof(CrystallineBlackrock), 1077568, 1, 1044253);
             SetItemHue(index, 2075);*/

@@ -73,9 +73,9 @@ namespace Server.Items
         public double Durability => (m_Hits / (double)MaxHits) * 100.0;
 
         public override bool ForceShowProperties => true;
-        public override int DefaultGumpID => 0x9CE7;
+        public override int DefaultGumpID => 0x3E;
         public override bool DisplaysContent => false;
-        public override int DefaultMaxWeight => 300;
+        public override int DefaultMaxWeight => 500;
 
         public List<Mobile> Viewing { get; set; } = new List<Mobile>();
 

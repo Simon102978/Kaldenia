@@ -224,12 +224,18 @@ namespace Server.Engines.Craft
             AddCraft(typeof(Axle), 1044042, 1024187, -25.0, 25.0, typeof(Board), 1044041, 2, 1044351);
             AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Board), 1044041, 5, 1044351);
 
-            AddCraft(typeof(Ramrod), 1044042, 1095839, 0.0, 50.0, typeof(Board), 1044041, 8, 1044253);
+			index = AddCraft(typeof(Torch), 1044042, "Torche", 0.0, 50.0, typeof(Board), 1044041, 2, 1044253);
+			index =  AddCraft(typeof(Ramrod), 1044042, 1095839, 0.0, 50.0, typeof(Board), 1044041, 5, 1044253);
+			index = AddCraft(typeof(FuseCord), 1044042, "Mèche", 0.0, 50.0, typeof(Cloth), 1044455, 1, 1044253);
+			index = AddCraft(typeof(PowderCharge), 1044042, 1116160, 0.0, 50.0, typeof(Cloth), 1044455, 1, 1044253);
+			AddRes(index, typeof(BlackPowder), 1095826, 1, 1044253);
+			SetUseAllRes(index, true);
 
-            index = AddCraft(typeof(Swab), 1044042, 1095840, 0.0, 50.0, typeof(Cloth), 1044286, 1, 1044253);
+
+			index = AddCraft(typeof(Swab), 1044042, 1095840, 0.0, 50.0, typeof(Cloth), 1044286, 1, 1044253);
             AddRes(index, typeof(Board), 1044041, 4, 1044253);
 
-            index = AddCraft(typeof(SoftenedReeds), 1044042, 1112249, 75.0, 100.0, typeof(DryReeds), 1112248, 1, 1112250);
+            index = AddCraft(typeof(SoftenedReeds), 1044042, 1112249, 75.0, 100.0, typeof(Kindling), 1112248, 1, 1112250);
             AddRes(index, typeof(ScouringToxin), 1112292, 2, 1112326);
             SetRequiresBasketWeaving(index);
             SetRequireResTarget(index);

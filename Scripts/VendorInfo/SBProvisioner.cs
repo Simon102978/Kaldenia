@@ -28,8 +28,9 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Torch), 8, 20, 0xF6B, 0));
                 Add(new GenericBuyInfo(typeof(Lantern), 2, 20, 0xA25, 0));
                 Add(new GenericBuyInfo(typeof(OilFlask), 10, 20, 0x1C18, 0));
+				Add(new GenericBuyInfo(typeof(BlackPowder), 10, 200, 0x423A, 1109));
 
-                Add(new GenericBuyInfo(typeof(Lockpick), 12, 20, 0x14FC, 0, true));
+				Add(new GenericBuyInfo(typeof(Lockpick), 12, 20, 0x14FC, 0, true));
 
                 Add(new GenericBuyInfo(typeof(FloppyHat), 7, 20, 0x1713, Utility.RandomDyedHue()));
                 Add(new GenericBuyInfo(typeof(WideBrimHat), 8, 20, 0x1714, Utility.RandomDyedHue()));

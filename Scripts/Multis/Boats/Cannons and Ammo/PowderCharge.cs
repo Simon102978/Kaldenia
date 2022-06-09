@@ -15,7 +15,7 @@ namespace Server.Items
 
         [Constructable]
         public PowderCharge(int amount)
-            : base(0xA2BE)
+            : base(16932)
         {
             Stackable = true;
             Amount = amount;

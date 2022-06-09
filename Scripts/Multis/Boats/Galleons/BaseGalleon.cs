@@ -530,12 +530,36 @@ namespace Server.Multis
             return m_SecurityEntry.IsPublic;
         }
 
-        public override bool CanCommand(Mobile m)
-        {
-            return GetSecurityLevel(m) >= SecurityLevel.Crewman;
-        }
+		public virtual bool CanCommand(Mobile m)
+		{
 
-        public override bool HasAccess(Mobile from)
+			if (m is CustomPlayerMobile)
+			{
+				CustomPlayerMobile cm = (CustomPlayerMobile)m;
+
+				if (cm.Skills[SkillName.Cartography].Value >= 50)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+
+
+
+
+
+
+
+			return true;
+		}
+
+
+		public override bool HasAccess(Mobile from)
         {
             if (Owner == null || (Scuttled && IsEnemy(from))/* || (Owner is BaseCreature && !Owner.Alive)*/)
                 return true;

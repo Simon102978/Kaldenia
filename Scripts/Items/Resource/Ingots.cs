@@ -1,3 +1,5 @@
+using System;
+
 namespace Server.Items
 {
     public abstract class BaseIngot : Item, ICommodity, IResource
@@ -43,15 +45,34 @@ namespace Server.Items
         {
             get
             {
-                if (m_Resource >= CraftResource.DullCopper && m_Resource <= CraftResource.Valorite)
-                    return 1042684 + (m_Resource - CraftResource.DullCopper);
+       //         if (m_Resource >= CraftResource.DullCopper && m_Resource <= CraftResource.Valorite)
+       //             return 1042684 + (m_Resource - CraftResource.DullCopper);
 
                 return 1042692;
             }
         }
         TextDefinition ICommodity.Description => LabelNumber;
         bool ICommodity.IsDeedable => true;
-        public override void Serialize(GenericWriter writer)
+
+
+
+		public override void AddNameProperty(ObjectPropertyList list)
+		{
+			var name = CraftResources.GetName(m_Resource);
+
+			if (Amount > 1)
+				list.Add(String.Format("{3} {0}{1}{2}", "Lingots [", name, "]", Amount)); // ~1_NUMBER~ ~2_ITEMNAME~
+			else
+				list.Add(String.Format("{0}{1}{2}", "Lingot [", name, "]")); // ingots
+		}
+
+
+
+
+
+
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
@@ -121,14 +142,7 @@ namespace Server.Items
             }
         }
 
-        public override void AddNameProperty(ObjectPropertyList list)
-        {
-            if (Amount > 1)
-                list.Add(1050039, "{0}\t#{1}", Amount, 1027154); // ~1_NUMBER~ ~2_ITEMNAME~
-            else
-                list.Add(1027154); // ingots
-        }
-
+    
         public override void GetProperties(ObjectPropertyList list)
         {
             base.GetProperties(list);

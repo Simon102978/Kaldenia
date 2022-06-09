@@ -649,54 +649,54 @@ namespace Server.Engines.Craft
 
       //      AddCraft(typeof(FurBoots), 1015288, "Bottes de cuir", 50.0, 75.0, typeof(Cloth), 1044455, 12, 1044287);
 
-            AddCraft(typeof(NinjaTabi), 1015288, 1030210, 70.0, 95.0, typeof(Cloth), 1044455, 10, 1044287);
+            AddCraft(typeof(NinjaTabi), 1015288, 1030210, 70.0, 95.0, typeof(Leather), 1044462, 15, 1044463);
 
-            AddCraft(typeof(SamuraiTabi), 1015288, 1030209, 20.0, 45.0, typeof(Cloth), 1044455, 6, 1044287);
+			AddCraft(typeof(SamuraiTabi), 1015288, 1030209, 20.0, 45.0, typeof(Leather), 1044462, 15, 1044463);
 
-            AddCraft(typeof(Sandals), 1015288, 1025901, 12.4, 37.4, typeof(Leather), 1044462, 4, 1044463);
-            AddCraft(typeof(Shoes), 1015288, 1025904, 16.5, 41.5, typeof(Leather), 1044462, 6, 1044463);
-            AddCraft(typeof(Boots), 1015288, 1025899, 33.1, 58.1, typeof(Leather), 1044462, 8, 1044463);
-            AddCraft(typeof(ThighBoots), 1015288, 1025906, 41.4, 66.4, typeof(Leather), 1044462, 10, 1044463);
+			AddCraft(typeof(Sandals), 1015288, 1025901, 12.4, 37.4, typeof(Leather), 1044462, 15, 1044463);
+			AddCraft(typeof(Shoes), 1015288, 1025904, 16.5, 41.5, typeof(Leather), 1044462, 15, 1044463);
+			AddCraft(typeof(Boots), 1015288, 1025899, 33.1, 58.1, typeof(Leather), 1044462, 15, 1044463);
+			AddCraft(typeof(ThighBoots), 1015288, 1025906, 41.4, 66.4, typeof(Leather), 1044462, 15, 1044463);
 
-            AddCraft(typeof(LeatherTalons), 1015288, 1095728, 40.4, 65.4, typeof(Leather), 1044462, 6, 1044453);
+			AddCraft(typeof(LeatherTalons), 1015288, 1095728, 40.4, 65.4, typeof(Leather), 1044462, 15, 1044463);
 
- /*           index = AddCraft(typeof(JesterShoes), 1015288, 1109617, 20.0, 35.0, typeof(Cloth), 1044455, 6, 1044287);
-            AddRecipe(index, (int)TailorRecipe.JesterShoes);
+			/*           index = AddCraft(typeof(JesterShoes), 1015288, 1109617, 20.0, 35.0, typeof(Cloth), 1044455, 6, 1044287);
+					   AddRecipe(index, (int)TailorRecipe.JesterShoes);
 
-            index = AddCraft(typeof(KrampusMinionBoots), 1015288, 1125637, 100.0, 500.0, typeof(Leather), 1044462, 6, 1044463);
-            AddRes(index, typeof(Cloth), 1044455, 4, 1044287);
-            AddRecipe(index, (int)TailorRecipe.KrampusMinionBoots);
+					   index = AddCraft(typeof(KrampusMinionBoots), 1015288, 1125637, 100.0, 500.0, typeof(Leather), 1044462, 6, 1044463);
+					   AddRes(index, typeof(Cloth), 1044455, 4, 1044287);
+					   AddRecipe(index, (int)TailorRecipe.KrampusMinionBoots);
 
-            index = AddCraft(typeof(KrampusMinionTalons), 1015288, 1125644, 100.0, 500.0, typeof(Leather), 1044462, 6, 1044463);
-            AddRes(index, typeof(Cloth), 1044455, 4, 1044287);
-            AddRecipe(index, (int)TailorRecipe.KrampusMinionTalons);
- */
-            #endregion
+					   index = AddCraft(typeof(KrampusMinionTalons), 1015288, 1125644, 100.0, 500.0, typeof(Leather), 1044462, 6, 1044463);
+					   AddRes(index, typeof(Cloth), 1044455, 4, 1044287);
+					   AddRecipe(index, (int)TailorRecipe.KrampusMinionTalons);
+			*/
+			#endregion
 
-            #region Leather Armor
+			#region Leather Armor
 
-       /*     index = AddCraft(typeof(SpellWovenBritches), 1015293, 1072929, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
-            AddRes(index, typeof(EyeOfTheTravesty), 1032685, 1, 1044253);
-            AddRes(index, typeof(Putrefaction), 1032678, 10, 1044253);
-            AddRes(index, typeof(Scourge), 1032677, 10, 1044253);
-            AddRecipe(index, (int)TailorRecipe.SpellWovenBritches);
-            ForceNonExceptional(index);
+			/*     index = AddCraft(typeof(SpellWovenBritches), 1015293, 1072929, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
+				 AddRes(index, typeof(EyeOfTheTravesty), 1032685, 1, 1044253);
+				 AddRes(index, typeof(Putrefaction), 1032678, 10, 1044253);
+				 AddRes(index, typeof(Scourge), 1032677, 10, 1044253);
+				 AddRecipe(index, (int)TailorRecipe.SpellWovenBritches);
+				 ForceNonExceptional(index);
 
-            index = AddCraft(typeof(SongWovenMantle), 1015293, 1072931, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
-            AddRes(index, typeof(EyeOfTheTravesty), 1032685, 1, 1044253);
-            AddRes(index, typeof(Blight), 1032675, 10, 1044253);
-            AddRes(index, typeof(Muculent), 1032680, 10, 1044253);
-            AddRecipe(index, (int)TailorRecipe.SongWovenMantle);
-            ForceNonExceptional(index);
+				 index = AddCraft(typeof(SongWovenMantle), 1015293, 1072931, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
+				 AddRes(index, typeof(EyeOfTheTravesty), 1032685, 1, 1044253);
+				 AddRes(index, typeof(Blight), 1032675, 10, 1044253);
+				 AddRes(index, typeof(Muculent), 1032680, 10, 1044253);
+				 AddRecipe(index, (int)TailorRecipe.SongWovenMantle);
+				 ForceNonExceptional(index);
 
-            index = AddCraft(typeof(StitchersMittens), 1015293, 1072932, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
-            AddRes(index, typeof(CapturedEssence), 1032686, 1, 1044253);
-            AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
-            AddRes(index, typeof(Taint), 1032679, 10, 1044253);
-            AddRecipe(index, (int)TailorRecipe.StitchersMittens);
-            ForceNonExceptional(index);*/
+				 index = AddCraft(typeof(StitchersMittens), 1015293, 1072932, 92.5, 117.5, typeof(Leather), 1044462, 15, 1044463);
+				 AddRes(index, typeof(CapturedEssence), 1032686, 1, 1044253);
+				 AddRes(index, typeof(Corruption), 1032676, 10, 1044253);
+				 AddRes(index, typeof(Taint), 1032679, 10, 1044253);
+				 AddRecipe(index, (int)TailorRecipe.StitchersMittens);
+				 ForceNonExceptional(index);*/
 
-            AddCraft(typeof(LeatherGorget), 1015293, 1025063, 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(LeatherGorget), 1015293, 1025063, 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
             AddCraft(typeof(LeatherCap), 1015293, 1027609, 6.2, 31.2, typeof(Leather), 1044462, 2, 1044463);
             AddCraft(typeof(LeatherGloves), 1015293, 1025062, 51.8, 76.8, typeof(Leather), 1044462, 3, 1044463);
             AddCraft(typeof(LeatherArms), 1015293, 1025061, 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);

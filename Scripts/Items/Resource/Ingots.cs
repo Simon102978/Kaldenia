@@ -18,6 +18,7 @@ namespace Server.Items
             Stackable = true;
             Amount = amount;
             Hue = CraftResources.GetHue(resource);
+			Name = "Lingot";
 
             m_Resource = resource;
         }

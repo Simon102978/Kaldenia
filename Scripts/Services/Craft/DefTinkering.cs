@@ -760,7 +760,19 @@ namespace Server.Engines.Craft
             AddSubRes(typeof(VeriteIngot), 1044029, 95.0, 1044036, 1044269);
             AddSubRes(typeof(ValoriteIngot), 1044030, 99.0, 1044036, 1044269);
 
-            MarkOption = true;
+			SetSubRes2(typeof(Board), 1072643);
+
+			// Add every material you want the player to be able to choose from
+			// This will override the overridable material
+			AddSubRes2(typeof(Board), 1072643, 0.0, 1044041, 1072653);
+			AddSubRes2(typeof(OakBoard), 1072644, 65.0, 1044041, 1072653);
+			AddSubRes2(typeof(AshBoard), 1072645, 75.0, 1044041, 1072653);
+			AddSubRes2(typeof(YewBoard), 1072646, 85.0, 1044041, 1072653);
+			AddSubRes2(typeof(HeartwoodBoard), 1072647, 95.0, 1044041, 1072653);
+			AddSubRes2(typeof(BloodwoodBoard), 1072648, 95.0, 1044041, 1072653);
+			AddSubRes2(typeof(FrostwoodBoard), 1072649, 95.0, 1044041, 1072653);
+
+			MarkOption = true;
             Repair = true;
             CanEnhance = true;
             CanAlter = true;

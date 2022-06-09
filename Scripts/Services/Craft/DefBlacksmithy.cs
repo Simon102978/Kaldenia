@@ -446,9 +446,6 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(MediumPlateShield), 1011080, 1095771, 50, 80, typeof(IronIngot), 1044036, 14, 1044037);
 
-            index = AddCraft(typeof(ChaosShield), 1011080, 1095808, 85.0, 135.0, typeof(IronIngot), 1044036, 25, 1044037);
-
-            index = AddCraft(typeof(OrderShield), 1011080, 1095810, 85.0, 135.0, typeof(IronIngot), 1044036, 25, 1044037);
             #endregion
 
             #region Bladed
@@ -456,7 +453,7 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(Broadsword), 1011081, 1023934, 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
 
-            AddCraft(typeof(CrescentBlade), 1011081, 1029921, 45.0, 95.0, typeof(IronIngot), 1044036, 14, 1044037);
+           
 
             AddCraft(typeof(Cutlass), 1011081, 1025185, 24.3, 74.3, typeof(IronIngot), 1044036, 8, 1044037);
             AddCraft(typeof(Dagger), 1011081, 1023921, -0.4, 49.6, typeof(IronIngot), 1044036, 3, 1044037);
@@ -664,7 +661,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(BoneMachete), 1011081, 1020526, 45.0, 95.0, typeof(IronIngot), 1044036, 20, 1044037);
             AddRes(index, typeof(Bone), 1049064, 6, 1049063);
             AddRecipe(index, (int)SmithRecipes.BoneMachete);*/
-
+/*
 			index = AddCraft(typeof(Katana), 1011081, 1097490, 44.1, 94.1, typeof(IronIngot), 1044036, 8, 1044037);
 
             index = AddCraft(typeof(Kryss), 1011081, 1097492, 36.7, 86.7, typeof(IronIngot), 1044036, 8, 1044037);
@@ -682,6 +679,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(BloodBlade), 1011081, 1095370, 44.1, 125.0, typeof(IronIngot), 1044036, 8, 1044037);
 
             index = AddCraft(typeof(Shortblade), 1011081, 1095374, 28.0, 100.0, typeof(IronIngot), 1044036, 12, 1044037);
+*/
             #endregion
 
             #region Axes
@@ -903,7 +901,7 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Miscellaneous
-
+/*
             index = AddCraft(typeof(DragonGloves), 1011173, 1029795, 68.9, 118.9, typeof(RedScales), 1060883, 16, 1060884);
             SetUseSubRes2(index, true);
 
@@ -918,6 +916,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(DragonChest), 1011173, 1029793, 85.0, 135.0, typeof(RedScales), 1060883, 36, 1060884);
             SetUseSubRes2(index, true);
+*/
 
   /*         index = AddCraft(typeof(CrushedGlass), 1011173, 1113351, 110.0, 135.0, typeof(BlueDiamond), 1032696, 1, 1044253);
             AddRes(index, typeof(GlassSword), 1095371, 5, 1044253);
@@ -958,7 +957,7 @@ namespace Server.Engines.Craft
             AddSubRes(typeof(VeriteIngot), 1044029, 95.0, 1044036, 1044269);
             AddSubRes(typeof(ValoriteIngot), 1044030, 99.0, 1044036, 1044269);
 
-            SetSubRes2(typeof(RedScales), 1060875);
+  /*          SetSubRes2(typeof(RedScales), 1060875);
 
             AddSubRes2(typeof(RedScales), 1060875, 0.0, 1053137, 1044268);
             AddSubRes2(typeof(YellowScales), 1060876, 0.0, 1053137, 1044268);
@@ -966,7 +965,7 @@ namespace Server.Engines.Craft
             AddSubRes2(typeof(GreenScales), 1060878, 0.0, 1053137, 1044268);
             AddSubRes2(typeof(WhiteScales), 1060879, 0.0, 1053137, 1044268);
             AddSubRes2(typeof(BlueScales), 1060880, 0.0, 1053137, 1044268);
-
+  */
             Resmelt = true;
             Repair = true;
             MarkOption = true;

@@ -1,5 +1,7 @@
 using Server.Gumps;
 using Server.Targeting;
+using Server.Items;
+using Server.Mobiles;
 
 namespace Server.Spells.Eighth
 {
@@ -21,6 +23,8 @@ namespace Server.Spells.Eighth
 
 		public override SpellCircle Circle => SpellCircle.Eighth;
 
+		private bool m_Corpse = false;
+
         public override void OnCast()
         {
             Caster.Target = new InternalTarget(this);
@@ -28,7 +32,7 @@ namespace Server.Spells.Eighth
 
         public void Target(Mobile m)
         {
-            if (!Caster.CanSee(m))
+            if (!Caster.CanSee(m) && !m_Corpse)
             {
                 Caster.SendLocalizedMessage(500237); // Target can not be seen.
             }
@@ -44,7 +48,7 @@ namespace Server.Spells.Eighth
             {
                 Caster.SendLocalizedMessage(501041); // Target is not dead.
             }
-            else if (!Caster.InRange(m, 1))
+            else if (!Caster.InRange(m, 5) && !m_Corpse)
             {
                 Caster.SendLocalizedMessage(501042); // Target is not close enough.
             }
@@ -68,8 +72,27 @@ namespace Server.Spells.Eighth
                 m.PlaySound(0x214);
                 m.FixedEffect(0x376A, 10, 16);
 
-                m.CloseGump(typeof(ResurrectGump));
-                m.SendGump(new ResurrectGump(m, Caster));
+
+				if (m is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cm = (CustomPlayerMobile)m;
+
+					if (m_Corpse)
+					{
+						cm.MoveToWorld(cm.Corpse.Location, cm.Corpse.Map);
+					}
+
+					cm.PlaySound(0x214);
+					cm.FixedEffect(0x376A, 10, 16);
+					cm.Resurrect();
+				}
+				else
+				{
+					m.CloseGump(typeof(ResurrectGump));
+					m.SendGump(new ResurrectGump(m, Caster));
+				}
+
+              
             }
 
             FinishSequence();
@@ -90,6 +113,16 @@ namespace Server.Spells.Eighth
                 {
                     m_Owner.Target((Mobile)o);
                 }
+				else if (o is Corpse)
+				{
+					Corpse c = (Corpse)o;
+
+					if (c.Owner is CustomPlayerMobile)
+					{
+						m_Owner.m_Corpse = true;
+						m_Owner.Target((Mobile)c.Owner);
+					}
+				}
             }
 
             protected override void OnTargetFinish(Mobile from)

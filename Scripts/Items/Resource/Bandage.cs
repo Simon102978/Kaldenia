@@ -143,6 +143,39 @@ namespace Server.Items
                         from.SendLocalizedMessage(500295); // You are too far away to do that.
                     }
                 }
+				else if (targeted is Corpse)
+				{
+					Corpse c = (Corpse)targeted;
+
+
+					if (c.Owner is CustomPlayerMobile)
+					{
+						if (!c.Owner.Alive)
+						{
+							if (BandageContext.BeginHeal(from, (Mobile)c.Owner, m_Bandage is EnhancedBandage) != null)
+							{
+								NegativeAttributes.OnCombatAction(from);
+								m_Bandage.Consume();
+							
+
+							}
+						}
+					}
+					else
+					{
+						from.SendMessage("Vous ne pouvez que soigner les corps de joueurs.");
+					}
+
+
+
+
+
+
+
+
+
+
+				}
                 else if (targeted is PlagueBeastInnard)
                 {
                     if (((PlagueBeastInnard)targeted).OnBandage(from))
@@ -182,15 +215,20 @@ namespace Server.Items
         private int m_HealedPoisonOrBleed;
         private Timer m_Timer;
         private int m_HealingBonus;
+		private bool m_Corpse;
 
-        public Mobile Healer => m_Healer;
+
+		public Mobile Healer => m_Healer;
         public Mobile Patient => m_Patient;
         public int Slips { get { return m_Slips; } set { m_Slips = value; } }
         public int HealedPoisonOrBleed { get { return m_HealedPoisonOrBleed; } set { m_HealedPoisonOrBleed = value; } }
         public Timer Timer => m_Timer;
         public int HealingBonus => m_HealingBonus;
 
-        public void Slip()
+		public bool corpse => m_Corpse;
+
+
+		public void Slip()
         {
             m_Healer.SendLocalizedMessage(500961); // Your fingers slip!
             ++m_Slips;
@@ -200,12 +238,14 @@ namespace Server.Items
             : this(healer, patient, delay, false)
         { }
 
-        public BandageContext(Mobile healer, Mobile patient, TimeSpan delay, bool enhanced)
+        public BandageContext(Mobile healer, Mobile patient, TimeSpan delay, bool enhanced, bool corpse = false)
         {
             m_Healer = healer;
             m_Patient = patient;
+			m_Corpse = corpse;
 
-            if (enhanced)
+
+			if (enhanced)
                 m_HealingBonus += EnhancedBandage.HealingBonus;
 
             m_Timer = new InternalTimer(this, delay);
@@ -305,6 +345,22 @@ namespace Server.Items
             }
         }
 
+
+		public bool CheckCorpse()
+		{
+			if (m_Patient.Corpse != null)
+			{
+				return m_Healer.InRange(m_Patient.Corpse, Bandage.Range);
+			}
+			else
+			{
+				return true;
+			}		
+		}
+
+
+
+
         public void EndHeal()
         {
             StopHeal();
@@ -324,7 +380,7 @@ namespace Server.Items
                 patientNumber = -1;
                 playSound = false;
             }
-            else if (!m_Healer.InRange(m_Patient, Bandage.Range))
+            else if (!m_Healer.InRange(m_Patient, Bandage.Range) && !CheckCorpse())
             {
                 healerNumber = 500963; // You did not stay close enough to heal your target.
                 patientNumber = -1;
@@ -407,8 +463,31 @@ namespace Server.Items
                         }
                         else
                         {
-                            m_Patient.CloseGump(typeof(ResurrectGump));
-                            m_Patient.SendGump(new ResurrectGump(m_Patient, m_Healer));
+							if (m_Patient is CustomPlayerMobile)
+							{
+								CustomPlayerMobile cm = (CustomPlayerMobile)m_Patient;
+
+
+								cm.MoveToWorld(cm.Corpse.Location, cm.Corpse.Map);
+
+
+
+								cm.PlaySound(0x214);
+								cm.FixedEffect(0x376A, 10, 16);
+
+								cm.Resurrect();
+
+
+							}
+							else
+							{
+								m_Patient.CloseGump(typeof(ResurrectGump));
+								m_Patient.SendGump(new ResurrectGump(m_Patient, m_Healer));
+							}
+
+
+
+                          
                         }
                     }
                 }
@@ -611,7 +690,7 @@ namespace Server.Items
             return BeginHeal(healer, patient, false);
         }
 
-        public static BandageContext BeginHeal(Mobile healer, Mobile patient, bool enhanced)
+        public static BandageContext BeginHeal(Mobile healer, Mobile patient, bool enhanced, bool corpse = false)
         {
             bool isDeadPet = (patient is BaseCreature && ((BaseCreature)patient).IsDeadPet);
 
@@ -649,7 +728,7 @@ namespace Server.Items
                 else
                     BuffInfo.AddBuff(healer, new BuffInfo(BuffIcon.Veterinary, 1002167, 1151400, delay, healer, string.Format("{0}", patient.Name)));
 
-                context = new BandageContext(healer, patient, delay, enhanced);
+                context = new BandageContext(healer, patient, delay, enhanced, corpse);
 
                 m_Table[healer] = context;
 
@@ -671,7 +750,7 @@ namespace Server.Items
             return null;
         }
 
-        public static TimeSpan GetDelay(Mobile healer, Mobile patient)
+		public static TimeSpan GetDelay(Mobile healer, Mobile patient)
         {
             return GetDelay(healer, patient, !patient.Alive || patient.IsDeadBondedPet);
         }

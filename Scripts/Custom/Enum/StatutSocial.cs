@@ -9,9 +9,9 @@ namespace Server
   {
         [AppearanceAttribute("Aucun", "Aucune")]
         Aucun,
-        [AppearanceAttribute("Esclave - Dechet", "Esclave - Dechet")]
+        [AppearanceAttribute("Dechet", "Dechet")]
         Dechet,
-        [AppearanceAttribute("Esclave - Possession", "Esclave - Possession")]
+        [AppearanceAttribute("Possession", "Possession")]
 		Possession,
         [AppearanceAttribute("Peregrin", "Peregrine")]
 		Peregrin,

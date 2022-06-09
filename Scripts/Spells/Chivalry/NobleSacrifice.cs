@@ -3,6 +3,7 @@ using Server.Mobiles;
 using Server.Spells.Necromancy;
 using System;
 using System.Collections.Generic;
+using Server.Items;
 
 namespace Server.Spells.Chivalry
 {
@@ -39,6 +40,8 @@ namespace Server.Spells.Chivalry
                     if (Caster != m && m.InLOS(Caster) && Caster.CanBeBeneficial(m, false, true) && (!(m is IRepairableMobile) || ((IRepairableMobile)m).RepairResource == typeof(Items.Bandage)))
                         targets.Add(m);
                 }
+
+
                 eable.Free();
 
                 Caster.PlaySound(0x244);
@@ -139,7 +142,56 @@ namespace Server.Spells.Chivalry
                     }
                 }
 
-                if (sacrifice)
+				targets = new List<Mobile>();
+
+				eable = Caster.GetItemsInRange(6);
+
+				foreach (Item m in eable)
+				{
+					if (!(m is Corpse))
+						continue;
+
+					Corpse c = (Corpse)m;
+
+
+					if (c.Owner is CustomPlayerMobile && Caster.CanBeBeneficial(c.Owner, false, true) && (!(c.Owner is IRepairableMobile) || ((IRepairableMobile)c.Owner).RepairResource == typeof(Items.Bandage)))
+						targets.Add(c.Owner);
+				}
+
+				eable.Free();
+
+				for (int i = 0; i < targets.Count; ++i)
+				{
+					Mobile m = targets[i];
+
+					if (!m.Alive)
+					{
+						if (m.Region != null && m.Region.IsPartOf("Khaldun"))
+						{
+							Caster.SendLocalizedMessage(1010395); // The veil of death in this area is too strong and resists thy efforts to restore life.
+						}
+						else if (resChance > Utility.RandomDouble())
+						{
+							m.FixedParticles(0x375A, 1, 15, 5005, 5, 3, EffectLayer.Head);
+
+							m.MoveToWorld(m.Corpse.Location, m.Corpse.Map);
+							m.PlaySound(0x214);
+							m.FixedEffect(0x376A, 10, 16);
+							m.Resurrect();
+							sacrifice = true;
+						}
+					}			
+				}
+
+
+
+
+
+
+
+
+
+				if (sacrifice)
                 {
                     Caster.PlaySound(Caster.Body.IsFemale ? 0x150 : 0x423);
                     Caster.Hits = 1;

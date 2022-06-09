@@ -562,7 +562,7 @@ namespace Server.Mobiles
 				case StatutSocialEnum.Aucun:
 					break;
 				case StatutSocialEnum.Dechet:
-					taxesGold = (int)Math.Round((GainGold * 0.5),0,MidpointRounding.AwayFromZero);
+					taxesGold = GainGold;
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Possession:
@@ -1605,6 +1605,15 @@ namespace Server.Mobiles
 			}
 			else
 			{
+				if (m_StatutSocial < StatutSocialEnum.Possession)
+				{
+					MoveToWorld(new Point3D(5340,2861,0), Map.Felucca);
+					return;
+				}
+
+
+
+
 				if (Deguise)
 				{
 					Deguisement.RemoveDeguisement();
@@ -1629,7 +1638,7 @@ namespace Server.Mobiles
 
 			Frozen = false;
 
-			if (Corpse != null)
+			if (Corpse != null )
 			{
 				ArrayList list = new ArrayList();
 

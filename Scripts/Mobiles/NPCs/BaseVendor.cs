@@ -35,6 +35,7 @@ namespace Server.Mobiles
         public static TimeSpan DelayRestock = TimeSpan.FromMinutes(Config.Get("Vendors.RestockDelay", 60));
         public static int MaxSell = Config.Get("Vendors.MaxSell", 500);
 
+
         public static List<BaseVendor> AllVendors { get; private set; }
 
         static BaseVendor()
@@ -46,6 +47,8 @@ namespace Server.Mobiles
 
         private readonly ArrayList m_ArmorBuyInfo = new ArrayList();
         private readonly ArrayList m_ArmorSellInfo = new ArrayList();
+
+		private bool m_Contrebandier = false;
 
         private DateTime m_LastRestock;
 
@@ -64,7 +67,19 @@ namespace Server.Mobiles
         public virtual bool IsActiveSeller => IsActiveVendor; // repsonse to vendor BUY
         public virtual bool HasHonestyDiscount => true;
 
-		public virtual StatutSocialEnum MinBuyClasse => StatutSocialEnum.Aucun;
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual bool ContreBandier
+		{
+			get => m_Contrebandier;
+			set
+			{
+				m_Contrebandier = value;
+			}
+
+		}
+		
+
+		public virtual StatutSocialEnum MinBuyClasse => StatutSocialEnum.Possession;
 
 
 
@@ -878,7 +893,7 @@ namespace Server.Mobiles
 			{
 				CustomPlayerMobile cm = (CustomPlayerMobile)from;
 
-				if (cm.StatutSocial < MinBuyClasse)
+				if (cm.StatutSocial < MinBuyClasse && !m_Contrebandier)
 				{
 					Say("Seul les " + MinBuyClasse + "s et les classes supérieurs peuvent acheter ici");
 					return;
@@ -2220,7 +2235,7 @@ namespace Server.Mobiles
             if (GiveGold > 0)
             {
 
-				if (seller is CustomPlayerMobile)
+				if (seller is CustomPlayerMobile && !m_Contrebandier)
 				{
 
 					CustomPlayerMobile pSeller = (CustomPlayerMobile)seller;
@@ -2289,7 +2304,9 @@ namespace Server.Mobiles
         {
             base.Serialize(writer);
 
-            writer.Write(4); // version
+            writer.Write(5); // version
+
+			writer.Write(m_Contrebandier);
 
             writer.Write(BribeMultiplier);
             writer.Write(NextMultiplierDecay);
@@ -2365,6 +2382,11 @@ namespace Server.Mobiles
 
             switch (version)
             {
+				case 5:
+					{
+						m_Contrebandier = reader.ReadBool();
+						goto case 4;
+					}
                 case 4:
                 case 3:
                 case 2:

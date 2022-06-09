@@ -6,6 +6,7 @@ using Server.Items;
 using Server.Misc;
 using System.Collections.Generic;
 using Server.Accounting;
+
 #endregion
 
 namespace Server
@@ -18,7 +19,7 @@ namespace Server
         private int m_Hue;
         private bool m_female;
 		private string m_Name;
-
+		private StatutSocialEnum m_Statut = StatutSocialEnum.Peregrin;
 
 
 		private int m_Str = 25;
@@ -176,6 +177,8 @@ namespace Server
 		public int Hue { get => m_Hue; set => m_Hue = value; }
 
 		public God God { get => m_God; set => m_God = value; }
+
+		public StatutSocialEnum Statut { get => m_Statut; set => m_Statut = value; }
 
 		public AppearanceEnum Appearance { get => m_Appearance; set => m_Appearance = value; }
 
@@ -378,7 +381,7 @@ namespace Server
 
 			m_Player.God = God;
 
-			m_Player.StatutSocial = StatutSocialEnum.Peregrin;
+			m_Player.StatutSocial = m_Statut;
 
 	//		Dictionary<SkillName, int> m_skills = new Dictionary<SkillName, int>();
 

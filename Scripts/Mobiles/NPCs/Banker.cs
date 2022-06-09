@@ -24,7 +24,7 @@ namespace Server.Mobiles
         { }
 
 
-		public static StatutSocialEnum MinBankClasse => StatutSocialEnum.Civenien;
+		public static StatutSocialEnum MinBankClasse => StatutSocialEnum.Possession;
 
 		public override NpcGuild NpcGuild => NpcGuild.MerchantsGuild;
 

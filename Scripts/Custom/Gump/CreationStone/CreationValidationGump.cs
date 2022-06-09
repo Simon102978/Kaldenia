@@ -92,7 +92,7 @@ namespace Server.Gumps
 
 			AddSection(x - 10, y, 303, 508, "Information", info);
 
-			string context = "Vous allez maintenant être envoyé dans la cité de Boscula, pour un escalde avant votre destination finale.\n\nDurant cette escale, profitez bien des marchands présents dans la cité pour regarnir votre garde-robe. \n\nMais prenez garder, le bateau est rempli, vous ne pourrez que transporter ce que vous portez.";
+			string context = "Vous allez maintenant être envoyé dans la cité de Boscula, pour une escale avant votre destination finale.\n\nDurant cette escale, profitez bien des marchands présents dans la cité pour regarnir votre garde-robe. \n\nMais prenez garde, le bateau est rempli, vous ne pourrez que transporter ce que vous portez.";
 
 			AddSection(x + 294, y, 304, 508, "Contexte", context);
 			AddSection(x - 10, y + 509, 610, 99, "Validation");

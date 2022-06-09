@@ -148,7 +148,7 @@ namespace Server.Items
         {
             base.GetProperties(list);
 
-            if (!CraftResources.IsStandard(m_Resource))
+       /*     if (!CraftResources.IsStandard(m_Resource))
             {
                 int num = CraftResources.GetLocalizationNumber(m_Resource);
 
@@ -156,7 +156,7 @@ namespace Server.Items
                     list.Add(num);
                 else
                     list.Add(CraftResources.GetName(m_Resource));
-            }
+            }*/
         }
     }
 

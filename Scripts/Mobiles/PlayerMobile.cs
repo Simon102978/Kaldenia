@@ -1243,6 +1243,15 @@ namespace Server.Mobiles
 					{
 						cp.SendMessage(72, string.Format("Vous avez {0} missive(s) en attente.", cp.MissiveEnAttente.Count));
 					}
+
+
+					if (cp.NetState.Version == new ClientVersion("7.0.15.1"))
+					{
+						cp.SendGump(new VersionGump(cp));
+					}
+
+
+
 				}
 			}
 

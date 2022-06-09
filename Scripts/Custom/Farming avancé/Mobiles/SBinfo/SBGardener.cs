@@ -31,52 +31,52 @@ namespace Server.Mobiles
 				this.Add( new GenericBuyInfo( "Plant Bowl", typeof( Engines.Plants.PlantBowl ), 2, 20, 0x15FD, 0 ) );
 				this.Add( new GenericBuyInfo( "Fertile Dirt", typeof( FertileDirt ), 10, 20, 0xF81, 0 ) );
 				this.Add( new GenericBuyInfo( "Random Plant Seed", typeof( Engines.Plants.Seed ), 2, 20, 0xDCF, 0 ) );
- 				this.Add( new GenericBuyInfo( typeof( GreaterCurePotion ), 45, 20, 0xF07, 0 ) );
-				this.Add( new GenericBuyInfo( typeof( GreaterPoisonPotion ), 45, 20, 0xF0A, 0 ) );
-				this.Add( new GenericBuyInfo( typeof( GreaterStrengthPotion ), 45, 20, 0xF09, 0 ) );
-				this.Add( new GenericBuyInfo( typeof( GreaterHealPotion ), 45, 20, 0xF0C, 0 ) );
-                this.Add(new GenericBuyInfo("Asparagus Seed", typeof(AsparagusSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Beet Seed", typeof(BeetSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Broccoli Seed", typeof(BroccoliSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Cabbage Seed", typeof(CabbageSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Carrot Seed", typeof(CarrotSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Cauliflower Seed", typeof(CauliflowerSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Celery Seed", typeof(CelerySeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Eggplant Seed", typeof(EggplantSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("GreenBean Seed", typeof(GreenBeanSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Lettuce Seed", typeof(LettuceSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Onion Seed", typeof(OnionSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Peanut Seed", typeof(PeanutSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Peas Seed", typeof(PeasSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Potato Seed", typeof(PotatoSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Radish Seed", typeof(RadishSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("SnowPeas Seed", typeof(SnowPeasSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Soy Seed", typeof(SoySeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Spinach Seed", typeof(SpinachSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Strawberry Seed", typeof(StrawberrySeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("SweetPotato Seed", typeof(SweetPotatoSeed), 5, 20, 0xF27, 0));
-                this.Add(new GenericBuyInfo("Turnip Seed", typeof(TurnipSeed), 5, 20, 0xF27, 0));
+ 			//	this.Add( new GenericBuyInfo( typeof( GreaterCurePotion ), 45, 20, 0xF07, 0 ) );
+			//	this.Add( new GenericBuyInfo( typeof( GreaterPoisonPotion ), 45, 20, 0xF0A, 0 ) );
+			//	this.Add( new GenericBuyInfo( typeof( GreaterStrengthPotion ), 45, 20, 0xF09, 0 ) );
+			//	this.Add( new GenericBuyInfo( typeof( GreaterHealPotion ), 45, 20, 0xF0C, 0 ) );
+                this.Add(new GenericBuyInfo("Asparagus Seed", typeof(AsparagusSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Beet Seed", typeof(BeetSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Broccoli Seed", typeof(BroccoliSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Cabbage Seed", typeof(CabbageSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Carrot Seed", typeof(CarrotSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Cauliflower Seed", typeof(CauliflowerSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Celery Seed", typeof(CelerySeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Eggplant Seed", typeof(EggplantSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("GreenBean Seed", typeof(GreenBeanSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Lettuce Seed", typeof(LettuceSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Onion Seed", typeof(OnionSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Peanut Seed", typeof(PeanutSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Peas Seed", typeof(PeasSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Potato Seed", typeof(PotatoSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Radish Seed", typeof(RadishSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("SnowPeas Seed", typeof(SnowPeasSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Soy Seed", typeof(SoySeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Spinach Seed", typeof(SpinachSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Strawberry Seed", typeof(StrawberrySeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("SweetPotato Seed", typeof(SweetPotatoSeed), 1, 20, 0xF27, 0));
+                this.Add(new GenericBuyInfo("Turnip Seed", typeof(TurnipSeed), 1, 20, 0xF27, 0));
 
-				this.Add(new GenericBuyInfo("Blackberry Seed", typeof(BlackberrySeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("BlackRaspberry Seed", typeof(BlackRaspberrySeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Blueberry Seed", typeof(BlueberrySeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Cranberry Seed", typeof(CranberrySeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Pineapple Seed", typeof(PineappleSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("RedRaspberry Seed", typeof(RedRaspberrySeed), 5, 20, 0xF27, 0));
-
-
-				this.Add(new GenericBuyInfo("Red Rose Seed", typeof(RedRoseSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("White Rose Seed", typeof(WhiteRoseSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Black Rose Seed", typeof(BlackRoseSeed), 5, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Blackberry Seed", typeof(BlackberrySeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("BlackRaspberry Seed", typeof(BlackRaspberrySeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Blueberry Seed", typeof(BlueberrySeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Cranberry Seed", typeof(CranberrySeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Pineapple Seed", typeof(PineappleSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("RedRaspberry Seed", typeof(RedRaspberrySeed), 1, 20, 0xF27, 0));
 
 
-				this.Add(new GenericBuyInfo("Cotton Seed", typeof(CottonSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Flax Seed", typeof(FlaxSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Hay Seed", typeof(HaySeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Oats Seed", typeof(OatsSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Rice Seed", typeof(RiceSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Sugarcane Seed", typeof(SugarcaneSeed), 5, 20, 0xF27, 0));
-				this.Add(new GenericBuyInfo("Wheat Seed", typeof(WheatSeed), 5, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Red Rose Seed", typeof(RedRoseSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("White Rose Seed", typeof(WhiteRoseSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Black Rose Seed", typeof(BlackRoseSeed), 1, 20, 0xF27, 0));
+
+
+				this.Add(new GenericBuyInfo("Cotton Seed", typeof(CottonSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Flax Seed", typeof(FlaxSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Hay Seed", typeof(HaySeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Oats Seed", typeof(OatsSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Rice Seed", typeof(RiceSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Sugarcane Seed", typeof(SugarcaneSeed), 1, 20, 0xF27, 0));
+				this.Add(new GenericBuyInfo("Wheat Seed", typeof(WheatSeed), 1, 20, 0xF27, 0));
 
 
 				this.Add(new GenericBuyInfo("Garlic Seed", typeof(GarlicSeed), 1, 20, 0xF27, 0));
@@ -141,6 +141,7 @@ namespace Server.Mobiles
 				this.Add(new GenericBuyInfo("Mini Pistacio Seed", typeof(MiniPistacioSeed), 1, 20, 0xF27, 0));
 				this.Add(new GenericBuyInfo("Mini Pomegranate Seed", typeof(MiniPomegranateSeed), 1, 20, 0xF27, 0));
 				this.Add(new GenericBuyInfo("Small Banana Seed", typeof(SmallBananaSeed), 1, 20, 0xF27, 0));
+
 
 
 

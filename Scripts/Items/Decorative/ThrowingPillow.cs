@@ -8,7 +8,7 @@ namespace Server.Items
         public ThrowPillow()
             : base(0x1944)
         {
-            LootType = LootType.Blessed;
+           
         }
 
         public bool Dye(Mobile from, DyeTub sender)

@@ -78,15 +78,24 @@ namespace Server.Items
         }
     }
 
-    public class LargeSquarePillow : Item
-    {
+    public class LargeSquarePillow : Item, IDyable
+	{
         [Constructable]
         public LargeSquarePillow()
             : base(5691)
         {
         }
+		public bool Dye(Mobile from, DyeTub sender)
+		{
+			if (Deleted)
+				return false;
 
-        public LargeSquarePillow(Serial serial)
+			Hue = sender.DyedHue;
+
+			return true;
+		}
+
+		public LargeSquarePillow(Serial serial)
             : base(serial)
         {
         }
@@ -104,15 +113,24 @@ namespace Server.Items
         }
     }
 
-    public class LargeDiamondPillow : Item
-    {
+    public class LargeDiamondPillow : Item, IDyable
+	{
         [Constructable]
         public LargeDiamondPillow()
             : base(5690)
         {
         }
+		public bool Dye(Mobile from, DyeTub sender)
+		{
+			if (Deleted)
+				return false;
 
-        public LargeDiamondPillow(Serial serial)
+			Hue = sender.DyedHue;
+
+			return true;
+		}
+
+		public LargeDiamondPillow(Serial serial)
             : base(serial)
         {
         }
@@ -130,7 +148,42 @@ namespace Server.Items
         }
     }
 
-    public class DustyPillow : Item
+	public class SmallDiamondPillow : Item, IDyable
+	{
+		[Constructable]
+		public SmallDiamondPillow()
+			: base(0x163C)
+		{
+		}
+		public bool Dye(Mobile from, DyeTub sender)
+		{
+			if (Deleted)
+				return false;
+
+			Hue = sender.DyedHue;
+
+			return true;
+		}
+
+		public SmallDiamondPillow(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0); // ver
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class DustyPillow : Item
     {
         public override int LabelNumber => 1113638;  // dusty pillow
 

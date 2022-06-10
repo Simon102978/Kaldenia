@@ -395,9 +395,9 @@ namespace Server.Engines.ArenaSystem
 
             m.BeginTarget(-1, false, Targeting.TargetFlags.None, (fro, targeted) =>
                 {
-                    if (m is PlayerMobile && targeted is ArenaStone)
+                    if (m is PlayerMobile && targeted is ArenaManager)
                     {
-                        ArenaStone stone = (ArenaStone)targeted;
+						ArenaManager stone = (ArenaManager)targeted;
 
                         if (stone.Arena != null)
                         {

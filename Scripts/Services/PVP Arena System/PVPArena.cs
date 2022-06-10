@@ -17,8 +17,8 @@ namespace Server.Engines.ArenaSystem
         [CommandProperty(AccessLevel.GameMaster)]
         public ArenaManager Manager { get; set; }
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public ArenaStone Stone { get; set; }
+   /*     [CommandProperty(AccessLevel.GameMaster)]
+        public ArenaStone Stone { get; set; }*/
 
         [CommandProperty(AccessLevel.GameMaster)]
         public ArenaExitBanner Banner1 { get; set; }
@@ -70,11 +70,11 @@ namespace Server.Engines.ArenaSystem
                 Manager.MoveToWorld(Definition.ManagerLocation, Definition.Map);
             }
 
-            if (Stone == null)
+          /*  if (Stone == null)
             {
                 Stone = new ArenaStone(this);
                 Stone.MoveToWorld(Definition.StoneLocation, Definition.Map);
-            }
+            }*/
 
             if (Banner1 == null)
             {
@@ -120,11 +120,11 @@ namespace Server.Engines.ArenaSystem
                 Manager.Delete();
             }
 
-            if (Stone != null && !Stone.Deleted)
+      /*      if (Stone != null && !Stone.Deleted)
             {
                 Stone.Delete();
             }
-
+	  */
             if (Banner1 != null)
             {
                 Banner1.Delete();
@@ -296,7 +296,7 @@ namespace Server.Engines.ArenaSystem
         private Point3D GetRandomRemovalLocation(Mobile m = null)
         {
             Rectangle2D rec = (m == null || m.Alive) ? Definition.EjectLocation : Definition.DeadEjectLocation;
-            Point3D loc = (m == null || m.Alive) ? Definition.StoneLocation : Definition.ManagerLocation;
+            Point3D loc =  Definition.ManagerLocation;
             Point3D p = loc;
 
             Map map = Definition.Map;
@@ -306,7 +306,7 @@ namespace Server.Engines.ArenaSystem
                 p = map.GetRandomSpawnPoint(rec);
 
 				if (m == null || m.Alive)
-					p.Z = Definition.StoneLocation.Z;
+					p.Z = Definition.ManagerLocation.Z;
 				else
 					p.Z = Definition.DeadZ;
 
@@ -376,7 +376,7 @@ namespace Server.Engines.ArenaSystem
                 writer.Write(blocker);
             }
 
-            writer.Write(Stone);
+    //        writer.Write(Stone);
             writer.Write(Manager);
             writer.Write(Banner1);
             writer.Write(Banner2);
@@ -436,7 +436,7 @@ namespace Server.Engines.ArenaSystem
                     Blockers.Add(blocker);
             }
 
-            Stone = reader.ReadItem() as ArenaStone;
+       /*     Stone =*/ /*reader.ReadItem()/* as ArenaStone*/;
             Manager = reader.ReadMobile() as ArenaManager;
             Banner1 = reader.ReadItem() as ArenaExitBanner;
             Banner2 = reader.ReadItem() as ArenaExitBanner;
@@ -461,8 +461,8 @@ namespace Server.Engines.ArenaSystem
                 CurrentDuel = new ArenaDuel(reader, this);
             }
 
-            if (Stone != null)
-                Stone.Arena = this;
+       /*     if (Stone != null)
+                Stone.Arena = this;*/
 
             if (Manager != null)
                 Manager.Arena = this;

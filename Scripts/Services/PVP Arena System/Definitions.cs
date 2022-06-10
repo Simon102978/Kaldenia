@@ -6,9 +6,9 @@ namespace Server.Engines.ArenaSystem
         [CommandProperty(AccessLevel.GameMaster)]
         public string Name { get; private set; }
 
-        [CommandProperty(AccessLevel.GameMaster)]
+  /*      [CommandProperty(AccessLevel.GameMaster)]
         public Point3D StoneLocation { get; private set; }
-
+  */
         [CommandProperty(AccessLevel.GameMaster)]
         public Point3D ManagerLocation { get; private set; }
 
@@ -57,7 +57,7 @@ namespace Server.Engines.ArenaSystem
         public ArenaDefinition(
             string name,
             int mapIndex,
-            Point3D stoneLoc,
+    //        Point3D stoneLoc,
             Point3D manLoc,
             Point3D banloc1,
             Point3D banloc2,
@@ -74,7 +74,7 @@ namespace Server.Engines.ArenaSystem
         {
             Name = name;
             MapIndex = mapIndex;
-            StoneLocation = stoneLoc;
+     //       StoneLocation = stoneLoc;
             ManagerLocation = manLoc;
             BannerLocation1 = banloc1;
             BannerLocation2 = banloc2;
@@ -103,7 +103,7 @@ namespace Server.Engines.ArenaSystem
 
  
             LostLandsFelucca = new ArenaDefinition("Alverton", 0,
-                new Point3D(1379, 687, -35),
+     //           new Point3D(1379, 687, -35),
                 new Point3D(1378, 687, -35),
                 new Point3D(1373, 671, 25),
                 new Point3D(1373, 668, 25),

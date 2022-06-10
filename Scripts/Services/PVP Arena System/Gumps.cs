@@ -251,7 +251,7 @@ namespace Server.Engines.ArenaSystem
 
         public override void OnResponse(RelayInfo info)
         {
-            if (Arena.Stone != null && !User.InRange(Arena.Stone.Location, 15))
+            if (Arena.Manager != null && !User.InRange(Arena.Manager.Location, 15))
             {
                 return;
             }
@@ -828,9 +828,10 @@ namespace Server.Engines.ArenaSystem
                     {
                         PVPArenaSystem.SendMessage(from, 1116151); // You have already banned the player once.
                     }
-                    else if (!pm.InRange(Arena.Stone.Location, 12))
+                    else if (!pm.InRange(Arena.Manager.Location, 12))
                     {
-                        PVPArenaSystem.SendMessage(from, 1116149); // The targeted player is too far away from the arena stone.
+						PVPArenaSystem.SendMessage(from, "Le joueur est trop loin de " + Arena.Manager.Name + ".");
+				//	   PVPArenaSystem.SendMessage(from, 1116149); // The targeted player is too far away from the arena stone.
                     }
                     else if (PVPArenaSystem.BlockSameIP && PVPArenaSystem.IsSameIP(from, pm))
                     {

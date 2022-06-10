@@ -530,7 +530,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(LargeDiamondPillow), "Tapis / Coussins", "Coussin Diamant", 55.0, 80.0, typeof(Cloth), "Tissus", 25, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(SmallDiamondPillow), "Tapis / Coussins", "Petit Coussin Diamant", 35.0, 60.0, typeof(Cloth), "Tissus", 15, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(LargeSquarePillow), "Tapis / Coussins", "Coussin Carré", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
-			index = AddCraft(typeof(ThrowPillow), "Tapis / Coussins", "Coussin Motifs", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(ThrowPillow), "Tapis / Coussins", "Coussin à Motifs", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
 			
 
 

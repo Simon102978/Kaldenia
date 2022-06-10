@@ -1,4 +1,5 @@
 using Server.Items;
+using Server.Misc;
 
 namespace Server.Mobiles
 {
@@ -8,7 +9,7 @@ namespace Server.Mobiles
         public Samurai()
             : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
-            Title = "the samurai";
+            Title = "Un Kuya";
 
             InitStats(100, 100, 25);
 
@@ -18,8 +19,9 @@ namespace Server.Mobiles
             SetSkill(SkillName.Swords, 64.0, 85.0);
 
             SpeechHue = Utility.RandomDyedHue();
+			Race = BaseRace.GetRace(Utility.Random(4));
 
-            Hue = Utility.RandomSkinHue();
+			Hue = Utility.RandomSkinHue();
 
             if (Female = Utility.RandomBool())
             {
@@ -88,18 +90,20 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.LootGold(250, 300));
-        }
+			AddLoot(LootPack.Average);
+		}
 
         public Samurai(Serial serial)
             : base(serial)
         {
         }
 
-        public override bool CanTeach => true;
-        public override bool ClickTitle => false;
+		public override bool ClickTitle => false;
+		public override bool AlwaysMurderer => true;
 
-        public override void Serialize(GenericWriter writer)
+		public override bool ShowFameTitle => false;
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 

@@ -17,8 +17,8 @@ namespace Server.Mobiles
             {
                 Add(new GenericBuyInfo("1060834", typeof(Engines.Plants.PlantBowl), 2, 20, 0x15FD, 0));
 
-                Add(new GenericBuyInfo(typeof(Arrow), 2, 20, 0xF3F, 0, true));
-                Add(new GenericBuyInfo(typeof(Bolt), 5, 20, 0x1BFB, 0, true));
+                Add(new GenericBuyInfo(typeof(Arrow), 3, 999, 0xF3F, 0, true));
+                Add(new GenericBuyInfo(typeof(Bolt), 3, 999, 0x1BFB, 0, true));
 
                 Add(new GenericBuyInfo(typeof(Backpack), 15, 20, 0x9B2, 0));
                 Add(new GenericBuyInfo(typeof(Pouch), 6, 20, 0xE79, 0));
@@ -82,8 +82,8 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Dices), 2, 20, 0xFA7, 0));
                 Add(new GenericBuyInfo(typeof(SmallBagBall), 3, 20, 0x2256, 0));
                 Add(new GenericBuyInfo(typeof(LargeBagBall), 3, 20, 0x2257, 0));
-                Add(new GenericBuyInfo("1079931", typeof(SalvageBag), 1255, 20, 0xE76, Utility.RandomBlueHue()));
-                Add(new GenericBuyInfo("1114770", typeof(SkinTingeingTincture), 1255, 20, 0xEFF, 90));
+           //     Add(new GenericBuyInfo("1079931", typeof(SalvageBag), 1255, 20, 0xE76, Utility.RandomBlueHue()));
+           //     Add(new GenericBuyInfo("1114770", typeof(SkinTingeingTincture), 1255, 20, 0xEFF, 90));
             }
         }
 

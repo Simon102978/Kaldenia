@@ -1164,7 +1164,10 @@ namespace Server.Mobiles
 		public override int GetResistance(ResistanceType type)
 		{
 			int resistance = base.GetResistance(type) + SphynxFortune.GetResistanceBonus(this, type);
-
+			if (type != ResistanceType.Physical)
+			{
+				resistance += 20;
+			}
 			if (CityLoyaltySystem.HasTradeDeal(this, TradeDeal.SocietyOfClothiers))
 			{
 				resistance++;
@@ -1173,9 +1176,10 @@ namespace Server.Mobiles
 
 			return resistance;
 		}
-		#endregion
+	
+	#endregion
 
-		public override void OnManaChange(int oldValue)
+	public override void OnManaChange(int oldValue)
 		{
 			base.OnManaChange(oldValue);
 			if (m_ExecutesLightningStrike > 0)

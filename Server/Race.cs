@@ -336,6 +336,9 @@ namespace Server
 
 		public virtual bool Barbe => true;
 
-	
+		public static implicit operator Race(string v)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

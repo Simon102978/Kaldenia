@@ -59,10 +59,10 @@ namespace Server.Mobiles
                 Female = true;
 
             SpeechHue = Utility.RandomDyedHue();
-            Title = "the dread pirate";
-            Hue = Race.RandomSkinHue();
+            Title = "Pirate Maudit";
+			Race = BaseRace.GetRace(Utility.Random(4));
 
-            Body = Female ? 0x191 : 0x190;
+			Body = Female ? 0x191 : 0x190;
 
             SetStr(500, 750);
             SetDex(125, 175);
@@ -88,7 +88,7 @@ namespace Server.Mobiles
             };
 
             if (Utility.RandomBool())
-                hat = new Bandana();
+                hat = new ChapeauPirate();
             else
                 hat = new TricorneHat();
 

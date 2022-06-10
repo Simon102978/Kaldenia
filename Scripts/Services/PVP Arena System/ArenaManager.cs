@@ -17,7 +17,7 @@ namespace Server.Engines.ArenaSystem
         [Constructable]
         public ArenaManager(PVPArena arena)
         {
-            Title = "The Arena Manager";
+            Title = "Commis de l'arene";
 
             Arena = arena;
             CantWalk = true;
@@ -26,12 +26,18 @@ namespace Server.Engines.ArenaSystem
         public override void InitBody()
         {
             Female = true;
-            Body = 0x191;
-            Name = NameList.RandomName("female");
+			Body = 0x191;
 
-            HairItemID = Race.RandomHair(true);
-            HairHue = Race.RandomHairHue();
-            Hue = Race.RandomSkinHue();
+			base.Race.RemoveRace(this);
+
+			Race.GetRace(0).AddRace(this, 1017);
+
+
+			Name = "Lucia"; /*NameList.RandomName("female");*/
+
+			HairItemID = 41883; /* Race.RandomHair(true);*/
+			HairHue = 1154; /*Race.RandomHairHue();*/
+           // Hue = Race.RandomSkinHue();
 
             SetStr(100);
             SetInt(100);
@@ -40,15 +46,26 @@ namespace Server.Engines.ArenaSystem
 
         public override void InitOutfit()
         {
-            SetWearable(new PlateHaidate(), 1173);
-            SetWearable(new FemalePlateChest(), 1173);
-            SetWearable(new PlateGloves(), 1173);
-            SetWearable(new Bonnet(), 1173);
-            SetWearable(new Sandals(), 1173);
-            SetWearable(new Spellbook(), 1168);
-        }
+			Bustier bust = new Bustier(1326);
+			bust.Layer = Layer.MiddleTorso;
+			SetWearable(bust);
 
-        public virtual void OfferResurrection(Mobile m)
+			RobeProvocante2 robe = new RobeProvocante2(1237);
+			robe.Layer = Layer.InnerTorso;
+			SetWearable(robe);
+
+			SetWearable(new Bottes10(), 1326);
+
+
+			/* SetWearable(new PlateHaidate(), 1173);
+			 SetWearable(new FemalePlateChest(), 1173);
+			 SetWearable(new PlateGloves(), 1173);
+			 SetWearable(new Bonnet(), 1173);
+			 SetWearable(new Sandals(), 1173);
+			 SetWearable(new Spellbook(), 1168);*/
+		}
+
+		public virtual void OfferResurrection(Mobile m)
         {
             Direction = GetDirectionTo(m);
 

@@ -94,11 +94,11 @@ namespace Server.Engines.ArenaSystem
                 Region.Register();
             }
 
-            if (GuardRegion == null)
+       /*     if (GuardRegion == null)
             {
                 GuardRegion = new GuardedArenaRegion(string.Format("{0}_Guarded", Definition.Name), Definition.Map, Definition.GuardBounds);
                 GuardRegion.Register();
-            }
+            }*/
         }
 
         public void Unregister()
@@ -109,11 +109,11 @@ namespace Server.Engines.ArenaSystem
                 Region = null;
             }
 
-            if (GuardRegion != null)
+ /*          if (GuardRegion != null)
             {
                 GuardRegion.Unregister();
                 GuardRegion = null;
-            }
+            }*/
 
             if (Manager != null)
             {
@@ -305,10 +305,15 @@ namespace Server.Engines.ArenaSystem
             {
                 p = map.GetRandomSpawnPoint(rec);
 
-                if (m == null || m.Alive)
+				if (m == null || m.Alive)
+					p.Z = Definition.StoneLocation.Z;
+				else
+					p.Z = Definition.DeadZ;
+
+             /*   if (m == null || m.Alive)
                     p.Z = Definition.StoneLocation.Z;
                 else
-                    p.Z = Definition.ManagerLocation.Z;
+                    p.Z = Definition.ManagerLocation.Z;*/
             }
 
             return p;

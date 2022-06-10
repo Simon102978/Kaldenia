@@ -100,7 +100,7 @@ namespace Server.Engines.ArenaSystem
                     for (int y = rec.Y; y < rec.Y + rec.Height; y++)
                     {
                         Static st = new Static(0x3709);
-                        st.MoveToWorld(new Point3D(x, y, Arena.Definition.Map.GetAverageZ(x, y)), Map);
+                        st.MoveToWorld(new Point3D(x, y, Arena.Definition.ArenaZ), Map);
                         _Items.Add(st);
                     }
                 }

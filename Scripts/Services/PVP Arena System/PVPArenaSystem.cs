@@ -12,8 +12,8 @@ namespace Server.Engines.ArenaSystem
     public class PVPArenaSystem : PointsSystem
     {
         public static PVPArenaSystem Instance { get; set; }
-        public static bool Enabled => false;
-        public static bool BlockSameIP => true;
+        public static bool Enabled => true;
+        public static bool BlockSameIP => false;
 
         public override PointsType Loyalty => PointsType.PVPArena;
         public override TextDefinition Name => m_Name;
@@ -21,6 +21,7 @@ namespace Server.Engines.ArenaSystem
         public override double MaxPoints => double.MaxValue;
 
         public override bool ShowOnLoyaltyGump => false;
+
         private readonly TextDefinition m_Name = new TextDefinition("Arena Stats");
 
         public static List<PVPArena> Arenas { get; set; }
@@ -347,7 +348,7 @@ namespace Server.Engines.ArenaSystem
 
         public static void InitializeArenas()
         {
-   /*         if (CanInitialize(ArenaDefinition.LostLandsTrammel))
+         /*   if (CanInitialize(ArenaDefinition.LostLandsTrammel))
             {
                 Instance.Register(new PVPArena(ArenaDefinition.LostLandsTrammel));
             }
@@ -356,8 +357,8 @@ namespace Server.Engines.ArenaSystem
 					   {
 						   Instance.Register(new PVPArena(ArenaDefinition.LostLandsFelucca));
 					   }
-					  /*
-					   if (CanInitialize(ArenaDefinition.HavenTrammel))
+					  
+	/*				   if (CanInitialize(ArenaDefinition.HavenTrammel))
 					   {
 						   Instance.Register(new PVPArena(ArenaDefinition.HavenTrammel));
 					   }
@@ -365,8 +366,8 @@ namespace Server.Engines.ArenaSystem
 					   if (CanInitialize(ArenaDefinition.HavenFelucca))
 					   {
 						   Instance.Register(new PVPArena(ArenaDefinition.HavenFelucca));
-					   }
-	*/
+					   }*/
+	
 		}
 
 		private static bool CanInitialize(ArenaDefinition def)

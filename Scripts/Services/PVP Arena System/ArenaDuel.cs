@@ -371,6 +371,8 @@ namespace Server.Engines.ArenaSystem
 
             Point3D p = map.GetRandomSpawnPoint(rec);
 
+			p.Z = Arena.Definition.ArenaZ;
+
             BaseCreature.TeleportPets(pm, p, map);
             pm.MoveToWorld(p, Arena.Definition.Map);
 
@@ -539,18 +541,18 @@ namespace Server.Engines.ArenaSystem
                     {
                         Item blocker;
 
-                        if (list.Count > 0)
+             /*           if (list.Count > 0)
                         {
                             blocker = list[0];
                             list.RemoveAt(0);
                         }
                         else
-                        {
+                        {*/
                             blocker = new Blocker();
                             Arena.Blockers.Add(blocker);
-                        }
+                      //  }
 
-                        blocker.MoveToWorld(new Point3D(x, y, Arena.Definition.Map.GetAverageZ(x, y)), Arena.Definition.Map);
+                        blocker.MoveToWorld(new Point3D(x, y, Arena.Definition.ArenaZ), Arena.Definition.Map);
                     }
                 }
             }
@@ -572,7 +574,7 @@ namespace Server.Engines.ArenaSystem
                 {
                     for (int y = rec.Y; y < rec.Y + rec.Height; y++)
                     {
-                        Effects.SendLocationEffect(new Point3D(x, y, Arena.Definition.Map.GetAverageZ(x, y)), Arena.Definition.Map, 0x3709, 60, 10);
+                        Effects.SendLocationEffect(new Point3D(x, y, Arena.Definition.ArenaZ), Arena.Definition.Map, 0x3709, 60, 10);
                     }
                 }
             }

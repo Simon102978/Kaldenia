@@ -11,7 +11,11 @@ namespace Server.Items
     {
         private static readonly Dictionary<Mobile, ExpireTimer> m_Table = new Dictionary<Mobile, ExpireTimer>();
 
-        public override int BaseMana => 20;
+		public override string Name => "Cold Wind";
+
+		public override int Id => 33;
+
+		public override int BaseMana => 20;
 
         public override double DamageScalar => 1.5;
 

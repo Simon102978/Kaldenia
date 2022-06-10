@@ -10,7 +10,10 @@ namespace Server.Items
 
         public override int AccuracyBonus => -35;
 
-        public override bool ValidatesDuringHit => false;
+		public override string Name => "Tir en mouvement";
+
+		public override int Id => 10;
+		public override bool ValidatesDuringHit => false;
 
         public override bool OnBeforeSwing(Mobile attacker, Mobile defender)
         {

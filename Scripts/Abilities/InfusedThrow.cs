@@ -11,7 +11,11 @@ namespace Server.Items
     {
         public override int BaseMana => 25;
 
-        public override void OnHit(Mobile attacker, Mobile defender, int damage)
+		public override string Name => "Lancer infusé";
+
+		public override int Id => 30;
+
+		public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {
             if (!CheckMana(attacker, true))
                 return;

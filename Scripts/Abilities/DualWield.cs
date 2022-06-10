@@ -12,7 +12,11 @@ namespace Server.Items
 
         public static Dictionary<Mobile, DualWieldTimer> Registry => m_Registry;
 
-        public override int BaseMana => 20;
+		public override string Name => "Dual Wield";
+
+		public override int Id => 21;
+
+		public override int BaseMana => 20;
 
         public static readonly TimeSpan Duration = TimeSpan.FromSeconds(8);
 

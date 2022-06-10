@@ -4,7 +4,11 @@ namespace Server.Items
     {
         public override int BaseMana => 25;
 
-        public override SkillName GetSecondarySkill(Mobile from)
+		public override string Name => "Serpent Arrow";
+
+		public override int Id => 28;
+
+		public override SkillName GetSecondarySkill(Mobile from)
         {
             return SkillName.Poisoning;
         }

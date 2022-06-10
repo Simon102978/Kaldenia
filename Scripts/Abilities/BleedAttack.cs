@@ -16,7 +16,11 @@ namespace Server.Items
     {
         private static readonly Dictionary<Mobile, BleedTimer> m_BleedTable = new Dictionary<Mobile, BleedTimer>();
 
-        public override int BaseMana => 30;
+		public override string Name => "Saignement";
+
+		public override int Id => 2;
+
+		public override int BaseMana => 30;
 
         public static bool IsBleeding(Mobile m)
         {

@@ -14,10 +14,14 @@ namespace Server.Items
 
         public virtual double DamageScalar => 1.0;
 
-        /// <summary>
-        ///		Return false to make this special ability consume no ammo from ranged weapons
-        /// </summary>
-        public virtual bool ConsumeAmmo => true;
+		public virtual int Id => 0;
+
+		public virtual string Name => "Aucun";
+
+		/// <summary>
+		///		Return false to make this special ability consume no ammo from ranged weapons
+		/// </summary>
+		public virtual bool ConsumeAmmo => true;
 
         public virtual void OnHit(Mobile attacker, Mobile defender, int damage)
         {
@@ -403,10 +407,10 @@ namespace Server.Items
 
         public static void Initialize()
         {
-            EventSink.SetAbility += EventSink_SetAbility;
+  //          EventSink.SetAbility += EventSink_SetAbility;
         }
 
-        private static void EventSink_SetAbility(SetAbilityEventArgs e)
+   /*     private static void EventSink_SetAbility(SetAbilityEventArgs e)
         {
             int index = e.Index;
 
@@ -414,7 +418,7 @@ namespace Server.Items
                 ClearCurrentAbility(e.Mobile);
             else if (index >= 1 && index < m_Abilities.Length)
                 SetCurrentAbility(e.Mobile, m_Abilities[index]);
-        }
+        }*/
 
         private static readonly Hashtable m_PlayersTable = new Hashtable();
 

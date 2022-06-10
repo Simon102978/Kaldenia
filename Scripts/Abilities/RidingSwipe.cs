@@ -12,7 +12,11 @@ namespace Server.Items
     {
         public override int BaseMana => 25;
 
-        public override bool CheckSkills(Mobile from)
+		public override string Name => "Riding Swipe";
+
+		public override int Id => 14;
+
+		public override bool CheckSkills(Mobile from)
         {
             if (GetSkill(from, SkillName.Bushido) < 50.0)
             {

@@ -16,7 +16,11 @@ namespace Server.Items
 
         public override int BaseMana => 30;
 
-        public static bool IsImmune(Mobile m)
+		public override string Name => "Coup paralysant";
+
+		public override int Id => 11;
+
+		public static bool IsImmune(Mobile m)
         {
             return m_Table.Contains(m);
         }

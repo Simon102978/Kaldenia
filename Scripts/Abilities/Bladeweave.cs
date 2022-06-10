@@ -17,7 +17,11 @@ namespace Server.Items
             }
         }
 
-        private static readonly Dictionary<Mobile, BladeWeaveRedirect> m_NewAttack = new Dictionary<Mobile, BladeWeaveRedirect>();
+		public override string Name => "Bladeweave";
+
+		public override int Id => 24;
+
+		private static readonly Dictionary<Mobile, BladeWeaveRedirect> m_NewAttack = new Dictionary<Mobile, BladeWeaveRedirect>();
 
         public static bool BladeWeaving(Mobile attacker, out WeaponAbility a)
         {

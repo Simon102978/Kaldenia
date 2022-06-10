@@ -7,7 +7,10 @@ namespace Server.Items
     {
         public override int BaseMana => 20;
 
-        public override double DamageScalar => 1.5;
+		public override string Name => "Coup écrasant";
+		public override int Id => 4;
+
+		public override double DamageScalar => 1.5;
 
         public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {

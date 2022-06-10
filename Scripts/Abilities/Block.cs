@@ -20,7 +20,10 @@ namespace Server.Items
 
         public override int BaseMana => 20;
 
-        public override int AccuracyBonus => -15;
+		public override string Name => "Bloquer";
+
+		public override int Id => 16;
+		public override int AccuracyBonus => -15;
 
         public override SkillName GetSecondarySkill(Mobile from)
         {

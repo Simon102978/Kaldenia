@@ -10,7 +10,11 @@ namespace Server.Items
     {
         public static Dictionary<Mobile, Timer> _Table = new Dictionary<Mobile, Timer>();
 
-        public override SkillName GetSecondarySkill(Mobile from)
+		public override string Name => "Armor Pierce";
+
+		public override int Id => 23;
+
+		public override SkillName GetSecondarySkill(Mobile from)
         {
             return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
         }

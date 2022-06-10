@@ -9,7 +9,11 @@ namespace Server.Items
 
         public override bool ConsumeAmmo => false;
 
-        public override void OnHit(Mobile attacker, Mobile defender, int damage)
+		public override string Name => "Lightning Arrow";
+
+		public override int Id => 26;
+
+		public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {
             if (!Validate(attacker))
                 return;

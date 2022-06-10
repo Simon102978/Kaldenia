@@ -11,7 +11,11 @@ namespace Server.Items
 
         public override double DamageScalar => 1.25;
 
-        public override bool RequiresSecondarySkill(Mobile from)
+		public override string Name => "Shadow Strike";
+
+		public override int Id => 12;
+
+		public override bool RequiresSecondarySkill(Mobile from)
         {
             return false;
         }

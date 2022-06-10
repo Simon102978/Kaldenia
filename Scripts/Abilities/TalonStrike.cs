@@ -11,7 +11,11 @@ namespace Server.Items
     {
         private static readonly Hashtable m_Registry = new Hashtable();
 
-        public override SkillName GetSecondarySkill(Mobile from)
+		public override string Name => "Talon Strike";
+
+		public override int Id => 19;
+
+		public override SkillName GetSecondarySkill(Mobile from)
         {
             return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
         }

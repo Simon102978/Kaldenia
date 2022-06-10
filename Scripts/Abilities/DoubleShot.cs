@@ -7,7 +7,11 @@ namespace Server.Items
     {
         public override int BaseMana => 30;
 
-        public override bool OnBeforeDamage(Mobile attacker, Mobile defender)
+		public override string Name => "Double tir";
+
+		public override int Id => 22;
+
+		public override bool OnBeforeDamage(Mobile attacker, Mobile defender)
         {
             BaseWeapon wep = attacker.Weapon as BaseWeapon;
 

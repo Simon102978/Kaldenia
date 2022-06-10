@@ -9,7 +9,10 @@ namespace Server.Items
     {
         public override int BaseMana => 30;
 
-        public override double DamageScalar => 0.9;
+		public override int Id => 1;
+
+		public override string Name => "Ignorer l'armure";
+		public override double DamageScalar => 0.9;
 
         public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {

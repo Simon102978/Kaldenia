@@ -12,7 +12,11 @@ namespace Server.Items
     /// </summary>
     public class FrenziedWhirlwind : WeaponAbility
     {
-        public override SkillName GetSecondarySkill(Mobile from)
+
+		public override string Name => "Tourbillon frénétique";
+
+		public override int Id => 15;
+		public override SkillName GetSecondarySkill(Mobile from)
         {
             return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
         }

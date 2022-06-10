@@ -13,7 +13,10 @@ namespace Server.Items
 
         public override int BaseMana => 20;
 
-        public override void OnHit(Mobile attacker, Mobile defender, int damage)
+		public override int Id => 31;
+		public override string Name => "Arc mystique";
+
+		public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {
             if (!CheckMana(attacker, true) && defender != null)
                 return;

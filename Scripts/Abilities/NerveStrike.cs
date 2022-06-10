@@ -10,7 +10,10 @@ namespace Server.Items
     {
         public override int BaseMana => 30;
 
-        public override bool CheckSkills(Mobile from)
+		public override int Id => 18;
+		public override string Name => "Nerve Strike";
+
+		public override bool CheckSkills(Mobile from)
         {
             if (GetSkill(from, SkillName.Bushido) < 50.0)
             {

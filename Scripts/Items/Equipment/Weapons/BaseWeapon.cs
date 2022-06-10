@@ -5206,7 +5206,25 @@ namespace Server.Items
             {
                 list.Add(1158861, LastParryChance.ToString()); // Last Parry Chance: ~1_val~%
             }
-        }
+
+
+			if (PrimaryAbility != null)
+			{
+				list.Add(PrimaryAbility.Name + " (" + PrimaryAbility.Id + ")");
+			}
+
+			if (SecondaryAbility != null)
+			{
+				list.Add(SecondaryAbility.Name + " (" + SecondaryAbility.Id + ")");
+			}
+
+
+
+
+
+
+
+		}
 
         public override void AddItemPowerProperties(ObjectPropertyList list)
         {

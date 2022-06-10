@@ -7,7 +7,11 @@ namespace Server.Items
     {
         public override int BaseMana => 35;
 
-        public override void OnHit(Mobile attacker, Mobile defender, int damage)
+		public override string Name => "Force de la nature";
+
+		public override int Id => 29;
+
+		public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {
             if (!Validate(attacker) || !CheckMana(attacker, true))
                 return;

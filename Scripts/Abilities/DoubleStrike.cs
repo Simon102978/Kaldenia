@@ -9,7 +9,11 @@ namespace Server.Items
         public override int BaseMana => 30;
         public override double DamageScalar => 0.9;
 
-        public override bool OnBeforeDamage(Mobile attacker, Mobile defender)
+		public override string Name => "Double frappe";
+
+		public override int Id => 7;
+
+		public override bool OnBeforeDamage(Mobile attacker, Mobile defender)
         {
             BaseWeapon wep = attacker.Weapon as BaseWeapon;
 

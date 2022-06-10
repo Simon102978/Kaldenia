@@ -13,7 +13,11 @@ namespace Server.Items
     {
         public override int BaseMana => 25;
 
-        public override bool Validate(Mobile from)
+		public override string Name => "Désarçonner";
+
+		public override int Id => 6;
+
+		public override bool Validate(Mobile from)
         {
             if (!base.Validate(from))
                 return false;

@@ -9,7 +9,12 @@ namespace Server.Items
     {
         public override int BaseMana => 20;
 
-        public override bool OnBeforeDamage(Mobile attacker, Mobile defender)
+		public override string Name => "Coup de commotion";
+		public override int Id => 3;
+
+
+
+		public override bool OnBeforeDamage(Mobile attacker, Mobile defender)
         {
             if (!Validate(attacker) || !CheckMana(attacker, true))
                 return false;

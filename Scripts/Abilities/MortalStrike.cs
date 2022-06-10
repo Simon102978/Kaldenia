@@ -18,7 +18,11 @@ namespace Server.Items
 
         public override int BaseMana => 30;
 
-        public static bool IsWounded(Mobile m)
+		public override string Name => "Mortal Strike";
+
+		public override int Id => 9;
+
+		public static bool IsWounded(Mobile m)
         {
             return m_Table.ContainsKey(m);
         }

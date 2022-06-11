@@ -2,6 +2,7 @@ using Server.ContextMenus;
 using Server.Engines.Craft;
 using Server.Network;
 using Server.Misc;
+using Server.Mobiles;
 
 using System;
 using System.Collections.Generic;
@@ -599,6 +600,19 @@ namespace Server.Items
                 mob.RemoveStatMod(modName + "Int");
 
                 mob.CheckStatTimers();
+
+				if (mob is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cm = (CustomPlayerMobile)mob;
+
+					if (cm.Masque)
+					{
+						if (!cm.CacheIdentite())
+						{
+							cm.Masque = false;
+						}
+					}
+				}
             }
 
             base.OnRemoved(parent);

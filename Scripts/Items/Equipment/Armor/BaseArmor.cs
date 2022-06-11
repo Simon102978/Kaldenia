@@ -4,7 +4,7 @@ using Server.Network;
 using Server.Misc;
 using AMA = Server.Items.ArmorMeditationAllowance;
 using AMT = Server.Items.ArmorMaterialType;
-
+using Server.Mobiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -101,7 +101,9 @@ namespace Server.Items
         public virtual bool AllowMaleWearer => true;
         public virtual bool AllowFemaleWearer => true;
 
-        public abstract AMT MaterialType { get; }
+		public virtual bool Disguise { get { return false; } }
+
+		public abstract AMT MaterialType { get; }
 
         public virtual AMA DefMedAllowance => AMA.None;
         public virtual AMA AosMedAllowance => DefMedAllowance;
@@ -2022,7 +2024,21 @@ namespace Server.Items
 
                 if (IsSetItem && m_SetEquipped)
                     SetHelper.RemoveSetBonus(m, SetID, this);
-            }
+
+				if (m is CustomPlayerMobile)
+				{
+					CustomPlayerMobile cm = (CustomPlayerMobile)m;
+
+					if (cm.Masque)
+					{
+						if (!cm.CacheIdentite())
+						{
+							cm.Masque = false;
+						}
+					}
+				}
+
+			}
 
             base.OnRemoved(parent);
         }

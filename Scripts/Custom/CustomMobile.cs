@@ -43,10 +43,13 @@ namespace Server.Mobiles
 		private AffinityDictionary m_MagicAfinity;
 		private List<int> m_QuickSpells = new List<int>();
 		private Deguisement m_Deguisement = null;
+		private bool m_Masque = false;
 
 		private Race m_BaseRace;
 		private bool m_BaseFemale;
 		private int m_BaseHue;
+
+	
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
@@ -130,15 +133,8 @@ namespace Server.Mobiles
 
 		}
 
-
-
-
-
-
 		[CommandProperty(AccessLevel.GameMaster)]
 		public StatutSocialEnum StatutSocial { get => m_StatutSocial; set => m_StatutSocial = value; }
-
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastLoginTime
@@ -251,10 +247,37 @@ namespace Server.Mobiles
 			get;
 			set;
 		}
-
 		public List<MissiveContent> MissiveEnAttente { get { return m_MissiveEnAttente; } set { m_MissiveEnAttente = value; } }
-	
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool Masque 
+		{ 
+			get 
+			{ 
+				return m_Masque; 
+			} 
+			set 
+			{
+				if (m_Masque)
+				{
+					NameMod = null;
+					m_Masque = value;
+					SendMessage("Votre identité est revelée.");
+				}
+				else if (NameMod != null)
+				{
+
+				}
+				else
+				{
+					NameMod = "Identite masquee";
+					m_Masque = value;
+				}
+
+
+				
+			} 
+		}
 
 		public List<int> QuickSpells
 		{
@@ -333,7 +356,6 @@ namespace Server.Mobiles
 
 
 		}
-
 
 		#region Hiding
 
@@ -520,8 +542,6 @@ namespace Server.Mobiles
 		}
 
 		#endregion
-
-
 
 
 		#region statutsocial	
@@ -880,6 +900,37 @@ namespace Server.Mobiles
 
 
 
+		}
+
+
+		public bool CacheIdentite()
+		{
+			foreach (Layer Laitem in Enum.GetValues(typeof(Layer)))
+			{
+				Item item = FindItemOnLayer(Laitem);
+
+				if (item is BaseClothing)
+				{
+					BaseClothing bc = (BaseClothing)item;
+
+					if (bc.Disguise)
+					{
+						return true;
+					}
+				}
+				else if (item is BaseArmor)
+				{
+					BaseArmor bc = (BaseArmor)item;
+
+					if (bc.Disguise)
+					{
+						return true;
+					}
+				}
+
+
+			}
+			return false;
 		}
 
 		#endregion
@@ -1618,6 +1669,12 @@ namespace Server.Mobiles
 				{
 					Deguisement.RemoveDeguisement();
 				}
+
+				if (Masque)
+				{
+					Masque = false;
+				}
+
 			}
 
 			Vulnerability = true;
@@ -1747,7 +1804,6 @@ namespace Server.Mobiles
 			accFrom.AddReroll(new Reroll(this));
 		}
 
-
 		public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
@@ -1757,14 +1813,21 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 17:
+					{
+						NameMod = reader.ReadString();
+						goto case 16;
+					}
+				case 16:
+					{
+						m_Masque = reader.ReadBool();
+						goto case 15;
+					}
 				case 15:
 					{
 						StatutSocial = (StatutSocialEnum)reader.ReadInt();
-
-
 						goto case 14;
 					}
-
 				case 14:
 					{
 						MissiveEnAttente = new List<MissiveContent>();
@@ -1775,9 +1838,6 @@ namespace Server.Mobiles
 						{
 							MissiveEnAttente.Add(MissiveContent.Deserialize(reader));
 						}
-
-
-
 						goto case 13;
 					}
 
@@ -1813,13 +1873,11 @@ namespace Server.Mobiles
 					{
 						
 						m_Deguisement = Deguisement.Deserialize(reader);
-
 						goto case 8;
 					}
 				case 8:
 					{
 						ChosenSpellbook = reader.ReadItem();
-
 						goto case 7;
 					}
 
@@ -1913,7 +1971,11 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(15); // version
+            writer.Write(17); // version
+
+
+			writer.Write(NameMod);
+			writer.Write(m_Masque);
 
 			writer.Write((int)m_StatutSocial);
 

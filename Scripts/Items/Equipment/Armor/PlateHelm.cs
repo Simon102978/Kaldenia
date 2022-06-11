@@ -2,7 +2,9 @@ namespace Server.Items
 {
     public class PlateHelm : BaseArmor
     {
-        [Constructable]
+		public override bool Disguise { get { return true; } }
+
+		[Constructable]
         public PlateHelm()
             : base(0x1412)
         {

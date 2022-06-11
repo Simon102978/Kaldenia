@@ -78,15 +78,19 @@ namespace Server.Spells.Fifth
             {
                 Caster.SendLocalizedMessage(1042402); // You cannot use incognito while wearing body paint
             }
-         /*   else if (DisguiseTimers.IsDisguised(Caster))
-            {
-                Caster.SendLocalizedMessage(1061631); // You can't do that while disguised.
-            }*/
-          /*  else if (!Caster.CanBeginAction(typeof(PolymorphSpell)) || Caster.IsBodyMod)
-            {
-                DoFizzle();
-            }
-		  */
+			/*   else if (DisguiseTimers.IsDisguised(Caster))
+			   {
+				   Caster.SendLocalizedMessage(1061631); // You can't do that while disguised.
+			   }*/
+			/*  else if (!Caster.CanBeginAction(typeof(PolymorphSpell)) || Caster.IsBodyMod)
+			  {
+				  DoFizzle();
+			  }
+			*/
+			else if (Caster.NameMod != null)
+			{
+				Caster.SendMessage("Vous ne pouvez pas lancer se sort quand votre identité est masquée.");
+			}
             else if (CheckSequence())
             {
                 if (Caster.BeginAction(typeof(IncognitoSpell)))

@@ -109,6 +109,12 @@ namespace Server.Misc
             if (body == null || body.Length <= 0)
                 body = "";
 
+			if (beholder.AccessLevel == AccessLevel.Player && beheld.NameMod != null)
+			{
+				beholder.SendMessage("Vous ne réussissez pas à obtenir l'information.");
+				return;
+			}
+
             beholder.Send(new DisplayProfile(beholder != beheld || !beheld.ProfileLocked, beheld, header, body, footer));
         }
 

@@ -299,8 +299,6 @@ namespace Server.Items
 
 	public abstract class BaseFoulards : BaseClothing
 	{
-		public override bool Disguise { get { return false; } }
-
 		public BaseFoulards(int itemID)
 			: this(itemID, 0)
 		{
@@ -333,6 +331,8 @@ namespace Server.Items
 
 	public class Foulard :  BaseFoulards
 	{
+
+
 		[Constructable]
 		public Foulard()
 				: this(0)
@@ -370,6 +370,10 @@ namespace Server.Items
 
 	public class Foulard2 :  BaseFoulards
 		{
+
+			public override bool Disguise { get { return ItemID ==  41800 ? true : false; } }
+
+
 				[Constructable]
 				public Foulard2()
 						: this(0)
@@ -446,6 +450,9 @@ namespace Server.Items
 
 	public class Foulard4 :  BaseFoulards
 			{
+
+				public override bool Disguise { get { return true; } }
+
 				[Constructable]
 				public Foulard4()
 						: this(0)

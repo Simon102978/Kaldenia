@@ -293,7 +293,7 @@ namespace Server.Engines.ArenaSystem
             }
         }
 
-        private Point3D GetRandomRemovalLocation(Mobile m = null)
+        public Point3D GetRandomRemovalLocation(Mobile m = null)
         {
             Rectangle2D rec = (m == null || m.Alive) ? Definition.EjectLocation : Definition.DeadEjectLocation;
             Point3D loc =  Definition.ManagerLocation;

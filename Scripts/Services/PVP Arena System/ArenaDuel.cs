@@ -424,7 +424,12 @@ namespace Server.Engines.ArenaSystem
 
         public void DoPreDuel()
         {
+
+			ClearArena();
+
             AssignStartPoints();
+
+
 
             Gate = new ArenaGate(this);
             Gate.MoveToWorld(Arena.Definition.GateLocation, Arena.Definition.Map);
@@ -541,7 +546,7 @@ namespace Server.Engines.ArenaSystem
                     {
                         Item blocker;
 
-             /*           if (list.Count > 0)
+                 /*       if (list.Count > 0)
                         {
                             blocker = list[0];
                             list.RemoveAt(0);
@@ -550,7 +555,7 @@ namespace Server.Engines.ArenaSystem
                         {*/
                             blocker = new Blocker();
                             Arena.Blockers.Add(blocker);
-                      //  }
+                       // }
 
                         blocker.MoveToWorld(new Point3D(x, y, Arena.Definition.ArenaZ), Arena.Definition.Map);
                     }
@@ -562,7 +567,9 @@ namespace Server.Engines.ArenaSystem
         {
             foreach (Item item in Arena.Blockers)
             {
-                item.Z -= 20;
+		     	item.Delete();
+
+               // item.Z -= 60;
             }
         }
 
@@ -944,6 +951,18 @@ namespace Server.Engines.ArenaSystem
             Warned = null;
             KillRecord = null;
         }
+
+
+		public void ClearArena()
+		{
+		    foreach (Mobile item in Arena.Region.GetMobiles())
+			{
+				if (item.Z == Arena.Definition.ArenaZ && item.AccessLevel == AccessLevel.Player)
+				{
+					item.MoveToWorld(Arena.GetRandomRemovalLocation(item), Arena.Definition.Map);
+				}
+			}
+		}
 
         public ArenaDuel(GenericReader reader, PVPArena arena)
         {

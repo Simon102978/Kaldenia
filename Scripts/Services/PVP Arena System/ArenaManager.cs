@@ -2,6 +2,7 @@ using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
 using System.Collections.Generic;
+using Server.ContextMenus;
 
 namespace Server.Engines.ArenaSystem
 {
@@ -174,7 +175,18 @@ namespace Server.Engines.ArenaSystem
 			}
 		}
 
+		public override void AddCustomContextEntries(Mobile from, List<ContextMenuEntry> list)
+		{
+			if (from.Alive)
+			{
 
+					ArenaEntry entry = new ArenaEntry(this);
+					list.Add(entry);
+				
+			}
+
+			base.AddCustomContextEntries(from, list);
+		}
 
 		private List<Item> _Items;
 
@@ -243,4 +255,41 @@ namespace Server.Engines.ArenaSystem
             int version = reader.ReadInt();
         }
     }
+
+	public class ArenaEntry : ContextMenuEntry
+	{
+		private readonly Mobile m_Manager;
+
+		public ArenaEntry(Mobile Manager)
+			: base(6255, 12) // 1115785
+		{
+			m_Manager = Manager;
+		}
+
+		public override void OnClick()
+		{
+			if (!Owner.From.CheckAlive())
+				return;
+
+			if (m_Manager is ArenaManager)
+			{
+				ArenaManager man = (ArenaManager)m_Manager;
+
+				man.OpenArena(Owner.From);
+			}
+
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
 }

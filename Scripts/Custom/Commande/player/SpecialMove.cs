@@ -14,11 +14,13 @@ namespace Server.Scripts.Commands
     {
         public static void Initialize()
         {
-			CommandSystem.Register("as", AccessLevel.Player, new CommandEventHandler(AttaqueSpecial_OnCommand));
+			CommandSystem.Register("wa", AccessLevel.Player, new CommandEventHandler(AttaqueSpecial_OnCommand));
+			CommandSystem.Register("wap", AccessLevel.Player, new CommandEventHandler(AttaqueSpecialPrimaire_OnCommand));
+			CommandSystem.Register("was", AccessLevel.Player, new CommandEventHandler(AttaqueSpecialSecondaire_OnCommand));
 		}
 
 
-		[Usage("AttaqueSpecial")]
+		[Usage("wa")]
 		[Description("Permet d'utiliser les attaques spéciales.")]
 		public static void AttaqueSpecial_OnCommand(CommandEventArgs e)
 		{
@@ -77,5 +79,63 @@ namespace Server.Scripts.Commands
 
 
 		}
-    }
+
+		[Usage("wap")]
+		[Description("Permet d'utiliser l'attaque spéciale primaire de l'arme.")]
+		public static void AttaqueSpecialPrimaire_OnCommand(CommandEventArgs e)
+		{
+			Mobile from = e.Mobile;
+
+			if (!from.Alive)
+				return;
+
+				WeaponAbility primaire = WeaponAbility.Disarm;
+
+				IWeapon wep = from.Weapon;
+
+				if (wep is BaseWeapon)
+				{
+					BaseWeapon bw = (BaseWeapon)wep;
+
+					primaire = bw.PrimaryAbility;
+			
+				}
+
+				if (primaire.Validate(from))
+				{
+					from.SendMessage("Vous activez l'attaque special : " + primaire.Name);
+					WeaponAbility.SetCurrentAbility(from, primaire);
+
+				}		
+
+			}
+
+		[Usage("was")]
+		[Description("Permet d'utiliser l'attaque spéciale secondaire de l'arme.")]
+		public static void AttaqueSpecialSecondaire_OnCommand(CommandEventArgs e)
+		{
+			Mobile from = e.Mobile;
+
+			if (!from.Alive)
+				return;
+
+			WeaponAbility primaire = WeaponAbility.ParalyzingBlow;
+
+			IWeapon wep = from.Weapon;
+
+			if (wep is BaseWeapon)
+			{
+				BaseWeapon bw = (BaseWeapon)wep;
+
+				primaire = bw.SecondaryAbility;
+
+			}
+
+			if (primaire.Validate(from))
+			{
+				from.SendMessage("Vous activez l'attaque special : " + primaire.Name);
+				WeaponAbility.SetCurrentAbility(from, primaire);
+			}
+		}
+	}	
 }

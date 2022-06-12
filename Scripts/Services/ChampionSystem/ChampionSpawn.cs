@@ -566,10 +566,10 @@ namespace Server.Engines.CannedEvil
                     {
                         m_Altar.Hue = 0x455;
 
-                        if (Map == Map.Felucca)
+                 /*     if (Map == Map.Felucca)
                         {
                             new StarRoomGate(true, m_Altar.Location, m_Altar.Map);
-                        }
+                        }*/
                     }
 
                     m_Champion = null;

@@ -72,20 +72,20 @@ namespace Server.Engines.CannedEvil
         {
             m_Enabled = Config.Get("Champions.Enabled", true);
             m_RotateDelay = Config.Get("Champions.RotateDelay", TimeSpan.FromDays(1.0d));
-            m_GoldShowerPiles = Config.Get("Champions.GoldPiles", 50);
-            m_GoldShowerMinAmount = Config.Get("Champions.GoldMin", 4000);
-            m_GoldShowerMaxAmount = Config.Get("Champions.GoldMax", 5500);
-            m_HarrowerGoldPiles = Config.Get("Champions.HarrowerGoldPiles", 75);
-            m_HarrowerGoldMinAmount = Config.Get("Champions.HarrowerGoldMin", 5000);
-            m_HarrowerGoldMaxAmount = Config.Get("Champions.HarrowerGoldMax", 10000);
-            m_PowerScrollAmount = Config.Get("Champions.PowerScrolls", 6);
-            m_StatScrollAmount = Config.Get("Champions.StatScrolls", 16);
+            m_GoldShowerPiles = Config.Get("Champions.GoldPiles", 0);
+            m_GoldShowerMinAmount = Config.Get("Champions.GoldMin", 0);
+            m_GoldShowerMaxAmount = Config.Get("Champions.GoldMax", 0);
+            m_HarrowerGoldPiles = Config.Get("Champions.HarrowerGoldPiles", 0);
+            m_HarrowerGoldMinAmount = Config.Get("Champions.HarrowerGoldMin", 0);
+            m_HarrowerGoldMaxAmount = Config.Get("Champions.HarrowerGoldMax", 0);
+            m_PowerScrollAmount = Config.Get("Champions.PowerScrolls", 0);
+            m_StatScrollAmount = Config.Get("Champions.StatScrolls", 0);
             m_ScrollChance = Config.Get("Champions.ScrollChance", 0.1d) / 100.0d;
             m_TranscendenceChance = Config.Get("Champions.TranscendenceChance", 50.0d) / 100.0d;
 
-            int rank2 = Config.Get("Champions.Rank2RedSkulls", 5);
-            int rank3 = Config.Get("Champions.Rank3RedSkulls", 10);
-            int rank4 = Config.Get("Champions.Rank4RedSkulls", 10);
+            int rank2 = Config.Get("Champions.Rank2RedSkulls", 3);
+            int rank3 = Config.Get("Champions.Rank3RedSkulls", 5);
+            int rank4 = Config.Get("Champions.Rank4RedSkulls", 5);
 
             for (int i = 0; i < m_Rank.Length; ++i)
             {

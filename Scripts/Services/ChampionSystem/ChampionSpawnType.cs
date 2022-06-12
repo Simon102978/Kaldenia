@@ -17,8 +17,9 @@ namespace Server.Engines.CannedEvil
         Terror,
         Infuse,
         DragonTurtle,
-        Khaldun
-    }
+        Khaldun,
+		Geant
+	}
 
     public class ChampionSpawnInfo
     {
@@ -133,7 +134,14 @@ namespace Server.Engines.CannedEvil
 				new[]{ typeof( CultistAmbusher  ), typeof( ShadowFiend ) },										
 				new[]{ typeof( KhalAnkurWarriors ) }											                    
 			} ),
-        };
+		   new ChampionSpawnInfo( "Geant", typeof( MonstrousInterredGrizzle ), new[]{ "Banisher", "Enforcer", "Eradicator" } , new[] // Khal Ankur
+            {
+				new[]{ typeof( Troll ), typeof( Ettin ), typeof( Ogre ), typeof(Troglodyte) },
+				new[]{ typeof( Cyclops ) },
+				new[]{ typeof( Titan  ) },
+				new[]{ typeof(OgreLord), typeof(Lurg) }
+			} ),
+		};
 
         public static ChampionSpawnInfo GetInfo(ChampionSpawnType type)
         {

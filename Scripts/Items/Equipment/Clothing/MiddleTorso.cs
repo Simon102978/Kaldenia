@@ -49,6 +49,7 @@ namespace Server.Items
             : base(0x1541, hue)
         {
             Weight = 1.0;
+			Name = "Ceinture de Corps";
         }
 
         public BodySash(Serial serial)

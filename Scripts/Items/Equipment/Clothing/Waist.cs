@@ -49,6 +49,7 @@ namespace Server.Items
             : base(0x153b, hue)
         {
             Weight = 2.0;
+			Name = "Petit Tablier"
         }
 
         public HalfApron(Serial serial)

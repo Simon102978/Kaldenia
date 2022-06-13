@@ -496,7 +496,7 @@ namespace Server.Engines.Quests
                     hold.DropItem(steaks);
                 }
 
-                hold.DropItem(new Gold(Utility.RandomMinMax(5000, 25000)));
+                hold.DropItem(new Gold(Utility.RandomMinMax(500, 1000)));
 
                 if (0.50 > Utility.RandomDouble())
                 {
@@ -518,51 +518,51 @@ namespace Server.Engines.Quests
                 {
                     case 0:
                         if (Utility.RandomBool())
-                            hold.DropItem(new IronOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new IronOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new IronIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new IronIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 1:
                         if (Utility.RandomBool())
-                            hold.DropItem(new DullCopperOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new DullCopperOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new DullCopperIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new DullCopperIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 2:
                         if (Utility.RandomBool())
-                            hold.DropItem(new ShadowIronOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ShadowIronOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new ShadowIronIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ShadowIronIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 3:
                         if (Utility.RandomBool())
-                            hold.DropItem(new CopperOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new CopperOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new CopperIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new CopperIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 4:
                         if (Utility.RandomBool())
-                            hold.DropItem(new BronzeOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new BronzeOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new BronzeIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new BronzeIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 5:
                         if (Utility.RandomBool())
-                            hold.DropItem(new AgapiteOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new AgapiteOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new AgapiteIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new AgapiteIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 6:
                         if (Utility.RandomBool())
-                            hold.DropItem(new VeriteOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new VeriteOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new VeriteIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new VeriteIngot(Utility.RandomMinMax(20, 40)));
                         break;
                     case 7:
                         if (Utility.RandomBool())
-                            hold.DropItem(new ValoriteOre(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ValoriteOre(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new ValoriteIngot(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ValoriteIngot(Utility.RandomMinMax(20, 40)));
                         break;
                 }
 
@@ -570,33 +570,33 @@ namespace Server.Engines.Quests
                 {
                     case 0:
                         if (Utility.RandomBool())
-                            hold.DropItem(new Board(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new Board(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new Log(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new Log(Utility.RandomMinMax(20, 40)));
                         break;
                     case 1:
                         if (Utility.RandomBool())
-                            hold.DropItem(new OakBoard(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new OakBoard(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new OakLog(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new OakLog(Utility.RandomMinMax(20, 40)));
                         break;
                     case 2:
                         if (Utility.RandomBool())
-                            hold.DropItem(new AshBoard(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new AshBoard(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new AshLog(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new AshLog(Utility.RandomMinMax(20, 40)));
                         break;
                     case 3:
                         if (Utility.RandomBool())
-                            hold.DropItem(new YewBoard(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new YewBoard(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new YewLog(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new YewLog(Utility.RandomMinMax(20, 40)));
                         break;
                     case 4:
                         if (Utility.RandomBool())
-                            hold.DropItem(new BloodwoodBoard(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new BloodwoodBoard(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new BloodwoodLog(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new BloodwoodLog(Utility.RandomMinMax(20, 40)));
                         break;
                 }
 
@@ -604,27 +604,27 @@ namespace Server.Engines.Quests
                 {
                     case 0:
                         if (Utility.RandomBool())
-                            hold.DropItem(new Leather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new Leather(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new Hides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new Hides(Utility.RandomMinMax(20, 40)));
                         break;
                     case 1:
                         if (Utility.RandomBool())
-                            hold.DropItem(new LupusLeather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new LupusLeather(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new LupusHides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new LupusHides(Utility.RandomMinMax(20, 40)));
                         break;
                     case 2:
                         if (Utility.RandomBool())
-                            hold.DropItem(new ReptilienLeather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ReptilienLeather(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new ReptilienHides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new ReptilienHides(Utility.RandomMinMax(20, 40)));
                         break;
                     case 3:
                         if (Utility.RandomBool())
-                            hold.DropItem(new GeantLeather(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new GeantLeather(Utility.RandomMinMax(20, 40)));
                         else
-                            hold.DropItem(new GeantHides(Utility.RandomMinMax(40, 50)));
+                            hold.DropItem(new GeantHides(Utility.RandomMinMax(20, 40)));
                         break;
                 }
 

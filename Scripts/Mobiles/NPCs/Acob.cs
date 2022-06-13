@@ -242,7 +242,7 @@ namespace Server.Engines.Quests
         public DeathToTheNinjaQuest()
             : base()
         {
-            AddObjective(new SlayObjective(typeof(EliteNinja), "elite ninjas", 10, "TheCitadel"));
+            AddObjective(new SlayObjective(typeof(KuyaNinja), "elite ninjas", 10, "TheCitadel"));
 
             AddReward(new BaseReward(typeof(TreasureBag), 1072583));
         }

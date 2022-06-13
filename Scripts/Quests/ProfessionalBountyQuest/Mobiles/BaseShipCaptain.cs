@@ -146,7 +146,7 @@ namespace Server.Mobiles
                     Mobile crew = new PirateCrew();
 
                     if (j == 0 && this is PirateCaptain)
-                        crew.Title = "the orc captain";
+                        crew.Title = "Le Capitaine";
 
                     AddToCrew(crew);
                     crew.MoveToWorld(new Point3D(gal.X + Utility.RandomList(-1, 1), gal.Y + Utility.RandomList(-1, 0, 1), gal.ZSurface), map);

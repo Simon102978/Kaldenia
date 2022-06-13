@@ -3,23 +3,35 @@ using System;
 
 namespace Server.Mobiles
 {
-    public class EliteNinja : BaseCreature
+	[CorpseName("Le corps d'un Kuya")]
+	public class KuyaNinja : BaseCreature
     {
         public override bool ClickTitle => false;
-        public override bool CanStealth => true;
+		public override bool AlwaysMurderer => true;
+		public override bool CanStealth => true;
 
         private DateTime m_NextWeaponChange;
 
         [Constructable]
-        public EliteNinja() : base(AIType.AI_Ninja, FightMode.Closest, 10, 1, 0.2, 0.4)
+        public KuyaNinja() : base(AIType.AI_Ninja, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            SpeechHue = Utility.RandomDyedHue();
-            Hue = Utility.RandomSkinHue();
-            Name = "an elite ninja";
+			SpeechHue = Utility.RandomDyedHue();
+			Race = BaseRace.GetRace(Utility.Random(4));
 
-            Body = (Female = Utility.RandomBool()) ? 0x191 : 0x190;
+			Hue = Utility.RandomSkinHue();
 
-            SetHits(251, 350);
+			if (Female = Utility.RandomBool())
+			{
+				Body = 0x191;
+				Name = NameList.RandomName("female");
+			}
+			else
+			{
+				Body = 0x190;
+				Name = NameList.RandomName("male");
+			}
+
+			SetHits(251, 350);
 
             SetStr(126, 225);
             SetDex(81, 95);
@@ -109,22 +121,15 @@ namespace Server.Mobiles
             ChangeWeapon();
         }
 
-        public override void OnDeath(Container c)
-        {
-            base.OnDeath(c);
-            c.DropItem(new BookOfNinjitsu());
-        }
-
         public override bool BardImmune => true;
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.FilthyRich);
-            AddLoot(LootPack.Rich);
-            AddLoot(LootPack.Gems, 2);
-        }
+			AddLoot(LootPack.Rich, 2);
 
-        public override bool AlwaysMurderer => true;
+			AddLoot(LootPack.MageryRegs, 31);
+		}
+
 
         private void ChangeWeapon()
         {
@@ -165,7 +170,7 @@ namespace Server.Mobiles
                 ChangeWeapon();
         }
 
-        public EliteNinja(Serial serial) : base(serial)
+        public KuyaNinja(Serial serial) : base(serial)
         {
         }
 

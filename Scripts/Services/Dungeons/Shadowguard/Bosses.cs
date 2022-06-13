@@ -958,7 +958,7 @@ namespace Server.Engines.Shadowguard
     public class Ozymandias : ShadowguardBoss
     {
         public override Type[] SummonTypes => _SummonTypes;
-        private readonly Type[] _SummonTypes = new Type[] { typeof(LesserHiryu), typeof(EliteNinja), typeof(TsukiWolf) };
+        private readonly Type[] _SummonTypes = new Type[] { typeof(LesserHiryu), typeof(KuyaNinja), typeof(TsukiWolf) };
 
         public override double WeaponAbilityChance => 0.4;
 

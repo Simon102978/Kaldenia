@@ -3,10 +3,11 @@ using Server.Misc;
 
 namespace Server.Mobiles
 {
-    public class Samurai : BaseCreature
+	[CorpseName("Le corps d'un Kuya")]
+	public class Kuya : BaseCreature
     {
         [Constructable]
-        public Samurai()
+        public Kuya()
             : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
             Title = "Un Kuya";
@@ -91,9 +92,10 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
 			AddLoot(LootPack.Average);
+	
 		}
 
-        public Samurai(Serial serial)
+        public Kuya(Serial serial)
             : base(serial)
         {
         }

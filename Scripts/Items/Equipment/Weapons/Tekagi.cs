@@ -4,8 +4,8 @@ namespace Server.Items
 {
     [Alterable(typeof(DefBlacksmithy), typeof(GargishTekagi))]
     [Flipable(0x27Ab, 0x27F6)]
-    public class Tekagi : BaseKnife
-    {
+    public class Tekagi : BaseKatar
+	{
         [Constructable]
         public Tekagi()
             : base(0x27AB)

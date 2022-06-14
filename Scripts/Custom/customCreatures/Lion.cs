@@ -1,6 +1,6 @@
 namespace Server.Mobiles
 {
-    [CorpseName("a lion corpse")]
+    [CorpseName("Le corps d'un Lion")]
     public class Lion : BaseCreature
     {
         public override double HealChance => .167;
@@ -9,38 +9,37 @@ namespace Server.Mobiles
         public Lion()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Name = "Lion";
-            Body = 0x592;
+            Name = "Un Lion";
+            Body = 786;
             Female = true;
             BaseSoundID = 0x3EF;
 
-            SetStr(710, 720);
-            SetDex(200, 220);
-            SetInt(120, 140);
+			SetStr(94, 170);
+			SetDex(96, 115);
+			SetInt(6, 10);
 
-            SetHits(350, 370);
+			SetHits(71, 110);
+			SetMana(0);
 
-            SetDamage(16, 22);
+			SetDamage(11, 17);
 
-            SetDamageType(ResistanceType.Physical, 100);
+			SetDamageType(ResistanceType.Physical, 100);
 
-            SetResistance(ResistanceType.Physical, 40, 50);
-            SetResistance(ResistanceType.Fire, 35, 45);
-            SetResistance(ResistanceType.Cold, 30, 40);
-            SetResistance(ResistanceType.Poison, 30, 40);
-            SetResistance(ResistanceType.Energy, 20, 40);
+			SetResistance(ResistanceType.Physical, 25, 30);
+			SetResistance(ResistanceType.Fire, 10, 15);
+			SetResistance(ResistanceType.Poison, 20, 25);
+			SetResistance(ResistanceType.Energy, 20, 25);
 
-            SetSkill(SkillName.Parry, 90.0, 100.0);
-            SetSkill(SkillName.Tactics, 100.0, 110.0);
-            SetSkill(SkillName.Wrestling, 100.0, 110.0);
-            SetSkill(SkillName.Tracking, 80.0);
+			SetSkill(SkillName.MagicResist, 75.1, 80.0);
+			SetSkill(SkillName.Tactics, 79.3, 94.0);
+			SetSkill(SkillName.Wrestling, 79.3, 94.0);
 
-            Fame = 11000;
+			Fame = 11000;
             Karma = -11000;
 
             Tamable = true;
             ControlSlots = 2;
-            MinTameSkill = 96.0;
+            MinTameSkill = 60.1;
 
             SetMagicalAbility(MagicalAbility.Piercing);
         }

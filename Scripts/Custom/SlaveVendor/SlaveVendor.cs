@@ -12,11 +12,11 @@ namespace Server.Mobiles
 		private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
         public SlaveVendor()
-            : base("the Slave Vendor")
+            : base("Vendeur d'esclaves")
         {
         }
-
-        public SlaveVendor(Serial serial)
+		public override StatutSocialEnum MinBuyClasse => StatutSocialEnum.Civenien;
+		public SlaveVendor(Serial serial)
             : base(serial)
         {
         }
@@ -26,8 +26,27 @@ namespace Server.Mobiles
         {
 
         }
+	
 
-		public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
+	public override void VendorBuy(Mobile from)
+	{
+		if (from is CustomPlayerMobile)
+		{
+		CustomPlayerMobile cm = (CustomPlayerMobile)from;
+
+				if (cm.StatutSocial < MinBuyClasse && !ContreBandier)
+				{
+					Say("Seul les " + MinBuyClasse + "s et les classes supérieurs peuvent acheter ici");
+					return;
+				}
+				else
+				{
+					from.SendGump(new SlaveVendorBuyGump((CustomPlayerMobile)from, this));
+				}
+				
+		}
+		}
+	/*	public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
 		{
 			base.GetContextMenuEntries(from, list);
 
@@ -44,7 +63,8 @@ namespace Server.Mobiles
 			if (pm != null)
 				list.Add(new SlaveVendorBuyMenu(pm, this));
 		}
-
+		
+		
 		public class SlaveVendorBuyMenu : ContextMenuEntry
 		{
 			private readonly PlayerMobile _From;
@@ -61,7 +81,7 @@ namespace Server.Mobiles
 				_From.SendGump(new SlaveVendorBuyGump(_From, _Vendor));
 			}
 		}
-
+	*/
 		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

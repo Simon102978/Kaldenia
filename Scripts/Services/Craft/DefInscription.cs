@@ -884,7 +884,7 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(RecallScroll), 1044445, 1, 1044253);
 			AddRes(index, typeof(GateTravelScroll), 1044446, 1, 1044253);
 
-			index = AddCraft(typeof(BulkOrders.BulkOrderBook), "Autres", 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
+			///index = AddCraft(typeof(BulkOrders.BulkOrderBook), "Autres", 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
 
 			index = AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
 

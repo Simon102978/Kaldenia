@@ -55,7 +55,7 @@ public class Capuche2 :  BaseHat
 
 		{
 		Weight = 2.0;
-		Name ="Capuche2";
+		Name = "Grande Capuche";
 	}
 
 	public Capuche2(Serial serial)
@@ -255,7 +255,7 @@ public class VoileTete :  BaseHat
 
 		{
 		Weight = 2.0;
-		Name ="Voile de Tête";
+		Name ="Voile";
 	}
 
 	public VoileTete(Serial serial)
@@ -295,7 +295,7 @@ public class VoileTeteLong :  BaseHat
 
 		{
 		Weight = 2.0;
-		Name ="Voile de tête long";
+		Name ="Long Voile";
 	}
 
 	public VoileTeteLong(Serial serial)

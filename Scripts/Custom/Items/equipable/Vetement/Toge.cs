@@ -15,7 +15,7 @@ namespace Server.Items
 		: base(41728, hue)
 	{
 		Weight = 2.0;
-		Name ="Toge";
+		Name = "Toge Souple";
 	}
 
 	public Toge(Serial serial)
@@ -54,7 +54,7 @@ public class Toge2 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge2";
+		Name = "Toge Propre";
 	}
 
 	public Toge2(Serial serial)
@@ -94,7 +94,7 @@ public class Toge3 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge3";
+		Name = "Toge à Épaulettes";
 	}
 
 	public Toge3(Serial serial)
@@ -134,7 +134,7 @@ public class Toge4 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge4";
+		Name = "Toge en toile";
 	}
 
 	public Toge4(Serial serial)
@@ -174,7 +174,7 @@ public class Toge5 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge5";
+		Name = "Toge à ceinture large";
 	}
 
 	public Toge5(Serial serial)
@@ -214,7 +214,7 @@ public class Toge6 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge6";
+		Name = "Toge à ceinture dorée";
 	}
 
 	public Toge6(Serial serial)
@@ -254,7 +254,7 @@ public class Toge7 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge7";
+		Name = "Toge en voile";
 	}
 
 	public Toge7(Serial serial)
@@ -294,7 +294,7 @@ public class Toge8 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Toge8";
+		Name = "Toge Sombre";
 	}
 
 	public Toge8(Serial serial)

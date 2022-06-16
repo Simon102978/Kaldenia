@@ -7,13 +7,16 @@ using Server.Items;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
+using Server.Items;
+using Server.Misc;
+using System.Collections.Generic;
 
 #endregion
 
 namespace Server.Gumps
 {
-    public class ViewHueGump : Gump
-    {
+    public class ViewHueGump : BaseProjectMGump
+	{
 
         private ArrayList Rewards;
 
@@ -26,8 +29,8 @@ namespace Server.Gumps
         public const int TOTAL_HUES = 3000;
 
         Mobile caller;
-        public ViewHueGump( Mobile from, int page ) : base(0, 0)
-        {
+        public ViewHueGump( Mobile from, int page ) : base("Hues", 130, 400, true)
+		{
             viewpage = page;
 
             int gotopageheight = 500;
@@ -37,21 +40,18 @@ namespace Server.Gumps
 
             PlayerMobile pm = from as PlayerMobile;
 
-            this.Closable = false;
-            this.Disposable = false;
+            this.Closable = true;
+            this.Disposable = true;
             this.Dragable = true;
             this.Resizable = false;
 
             AddPage(0);
-            AddBackground(35, 67, 190, 460, 1755);
+           // AddBackground(35, 67, 190, 460, 1755);
             //AddBackground(35, 67, 190, 460, 9200);
             //AddBackground(42, 93, 175, 342, 1755);
 
-            AddHtml(46, 72, 150, 20,
-                @"<basefont color = #478cf7><center><h1>View Hue", ( bool ) false, ( bool ) false);
-            AddButton(200, 76, 3, 4, ( int ) Buttons.CloseBtn, GumpButtonType.Reply, 0);
 
-            AddLabel(60, 100, 294, "Hue");
+            AddLabel(90, 100, 294, "Hue");
 
             int y = 100;
             for ( int i = 0; i < TOTAL_HUES; i++ )
@@ -66,30 +66,30 @@ namespace Server.Gumps
                 int texthue = i;
                 string color = Convert.ToString(texthue + 1);
 
-                AddLabel(60, y + 3, texthue, color);
+                AddLabel(90, y + 3, texthue, color);
 
-                AddItem(85, y, 0xFAB, texthue + 1);
+                AddItem(110, y, 0xFAB, texthue + 1);
 
                 //The Button That Hues
-                AddButton(pagewidth - 205, y, 0x992, 0x993, i + 4000, GumpButtonType.Reply, 0);
+                AddButton(pagewidth - 185, y, 0x992, 0x993, i + 4000, GumpButtonType.Reply, 0);
             }
 
-            AddHtml(85, 435, 200, 20, String.Format(
+            AddHtml(115, 435, 200, 20, String.Format(
                 @"<basefont color =  #478cf7 >Page: {0}/{1}"
                 , viewpage + 1, 3000 / maxItemsPerPage), ( bool ) false, ( bool ) false);
             // page up and down buttons
-            AddButton(65, 437, 0x15E0, 0x15E4, 13, GumpButtonType.Reply, 0);
-            AddButton(50, 437, 0x15E2, 0x15E6, 12, GumpButtonType.Reply, 0);
+            AddButton(95, 437, 0x15E0, 0x15E4, 13, GumpButtonType.Reply, 0);
+            AddButton(80, 437, 0x15E2, 0x15E6, 12, GumpButtonType.Reply, 0);
 
-            AddHtml(50, 455, 160, 60,
-                @"<basefont color = #094175><center>Enter a hue number to jump directly to it's page", false, false);
-            AddAlphaRegion(80, gotopageheight - 4, 65, 20);
-            AddTextEntry(80, gotopageheight - 4, 65, 20, 294, 14, @"1");
+            AddHtml(75, 455, 160, 60,
+                @"<basefont color = #094175><center>Entrez le numéro du hue", false, false);
+         //   AddAlphaRegion(90, 480, 65, 20);
+            AddTextEntry(90, 480, 65, 20, 294, 14, @"1");
             // GoTo Hue Button
-            AddButton(150, gotopageheight - 2, 2224, 2224, 15, GumpButtonType.Reply, 0);
+            AddButton(160, 485, 2224, 2224, 15, GumpButtonType.Reply, 0);
 
-            AddButton(195, 438, 0x4B9, 0x4BA, 99, GumpButtonType.Reply, 0);//Hue 0 Button
-            AddHtml(185, 435, 50, 20, @"<basefont color = #478cf7 >0",
+            AddButton(210, 480, 0x4B9, 0x4BA, 99, GumpButtonType.Reply, 0);//Hue 0 Button
+            AddHtml(200, 480, 50, 20, @"<basefont color = #478cf7 >0",
                 ( bool ) false, ( bool ) false);
 
 

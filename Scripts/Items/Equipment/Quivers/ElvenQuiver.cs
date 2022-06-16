@@ -10,6 +10,7 @@ namespace Server.Items
             : base()
         {
             WeightReduction = 30;
+			Name = "Petit Carquois";
         }
 
         public ElvenQuiver(Serial serial)

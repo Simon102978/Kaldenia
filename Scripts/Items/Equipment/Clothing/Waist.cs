@@ -49,7 +49,7 @@ namespace Server.Items
             : base(0x153b, hue)
         {
             Weight = 2.0;
-			Name = "Petit Tablier";
+			Name = "Demi-Tablier";
         }
 
         public HalfApron(Serial serial)
@@ -122,6 +122,7 @@ namespace Server.Items
             : base(0x2B68, hue)
         {
             Weight = 4.0;
+			Name = "Pagne";
         }
 
         public WoodlandBelt(Serial serial)
@@ -170,7 +171,9 @@ namespace Server.Items
             : base(0x50D8, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Demi trablié élégant";
+
+		}
 
         public GargoyleHalfApron(Serial serial)
             : base(serial)

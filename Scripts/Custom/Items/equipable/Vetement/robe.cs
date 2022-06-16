@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41694, hue)
 	{
 		Weight = 2.0;
-		Name = "Robe2";
+		Name = "Robe provocante";
 	}
 
 	public Robe2(Serial serial)
@@ -55,7 +55,7 @@ public class Robe19 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe19";
+		Name = "Robe sans manche";
 	}
 
 	public Robe19(Serial serial)
@@ -135,7 +135,7 @@ public class Robe3 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe3";
+		Name = "Robe manches courtes";
 	}
 
 	public Robe3(Serial serial)
@@ -175,7 +175,7 @@ public class Robe4 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe4";
+		Name = "Robe ornée";
 	}
 
 	public Robe4(Serial serial)
@@ -215,7 +215,7 @@ public class RobeProvocante :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe Provocante";
+		Name ="Robe Sombre";
 	}
 
 	public RobeProvocante(Serial serial)
@@ -255,7 +255,7 @@ public class Robe5 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe5";
+		Name = "Robe artisane";
 	}
 
 	public Robe5(Serial serial)
@@ -295,7 +295,7 @@ public class Robe6 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe6";
+		Name = "Robe à volants";
 	}
 
 	public Robe6(Serial serial)
@@ -335,7 +335,7 @@ public class Robe7 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe7";
+		Name = "Robe Simple";
 	}
 
 	public Robe7(Serial serial)
@@ -375,7 +375,7 @@ public class Robe8 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe8";
+		Name = "Robe lacée large";
 	}
 
 	public Robe8(Serial serial)
@@ -415,7 +415,7 @@ public class Robe9 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe9";
+		Name = "Robe d'érudit";
 	}
 
 	public Robe9(Serial serial)
@@ -455,7 +455,7 @@ public class Robe10 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe10";
+		Name = "Robe manches amples";
 	}
 
 	public Robe10(Serial serial)
@@ -495,7 +495,7 @@ public class Robe11 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe11";
+		Name = "Robe Délicate sombre";
 	}
 
 	public Robe11(Serial serial)
@@ -535,7 +535,7 @@ public class Robe12 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe12";
+		Name = "Robe délicate";
 	}
 
 	public Robe12(Serial serial)
@@ -575,7 +575,7 @@ public class Robe13 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe13";
+		Name = "Robe Ouverte";
 	}
 
 	public Robe13(Serial serial)
@@ -615,7 +615,7 @@ public class Robe14 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe14";
+		Name = "Robe Provocante délicate";
 	}
 
 	public Robe14(Serial serial)
@@ -655,7 +655,7 @@ public class Robe15 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe15";
+		Name = "Robe légère";
 	}
 
 	public Robe15(Serial serial)
@@ -695,7 +695,7 @@ public class Robe16 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe16";
+		Name = "Robe provocante Sombre";
 	}
 
 	public Robe16(Serial serial)
@@ -735,7 +735,7 @@ public class RobeProvocante2 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="RobeProvocante2";
+		Name = "Robe Provocante ornée";
 	}
 
 	public RobeProvocante2(Serial serial)
@@ -775,7 +775,7 @@ public class RobeProvocante3 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="RobeProvocante3";
+		Name = "Robe dorée sombre";
 	}
 
 	public RobeProvocante3(Serial serial)
@@ -815,7 +815,7 @@ public class RobeProvocante4 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="RobeProvocante4";
+		Name = "Robe décoltée";
 	}
 
 	public RobeProvocante4(Serial serial)
@@ -855,7 +855,7 @@ public class RobeProvocante5 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="RobeProvocante5";
+		Name = "Robe provocante légère";
 	}
 
 	public RobeProvocante5(Serial serial)
@@ -895,7 +895,7 @@ public class RobeProvocante6 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="RobeProvocante6";
+		Name = "Robe dorée";
 	}
 
 	public RobeProvocante6(Serial serial)
@@ -935,7 +935,7 @@ public class Robe17 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe17";
+		Name = "Robe Ceinture dorée";
 	}
 
 	public Robe17(Serial serial)
@@ -975,7 +975,7 @@ public class Robe18 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name ="Robe18";
+		Name = "Robe à Col";
 	}
 
 	public Robe18(Serial serial)

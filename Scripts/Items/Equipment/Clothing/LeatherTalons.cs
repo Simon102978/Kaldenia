@@ -14,7 +14,8 @@ namespace Server.Items
             : base(0x41D8, hue)
         {
             Weight = 3.0;
-        }
+			Name = "Soulier en cuir";
+		}
 
         public LeatherTalons(Serial serial)
             : base(serial)

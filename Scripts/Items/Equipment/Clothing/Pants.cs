@@ -152,7 +152,9 @@ namespace Server.Items
             : base(0x152E, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Short Taille Haute";
+
+		}
 
         public ShortPants(Serial serial)
             : base(serial)
@@ -188,7 +190,9 @@ namespace Server.Items
             : base(0x1539, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Pantalon Taille Haute";
+
+		}
 
         public LongPants(Serial serial)
             : base(serial)
@@ -262,7 +266,9 @@ namespace Server.Items
             : base(0x2FC3, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Pantalon Moulant";
+
+		}
 
         public ElvenPants(Serial serial)
             : base(serial)

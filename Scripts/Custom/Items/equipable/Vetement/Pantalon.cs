@@ -15,7 +15,7 @@ namespace Server.Items
 		: base(41776, hue)
 	{
 		Weight = 2.0;
-		Name ="Pantalon1";
+		Name = "Pantalon Ample";
 	}
 
 	public Pantalon1(Serial serial)
@@ -54,7 +54,7 @@ public class Pantalon2 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon2";
+		Name = "Pantalon à Motifs";
 	}
 
 	public Pantalon2(Serial serial)
@@ -94,7 +94,7 @@ public class Pantalon3 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon3";
+		Name = "Pantalon à Fourrure";
 	}
 
 	public Pantalon3(Serial serial)
@@ -134,7 +134,7 @@ public class Pantalon4 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon4";
+		Name = "Pantalon à Poches";
 	}
 
 	public Pantalon4(Serial serial)
@@ -174,7 +174,7 @@ public class Pantalon5 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon5";
+		Name = "Pantalon de Cuir";
 	}
 
 	public Pantalon5(Serial serial)
@@ -214,7 +214,7 @@ public class Pantalon6 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon6";
+		Name = "Pantalon Court à Ceinture";
 	}
 
 	public Pantalon6(Serial serial)
@@ -254,7 +254,7 @@ public class Pantalon7 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon7";
+		Name = "Short Droit";
 	}
 
 	public Pantalon7(Serial serial)
@@ -294,7 +294,7 @@ public class Pantalon8 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon8";
+		Name = "Short Ample";
 	}
 
 	public Pantalon8(Serial serial)
@@ -334,7 +334,7 @@ public class Pantalon9 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon9";
+		Name = "Short de Toile";
 	}
 
 	public Pantalon9(Serial serial)
@@ -374,7 +374,7 @@ public class Pantalon10 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon10";
+		Name = "Pantalon Sombre";
 	}
 
 	public Pantalon10(Serial serial)
@@ -414,7 +414,7 @@ public class Pantalon11 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon11";
+		Name = "Pantalon Jupe";
 	}
 
 	public Pantalon11(Serial serial)
@@ -454,7 +454,7 @@ public class Pantalon12 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name ="Pantalon12";
+		Name = "Pantalon de Toile";
 	}
 
 	public Pantalon12(Serial serial)

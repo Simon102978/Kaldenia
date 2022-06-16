@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41821, hue)
 	{
 		Weight = 2.0;
-		Name ="Bottes";
+		Name = "Bottes à talon";
 	}
 
 	public Bottes(Serial serial)
@@ -55,7 +55,7 @@ public class Bottes2 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes2";
+		Name = "Bottes en cuir";
 	}
 
 	public Bottes2(Serial serial)
@@ -95,7 +95,7 @@ public class Bottes3 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes3";
+		Name = "Bottes ajustées";
 	}
 
 	public Bottes3(Serial serial)
@@ -135,7 +135,7 @@ public class Bottes4 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes4";
+		Name = "Bottes lacées";
 	}
 
 	public Bottes4(Serial serial)
@@ -175,7 +175,7 @@ public class Bottes5 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes5";
+		Name = "Bottes à Sangles";
 	}
 
 	public Bottes5(Serial serial)
@@ -215,7 +215,7 @@ public class Bottes6 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes6";
+		Name = "Bottes en cuir large";
 	}
 
 	public Bottes6(Serial serial)
@@ -255,7 +255,7 @@ public class Bottes7 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes7";
+		Name = "Bottes en fourrure";
 	}
 
 	public Bottes7(Serial serial)
@@ -295,7 +295,7 @@ public class Bottes8 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes8";
+		Name = "Bottes en tissus";
 	}
 
 	public Bottes8(Serial serial)
@@ -335,7 +335,7 @@ public class Bottes9 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes9";
+		Name = "Bottes à rebord";
 	}
 
 	public Bottes9(Serial serial)
@@ -375,7 +375,7 @@ public class Bottes10 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name ="Bottes10";
+		Name = "Botte haute à sangles";
 	}
 
 	public Bottes10(Serial serial)

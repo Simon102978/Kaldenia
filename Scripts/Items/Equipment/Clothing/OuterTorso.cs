@@ -463,7 +463,9 @@ namespace Server.Items
             : base(0x1F00, hue)
         {
             Weight = 3.0;
-        }
+			Name = "Robe élégante";
+
+		}
 
         public FancyDress(Serial serial)
             : base(serial)
@@ -1051,6 +1053,7 @@ namespace Server.Items
             : base(0x1F03, hue)
         {
             Weight = 3.0;
+			Name = "Toge Simple";
         }
 
         public Robe(Serial serial)
@@ -1166,7 +1169,9 @@ namespace Server.Items
             : base(0x1F01, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Robe Paysane";
+
+		}
 
         public PlainDress(Serial serial)
             : base(serial)
@@ -1350,7 +1355,9 @@ namespace Server.Items
             : base(0x2FB9, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Robe à Capuchon";
+
+		}
 
         public MaleElvenRobe(Serial serial)
             : base(serial)
@@ -1386,7 +1393,9 @@ namespace Server.Items
             : base(0x2FBA, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Grande Robe Toge";
+
+		}
 
         public override bool AllowMaleWearer => false;
 

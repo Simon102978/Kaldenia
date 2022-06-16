@@ -405,6 +405,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Fouet4), 1044050, "Fouet 4 mètres", 50.0, 70.0, typeof(Leather), 1044462, 3, 1044463);
 			index = AddCraft(typeof(Fouet6), 1044050, "Fouet 6 mètres", 65.0, 85.0, typeof(Leather), 1044462, 4, 1044463);
 			index = AddCraft(typeof(Fouet8), 1044050, "Fouet 8 mètres", 85.0, 105.0, typeof(Leather), 1044462, 5, 1044463);
+			index = AddCraft(typeof(ToileVierge), 1044050, "Toile Vierge", 30.0, 50.0, typeof(Board), 1044041, 5, 1044351);
 
 			index = AddCraft(typeof(ShojiLantern), 1044050, 1029404, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
             AddRes(index, typeof(Board), 1044041, 5, 1044351);

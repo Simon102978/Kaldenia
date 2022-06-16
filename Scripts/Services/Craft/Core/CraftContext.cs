@@ -178,7 +178,7 @@ namespace Server.Engines.Craft
         }
 
         public static CraftSystem[] Systems => _Systems;
-        private static readonly CraftSystem[] _Systems = new CraftSystem[11];
+        private static readonly CraftSystem[] _Systems = new CraftSystem[12];
 
         public static void Configure()
         {
@@ -193,8 +193,9 @@ namespace Server.Engines.Craft
             _Systems[8] = DefMasonry.CraftSystem;
             _Systems[9] = DefTailoring.CraftSystem;
             _Systems[10] = DefTinkering.CraftSystem;
+			_Systems[11] = DefPeinture.CraftSystem;
 
-            EventSink.WorldSave += OnSave;
+			EventSink.WorldSave += OnSave;
             EventSink.WorldLoad += OnLoad;
         }
 

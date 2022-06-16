@@ -189,19 +189,13 @@ namespace Server.Gumps
 			{
 				Coiffure co = Coiffure.coiffure[buttonID - 1000];
 
-				if (m_From.Skills[SkillName.Tailoring].Value < co.SkillRequis)
-				{
-					m_From.SendMessage("Je sais ce que tu tente de faire !");
-					m_From.SendGump(new CustomCoiffureGump(m_From, 0 , m_Barbe));
-				}
-				else
-				{
 
-					m_From.SendGump(new CustomCoiffureConfirmationGump(m_From, co));
+
+				m_From.SendGump(new CustomCoiffureConfirmationGump(m_From, co));
 					
 
 
-				}
+				
 
 
 			}

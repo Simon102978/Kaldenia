@@ -1,41 +1,42 @@
 namespace Server.Mobiles
 {
-    [CorpseName("a troll corpse")]
-    public class Troll : BaseCeosSpawn
+    [CorpseName("cadavre de troll")]
+    public class Trollvillageois : BaseCeosSpawn
 	{
         [Constructable]
-        public Troll()
+        public Trollvillageois()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Name = "a troll";
+            Name = "troll villageois";
             Body = Utility.RandomList(53, 54);
             BaseSoundID = 461;
 
-            SetStr(176, 205);
-            SetDex(46, 65);
-            SetInt(46, 70);
 
-            SetHits(106, 123);
+			SetStr(96, 120);
+			SetDex(81, 105);
+			SetInt(36, 60);
 
-            SetDamage(8, 14);
+			SetHits(58, 72);
 
-            SetDamageType(ResistanceType.Physical, 100);
+			SetDamage(5, 7);
 
-            SetResistance(ResistanceType.Physical, 35, 45);
-            SetResistance(ResistanceType.Fire, 25, 35);
-            SetResistance(ResistanceType.Cold, 15, 25);
-            SetResistance(ResistanceType.Poison, 5, 15);
-            SetResistance(ResistanceType.Energy, 5, 15);
+			SetDamageType(ResistanceType.Physical, 100);
 
-            SetSkill(SkillName.MagicResist, 45.1, 60.0);
-            SetSkill(SkillName.Tactics, 50.1, 70.0);
-            SetSkill(SkillName.Wrestling, 50.1, 70.0);
+			SetResistance(ResistanceType.Physical, 25, 30);
+			SetResistance(ResistanceType.Fire, 20, 30);
+			SetResistance(ResistanceType.Cold, 10, 20);
+			SetResistance(ResistanceType.Poison, 10, 20);
+			SetResistance(ResistanceType.Energy, 20, 30);
 
-            Fame = 3500;
-            Karma = -3500;
-        }
+			SetSkill(SkillName.MagicResist, 50.1, 75.0);
+			SetSkill(SkillName.Tactics, 55.1, 80.0);
+			SetSkill(SkillName.Wrestling, 50.1, 70.0);
 
-        public Troll(Serial serial)
+			Fame = 1500;
+			Karma = -1500;
+		}
+
+        public Trollvillageois(Serial serial)
             : base(serial)
         {
         }

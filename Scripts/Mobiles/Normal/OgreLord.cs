@@ -1,13 +1,13 @@
 namespace Server.Mobiles
 {
-    [CorpseName("an ogre lords corpse")]
-    public class OgreLord : BaseCreature
-    {
+    [CorpseName("Corp de Seigneur Ogre")]
+    public class OgreLord : BaseCeosSpawn
+	{
         [Constructable]
         public OgreLord()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Name = "an ogre lord";
+            Name = "Seigneur Ogre";
             Body = 83;
             BaseSoundID = 427;
 

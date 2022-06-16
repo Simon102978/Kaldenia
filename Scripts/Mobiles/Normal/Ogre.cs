@@ -1,8 +1,8 @@
 namespace Server.Mobiles
 {
     [CorpseName("an ogre corpse")]
-    public class Ogre : BaseCreature
-    {
+    public class Ogre : BaseCeosSpawn
+	{
         [Constructable]
         public Ogre()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)

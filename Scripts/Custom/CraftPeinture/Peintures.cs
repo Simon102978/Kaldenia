@@ -6,9 +6,32 @@ namespace Server.Items
 	
     public abstract class Peintures : Item
     {
-		public string m_Marque;
+		private string m_Title;
+		private string m_Description;
+		private Mobile m_Crafter;
+		private string m_CrafterName;
+		private bool m_Finish;
 
-        public Peintures(int itemID)
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string CrafterName { get => m_CrafterName; set => m_CrafterName = value; }
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool Finish { get => m_Finish; set => m_Finish = value; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string Title { get => m_Title; set => m_Title = value; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string Description { get => m_Description; set => m_Description = value; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Mobile Crafter { get => m_Crafter; set => m_Crafter = value; }
+
+
+
+		public Peintures(int itemID)
             : this(itemID, 0)
         {
         }
@@ -22,37 +45,52 @@ namespace Server.Items
             : base(serial)
         {
         }
-
-        [CommandProperty(AccessLevel.GameMaster)]
-        public string Marque
-        {
-            get { return m_Marque; }
-            set { m_Marque = value; InvalidateProperties(); }
-        }
-		
-		
+	
 		public override void GetProperties(ObjectPropertyList list)
         {
             base.GetProperties(list);
 
-            if (m_Marque != null && m_Marque != "")
-                list.Add(1060527, m_Marque);
+            if (m_Title != null && m_Title != "")
+                list.Add(1060527, m_Title);
         }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
-            writer.Write((int)0); // version
-			writer.Write((string)m_Marque);
-			}
+            writer.Write((int)1); // version
+			writer.Write(m_Finish);
+			writer.Write(m_Crafter);
+			writer.Write(m_Description);
+			writer.Write((string)m_Title);
+		}
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
-			m_Marque = reader.ReadString();
+
+
+			switch (version)
+			{
+				case 1:
+					{
+						m_CrafterName = reader.ReadString();
+						m_Finish = reader.ReadBool();
+						m_Crafter = reader.ReadMobile();
+						m_Description = reader.ReadString();
+						goto case 0;
+					}
+				case 0:
+					{
+						m_Title = reader.ReadString();
+
+						break;
+					}
+			}
+
+		
         }
     }
 	
@@ -79,17 +117,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Portrait";
 		}
 	}
 	public class PortraitSud02 : Peintures
@@ -115,17 +151,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Portrait";
 		}
 	}
 	public class PortraitSud03 : Peintures
@@ -151,17 +185,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+			int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud04 : Peintures
@@ -187,17 +218,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Portrait";
 		}
 	}
 	public class PortraitSud05 : Peintures
@@ -223,17 +252,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Portrait";
 		}
 	}
 	public class PortraitEst01 : Peintures
@@ -260,17 +287,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Portrait";
 		}
 	}
 	public class PortraitEst02 : Peintures
@@ -296,17 +321,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst03 : Peintures
@@ -332,17 +354,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst04 : Peintures
@@ -368,17 +387,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst05 : Peintures
@@ -404,17 +420,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitHomme : Peintures
@@ -440,17 +453,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud06 : Peintures
@@ -476,17 +486,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud07 : Peintures
@@ -512,17 +519,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud08 : Peintures
@@ -548,17 +552,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud09 : Peintures
@@ -584,17 +585,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst06 : Peintures
@@ -620,17 +618,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst07 : Peintures
@@ -656,17 +651,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst08 : Peintures
@@ -692,17 +684,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst09 : Peintures
@@ -728,17 +717,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud01 : Peintures
@@ -764,17 +750,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst01 : Peintures
@@ -800,17 +783,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitFemme : Peintures
@@ -836,17 +816,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud10 : Peintures
@@ -872,17 +849,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud11 : Peintures
@@ -908,17 +882,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud12 : Peintures
@@ -944,17 +915,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud13 : Peintures
@@ -980,17 +948,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud14 : Peintures
@@ -1016,17 +981,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud15 : Peintures
@@ -1052,17 +1014,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitSud16 : Peintures
@@ -1088,17 +1047,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst10 : Peintures
@@ -1124,17 +1080,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst11 : Peintures
@@ -1160,17 +1113,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst12 : Peintures
@@ -1196,17 +1146,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst13 : Peintures
@@ -1232,17 +1179,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst14 : Peintures
@@ -1268,17 +1212,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst15 : Peintures
@@ -1304,17 +1245,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PortraitEst16 : Peintures
@@ -1340,17 +1278,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Portrait";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud : Peintures
@@ -1376,17 +1311,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud02 : Peintures
@@ -1412,17 +1344,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud03 : Peintures
@@ -1448,17 +1377,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud04 : Peintures
@@ -1484,17 +1410,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud05 : Peintures
@@ -1520,17 +1443,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud06 : Peintures
@@ -1556,17 +1476,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud07 : Peintures
@@ -1592,17 +1510,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud08 : Peintures
@@ -1628,17 +1543,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud09 : Peintures
@@ -1664,17 +1576,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud10 : Peintures
@@ -1700,17 +1610,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud11 : Peintures
@@ -1736,17 +1644,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud12 : Peintures
@@ -1772,17 +1678,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud13 : Peintures
@@ -1808,17 +1711,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst02 : Peintures
@@ -1844,17 +1745,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst03 : Peintures
@@ -1880,17 +1778,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst04 : Peintures
@@ -1916,17 +1812,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst05 : Peintures
@@ -1952,17 +1846,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst06 : Peintures
@@ -1988,17 +1880,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst07 : Peintures
@@ -2024,17 +1913,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst08 : Peintures
@@ -2060,17 +1947,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst09 : Peintures
@@ -2096,17 +1980,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst10 : Peintures
@@ -2132,17 +2013,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst11 : Peintures
@@ -2168,17 +2046,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst12 : Peintures
@@ -2204,17 +2079,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst13 : Peintures
@@ -2240,17 +2112,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud14 : Peintures
@@ -2276,17 +2145,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud15 : Peintures
@@ -2312,17 +2178,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud16 : Peintures
@@ -2348,17 +2211,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud17 : Peintures
@@ -2384,17 +2245,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud18 : Peintures
@@ -2420,17 +2278,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud19 : Peintures
@@ -2456,17 +2312,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud20 : Peintures
@@ -2492,17 +2346,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud21 : Peintures
@@ -2528,17 +2379,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud22 : Peintures
@@ -2564,17 +2412,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud23 : Peintures
@@ -2600,17 +2445,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud24 : Peintures
@@ -2636,17 +2478,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud25 : Peintures
@@ -2672,17 +2511,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud26 : Peintures
@@ -2708,17 +2544,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst14 : Peintures
@@ -2744,17 +2577,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst15 : Peintures
@@ -2780,17 +2610,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst16 : Peintures
@@ -2816,17 +2643,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst17 : Peintures
@@ -2852,17 +2676,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst18 : Peintures
@@ -2888,17 +2709,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst19 : Peintures
@@ -2924,17 +2742,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst20 : Peintures
@@ -2960,17 +2776,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst21 : Peintures
@@ -2996,17 +2810,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst22 : Peintures
@@ -3032,17 +2844,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst23 : Peintures
@@ -3068,17 +2878,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst24 : Peintures
@@ -3104,17 +2911,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst25 : Peintures
@@ -3140,17 +2945,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureEst26 : Peintures
@@ -3176,17 +2978,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud27 : Peintures
@@ -3212,17 +3011,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud28 : Peintures
@@ -3248,17 +3045,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud29 : Peintures
@@ -3284,17 +3079,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud30 : Peintures
@@ -3320,17 +3113,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud31 : Peintures
@@ -3356,17 +3146,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud32 : Peintures
@@ -3392,17 +3179,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud33 : Peintures
@@ -3428,17 +3212,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud34 : Peintures
@@ -3464,17 +3246,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud35 : Peintures
@@ -3500,17 +3280,14 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
-
-            Weight = 1.0;
-            Name = "Peinture";
+            int version = reader.ReadInt();
 		}
 	}
 	public class PeintureSud36 : Peintures
@@ -3536,17 +3313,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud37 : Peintures
@@ -3572,17 +3347,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureSud38 : Peintures
@@ -3608,17 +3381,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst27 : Peintures
@@ -3644,17 +3415,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst28 : Peintures
@@ -3680,17 +3449,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst29 : Peintures
@@ -3716,17 +3483,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst30 : Peintures
@@ -3752,17 +3517,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst31 : Peintures
@@ -3788,17 +3551,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst32 : Peintures
@@ -3824,17 +3585,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst33 : Peintures
@@ -3860,17 +3619,16 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
+
 		}
 	}
 	public class PeintureEst34 : Peintures
@@ -3896,17 +3654,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst35 : Peintures
@@ -3932,17 +3688,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst36 : Peintures
@@ -3968,17 +3722,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst37 : Peintures
@@ -4004,17 +3756,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 	public class PeintureEst38 : Peintures
@@ -4040,17 +3790,15 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );writer.Write((string)m_Marque); // version
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-            int version = reader.ReadInt();m_Marque = reader.ReadString();
+            int version = reader.ReadInt();
 
-            Weight = 1.0;
-            Name = "Peinture";
 		}
 	}
 }

@@ -1867,6 +1867,13 @@ namespace Server.Engines.Craft
                         ((MapItem)item).Facet = from.Map;
                     }
 
+					if (item is Peintures)
+					{
+						Peintures p = (Peintures)item;
+
+						p.Crafter = from;
+					}
+
                     CraftContext context = craftSystem.GetContext(from);
                     int originalHue = item.Hue;
 

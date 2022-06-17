@@ -82,7 +82,9 @@ namespace Server.Items
             : base(0x1516, hue)
         {
             Weight = 4.0;
-        }
+			Name = "Jupe Simple";
+
+		}
 
         public Skirt(Serial serial)
             : base(serial)
@@ -118,7 +120,9 @@ namespace Server.Items
             : base(0x1537, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Kilt";
+
+		}
 
         public Kilt(Serial serial)
             : base(serial)

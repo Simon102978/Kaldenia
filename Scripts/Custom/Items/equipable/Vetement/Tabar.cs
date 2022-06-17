@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41736, hue)
 	{
 		Weight = 2.0;
-		Name ="Tabar";
+		Name = "Tabar simple";
 	}
 
 	public Tabar(Serial serial)
@@ -55,7 +55,7 @@ public class Tabar1 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar1";
+		Name = "Tabar orné";
 	}
 
 	public Tabar1(Serial serial)
@@ -135,7 +135,7 @@ public class Tabar3 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar3";
+		Name = "Tabar à cape";
 	}
 
 	public Tabar3(Serial serial)
@@ -175,7 +175,7 @@ public class Tabar4 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar4";
+		Name = "Tabar sombre";
 	}
 
 	public Tabar4(Serial serial)
@@ -215,7 +215,7 @@ public class Tabar5 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar5";
+		Name = "Tabar sombre à griffon";
 	}
 
 	public Tabar5(Serial serial)
@@ -255,7 +255,7 @@ public class Tabar6 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar6";
+		Name = "Tabar à arbre";
 	}
 
 	public Tabar6(Serial serial)
@@ -295,7 +295,7 @@ public class Tabar7 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar7";
+		Name = "Tabar doré";
 	}
 
 	public Tabar7(Serial serial)
@@ -335,7 +335,7 @@ public class Tabar8 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar8";
+		Name = "Tabar doré capitoné";
 	}
 
 	public Tabar8(Serial serial)
@@ -375,7 +375,7 @@ public class Tabar9 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar9";
+		Name = "Grand tabar ouvert";
 	}
 
 	public Tabar9(Serial serial)
@@ -415,7 +415,7 @@ public class Tabar10 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar10";
+		Name = "Grand tabar de toile";
 	}
 
 	public Tabar10(Serial serial)
@@ -455,7 +455,7 @@ public class Tabar11 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name ="Tabar11";
+		Name = "Grand tabar simple";
 	}
 
 	public Tabar11(Serial serial)

@@ -46,7 +46,9 @@ namespace Server.Items
             : base(0x1EFD, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Chandail de banquet";
+
+		}
 
         public FancyShirt(Serial serial)
             : base(serial)
@@ -82,7 +84,9 @@ namespace Server.Items
             : base(0x1517, hue)
         {
             Weight = 1.0;
-        }
+			Name = "Camisole";
+
+		}
 
         public Shirt(Serial serial)
             : base(serial)
@@ -154,7 +158,9 @@ namespace Server.Items
             : base(0x3175, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Chemise ornée";
+
+		}
 
         public ElvenShirt(Serial serial)
             : base(serial)
@@ -189,7 +195,7 @@ namespace Server.Items
             : base(0x3176, hue)
         {
             Weight = 2.0;
-			Name = "Gilet Elfique sombre";
+			Name = "Chemise ornée sombre";
         }
 
         public ElvenDarkShirt(Serial serial)

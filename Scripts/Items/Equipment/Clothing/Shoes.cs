@@ -123,7 +123,8 @@ namespace Server.Items
             : base(0x170B, hue)
         {
             Weight = 3.0;
-        }
+			Name = Name = "Bottes simples";
+		}
 
         public Boots(Serial serial)
             : base(serial)
@@ -229,7 +230,8 @@ namespace Server.Items
             : base(0x1711, hue)
         {
             Weight = 4.0;
-        }
+			Name = "Bottes simple";
+		}
 
         public ThighBoots(Serial serial)
             : base(serial)
@@ -303,7 +305,8 @@ namespace Server.Items
             : base(0x170F, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Souliers";
+		}
 
         public Shoes(Serial serial)
             : base(serial)
@@ -342,6 +345,7 @@ namespace Server.Items
             : base(0x170D, hue)
         {
             Weight = 1.0;
+			Name = "Sandales";
         }
 
         public Sandals(Serial serial)
@@ -492,7 +496,9 @@ namespace Server.Items
             : base(0x2FC4, hue)
         {
             Weight = 2.0;
-        }
+			Name = "Bottes délicate";
+
+		}
 
         public ElvenBoots(Serial serial)
             : base(serial)

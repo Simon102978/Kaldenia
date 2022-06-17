@@ -17,7 +17,7 @@ namespace Server.Commands
         public static void Initialize()
         {
             CommandSystem.Register("ViewHue", AccessLevel.Owner, new CommandEventHandler(ViewHue_OnCommand));
-            CommandSystem.Register("ViewHues", AccessLevel.GameMaster, new CommandEventHandler(ViewHues_OnCommand));
+     //       CommandSystem.Register("ViewHues", AccessLevel.GameMaster, new CommandEventHandler(ViewHues_OnCommand));
         }
 
         [Usage("ViewHue")]

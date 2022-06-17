@@ -8,7 +8,8 @@ namespace Server.Items
             : base()
         {
             Hue = 0x4F9;
-        }
+			Name = "Carquois de foudre";
+		}
 
         public QuiverOfLightning(Serial serial)
             : base(serial)

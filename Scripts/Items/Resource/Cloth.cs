@@ -68,6 +68,7 @@ namespace Server.Items
         public CutUpCloth()
             : base(0x1767)
         {
+			Name = "Bout de tissus";
         }
 
         public CutUpCloth(Serial serial)
@@ -111,6 +112,7 @@ namespace Server.Items
         public CombineCloth()
             : base(0x1767)
         {
+			Name = "Tissus Combiné";
         }
 
         public CombineCloth(Serial serial)

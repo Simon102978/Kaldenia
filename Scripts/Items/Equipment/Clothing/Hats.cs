@@ -400,7 +400,9 @@ namespace Server.Items
         public ClothNinjaHood(int hue)
             : base(0x278F, hue)
         {
-        }
+			Name = "Capuche de ninja";
+
+		}
 
         public ClothNinjaHood(Serial serial)
             : base(serial)
@@ -484,7 +486,7 @@ namespace Server.Items
         public FloppyHat(int hue)
             : base(0x1713, hue)
         {
-
+			Name = "Chapeau";
         }
 
         public FloppyHat(Serial serial)
@@ -526,8 +528,9 @@ namespace Server.Items
         public WideBrimHat(int hue)
             : base(0x1714, hue)
         {
+			Name = "Petit chapeau de paille";
 
-        }
+		}
 
         public WideBrimHat(Serial serial)
             : base(serial)
@@ -568,8 +571,9 @@ namespace Server.Items
         public Cap(int hue)
             : base(0x1715, hue)
         {
+			Name = "Petit Chapeau";
 
-        }
+		}
 
         public Cap(Serial serial)
             : base(serial)
@@ -610,7 +614,8 @@ namespace Server.Items
         public SkullCap(int hue)
             : base(0x1544, hue)
         {
-
+			Name = "Bandana";
+			Weight = 2.0;
         }
 
         public SkullCap(Serial serial)
@@ -652,8 +657,9 @@ namespace Server.Items
         public Bandana(int hue)
             : base(0x1540, hue)
         {
+			Name = "Bandeau";
 
-        }
+		}
 
         public Bandana(Serial serial)
             : base(serial)
@@ -696,7 +702,9 @@ namespace Server.Items
         public BearMask(int hue)
             : base(0x1545, hue)
         {
-        }
+			Name = "Masque d'ours";
+
+		}
 
         public override bool Dye(Mobile from, DyeTub sender)
         {
@@ -745,7 +753,9 @@ namespace Server.Items
         public DeerMask(int hue)
             : base(0x1547, hue)
         {
-        }
+			Name = "Marsque de Cerf";
+
+		}
 
         public override bool Dye(Mobile from, DyeTub sender)
         {
@@ -845,8 +855,9 @@ namespace Server.Items
         public TribalMask(int hue)
             : base(0x154B, hue)
         {
+			Name = "Masque Tribal";
 
-        }
+		}
 
         public override bool Dye(Mobile from, DyeTub sender)
         {
@@ -893,8 +904,9 @@ namespace Server.Items
         public TallStrawHat(int hue)
             : base(0x1716, hue)
         {
+			Name = "Grand chapeau de paille";
 
-        }
+		}
 
         public TallStrawHat(Serial serial)
             : base(serial)
@@ -935,8 +947,9 @@ namespace Server.Items
         public StrawHat(int hue)
             : base(0x1717, hue)
         {
+			Name = "Chapeau de paille";
 
-        }
+		}
 
         public StrawHat(Serial serial)
             : base(serial)
@@ -1052,7 +1065,9 @@ namespace Server.Items
         public OrcMask()
             : base(0x141B)
         {
-        }
+			Name = "Masque d'orc";
+
+		}
 
         public OrcMask(Serial serial)
             : base(serial)
@@ -1150,7 +1165,9 @@ namespace Server.Items
         public WizardsHat(int hue)
             : base(0x1718, hue)
         {
-        }
+			Name = "Chapeau de sorcier";
+
+		}
 
         public WizardsHat(Serial serial)
             : base(serial)
@@ -1238,6 +1255,7 @@ namespace Server.Items
         public Bonnet(int hue)
             : base(0x1719, hue)
         {
+			Name = "Bonnet";
         }
 
         public Bonnet(Serial serial)
@@ -1279,7 +1297,9 @@ namespace Server.Items
         public FeatheredHat(int hue)
             : base(0x171A, hue)
         {
-        }
+			Name = "Chapeau à plume";
+
+		}
 
         public FeatheredHat(Serial serial)
             : base(serial)
@@ -1320,7 +1340,9 @@ namespace Server.Items
         public TricorneHat(int hue)
             : base(0x171B, hue)
         {
-        }
+			Name = "Chapeau Tricorne";
+
+		}
 
         public TricorneHat(Serial serial)
             : base(serial)
@@ -1361,7 +1383,9 @@ namespace Server.Items
         public JesterHat(int hue)
             : base(0x171C, hue)
         {
-        }
+			Name = "Chapeau de bouffon";
+
+		}
 
         public JesterHat(Serial serial)
             : base(serial)

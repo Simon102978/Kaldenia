@@ -87,7 +87,9 @@ namespace Server.Items
             : base(0x153d, hue)
         {
             Weight = 4.0;
-        }
+			Name = "Tablier";
+
+		}
 
         public FullApron(Serial serial)
             : base(serial)
@@ -123,6 +125,7 @@ namespace Server.Items
             : base(0x1F7B, hue)
         {
             Weight = 2.0;
+			Name = "Doublet";
         }
 
         public Doublet(Serial serial)
@@ -159,6 +162,7 @@ namespace Server.Items
             : base(0x1FFD, hue)
         {
             Weight = 6.0;
+			Name = "Tunique ajustée";
         }
 
         public Surcoat(Serial serial)
@@ -195,7 +199,9 @@ namespace Server.Items
             : base(0x1FA1, hue)
         {
             Weight = 5.0;
-        }
+			Name = "Tunique";
+
+		}
 
         public Tunic(Serial serial)
             : base(serial)
@@ -302,7 +308,9 @@ namespace Server.Items
             : base(0x1F9F, hue)
         {
             Weight = 4.0;
-        }
+			Name = "Tunique de bouffon";
+
+		}
 
         public JesterSuit(Serial serial)
             : base(serial)
@@ -374,7 +382,9 @@ namespace Server.Items
             : base(0x46B4, Layer.MiddleTorso, hue)
         {
             Weight = 1.0;
-        }
+			Name = "Cocarde élégant";
+
+		}
 
         public Sash(Serial serial)
             : base(serial)

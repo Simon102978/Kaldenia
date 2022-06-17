@@ -111,7 +111,9 @@ namespace Server.Items
             : base(0x1515, hue)
         {
             Weight = 5.0;
-        }
+			Name = "Cape Simple";
+
+		}
 
         public Cloak(Serial serial)
             : base(serial)

@@ -49,7 +49,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot(LootPack.Rich);
+			AddLoot(LootPack.Average);
 			AddLoot(LootPack.MedScrolls);
 		}
 

@@ -278,7 +278,7 @@ namespace Server.Items
         {
         }
 
-        public override void GetProperties(ObjectPropertyList list)
+  /*      public override void GetProperties(ObjectPropertyList list)
         {
             base.GetProperties(list);
             if (m_Skill != null)
@@ -290,7 +290,7 @@ namespace Server.Items
             if (StrBoost > 0)
                 list.Add("If you eat this you will gain, Str Boost: " + StrBoost);
         }
-
+*/
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
         {
             base.GetContextMenuEntries(from, list);

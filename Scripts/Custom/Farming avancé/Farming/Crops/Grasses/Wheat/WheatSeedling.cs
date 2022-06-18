@@ -49,7 +49,7 @@ namespace Server.Items.Crops
             }
             else
             {
-                from.SendMessage("Votre ressource est trop jeune pour être récoltée.");
+                from.SendMessage("Votre pousse est trop jeune pour être récoltée.");
             }
 		}
 		public WheatSeedling( Serial serial ) : base( serial ) 

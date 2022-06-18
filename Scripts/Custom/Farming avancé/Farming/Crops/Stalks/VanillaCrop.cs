@@ -61,7 +61,7 @@ namespace Server.Items.Crops
 		public Mobile Sower{ get{ return m_sower; } set{ m_sower = value; } }
 
 		[Constructable]
-		public VanillaSeedling( Mobile sower ) : base( 0x4B8A )
+		public VanillaSeedling( Mobile sower ) : base( 3973 )
 		{
 			Movable = false;
             Name = "Vanilla Seedling";
@@ -76,7 +76,7 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être récolté sur votre monture." ); return; }
-			else from.SendMessage( "Votre ressource est trop jeune pour être récoltée." );
+			else from.SendMessage( "Votre pousse est trop jeune pour être récoltée." );
 		}
         public VanillaSeedling(Serial serial) : base(serial) { }
 
@@ -123,11 +123,11 @@ namespace Server.Items.Crops
 		public VanillaCrop() : this(null) { }
 
 		[Constructable]
-		public VanillaCrop( Mobile sower ) : base( 0x4B8C )
+		public VanillaCrop( Mobile sower ) : base( 0x2BE3 )
 		{
 			Movable = false;
 			Name = "Vanilla Plant";
-			Hue = 0x000;
+			Hue = 0;
 			m_sower = sower;
 			m_lastvisit = DateTime.UtcNow;
 			init( this, false );
@@ -135,8 +135,8 @@ namespace Server.Items.Crops
 
 		public static void init ( VanillaCrop plant, bool full )
 		{
-			plant.PickGraphic = ( 0x4B8B );
-			plant.FullGraphic = ( 0x4B8C );
+			plant.PickGraphic = (0x2BE3);
+			plant.FullGraphic = (0x2BE3);
 			plant.LastPick = DateTime.UtcNow;
 			plant.regrowTimer = new CropTimer( plant );
 			if ( full ) { plant.Yield = plant.Capacity; ((Item)plant).ItemID = plant.FullGraphic; }
@@ -146,17 +146,17 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
-			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !!!" ); return; }
+			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !" ); return; }
 
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "You cannot harvest a crop while mounted." ); return; }
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez récolter sur une monture." ); return; }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )
 			{
 				lastpicked = DateTime.UtcNow;
 				int cookValue = (int)from.Skills[SkillName.Cooking].Value / 20;
-				if ( cookValue == 0 ) { from.SendMessage( "You have no idea how to harvest this crop." ); return; }
+				if ( cookValue == 0 ) { from.SendMessage( "Vous ignorez comment récolter cette pousse." ); return; }
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
 				{
-					if ( m_yield < 1 ) { from.SendMessage( "There is nothing here to harvest." ); }
+					if ( m_yield < 1 ) { from.SendMessage( "Il n'y a rien à récolter ici." ); }
 					else
 					{
 						from.Direction = from.GetDirectionTo( this );
@@ -165,11 +165,11 @@ namespace Server.Items.Crops
 						if ( cookValue > m_yield ) cookValue = m_yield + 1;
 						int pick = Utility.RandomMinMax( cookValue - 4, cookValue );
 						if (pick < 0 ) pick = 0;
-						if ( pick == 0 ) { from.SendMessage( "You do not manage to harvest any crops." ); return; }
+						if ( pick == 0 ) { from.SendMessage( "Votre récolte ne porte pas fruit." ); return; }
 						m_yield -= pick;
-						from.SendMessage( "You harvest {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
+						from.SendMessage( "Vous récoltez {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
 						if (m_yield < 1) ((Item)this).ItemID = pickedGraphic;
-						Corn crop = new Corn( pick );
+						Vanilla crop = new Vanilla( pick );
 						from.AddToBackpack( crop );
 						if ( !regrowTimer.Running ) { regrowTimer.Start(); }
 					}
@@ -222,16 +222,16 @@ namespace Server.Items.Crops
 					double lumberValue = from.Skills[SkillName.Lumberjacking].Value / 100;
 					if ( ( lumberValue > .5 ) && ( Utility.RandomDouble() <= lumberValue ) )
 					{
-						Corn fruit = new Corn( Utility.Random( m_yield +2 ) );
+						Vanilla fruit = new Vanilla( Utility.Random( m_yield +2 ) );
 						from.AddToBackpack( fruit );
 						int cnt = Utility.Random( 4 ) + 1;
 						Log logs = new Log( cnt );
 						from.AddToBackpack( logs );
 					}
 						this.Delete();
-						from.SendMessage( "You chop the plant up" );
+						from.SendMessage( "Vous coupez le plant." );
 				}
-				else from.SendMessage( "Ce plant ne vous appartient pas !!!" );
+				else from.SendMessage( "Ce plant ne vous appartient pas !" );
 			}
 			else from.SendLocalizedMessage( 500446 );
 		}

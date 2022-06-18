@@ -94,7 +94,7 @@ namespace Server.Items
 			{ 
 				if ( m_yield < 1 )
 				{
-					from.SendMessage( "There is nothing here to harvest." ); 
+					from.SendMessage( "Il n'y a rien à récolter ici." ); 
 					
 				}
 				

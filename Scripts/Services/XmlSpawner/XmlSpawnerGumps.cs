@@ -25,7 +25,12 @@ namespace Server.Mobiles
             m_index = index;
             m_SpawnerGump = spawnergump;
 
-            AddPage(0);
+			this.Closable = true;
+			this.Disposable = true;
+			this.Dragable = true;
+			this.Resizable = false;
+
+			AddPage(0);
 
             AddBackground(20, 0, 220, 354, 5054);
             AddAlphaRegion(20, 0, 220, 354);

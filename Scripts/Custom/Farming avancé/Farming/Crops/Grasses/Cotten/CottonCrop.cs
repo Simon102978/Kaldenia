@@ -79,13 +79,13 @@ namespace Server.Items.Crops
 
             if (from != m_sower)
             { 
-                from.SendMessage("Ce plant ne vous appartient pas !!!"); 
+                from.SendMessage("Ce plant ne vous appartient pas !"); 
                 return;
             }
 
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {
-                from.SendMessage("You cannot harvest a crop while mounted.");
+                from.SendMessage("Vous ne pouvez récolter sur une monture.");
                 return;
             }
 
@@ -95,14 +95,14 @@ namespace Server.Items.Crops
                 int cookValue = (int)from.Skills[SkillName.Cooking].Value / 20;
                 if (cookValue == 0)
                 {
-                    from.SendMessage("You have no idea how to harvest this crop.");
+                    from.SendMessage("Vous ignorez comment récolter cette pousse.");
                     return;
                 }
                 if (from.InRange(this.GetWorldLocation(), 1))
                 {
                     if (m_yield < 1)
                     {
-                        from.SendMessage("There is nothing here to harvest.");
+                        from.SendMessage("Il n'y a rien à récolter ici.");
                     }
                     else
                     {
@@ -122,12 +122,12 @@ namespace Server.Items.Crops
 
                         if (pick == 0)
                         {
-                            from.SendMessage("You do not manage to harvest any crops.");
+                            from.SendMessage("Votre récolte ne porte pas fruit.");
                             return;
                         }
 
                         m_yield -= pick;
-                        from.SendMessage("You harvest {0} crop{1}!", pick, (pick == 1 ? "" : "s"));
+                        from.SendMessage("Vous récoltez {0} crop{1}!", pick, (pick == 1 ? "" : "s"));
 
                         if (m_yield < 1)
                         {
@@ -202,9 +202,9 @@ namespace Server.Items.Crops
                         from.AddToBackpack(fruit);
                     }
                     this.Delete();
-                    from.SendMessage("You chop the plant up");
+                    from.SendMessage("Vous coupez le plant.");
                 }
-                else from.SendMessage("Ce plant ne vous appartient pas !!!");
+                else from.SendMessage("Ce plant ne vous appartient pas !");
             }
             else from.SendLocalizedMessage(500446);
         }

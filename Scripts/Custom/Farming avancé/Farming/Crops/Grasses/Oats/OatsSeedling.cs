@@ -30,7 +30,7 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être récolté sur votre monture." ); return; }
-			else from.SendMessage( "Votre ressource est trop jeune pour être récoltée." );
+			else from.SendMessage( "Votre pousse est trop jeune pour être récoltée." );
 		}
 		public OatsSeedling( Serial serial ) : base( serial ) { }
 

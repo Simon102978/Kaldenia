@@ -46,6 +46,7 @@ namespace Server.Custom.Gumps
 			new PackageEntry(typeof(SmallPackage), "Petite caisse", 0x0E7E, 100, 0, 0),
 			new PackageEntry(typeof(MediumPackage), "Moyenne caisse", 0x0E3E, 500, 0, 0),
 			new PackageEntry(typeof(LargePackage), "Grosse caisse", 0x0E3C, 1000, 0, 0),
+			new PackageEntry(typeof(CoffreBoisPackage), "Coffre en bois", 0x0E42, 2000, 0, 0)
 		};
 
 		public static PackageEntry[] Entries => m_Entries;
@@ -118,7 +119,7 @@ namespace Server.Custom.Gumps
 						30 - b.Height / 2 - b.Y + Entries[i].OffsetY,
 						0);
 					AddHtml(x + 84, y, 250, 60, Color(string.Format(Entries[i].Name), 0xFFFFFF), false, false);
-					AddHtml(x + 84, y + 20, 250, 60, Color(string.Format($"{Entries[i].Price} po"), 0xFFFFFF), false, false);
+					AddHtml(x + 84, y + 20, 250, 60, Color(string.Format($"{Entries[i].Price} {maker.Currency.Name}"), 0xFFFFFF), false, false);
 
 					current++;
 				}
@@ -139,15 +140,29 @@ namespace Server.Custom.Gumps
 
 			PackageEntry entry = Entries[entryID];
 
-			if (!ConsumeFromBank.GoldConsumption(m_Buyer, entry.Price))
+			if (!sender.Mobile.Backpack.ConsumeTotal(m_Maker.Currency, entry.Price, true))
 			{
-				m_Buyer.SendMessage("Vous n'avez pas suffisamment de pièces d'or dans votre banque pour acheter ceci.");
+				m_Buyer.SendMessage($"Vous n'avez pas suffisamment de {m_Maker.Currency.Name} dans votre sac pour acheter ceci.");
 				return;
 			}
+			else
+			{
+				m_Buyer.SendMessage($"{entry.Price} {m_Maker.Currency.Name} ont été pris dans votre sac.");
+			}
+		
 
-			m_Buyer.SendMessage($"{entry.Price} pièces d'or ont été débitées de votre banque.");
 
 			var box = (Item)Activator.CreateInstance(entry.Type);
+
+			if (box is CustomPackaging)
+			{
+				CustomPackaging cp = (CustomPackaging)box;
+
+				cp.Reward =  (int)Math.Round(entry.Price * m_Maker.Conversion);
+
+			}
+
+
 			m_Buyer.PlaceInBackpack(box);
 		}
 	}

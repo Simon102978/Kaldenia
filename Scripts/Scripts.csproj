@@ -27,8 +27,4 @@
   <ItemGroup>
     <Reference Include="System.Web" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Custom\customCreatures\" />
-  </ItemGroup>
 </Project>

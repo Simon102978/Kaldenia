@@ -1,7 +1,10 @@
 ﻿namespace Server.Custom.Packaging.Packages
 {
-	public class SmallPackage : Item
+	public class SmallPackage : CustomPackaging
 	{
+
+		public override double Conversion => 0.25;
+
 		[Constructable]
 		public SmallPackage() : base(0x0E7E)
 		{

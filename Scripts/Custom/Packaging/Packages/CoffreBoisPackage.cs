@@ -1,17 +1,19 @@
 ﻿namespace Server.Custom.Packaging.Packages
 {
-	public class MediumPackage : CustomPackaging
+	public class CoffreBoisPackage : CustomPackaging
 	{
-		public override double Conversion => 0.50;
+
+		public override double Conversion => 1.0;
+
 
 		[Constructable]
-		public MediumPackage() : base(0x0E3E)
+		public CoffreBoisPackage() : base(0x0E42)
 		{
-			Name = "Moyenne caisse";
-			Weight = 225.0;
+			Name = "Coffre en bois";
+			Weight = 500.0;
 		}
 
-		public MediumPackage(Serial serial)
+		public CoffreBoisPackage(Serial serial)
 			: base(serial)
 		{
 		}

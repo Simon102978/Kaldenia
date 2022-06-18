@@ -1,14 +1,24 @@
 using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Custom.Gumps;
+using System;
+using Server.Items;
+using Server.Custom.Packaging.Packages;
 
 namespace Server.Mobiles
 {
     public class PackageMaker : BaseVendor
     {
-		[CommandProperty(AccessLevel.GameMaster)]
-		public int SlavePrice { get; set; } = 1000;
-		
+		private Type m_Currency = typeof(Marchandise);
+
+		[CommandProperty(AccessLevel.Seer)]
+		public Type Currency { get { return m_Currency; } set { m_Currency = value; } }
+
+		private double m_Conversion = 1;
+
+		[CommandProperty(AccessLevel.Seer)]
+		public double Conversion { get { return m_Conversion; } set { m_Conversion = value; } }
+
 		private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
 
         [Constructable]
@@ -66,9 +76,12 @@ namespace Server.Mobiles
         {
             base.Serialize(writer);
 
-            writer.Write(0); // version
+            writer.Write(1); // version
 
-			writer.Write(SlavePrice);
+			writer.Write(m_Currency.ToString());
+			writer.Write(m_Conversion);
+
+		
         }
 
         public override void Deserialize(GenericReader reader)
@@ -79,7 +92,12 @@ namespace Server.Mobiles
 
 			switch(version)
 			{
-				case 0: SlavePrice = reader.ReadInt(); break;
+				case 1:
+				{
+						m_Currency = ScriptCompiler.FindTypeByFullName(reader.ReadString());
+						m_Conversion = reader.ReadDouble();
+						break;
+				}
 			}
 		}
     }

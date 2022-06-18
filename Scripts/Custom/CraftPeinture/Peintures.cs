@@ -59,11 +59,7 @@ namespace Server.Items
 				{
 					from.SendMessage("Seul le créateur de la toile peut la terminer.");
 				}
-
-
-
-
-				
+			
 			}
 		}
 

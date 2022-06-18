@@ -1,17 +1,17 @@
 ﻿namespace Server.Custom.Packaging.Packages
 {
-	public class MediumPackage : CustomPackaging
+	public  class Marchandise : Item
 	{
-		public override double Conversion => 0.50;
-
 		[Constructable]
-		public MediumPackage() : base(0x0E3E)
+		public Marchandise() : base(0x0E73)
 		{
-			Name = "Moyenne caisse";
-			Weight = 225.0;
+			Name = "Marchandise";
+			Hue = 1580;
+			Weight = 0.3;
+			Stackable = true;
 		}
 
-		public MediumPackage(Serial serial)
+		public Marchandise(Serial serial)
 			: base(serial)
 		{
 		}

@@ -75,7 +75,7 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être récolté sur votre monture." ); return; }
-			else from.SendMessage( "Votre ressource est trop jeune pour être récoltée." );
+			else from.SendMessage( "Votre pousse est trop jeune pour être récoltée." );
 		}
 		public CantaloupeSeedling( Serial serial ) : base( serial ) { }
 
@@ -122,7 +122,7 @@ namespace Server.Items.Crops
 		public CantaloupeCrop() : this(null) { }
 
 		[Constructable]
-		public CantaloupeCrop( Mobile sower ) : base( 15374 )
+		public CantaloupeCrop( Mobile sower ) : base(3164)
 		{
 			Movable = false;
 			Name = "Cantaloupe Plant";
@@ -134,8 +134,8 @@ namespace Server.Items.Crops
 
 		public static void init ( CantaloupeCrop plant, bool full )
 		{
-			plant.PickGraphic = ( 15374 );
-			plant.FullGraphic = ( 15374 );
+			plant.PickGraphic = ( 3164 );
+			plant.FullGraphic = (3164);
 			plant.LastPick = DateTime.UtcNow;
 			plant.regrowTimer = new CropTimer( plant );
 			if ( full ) { plant.Yield = plant.Capacity; ((Item)plant).ItemID = plant.FullGraphic; }
@@ -145,17 +145,17 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
-			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !!!" ); return; }
+			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !" ); return; }
 
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "You cannot harvest a crop while mounted." ); return; }
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez récolter sur une monture." ); return; }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )
 			{
 				lastpicked = DateTime.UtcNow;
 				int cookValue = (int)from.Skills[SkillName.Cooking].Value / 20;
-				if ( cookValue == 0 ) { from.SendMessage( "You have no idea how to harvest this crop." ); return; }
+				if ( cookValue == 0 ) { from.SendMessage( "Vous ignorez comment récolter cette pousse." ); return; }
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
 				{
-					if ( m_yield < 1 ) { from.SendMessage( "There is nothing here to harvest." ); }
+					if ( m_yield < 1 ) { from.SendMessage( "Il n'y a rien à récolter ici." ); }
 					else
 					{
 						from.Direction = from.GetDirectionTo( this );
@@ -164,9 +164,9 @@ namespace Server.Items.Crops
 						if ( cookValue > m_yield ) cookValue = m_yield + 1;
 						int pick = Utility.RandomMinMax( cookValue - 4, cookValue );
 						if (pick < 0 ) pick = 0;
-						if ( pick == 0 ) { from.SendMessage( "You do not manage to harvest any crops." ); return; }
+						if ( pick == 0 ) { from.SendMessage( "Votre récolte ne porte pas fruit." ); return; }
 						m_yield -= pick;
-						from.SendMessage( "You harvest {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
+						from.SendMessage( "Vous récoltez {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
 						if (m_yield < 1) ((Item)this).ItemID = pickedGraphic;
 						Cantaloupe crop = new Cantaloupe( pick );
 						from.AddToBackpack( crop );
@@ -226,9 +226,9 @@ namespace Server.Items.Crops
 						if (Utility.RandomDouble() <= .1 ) { Vines logs = new Vines(); from.AddToBackpack( logs ); }
 					}
 						this.Delete();
-						from.SendMessage( "You chop the plant up" );
+						from.SendMessage( "Vous coupez le plant." );
 				}
-				else from.SendMessage( "Ce plant ne vous appartient pas !!!" );
+				else from.SendMessage( "Ce plant ne vous appartient pas !" );
 			}
 			else from.SendLocalizedMessage( 500446 );
 		}

@@ -38,7 +38,7 @@ namespace Server.Items.Crops
             }
             else
             {
-                from.SendMessage("Votre ressource est trop jeune pour être récoltée.");
+                from.SendMessage("Votre pousse est trop jeune pour être récoltée.");
             }
         }
         public CottonSeedling(Serial serial) : base(serial)

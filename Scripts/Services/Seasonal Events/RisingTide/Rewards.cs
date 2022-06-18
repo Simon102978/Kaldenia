@@ -121,7 +121,7 @@ namespace Server.Items
         }
     }
 
-    [Flipable(0xA2CA, 0xA2CB)]
+    [Flipable(0x3B4C, 0x3B4D)]
     public class ShoulderParrot : BaseOuterTorso
     {
         private DateTime _NextFly;
@@ -136,9 +136,10 @@ namespace Server.Items
 
         [Constructable]
         public ShoulderParrot()
-            : base(0xA2CA)
+            : base(0x3B4C)
         {
-            LootType = LootType.Blessed;
+			Name = "Perroquet";
+			Weight = 2.0;
         }
 
         public override void AddNameProperty(ObjectPropertyList list)
@@ -149,7 +150,7 @@ namespace Server.Items
             }
             else
             {
-                list.Add(1158928); // Shoulder Parrot
+                list.Add("Un Perroquet"); // Shoulder Parrot
             }
         }
 
@@ -159,7 +160,7 @@ namespace Server.Items
             {
                 if (_NextFly > DateTime.UtcNow)
                 {
-                    m.SendLocalizedMessage(1158956); // Your parrot is too tired to fly right now.
+                    m.SendMessage("Votre Perroquet est trop épuisé pour voler maintenant."); // Your parrot is too tired to fly right now.
                 }
                 else
                 {
@@ -169,14 +170,14 @@ namespace Server.Items
                     Movable = false;
                     _LastShoulder = m;
                     MoveToWorld(new Point3D(m.X, m.Y, m.Z + 15), m.Map);
-                    ItemID = 0xA2CC;
+                    ItemID = 0x3B4E;
 
                     _FlyEnd = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(3, 5));
                 }
             }
             else
             {
-                m.SendLocalizedMessage(1158957); // Your parrot can't fly here.
+                m.SendMessage("Votre perroquet ne peut pas voler ici"); // Your parrot can't fly here.
             }
         }
 
@@ -185,7 +186,7 @@ namespace Server.Items
             if (_FlyEnd < DateTime.UtcNow && _LastShoulder != null)
             {
                 Movable = true;
-                ItemID = 0xA2CA;
+                ItemID = 0x3B4C;
 
                 if (_LastShoulder.FindItemOnLayer(Layer.OuterTorso) != null)
                 {
@@ -225,7 +226,7 @@ namespace Server.Items
 
             if (m != null)
             {
-                ItemID = 0xA2CA;
+                ItemID = 0x3B4C;
 
                 Timer.DelayCall(() =>
                 {

@@ -11,7 +11,7 @@ namespace Server.Items
 		}
 
         [Constructable]
-        public ToileVierge(int amount) : base(0x0F68)
+        public ToileVierge(int amount) : base(0x0F77)
         {
 			
 

@@ -160,8 +160,9 @@ namespace Server.Items
         #region Spawn Locations
         private static readonly Rectangle2D[] m_FelTramWrap = new Rectangle2D[]
         {
-            new Rectangle2D(0, 0, 1930, 1169)
-        };
+            new Rectangle2D(0, 0, 3632, 1176),
+			new Rectangle2D(1344, 1320, 2248, 552),
+		};
 
         private static readonly Rectangle2D[] m_TokunoWrap = new Rectangle2D[]
         {

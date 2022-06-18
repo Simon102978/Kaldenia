@@ -107,8 +107,8 @@ namespace Server.Items
 
         public static readonly TimeSpan InstancedCorpseTime = TimeSpan.FromMinutes(3.0);
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public virtual bool InstancedCorpse => DateTime.UtcNow < TimeOfDeath + InstancedCorpseTime;
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual bool InstancedCorpse => false; /* DateTime.UtcNow < TimeOfDeath + InstancedCorpseTime;*/
 
         private Dictionary<Item, InstancedItemInfo> m_InstancedItems;
 

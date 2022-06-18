@@ -3,12 +3,13 @@ using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using System.Collections.Generic;
+using Server.Engines.Craft;
 
 namespace Server.Items
 {
 	
-    public abstract class Peintures : Item
-    {
+    public abstract class Peintures : Item, ICraftable
+	{
 		private string m_Title;
 		private Dictionary<int, string> m_Description = new Dictionary<int, string>();
 		private Mobile m_Crafter;
@@ -168,7 +169,19 @@ namespace Server.Items
 
 		
         }
-    }
+
+		public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, ITool tool, CraftItem craftItem, int resHue)
+		{
+		
+			
+
+			Crafter = from;
+
+
+			return quality;
+
+		}
+	}
 	
 	public class PortraitSud01 : Peintures
 	{

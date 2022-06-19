@@ -19,28 +19,29 @@ namespace Server.Items
         private bool m_Redyable;
         private int m_DyedHue;
         private SecureLevel m_SecureLevel;
-		private int m_Charge;
-
+		private int m_Charges;
+		
 		[Constructable]
         public DyeTub()
             : base(0xFAB)
         {
             Weight = 10.0;
             m_Redyable = true;
-			m_Charge = 5;
+			m_Charges = 10;
         }
 
         public DyeTub(Serial serial)
             : base(serial)
         {
         }
-		public override void OnAosSingleClick(Mobile from)
+		public override void GetProperties(ObjectPropertyList list)
 		{
-			base.OnAosSingleClick(from);
-
-			LabelTo(from, String.Format("[{0} charge{1}]", m_Charge, m_Charge > 1 ? "s" : ""));
+				base.GetProperties(list);
+				list.Add(String.Format("[{0} charge{1}]", m_Charges, m_Charges > 1 ? "s" : ""));
 		}
+		
 
+	
 		public virtual CustomHuePicker CustomHuePicker => null;
         public virtual bool AllowRunebooks => false;
         public virtual bool AllowFurniture => false;
@@ -48,8 +49,11 @@ namespace Server.Items
         public virtual bool AllowLeather => false;
         public virtual bool AllowDyables => true;
         public virtual bool AllowMetal => false;
+		
+		
 
-        [CommandProperty(AccessLevel.GameMaster)]
+
+		[CommandProperty(AccessLevel.GameMaster)]
         public bool Redyable
         {
             get { return m_Redyable; }
@@ -78,10 +82,12 @@ namespace Server.Items
         }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public int Charge
+		public int Charges
 		{
-			get { return m_Charge; }
-			set { m_Charge = value; }
+			get
+			{ 
+				return m_Charges; }
+			set { m_Charges = value; }
 		}
 
 		public virtual int TargetMessage => 500859;  // Select the clothing to dye.        
@@ -102,7 +108,7 @@ namespace Server.Items
             writer.Write((int)m_SecureLevel);
             writer.Write(m_Redyable);
             writer.Write(m_DyedHue);
-			writer.Write((int)m_Charge);
+			writer.Write((int)m_Charges);
 		}
 
         public override void Deserialize(GenericReader reader)
@@ -113,7 +119,7 @@ namespace Server.Items
 			m_SecureLevel = (SecureLevel)reader.ReadInt();
 			m_Redyable = reader.ReadBool();
             m_DyedHue = reader.ReadInt();
-			m_Charge = reader.ReadInt();
+			m_Charges = reader.ReadInt();
         }
 
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
@@ -124,7 +130,9 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (from.InRange(GetWorldLocation(), 1))
+			
+			
+				if (from.InRange(GetWorldLocation(), 1))
             {
                 from.SendLocalizedMessage(TargetMessage);
                 from.Target = new InternalTarget(this);
@@ -161,7 +169,17 @@ namespace Server.Items
                             from.SendLocalizedMessage(500861); // Can't Dye clothing that is being worn.
                         else if (((IDyable)item).Dye(from, m_Tub))
                             from.PlaySound(0x23E);
-                    }
+						if (m_Tub.Charges > 1)
+						{
+							m_Tub.Charges -= 1;
+						}
+						else
+						{
+							m_Tub.Delete();
+							from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+						}
+					}
                     else if (m_Tub.AllowFurniture && (FurnitureAttribute.Check(item) || m_Tub.CanForceDye(item)))
                     {
                         if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
@@ -197,7 +215,8 @@ namespace Server.Items
                                 from.PlaySound(0x23E);
                             }
 							
-                    
+                        }
+                    }
                     else if (m_Tub.AllowRunebooks && (item is Runebook || item is RecallRune || m_Tub.CanForceDye(item)))
                     {
                         if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
@@ -297,16 +316,11 @@ namespace Server.Items
                         from.SendLocalizedMessage(m_Tub.FailMessage);
                     }
                 }
-
                 else
                 {
                     from.SendLocalizedMessage(m_Tub.FailMessage);
                 }
-						if (m_Tub.Charge == 0)
-						{
-							this.Delete();
-						}
-					}
+            }
         }
     }
 }

@@ -8,8 +8,9 @@ namespace Server.Items
         [Constructable]
         public FurnitureDyeTub()
         {
-            LootType = LootType.Blessed;
-        }
+			Name = "Bac de Teinture (Meubles)";
+			Charges = 5;
+		}
 
         public FurnitureDyeTub(Serial serial)
             : base(serial)

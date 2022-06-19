@@ -5,8 +5,9 @@ namespace Server.Items
         [Constructable]
         public MetallicClothDyeTub()
         {
-            LootType = LootType.Blessed;
-        }
+			Name = "Bac de Teinture (Vêtements)";
+			Charges = 5;
+		}
 
         public MetallicClothDyeTub(Serial serial)
             : base(serial)

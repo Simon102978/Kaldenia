@@ -3,7 +3,7 @@
 	public class LargePackage : CustomPackaging
 	{
 
-		public override double Conversion => 0.75;
+		public override double Conversion => 0.90;
 
 		[Constructable]
 		public LargePackage() : base(0x0E3C)

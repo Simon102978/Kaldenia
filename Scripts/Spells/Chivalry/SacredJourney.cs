@@ -85,8 +85,13 @@ namespace Server.Spells.Chivalry
                 Caster.SendLocalizedMessage(502359, "", 0x22); // Thou art too encumbered to move.
                 return false;
             }
+			else if (Caster.CheckPackage())
+			{
+				Caster.SendMessage("Vous ne pouvez pas vous teleporter avec un paquet.");
+				return false;
+			}
 
-            return SpellHelper.CheckTravel(Caster, TravelCheckType.RecallFrom);
+			return SpellHelper.CheckTravel(Caster, TravelCheckType.RecallFrom);
         }
 
         public void Effect(BaseGalleon galleon)

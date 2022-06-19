@@ -1183,11 +1183,15 @@ namespace Server.Mobiles
 		{
 			if (cl == ClasseSecondaire)
 			{
-				m_ClasseSecondaire = Classe.GetClasse(-1);
+				m_ClassePrimaire = cl;
+				ClasseSecondaire = Classe.GetClasse(-1);
+				return false;
 			}
 			else if (cl == Metier)
 			{
+				m_ClassePrimaire = cl;
 				Metier = Classe.GetClasse(-1);
+				return false;
 			}
 
 			return true;
@@ -1197,11 +1201,15 @@ namespace Server.Mobiles
 		{
 			if (cl == ClassePrimaire)
 			{
-				m_ClassePrimaire = Classe.GetClasse(-1);
+				m_ClasseSecondaire = cl;
+				ClassePrimaire = Classe.GetClasse(-1);
+				return false;
 			}
 			else if (cl == Metier)
 			{
+				m_ClasseSecondaire = cl;
 				Metier = Classe.GetClasse(-1);
+				return false;
 			}
 
 			return true;
@@ -1211,11 +1219,15 @@ namespace Server.Mobiles
 		{
 			if (cl == ClassePrimaire)
 			{
-				m_ClassePrimaire = Classe.GetClasse(-1);
+				m_Metier = cl;
+				ClassePrimaire = Classe.GetClasse(-1);
+				return false;
 			}
 			else if (cl == ClasseSecondaire)
 			{
+				m_Metier = cl;
 				ClasseSecondaire = Classe.GetClasse(-1);
+				return false;
 			}
 
 			return true;
@@ -1803,6 +1815,19 @@ namespace Server.Mobiles
 
 			accFrom.AddReroll(new Reroll(this));
 		}
+
+		public override bool CheckPackage()
+		{
+			Item package =  (Item)Backpack.FindItemByType(typeof(Server.Custom.Packaging.Packages.CustomPackaging));
+
+			if (package != null)
+			{
+				return true;
+			}
+
+			return false;
+		}
+
 
 		public override void Deserialize(GenericReader reader)
         {

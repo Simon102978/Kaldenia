@@ -2,6 +2,7 @@
 using Server.Items;
 using Server.Mobiles;
 using System;
+using Server.Custom.Packaging.Packages;
 #endregion
 
 namespace Server
@@ -212,7 +213,7 @@ namespace Server
 
 
 
-
+		public static readonly LootPackItem[] Marchandise = new[] { new LootPackItem(typeof(Marchandise), 1) };
 		public static readonly LootPackItem[] Gold5 = new[] { new LootPackItem(typeof(Citrine), 1) };
 		       public static readonly LootPackItem[] Gold10 = new[] { new LootPackItem(typeof(Amber), 1) };
 		       public static readonly LootPackItem[] Gold25 = new[] { new LootPackItem(typeof(Tourmaline), 1) };
@@ -598,7 +599,7 @@ namespace Server
 					new LootPackEntry(false, false, LowScrollItems, 50.0, 1, true),
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-
+					new LootPackEntry(false, false, Marchandise, 100.0, 1, true),
 
 				});
 
@@ -626,6 +627,7 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
+					new LootPackEntry(false, false, Marchandise, 100.0, 2, true),
 
 				});
 
@@ -666,7 +668,7 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
-
+					new LootPackEntry(false, false, Marchandise, 100.0, 3, true),
 				});
 
         public static readonly LootPack LootRich =
@@ -710,7 +712,7 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
-
+					new LootPackEntry(false, false, Marchandise, 100.0, 4, true),
 				});
 
         public static readonly LootPack LootFilthyRich =
@@ -748,8 +750,8 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-				
 
+					new LootPackEntry(false, false, Marchandise, 100.0, 5, true),
 				});
 
         public static readonly LootPack LootUltraRich =
@@ -794,6 +796,7 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
+					new LootPackEntry(false, false, Marchandise, 100.0, 6, true),
 				});
 
         public static readonly LootPack LootSuperBoss =
@@ -837,7 +840,7 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
-
+					new LootPackEntry(false, false, Marchandise, 100.0, 7, true),
 				});
         #endregion
 

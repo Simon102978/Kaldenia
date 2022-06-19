@@ -2,7 +2,7 @@
 {
 	public class MediumPackage : CustomPackaging
 	{
-		public override double Conversion => 0.50;
+		public override double Conversion => 0.80;
 
 		[Constructable]
 		public MediumPackage() : base(0x0E3E)

@@ -3,22 +3,49 @@ using Server.ContextMenus;
 using Server.Custom.Gumps;
 using Server.Targeting;
 using Server.Custom.Packaging.Packages;
+using Server.Items;
 
 namespace Server.Mobiles
 {
     public class PackageExchanger : BaseVendor
     {
-	/*	[CommandProperty(AccessLevel.GameMaster)]
-		public int SlavePrice { get; set; } = 1000;*/
+	
 		
 		private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
 
         [Constructable]
-        public PackageExchanger() : base("Package Exchanger")
-        {
-        }
+        public PackageExchanger() : base("Importateur de marchandises")
+		{
 
-        public PackageExchanger(Serial serial)
+			SetSkill(SkillName.Cartography, 75.0, 100.0);
+			SetSkill(SkillName.Hiding, 75.0, 100.0);
+
+			Hue = Utility.RandomSkinHue();
+			Body = 0x190;
+			Name = NameList.RandomName("male");
+
+			HairItemID = Race.RandomHair(Female);
+			if (Utility.RandomBool())
+				FacialHairItemID = Race.RandomFacialHair(Female);
+			int hhue = Race.RandomHairHue();
+			HairHue = hhue;
+			FacialHairHue = hhue;
+
+			SetStr(86, 100);
+			SetDex(81, 95);
+			SetInt(61, 75);
+			SetDamage(10, 23);
+		}
+
+		public override void InitOutfit()
+		{
+			AddItem(new Camisole(Utility.RandomNeutralHue()));
+			AddItem(new Shoes());
+			AddItem(new SkullCap(Utility.RandomBirdHue()));
+			AddItem(new Pantalon6(Utility.RandomBirdHue()));
+			AddItem(new ShoulderParrot());
+		}
+		public PackageExchanger(Serial serial)
             : base(serial)
         {
         }
@@ -31,15 +58,7 @@ namespace Server.Mobiles
 
 		public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
 		{
-			//	base.GetContextMenuEntries(from, list);
-
-			/*	for(int i = list.Count - 1; i >= 0; i--)
-				{
-					if (list[i] is VendorBuyEntry)
-						list.RemoveAt(i);
-					else if (list[i] is VendorSellEntry)
-							list.RemoveAt(i);
-				}*/
+			
 
 			if (CanPaperdollBeOpenedBy(from))
 			{
@@ -124,7 +143,6 @@ namespace Server.Mobiles
 
             writer.Write(0); // version
 
-	//		writer.Write(SlavePrice);
         }
 
         public override void Deserialize(GenericReader reader)
@@ -133,10 +151,6 @@ namespace Server.Mobiles
 
             int version = reader.ReadInt();
 
-		/*	switch(version)
-			{
-				case 0: SlavePrice = reader.ReadInt(); break;
-			}*/
 		}
     }
 }

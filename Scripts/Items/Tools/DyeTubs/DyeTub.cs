@@ -19,21 +19,29 @@ namespace Server.Items
         private bool m_Redyable;
         private int m_DyedHue;
         private SecureLevel m_SecureLevel;
+		private int m_Charge;
 
-        [Constructable]
+		[Constructable]
         public DyeTub()
             : base(0xFAB)
         {
             Weight = 10.0;
             m_Redyable = true;
+			m_Charge = 5;
         }
 
         public DyeTub(Serial serial)
             : base(serial)
         {
         }
+		public override void OnAosSingleClick(Mobile from)
+		{
+			base.OnAosSingleClick(from);
 
-        public virtual CustomHuePicker CustomHuePicker => null;
+			LabelTo(from, String.Format("[{0} charge{1}]", m_Charge, m_Charge > 1 ? "s" : ""));
+		}
+
+		public virtual CustomHuePicker CustomHuePicker => null;
         public virtual bool AllowRunebooks => false;
         public virtual bool AllowFurniture => false;
         public virtual bool AllowStatuettes => false;
@@ -69,7 +77,14 @@ namespace Server.Items
             set { m_SecureLevel = value; }
         }
 
-        public virtual int TargetMessage => 500859;  // Select the clothing to dye.        
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int Charge
+		{
+			get { return m_Charge; }
+			set { m_Charge = value; }
+		}
+
+		public virtual int TargetMessage => 500859;  // Select the clothing to dye.        
         public virtual int FailMessage => 1042083;  // You can not dye that.
 
         public virtual Type[] ForcedDyables => new Type[0];
@@ -87,7 +102,8 @@ namespace Server.Items
             writer.Write((int)m_SecureLevel);
             writer.Write(m_Redyable);
             writer.Write(m_DyedHue);
-        }
+			writer.Write((int)m_Charge);
+		}
 
         public override void Deserialize(GenericReader reader)
         {
@@ -97,6 +113,7 @@ namespace Server.Items
 			m_SecureLevel = (SecureLevel)reader.ReadInt();
 			m_Redyable = reader.ReadBool();
             m_DyedHue = reader.ReadInt();
+			m_Charge = reader.ReadInt();
         }
 
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
@@ -179,8 +196,8 @@ namespace Server.Items
                                 item.Hue = m_Tub.DyedHue;
                                 from.PlaySound(0x23E);
                             }
-                        }
-                    }
+							
+                    
                     else if (m_Tub.AllowRunebooks && (item is Runebook || item is RecallRune || m_Tub.CanForceDye(item)))
                     {
                         if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
@@ -280,11 +297,16 @@ namespace Server.Items
                         from.SendLocalizedMessage(m_Tub.FailMessage);
                     }
                 }
+
                 else
                 {
                     from.SendLocalizedMessage(m_Tub.FailMessage);
                 }
-            }
+						if (m_Tub.Charge == 0)
+						{
+							this.Delete();
+						}
+					}
         }
     }
 }

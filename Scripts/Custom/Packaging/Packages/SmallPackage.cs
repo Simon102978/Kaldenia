@@ -3,7 +3,7 @@
 	public class SmallPackage : CustomPackaging
 	{
 
-		public override double Conversion => 0.25;
+		public override double Conversion => 0.70;
 
 		[Constructable]
 		public SmallPackage() : base(0x0E7E)

@@ -86,7 +86,12 @@ namespace Server.Mobiles
             if (CheckFeed(from, item))
                 return true;
 
-            if (PackAnimal.CheckAccess(this, from))
+			if (!PackAnimal.CheckDrop(from, item))
+			{
+				return false;
+			}
+
+			if (PackAnimal.CheckAccess(this, from))
             {
                 AddToBackpack(item);
                 return true;

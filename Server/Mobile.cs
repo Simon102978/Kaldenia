@@ -1692,6 +1692,9 @@ namespace Server
 			}
 		}
 
+		
+
+
 		#region Timers
 
 		#region Regeneration
@@ -2016,6 +2019,14 @@ namespace Server
 		{
 			return Utility.InUpdateRange(this, e.Location) && CanSee(e) && InLOS(e);
 		}
+
+
+		public virtual bool CheckPackage()
+		{
+			return false;
+		}
+
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool GuardImmune { get; set; }
@@ -10401,7 +10412,7 @@ namespace Server
 			return pack != null && pack.TryDropItem(this, item, false);
 		}
 
-		public bool AddToBackpack(Item item)
+		public virtual bool AddToBackpack(Item item)
 		{
 			if (item.Deleted)
 			{

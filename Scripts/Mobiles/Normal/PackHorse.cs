@@ -87,7 +87,12 @@ namespace Server.Mobiles
             if (CheckFeed(from, item))
                 return true;
 
-            if (PackAnimal.CheckAccess(this, from))
+			if (!PackAnimal.CheckDrop(from, item))
+			{
+				return false;
+			}
+
+			if (PackAnimal.CheckAccess(this, from))
             {
                 AddToBackpack(item);
                 return true;
@@ -175,7 +180,18 @@ namespace Server.Mobiles
             return false;
         }
 
-        public static void TryPackOpen(BaseCreature animal, Mobile from)
+		public static bool CheckDrop(Mobile from, Item item)
+		{
+			if (item is Server.Custom.Packaging.Packages.CustomPackaging)
+			{
+				return false;
+			}
+
+
+			return true;
+		}
+
+		public static void TryPackOpen(BaseCreature animal, Mobile from)
         {
             if (animal.IsDeadPet)
                 return;

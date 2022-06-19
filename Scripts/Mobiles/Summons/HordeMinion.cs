@@ -174,6 +174,11 @@ namespace Server.Mobiles
                 return true;
             }
 
+			if (!PackAnimal.CheckDrop(from, item))
+			{
+				return false;
+			}
+
             if (PackAnimal.CheckAccess(this, from))
             {
                 AddToBackpack(item);

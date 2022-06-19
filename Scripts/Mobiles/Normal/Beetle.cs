@@ -108,52 +108,6 @@ namespace Server.Mobiles
                 CurrentSpeed = PassiveSpeed;
         }
 
-        #region Pack Animal Methods
-        public override DeathMoveResult GetInventoryMoveResultFor(Item item)
-        {
-            return DeathMoveResult.MoveToCorpse;
-        }
-
-        public override bool IsSnoop(Mobile from)
-        {
-            if (PackAnimal.CheckAccess(this, from))
-                return false;
-
-            return base.IsSnoop(from);
-        }
-
-        public override bool OnDragDrop(Mobile from, Item item)
-        {
-            if (CheckFeed(from, item))
-                return true;
-
-            if (PackAnimal.CheckAccess(this, from))
-            {
-                AddToBackpack(item);
-                return true;
-            }
-
-            return base.OnDragDrop(from, item);
-        }
-
-        public override bool CheckNonlocalDrop(Mobile from, Item item, Item target)
-        {
-            return PackAnimal.CheckAccess(this, from);
-        }
-
-        public override bool CheckNonlocalLift(Mobile from, Item item)
-        {
-            return PackAnimal.CheckAccess(this, from);
-        }
-
-        public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
-        {
-            base.GetContextMenuEntries(from, list);
-
-            PackAnimal.GetContextMenuEntries(this, from, list);
-        }
-        #endregion
-
         public override void OnAfterTame(Mobile tamer)
         {
             base.OnAfterTame(tamer);

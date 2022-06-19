@@ -129,7 +129,11 @@ namespace Server.Items
             {
                 m.SendLocalizedMessage(1071955); // You cannot teleport while dragging an object.
             }
-            else if (TargetMap != null && TargetMap != Map.Internal)
+			else if (m.CheckPackage())
+			{
+				m.SendMessage("Vous ne pouvez pas passer une porte magique avec un paquet.");
+			}
+			else if (TargetMap != null && TargetMap != Map.Internal)
             {
                 OnGateUsed(m);
             }

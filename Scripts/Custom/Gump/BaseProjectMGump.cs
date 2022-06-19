@@ -276,11 +276,12 @@ namespace Server.Gumps
     }
 
         // Button et le texte, pour pas avoir a gosser avec a chaque fois.
-    public void AddButtonHtlml(int x, int y, int buttonID,string text)
+    public void AddButtonHtlml(int x, int y, int buttonID,string text, string color = "#000000")
     {
-            AddButtonHtlml(x, y, buttonID, 2117, 2118,  text);  
+            AddButtonHtlml(x, y, buttonID, 2117, 2118,  text, color);  
     }
-       public void AddButtonHtlml(int x, int y, int buttonID, int NormalButton, int PressButton, string text, string color = "#000000")
+
+		public void AddButtonHtlml(int x, int y, int buttonID, int NormalButton, int PressButton, string text, string color = "#000000")
        {
             AddButton(x, y + 2, NormalButton, PressButton, buttonID, GumpButtonType.Reply, 0);
             AddHtml(x + 18, y, 400, 20, "<h3><basefont color=" + color + ">" + text + "<basefont></h3>", false, false);

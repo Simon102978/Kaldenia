@@ -272,10 +272,7 @@ namespace Server.Mobiles
 				{
 					NameMod = "Identite masquee";
 					m_Masque = value;
-				}
-
-
-				
+				}			
 			} 
 		}
 
@@ -287,7 +284,6 @@ namespace Server.Mobiles
 
 		public CustomPlayerMobile()
 		{
-
 			MagicAfinity = new AffinityDictionary(this);
 		}
 
@@ -300,13 +296,11 @@ namespace Server.Mobiles
 				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMÉE" : "ASSOMÉ") + "</basefont></h3>\t");
 			}
 
-
 			if (NameMod == null)
 			{
 				list.Add(1050045, "{0}, \t{1}\t", Race.Name, Apparence()); // ~1_PREFIX~~2_NAME~~3_SUFFIX~
 				list.Add(1050045, "{0}, \t{1}\t", GrandeurString(), GrosseurString());
 			}
-
 
 		}
 
@@ -319,8 +313,6 @@ namespace Server.Mobiles
 			MissiveEnAttente.Add(missive.Content);
 
 			missive.Delete();
-
-
 
 			SendMessage("Vous avez reçu une missive.");
 		}
@@ -343,17 +335,10 @@ namespace Server.Mobiles
 
 		}
 
-
-
 		#endregion
 
 		private static void OnLogin(LoginEventArgs e)
 		{
-
-
-
-			
-
 
 		}
 
@@ -543,7 +528,6 @@ namespace Server.Mobiles
 
 		#endregion
 
-
 		#region statutsocial	
 
 		public string StatutSocialString()
@@ -647,11 +631,6 @@ namespace Server.Mobiles
 		}
 
 		#endregion
-
-
-
-
-
 
 		#region Apparence
 
@@ -902,7 +881,6 @@ namespace Server.Mobiles
 
 		}
 
-
 		public bool CacheIdentite()
 		{
 			foreach (Layer Laitem in Enum.GetValues(typeof(Layer)))
@@ -992,9 +970,6 @@ namespace Server.Mobiles
 						req = 10;
 						break;
 				}
-
-
-
 
 				if (Armure < req)
 				{
@@ -1104,7 +1079,6 @@ namespace Server.Mobiles
 		{
 			HashSet<SkillName> list = new HashSet<SkillName>();
 
-
 			foreach (SkillName item in ClassePrimaire.Skill)
 			{
 				list.Add(item);
@@ -1114,8 +1088,6 @@ namespace Server.Mobiles
 			{
 				list.Add(item);
 			}
-
-
 			foreach (SkillName item in Metier.Skill)
 			{
 				list.Add(item);
@@ -1125,10 +1097,7 @@ namespace Server.Mobiles
 			{
 				list.Add(item);
 			}
-
-
 			return list;
-
 		}
 
 		public int GetAffinityValue(MagieType affinity)
@@ -1137,7 +1106,6 @@ namespace Server.Mobiles
 		}
 
 		#region Classe
-
 
 		public bool ClassSkill(SkillName skills)
 		{
@@ -1181,9 +1149,27 @@ namespace Server.Mobiles
 
 		public bool CheckClassePrimaire(Classe cl)
 		{
-			if (cl == ClasseSecondaire)
+
+			if (cl == Classe.GetClasse(-1))
 			{
+				return true;
+			}
+			else if (cl == ClasseSecondaire)
+			{
+
 				m_ClassePrimaire = cl;
+
+				foreach (SkillName item in cl.Skill)
+				{
+					Skills[item].Base += 20;
+
+					if (Skills[item].Base > 100)
+					{
+						m_feAttente += (int)Math.Round(Skills[item].Base) - 100;
+						Skills[item].Base = 100;
+					}
+				}
+				
 				ClasseSecondaire = Classe.GetClasse(-1);
 				return false;
 			}
@@ -1199,15 +1185,26 @@ namespace Server.Mobiles
 
 		public bool CheckClasseSecondaire(Classe cl)
 		{
-			if (cl == ClassePrimaire)
+			if (cl == Classe.GetClasse(-1))
+			{
+				return true;
+			}
+			else if (cl == ClassePrimaire)
 			{
 				m_ClasseSecondaire = cl;
+
+				foreach (SkillName item in cl.Skill)
+				{
+					Skills[item].Base -= 20;			
+				}
+
 				ClassePrimaire = Classe.GetClasse(-1);
 				return false;
 			}
 			else if (cl == Metier)
 			{
 				m_ClasseSecondaire = cl;
+
 				Metier = Classe.GetClasse(-1);
 				return false;
 			}
@@ -1217,7 +1214,11 @@ namespace Server.Mobiles
 
 		public bool CheckMetier(Classe cl)
 		{
-			if (cl == ClassePrimaire)
+			if (cl == Classe.GetClasse(-1))
+			{
+				return true;
+			}
+			else if (cl == ClassePrimaire)
 			{
 				m_Metier = cl;
 				ClassePrimaire = Classe.GetClasse(-1);
@@ -1226,6 +1227,18 @@ namespace Server.Mobiles
 			else if (cl == ClasseSecondaire)
 			{
 				m_Metier = cl;
+
+				foreach (SkillName item in cl.Skill)
+				{
+					Skills[item].Base += 20;
+
+					if (Skills[item].Base > 100)
+					{
+						m_feAttente += (int)Math.Round(Skills[item].Base) - 100;
+						Skills[item].Base = 100;
+					}
+				}
+
 				ClasseSecondaire = Classe.GetClasse(-1);
 				return false;
 			}
@@ -1240,7 +1253,7 @@ namespace Server.Mobiles
 			{
 				case 1:
 					{
-						if (ClassePrimaire != null)
+						if (ClassePrimaire != null )
 						{
 							foreach (SkillName item in ClassePrimaire.Skill)
 							{
@@ -1279,6 +1292,12 @@ namespace Server.Mobiles
 								{
 									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
 									Skills[item].Base += 20;
+
+									if (Skills[item].Base > 100)
+									{
+										m_feAttente += (int)Math.Round(Skills[item].Base) - 100;
+										Skills[item].Base = 100;
+									}
 								}
 								else
 								{
@@ -1386,6 +1405,16 @@ namespace Server.Mobiles
 								{
 
 									Skills[item].Base += 20;
+
+
+									if (Skills[item].Base > 100)
+									{
+								     	m_feAttente += (int)Math.Round(Skills[item].Base) - 100;
+										Skills[item].Base = 100;
+									}
+									
+
+
 								}
 								else
 								{
@@ -1404,6 +1433,31 @@ namespace Server.Mobiles
 					break;
 			}
 		}
+
+		public void SetClasseSkills(double skills)
+		{
+			double principal = skills < 50 ? 50 : skills;
+			double secondaire = skills < 30 ? 30 : skills;
+
+
+			foreach (SkillName item in ClasseSecondaire.Skill)
+			{
+				Skills[item].Base = secondaire;
+			}
+
+			foreach (SkillName item in ClassePrimaire.Skill)
+			{
+				Skills[item].Base = principal;
+			}
+
+			foreach (SkillName item in Metier.Skill)
+			{
+				Skills[item].Base = principal;
+			}
+
+
+		}
+
 
 		#endregion
 
@@ -1498,7 +1552,6 @@ namespace Server.Mobiles
 					return false;
 				default:
 					return false;
-					break;
 			}
 		}
 
@@ -1799,14 +1852,9 @@ namespace Server.Mobiles
 
 		public override void OnDelete()
 		{
-
 			Reroll(); // Ok, c'est un peu bizard de faire quand on delete le perso, que sa reroll automatique, mais ca facilite la pierre de reroll (fait juste deleter le personnage) et ca diminue aussi l'impacte d'un Rage Quit, puisque si le joueur a deleter son perso, il va automatiquement recevoir l'experience et va pouvoir revenir en rerollant.
 
 			base.OnDelete();
-
-
-
-
 		}
 
 		public void Reroll()
@@ -1827,7 +1875,6 @@ namespace Server.Mobiles
 
 			return false;
 		}
-
 
 		public override void Deserialize(GenericReader reader)
         {

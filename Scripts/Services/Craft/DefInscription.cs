@@ -888,7 +888,23 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
 
-
+			index = AddCraft(typeof(LivreArcher), "Livre de Classe", "livre d'archer", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreBagarreur), "Livre de Classe", "livre de Bagarreur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreDueliste), "Livre de Classe", "livre de Dueliste", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreEpeiste), "Livre de Classe", "livre d'épéiste", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreGardien), "Livre de Classe", "livre de gardien", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreMassier), "Livre de Classe", "livre de Massier", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreSorcier), "Livre de Classe", "livre de sorcier", 99.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreEpicier), "Livre de Classe", "livre d'épicier", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreHistorien), "Livre de Classe", "livre d'Historien", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreIngenieur), "Livre de Classe", "livre d'Ingénieur", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivrePalefrenier), "Livre de Classe", "livre de palefrenier", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreStyliste), "Livre de Classe", "livre de styliste", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreAssassin), "Livre de Classe", "livre d'assassin", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreCambrioleur), "Livre de Classe", "livre de Cambrioleur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreDresseur), "Livre de Classe", "livre de dresseur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivreMenestrel), "Livre de Classe", "livre de ménéstrel", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			index = AddCraft(typeof(LivrePisteur), "Livre de Classe", "livre de pisteur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
 
 
 			/*			index = AddCraft(typeof(ScrappersCompendium), 1044294, 1072940, 75.0, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);

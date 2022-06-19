@@ -64,6 +64,17 @@ namespace Server
 
 		}
 
+		public bool IsMetier()
+		{
+			if (ClasseType == ClasseType.Metier)
+			{
+				return true;
+			}
+			return false;
+
+
+		}
+
 
 	    public virtual bool ContainSkill(SkillName skill)
 		{

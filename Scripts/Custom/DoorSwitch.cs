@@ -17,8 +17,11 @@ namespace Server.Items
      
         private ArrayList m_doors;
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool Lock { get; set; }
+
 		[Constructable]
-        public DoorSwitch() : base(0x1093)
+        public DoorSwitch() : base(0x1095)
 		{
 			LootType = LootType.Blessed;
 			Movable = true;
@@ -30,7 +33,7 @@ namespace Server.Items
 		{
 		}
 
-		public override void GetProperties( ObjectPropertyList list )
+	/*	public override void GetProperties( ObjectPropertyList list )
 		{
 
 			base.GetProperties( list );
@@ -39,17 +42,27 @@ namespace Server.Items
 
 		}
 
-        
+       */
 
 		public override void OnDoubleClick(Mobile m)
 		{
-            InvalidateProperties();
-            m.SendMessage("Please target a door to add/remove or this item to open/close the doors.");
-			m.Target = new AddDoor(m_doors);
-            InvalidateProperties();
+			if (AccessLevel.Player < m.AccessLevel)
+			{
+				InvalidateProperties();
+				m.SendMessage("Please target a door to add/remove or this item to open/close the doors.");
+				m.Target = new AddDoor(m_doors);
+				InvalidateProperties();
+			}
+			else if (!Lock)
+			{
+				switchit();
+
+			}
+			else m.SendMessage("Le levier semble cadenassé");
+
 		}
 
-        public void switchit(){
+		public void switchit(){
             BaseDoor oc;
             foreach(Item i in m_doors){
                 oc = i as BaseDoor;

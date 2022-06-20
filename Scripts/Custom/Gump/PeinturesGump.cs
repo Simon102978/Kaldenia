@@ -88,7 +88,7 @@ namespace Server.Gumps
 
 			for (int i = 0 + 10 * m_Page; i < 10 * (m_Page + 1); ++i)
 			{
-				AddTextEntry(x + 25, y + line * scale, 330, 15, 0, i, PeintureCours.GetContenu(i));
+				AddTextEntry(x + 25, y + line * scale, 280, 15, 0, i, PeintureCours.GetContenu(i));
 				line++;
 			}
 		  }

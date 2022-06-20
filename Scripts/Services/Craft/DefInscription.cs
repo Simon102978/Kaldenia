@@ -889,22 +889,55 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
 
 			index = AddCraft(typeof(LivreArcher), "Livre de Classe", "livre d'archer", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreBagarreur), "Livre de Classe", "livre de Bagarreur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreDueliste), "Livre de Classe", "livre de Dueliste", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreEpeiste), "Livre de Classe", "livre d'épéiste", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreGardien), "Livre de Classe", "livre de gardien", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreMassier), "Livre de Classe", "livre de Massier", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreSorcier), "Livre de Classe", "livre de sorcier", 99.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreEpicier), "Livre de Classe", "livre d'épicier", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreHistorien), "Livre de Classe", "livre d'Historien", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreIngenieur), "Livre de Classe", "livre d'Ingénieur", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivrePalefrenier), "Livre de Classe", "livre de palefrenier", 95.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreStyliste), "Livre de Classe", "livre de styliste", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreAssassin), "Livre de Classe", "livre d'assassin", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreCambrioleur), "Livre de Classe", "livre de Cambrioleur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreDresseur), "Livre de Classe", "livre de dresseur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivreMenestrel), "Livre de Classe", "livre de ménéstrel", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
+
 			index = AddCraft(typeof(LivrePisteur), "Livre de Classe", "livre de pisteur", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
+			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
 
 
 			/*			index = AddCraft(typeof(ScrappersCompendium), 1044294, 1072940, 75.0, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
@@ -931,8 +964,8 @@ namespace Server.Engines.Craft
 						AddRes(index, typeof(WoodPulp), 1113136, 10, 1113289);
 						AddRes(index, typeof(Beeswax), 1025154, 5, 1044253);*/
 
-			index = AddCraft(typeof(BlankScroll), "Autres", 1023636, 50.0, 100.0, typeof(WoodPulp), 1113136, 1, 1044378);
-			index = AddCraft(typeof(Missive), "Autres", "Missive", 15.0, 50.0, typeof(WoodPulp), 1113136, 1, 1044378);
+			index = AddCraft(typeof(BlankScroll), "Autres", 1023636, 50.0, 100.0, typeof(Kindling), "Kindling", 1, "Vous n'avez pas assez de Petit Bois.");
+			index = AddCraft(typeof(Missive), "Autres", "Missive", 15.0, 50.0, typeof(BlankScroll), 1044377, 1, 1044378);
 
 			/*			index = AddCraft(typeof(ScrollBinderDeed), 1044294, 1113135, 75.0, 125.0, typeof(WoodPulp), 1113136, 1, 1044253);
 						SetItemHue(index, 1641);*/
@@ -947,6 +980,18 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(Beeswax), 1025154, 4, 1053098);
 
 			index = AddCraft(typeof(Calendrier), "Autres", "Calendrier", 0.0, 25.0, typeof(BlankScroll), 1044377, 20, 1044378);
+
+			index = AddCraft(typeof(GlassblowingBook), "Autres", "Connaissances Verre", 65, 100, typeof(BlankScroll), 1044377, 5, 1044378);
+
+			index = AddCraft(typeof(SandMiningBook), "Autres", "Connaissances Sable", 65, 100, typeof(BlankScroll), 1044377, 5, 1044378);
+
+			index = AddCraft(typeof(StoneMiningBook), "Autres", "Connaissances Granite", 65, 100, typeof(BlankScroll), 1044377, 5, 1044378);
+
+			index = AddCraft(typeof(MasonryBook), "Autres", "Connaissances Pierre", 65, 100, typeof(BlankScroll), 1044377, 5, 1044378);
+
+			index = AddCraft(typeof(GemMiningBook), "Autres", "Connaissances Gems", 65, 100, typeof(BlankScroll), 1044377, 5, 1044378);
+
+			
 
 			MarkOption = true;
         }

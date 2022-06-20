@@ -2,6 +2,8 @@ using Server.Mobiles;
 using Server.Network;
 using System;
 using System.Collections;
+using Server.Items;
+using Server.Gumps;
 
 namespace Server.Items
 {
@@ -19,6 +21,9 @@ namespace Server.Items
         private readonly Timer m_Timer;
         private readonly DateTime m_Created;
         private readonly ArrayList m_Entries;
+
+ 	public bool IsUpgraded = false;
+
         public Campfire()
             : base(0xDE3)
         {
@@ -118,11 +123,11 @@ namespace Server.Items
             DateTime now = DateTime.UtcNow;
             TimeSpan age = now - Created;
 
-            if (age >= TimeSpan.FromSeconds(100.0))
+            if (age >= TimeSpan.FromSeconds(220.0)) // 100
                 Delete();
-            else if (age >= TimeSpan.FromSeconds(90.0))
+            else if (age >= TimeSpan.FromSeconds(210.0)) // 90
                 Status = CampfireStatus.Off;
-            else if (age >= TimeSpan.FromSeconds(60.0))
+            else if (age >= TimeSpan.FromSeconds(180.0)) // 60
                 Status = CampfireStatus.Extinguishing;
 
             if (Status == CampfireStatus.Off || Deleted)
@@ -130,15 +135,37 @@ namespace Server.Items
 
             foreach (CampfireEntry entry in new ArrayList(m_Entries))
             {
+
                 if (!entry.Valid || entry.Player.NetState == null)
                 {
                     RemoveEntry(entry);
                 }
-                else if (!entry.Safe && now - entry.Start >= TimeSpan.FromSeconds(30.0))
+                else if (!entry.Safe && now - entry.Start >= TimeSpan.FromSeconds(60 - 45 *(entry.Player.Skills[SkillName.Tracking].Value / 100)) ) //originally was: TimeSpan.FromSeconds(30.0)
                 {
                     entry.Safe = true;
                     entry.Player.SendLocalizedMessage(500621); // The camp is now secure.
+
+
                 }
+
+	    	if(entry.Safe = true)
+	    	{
+		    
+		    if(entry.Player.Hits < entry.Player.HitsMax)
+		    	entry.Player.Hits +=1;
+		  //  if(entry.Player.Mana < entry.Player.ManaMax)
+		    //	entry.Player.Mana +=1;
+		    
+
+                    Effects.SendLocationParticles(this, 0x3779, 1, 30, 1160, 3, 9502, 0);
+
+		    if(!entry.IsBuffed)
+		    {
+			DoBuff(entry.Player);
+		   	entry.IsBuffed = true;
+		    }
+	    	}
+
             }
 
             IPooledEnumerable eable = GetClientsInRange(SecureRange);
@@ -160,6 +187,28 @@ namespace Server.Items
 
             eable.Free();
         }
+
+        public bool DoBuff(Mobile from)
+        {
+	    TimeSpan Duration = TimeSpan.FromMinutes(10);
+            int scale = 5;
+            if (Spells.SpellHelper.AddStatOffset(from, StatType.Str, scale, Duration) 
+	    && Spells.SpellHelper.AddStatOffset(from, StatType.Dex, scale, Duration)
+ 	    && Spells.SpellHelper.AddStatOffset(from, StatType.Int, scale, Duration))
+            {
+                from.FixedEffect(0x375A, 10, 15);
+                from.PlaySound(0x1E7);
+	//	from.SendMessage("You feel comforted by the warmth of the campfire.");
+
+                return true;
+            }
+
+
+            from.SendLocalizedMessage(502173); // You are already under a similar effect.
+            return false;
+        }
+
+
 
         private void ClearEntries()
         {
@@ -191,6 +240,7 @@ namespace Server.Items
         public Campfire Fire => m_Fire;
         public DateTime Start => m_Start;
         public bool Valid => !Fire.Deleted && Fire.Status != CampfireStatus.Off && Player.Map == Fire.Map && Player.InRange(Fire, Campfire.SecureRange);
+	public bool IsBuffed;
         public bool Safe
         {
             get

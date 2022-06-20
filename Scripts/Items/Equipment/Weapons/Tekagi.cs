@@ -30,7 +30,7 @@ namespace Server.Items
         public override int DefMissSound => 0x232;
         public override int InitMinHits => 35;
         public override int InitMaxHits => 60;
-        public override SkillName DefSkill => SkillName.Fencing;
+        public override SkillName DefSkill => SkillName.Wrestling;
         public override WeaponType DefType => WeaponType.Piercing;
         public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
         public override void Serialize(GenericWriter writer)

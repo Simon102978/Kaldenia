@@ -23,12 +23,12 @@ namespace Server.Mobiles
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
-				Name = NameList.RandomName("female");
+				Name = NameList.RandomName("tokuno female");
 			}
 			else
 			{
 				Body = 0x190;
-				Name = NameList.RandomName("male");
+				Name = NameList.RandomName("tokuno male");
 			}
 
 			SetHits(251, 350);
@@ -123,7 +123,9 @@ namespace Server.Mobiles
 
         public override bool BardImmune => true;
 
-        public override void GenerateLoot()
+		public override TribeType Tribe => TribeType.Kuya;
+
+		public override void GenerateLoot()
         {
 			AddLoot(LootPack.Rich, 2);
 

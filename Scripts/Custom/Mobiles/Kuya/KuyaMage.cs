@@ -47,12 +47,12 @@ namespace Server.Mobiles
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
-				Name = NameList.RandomName("female");
+				Name = NameList.RandomName("tokuno female");
 			}
 			else
 			{
 				Body = 0x190;
-				Name = NameList.RandomName("male");
+				Name = NameList.RandomName("tokuno male");
 			}
 
 
@@ -109,7 +109,7 @@ namespace Server.Mobiles
 		public override bool CanRummageCorpses => true;
 		public override bool AlwaysMurderer => true;
 
-		
+		public override TribeType Tribe => TribeType.Kuya;
 		public override void GenerateLoot()
 		{
 			AddLoot(LootPack.Rich, 2);

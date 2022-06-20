@@ -65,7 +65,8 @@ namespace Server.Mobiles
 
         public override bool AlwaysMurderer => true;
 
-        public bool BlockReflect { get; set; }
+		public override TribeType Tribe => TribeType.Brigand;
+		public bool BlockReflect { get; set; }
 
         public override int Damage(int amount, Mobile from, bool informMount, bool checkDisrupt)
         {

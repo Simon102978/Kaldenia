@@ -79,7 +79,9 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool ClickTitle => false;
+		public override TribeType Tribe => TribeType.Brigand;
+
+		public override bool ClickTitle => false;
         public override bool AlwaysMurderer => true;
 
         public override bool ShowFameTitle => false;

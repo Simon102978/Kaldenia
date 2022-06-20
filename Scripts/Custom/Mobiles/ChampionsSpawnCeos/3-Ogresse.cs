@@ -45,7 +45,6 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override TribeType Tribe => TribeType.Fey;
 
 		public override void GenerateLoot()
 		{

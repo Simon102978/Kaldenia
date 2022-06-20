@@ -89,7 +89,8 @@ namespace Server.Mobiles
                 AddItem(Loot.RandomShield());
         }
 
-        public ElfBrigand(Serial serial)
+		public override TribeType Tribe => TribeType.Brigand;
+		public ElfBrigand(Serial serial)
             : base(serial)
         {
         }

@@ -24,18 +24,18 @@ namespace Server.Mobiles
 
 			Hue = Utility.RandomSkinHue();
 
-            if (Female = Utility.RandomBool())
-            {
-                Body = 0x191;
-                Name = NameList.RandomName("female");
-            }
-            else
-            {
-                Body = 0x190;
-                Name = NameList.RandomName("male");
-            }
+			if (Female = Utility.RandomBool())
+			{
+				Body = 0x191;
+				Name = NameList.RandomName("tokuno female");
+			}
+			else
+			{
+				Body = 0x190;
+				Name = NameList.RandomName("tokuno male");
+			}
 
-            switch (Utility.Random(3))
+			switch (Utility.Random(3))
             {
                 case 0:
                     AddItem(new Lajatang());
@@ -95,7 +95,9 @@ namespace Server.Mobiles
 	
 		}
 
-        public Kuya(Serial serial)
+		public override TribeType Tribe => TribeType.Kuya;
+
+		public Kuya(Serial serial)
             : base(serial)
         {
         }

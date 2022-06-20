@@ -163,7 +163,9 @@ namespace Server.Mobiles
         Fey,
         Undead,
         GrayGoblin,
-        GreenGoblin
+        GreenGoblin,
+		Kuya,
+		Brigand
     }
 
     public enum LootStage
@@ -1560,7 +1562,8 @@ namespace Server.Mobiles
 
         public virtual bool IsTribeEnemy(Mobile m)
         {
-            // Target must be BaseCreature
+			// Target must be BaseCreature
+
             if (!(m is BaseCreature))
             {
                 return false;
@@ -1578,7 +1581,9 @@ namespace Server.Mobiles
                 case TribeType.Undead: return (c.Tribe == TribeType.Fey);
                 case TribeType.GrayGoblin: return (c.Tribe == TribeType.GreenGoblin);
                 case TribeType.GreenGoblin: return (c.Tribe == TribeType.GrayGoblin);
-                default: return false;
+				case TribeType.Kuya: return (c.Tribe == TribeType.Brigand);
+				case TribeType.Brigand: return (c.Tribe == TribeType.Kuya);
+				default: return false;
             }
         }
 
@@ -1653,10 +1658,23 @@ namespace Server.Mobiles
                 }
             }
 
-            if (Tribe != TribeType.None && IsTribeEnemy(m))
-            {
-                return true;
-            }
+			if (Tribe != TribeType.None && IsTribeEnemy(m))
+			{
+				return true;
+			}
+			else if (Tribe != TribeType.None && m is CustomPlayerMobile cp)
+			{
+				if (cp.GetTribeValue(Tribe) >= 75)
+				{
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+
+
+			}
 
             BaseCreature c = m as BaseCreature;
 

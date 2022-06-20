@@ -43,6 +43,11 @@ namespace Server.Mobiles
 		private AffinityDictionary m_MagicAfinity;
 		private List<int> m_QuickSpells = new List<int>();
 		private Deguisement m_Deguisement = null;
+
+		private TribeRelation m_TribeRelation;
+
+
+
 		private bool m_Masque = false;
 
 		private Race m_BaseRace;
@@ -188,6 +193,9 @@ namespace Server.Mobiles
 		public AffinityDictionary MagicAfinity { get { return m_MagicAfinity; } set { m_MagicAfinity = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
+		public TribeRelation TribeRelation { get { return m_TribeRelation; } set { m_TribeRelation = value; } }	
+
+		[CommandProperty(AccessLevel.GameMaster)]
 		public Item ChosenSpellbook { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -285,6 +293,7 @@ namespace Server.Mobiles
 		public CustomPlayerMobile()
 		{
 			MagicAfinity = new AffinityDictionary(this);
+			TribeRelation = new TribeRelation(this);
 		}
 
 		public override void GetProperties(ObjectPropertyList list)
@@ -917,6 +926,7 @@ namespace Server.Mobiles
 			: base(s)
 		{
 			MagicAfinity = new AffinityDictionary(this);
+			TribeRelation = new TribeRelation(this);
 		}
 
 		public virtual void Tip(Mobile m, string tip)
@@ -1104,6 +1114,12 @@ namespace Server.Mobiles
 		{
 			return MagicAfinity.GetValue(affinity);
 		}
+
+		public int GetTribeValue(TribeType tribe)
+		{
+			return TribeRelation.GetValue(tribe);
+		}
+
 
 		#region Classe
 
@@ -1885,6 +1901,12 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 18:
+					{
+						TribeRelation = new TribeRelation(this, reader);
+
+						goto case 17;
+					}
 				case 17:
 					{
 						NameMod = reader.ReadString();
@@ -1970,27 +1992,6 @@ namespace Server.Mobiles
 
 						MagicAfinity = new AffinityDictionary(this, reader);
 					
-						/*
-												int count = reader.ReadInt();
-
-												for (int i = 0; i < count; i++)
-												{
-
-													MagieType affinity = (MagieType)reader.ReadInt();
-
-													int affinityValue = reader.ReadInt();
-
-													if (m_MagicAfinity.ContainsKey(affinity))
-													{
-														m_MagicAfinity[affinity] += affinityValue;
-													}
-													else
-													{
-														m_MagicAfinity.Add(affinity, affinityValue);
-													}
-
-
-												}*/
 						goto case 5;
 					}
 				case 5:
@@ -2043,8 +2044,9 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(17); // version
+            writer.Write(18); // version
 
+			m_TribeRelation.Serialize(writer);
 
 			writer.Write(NameMod);
 			writer.Write(m_Masque);

@@ -44,7 +44,7 @@ namespace Server.Gumps
 				case StatutSocialEnum.Aucun:
 					break;
 				case StatutSocialEnum.Dechet:
-					detail = "Les esclaves de Kaldenia n’ont aucune autorité et aucun droit sur quiconque dans le royaume. Considérés comme la chair à canon, leur présence dans Alverton ne sert qu’à assouvir les moindres désirs des maîtres. Ils n’ont aucune valeur, mais il est possible, à force d’acharnement, de devenir un Pérégrin. \n\n<u>Ils peuvent et doivent servir absolument n’importe qui.</u> Si personne ne veut s’en occuper, ni même user de leurs services, ils vont errer ici et là jusqu’à la mort.";
+					detail = "Les esclaves de Kaldenia n’ont aucune autorité et aucun droit sur quiconque dans le royaume. Considérés comme la chair à canon, leur présence dans Alverton ne sert qu’à assouvir les moindres désirs des maîtres. Ils n’ont aucune valeur, mais il est possible, à force d’acharnement, de devenir un Pérégrin. \n\n<color><u>Ils peuvent et doivent servir absolument n’importe qui.</u> Si personne ne veut s’en occuper, ni même user de leurs services, ils vont errer ici et là jusqu’à la mort. </basefont></h3><h3><basefont color=#ff0000> \n\n-Lorsqu'un déchet meurt, sa mort est permanente\n-Les déchets ne peuvent pas acheter au npc\n-Les déchets ne peuvent pas vendre au npc\n-Les déchets n'ont pas accès à la banque</basefont></h3>\n";
 					break;
 				case StatutSocialEnum.Possession:
 					break;

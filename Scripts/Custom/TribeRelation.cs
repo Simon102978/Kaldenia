@@ -127,7 +127,14 @@ namespace Server
 		  get { return GetValue(TribeType.Kuya); }
 		  set { SetValue(TribeType.Kuya, value); }
 		}
-	#endregion
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int Brigand
+		{
+			get { return GetValue(TribeType.Brigand); }
+			set { SetValue(TribeType.Brigand, value); }
+		}
+		#endregion
 
 
 	}

@@ -43,7 +43,7 @@ namespace Server
 
     public int GetValue(TribeType tribe)
     {
-      return this.ContainsKey(tribe) ? this[tribe] : 0;
+      return this.ContainsKey(tribe) ? this[tribe] : 50;
     }
 
 

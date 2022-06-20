@@ -65,6 +65,18 @@ namespace Server.Engines.ArenaSystem
 			robe.Layer = Layer.InnerTorso;
 			SetWearable(robe);
 
+			
+			SetWearable(new Collier8());
+
+			GoldRing ring = new GoldRing();
+			ring.GemType = GemType.Diamond;
+			SetWearable(ring);
+
+			GoldBracelet bracelet = new GoldBracelet();
+			bracelet.GemType = GemType.Diamond;
+			SetWearable(bracelet);
+
+
 			SetWearable(new Bottes10(), 1326);
 
 

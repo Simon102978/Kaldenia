@@ -1120,6 +1120,13 @@ namespace Server.Mobiles
 			return TribeRelation.GetValue(tribe);
 		}
 
+		public void ChangeTribeValue(TribeType tribe, int value)
+		{
+
+			TribeRelation.SetValue(tribe, TribeRelation.GetValue(tribe) + value);
+		}
+
+
 
 		#region Classe
 

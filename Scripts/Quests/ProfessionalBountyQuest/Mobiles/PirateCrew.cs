@@ -84,6 +84,7 @@ namespace Server.Mobiles
 		{
 		}
 
+		public override TribeType Tribe => TribeType.Pirate;
 		public override bool ClickTitle => false;
 		public override bool AlwaysMurderer => true;
 

@@ -165,7 +165,8 @@ namespace Server.Mobiles
         GrayGoblin,
         GreenGoblin,
 		Kuya,
-		Brigand
+		Brigand,
+		Pirate
     }
 
     public enum LootStage
@@ -1571,24 +1572,107 @@ namespace Server.Mobiles
 
             BaseCreature c = (BaseCreature)m;
 
-            switch (Tribe)
-            {
-                case TribeType.Terathan: return (c.Tribe == TribeType.Ophidian);
-                case TribeType.Ophidian: return (c.Tribe == TribeType.Terathan);
-                case TribeType.Savage: return (c.Tribe == TribeType.Orc);
-                case TribeType.Orc: return (c.Tribe == TribeType.Savage);
-                case TribeType.Fey: return (c.Tribe == TribeType.Undead);
-                case TribeType.Undead: return (c.Tribe == TribeType.Fey);
-                case TribeType.GrayGoblin: return (c.Tribe == TribeType.GreenGoblin);
-                case TribeType.GreenGoblin: return (c.Tribe == TribeType.GrayGoblin);
-				case TribeType.Kuya: return (c.Tribe == TribeType.Brigand);
-				case TribeType.Brigand: return (c.Tribe == TribeType.Kuya);
-				default: return false;
-            }
-        }
 
-        #region Friends
-        public List<Mobile> Friends => m_Friends;
+			return GetEnemy(Tribe).Contains(c.Tribe);
+	    }
+
+
+		public static List<TribeType> GetEnemy(TribeType tribe)
+		{
+			List<TribeType> lTribe = new List<TribeType>();
+
+
+			switch (tribe)
+			{
+				case TribeType.None:
+					break;
+				case TribeType.Terathan:
+					{
+						lTribe.Add(TribeType.Ophidian);
+						break;
+					}
+
+				case TribeType.Ophidian:
+					{
+						lTribe.Add(TribeType.Terathan);
+						break;
+					}
+				case TribeType.Savage:
+					{
+						lTribe.Add(TribeType.Brigand);
+					//	lTribe.Add(TribeType.Pirate);
+						break;
+					}
+				case TribeType.Orc:
+					{
+					//	lTribe.Add(TribeType.Savage);
+						break;
+					}
+				case TribeType.Fey:
+					{
+						lTribe.Add(TribeType.Undead);
+						break;
+					}
+				case TribeType.Undead:
+					{
+						lTribe.Add(TribeType.Fey);
+						break;
+					}
+				case TribeType.GrayGoblin:
+					{
+						lTribe.Add(TribeType.GreenGoblin);
+						break;
+					}
+				case TribeType.GreenGoblin:
+					{
+						lTribe.Add(TribeType.GrayGoblin);
+						break;
+					}
+				case TribeType.Kuya:
+					{
+						// Pas d'ennemis, car il protège la valorite, et renderait le tout trop simple.
+
+
+
+						break;
+					}
+				case TribeType.Brigand:
+					{
+				//		lTribe.Add(TribeType.Pirate);
+						lTribe.Add(TribeType.Savage);
+
+						break;
+					}
+
+				case TribeType.Pirate:
+					{
+				//		lTribe.Add(TribeType.Brigand);
+				//		lTribe.Add(TribeType.Savage);
+
+						break;
+					}
+				default:
+					break;
+			}
+
+
+
+			return lTribe;
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+		#region Friends
+		public List<Mobile> Friends => m_Friends;
 
         public virtual bool AllowNewPetFriend => (m_Friends == null || m_Friends.Count < 5);
 
@@ -6489,7 +6573,27 @@ namespace Server.Mobiles
                                             fame[index] += divedFame;
                                             karma[index] += divedKarma;
                                         }
-                                    }
+
+										if (Tribe != TribeType.None && info.Mobile is CustomPlayerMobile cp)
+										{
+
+											foreach (TribeType item in GetEnemy(Tribe))
+											{
+												cp.ChangeTribeValue(item, 1);
+											}
+
+											cp.ChangeTribeValue(Tribe, -2);
+
+										}
+
+
+
+
+
+
+
+
+									}
                                 }
                             }
                             else
@@ -6502,11 +6606,25 @@ namespace Server.Mobiles
                                         fame.Add(totalFame);
                                         karma.Add(totalKarma);
                                     }
-                                }
+
+									if (Tribe != TribeType.None && ds.m_Mobile is CustomPlayerMobile cp)
+									{
+
+										foreach (TribeType item in GetEnemy(Tribe))
+										{
+											cp.ChangeTribeValue(item, 1);
+										}
+
+										cp.ChangeTribeValue(Tribe, -2);
+									}
+								}
 
                                 titles.Add(ds.m_Mobile);
                                 fame.Add(totalFame);
                                 karma.Add(totalKarma);
+
+								
+
                             }
                         }
 

@@ -174,7 +174,9 @@ namespace Server.Mobiles
             eable.Free();
         }
 
-        public void OnTalk()
+		public override TribeType Tribe => TribeType.Pirate;
+
+		public void OnTalk()
         {
             Say(Utility.RandomMinMax(1149701, 1149720));
             m_NextTalk = DateTime.UtcNow + TimeSpan.FromMinutes(1);

@@ -303,6 +303,7 @@ namespace Server.Items
             Hue = 1272;
             Stackable = true;
             Amount = amount;
+			Name = "Potion d'Éodon";
         }
 
         public override bool CanDoEffects(Mobile m)
@@ -373,7 +374,9 @@ namespace Server.Items
             Hue = 2727;
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Potion de résistances";
+
+		}
 
         public override void DoEffects(Mobile m)
         {
@@ -427,7 +430,9 @@ namespace Server.Items
             Hue = 1260;
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Essence de Kurak";
+
+		}
 
         public KurakAmbushersEssence(Serial serial)
             : base(serial)
@@ -459,7 +464,9 @@ namespace Server.Items
             Hue = 1072;
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Brassage de Barako";
+
+		}
 
         public override void DoEffects(Mobile m)
         {
@@ -506,7 +513,9 @@ namespace Server.Items
             Hue = 1098;
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Tonic de Urali";
+
+		}
 
         public override void DoEffects(Mobile m)
         {
@@ -566,7 +575,9 @@ namespace Server.Items
             Hue = 2531;
             Stackable = true;
             Amount = amount;
-        }
+			Name = "Potion de Sakkhra";
+
+		}
 
         public override void DoEffects(Mobile m)
         {

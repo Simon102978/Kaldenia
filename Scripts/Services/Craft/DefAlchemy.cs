@@ -133,7 +133,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(GreaterCurePotion), 1116348, 1044554, 65.0, 115.0, typeof(Garlic), 1044355, 6, 1044363);
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
-            index = AddCraft(typeof(ElixirOfRebirth), 1116348, 1112762, 65.0, 115.0, typeof(SpidersSilk), 1031702, 3, 1044253);
+            index = AddCraft(typeof(ElixirOfRebirth), 1116348, 1112762, 65.0, 115.0, typeof(Dragonsblood), 1031702, 3, 1044253);
                      AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
             index = AddCraft(typeof(BarrabHemolymphConcentrate), 1116348, "Potion d'Eodon", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
@@ -202,18 +202,19 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
             index = AddCraft(typeof(ParasiticPotion), 1116350, 1072942, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
-            AddRes(index, typeof(ParasiticPlant), 1073474, 5, 1044253);
-            AddRecipe(index, (int)TinkerRecipes.ParasiticPotion);
+            AddRes(index, typeof(NoxCrystal), 1073474, 1, 1044253);
+			AddRes(index, typeof(DaemonBlood), 1073475, 1, 1044253);
 
-            index = AddCraft(typeof(DarkglowPotion), 1116350, 1072943, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
-            AddRes(index, typeof(LuminescentFungi), 1073475, 5, 1044253);
-            AddRecipe(index, (int)TinkerRecipes.DarkglowPotion);
+			index = AddCraft(typeof(DarkglowPotion), 1116350, 1072943, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
+            AddRes(index, typeof(NoxCrystal), 1073475, 3, 1044253);
+			AddRes(index, typeof(DaemonBlood), 1073475, 3, 1044253);
 
-            index = AddCraft(typeof(ScouringToxin), 1116350, 1112292, 75.0, 100.0, typeof(ToxicVenomSac), 1112291, 1, 1044253);
+			index = AddCraft(typeof(ScouringToxin), 1116350, 1112292, 75.0, 100.0, typeof(NoxCrystal), 1112291, 1, 1044253);
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+			AddRes(index, typeof(DaemonBlood), 1073475, 5, 1044253);
 
-            // Explosive
-            index = AddCraft(typeof(LesserExplosionPotion), 1116351, 1044555, 5.0, 55.0, typeof(SulfurousAsh), 1044359, 3, 1044367);
+			// Explosive
+			index = AddCraft(typeof(LesserExplosionPotion), 1116351, 1044555, 5.0, 55.0, typeof(SulfurousAsh), 1044359, 3, 1044367);
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
             index = AddCraft(typeof(ExplosionPotion), 1116351, 1044556, 35.0, 85.0, typeof(SulfurousAsh), 1044359, 5, 1044367);
@@ -236,9 +237,8 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(BlackPowder), 1116351, 1095826, 65.0, 115.0, typeof(SulfurousAsh), 1023980, 1, 1044253);
                       AddRes(index, typeof(Charcoal), 1116303, 5, 1044253);
-            SetUseAllRes(index, true);
 
-            index = AddCraft(typeof(FuseCord), 1116351, 1116305, 55.0, 105.0, typeof(DarkYarn), 1023615, 1, 1044253);
+            index = AddCraft(typeof(FuseCord), 1116351, 1116305, 55.0, 105.0, typeof(LightYarn), 1023615, 1, 1044253);
             AddRes(index, typeof(BlackPowder), 1095826, 1, 1044253);
             SetNeedWater(index, true);
 

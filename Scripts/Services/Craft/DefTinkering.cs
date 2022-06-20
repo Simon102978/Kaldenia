@@ -401,7 +401,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(CopperWire), 1044050, "Fil de cuivre", 30.0, 60.0, typeof(CopperIngot), "Lingot de cuivre", 2, 1044037);
 			index = AddCraft(typeof(SilverWire), 1044050, "Fil d'argent", 50.0, 90.0, typeof(IronIngot), "Lingot de fer", 2, 1044037);
 			index = AddCraft(typeof(GoldWire), 1044050, "Fil d'or", 70.0, 110.0, typeof(GoldIngot), "Lingot d'or", 2, 1044037);
-
+			index = AddCraft(typeof(MetalKeg), 1044050, "Metal Keg", 85.0, 100.0, typeof(IronIngot), 1044036, 25, 1044253);
 			index = AddCraft(typeof(ShojiLantern), 1044050, 1029404, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
             AddRes(index, typeof(Board), 1044041, 5, 1044351);
 

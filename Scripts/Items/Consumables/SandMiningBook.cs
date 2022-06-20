@@ -8,9 +8,10 @@ namespace Server.Items
 
         [Constructable]
         public SandMiningBook()
-            : base(0xFF4)
+            : base(0xFBE)
         {
-            Weight = 2.0;
+            Weight = 5.0;
+			Name = "Connaissances Sable";
         }
 
         public SandMiningBook(Serial serial)

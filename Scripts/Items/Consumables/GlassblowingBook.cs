@@ -8,9 +8,10 @@ namespace Server.Items
 
         [Constructable]
         public GlassblowingBook()
-            : base(0xFF4)
+            : base(0xFBE)
         {
             Weight = 5.0;
+			Name = "Connaissances Verre";
         }
 
         public GlassblowingBook(Serial serial)

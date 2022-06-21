@@ -22,7 +22,7 @@ namespace Server.Items
         Glassware = 1158,
     }
 
-    [Flipable(0xA2C4, 0xA2C5)]
+    [Flipable(0x994B, 0x994C)]
     public class MaritimeCargo : Item
     {
         private CargoQuality _CargoQuality;
@@ -80,7 +80,7 @@ namespace Server.Items
 
         [Constructable]
         public MaritimeCargo(CargoQuality quality, City city, CargoType type)
-            : base(0xA2C4)
+            : base(0x994B)
         {
             CargoQuality = quality;
             City = city;

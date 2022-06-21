@@ -17,7 +17,7 @@ namespace Server.Items
         Plum
     }
 
-    [Flipable(0x9E36, 0x9E37)]
+    [Flipable(0x9955, 0x9956)]
     public class FermentationBarrel : BaseContainer
     {
         public override int LabelNumber => 1124526;  // Fermentation Barrel
@@ -51,7 +51,7 @@ namespace Server.Items
 
         [Constructable]
         public FermentationBarrel()
-            : base(0x9E36)
+            : base(0x9955)
         {
             MaxItems = 400;
         }

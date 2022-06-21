@@ -585,9 +585,9 @@ namespace Server.Engines.Craft
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(ArcaneCircleDeed), 1044290, 1072703, 94.7, 119.7, typeof(Board), 1044041, 100, 1044351);
-            AddRes(index, typeof(BlueDiamond), 1026255, 2, 1053098);
-            AddRes(index, typeof(PerfectEmerald), 1026251, 2, 1053098);
-            AddRes(index, typeof(FireRuby), 1026254, 2, 1053098);
+            AddRes(index, typeof(Diamond), 1026255, 2, 1053098);
+            AddRes(index, typeof(Emerald), 1026251, 2, 1053098);
+            AddRes(index, typeof(Ruby), 1026254, 2, 1053098);
             ForceNonExceptional(index);
 
   /*          index = AddCraft(typeof(TallElvenBedSouthDeed), 1044290, 1072858, 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);

@@ -3,7 +3,7 @@
 	public  class Marchandise : Item
 	{
 		[Constructable]
-		public Marchandise() : base(0x0E73)
+		public Marchandise() : base(0x9949)
 		{
 			Name = "Marchandise";
 			Hue = 1580;

@@ -6,9 +6,9 @@
 		public override double Conversion => 0.90;
 
 		[Constructable]
-		public LargePackage() : base(0x0E3C)
+		public LargePackage() : base(0x996B)
 		{
-			Name = "Large caisse";
+			Name = "Coffre Doré";
 			Weight = 300.0;
 		}
 

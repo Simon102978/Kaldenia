@@ -18,7 +18,7 @@ namespace Server.Items
 
         [Constructable]
         public Grapeshot(int amount)
-            : base(0xA2BF)
+            : base(0x994A)
         {
             Stackable = true;
             Amount = amount;

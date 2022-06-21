@@ -44,10 +44,10 @@ namespace Server.Items
             {
                 pm.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
             }
-            else if (pm.Skills[SkillName.Mining].Base < 100.0)
-            {
-                pm.SendLocalizedMessage(1080041); // Only a Grandmaster Miner can learn from this book.
-            }
+            else if (pm.Skills[SkillName.Mining].Base < 50.0)
+           {
+				pm.SendMessage("Vous devez avoir 50.0 dans votre skill de Mining"); // Only a Grandmaster Miner can learn from this book.
+			}
             else if (pm.SandMining)
             {
                 pm.SendLocalizedMessage(1080066); // You have already learned this information.

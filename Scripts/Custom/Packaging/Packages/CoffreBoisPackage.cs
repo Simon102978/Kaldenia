@@ -7,9 +7,9 @@
 
 
 		[Constructable]
-		public CoffreBoisPackage() : base(0x0E42)
+		public CoffreBoisPackage() : base(0x994B)
 		{
-			Name = "Coffre en bois";
+			Name = "Paquet Maritime";
 			Weight = 500.0;
 		}
 

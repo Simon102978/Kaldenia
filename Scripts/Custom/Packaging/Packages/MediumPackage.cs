@@ -5,9 +5,9 @@
 		public override double Conversion => 0.80;
 
 		[Constructable]
-		public MediumPackage() : base(0x0E3E)
+		public MediumPackage() : base(0x9966)
 		{
-			Name = "Moyenne caisse";
+			Name = "Coffre Visqueux";
 			Weight = 225.0;
 		}
 

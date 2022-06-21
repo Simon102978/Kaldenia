@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using System.Globalization;
 using Server.Network;
 #endregion
 
@@ -667,6 +667,9 @@ namespace Server
 				const float ticksPerSecond = 1000.0f * sampleInterval;
 
 				long sample = 0;
+
+				System.Globalization.CultureInfo.CurrentCulture =  new CultureInfo("fr-CA", false);
+
 
 				while (!Closing)
 				{

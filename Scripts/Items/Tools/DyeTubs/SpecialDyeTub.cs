@@ -6,7 +6,8 @@ namespace Server.Items
         [Constructable]
         public SpecialDyeTub()
         {
-            LootType = LootType.Blessed;
+			Name = "Bac de Teinture (Spéciale)";
+			Charges = 5;
         }
 
         public SpecialDyeTub(Serial serial)

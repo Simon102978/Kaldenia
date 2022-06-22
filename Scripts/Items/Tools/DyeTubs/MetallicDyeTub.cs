@@ -20,7 +20,10 @@ namespace Server.Items
 
         public override bool AllowDyables => false;
         public override bool AllowMetal => true;
-        public override int TargetMessage => 1080393;  // Select the metal item to dye.
+
+		public override bool AllowWeapons => true;
+
+		public override int TargetMessage => 1080393;  // Select the metal item to dye.
         public override int FailMessage => 1080394;  // You can only dye metal with this tub.
         public override int LabelNumber => 1150067;  // Metallic Dye Tub
         public override CustomHuePicker CustomHuePicker => CustomHuePicker.MetallicDyeTub;

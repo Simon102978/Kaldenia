@@ -90,11 +90,18 @@ namespace Server.Items
 
 					from.SendGump(new CoiffureGump(from2, m, 0, m_Item));
 				}
+				else if (targeted is BaseHire)
+				{
+					CustomPlayerMobile from2 = from as CustomPlayerMobile;
+					BaseHire m = (BaseHire)targeted;
+
+					from.SendGump(new CoiffureGump(from2, m, 0, m_Item));
+				}
 
 
 
 
-                else
+				else
                 {
                     from.SendLocalizedMessage(502440); // Scissors can not be used on that to produce anything.
                 }

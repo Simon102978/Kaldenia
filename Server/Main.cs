@@ -668,7 +668,7 @@ namespace Server
 
 				long sample = 0;
 
-				System.Globalization.CultureInfo.CurrentCulture =  new CultureInfo("fr-CA", false);
+			//	System.Globalization.CultureInfo.CurrentCulture =  new CultureInfo("fr-CA", false);
 
 
 				while (!Closing)

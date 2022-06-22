@@ -277,10 +277,10 @@ namespace Server.Mobiles
                 return;
             }
 
-            if (pet.Body.IsHuman)
-            {
-                SayTo(from, 502672); // HA HA HA! Sorry, I am not an inn.
-            }
+          //  if (pet.Body.IsHuman)
+          //  {
+          //      SayTo(from, 502672); // HA HA HA! Sorry, I am not an inn.
+          //  }
             else if (!pet.Controlled)
             {
                 SayTo(from, 1048053); // You can't stable that!

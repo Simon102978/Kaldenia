@@ -10,17 +10,19 @@ namespace Server.Items
 {
 	[Furniture]
 	[Flipable(0x994B, 0x994C)]
-	public class MartimeChest : LockableContainer
+	public class MaritimeChest : LockableContainer
 	{
+		public override int DefaultGumpID { get { return 0x44; } }
+		public override int DefaultMaxItems { get { return 250; } }
 		[Constructable]
-		public MartimeChest()
+		public MaritimeChest()
 			: base(0x994B)
 		{
 			Name = "Coffre Maritime";
 			Weight = 50.0;
 		}
 
-		public MartimeChest(Serial serial)
+		public MaritimeChest(Serial serial)
 			: base(serial)
 		{
 		}
@@ -44,6 +46,9 @@ namespace Server.Items
 	[Flipable(0x9955, 0x9956)]
 	public class BarrildeVin : BaseContainer
 	{
+		public override int DefaultGumpID { get { return 0x3E; } }
+		public override int DefaultMaxItems { get { return 250; } }
+
 		[Constructable]
 		public BarrildeVin()
 			: base(0x9955)
@@ -76,6 +81,9 @@ namespace Server.Items
 	[Flipable(0x995D, 0x995E)]
 	public class CoffreFort : LockableContainer
 	{
+		public override int DefaultGumpID { get { return 0x4B; } }
+		public override int DefaultMaxItems { get { return 250; } }
+
 		[Constructable]
 		public CoffreFort()
 			: base(0x995D)
@@ -107,6 +115,9 @@ namespace Server.Items
 	[Flipable(0x9965, 0x9966)]
 	public class CoffreMetalVisqueux : LockableContainer
 	{
+		public override int DefaultGumpID { get { return 0x4A; } }
+		public override int DefaultMaxItems { get { return 250; } }
+
 		[Constructable]
 		public CoffreMetalVisqueux()
 			: base(0x9965)
@@ -138,6 +149,9 @@ namespace Server.Items
 	[Flipable(0x9969, 0x996A)]
 	public class CoffreMetalRouille : LockableContainer
 	{
+		public override int DefaultGumpID { get { return 0x4A; } }
+		public override int DefaultMaxItems { get { return 250; } }
+
 		[Constructable]
 		public CoffreMetalRouille()
 			: base(0x9969)
@@ -169,6 +183,9 @@ namespace Server.Items
 	[Flipable(0x996B, 0x996C)]
 	public class CoffreMetalDore : LockableContainer
 	{
+		public override int DefaultGumpID { get { return 0x4A; } }
+		public override int DefaultMaxItems { get { return 250; } }
+
 		[Constructable]
 		public CoffreMetalDore()
 			: base(0x996B)
@@ -200,6 +217,9 @@ namespace Server.Items
 	[Flipable(0x9972, 0x9973)]
 	public class CoffrePirate : LockableContainer
 	{
+		public override int DefaultGumpID { get { return 0x4A; } }
+		public override int DefaultMaxItems { get { return 250; } }
+
 		[Constructable]
 		public CoffrePirate()
 			: base(0x9972)
@@ -207,7 +227,7 @@ namespace Server.Items
 			Name = "Coffre";
 			Weight = 50.0;
 		}
-
+	
 		
 
 		public CoffrePirate(Serial serial)

@@ -5,8 +5,8 @@
 		[Constructable]
 		public Marchandise() : base(0x9949)
 		{
-			Name = "Marchandise";
-			Hue = 1580;
+			Name = "Marchandises";
+			Hue = 542;
 			Weight = 0.3;
 			Stackable = true;
 		}

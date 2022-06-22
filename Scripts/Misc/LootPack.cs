@@ -587,16 +587,13 @@ namespace Server
                 new[]
                 {
 					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
-					new LootPackEntry(false, false, Gold5, 50.0, 1, true),
 					new LootPackEntry(false, false, Gold10, 20.0, 1, true),
              
 
                     new LootPackEntry(false, false, Instruments, 1.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 					new LootPackEntry(false, false, MageryRegItems, 90.0, 5, true),
-					new LootPackEntry(false, false, MageryRegItems, 90.0, 5, true),
-					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
-					new LootPackEntry(false, false, LowScrollItems, 50.0, 1, true),
+							
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, Marchandise, 100.0, 1, true),
@@ -609,25 +606,23 @@ namespace Server
                 {
 					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
 					new LootPackEntry(false, false, Gold10, 50.0, 1, true),
-					new LootPackEntry(false, false, Gold25, 100.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 10.0, 1, true),
 					
 					
                    new LootPackEntry(false, false, Instruments, 5.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 
-					new LootPackEntry(false, false, MageryRegItems, 100.0, 10, true),
-					new LootPackEntry(false, false, MageryRegItems, 100.0, 9, true),				
+					new LootPackEntry(false, false, MageryRegItems, 100.0, 10, true),				
 					new LootPackEntry(false, false, MageryRegItems, 50.0, 15, true),
 
-					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
-					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 30.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 10.0, 1, true),
 					new LootPackEntry(false, false, LowScrollItems, 75.0, 1, true),
-					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
-					new LootPackEntry(false, false, Marchandise, 100.0, 2, true),
+					new LootPackEntry(false, false, Marchandise, 100.0, 1, true),
 
 				});
 
@@ -637,8 +632,7 @@ namespace Server
                 {
 					new LootPackEntry(false, false, Gold5, 100.0, 1, true),
 					new LootPackEntry(false, false, Gold10, 100.0, 1, true),
-					new LootPackEntry(false, false, Gold25, 100.0, 2, true),
-					new LootPackEntry(false, false, Gold25, 15.0, 1, true),
+					new LootPackEntry(false, false, Gold25, 100.0, 1, true),
 					new LootPackEntry(false, false, Gold50, 5.0, 1, true),
 				
 
@@ -652,14 +646,14 @@ namespace Server
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 8, true),
 					new LootPackEntry(false, false, MageryRegItems, 75.0, 10, true),
 
-					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
-					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 50.0, 1, true),
+					new LootPackEntry(false, false, PotionItems, 45.0, 1, true),
 
 					new LootPackEntry(false, false, LowScrollItems, 50.0, 1, true),
-					new LootPackEntry(false, false, LowScrollItems, 25.0, 1, true),
+					
 
 					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
-					new LootPackEntry(false, false, MedScrollItems, 25.0, 1, true),
+					
 
 					new LootPackEntry(false, false, NecroScrollItems, 25.0, 1, true),
 					new LootPackEntry(false, false, ArcanistScrollItems, 25.0, 1, true),
@@ -668,7 +662,7 @@ namespace Server
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
-					new LootPackEntry(false, false, Marchandise, 100.0, 3, true),
+					new LootPackEntry(false, false, Marchandise, 100.0, 2, true),
 				});
 
         public static readonly LootPack LootRich =
@@ -698,8 +692,6 @@ namespace Server
 
 					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
 					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
-					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
-					new LootPackEntry(false, false, PotionItems, 50.0, 1, true),
 
 					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, MedScrollItems, 50.0, 1, true),
@@ -737,8 +729,7 @@ namespace Server
 					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
 					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
 					new LootPackEntry(false, false, PotionItems, 100.0, 1, true),
-					new LootPackEntry(false, false, PotionItems, 90.0, 1, true),
-					new LootPackEntry(false, false, PotionItems, 50.0, 1, true),
+
 
 					new LootPackEntry(false, false, MedScrollItems, 100.0, 1, true),			
 					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
@@ -778,8 +769,7 @@ namespace Server
 					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
 					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
 					new LootPackEntry(false, false, PotionItems, 100.0, 2, true),
-					new LootPackEntry(false, false, PotionItems, 90.0, 2, true),
-					new LootPackEntry(false, false, PotionItems, 50.0, 2, true),
+			
 
 			
 					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),

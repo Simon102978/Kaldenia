@@ -1,4 +1,6 @@
-﻿namespace Server.Items
+﻿using System;
+
+namespace Server.Items
 {
 	[Furniture]
 [Flipable(0x994D, 0x994E)]
@@ -291,4 +293,103 @@ public class RangementAlchimie : CraftableFurniture
 
 	}
 }
+	[Furniture]
+	[Flipable(0x9957, 0x9958, 0x9959, 0x995A, 0x995B, 0x995C)]
+	public class TableBrasseur : CraftableFurniture
+	{
+		[Constructable]
+		public TableBrasseur()
+			: base(0x9957)
+		{
+			Weight = 10.0;
+			Name = "Table de Brasseur";
+		}
+
+		public TableBrasseur(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	public class GoldPile1 : CraftableFurniture
+	{
+		[Constructable]
+		public GoldPile1()
+			: base(0x9976)
+		{
+			Weight = 15.0;
+			Name = "Trésor";
+			Movable = false;
+		}
+
+		public GoldPile1(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+
+		internal void MoveToWorld()
+		{
+			throw new NotImplementedException();
+		}
+	}
+	public class GoldPile2 : CraftableFurniture
+	{
+		[Constructable]
+		public GoldPile2()
+			: base(0x9977)
+		{
+			Weight = 15.0;
+			Name = "Trésor";
+			Movable = false;
+		}
+
+		public GoldPile2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
 }

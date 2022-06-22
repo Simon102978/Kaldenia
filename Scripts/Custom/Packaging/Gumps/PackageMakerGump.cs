@@ -43,10 +43,10 @@ namespace Server.Custom.Gumps
 
 		private static readonly PackageEntry[] m_Entries = new[]
 		{
-			new PackageEntry(typeof(SmallPackage), "Petite caisse", 0x0E7E, 100, 0, 0),
-			new PackageEntry(typeof(MediumPackage), "Moyenne caisse", 0x0E3E, 500, 0, 0),
-			new PackageEntry(typeof(LargePackage), "Grosse caisse", 0x0E3C, 1000, 0, 0),
-			new PackageEntry(typeof(CoffreBoisPackage), "Coffre en bois", 0x0E42, 2000, 0, 0)
+			new PackageEntry(typeof(SmallPackage), "Coffre Rouillé", 0x9969, 100, -20, -25),
+			new PackageEntry(typeof(MediumPackage), "Coffre Visqueux", 0x9966, 500, -20, -25),
+			new PackageEntry(typeof(LargePackage), "Coffre Doré", 0x996B, 1000, -20, -25),
+			new PackageEntry(typeof(CoffreBoisPackage), "Paquet Maritime", 0x994B, 2000, -30, -30)
 		};
 
 		public static PackageEntry[] Entries => m_Entries;
@@ -67,7 +67,7 @@ namespace Server.Custom.Gumps
 			AddImageTiled(10, 274, 500, 20, 0xA40);
 			AddAlphaRegion(10, 10, 500, 284);
 
-			AddHtml(14, 12, 500, 20, Color("<CENTER>Menu de sélection des caisses</CENTER>", 0xFFFFFF), false, false);
+			AddHtml(14, 12, 500, 20, Color("<CENTER>Menu de sélection</CENTER>", 0xFFFFFF), false, false);
 
 			AddButton(10, 274, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0);
 			AddHtml(45, 276, 450, 20, Color("Annuler", 0xFFFFFF), false, false);

@@ -1,8 +1,8 @@
 namespace Server.Items
 {
     [Flipable(0x19BC, 0x19BD)]
-    public partial class BaseCostume : BaseShield
-    {
+    public partial class BaseCostume : BaseAxe
+	{
         public bool m_Transformed;
         private int m_Body = 0;
         private int m_Hue = -1;

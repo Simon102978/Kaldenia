@@ -2,6 +2,7 @@ using Server.Engines.Craft;
 using System;
 using System.Collections.Generic;
 
+
 namespace Server.Items
 {
     public class FurnitureContainer : BaseContainer, IResource, IQuality
@@ -511,14 +512,54 @@ namespace Server.Items
             DynamicFurniture.Close(this);
         }
     }
+	[Furniture]
+	[Flipable(0x9972, 0x9973, 0x9978, 0x9979)]
+	public class PirateChest : FurnitureContainer
+	{
+		public override int DefaultGumpID { get { return 0x4A; } }
+		public override int DefaultMaxItems { get { return 250; } }
 
-    public class DynamicFurniture
+		[Constructable]
+		public PirateChest()
+			: base(0x9972)
+		{
+			Weight = 1.0;
+			Name = "Coffre de Pirate";
+		}
+
+		public PirateChest(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void DisplayTo(Mobile m)
+		{
+			if (DynamicFurniture.Open(this, m))
+				base.DisplayTo(m);
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = (InheritsItem ? 0 : reader.ReadInt()); // Required for FurnitureContainer insertion
+
+			DynamicFurniture.Close(this);
+		}
+	}
+
+	public class DynamicFurniture
     {
         private static readonly Dictionary<Container, Timer> m_Table = new Dictionary<Container, Timer>();
 
         public static bool Open(Container c, Mobile m)
         {
-            if (c is Armoire || c is FancyArmoire)
+            if (c is Armoire || c is FancyArmoire || c is PirateChest)
             {
                 if (!m_Table.ContainsKey(c))
                 {
@@ -539,7 +580,13 @@ namespace Server.Items
                     case 0xA53:
                         c.ItemID = 0xA52;
                         break;
-                }
+					case 0x9972:
+						c.ItemID = 0x9974;
+						break;
+					case 0x9973:
+						c.ItemID = 0x9975;
+						break;
+				}
             }
 
             c.ProcessDelta();
@@ -559,7 +606,7 @@ namespace Server.Items
                 m_Table.Remove(c);
             }
 
-            if (c is Armoire || c is FancyArmoire)
+            if (c is Armoire || c is FancyArmoire || c is PirateChest)
             {
                 switch (c.ItemID)
                 {
@@ -575,7 +622,13 @@ namespace Server.Items
                     case 0xA52:
                         c.ItemID = 0xA53;
                         break;
-                }
+					case 0x9974:
+						c.ItemID = 0x9972;
+						break;
+					case 0x9975:
+						c.ItemID = 0x9973;
+						break;
+				}
             }
         }
     }

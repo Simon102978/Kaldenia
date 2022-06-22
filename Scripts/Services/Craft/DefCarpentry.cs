@@ -289,7 +289,8 @@ namespace Server.Engines.Craft
             AddCraft(typeof(LargeCrate), 1044292, 1044311, 47.3, 72.3, typeof(Board), 1044041, 18, 1044351);
             AddCraft(typeof(WoodenChest), 1044292, 1023650, 73.6, 98.6, typeof(Board), 1044041, 20, 1044351);
             AddCraft(typeof(EmptyBookcase), 1044292, 1022718, 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
-            AddCraft(typeof(FancyArmoire), 1044292, 1044312, 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
+			AddCraft(typeof(FullBookcase), 1044292, 1022718, 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
+			AddCraft(typeof(FancyArmoire), 1044292, 1044312, 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
             AddCraft(typeof(Armoire), 1044292, 1022643, 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
 
             AddCraft(typeof(PlainWoodenChest), 1044292, 1030251, 90.0, 115.0, typeof(Board), 1044041, 30, 1044351);
@@ -314,7 +315,16 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(CherryArmoire), 1044292, 1030334, 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 
-            index = AddCraft(typeof(Keg), 1044292, 1023711, 57.8, 82.8, typeof(BarrelStaves), 1044288, 3, 1044253);
+//Ajouts Carpentry 
+			AddCraft(typeof(MaritimeChest), 1044292, "Cargo Maritime", 800.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			AddCraft(typeof(BarrildeVin), 1044292, "Barril de Vin", 80.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			AddCraft(typeof(CoffreFort), 1044292, "Coffre Fort", 80.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalVisqueux), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalRouille), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalDore), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(PirateChest), 1044292, "Coffre de Pirate", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+
+			index = AddCraft(typeof(Keg), 1044292, 1023711, 57.8, 82.8, typeof(BarrelStaves), 1044288, 3, 1044253);
             AddRes(index, typeof(BarrelHoops), 1044289, 1, 1044253);
             AddRes(index, typeof(BarrelLid), 1044251, 1, 1044253);
             ForceNonExceptional(index);
@@ -522,7 +532,7 @@ namespace Server.Engines.Craft
          //   AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 
-			index = AddCraft(typeof(RuneLute), "Instruments", "Lute fin", 55.0, 70.0, typeof(Board), 1044041, 6, 1044351);
+			index = AddCraft(typeof(RuneLute), 1044293, "Lute fin", 55.0, 70.0, typeof(Board), 1044041, 6, 1044351);
 			AddRes(index, typeof(Cloth), "Cloth", 6, "You do not have enough cloth to make that.");
 
 
@@ -647,11 +657,9 @@ namespace Server.Engines.Craft
             AddCraft(typeof(BallotBoxDeed), 1044290, 1044327, 47.3, 72.3, typeof(Board), 1044041, 5, 1044351);
 
             index = AddCraft(typeof(PentagramDeed), 1044290, 1044328, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);
-            AddSkill(index, SkillName.Magery, 75.0, 80.0);
             AddRes(index, typeof(IronIngot), 1044036, 40, 1044037);
 
             index = AddCraft(typeof(AbbatoirDeed), 1044290, 1044329, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);
-            AddSkill(index, SkillName.Magery, 50.0, 55.0);
             AddRes(index, typeof(IronIngot), 1044036, 40, 1044037);
 
             AddCraft(typeof(LongTableSouthDeed), 1044290, 1111781, 90.0, 115.0, typeof(Board), 1044041, 80, 1044351);
@@ -665,6 +673,22 @@ namespace Server.Engines.Craft
             AddCraft(typeof(RusticBenchSouthDeed), 1044290, 1150593, 94.7, 119.8, typeof(Board), 1044041, 35, 1044351);
 
             AddCraft(typeof(RusticBenchEastDeed), 1044290, 1150594, 94.7, 119.8, typeof(Board), 1044041, 35, 1044351);
+
+			AddCraft(typeof(MachineCoudre), 1044290, "Machine à Coudre", 90.0, 115.0, typeof(Board), 1044041, 30, 1044351);
+			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
+
+			AddCraft(typeof(BancMachineCoudre), 1044290, 1111783, 90.0, 115.0, typeof(Board), 1044041, 8, 1044351);
+			AddCraft(typeof(TinkerTable), 1044290, "Table de Travail", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
+			AddCraft(typeof(RepairTable), 1044290, "Table de Travail", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
+			AddCraft(typeof(FeedingThrough), 1044290, "Mangeoir", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			AddCraft(typeof(Puit), 1044290, "Puit", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			AddCraft(typeof(Ancre), 1044290, "Ancre", 90.0, 115.0, typeof(IronIngot), 1044036, 15, 1044037);
+			AddCraft(typeof(RackaVin), 1044290, "Cellier", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
+			AddRes(index, typeof(BottleOfWine), "Bouteille de vin", 15, "Vous n'avez pas suffisament de bouteille de vin.");
+			AddCraft(typeof(RangementAlchimie), 1044290, "Rangement Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			AddCraft(typeof(TableBrasseur), 1044290, "Table Festive", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 
 			/*        AddCraft(typeof(PlainWoodenShelfSouthDeed), 1044290, 1154160, 40.0, 90.0, typeof(Board), 1044041, 15, 1044351);
 

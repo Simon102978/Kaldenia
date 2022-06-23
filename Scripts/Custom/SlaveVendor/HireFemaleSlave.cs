@@ -12,8 +12,10 @@ namespace Server.Mobiles
 
             Body = 0x191;
             Name = NameList.RandomName("female");
+			ActiveSpeed = 1.0;
+			PassiveSpeed = 1.0;
 
-            switch (Utility.Random(2))
+			switch (Utility.Random(2))
             {
                 case 0:
                     AddItem(new Skirt(Utility.RandomNeutralHue()));
@@ -53,7 +55,7 @@ namespace Server.Mobiles
                     break;
             }
 
-			ControlSlots = 1;
+			ControlSlots = 2;
 			Tamable = false;
 		}
 

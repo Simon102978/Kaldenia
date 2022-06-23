@@ -328,7 +328,7 @@ namespace Server.Items
         {
             EodonPotionContext c = GetContext(m, PotionEffect.Barrab);
 
-            if (c != null && c.StartTime + TimeSpan.FromMinutes(5) > DateTime.UtcNow)
+            if (c != null && c.StartTime + TimeSpan.FromMinutes(2) > DateTime.UtcNow)
                 return 10;
 
             return 0;
@@ -338,7 +338,7 @@ namespace Server.Items
         {
             EodonPotionContext c = GetContext(m, PotionEffect.Barrab);
 
-            if (c != null && c.StartTime + TimeSpan.FromMinutes(10) > DateTime.UtcNow)
+            if (c != null && c.StartTime + TimeSpan.FromMinutes(2) > DateTime.UtcNow)
                 return 100;
 
             return 0;
@@ -385,7 +385,7 @@ namespace Server.Items
             ResistanceMod mod = new ResistanceMod(ResistanceType.Fire, 10);
             m.AddResistanceMod(mod);
 
-            Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod));
+            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod));
         }
 
         public static int GetStamBuff(Mobile m)
@@ -418,7 +418,7 @@ namespace Server.Items
 
     public class KurakAmbushersEssence : EodonianPotion
     {
-        public override TimeSpan Cooldown => TimeSpan.FromMinutes(10);
+        public override TimeSpan Cooldown => TimeSpan.FromMinutes(2);
 
         [Constructable]
         public KurakAmbushersEssence() : this(1) { }
@@ -475,12 +475,12 @@ namespace Server.Items
             ResistanceMod mod1 = new ResistanceMod(ResistanceType.Physical, 10);
             m.AddResistanceMod(mod1);
 
-            Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod1));
+            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod1));
 
             ResistanceMod mod2 = new ResistanceMod(ResistanceType.Cold, 5);
             m.AddResistanceMod(mod1);
 
-            Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod2));
+            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod2));
         }
 
         public BarakoDraftOfMight(Serial serial)
@@ -528,7 +528,7 @@ namespace Server.Items
         {
             EodonPotionContext context = GetContext(m, PotionEffect);
 
-            if (context != null && context.StartTime + TimeSpan.FromMinutes(10) > DateTime.UtcNow)
+            if (context != null && context.StartTime + TimeSpan.FromMinutes(2) > DateTime.UtcNow)
             {
                 m.Mana += 10;
                 //TODO: Message?
@@ -586,12 +586,12 @@ namespace Server.Items
             ResistanceMod mod1 = new ResistanceMod(ResistanceType.Poison, 10);
             m.AddResistanceMod(mod1);
 
-            Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod1));
+            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod1));
 
             ResistanceMod mod2 = new ResistanceMod(ResistanceType.Energy, 5);
             m.AddResistanceMod(mod2);
 
-            Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod2));
+            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod2));
         }
 
         public SakkhraProphylaxisPotion(Serial serial)

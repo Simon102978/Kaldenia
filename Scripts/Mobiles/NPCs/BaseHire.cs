@@ -9,7 +9,7 @@ namespace Server.Mobiles
 {
 	public class BaseHire : BaseCreature
 	{
-		public override bool IsBondable => false;
+		public override bool IsBondable => true;
 		public override bool CanAutoStable => false;
 		public override bool CanDetectHidden => false;
 		public override bool KeepsItemsOnDeath => true;

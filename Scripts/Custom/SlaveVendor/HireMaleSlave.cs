@@ -9,9 +9,13 @@ namespace Server.Mobiles
 		{
             SpeechHue = Utility.RandomDyedHue();
             Hue = Utility.RandomSkinHue();
+			
 
-            Body = 0x190;
+			Body = 0x190;
             Name = NameList.RandomName("male");
+			ActiveSpeed = 1.0;
+			PassiveSpeed = 1.0;
+
             AddItem(new ShortPants(Utility.RandomNeutralHue()));
 
             Title = "Esclave";
@@ -43,7 +47,7 @@ namespace Server.Mobiles
                     break;
             }
 
-			ControlSlots = 1;
+			ControlSlots = 2;
 			Tamable = false;
 		}
 		public HireMaleSlave(Serial serial) : base(serial)

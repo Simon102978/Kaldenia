@@ -16,7 +16,7 @@
 		<PetAsStatuette type="bool">true</PetAsStatuette>	<!-- Deed or statuette form -->
 		<AllowLocking type="bool">false</AllowLocking>		<!-- Allow players to lock the shrunken pet so it can only be unshrunk by the owner -->
 		<ShowPetDetails type="bool">true</ShowPetDetails>	<!-- Show stats and skills on the properties of the shrunken pet -->
-		<ShrunkenWeight type="double">10.0</ShrunkenWeight>	<!-- Weight of the shrunken pet -->
+		<ShrunkenWeight type="double">10</ShrunkenWeight>	<!-- Weight of the shrunken pet -->
 		<BlessedLeash type="bool">false</BlessedLeash>		<!-- Loot type of the pet leash -->
 
 		<!--

@@ -66,7 +66,7 @@ namespace Server.Custom.System
 
         public static ArrayList m_NewGuildsList;
                                                          
-        public string NewGuildTitle         = "Veuillez écrire le nom de votre guilde ici";
+        public string NewGuildTitle         = "Nouvelle Guilde";
         public string NewGuildDescription   = "Veuillez écrire la description de votre guilde ici";
         public string NewGuildSalary        = "Veuillez écrire le salaire du rang ici";
 
@@ -198,10 +198,7 @@ namespace Server.Custom.System
                     Directory.CreateDirectory(path);
 
                 using (StreamWriter sw = new StreamWriter(fileName, true))
-                    sw.WriteLine(   "------------------------------------\r\n" +
-                                    "Date : " + DateTime.Now.ToString() + "\r\n" +
-                                    "Nom du joueur : " + m.Name + "\r\n" +
-                                    "Montant : " + amount.ToString() + "\r\n\n");
+                    sw.WriteLine(DateTime.Now.ToString() + ","  + m.Name + "," + amount.ToString() + "\n");  // CSV fIle type..
             }
         }
 

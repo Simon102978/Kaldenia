@@ -60,9 +60,6 @@ namespace Server.Gumps
 
 		public override void OnResponse(NetState sender, RelayInfo info)
         {
-
-
-
 			     switch (info.ButtonID)
 				 {
 					case 0:

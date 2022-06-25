@@ -96,17 +96,14 @@ namespace Server.Items
 				{
 					CustomPlayerMobile cm = (CustomPlayerMobile)from;
 
-
-					if (cm.Deguisement == null)
+					if (cm.GetDeguisement() == null)
 					{
 						from.SendGump(new CustomDisguiseGump(cm, new Deguisement(cm)));
 					}
 					else
 					{
-						from.SendGump(new CustomDisguiseGump(cm, cm.Deguisement));
-					}
-
-					
+						from.SendGump(new CustomDisguiseGump(cm, cm.GetDeguisement()));
+					}					
 				}
 				else
 				{

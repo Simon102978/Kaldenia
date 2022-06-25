@@ -18,7 +18,7 @@ namespace Server.Scripts.Commands
 
                 if (from.Deguise)
                 {
-					from.Deguisement.RemoveDeguisement();
+					Server.Deguisement.RemoveDeguisement(from);
 
                     from.SendMessage("Vous retirez votre déguisement.");
                 }

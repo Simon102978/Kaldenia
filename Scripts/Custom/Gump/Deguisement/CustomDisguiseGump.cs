@@ -252,7 +252,8 @@ namespace Server.Gumps
 						{
 							if (cm.DeguisementAction(DeguisementAction.Titre))
 							{
-								cm.Deguisement = m_Deg;
+						        cm.SetDeguisement(m_Deg);
+
 								m_Deg.ApplyDeguisement();
 							}
 							break;
@@ -261,7 +262,7 @@ namespace Server.Gumps
 						{
 							if (cm.Deguise)
 							{
-								cm.Deguisement.RemoveDeguisement();
+								Deguisement.RemoveDeguisement(cm);
 							}
 
 							break;

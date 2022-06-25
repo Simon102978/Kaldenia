@@ -42,7 +42,10 @@ namespace Server.Mobiles
 		private God m_God = God.GetGod(-1);
 		private AffinityDictionary m_MagicAfinity;
 		private List<int> m_QuickSpells = new List<int>();
-		private Deguisement m_Deguisement = null;
+
+
+		private int m_IdentiteId;
+		private Dictionary<int, Deguisement> m_Deguisement = new Dictionary<int, Deguisement>();
 
 		private TribeRelation m_TribeRelation;
 
@@ -53,6 +56,7 @@ namespace Server.Mobiles
 		private Race m_BaseRace;
 		private bool m_BaseFemale;
 		private int m_BaseHue;
+		
 
 	
 
@@ -199,7 +203,10 @@ namespace Server.Mobiles
 		public Item ChosenSpellbook { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Deguisement Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
+		public Dictionary<int,Deguisement> Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int IdentiteID { get => m_IdentiteId; set => m_IdentiteId = value; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Race BaseRace 
@@ -546,7 +553,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.StatutSocial;
+				gros = GetDeguisement().StatutSocial;
 			}
 
 
@@ -668,7 +675,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.Appearance;
+				gros = GetDeguisement().Appearance;
 			}
 
 			if (gros < 0)
@@ -694,7 +701,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.Grosseur;
+				gros = GetDeguisement().Grosseur;
 			}
 
 
@@ -726,7 +733,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.Grandeur;
+				gros = GetDeguisement().Grandeur;
 			}
 
 
@@ -748,7 +755,7 @@ namespace Server.Mobiles
 		{
 			if (Deguise) // Devrais pas etre autre choses
 			{
-				return Deguisement.Name;
+				return GetDeguisement().Name;
 
 			}
 			return base.DeguisementName();
@@ -758,7 +765,7 @@ namespace Server.Mobiles
 		{
 			if (Deguise) // Devrais pas etre autre choses
 			{
-				return Deguisement.GetProfile();
+				return GetDeguisement().GetProfile();
 			}
 			return base.DeguisementName();
 		}
@@ -919,6 +926,32 @@ namespace Server.Mobiles
 			}
 			return false;
 		}
+
+
+		public Deguisement GetDeguisement()
+		{
+			if (m_Deguisement.ContainsKey(IdentiteID))
+			{
+				return m_Deguisement[IdentiteID];
+			}
+
+			return null;	
+		}
+
+		public void SetDeguisement(Deguisement deg)
+		{
+			if (m_Deguisement.ContainsKey(IdentiteID))
+			{
+				m_Deguisement[IdentiteID] = deg;
+			}
+			else
+			{
+				m_Deguisement.Add(IdentiteID, deg);
+			}
+
+			
+		}
+
 
 		#endregion
 
@@ -1755,7 +1788,7 @@ namespace Server.Mobiles
 
 				if (Deguise)
 				{
-					Deguisement.RemoveDeguisement();
+					Server.Deguisement.RemoveDeguisement(this);
 				}
 
 				if (Masque)
@@ -1908,6 +1941,21 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 19:
+					{
+						m_IdentiteId = reader.ReadInt();
+
+						m_Deguisement = new Dictionary<int, Deguisement>();
+
+						int count = reader.ReadInt();
+
+						for (int i = 0; i < count; i++)
+						{
+							m_Deguisement.Add(reader.ReadInt(), Server.Deguisement.Deserialize(reader));
+						}
+
+						goto case 18;
+					}
 				case 18:
 					{
 						TribeRelation = new TribeRelation(this, reader);
@@ -1967,13 +2015,22 @@ namespace Server.Mobiles
 						m_BaseRace = Server.BaseRace.GetRace(reader.ReadInt());
 						m_BaseFemale = reader.ReadBool();
 
-						goto case 9;
+						if (version <= 18)
+						{
+							goto case 9;
+						}
+						else
+						{
+							goto case 8;
+						}
+
+						
 					}
 
 				case 9:
 					{
 						
-						m_Deguisement = Deguisement.Deserialize(reader);
+						Deguisement.Add(0,Server.Deguisement.Deserialize(reader));
 						goto case 8;
 					}
 				case 8:
@@ -2051,7 +2108,18 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(18); // version
+            writer.Write(19); // version
+
+			writer.Write(m_IdentiteId);
+
+			writer.Write(m_Deguisement.Count);
+
+			foreach (KeyValuePair<int,Deguisement> item in m_Deguisement)
+			{
+				writer.Write(item.Key);
+				item.Value.Serialize(writer);
+			}
+
 
 			m_TribeRelation.Serialize(writer);
 
@@ -2093,7 +2161,7 @@ namespace Server.Mobiles
 			writer.Write(m_BaseRace.RaceID);
 			writer.Write(m_BaseFemale);
 
-
+/*
 
 			if (m_Deguisement == null)
 			{
@@ -2103,7 +2171,7 @@ namespace Server.Mobiles
 			
 			m_Deguisement.Serialize(writer);
 			
-
+			*/
 
 			
 

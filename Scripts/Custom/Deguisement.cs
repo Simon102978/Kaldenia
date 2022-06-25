@@ -188,7 +188,7 @@ namespace Server
 				return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
 			}
 
-			return "Aucunwe";
+			return "Aucune";
 		}
 
 		public string GetApparence()
@@ -359,16 +359,14 @@ namespace Server
 
 		}
 
-		public void RemoveDeguisement()
+		public static void RemoveDeguisement(CustomPlayerMobile player)
 		{
-
-			m_Player.Deguise = false;
-			m_Player.Female = m_Player.BaseFemale;
-			m_Player.Race = m_Player.BaseRace;
-			m_Player.Race.RemoveRace(m_Player);
-			Race.AddRace(m_Player, m_Player.BaseHue);
-
-
+			player.IdentiteID = 0;
+			player.Deguise = false;
+			player.Female = player.BaseFemale;
+			player.Race = player.BaseRace;
+			player.Race.RemoveRace(player);
+			player.Race.AddRace(player, player.BaseHue);
 		}
 
 

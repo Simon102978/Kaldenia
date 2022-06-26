@@ -59,9 +59,24 @@ namespace Server.Custom.System
         }
     }
 
-    class NewGuildRecruterStone : Item
+    class NewGuildRecruterStone : BaseVendor
     {
         #region Variables
+
+        private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
+
+        protected override List<SBInfo> SBInfos => m_SBInfos;
+        public override bool IsActiveVendor => false;
+        public override bool IsActiveBuyer => false;
+        public override bool IsActiveSeller => false;
+        public override bool CanTeach => false;
+
+         public override void InitSBInfo()
+        { }
+
+
+
+
         private Dictionary<Mobile, NewGuildRank> m_RankMobiles;
 
         public static ArrayList m_NewGuildsList;
@@ -309,10 +324,10 @@ namespace Server.Custom.System
 
         #region Constructor
         [Constructable]
-        public NewGuildRecruterStone() : base( 0xED4 )
+        public NewGuildRecruterStone() : base("Ressource Humaine")
         {
-            Name = "Pierre de guilde";
-            Movable = false;
+           // Name = "Pierre de guilde";
+            //Movable = false;
 
             if (m_NewGuildsList == null)
                 m_NewGuildsList = new ArrayList();

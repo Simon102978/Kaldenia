@@ -59,14 +59,29 @@ namespace Server.Custom.System
         }
     }
 
-    class NewGuildRecruterStone : Item
+    class NewGuildRecruterStone : BaseVendor
     {
         #region Variables
+
+        private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
+
+        protected override List<SBInfo> SBInfos => m_SBInfos;
+        public override bool IsActiveVendor => false;
+        public override bool IsActiveBuyer => false;
+        public override bool IsActiveSeller => false;
+        public override bool CanTeach => false;
+
+         public override void InitSBInfo()
+        { }
+
+
+
+
         private Dictionary<Mobile, NewGuildRank> m_RankMobiles;
 
         public static ArrayList m_NewGuildsList;
                                                          
-        public string NewGuildTitle         = "Veuillez écrire le nom de votre guilde ici";
+        public string NewGuildTitle         = "Nouvelle Guilde";
         public string NewGuildDescription   = "Veuillez écrire la description de votre guilde ici";
         public string NewGuildSalary        = "Veuillez écrire le salaire du rang ici";
 
@@ -198,10 +213,7 @@ namespace Server.Custom.System
                     Directory.CreateDirectory(path);
 
                 using (StreamWriter sw = new StreamWriter(fileName, true))
-                    sw.WriteLine(   "------------------------------------\r\n" +
-                                    "Date : " + DateTime.Now.ToString() + "\r\n" +
-                                    "Nom du joueur : " + m.Name + "\r\n" +
-                                    "Montant : " + amount.ToString() + "\r\n\n");
+                    sw.WriteLine(DateTime.Now.ToString() + ","  + m.Name + "," + amount.ToString() + "\n");  // CSV fIle type..
             }
         }
 
@@ -312,10 +324,10 @@ namespace Server.Custom.System
 
         #region Constructor
         [Constructable]
-        public NewGuildRecruterStone() : base( 0xED4 )
+        public NewGuildRecruterStone() : base("Ressource Humaine")
         {
-            Name = "Pierre de guilde";
-            Movable = false;
+           // Name = "Pierre de guilde";
+            //Movable = false;
 
             if (m_NewGuildsList == null)
                 m_NewGuildsList = new ArrayList();

@@ -18,7 +18,7 @@ namespace Server.Gumps
 		private Deguisement m_Deg;
 
         public CustomDisguiseGump(CustomPlayerMobile from, Deguisement deg)
-            : base("Déguisement", 560, 622, false)
+            : base("Dï¿½guisement", 560, 622, false)
         {
 
 			m_Deg = deg;
@@ -31,7 +31,7 @@ namespace Server.Gumps
 			int colonne = 0;
 			int scale = 25;
 
-			AddSection(x - 10, y , 610, 115, "Général");
+			AddSection(x - 10, y , 610, 115, "Gï¿½nï¿½ral");
 
 			AddHtmlTexteColored(x + 10, y + 45, 75, "Nom: ", "#ffffff");
 
@@ -56,7 +56,7 @@ namespace Server.Gumps
 			}
 		
 
-			AddSection(x - 10, y + 116, 300, 270, "Spécifique");
+			AddSection(x - 10, y + 116, 300, 270, "Spï¿½cifique");
 
 			AddSection(x + 291, y + 116, 309, 270, "Apparence");
 
@@ -165,6 +165,15 @@ namespace Server.Gumps
 			line++;
 			}
 
+			if(from.DeguisementAction(DeguisementAction.Identite))
+			{
+
+			AddButtonHtlml(x + 10, y + 151 + line * scale, 11, 2117, 2118, "IdentitÃ©s: " + from.IdentiteID, "#ffffff");
+			line++;
+
+			}
+
+
 
 			line++;
 
@@ -252,7 +261,8 @@ namespace Server.Gumps
 						{
 							if (cm.DeguisementAction(DeguisementAction.Titre))
 							{
-								cm.Deguisement = m_Deg;
+						        cm.SetDeguisement(m_Deg);
+
 								m_Deg.ApplyDeguisement();
 							}
 							break;
@@ -261,7 +271,7 @@ namespace Server.Gumps
 						{
 							if (cm.Deguise)
 							{
-								cm.Deguisement.RemoveDeguisement();
+								Deguisement.RemoveDeguisement(cm);
 							}
 
 							break;
@@ -273,9 +283,18 @@ namespace Server.Gumps
 								m_From.SendGump(new DegStatutSocialGump(m_From, m_Deg));
 							}
 							break;
-
-							break;
 						}
+					case 11:
+					{
+							if (cm.DeguisementAction(DeguisementAction.Identite))
+							{
+								m_From.SendGump(new DegIdentiteGump(m_From));
+							}
+
+
+						break;
+					}
+
 				}
 
 				if (info.ButtonID >= 100 && info.ButtonID < 200)

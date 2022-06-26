@@ -47,16 +47,14 @@ namespace Server.Misc
 						Dictionary<int, string> dic = new Dictionary<int, string>();
 						int i = 0;
 
-
 						foreach (string item in array)
 						{
 							dic.Add(i, array[i]);
 
-
 							i++;
 						}
 
-						cp.Deguisement.Paperdoll = dic;
+						cp.GetDeguisement().Paperdoll = dic;
 
 					}
 					else if (cp.Deguise)
@@ -67,8 +65,6 @@ namespace Server.Misc
 					{
 						from.Profile = e.Text;
 					}
-
-
 				}
 				else
 				{

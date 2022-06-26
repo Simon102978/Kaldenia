@@ -29,7 +29,7 @@ namespace Server.Scripts.Commands
 				string secondaire = pm.ClasseSecondaire.Name;
 				string metier = pm.Metier.Name;
 				string customTitle = pm.customTitle;
-				string DegTitle = pm.Deguisement.Title;
+				string DegTitle = pm.GetDeguisement().Title;
 
                 pm.TitleCycle += 1;
 

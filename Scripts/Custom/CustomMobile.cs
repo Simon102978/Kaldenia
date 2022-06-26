@@ -42,7 +42,10 @@ namespace Server.Mobiles
 		private God m_God = God.GetGod(-1);
 		private AffinityDictionary m_MagicAfinity;
 		private List<int> m_QuickSpells = new List<int>();
-		private Deguisement m_Deguisement = null;
+
+
+		private int m_IdentiteId;
+		private Dictionary<int, Deguisement> m_Deguisement = new Dictionary<int, Deguisement>();
 
 		private TribeRelation m_TribeRelation;
 
@@ -53,6 +56,7 @@ namespace Server.Mobiles
 		private Race m_BaseRace;
 		private bool m_BaseFemale;
 		private int m_BaseHue;
+		
 
 	
 
@@ -199,7 +203,10 @@ namespace Server.Mobiles
 		public Item ChosenSpellbook { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Deguisement Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
+		public Dictionary<int,Deguisement> Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int IdentiteID { get => m_IdentiteId; set => m_IdentiteId = value; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Race BaseRace 
@@ -270,7 +277,7 @@ namespace Server.Mobiles
 				{
 					NameMod = null;
 					m_Masque = value;
-					SendMessage("Votre identité est revelée.");
+					SendMessage("Votre identitï¿½ est revelï¿½e.");
 				}
 				else if (NameMod != null)
 				{
@@ -302,7 +309,7 @@ namespace Server.Mobiles
 
 			if (Vulnerability)
 			{
-				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMÉE" : "ASSOMÉ") + "</basefont></h3>\t");
+				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMï¿½E" : "ASSOMï¿½") + "</basefont></h3>\t");
 			}
 
 			if (NameMod == null)
@@ -323,7 +330,7 @@ namespace Server.Mobiles
 
 			missive.Delete();
 
-			SendMessage("Vous avez reçu une missive.");
+			SendMessage("Vous avez reï¿½u une missive.");
 		}
 
 		public virtual void GetMissive()
@@ -365,7 +372,7 @@ namespace Server.Mobiles
 				else
 				{
 					VisibilityList.Add(m);
-					m.SendMessage("Vous avez detecté " + Name + ".");
+					m.SendMessage("Vous avez detectï¿½ " + Name + ".");
 				}
 
 				if (Utility.InUpdateRange(m, this))
@@ -404,7 +411,7 @@ namespace Server.Mobiles
 				else
 				{
 					VisibilityList.Add(cm);
-					cm.SendMessage(sd.Name + " vous indique la présence de " + Name + ".");
+					cm.SendMessage(sd.Name + " vous indique la prï¿½sence de " + Name + ".");
 				}
 
 				if (Utility.InUpdateRange(cm, this))
@@ -546,7 +553,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.StatutSocial;
+				gros = GetDeguisement().StatutSocial;
 			}
 
 
@@ -668,7 +675,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.Appearance;
+				gros = GetDeguisement().Appearance;
 			}
 
 			if (gros < 0)
@@ -694,7 +701,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.Grosseur;
+				gros = GetDeguisement().Grosseur;
 			}
 
 
@@ -726,7 +733,7 @@ namespace Server.Mobiles
 
 			if (Deguise)
 			{
-				gros = Deguisement.Grandeur;
+				gros = GetDeguisement().Grandeur;
 			}
 
 
@@ -742,13 +749,13 @@ namespace Server.Mobiles
 		}
 		#endregion
 
-		#region Déguisement
+		#region Dï¿½guisement
 
 		public override string DeguisementName()
 		{
 			if (Deguise) // Devrais pas etre autre choses
 			{
-				return Deguisement.Name;
+				return GetDeguisement().Name;
 
 			}
 			return base.DeguisementName();
@@ -758,7 +765,7 @@ namespace Server.Mobiles
 		{
 			if (Deguise) // Devrais pas etre autre choses
 			{
-				return Deguisement.GetProfile();
+				return GetDeguisement().GetProfile();
 			}
 			return base.DeguisementName();
 		}
@@ -879,6 +886,17 @@ namespace Server.Mobiles
 							return false;
 						}
 					}
+					case Server.DeguisementAction.Identite:
+					{
+						if (skill > 80)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
 				default:
 					return true;
 			}
@@ -920,6 +938,32 @@ namespace Server.Mobiles
 			return false;
 		}
 
+
+		public Deguisement GetDeguisement()
+		{
+			if (m_Deguisement.ContainsKey(IdentiteID))
+			{
+				return m_Deguisement[IdentiteID];
+			}
+
+			return new Deguisement(this);	
+		}
+
+		public void SetDeguisement(Deguisement deg)
+		{
+			if (m_Deguisement.ContainsKey(IdentiteID))
+			{
+				m_Deguisement[IdentiteID] = deg;
+			}
+			else
+			{
+				m_Deguisement.Add(IdentiteID, deg);
+			}
+
+			
+		}
+
+
 		#endregion
 
 		public CustomPlayerMobile(Serial s)
@@ -933,7 +977,7 @@ namespace Server.Mobiles
 		{
 			SendGump(new TipGump(this, m, tip, true));
 
-			SendMessage("Un maître de jeu vous a envoyé un message, double cliquez le parchemin pour le lire.");
+			SendMessage("Un maï¿½tre de jeu vous a envoyï¿½ un message, double cliquez le parchemin pour le lire.");
 		}
 
 		public override bool OnEquip(Item item)
@@ -1290,7 +1334,7 @@ namespace Server.Mobiles
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
-									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									// Secondaire a 30, et primaire ï¿½ 50, donc perte de 20 de skills.
 									Skills[item].Base -= 20;
 								}
 								else
@@ -1313,7 +1357,7 @@ namespace Server.Mobiles
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
-									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									// Secondaire a 30, et primaire ï¿½ 50, donc perte de 20 de skills.
 									Skills[item].Base += 20;
 
 									if (Skills[item].Base > 100)
@@ -1343,7 +1387,7 @@ namespace Server.Mobiles
 							{
 								if (ClassePrimaire.ContainSkill(item))
 								{
-									// rien a faire, classe primaire est plus elevés.
+									// rien a faire, classe primaire est plus elevï¿½s.
 								}
 								else if (NewClass.ContainSkill(item))
 								{
@@ -1351,7 +1395,7 @@ namespace Server.Mobiles
 								}
 								else if (Metier.ContainSkill(item))
 								{
-									// rien a faire, metier à 50...
+									// rien a faire, metier ï¿½ 50...
 								}
 								else
 								{
@@ -1365,7 +1409,7 @@ namespace Server.Mobiles
 							{
 								if (ClassePrimaire.ContainSkill(item))
 								{
-									// rien a faire, classe primaire est plus elevés.
+									// rien a faire, classe primaire est plus elevï¿½s.
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
@@ -1373,7 +1417,7 @@ namespace Server.Mobiles
 								}
 								else if (Metier.ContainSkill(item))
 								{
-									// rien a faire, metier à 50...
+									// rien a faire, metier ï¿½ 50...
 								}
 								else
 								{
@@ -1403,7 +1447,7 @@ namespace Server.Mobiles
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
-									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									// Secondaire a 30, et primaire ï¿½ 50, donc perte de 20 de skills.
 									Skills[item].Base -= 20;
 								}
 								else
@@ -1665,11 +1709,11 @@ namespace Server.Mobiles
 		public bool CanDecreaseSkill(SkillName skills)
 		{
 
-			if (Skills[skills].Value > 50) // sert à rien de calculer ca..
+			if (Skills[skills].Value > 50) // sert ï¿½ rien de calculer ca..
 			{
 				return true;
 			}
-			else if (Skills[skills].Value == 0) // sert à rien de calculer ca..
+			else if (Skills[skills].Value == 0) // sert ï¿½ rien de calculer ca..
 			{
 				return false;
 			}
@@ -1755,7 +1799,7 @@ namespace Server.Mobiles
 
 				if (Deguise)
 				{
-					Deguisement.RemoveDeguisement();
+					Server.Deguisement.RemoveDeguisement(this);
 				}
 
 				if (Masque)
@@ -1812,9 +1856,9 @@ namespace Server.Mobiles
 			}
 
 
-			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous vous relevez péniblement.", VulnerabilityDuration);
-			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous êtes vulnérable pendant les {0} prochaines minutes.", VulnerabilityDuration);
-			SendMessage(HueManager.GetHue(HueManagerList.Red), "Si vous tombez au combat, vous serez envoyé{0} dans le monde des esprits.", Female ? "e" : "");
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous vous relevez pï¿½niblement.", VulnerabilityDuration);
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous ï¿½tes vulnï¿½rable pendant les {0} prochaines minutes.", VulnerabilityDuration);
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Si vous tombez au combat, vous serez envoyï¿½{0} dans le monde des esprits.", Female ? "e" : "");
 
 		}
 
@@ -1856,7 +1900,7 @@ namespace Server.Mobiles
 				if (pm.Vulnerability && pm.EndOfVulnerabilityTime <= DateTime.Now)
 				{
 					pm.Vulnerability = false;
-					pm.SendMessage(HueManager.GetHue(HueManagerList.Green), "Vous n'êtes plus vulnérable. La prochaine fois que vous tomberez au combat, vous serez assomé.");
+					pm.SendMessage(HueManager.GetHue(HueManagerList.Green), "Vous n'ï¿½tes plus vulnï¿½rable. La prochaine fois que vous tomberez au combat, vous serez assomï¿½.");
 				}
 			}
 		}
@@ -1908,6 +1952,21 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 19:
+					{
+						m_IdentiteId = reader.ReadInt();
+
+						m_Deguisement = new Dictionary<int, Deguisement>();
+
+						int count = reader.ReadInt();
+
+						for (int i = 0; i < count; i++)
+						{
+							m_Deguisement.Add(reader.ReadInt(), Server.Deguisement.Deserialize(reader));
+						}
+
+						goto case 18;
+					}
 				case 18:
 					{
 						TribeRelation = new TribeRelation(this, reader);
@@ -1967,13 +2026,22 @@ namespace Server.Mobiles
 						m_BaseRace = Server.BaseRace.GetRace(reader.ReadInt());
 						m_BaseFemale = reader.ReadBool();
 
-						goto case 9;
+						if (version <= 18)
+						{
+							goto case 9;
+						}
+						else
+						{
+							goto case 8;
+						}
+
+						
 					}
 
 				case 9:
 					{
 						
-						m_Deguisement = Deguisement.Deserialize(reader);
+						Deguisement.Add(0,Server.Deguisement.Deserialize(reader));
 						goto case 8;
 					}
 				case 8:
@@ -2051,7 +2119,18 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(18); // version
+            writer.Write(19); // version
+
+			writer.Write(m_IdentiteId);
+
+			writer.Write(m_Deguisement.Count);
+
+			foreach (KeyValuePair<int,Deguisement> item in m_Deguisement)
+			{
+				writer.Write(item.Key);
+				item.Value.Serialize(writer);
+			}
+
 
 			m_TribeRelation.Serialize(writer);
 
@@ -2093,7 +2172,7 @@ namespace Server.Mobiles
 			writer.Write(m_BaseRace.RaceID);
 			writer.Write(m_BaseFemale);
 
-
+/*
 
 			if (m_Deguisement == null)
 			{
@@ -2103,7 +2182,7 @@ namespace Server.Mobiles
 			
 			m_Deguisement.Serialize(writer);
 			
-
+			*/
 
 			
 

@@ -277,7 +277,7 @@ namespace Server.Mobiles
 				{
 					NameMod = null;
 					m_Masque = value;
-					SendMessage("Votre identité est revelée.");
+					SendMessage("Votre identitï¿½ est revelï¿½e.");
 				}
 				else if (NameMod != null)
 				{
@@ -309,7 +309,7 @@ namespace Server.Mobiles
 
 			if (Vulnerability)
 			{
-				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMÉE" : "ASSOMÉ") + "</basefont></h3>\t");
+				list.Add(1050045, "<\th3><basefont color=#FF8000>" + (Female ? "ASSOMï¿½E" : "ASSOMï¿½") + "</basefont></h3>\t");
 			}
 
 			if (NameMod == null)
@@ -330,7 +330,7 @@ namespace Server.Mobiles
 
 			missive.Delete();
 
-			SendMessage("Vous avez reçu une missive.");
+			SendMessage("Vous avez reï¿½u une missive.");
 		}
 
 		public virtual void GetMissive()
@@ -372,7 +372,7 @@ namespace Server.Mobiles
 				else
 				{
 					VisibilityList.Add(m);
-					m.SendMessage("Vous avez detecté " + Name + ".");
+					m.SendMessage("Vous avez detectï¿½ " + Name + ".");
 				}
 
 				if (Utility.InUpdateRange(m, this))
@@ -411,7 +411,7 @@ namespace Server.Mobiles
 				else
 				{
 					VisibilityList.Add(cm);
-					cm.SendMessage(sd.Name + " vous indique la présence de " + Name + ".");
+					cm.SendMessage(sd.Name + " vous indique la prï¿½sence de " + Name + ".");
 				}
 
 				if (Utility.InUpdateRange(cm, this))
@@ -749,7 +749,7 @@ namespace Server.Mobiles
 		}
 		#endregion
 
-		#region Déguisement
+		#region Dï¿½guisement
 
 		public override string DeguisementName()
 		{
@@ -886,6 +886,17 @@ namespace Server.Mobiles
 							return false;
 						}
 					}
+					case Server.DeguisementAction.Identite:
+					{
+						if (skill > 80)
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
 				default:
 					return true;
 			}
@@ -935,7 +946,7 @@ namespace Server.Mobiles
 				return m_Deguisement[IdentiteID];
 			}
 
-			return null;	
+			return new Deguisement(this);	
 		}
 
 		public void SetDeguisement(Deguisement deg)
@@ -966,7 +977,7 @@ namespace Server.Mobiles
 		{
 			SendGump(new TipGump(this, m, tip, true));
 
-			SendMessage("Un maître de jeu vous a envoyé un message, double cliquez le parchemin pour le lire.");
+			SendMessage("Un maï¿½tre de jeu vous a envoyï¿½ un message, double cliquez le parchemin pour le lire.");
 		}
 
 		public override bool OnEquip(Item item)
@@ -1323,7 +1334,7 @@ namespace Server.Mobiles
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
-									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									// Secondaire a 30, et primaire ï¿½ 50, donc perte de 20 de skills.
 									Skills[item].Base -= 20;
 								}
 								else
@@ -1346,7 +1357,7 @@ namespace Server.Mobiles
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
-									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									// Secondaire a 30, et primaire ï¿½ 50, donc perte de 20 de skills.
 									Skills[item].Base += 20;
 
 									if (Skills[item].Base > 100)
@@ -1376,7 +1387,7 @@ namespace Server.Mobiles
 							{
 								if (ClassePrimaire.ContainSkill(item))
 								{
-									// rien a faire, classe primaire est plus elevés.
+									// rien a faire, classe primaire est plus elevï¿½s.
 								}
 								else if (NewClass.ContainSkill(item))
 								{
@@ -1384,7 +1395,7 @@ namespace Server.Mobiles
 								}
 								else if (Metier.ContainSkill(item))
 								{
-									// rien a faire, metier à 50...
+									// rien a faire, metier ï¿½ 50...
 								}
 								else
 								{
@@ -1398,7 +1409,7 @@ namespace Server.Mobiles
 							{
 								if (ClassePrimaire.ContainSkill(item))
 								{
-									// rien a faire, classe primaire est plus elevés.
+									// rien a faire, classe primaire est plus elevï¿½s.
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
@@ -1406,7 +1417,7 @@ namespace Server.Mobiles
 								}
 								else if (Metier.ContainSkill(item))
 								{
-									// rien a faire, metier à 50...
+									// rien a faire, metier ï¿½ 50...
 								}
 								else
 								{
@@ -1436,7 +1447,7 @@ namespace Server.Mobiles
 								}
 								else if (ClasseSecondaire.ContainSkill(item))
 								{
-									// Secondaire a 30, et primaire à 50, donc perte de 20 de skills.
+									// Secondaire a 30, et primaire ï¿½ 50, donc perte de 20 de skills.
 									Skills[item].Base -= 20;
 								}
 								else
@@ -1698,11 +1709,11 @@ namespace Server.Mobiles
 		public bool CanDecreaseSkill(SkillName skills)
 		{
 
-			if (Skills[skills].Value > 50) // sert à rien de calculer ca..
+			if (Skills[skills].Value > 50) // sert ï¿½ rien de calculer ca..
 			{
 				return true;
 			}
-			else if (Skills[skills].Value == 0) // sert à rien de calculer ca..
+			else if (Skills[skills].Value == 0) // sert ï¿½ rien de calculer ca..
 			{
 				return false;
 			}
@@ -1845,9 +1856,9 @@ namespace Server.Mobiles
 			}
 
 
-			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous vous relevez péniblement.", VulnerabilityDuration);
-			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous êtes vulnérable pendant les {0} prochaines minutes.", VulnerabilityDuration);
-			SendMessage(HueManager.GetHue(HueManagerList.Red), "Si vous tombez au combat, vous serez envoyé{0} dans le monde des esprits.", Female ? "e" : "");
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous vous relevez pï¿½niblement.", VulnerabilityDuration);
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Vous ï¿½tes vulnï¿½rable pendant les {0} prochaines minutes.", VulnerabilityDuration);
+			SendMessage(HueManager.GetHue(HueManagerList.Red), "Si vous tombez au combat, vous serez envoyï¿½{0} dans le monde des esprits.", Female ? "e" : "");
 
 		}
 
@@ -1889,7 +1900,7 @@ namespace Server.Mobiles
 				if (pm.Vulnerability && pm.EndOfVulnerabilityTime <= DateTime.Now)
 				{
 					pm.Vulnerability = false;
-					pm.SendMessage(HueManager.GetHue(HueManagerList.Green), "Vous n'êtes plus vulnérable. La prochaine fois que vous tomberez au combat, vous serez assomé.");
+					pm.SendMessage(HueManager.GetHue(HueManagerList.Green), "Vous n'ï¿½tes plus vulnï¿½rable. La prochaine fois que vous tomberez au combat, vous serez assomï¿½.");
 				}
 			}
 		}

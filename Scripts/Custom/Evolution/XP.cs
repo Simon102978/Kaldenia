@@ -32,6 +32,13 @@ namespace Server
       {
 
     	 int day = (int)(DateTime.Now - CustomPersistence.Ouverture).TotalDays + 1;
+
+		 if(CustomPersistence.ProchainePay <= DateTime.Now)
+		 {
+			CustomPersistence.ProchainePay = CustomPersistence.ProchainePay.AddDays(7);
+			Server.Custom.System.GuildRecruter.Pay();
+
+		 }
       
 
         foreach (NetState state in NetState.Instances)

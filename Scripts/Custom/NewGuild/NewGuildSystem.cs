@@ -22,12 +22,12 @@ namespace Server.Custom.System
         public static void Pay_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;
-            NewGuildRecruterStone.Pay();
+            GuildRecruter.Pay();
             from.SendMessage(HueManager.GetHue(HueManagerList.Green), "Vous payez les membres des guildes.");
         }
     }
 
-    class NewGuildRank
+   public class NewGuildRank
     {
         int m_Rank;
         string m_Title;
@@ -59,142 +59,168 @@ namespace Server.Custom.System
         }
     }
 
-    class NewGuildRecruterStone : BaseVendor
-    {
-        #region Variables
+	public class GuildRecruter : BaseVendor
+	{
+		#region Variables
 
-        private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
+		private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
 
-        protected override List<SBInfo> SBInfos => m_SBInfos;
-        public override bool IsActiveVendor => false;
-        public override bool IsActiveBuyer => false;
-        public override bool IsActiveSeller => false;
-        public override bool CanTeach => false;
+		protected override List<SBInfo> SBInfos => m_SBInfos;
+		public override bool IsActiveVendor => false;
+		public override bool IsActiveBuyer => false;
+		public override bool IsActiveSeller => false;
+		public override bool CanTeach => false;
 
-         public override void InitSBInfo()
-        { }
+		public override void InitSBInfo()
+		{ }
+
+		private List<CustomGuildMember> m_Members;
+
+		public static ArrayList m_NewGuildsList;
+
+		public string NewGuildTitle = "Nouvelle Guilde";
+		public string NewGuildDescription = "Veuillez écrire la description de votre guilde ici";
+		public string NewGuildSalary = "Veuillez écrire le salaire du rang ici";
+
+		public const int _RANKMAX = 8;
+
+		public List<NewGuildRank> newGuildRankList;
+
+		public List<CustomGuildMember> Members { get => m_Members; set => m_Members = value; }
+		#endregion
+
+		#region Get
+
+		/*   public List<Mobile> GetMemberList()
+		   {
+			   return m_RankMobiles.Keys.ToList<Mobile>();
+		   }*/
+
+		/// <summary>
+		/// Retourne le titre lié au rang
+		/// </summary>
+		/// <param name="rank">Le rang, doit être entre 0 et _RANKMAX.</param>
+		/// <returns>Le titre en string du rang. Si invalide, retourne No Title.</returns>
+		public String GetTitleByRank(int rank)
+		{
+			if (IsValidRank(rank))
+			{
+				try
+				{
+					return newGuildRankList[rank].Title;
+				}
+				catch (Exception)
+				{
+				}
+			}
+			return newGuildRankList[0].Title;
+		}
+
+		/// <summary>
+		/// Retourne le salaire lié au rang
+		/// </summary>
+		/// <param name="rank">Le rang, doit être entre 0 et _RANKMAX.</param>
+		/// <returns>Une string contenant le salaire lié au rang. Si le salaire est invalide, il retourne le salaire[0] par défaut.</returns>
+		public int GetSalaryByRank(int rank)
+		{
+			if (IsValidRank(rank))
+			{
+				try
+				{
+					return newGuildRankList[rank].Salary;
+				}
+				catch (Exception)
+				{
+				}
+			}
+			return 1;
+		}
+
+		/// <summary>
+		/// Retourne le rang du mobile
+		/// </summary>
+		/// <param name="m">Mobile dont on veut le rang</param>
+		/// <returns>Rang du mobile. Si ne troune pas, retourne le rang 0.</returns>
+		public int GetMobileRank(CustomPlayerMobile cm)
+		{
+			CustomGuildMember cgm = GetMobileInfo(cm);
+
+			if (cgm != null)
+			{
+				return cgm.CustomRank;
+			}
+
+			return -1;
+
+		}
+
+		public void UpdateSalaryRank(int index, int Salary)
+		{
+
+			newGuildRankList[index].Salary = Salary;
+
+			foreach (CustomGuildMember item in m_Members)
+			{
+				if (item.CustomRank == index)
+				{
+					item.Salaire = Salary;
+				}
+			}
+
+		}
+
+		public CustomGuildMember GetMobileInfo(CustomPlayerMobile cm)
+		{
+			return GetMobileInfo(cm, cm.IdentiteID);
+
+		}
+
+		public CustomGuildMember GetMobileInfo(CustomPlayerMobile cm, int identite)
+		{
+			foreach (CustomGuildMember item in m_Members)
+			{
+				if (item.Mobile == cm && item.Identite == identite)
+				{
+					return item;
+				}
+			}
+
+			return null;
+
+		}
 
 
+		#endregion
 
+		#region Methods
 
-        private Dictionary<Mobile, NewGuildRank> m_RankMobiles;
-
-        public static ArrayList m_NewGuildsList;
-                                                         
-        public string NewGuildTitle         = "Nouvelle Guilde";
-        public string NewGuildDescription   = "Veuillez écrire la description de votre guilde ici";
-        public string NewGuildSalary        = "Veuillez écrire le salaire du rang ici";
-
-        public const int _RANKMAX = 8;
-        public List<NewGuildRank> newGuildRankList;
-        #endregion
-
-        #region Get
-
-        public List<Mobile> GetMemberList()
-        {
-            return m_RankMobiles.Keys.ToList<Mobile>();
-        }
-
-        /// <summary>
-        /// Retourne le titre lié au rang
-        /// </summary>
-        /// <param name="rank">Le rang, doit être entre 0 et _RANKMAX.</param>
-        /// <returns>Le titre en string du rang. Si invalide, retourne No Title.</returns>
-        public String GetTitleByRank(int rank)
-        {
-            if (IsValidRank(rank))
-            {
-                try
-                {
-                    return newGuildRankList[rank].Title;
-                }
-                catch (Exception)
-                {
-                }
-            }
-            return newGuildRankList[0].Title;
-        }
-
-        /// <summary>
-        /// Retourne le salaire lié au rang
-        /// </summary>
-        /// <param name="rank">Le rang, doit être entre 0 et _RANKMAX.</param>
-        /// <returns>Une string contenant le salaire lié au rang. Si le salaire est invalide, il retourne le salaire[0] par défaut.</returns>
-        public int GetSalaryByRank(int rank)
-        {
-            if (IsValidRank(rank))
-            {
-                try
-                {
-                    return newGuildRankList[rank].Salary;
-                }
-                catch (Exception)
-                {
-                }
-            }
-            return 1;
-        }
-
-        /// <summary>
-        /// Retourne le rang du mobile
-        /// </summary>
-        /// <param name="m">Mobile dont on veut le rang</param>
-        /// <returns>Rang du mobile. Si ne troune pas, retourne le rang 0.</returns>
-        public int GetMobileRank(Mobile m)
-        {
-            if (m_RankMobiles.ContainsKey(m))
-            {
-                return m_RankMobiles[m].Rank;
-            }
-            return -1;
-        }
-
-        #endregion
-
-        #region Methods
-
-        /// <summary>
-        /// Donne le salaire à tous les membres de la guilde. Si un membre est dans plusieurs guildes, il touche le salaire de son rang le plus élevé, mais aucun des autres.
-        /// </summary>
-        public static void Pay()
+		/// <summary>
+		/// Donne le salaire à tous les membres de la guilde. Si un membre est dans plusieurs guildes, il touche le salaire de son rang le plus élevé, mais aucun des autres.
+		/// </summary>
+		public static void Pay()
         {
 
             if (m_NewGuildsList != null)
             {
                 if (m_NewGuildsList.Count > 0)
                 {
-                    Dictionary<Mobile, int> MemberSalaryDict = new Dictionary<Mobile, int>();
+                
 
-                    foreach (NewGuildRecruterStone guild in m_NewGuildsList)
+                    foreach (GuildRecruter guild in m_NewGuildsList)
                     {
                         if (guild != null)
                         {
-                            foreach (KeyValuePair<Mobile, NewGuildRank> kvp in guild.m_RankMobiles)
+                            foreach (CustomGuildMember kvp in guild.Members)
                             {
-                                if (!MemberSalaryDict.ContainsKey(kvp.Key))
-                                    MemberSalaryDict.Add(kvp.Key, guild.GetSalaryByRank(guild.GetMobileRank(kvp.Key)));
-                                else
-                                    MemberSalaryDict[kvp.Key] = Math.Max(MemberSalaryDict[kvp.Key], guild.GetSalaryByRank(guild.GetMobileRank(kvp.Key)));
-                            }
+								if (kvp.Mobile != null)
+								{
+									kvp.Mobile.GainSalaire(kvp);
+								}							
+							}
                         }
                     }
 
-                    foreach (KeyValuePair<Mobile, int> kvp in MemberSalaryDict)
-                    {
-                        //Paie en or
-                        if (Banker.Deposit(kvp.Key, kvp.Value))
-                        {
-                            kvp.Key.SendMessage(HueManager.GetHue(HueManagerList.Green), "Votre guilde a déposé votre salaire de " + kvp.Value + " pièces d'or dans votre coffre de banque.");
-                        }
-                        else
-                        {
-                            kvp.Key.SendMessage(HueManager.GetHue(HueManagerList.Green), "Un messager de votre guilde a déposé votre salaire de " + kvp.Value + " pièces d'or dans votre sac.");
-                            kvp.Key.AddToBackpack(new BankCheck(kvp.Value));
-                        }
 
-                        PayLog(kvp.Key, kvp.Value);
-                    }
                 }
             }
         }
@@ -202,18 +228,20 @@ namespace Server.Custom.System
         /// <summary>
         /// Imprimer dans un fichier la liste des salaires donnés aux mobiles.
         /// </summary>
-        private static void PayLog(Mobile m, int amount)
+        public static void PayLog(CustomGuildMember cgm, int amount)
         {
+			Mobile m = cgm.Mobile;
+
             if (m != null && m.Account != null)
             {
                 string path = "Logs/PayLogs/";
-                string fileName = path + m.Account.Username + ".txt";
+                string fileName = path + m.Account.Username + ".csv";
 
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
 
                 using (StreamWriter sw = new StreamWriter(fileName, true))
-                    sw.WriteLine(DateTime.Now.ToString() + ","  + m.Name + "," + amount.ToString() + "\n");  // CSV fIle type..
+                    sw.WriteLine(DateTime.Now.ToString() + ","  + cgm.GetName() + "," + amount.ToString() + "\n");  // CSV fIle type..
             }
         }
 
@@ -222,11 +250,11 @@ namespace Server.Custom.System
         /// </summary>
         /// <param name="m">Mobile dont on veut tous les titres</param>
         /// <returns>Tableau de strings avec tous les titres à l'intérieur</returns>
-        public static List<String> GetTitreList(Mobile from)
+  /*      public static List<String> GetTitreList(Mobile from)
         {
             List<String> titlesTable = new List<String>();
 
-            foreach (NewGuildRecruterStone guild in m_NewGuildsList)
+            foreach (GuildRecruter guild in m_NewGuildsList)
             {
                 if (guild.m_RankMobiles.ContainsKey(from))
                 {
@@ -235,25 +263,25 @@ namespace Server.Custom.System
             }
 
             return titlesTable;
-        }
+        }*/
 
         /// <summary>
         /// Retourne toutes les guildes du mobile
         /// </summary>
         /// <param name="m">Mobile dont on veut toutes les guildes</param>
         /// <returns>Tableau de NewGuildHandler avec tous les NewGuildHandler à l'intérieur</returns>
-        public static List<NewGuildRecruterStone> GetGuilds(Mobile from)
+ /*       public static List<GuildRecruter> GetGuilds(Mobile from)
         {
-            List<NewGuildRecruterStone> guildTable = new List<NewGuildRecruterStone>();
+            List<GuildRecruter> guildTable = new List<GuildRecruter>();
 
-            foreach (NewGuildRecruterStone guild in m_NewGuildsList)
+            foreach (GuildRecruter guild in m_NewGuildsList)
             {
                 if (guild.m_RankMobiles.ContainsKey(from))
                     guildTable.Add(guild);
             }
             return guildTable;
         }
-
+ */
         #endregion
 
         #region Actions
@@ -263,12 +291,14 @@ namespace Server.Custom.System
         /// <param name="m">Le mobile qu'on veut ajouter.</param>
         public void AddGuildMember(Mobile m)
         {
-            if (m != null)
-            {
-                NewGuildRank rank = new NewGuildRank();
+			if (m is CustomPlayerMobile cm)
+			{
+				if (GetMobileInfo(cm) == null)
+				{
+					CustomGuildMember cgm = new CustomGuildMember(cm);
 
-                if (!m_RankMobiles.ContainsKey(m))
-                    m_RankMobiles.Add(m, rank);
+					Members.Add(cgm);
+				}			   
             }
         }
 
@@ -278,18 +308,22 @@ namespace Server.Custom.System
         /// <param name="m">Le mobile à retirer.</param>
         public void RemoveGuildMember(Mobile m)
         {
-            if (m != null)
-            {
-                if (m_RankMobiles.ContainsKey(m))
-                    m_RankMobiles.Remove(m);
-            }
-        }
+			if (m is CustomPlayerMobile cm)
+			{
+				CustomGuildMember cgm = GetMobileInfo(cm);
+
+				if (cgm != null)
+				{
+					Members.Remove(cgm);
+				}
+			}
+		}
 
         /// <summary>
         /// Vérifier si le rang existe
         /// </summary>
         /// <param name="m">Le rang à vérifier</param>
-        private static bool IsValidRank(int rank)
+        public static bool IsValidRank(int rank)
         {
             return (rank >= 0 && rank <= _RANKMAX);
         }
@@ -298,12 +332,13 @@ namespace Server.Custom.System
         /// Augmenter le rang du mobile si c'est possible, rang + 1
         /// </summary>
         /// <param name="m">Mobile dont on veut augmenter le rang.</param>
-        public void RankUp(Mobile m)
+        public void RankUp(CustomPlayerMobile m)
         {
-            if (m_RankMobiles.ContainsKey(m))
+			CustomGuildMember cgm = GetMobileInfo(m);
+
+            if (cgm != null)
             {
-                if (m_RankMobiles[m].Rank >= 0 && m_RankMobiles[m].Rank < _RANKMAX)
-                    m_RankMobiles[m].Rank++;
+				cgm.IncreaseRank(this);
             }
         }
 
@@ -311,20 +346,21 @@ namespace Server.Custom.System
         /// Diminuer le rang du mobile si c'est possible, rang - 1
         /// </summary>
         /// <param name="m">Mobile dont on veut diminuer le rang.</param>
-        public void RankDown(Mobile m)
+        public void RankDown(CustomPlayerMobile m)
         {
-            if (m_RankMobiles.ContainsKey(m))
-            {
-                if (m_RankMobiles[m].Rank > 0 && m_RankMobiles[m].Rank <= _RANKMAX)
-                    m_RankMobiles[m].Rank--;
-            }
-        }
+			CustomGuildMember cgm = GetMobileInfo(m);
+
+			if (cgm != null)
+			{
+				cgm.DecreaseRank(this);
+			}
+		}
 
         #endregion
 
         #region Constructor
         [Constructable]
-        public NewGuildRecruterStone() : base("Ressource Humaine")
+        public GuildRecruter() : base("Ressource Humaine")
         {
            // Name = "Pierre de guilde";
             //Movable = false;
@@ -334,7 +370,7 @@ namespace Server.Custom.System
 
             m_NewGuildsList.Add(this);
 
-            m_RankMobiles = new Dictionary<Mobile, NewGuildRank>();
+            Members = new List<CustomGuildMember>();
 
             newGuildRankList = new List<NewGuildRank>();
 
@@ -342,9 +378,10 @@ namespace Server.Custom.System
             {
                 NewGuildRank newGuildRank = new NewGuildRank();
                 newGuildRank.Rank = i;
+
                 if (i > 0)
                 {
-                    newGuildRank.Title = "Écrivez le nom du titre " + i + " ici.";
+                    newGuildRank.Title = "Titre " + i ;
                     newGuildRank.Salary = 100;
                 }
                 else
@@ -358,14 +395,18 @@ namespace Server.Custom.System
             }
         }
 
-        public NewGuildRecruterStone(Serial serial) : base( serial )
+        public GuildRecruter(Serial serial) : base( serial )
         {
 
         }
 
         public override void OnDoubleClick(Mobile from)
         {
-            from.SendGump(new NewGuildGump(from, this));
+			if (from is CustomPlayerMobile cm)
+			{
+				from.SendGump(new NewGuildGump(cm, this));
+			}
+          
         }
 
         public override void Delete()
@@ -384,14 +425,11 @@ namespace Server.Custom.System
 
             writer.Write((int)0); // version
 
-            writer.Write(m_RankMobiles.Count);
+            writer.Write(m_Members.Count);
 
-            foreach (KeyValuePair<Mobile, NewGuildRank> pair in m_RankMobiles)
+            foreach (CustomGuildMember pair in m_Members)
             {
-                writer.Write(pair.Key);
-                writer.Write(pair.Value.Rank);
-                writer.Write(pair.Value.Salary);
-                writer.Write(pair.Value.Title);
+				pair.Serialize(writer);
             }
 
             writer.Write(NewGuildTitle);
@@ -414,26 +452,14 @@ namespace Server.Custom.System
 
             int version = reader.ReadInt();
 
-            if (m_RankMobiles == null)
-                m_RankMobiles = new Dictionary<Mobile, NewGuildRank>();
+            if (m_Members == null)
+				m_Members = new List<CustomGuildMember>();
 
             int count = reader.ReadInt();
 
             for (int i = 0; i < count; ++i)
             {
-                Mobile key = reader.ReadMobile();
-                int rank = reader.ReadInt();
-                int salary = reader.ReadInt();
-                string title = reader.ReadString();
-
-                NewGuildRank newGuildRank = new NewGuildRank();
-
-                newGuildRank.Rank = rank;
-                newGuildRank.Salary = salary;
-                newGuildRank.Title = title;
-
-                if (key != null)
-                    m_RankMobiles.Add(key, newGuildRank);
+				m_Members.Add(CustomGuildMember.Deserialize(reader));
             }
 
             NewGuildTitle = reader.ReadString();

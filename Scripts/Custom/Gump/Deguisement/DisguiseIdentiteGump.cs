@@ -59,8 +59,8 @@ namespace Server.Gumps
 						 }
 					 case 1:
 						 {
-							 m_From.IdentiteID = m_From.Deguisement.Count + 1;
-							 m_From.SetDeguisement(new Deguisement(m_From));
+							 m_From.IdentiteID = m_From.Deguisement.Count;
+
 						//	 m_From.GetDeguisement().ApplyDeguisement();
 							 m_From.SendGump(new CustomDisguiseGump(m_From, m_From.GetDeguisement()));
 							 break;

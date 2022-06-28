@@ -39,6 +39,10 @@ namespace Server.Mobiles
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
 
+		private DateTime m_LastPay;
+		private int m_Salaire;
+
+
 		private God m_God = God.GetGod(-1);
 		private AffinityDictionary m_MagicAfinity;
 		private List<int> m_QuickSpells = new List<int>();
@@ -152,6 +156,21 @@ namespace Server.Mobiles
 			set { m_lastLoginTime = value; }
 		}
 
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime LastPay
+		{
+			get { return m_LastPay; }
+			set { m_LastPay = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int Salaire { get { return m_Salaire; } set { m_Salaire = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int StatAttente { get { return m_StatAttente; } set { m_StatAttente = value; } }
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public TimeSpan NextFETime
 		{
@@ -159,8 +178,7 @@ namespace Server.Mobiles
 			set { m_nextFETime = value; }
 		}
 
-		[CommandProperty(AccessLevel.GameMaster)]
-		public int StatAttente { get { return m_StatAttente; } set { m_StatAttente = value; } }
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FE { get { return m_fe; } set { m_fe = value; } }
@@ -206,7 +224,19 @@ namespace Server.Mobiles
 		public Dictionary<int,Deguisement> Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public int IdentiteID { get => m_IdentiteId; set => m_IdentiteId = value; }
+		public int IdentiteID 
+		{ 
+			get => m_IdentiteId;
+			set 
+			{
+				if (!m_Deguisement.ContainsKey(value))
+				{
+					m_Deguisement.Add(value, new Deguisement(this));
+				}
+
+				m_IdentiteId = value; 
+			}
+		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Race BaseRace 
@@ -615,7 +645,10 @@ namespace Server.Mobiles
 
 			if (bank)
 			{
-
+				if (Banker.Deposit(this, GainGold))
+				{
+					SendMessage(HueManager.GetHue(HueManagerList.Green), "Votre guilde a déposé votre salaire de " + GainGold + " pièces d'or dans votre coffre de banque.");
+				}
 			}
 			else
 			{
@@ -644,6 +677,33 @@ namespace Server.Mobiles
 
 
 
+		}
+
+
+		public void GainSalaire(CustomGuildMember cgm)
+		{
+
+			int gold = cgm.Salaire;
+
+
+			if (m_LastPay.Day != DateTime.Now.Day)
+			{
+				Salaire = 0;
+				m_LastPay = DateTime.Now;
+
+			}
+
+
+			if (gold > Salaire)
+			{
+				int Payment = gold - Salaire;
+				
+				Server.Custom.System.GuildRecruter.PayLog(cgm, Payment);
+				GainGold(Payment, true);
+				CustomPersistence.Salaire += Payment;
+
+				Salaire = Payment;
+			}
 		}
 
 		#endregion
@@ -947,6 +1007,16 @@ namespace Server.Mobiles
 			}
 
 			return new Deguisement(this);	
+		}
+
+		public Deguisement GetDeguisement(int Identite)
+		{
+			if (m_Deguisement.ContainsKey(Identite))
+			{
+				return m_Deguisement[Identite];
+			}
+
+			return new Deguisement(this);
 		}
 
 		public void SetDeguisement(Deguisement deg)
@@ -1952,6 +2022,14 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 20:
+					{
+						m_Salaire = reader.ReadInt();
+						m_LastPay = reader.ReadDateTime();
+
+
+						goto case 19;
+					}
 				case 19:
 					{
 						m_IdentiteId = reader.ReadInt();
@@ -2119,7 +2197,12 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(19); // version
+            writer.Write(20); // version
+
+
+			writer.Write(m_Salaire);
+			writer.Write(m_LastPay);
+
 
 			writer.Write(m_IdentiteId);
 

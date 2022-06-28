@@ -13,6 +13,8 @@ namespace Server.Custom
 		public static int TaxesMoney { get; set; }
 		public static int Salaire { get; set; }
 
+		public static DateTime ProchainePay { get; set; }
+
 
 
 		public static void Configure()
@@ -21,6 +23,7 @@ namespace Server.Custom
             EventSink.WorldLoad += OnLoad;
 
 			Ouverture = DateTime.Now;
+			ProchainePay = Ouverture.AddDays(7);
 			TaxesMoney = 0;
 			Salaire = 0;
 
@@ -32,8 +35,9 @@ namespace Server.Custom
                 FilePath,
                 writer =>
                 {
-                    writer.Write(1);
+                    writer.Write(2);
 
+					writer.Write(ProchainePay);
 					writer.Write(Salaire);
 					writer.Write(TaxesMoney);
 
@@ -51,6 +55,11 @@ namespace Server.Custom
 
 					switch (version)
 					{
+						case 2:
+							{
+								ProchainePay = reader.ReadDateTime();
+								goto case 1;
+							}
 						case 1:
 							{
 								Salaire = reader.ReadInt();

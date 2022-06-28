@@ -6,6 +6,7 @@ using Server.Mobiles;
 using Server.Items;
 using Server.Targeting;
 using Server.Network;
+using System.Text;
 
 
 namespace Server.Scripts.Commands
@@ -35,7 +36,9 @@ namespace Server.Scripts.Commands
 		public static void Globalization_OnCommand(CommandEventArgs e)
 		{
 
-			e.Mobile.SendMessage(System.Globalization.CultureInfo.CurrentCulture.ToString());
+			e.Mobile.SendMessage(Encoding.Default.BodyName);
+
+
 
 
 		}

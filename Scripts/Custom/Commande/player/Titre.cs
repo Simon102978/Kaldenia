@@ -38,7 +38,7 @@ namespace Server.Scripts.Commands
 					pm.TitleCycle += 1;
 				}
 
-				if (pm.TitleCycle > 6)
+				if (pm.TitleCycle > 7)
                     pm.TitleCycle = 0;
 
 	
@@ -96,9 +96,9 @@ namespace Server.Scripts.Commands
 
 									   Dictionary<Mobile, int> MemberSalaryDict = new Dictionary<Mobile, int>();
 
-									   if (NewGuildRecruterStone.NewGuildsList != null && NewGuildRecruterStone.NewGuildsList.Count > 0)
+									   if (GuildRecruter.NewGuildsList != null && GuildRecruter.NewGuildsList.Count > 0)
 									   {
-										   foreach (NewGuildRecruterStone guild in NewGuildRecruterStone.NewGuildsList)
+										   foreach (GuildRecruter guild in GuildRecruter.NewGuildsList)
 										   {
 											   if (guild == null)
 												   continue;

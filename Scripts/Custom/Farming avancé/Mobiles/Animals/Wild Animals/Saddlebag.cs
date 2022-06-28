@@ -79,7 +79,7 @@ namespace Server.Items
 							from.SendMessage("You can only put a pack on your own animal!");
 						else
 						{
-							if (targ is WildHorse)
+							if (targ is Horse)
 							{
 								PackHorse ph = new PackHorse();
 								ConvertAnimal(bc, ph);

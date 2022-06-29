@@ -175,7 +175,7 @@ public class CurseScroll : SpellScroll
 	[Constructable]
 	public CurseScroll(int amount) : base(756, 7993, amount)
 		{
-		Name ="Malédiction";
+		Name ="Mal??#$?&*diction";
 		Hue = 37;
 	}
 
@@ -271,7 +271,7 @@ public class InvisibilityScroll : SpellScroll
 	[Constructable]
 	public InvisibilityScroll(int amount) : base(759, 7993, amount)
 		{
-		Name ="Invisibilité";
+		Name ="Invisibilit??#$?&*";
 		Hue = 37;
 	}
 
@@ -367,7 +367,7 @@ public class EvasionScroll : SpellScroll
 	[Constructable]
 	public EvasionScroll(int amount) : base(837, 7993, amount)
 		{
-		Name ="Évasion";
+		Name ="??#$?&*vasion";
 		Hue = 140;
 	}
 
@@ -399,7 +399,7 @@ public class EtherealVoyageScroll : SpellScroll
 	[Constructable]
 	public EtherealVoyageScroll(int amount) : base(751, 7993, amount)
 		{
-		Name ="Voyage éthéré";
+		Name ="Voyage ??#$?&*th??#$?&*r??#$?&*";
 		Hue = 37;
 	}
 
@@ -528,7 +528,7 @@ public class ReactiveArmorScroll : SpellScroll
 	[Constructable]
 	public ReactiveArmorScroll(int amount) : base(766, 7993, amount)
 		{
-		Name ="Armure réactive";
+		Name ="Armure r??#$?&*active";
 		Hue = 498;
 	}
 
@@ -624,7 +624,7 @@ public class HealScroll : SpellScroll
 	[Constructable]
 	public HealScroll(int amount) : base(769, 7993, amount)
 		{
-		Name ="Guérison";
+		Name ="Gu??#$?&*rison";
 		Hue = 498;
 	}
 
@@ -784,7 +784,7 @@ public class AgilityScroll : SpellScroll
 	[Constructable]
 	public AgilityScroll(int amount) : base(774, 7993, amount)
 		{
-		Name ="Agilité";
+		Name ="Agilit??#$?&*";
 		Hue = 498;
 	}
 
@@ -1104,7 +1104,7 @@ public class TelekinesisScroll : SpellScroll
 	[Constructable]
 	public TelekinesisScroll(int amount) : base(784, 7993, amount)
 		{
-		Name ="Télékinésie";
+		Name ="T??#$?&*l??#$?&*kin??#$?&*sie";
 		Hue = 498;
 	}
 
@@ -1136,7 +1136,7 @@ public class TeleportScroll : SpellScroll
 	[Constructable]
 	public TeleportScroll(int amount) : base(785, 7993, amount)
 		{
-		Name ="Téléportation";
+		Name ="T??#$?&*l??#$?&*portation";
 		Hue = 498;
 	}
 
@@ -1265,7 +1265,7 @@ public class FireElementalScroll : SpellScroll
 	[Constructable]
 	public FireElementalScroll(int amount) : base(789, 7993, amount)
 		{
-		Name ="Élém. : Feu";
+		Name ="??#$?&*l??#$?&*m. : Feu";
 		Hue = 498;
 	}
 
@@ -1297,7 +1297,7 @@ public class EarthElementalScroll : SpellScroll
 	[Constructable]
 	public EarthElementalScroll(int amount) : base(790, 7993, amount)
 		{
-		Name ="Élém. : Terre";
+		Name ="??#$?&*l??#$?&*m. : Terre";
 		Hue = 498;
 	}
 
@@ -1329,7 +1329,7 @@ public class AirElementalScroll : SpellScroll
 	[Constructable]
 	public AirElementalScroll(int amount) : base(791, 7993, amount)
 		{
-		Name ="Élém. : Air";
+		Name ="??#$?&*l??#$?&*m. : Air";
 		Hue = 498;
 	}
 
@@ -1489,7 +1489,7 @@ public class WitherScroll : SpellScroll
 	[Constructable]
 	public WitherScroll(int amount) : base(797, 7993, amount)
 		{
-		Name ="Flétrissement";
+		Name ="Fl??#$?&*trissement";
 		Hue = 72;
 	}
 
@@ -1585,7 +1585,7 @@ public class AnimateDeadScroll : SpellScroll
 	[Constructable]
 	public AnimateDeadScroll(int amount) : base(800, 7993, amount)
 		{
-		Name ="Réanimation";
+		Name ="R??#$?&*animation";
 		Hue = 72;
 	}
 
@@ -1649,7 +1649,7 @@ public class SummonCreatureScroll : SpellScroll
 	[Constructable]
 	public SummonCreatureScroll(int amount) : base(801, 7993, amount)
 		{
-		Name ="Créatures";
+		Name ="Cr??#$?&*atures";
 		Hue = 72;
 	}
 
@@ -1777,7 +1777,7 @@ public class NetherCycloneScroll : SpellScroll
 	[Constructable]
 	public NetherCycloneScroll(int amount) : base(805, 7993, amount)
 		{
-		Name ="Cyclone du Néant";
+		Name ="Cyclone du N??#$?&*ant";
 		Hue = 72;
 	}
 
@@ -1841,7 +1841,7 @@ public class EarthquakeScroll : SpellScroll
 	[Constructable]
 	public EarthquakeScroll(int amount) : base(807, 7993, amount)
 		{
-		Name ="Séisme";
+		Name ="S??#$?&*isme";
 		Hue = 72;
 	}
 
@@ -1905,7 +1905,7 @@ public class EvilOmenScroll : SpellScroll
 	[Constructable]
 	public EvilOmenScroll(int amount) : base(810, 7993, amount)
 		{
-		Name ="Mauvais présage";
+		Name ="Mauvais pr??#$?&*sage";
 		Hue = 2052;
 	}
 
@@ -2001,7 +2001,7 @@ public class AnimatedWeaponScroll : SpellScroll
 	[Constructable]
 	public AnimatedWeaponScroll(int amount) : base(812, 7993, amount)
 		{
-		Name ="Arme Animée";
+		Name ="Arme Anim??#$?&*e";
 		Hue = 2052;
 	}
 
@@ -2065,7 +2065,7 @@ public class MassCurseScroll : SpellScroll
 	[Constructable]
 	public MassCurseScroll(int amount) : base(814, 7993, amount)
 		{
-		Name ="Malédiction de groupe";
+		Name ="Mal??#$?&*diction de groupe";
 		Hue = 2052;
 	}
 
@@ -2257,7 +2257,7 @@ public class StrangleScroll : SpellScroll
 	[Constructable]
 	public StrangleScroll(int amount) : base(820, 7993, amount)
 		{
-		Name ="Étranglement";
+		Name ="??#$?&*tranglement";
 		Hue = 2052;
 	}
 
@@ -2353,7 +2353,7 @@ public class SummonDaemonScroll : SpellScroll
 	[Constructable]
 	public SummonDaemonScroll(int amount) : base(823, 7993, amount)
 		{
-		Name ="Démon";
+		Name ="D??#$?&*mon";
 		Hue = 2052;
 	}
 
@@ -2513,7 +2513,7 @@ public class LightningScroll : SpellScroll
 	[Constructable]
 	public LightningScroll(int amount) : base(828, 7993, amount)
 		{
-		Name ="Éclair";
+		Name ="??#$?&*clair";
 		Hue = 140;
 	}
 
@@ -2803,7 +2803,7 @@ public class HolyLightScroll : SpellScroll
 	[Constructable]
 	public HolyLightScroll(int amount) : base(850, 7993, amount)
 		{
-		Name ="Lumière sacrée";
+		Name ="Lumière sacr??#$?&*e";
 		Hue = 182;
 	}
 
@@ -2867,7 +2867,7 @@ public class ResurrectionScroll : SpellScroll
 	[Constructable]
 	public ResurrectionScroll(int amount) : base(839, 7993, amount)
 		{
-		Name ="Résurrection";
+		Name ="R??#$?&*surrection";
 		Hue = 140;
 	}
 
@@ -2899,7 +2899,7 @@ public class WaterElementalScroll : SpellScroll
 	[Constructable]
 	public WaterElementalScroll(int amount) : base(840, 7993, amount)
 		{
-		Name ="Élém. : Eau";
+		Name ="??#$?&*l??#$?&*m. : Eau";
 		Hue = 498;
 	}
 
@@ -2931,7 +2931,7 @@ public class RevealScroll : SpellScroll
 	[Constructable]
 	public RevealScroll(int amount) : base(843, 7993, amount)
 		{
-		Name ="Révélation";
+		Name ="R??#$?&*v??#$?&*lation";
 		Hue = 182;
 	}
 
@@ -3027,7 +3027,7 @@ public class BlessScroll : SpellScroll
 	[Constructable]
 	public BlessScroll(int amount) : base(845, 7993, amount)
 		{
-		Name ="Bénédiction";
+		Name ="B??#$?&*n??#$?&*diction";
 		Hue = 182;
 	}
 
@@ -3123,7 +3123,7 @@ public class GreaterHealScroll : SpellScroll
 	[Constructable]
 	public GreaterHealScroll(int amount) : base(848, 7993, amount)
 		{
-		Name ="Guérison majeure";
+		Name ="Gu??#$?&*rison majeure";
 		Hue = 182;
 	}
 
@@ -3348,7 +3348,7 @@ public class EnergyBoltScroll : SpellScroll
 	[Constructable]
 	public EnergyBoltScroll(int amount) : base(854, 7993, amount)
 		{
-		Name ="Boule d'énergie";
+		Name ="Boule d'??#$?&*nergie";
 
 												Hue = 182;
 	}

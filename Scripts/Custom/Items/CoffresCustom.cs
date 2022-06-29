@@ -156,7 +156,7 @@ namespace Server.Items
 		public CoffreMetalRouille()
 			: base(0x9969)
 		{
-			Name = "Coffre Rouillé";
+			Name = "Coffre Rouill??#$?&*";
 			Weight = 15.0;
 		}
 
@@ -190,7 +190,7 @@ namespace Server.Items
 		public CoffreMetalDore()
 			: base(0x996B)
 		{
-			Name = "Coffre Doré";
+			Name = "Coffre Dor??#$?&*";
 			Weight = 15.0;
 		}
 

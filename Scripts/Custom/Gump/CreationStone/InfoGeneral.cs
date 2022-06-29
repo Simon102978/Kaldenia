@@ -14,7 +14,7 @@ namespace Server.Gumps
     {
 
         public InfoGenGump(CustomPlayerMobile from, CreationPerso creationPerso)
-            : base(from, creationPerso, "Information Générale",true, creationPerso.InfoGeneral())
+            : base(from, creationPerso, "Information G??#$?&*n??#$?&*rale",true, creationPerso.InfoGeneral())
         {
 
             int x = XBase;
@@ -23,7 +23,7 @@ namespace Server.Gumps
             int scale = 20;   
             int space = 115;
 
-            AddSection(x - 10, y, 610, 125, "Information générales");
+            AddSection(x - 10, y, 610, 125, "Information g??#$?&*n??#$?&*rales");
 
 			AddHtmlTexteColored(x + 10, y + 55, 75, "Nom: ", "#ffffff");
 			AddTextEntryBg(x + 73, y + 50, 500, 25, 0, 1, creationPerso.Name);

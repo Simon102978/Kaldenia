@@ -25,7 +25,7 @@ namespace Server.Items
 		LupusLeather,
 		[Description("Reptilien")]
 		ReptilienLeather,
-		[Description("Géant")]
+		[Description("G??#$?&*ant")]
 		GeantLeather,
 		[Description("Ophidien")]
 		OphidienLeather,
@@ -62,7 +62,7 @@ namespace Server.Items
 		LupusBone,
 		[Description("Reptilien")]
 		ReptilienBone,
-		[Description("Géant")]
+		[Description("G??#$?&*ant")]
 		GeantBone,
 		[Description("Ophidien")]
 		OphidienBone,

@@ -17,7 +17,7 @@ namespace Server.Scripts.Commands
         }
 
         [Usage("Reveler")]
-        [Description("Révéler la cible cachée.")]
+        [Description("R??#$?&*v??#$?&*ler la cible cach??#$?&*e.")]
         public static void Reveler_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;
@@ -46,15 +46,15 @@ namespace Server.Scripts.Commands
                     if (targeted is Mobile && targeted != from)
                     {
                         Mobile PersoVise = (Mobile)targeted;
-                        if (PersoVise.Hidden) // Si le target est caché.
+                        if (PersoVise.Hidden) // Si le target est cach??#$?&*.
                         {
-                            PersoVise.NextSkillTime = 5; // Empêche le joueur visé d'utiliser un skill pour les 5 prochaines secondes.
+                            PersoVise.NextSkillTime = 5; // Empêche le joueur vis??#$?&* d'utiliser un skill pour les 5 prochaines secondes.
                             PersoVise.RevealingAction();
-                            PersoVise.SendMessage("Quelqu'un a révélé votre présence.");
+                            PersoVise.SendMessage("Quelqu'un a r??#$?&*v??#$?&*l??#$?&* votre pr??#$?&*sence.");
                         }
                         else
                         {
-                            from.SendMessage("Le personnage ciblé doit être caché !");
+                            from.SendMessage("Le personnage cibl??#$?&* doit être cach??#$?&* !");
                         }
                     }
                     else

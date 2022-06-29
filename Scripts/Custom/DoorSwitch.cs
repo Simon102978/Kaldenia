@@ -58,7 +58,7 @@ namespace Server.Items
 				switchit();
 
 			}
-			else m.SendMessage("Le levier semble cadenassé");
+			else m.SendMessage("Le levier semble cadenass??#$?&*");
 
 		}
 

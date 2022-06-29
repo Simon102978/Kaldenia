@@ -169,7 +169,7 @@ namespace Server.Items
 			: base(41571)
 		{
 
-			Name = "Rapière Décorée";
+			Name = "Rapière D??#$?&*cor??#$?&*e";
 			Weight = 8.0;
 	//		Layer = Layer.TwoHanded;
 		}
@@ -214,7 +214,7 @@ namespace Server.Items
 			: base(41572)
 		{
 
-			Name = "Épée bâtarde";
+			Name = "??#$?&*p??#$?&*e bâtarde";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -258,7 +258,7 @@ namespace Server.Items
 			: base(41573)
 		{
 
-			Name = "Épée bâtarde de luxe";
+			Name = "??#$?&*p??#$?&*e bâtarde de luxe";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -302,7 +302,7 @@ namespace Server.Items
 			: base(41574)
 		{
 
-			Name = "Épée à Double Tranchants";
+			Name = "??#$?&*p??#$?&*e à Double Tranchants";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -346,7 +346,7 @@ namespace Server.Items
 			: base(41575)
 		{
 
-			Name = "Épée Courte";
+			Name = "??#$?&*p??#$?&*e Courte";
 			Weight = 8.0;
 			//Layer = Layer.TwoHanded;
 		}
@@ -391,7 +391,7 @@ namespace Server.Items
 			: base(41576)
 		{
 
-			Name = "Épée Deux Mains";
+			Name = "??#$?&*p??#$?&*e Deux Mains";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -435,7 +435,7 @@ namespace Server.Items
 			: base(41577)
 		{
 
-			Name = "Épée Longue";
+			Name = "??#$?&*p??#$?&*e Longue";
 			Weight = 8.0;
 	//		Layer = Layer.TwoHanded;
 		}
@@ -528,7 +528,7 @@ namespace Server.Items
 			: base(41579)
 		{
 
-			Name = "Sabre Dorée de Luxe";
+			Name = "Sabre Dor??#$?&*e de Luxe";
 			Weight = 8.0;
 	//		Layer = Layer.TwoHanded;
 		}

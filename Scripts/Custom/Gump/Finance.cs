@@ -46,7 +46,7 @@ namespace Server.Gumps
 			line++;
 			line++;
 
-			AddHtmlTexteColored(x, y + line * scale, 120, "Dépenses :", "#FFFFFF");
+			AddHtmlTexteColored(x, y + line * scale, 120, "D??#$?&*penses :", "#FFFFFF");
 			line++;
 
 
@@ -57,7 +57,7 @@ namespace Server.Gumps
 
 			AddHorizontalLigne(xAmountColum - 20, y + line * scale + 15, 120);
 			int Depenses = SalaireGold;
-			AddHtmlTexteColored(xSecondColum, y + line * scale, 200, "Total des dépenses :", "#FFFFFF");
+			AddHtmlTexteColored(xSecondColum, y + line * scale, 200, "Total des d??#$?&*penses :", "#FFFFFF");
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + Depenses.ToString("### ### ##0") + "</p>", "#FFFFFF");
 
 			line++;
@@ -66,7 +66,7 @@ namespace Server.Gumps
 
 
 			int Benefice = Revenue - Depenses;
-			AddHtmlTexteColored(x, y + line * scale, 300, "Bénéfice :", "#FFFFFF");
+			AddHtmlTexteColored(x, y + line * scale, 300, "B??#$?&*n??#$?&*fice :", "#FFFFFF");
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + Benefice.ToString("### ### ##0") + "</p>", "#FFFFFF");
 		}
 

@@ -49,7 +49,7 @@ namespace Server.Items
 		: base(41663, hue)
 		{
 			Weight = 2.0;
-			Name ="Pipe Courbée";
+			Name ="Pipe Courb??#$?&*e";
 		}
 
 		public PipeCourbee(Serial serial)
@@ -194,7 +194,7 @@ namespace Server.Items
 
 		{
 			Weight = 2.0;
-			Name = "Fourreau épée longue";
+			Name = "Fourreau ??#$?&*p??#$?&*e longue";
 		}
 
 		public fourreau(Serial serial)
@@ -232,7 +232,7 @@ namespace Server.Items
 
 		{
 			Weight = 2.0;
-			Name = "Fourreau croisé";
+			Name = "Fourreau crois??#$?&*";
 		}
 
 		public fourreau2(Serial serial)
@@ -386,7 +386,7 @@ namespace Server.Items
 
 				{
 					Weight = 2.0;
-					Name = "Foulard Épaule";
+					Name = "Foulard ??#$?&*paule";
 				}
 
 				public Foulard2(Serial serial)
@@ -610,7 +610,7 @@ namespace Server.Items
 					: base(41813, hue)
 			{
 				Weight = 2.0;
-				Name = "Ceinture boucle carrée";
+				Name = "Ceinture boucle carr??#$?&*e";
 			}
 			public Ceinture2(Serial serial)
 				: base(serial)
@@ -872,7 +872,7 @@ namespace Server.Items
 					: base(41820, hue)
 			{
 				Weight = 2.0;
-				Name = "Bourse carrée";
+				Name = "Bourse carr??#$?&*e";
 			}
 
 			public Ceinture9(Serial serial)

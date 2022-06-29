@@ -49,7 +49,7 @@ namespace Server.Items
 
             if (item != null && item is BaseShield)
             {
-                from.SendMessage("Vous ne pouvez pas équipper un fouet en ayant un bouclier à la main.");
+                from.SendMessage("Vous ne pouvez pas ??#$?&*quipper un fouet en ayant un bouclier à la main.");
                 return false;
             }
 
@@ -111,7 +111,7 @@ namespace Server.Items
      //               if (chanceDeFizzle > Utility.Random(100))
      //               {
      //                   receveur.Spell.OnCasterHurt();
-     //                   from.SendMessage("Vous dérangez votre cible !");
+     //                   from.SendMessage("Vous d??#$?&*rangez votre cible !");
      //                   Animation(from, receveur);
      //               }
      //           }
@@ -153,7 +153,7 @@ namespace Server.Items
      //               }
 					//else
      //               {
-     //                   from.SendMessage("Vous échouez à voler ou à faire tomber l'arme de votre cible !");
+     //                   from.SendMessage("Vous ??#$?&*chouez à voler ou à faire tomber l'arme de votre cible !");
      //               }
      //           }
      //       }

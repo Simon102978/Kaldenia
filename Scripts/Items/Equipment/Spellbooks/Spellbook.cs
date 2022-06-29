@@ -1200,7 +1200,7 @@ namespace Server.Items
 					
 				}
 
-				from.SendMessage("Le livre a été remplis.");
+				from.SendMessage("Le livre a ??#$?&*t??#$?&* remplis.");
 			}
             else if (obj is Spellbook)
             {

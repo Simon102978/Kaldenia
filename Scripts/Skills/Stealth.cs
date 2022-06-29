@@ -16,7 +16,7 @@ namespace Server.SkillHandlers
 
      /*   public static TimeSpan OnUse(Mobile m)
         {
-			m.SendMessage("Skills désactivé.");
+			m.SendMessage("Skills d??#$?&*sactiv??#$?&*.");
         }*/
     }
 }

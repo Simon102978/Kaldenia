@@ -332,7 +332,7 @@ public class RangementAlchimie : CraftableFurniture
 			: base(0x9976)
 		{
 			Weight = 15.0;
-			Name = "Trésor";
+			Name = "Tr??#$?&*sor";
 			Movable = false;
 		}
 
@@ -368,7 +368,7 @@ public class RangementAlchimie : CraftableFurniture
 			: base(0x9977)
 		{
 			Weight = 15.0;
-			Name = "Trésor";
+			Name = "Tr??#$?&*sor";
 			Movable = false;
 		}
 

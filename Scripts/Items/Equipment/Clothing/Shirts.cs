@@ -158,7 +158,7 @@ namespace Server.Items
             : base(0x3175, hue)
         {
             Weight = 2.0;
-			Name = "Chemise ornée";
+			Name = "Chemise orn??#$?&*e";
 
 		}
 
@@ -195,7 +195,7 @@ namespace Server.Items
             : base(0x3176, hue)
         {
             Weight = 2.0;
-			Name = "Chemise ornée sombre";
+			Name = "Chemise orn??#$?&*e sombre";
         }
 
         public ElvenDarkShirt(Serial serial)

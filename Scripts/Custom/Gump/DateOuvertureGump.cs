@@ -24,7 +24,7 @@ namespace Server.Gumps
 
 			DateTime date = CustomPersistence.Ouverture;
 
-			AddHtmlTexte(x +10, y + 20, 250, 60, "Determine la date d'ouverture du serveur pour le système d'expérience.");
+			AddHtmlTexte(x +10, y + 20, 250, 60, "Determine la date d'ouverture du serveur pour le système d'exp??#$?&*rience.");
 
 			AddHtmlTexte(x + 10, y + 65, 150, "Jour");
 			AddTextEntryBg(x + 100, y + 60, 150, 30, 0, 1, date.Day.ToString());
@@ -32,7 +32,7 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 10, y + 105, 150, "Mois");
 			AddTextEntryBg(x + 100, y + 100, 150, 30, 0, 2, date.Month.ToString());
 
-			AddHtmlTexte(x + 10, y + 145, 150, "Année");
+			AddHtmlTexte(x + 10, y + 145, 150, "Ann??#$?&*e");
 			AddTextEntryBg(x + 100, y + 140, 150, 30, 0, 3, date.Year.ToString());
 
 			AddButton(x + 35, y + 180, 1, 1147);
@@ -91,13 +91,13 @@ namespace Server.Gumps
 
 							if (!int.TryParse(info.GetTextEntry(3).Text, out Year))
 							{
-								from.SendMessage("L'année doit être une année après 2022.");
+								from.SendMessage("L'ann??#$?&*e doit être une ann??#$?&*e après 2022.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
 							else if (Year < 2022)
 							{
-								from.SendMessage("L'année doit être une année après 2022.");
+								from.SendMessage("L'ann??#$?&*e doit être une ann??#$?&*e après 2022.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}

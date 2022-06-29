@@ -13,7 +13,7 @@ namespace Server.Custom
 		{
 			if (m.BankBox == null)
 			{
-				m.SendMessage("Vous devez déposer les pièces d'or ou les chèques dans votre coffre de banque.");
+				m.SendMessage("Vous devez d??#$?&*poser les pièces d'or ou les chèques dans votre coffre de banque.");
 				return 0;
 			}
 

@@ -25,7 +25,7 @@ namespace Server.Items
 			: base(41558) 
 		{
 		
-			Name = "Double Épée";
+			Name = "Double ??#$?&*p??#$?&*e";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}

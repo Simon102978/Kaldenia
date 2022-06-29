@@ -23,7 +23,7 @@ namespace Server.Gumps
             int scale = 20;   
             int space = 115;
 
-            AddSection(x - 10, y, 610, 150, "Sélection");
+            AddSection(x - 10, y, 610, 150, "S??#$?&*lection");
 
 			//	AddHtmlTexte(x + 100, y + 100, 100, "Forces");
 
@@ -33,7 +33,7 @@ namespace Server.Gumps
 			AddButton(x + 348, y + 45, 5603, 5607, 138, GumpButtonType.Reply, 0);
 			AddButton(x + 369, y + 45, 5601, 5605, 139, GumpButtonType.Reply, 0);
 
-			AddLabel(x + 200, y + 68, 2101, "Dextérité");
+			AddLabel(x + 200, y + 68, 2101, "Dext??#$?&*rit??#$?&*");
 			AddLabel(x + 279, y + 69, 2101, ":");
 			AddLabel(x + 308, y + 68, 2101, creationPerso.Dex.ToString());
 			AddButton(x + 348, y + 70, 5603, 5607, 140, GumpButtonType.Reply, 0);
@@ -50,12 +50,12 @@ namespace Server.Gumps
 			AddLabel(x + 308, y + 118, 2101, creationPerso.PointRestant().ToString());
 
 
-			string detail = "Force: \n  -Détermine les points de vie\n  -Détermine la quantité que peux porter un personnage\n  -Détermine les dégats au corps à corps\n  -Détermine si vous pouvez porter une armure \n\nDextérité:\n  -Aide au chance de parrer un coup\n  -Détermine le temps entre chaque bandage\n  -Détermine l'endurance\n\nIntelligence:\n  -Détermine la mana\n  -Influence la regénération de mana\n";
+			string detail = "Force: \n  -D??#$?&*termine les points de vie\n  -D??#$?&*termine la quantit??#$?&* que peux porter un personnage\n  -D??#$?&*termine les d??#$?&*gats au corps à corps\n  -D??#$?&*termine si vous pouvez porter une armure \n\nDext??#$?&*rit??#$?&*:\n  -Aide au chance de parrer un coup\n  -D??#$?&*termine le temps entre chaque bandage\n  -D??#$?&*termine l'endurance\n\nIntelligence:\n  -D??#$?&*termine la mana\n  -Influence la reg??#$?&*n??#$?&*ration de mana\n";
 
 
 
 
-			AddSection(x - 10, y + 151, 610, 458, "Détail", detail);
+			AddSection(x - 10, y + 151, 610, 458, "D??#$?&*tail", detail);
 
 
 

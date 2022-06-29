@@ -29,7 +29,7 @@ namespace Server.Gumps
 			// Layout
 			
 			AddSection(x - 10, y, 202, 300, "Guerrier");
-			AddSection(x - 10, y + 301, 202, 308, "Métier");
+			AddSection(x - 10, y + 301, 202, 308, "M??#$?&*tier");
 			AddSection(x - 10 + 203, y, 203, 300, "Roublard");
 			AddSection(x - 10 + 407, y, 203, 300, "Mage");
 			AddSection(x - 10 + 203, y + +301, 406, 308, "Description", ClasseDescription());

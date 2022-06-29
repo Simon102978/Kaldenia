@@ -130,7 +130,7 @@ namespace Server.Items.Crops
 				{
 					if ( m_yield < 1 )
 					{
-						from.SendMessage( "Il n'y a rien à récolter ici." );
+						from.SendMessage( "Il n'y a rien à r??#$?&*colter ici." );
 					}
 					else
 					{

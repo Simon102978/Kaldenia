@@ -90,7 +90,7 @@ namespace Server.Gumps
 
 				if (nameSender != "" || receivedText != "")
 				{
-					AddHtml(20, 265, 360, 20, Color(Center("Message envoyé par: " + nameSender), 0x1d), false, false);
+					AddHtml(20, 265, 360, 20, Color(Center("Message envoy??#$?&* par: " + nameSender), 0x1d), false, false);
 					AddHtml(20, 285, 360, 78, Color(receivedText, 0x1d), false, true);
 				}
 
@@ -344,7 +344,7 @@ namespace Server.Gumps
 						else
 						{
 							from.SendGump(new PropertiesGump(from, focus));
-							CommandLogging.WriteLine(from, "{0} {1} ouverture des propriétés de {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
+							CommandLogging.WriteLine(from, "{0} {1} ouverture des propri??#$?&*t??#$?&*s de {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
 						}
 
 						break;
@@ -422,7 +422,7 @@ namespace Server.Gumps
 
 							focus.Resurrect();
 
-							CommandLogging.WriteLine(from, "{0} {1} résurrecte {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
+							CommandLogging.WriteLine(from, "{0} {1} r??#$?&*surrecte {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
 						}
 
 						Resend(from, info);

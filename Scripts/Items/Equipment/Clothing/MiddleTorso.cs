@@ -162,7 +162,7 @@ namespace Server.Items
             : base(0x1FFD, hue)
         {
             Weight = 6.0;
-			Name = "Tunique ajustée";
+			Name = "Tunique ajust??#$?&*e";
         }
 
         public Surcoat(Serial serial)
@@ -382,7 +382,7 @@ namespace Server.Items
             : base(0x46B4, Layer.MiddleTorso, hue)
         {
             Weight = 1.0;
-			Name = "Cocarde élégant";
+			Name = "Cocarde ??#$?&*l??#$?&*gant";
 
 		}
 

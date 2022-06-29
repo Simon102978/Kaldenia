@@ -67,7 +67,7 @@ namespace Server.Custom.Gumps
 			AddImageTiled(10, 274, 500, 20, 0xA40);
 			AddAlphaRegion(10, 10, 500, 284);
 
-			AddHtml(14, 12, 500, 20, Color("<CENTER>Menu de sélection des caisses</CENTER>", 0xFFFFFF), false, false);
+			AddHtml(14, 12, 500, 20, Color("<CENTER>Menu de s??#$?&*lection des caisses</CENTER>", 0xFFFFFF), false, false);
 
 			AddButton(10, 274, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0);
 			AddHtml(45, 276, 450, 20, Color("Annuler", 0xFFFFFF), false, false);
@@ -149,7 +149,7 @@ namespace Server.Custom.Gumps
 			}
 
 			boxes[0].Delete();
-			m_Buyer.SendMessage($"{entry.Price} pièces d'or ont été placées dans votre sac.");
+			m_Buyer.SendMessage($"{entry.Price} pièces d'or ont ??#$?&*t??#$?&* plac??#$?&*es dans votre sac.");
 			m_Buyer.PlaceInBackpack(new Gold(entry.Price));
 		}
 	}

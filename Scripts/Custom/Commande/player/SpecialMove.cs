@@ -21,7 +21,7 @@ namespace Server.Scripts.Commands
 
 
 		[Usage("wa")]
-		[Description("Permet d'utiliser les attaques spéciales.")]
+		[Description("Permet d'utiliser les attaques sp??#$?&*ciales.")]
 		public static void AttaqueSpecial_OnCommand(CommandEventArgs e)
 		{
             Mobile from = e.Mobile;
@@ -81,7 +81,7 @@ namespace Server.Scripts.Commands
 		}
 
 		[Usage("wap")]
-		[Description("Permet d'utiliser l'attaque spéciale primaire de l'arme.")]
+		[Description("Permet d'utiliser l'attaque sp??#$?&*ciale primaire de l'arme.")]
 		public static void AttaqueSpecialPrimaire_OnCommand(CommandEventArgs e)
 		{
 			Mobile from = e.Mobile;
@@ -111,7 +111,7 @@ namespace Server.Scripts.Commands
 			}
 
 		[Usage("was")]
-		[Description("Permet d'utiliser l'attaque spéciale secondaire de l'arme.")]
+		[Description("Permet d'utiliser l'attaque sp??#$?&*ciale secondaire de l'arme.")]
 		public static void AttaqueSpecialSecondaire_OnCommand(CommandEventArgs e)
 		{
 			Mobile from = e.Mobile;

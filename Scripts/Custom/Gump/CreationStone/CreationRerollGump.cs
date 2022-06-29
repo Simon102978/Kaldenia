@@ -52,7 +52,7 @@ namespace Server.Gumps
                     }
 
 					AddButtonHtlml(x + 5, y + 35 + SpaceRanger * Range, "Nom: " + rero.Name, 200, 25, Range + 100, hueText);
-					AddHtmlTexteColored(x + 23, y + 35 + Range * SpaceRanger + 20, 200,  "Expériences: " + Math.Round(rero.Experience * 0.75), hueText);
+					AddHtmlTexteColored(x + 23, y + 35 + Range * SpaceRanger + 20, 200,  "Exp??#$?&*riences: " + Math.Round(rero.Experience * 0.75), hueText);
 
 
 					
@@ -64,7 +64,7 @@ namespace Server.Gumps
 					//      AddBackground(x + 5, y + 35 + Range * SpaceRanger, 205, 60, 9350);
 
 					//            AddHtmlTexte(x + 15, y + 35 + Range * SpaceRanger, 200, 40, "<h3><basefont color=#"+ hueText + "> " + rero.Name + "</basefont></h3>");
-					//           AddHtmlTexte(x + 15, y + 55 + Range * SpaceRanger, 200, 40, "<h3><basefont color=#" + hueText + ">Expériences: " +  Math.Round(rero.Experience * 0.75) + "</basefont></h3>");
+					//           AddHtmlTexte(x + 15, y + 55 + Range * SpaceRanger, 200, 40, "<h3><basefont color=#" + hueText + ">Exp??#$?&*riences: " +  Math.Round(rero.Experience * 0.75) + "</basefont></h3>");
 				}
                 else
                 {
@@ -85,7 +85,7 @@ namespace Server.Gumps
 
             if (creationPerso.Reroll != null)
             {
-                TransfertSelect = creationPerso.Reroll.Name + " \n\nExpériences: " + Math.Round(creationPerso.Reroll.Experience * 0.75) ;
+                TransfertSelect = creationPerso.Reroll.Name + " \n\nExp??#$?&*riences: " + Math.Round(creationPerso.Reroll.Experience * 0.75) ;
             }
 
             AddSection(x - 10, y + 471, 610, 135, "Informations", TransfertSelect);

@@ -294,7 +294,7 @@ namespace Server.Commands
 			}
 			else
 			{
-				from.SendMessage("Le NPC a été supprimé peu être à cause d'un respawn manuel");	
+				from.SendMessage("Le NPC a ??#$?&*t??#$?&* supprim??#$?&* peu être à cause d'un respawn manuel");	
 				//"The original NPC was deleted. Maybe because a manual respawn"
 				oldNPC.Delete();
 			}

@@ -25,11 +25,11 @@ namespace Server.Items
             ac = new
 
             AddonComponent(0x8DE);
-            ac.Name = "Cheminée en pierre";
+            ac.Name = "Chemin??#$?&*e en pierre";
             AddComponent(ac, 0, 0, 0);
 
             ac = new AddonComponent(0x967);
-            ac.Name = "Cheminée en pierre";
+            ac.Name = "Chemin??#$?&*e en pierre";
             AddComponent(ac, -1, 0, 0);
              
         }
@@ -49,7 +49,7 @@ namespace Server.Items
                 {
                     ac.ItemID = 0x8DE;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("Vous éteignez le feu dans la cheminée !");
+                    from.SendMessage("Vous ??#$?&*teignez le feu dans la chemin??#$?&*e !");
                 }
                 else if (ac.ItemID == 0x8DE)
                 {
@@ -71,13 +71,13 @@ namespace Server.Items
                     {
                         case 0:
                             {
-                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans la cheminée");
+                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans la chemin??#$?&*e");
                                 break;
                             }
                             default:
                             {
                                 Effects.PlaySound(from.Location, from.Map, 0x137);
-                                from.SendMessage("Vous mettez les bûches dans la cheminée !");
+                                from.SendMessage("Vous mettez les bûches dans la chemin??#$?&*e !");
                                 ac.ItemID = 0x95F;
                                 break;
                             }
@@ -93,13 +93,13 @@ namespace Server.Items
                         ac.ItemID = 0x961;
                         ac.Light = LightType.Circle225;
                         Effects.PlaySound(from.Location, from.Map, 0x4BA);
-                        from.SendMessage("Vous allumez un feu dans la cheminée.");
+                        from.SendMessage("Vous allumez un feu dans la chemin??#$?&*e.");
                     }
                     else
                     {
                         if (matchlight == null)
                         {
-                            from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la cheminée");
+                            from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la chemin??#$?&*e");
                         }
                     }
                 }

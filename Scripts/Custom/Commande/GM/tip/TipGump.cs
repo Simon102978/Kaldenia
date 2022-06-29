@@ -50,7 +50,7 @@ namespace Server.Gumps
                     {
                         AddBackground(39, 42, 270, 281, 9380);
 
-                        //AddHtml(64, 46, 223, 22, Color(Center(String.Format("{0} vous dit :", (m_From.AccessLevel >= AccessLevel.Counselor ? "Éq" : m_From.Name))), 0x000008), false, false);
+                        //AddHtml(64, 46, 223, 22, Color(Center(String.Format("{0} vous dit :", (m_From.AccessLevel >= AccessLevel.Counselor ? "??#$?&*q" : m_From.Name))), 0x000008), false, false);
                         AddHtml(64, 79, 220, 209, m_Tip, false, false);
                         break;
                     }

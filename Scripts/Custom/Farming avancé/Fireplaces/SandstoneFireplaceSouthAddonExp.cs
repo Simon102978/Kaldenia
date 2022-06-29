@@ -25,11 +25,11 @@ namespace Server.Items
             ac = new
 
             AddonComponent(0x45F);
-            ac.Name = "Cheminée en grès";
+            ac.Name = "Chemin??#$?&*e en grès";
             AddComponent(ac, 0, 0, 0);
 
             ac = new AddonComponent(0x482);
-            ac.Name = "Cheminée en grès";
+            ac.Name = "Chemin??#$?&*e en grès";
             AddComponent(ac, -1, 0, 0);
              
         }
@@ -49,7 +49,7 @@ namespace Server.Items
                 {
                     ac.ItemID = 0x45F;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("Vous éteignez le feu dans la cheminée !");
+                    from.SendMessage("Vous ??#$?&*teignez le feu dans la chemin??#$?&*e !");
                 }
                 else if (ac.ItemID == 0x45F)
                 {
@@ -64,18 +64,18 @@ namespace Server.Items
                     {
                         case 0:
                             {
-                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans la cheminée");
+                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans la chemin??#$?&*e");
                                 break;
                             }
                         case 1:
                             {
-                                from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la cheminée");
+                                from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la chemin??#$?&*e");
                                 break;
                             }
                         default:
                             {
                                 Effects.PlaySound(from.Location, from.Map, 0x137);
-                                from.SendMessage("Vous allumez un feu dans la cheminée.");
+                                from.SendMessage("Vous allumez un feu dans la chemin??#$?&*e.");
                                 ac.ItemID = 0x47B;
                                 ac.Light = LightType.Circle225;
                                 Effects.PlaySound(from.Location, from.Map, 0x4BA);

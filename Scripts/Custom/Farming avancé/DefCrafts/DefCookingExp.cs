@@ -1495,7 +1495,7 @@ namespace Server.Engines.Craft
 			#region High Seas
 			if (Core.HS)
             {
-                // Fish Oil Flask ( Oléo de peixe )
+                // Fish Oil Flask ( Ol??#$?&*o de peixe )
                 index = AddCraft(typeof(FishOil), 1044496, 1150863, 60.0, 120.0, typeof(BaseBeverage), 1046458, 1, 1044253);
                 AddRes(index, typeof(RawFishSteak), 1044476, 8, 1044253);
                 AddRes(index, typeof(SackFlour), 1044468, 1, 1044253);

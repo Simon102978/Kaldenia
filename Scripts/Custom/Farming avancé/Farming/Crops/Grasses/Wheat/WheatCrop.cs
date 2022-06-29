@@ -120,7 +120,7 @@ namespace Server.Items.Crops
             }
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) 
             { 
-                from.SendMessage( "Vous ne pouvez récolter sur une monture." );
+                from.SendMessage( "Vous ne pouvez r??#$?&*colter sur une monture." );
                 return;
             }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )
@@ -129,14 +129,14 @@ namespace Server.Items.Crops
 				int cookValue = (int)from.Skills[SkillName.Cooking].Value / 20;
 				if ( cookValue == 0 )
                 {
-                    from.SendMessage( "Vous ignorez comment récolter cette pousse." );
+                    from.SendMessage( "Vous ignorez comment r??#$?&*colter cette pousse." );
                     return; 
                 }
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
 				{
 					if ( m_yield < 1 ) 
                     { 
-                        from.SendMessage( "Il n'y a rien à récolter ici." );
+                        from.SendMessage( "Il n'y a rien à r??#$?&*colter ici." );
                     }
 					else
 					{
@@ -152,11 +152,11 @@ namespace Server.Items.Crops
 						
                         if ( pick == 0 ) 
                         { 
-                            from.SendMessage( "Votre récolte ne porte pas fruit." ); return; 
+                            from.SendMessage( "Votre r??#$?&*colte ne porte pas fruit." ); return; 
                         }
 						
                         m_yield -= pick;
-                        from.SendMessage( "Vous récoltez {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
+                        from.SendMessage( "Vous r??#$?&*coltez {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
 						
                         if (m_yield < 1) ((Item)this).ItemID = pickedGraphic;
 						
@@ -171,7 +171,7 @@ namespace Server.Items.Crops
 				}
 				else
                 {
-                    from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." );
+                    from.SendMessage( "Vous êtes trop loin pour r??#$?&*colter quelque chose." );
                 }
 			}
 		}

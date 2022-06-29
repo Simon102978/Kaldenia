@@ -89,7 +89,7 @@ namespace Server.Spells.Fifth
 			*/
 			else if (Caster.NameMod != null)
 			{
-				Caster.SendMessage("Vous ne pouvez pas lancer se sort quand votre identité est masquée.");
+				Caster.SendMessage("Vous ne pouvez pas lancer se sort quand votre identit??#$?&* est masqu??#$?&*e.");
 			}
             else if (CheckSequence())
             {

@@ -7,7 +7,7 @@ namespace Server.Items
     {
         public override int BaseMana => 20;
 
-		public override string Name => "Coup écrasant";
+		public override string Name => "Coup ??#$?&*crasant";
 		public override int Id => 4;
 
 		public override double DamageScalar => 1.5;

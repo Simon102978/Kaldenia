@@ -7,7 +7,7 @@ namespace Server.Items
         [Constructable]
         public MetallicDyeTub()
         {
-			Name = "Bac de Teinture (armure de métal)";
+			Name = "Bac de Teinture (armure de m??#$?&*tal)";
 			Charges = 5;
 			
 

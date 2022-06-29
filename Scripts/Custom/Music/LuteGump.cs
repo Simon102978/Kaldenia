@@ -24,7 +24,7 @@ namespace Server.Gumps
 			this.AddBackground(6, 15, 570, 140, 5120);
 			this.AddAlphaRegion( 16, 20, 550, 130 );
 			this.AddImageTiled( 16, 20, 550, 20, 9354);
-			this.AddLabel( 19, 20, 200, "Compositeur des mélodies");
+			this.AddLabel( 19, 20, 200, "Compositeur des m??#$?&*lodies");
             this.AddLabel(55, 60, 2056, @"do");
             this.AddLabel(55, 80, 2056, @"do");
             this.AddLabel(55, 100, 2056, @"do");

@@ -22,11 +22,11 @@ namespace Server.Scripts.Commands
 
 			if (!from.Hidden)
 			{
-				from.SendMessage("Vous devez être caché pour signaler votre présence à quelqu'un.");
+				from.SendMessage("Vous devez être cach??#$?&* pour signaler votre pr??#$?&*sence à quelqu'un.");
 				return;
 			}
 
-			from.SendMessage("Veuillez viser le joueur à qui vous désirez signaler votre présence. (Vous devez lui être adjacent.)");
+			from.SendMessage("Veuillez viser le joueur à qui vous d??#$?&*sirez signaler votre pr??#$?&*sence. (Vous devez lui être adjacent.)");
 			from.Target = new SignalerTarget();
 		}
 
@@ -50,8 +50,8 @@ namespace Server.Scripts.Commands
 
 				target.Reveal(sfrom);
 	
-				from.SendMessage("Vous signalez à {0} votre présence.", target.Name);
-				target.SendMessage("{0} vous signale sa présence.", from.Name);
+				from.SendMessage("Vous signalez à {0} votre pr??#$?&*sence.", target.Name);
+				target.SendMessage("{0} vous signale sa pr??#$?&*sence.", from.Name);
 			}
 		}
 	}

@@ -275,7 +275,7 @@ namespace Server.Engines.CannedEvil
 				new Dictionary<int, string>()
 				{
 					   {1 , "Ceos: On ne peut pas confier au troll un travail d'ogre !" },
-					   {2 , "Ceos: C'était juste de la chair à canon, maintenant le véritable combat commence." },
+					   {2 , "Ceos: C'??#$?&*tait juste de la chair à canon, maintenant le v??#$?&*ritable combat commence." },
 					   {3 , "Ceos: Quoi ?! Impossible ! Vous allez payer pour cette affront !" },
 					   {4 , "Ceos: GNAAAH ! MOURREZ !" },
 				},
@@ -283,7 +283,7 @@ namespace Server.Engines.CannedEvil
 			    {
 					 {"Ceos: Qui est-ce qui va se cacher sous les jupons de leurs mère ?" },
 					 {"Ceos: Revenez, on commençait juste à s'amuser !" },
-					 {"Ceos: Quoi ? Vous osez me déranger juste pour ca ?" },
+					 {"Ceos: Quoi ? Vous osez me d??#$?&*ranger juste pour ca ?" },
 					 {"Ceos: *Soupire* Moi qui croyais que vous aviez du potentiel..." },
 					 {"Ceos: Si c'est comme ca, vous êtes plus mes amis !" },
 				}

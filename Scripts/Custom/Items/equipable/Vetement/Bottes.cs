@@ -95,7 +95,7 @@ public class Bottes3 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name = "Bottes ajustées";
+		Name = "Bottes ajust??#$?&*es";
 	}
 
 	public Bottes3(Serial serial)
@@ -135,7 +135,7 @@ public class Bottes4 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name = "Bottes lacées";
+		Name = "Bottes lac??#$?&*es";
 	}
 
 	public Bottes4(Serial serial)

@@ -51,7 +51,7 @@ namespace Server.Gumps
                
 
             string GodName = "Aucune";
-            string GodBG = "Aucune God de selectionnée";
+            string GodBG = "Aucune God de selectionn??#$?&*e";
 
             if (m_Creation.God != null)
             {

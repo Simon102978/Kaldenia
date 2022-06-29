@@ -69,7 +69,7 @@ namespace Server.Misc
             new InternationalCode("ENW", "English", "Zimbabwe"),
             new InternationalCode("ENP", "English", "Philippines"),
             new InternationalCode("ESP", "Spanish", "Spain (Traditional Sort)", "Español", "España (tipo tradicional)"),
-            new InternationalCode("ESM", "Spanish", "Mexico", "Español", "México"),
+            new InternationalCode("ESM", "Spanish", "Mexico", "Español", "M??#$?&*xico"),
             new InternationalCode("ESN", "Spanish", "Spain (International Sort)", "Español", "España (tipo internacional)"),
             new InternationalCode("ESG", "Spanish", "Guatemala", "Español", "Guatemala"),
             new InternationalCode("ESC", "Spanish", "Costa Rica", "Español", "Costa Rica"),

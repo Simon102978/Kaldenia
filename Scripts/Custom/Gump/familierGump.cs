@@ -42,7 +42,7 @@ namespace Server.Gumps
 
 
             this.AddButton(246, 145, 0xFA5, 0xFA7, 1, GumpButtonType.Reply, 0);
-            AddHtml(280, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Déplacement"), false, false);
+            AddHtml(280, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "D??#$?&*placement"), false, false);
 
             this.AddButton(396, 145, 0xFA5, 0xFA7, 7, GumpButtonType.Reply, 0);
             AddHtml(430, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Arrêter"), false, false);
@@ -110,7 +110,7 @@ namespace Server.Gumps
             if (c.Deleted)   // Mettre ici si la cible est morte.. dissiper ou autre
             {
 
-                from.SendMessage("Votre créature n'existe plus.");
+                from.SendMessage("Votre cr??#$?&*ature n'existe plus.");
                 return;
             }
                 

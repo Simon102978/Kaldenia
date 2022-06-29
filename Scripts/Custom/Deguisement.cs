@@ -347,7 +347,7 @@ namespace Server
 				m_Player.Race.RemoveRace(m_Player);
 				Race.AddRace(m_Player, m_Hue);
 
-				m_Player.SendMessage("Vous etes maintenant déguisé.");
+				m_Player.SendMessage("Vous etes maintenant d??#$?&*guis??#$?&*.");
 			}
 			else
 			{

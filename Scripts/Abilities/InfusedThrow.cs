@@ -11,7 +11,7 @@ namespace Server.Items
     {
         public override int BaseMana => 25;
 
-		public override string Name => "Lancer infusé";
+		public override string Name => "Lancer infus??#$?&*";
 
 		public override int Id => 30;
 

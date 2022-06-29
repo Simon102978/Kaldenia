@@ -15,7 +15,7 @@ namespace Server
         Maigre,
         [AppearanceAttribute("Mince", "Mince")]
         Mince,
-        [AppearanceAttribute("Élancé", "Élancée")]
+        [AppearanceAttribute("??#$?&*lanc??#$?&*", "??#$?&*lanc??#$?&*e")]
         Elance,
         [AppearanceAttribute("Svelte", "Svelte")]
         Svelte,

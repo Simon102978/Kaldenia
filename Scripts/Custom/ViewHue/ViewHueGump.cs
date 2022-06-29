@@ -82,7 +82,7 @@ namespace Server.Gumps
             AddButton(80, 437, 0x15E2, 0x15E6, 12, GumpButtonType.Reply, 0);
 
             AddHtml(75, 455, 160, 60,
-                @"<basefont color = #094175><center>Entrez le numéro du hue", false, false);
+                @"<basefont color = #094175><center>Entrez le num??#$?&*ro du hue", false, false);
          //   AddAlphaRegion(90, 480, 65, 20);
             AddTextEntry(90, 480, 65, 20, 294, 14, @"1");
             // GoTo Hue Button

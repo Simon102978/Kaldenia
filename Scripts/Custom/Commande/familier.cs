@@ -51,12 +51,12 @@ namespace Server.Commands
                 }
                 else
                 {
-                    from.SendMessage("Vous devez avoir le contrôle de la créature ciblée.");
+                    from.SendMessage("Vous devez avoir le contrôle de la cr??#$?&*ature cibl??#$?&*e.");
                 }             
             }
             else
             {
-                from.SendMessage("Vous devez cibler une créature.");
+                from.SendMessage("Vous devez cibler une cr??#$?&*ature.");
             }
              
         }

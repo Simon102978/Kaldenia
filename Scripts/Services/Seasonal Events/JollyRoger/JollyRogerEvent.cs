@@ -135,7 +135,7 @@ namespace Server.Engines.JollyRoger
             }
             #endregion
 
-            #region Castle Sallé Dacil Decorations
+            #region Castle Sall??#$?&* Dacil Decorations
             if (map.FindItem<CastleTrapDoor>(new Point3D(1316, 231, -26)) == null)
             {
                 item = new CastleTrapDoor(new Point3D(982, 1126, 65), map, false);

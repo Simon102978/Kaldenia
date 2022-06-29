@@ -60,7 +60,7 @@ namespace Server.Gumps
             {
             	case 0:
             		{
-            			m.SendMessage(46, "Votre mot de passe n'a pas été modifié.");
+            			m.SendMessage(46, "Votre mot de passe n'a pas ??#$?&*t??#$?&* modifi??#$?&*.");
             			return;
             		}
             	case 1:
@@ -81,7 +81,7 @@ namespace Server.Gumps
 						{
 							if( !(char.IsLetterOrDigit( newPass[i] )) ) //Char is NOT a letter or digit
 							{
-								m.SendMessage(37, "Les mots de passe doivent être composés seulement de lettres (A à Z) et des chiffres (0 à 9).");
+								m.SendMessage(37, "Les mots de passe doivent être compos??#$?&*s seulement de lettres (A à Z) et des chiffres (0 à 9).");
 								return;
 							}
 						}
@@ -99,7 +99,7 @@ namespace Server.Gumps
 	            		if ( (a.CheckPassword( origPass )) && (newPass == confirmNewPass) ) //La "Password Attuale" è corretta.
             			{
             				a.SetPassword( newPass );
-            				m.SendMessage(1274, "Votre mot de passe a été modifié avec succès!");
+            				m.SendMessage(1274, "Votre mot de passe a ??#$?&*t??#$?&* modifi??#$?&* avec succès!");
            	 			}
             			break;
             		}

@@ -8,7 +8,7 @@
 		[Constructable]
 		public SmallPackage() : base(0x9969)
 		{
-			Name = "Coffre Rouillé";
+			Name = "Coffre Rouill??#$?&*";
 			Weight = 150.0;
 		}
 

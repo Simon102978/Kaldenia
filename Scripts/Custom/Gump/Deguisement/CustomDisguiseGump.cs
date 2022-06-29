@@ -31,7 +31,7 @@ namespace Server.Gumps
 			int colonne = 0;
 			int scale = 25;
 
-			AddSection(x - 10, y , 610, 115, "Général");
+			AddSection(x - 10, y , 610, 115, "G??#$?&*n??#$?&*ral");
 
 			AddHtmlTexteColored(x + 10, y + 45, 75, "Nom: ", "#ffffff");
 
@@ -56,7 +56,7 @@ namespace Server.Gumps
 			}
 		
 
-			AddSection(x - 10, y + 116, 300, 270, "Spécifique");
+			AddSection(x - 10, y + 116, 300, 270, "Sp??#$?&*cifique");
 
 			AddSection(x + 291, y + 116, 309, 270, "Apparence");
 
@@ -168,7 +168,7 @@ namespace Server.Gumps
 			if(from.DeguisementAction(DeguisementAction.Identite))
 			{
 
-			AddButtonHtlml(x + 10, y + 151 + line * scale, 11, 2117, 2118, "Identités: " + from.IdentiteID, "#ffffff");
+			AddButtonHtlml(x + 10, y + 151 + line * scale, 11, 2117, 2118, "Identit??#$?&*s: " + from.IdentiteID, "#ffffff");
 			line++;
 
 			}

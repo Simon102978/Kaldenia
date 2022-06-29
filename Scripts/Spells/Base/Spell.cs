@@ -636,7 +636,7 @@ namespace Server.Spells
 
 				if (m_Caster != null && !VerifyAffinity(cp, AffinityRequirements))
 				{
-					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinités requises.");
+					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinit??#$?&*s requises.");
 
 					if (m_Caster.AccessLevel > AccessLevel.Counselor)
 					{

@@ -51,7 +51,7 @@ namespace Server.Gumps
 
 				if (!BaseVendor.ConsumeGold(m_from.Backpack,m_coif.Price))
 				{
-					m_from.SendMessage("Vous n'avez pas l'or nécessaire pour acheter cette coupe");
+					m_from.SendMessage("Vous n'avez pas l'or n??#$?&*cessaire pour acheter cette coupe");
 				}
 				else
 				{

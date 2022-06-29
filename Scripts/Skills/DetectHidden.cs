@@ -32,7 +32,7 @@ namespace Server.SkillHandlers
         public static TimeSpan OnUse(Mobile src)
         {
 
-			src.SendMessage("Skill désactivé.");
+			src.SendMessage("Skill d??#$?&*sactiv??#$?&*.");
 
 			/*
             src.SendLocalizedMessage(500819);//Where will you search?

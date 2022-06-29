@@ -94,7 +94,7 @@ namespace Server.Items
 		: base(0x3B46, hue)
 	{
 		Weight = 3.0;
-		Name = "Une Araignée";
+		Name = "Une Araign??#$?&*e";
 
 	}
 
@@ -211,7 +211,7 @@ namespace Server.Items
 		: base(0x3B49, hue)
 	{
 		Weight = 3.0;
-		Name = "Un Lézard";
+		Name = "Un L??#$?&*zard";
 
 	}
 

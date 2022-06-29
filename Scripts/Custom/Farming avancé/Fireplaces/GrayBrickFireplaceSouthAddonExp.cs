@@ -49,7 +49,7 @@ namespace Server.Items
                 {
                     ac.ItemID = 0x8D4;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("Vous éteignez la cheminée !");
+                    from.SendMessage("Vous ??#$?&*teignez la chemin??#$?&*e !");
                 }
                 else if (ac.ItemID == 0x8D4)
                 {
@@ -77,7 +77,7 @@ namespace Server.Items
                             default:
                             {
                                 Effects.PlaySound(from.Location, from.Map, 0x137);
-                                from.SendMessage("Vous mettez les bûches dans la cheminée !");
+                                from.SendMessage("Vous mettez les bûches dans la chemin??#$?&*e !");
                                 ac.ItemID = 0x943;
                                 break;
                             }
@@ -93,13 +93,13 @@ namespace Server.Items
                         ac.ItemID = 0x945;
                         ac.Light = LightType.Circle225;
                         Effects.PlaySound(from.Location, from.Map, 0x4BA);
-                        from.SendMessage("Vous allumez la cheminée !");
+                        from.SendMessage("Vous allumez la chemin??#$?&*e !");
                     }
                     else
                     {
                         if (matchlight == null)
                         {
-                            from.SendMessage("Vous devez avoir une allumette pour allumer la cheminée");
+                            from.SendMessage("Vous devez avoir une allumette pour allumer la chemin??#$?&*e");
                         }
                     }
                 }

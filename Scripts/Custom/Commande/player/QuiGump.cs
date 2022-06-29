@@ -207,7 +207,7 @@ namespace Server.Gumps
                 AddButton(x + PrevOffsetX, y + PrevOffsetY, PrevButtonID1, PrevButtonID2, 1, GumpButtonType.Reply, 0);
 
                 if (PrevLabel)
-                    AddHtml(x + PrevLabelOffsetX, y + PrevLabelOffsetY, 200, 20, "<h3><basefont color=#5A4A31>Précedent<basefont></h3>", false, false);
+                    AddHtml(x + PrevLabelOffsetX, y + PrevLabelOffsetY, 200, 20, "<h3><basefont color=#5A4A31>Pr??#$?&*cedent<basefont></h3>", false, false);
             }
 
             x += PrevWidth + OffsetSize;
@@ -306,12 +306,12 @@ namespace Server.Gumps
                         {
                             if (m.Deleted)
                             {
-                                from.SendMessage("Ce joueur a supprimé son personnage.");
+                                from.SendMessage("Ce joueur a supprim??#$?&* son personnage.");
                                 from.SendGump(new QuiGump(from, m_Mobiles, m_Page));
                             }
                             else if (m.NetState == null)
                             {
-                                from.SendMessage("Ce joueur n'est plus connecté en jeu.");
+                                from.SendMessage("Ce joueur n'est plus connect??#$?&* en jeu.");
                                 from.SendGump(new QuiGump(from, m_Mobiles, m_Page));
                             }
                             else
@@ -321,7 +321,7 @@ namespace Server.Gumps
                         }
                         else if(m_Owner.AccessLevel > AccessLevel.Counselor)
                         {
-                            from.SendMessage("Vous ne pouvez pas accéder à la fenêtre d'un maître de jeu.");
+                            from.SendMessage("Vous ne pouvez pas acc??#$?&*der à la fenêtre d'un maître de jeu.");
                             from.SendGump(new QuiGump(from, m_Mobiles, m_Page));
                         }
                         else
@@ -358,7 +358,7 @@ namespace Server.Gumps
 			AddPage(0);
 			AddBackground(39, 56, 350, 120, 3500);
 
-            AddHtml(75, 75, 300, 50, "<h3><basefont color=#5A4A31>" + "Options de réception de messages privés" + "<basefont><h3>", false, false);
+            AddHtml(75, 75, 300, 50, "<h3><basefont color=#5A4A31>" + "Options de r??#$?&*ception de messages priv??#$?&*s" + "<basefont><h3>", false, false);
 
             if ((q & 0x001) == 0)
                 AddButton(100, 100, 0x138a, 0x138b, 2, GumpButtonType.Reply, 0);
@@ -370,13 +370,13 @@ namespace Server.Gumps
                 AddButton(100, 120, 0x138a, 0x138b, 3, GumpButtonType.Reply, 0);
             else
                 AddButton(100, 120, 0x138b, 0x138a, 3, GumpButtonType.Reply, 0);
-            AddHtml(125, 119, 300, 50, "<h3><basefont color=#025a>" + "Bloquer les identités cachées" + "<basefont><h3>", false, false);
+            AddHtml(125, 119, 300, 50, "<h3><basefont color=#025a>" + "Bloquer les identit??#$?&*s cach??#$?&*es" + "<basefont><h3>", false, false);
 
             if ((q & 0x100) == 0)
                 AddButton(100, 140, 0x138a, 0x138b, 4, GumpButtonType.Reply, 0);
             else
                 AddButton(100, 140, 0x138b, 0x138a, 4, GumpButtonType.Reply, 0);
-            AddHtml(125, 139, 300, 50, "<h3><basefont color=#025a>" + "Bloquer les gens renommés" + "<basefont><h3>", false, false);
+            AddHtml(125, 139, 300, 50, "<h3><basefont color=#025a>" + "Bloquer les gens renomm??#$?&*s" + "<basefont><h3>", false, false);
 
         }
 

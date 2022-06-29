@@ -74,12 +74,12 @@ namespace Server.Scripts.Commands
                             }
                             else
                             {
-                                from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus élevé.");
+                                from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus ??#$?&*lev??#$?&*.");
                             }
                         }
                         else
                         {
-                            from.SendMessage("Vous êtes déjà en mode Follow.");
+                            from.SendMessage("Vous êtes d??#$?&*jà en mode Follow.");
                         }
                     }
                     else
@@ -89,7 +89,7 @@ namespace Server.Scripts.Commands
                 }
                 else
                 {
-                    from.SendMessage("Cette cible est inadéquate.");
+                    from.SendMessage("Cette cible est inad??#$?&*quate.");
                 }
             }
 
@@ -126,7 +126,7 @@ namespace Server.Scripts.Commands
                         PlayerMobile m_pmTarget = m_Target as PlayerMobile;
                         if (m_From.AccessLevel == m_Target.AccessLevel && m_Target.Hidden && !m_pmTarget.VisibilityList.Contains(m_From))
                         {
-                            m_From.SendMessage("Le personnage s'est caché, vous ne pouvez plus le suivre.");
+                            m_From.SendMessage("Le personnage s'est cach??#$?&*, vous ne pouvez plus le suivre.");
                             Stop();
                             m_From.CloseGump(typeof(FollowGump));
                             Follow.Collection.Remove(m_From);
@@ -148,7 +148,7 @@ namespace Server.Scripts.Commands
                     }
                     else if (m_Target.Map == Map.Internal)
                     {
-                        m_From.SendMessage("Le joueur s'est déconnecté.");
+                        m_From.SendMessage("Le joueur s'est d??#$?&*connect??#$?&*.");
                         Stop();
                         m_From.CloseGump(typeof(FollowGump));
                         Follow.Collection.Remove(m_From);
@@ -157,7 +157,7 @@ namespace Server.Scripts.Commands
                 }
                 else
                 {
-                    m_From.SendMessage("Le joueur est supprimé.");
+                    m_From.SendMessage("Le joueur est supprim??#$?&*.");
                     m_From.SendMessage("Vous ne suivez plus le joueur.");
                     Stop();
                     m_From.CloseGump(typeof(FollowGump));

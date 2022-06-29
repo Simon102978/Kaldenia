@@ -15,7 +15,7 @@ namespace Server.Items
         : base(3796)
     {
       Movable = false;
-      Name = "Finalisation de la création";
+      Name = "Finalisation de la cr??#$?&*ation";
     }
 
     public override void OnDoubleClickDead(Mobile from)

@@ -53,16 +53,12 @@ namespace Server.Mobiles
 
 		private TribeRelation m_TribeRelation;
 
-
-
 		private bool m_Masque = false;
 
 		private Race m_BaseRace;
 		private bool m_BaseFemale;
 		private int m_BaseHue;
-		
-
-	
+		private TimeSpan m_TotalGameTime;
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
@@ -156,8 +152,6 @@ namespace Server.Mobiles
 			set { m_lastLoginTime = value; }
 		}
 
-
-
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastPay
 		{
@@ -177,8 +171,6 @@ namespace Server.Mobiles
 			get { return m_nextFETime; }
 			set { m_nextFETime = value; }
 		}
-
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FE { get { return m_fe; } set { m_fe = value; } }
@@ -319,6 +311,22 @@ namespace Server.Mobiles
 					m_Masque = value;
 				}			
 			} 
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public TimeSpan TotalGameTime
+		{
+			get
+			{
+
+				if (NetState != null)
+				{
+					return m_TotalGameTime + (DateTime.Now - LastLoginTime);
+				}
+
+				return m_TotalGameTime;
+			}
+			set { m_TotalGameTime = value; }
 		}
 
 		public List<int> QuickSpells
@@ -2022,6 +2030,12 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 21:
+					{
+						m_TotalGameTime = reader.ReadTimeSpan();
+
+						goto case 20;
+					}
 				case 20:
 					{
 						m_Salaire = reader.ReadInt();
@@ -2197,8 +2211,9 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(20); // version
+            writer.Write(21); // version
 
+			writer.Write(m_TotalGameTime);
 
 			writer.Write(m_Salaire);
 			writer.Write(m_LastPay);

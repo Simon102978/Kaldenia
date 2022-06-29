@@ -27,6 +27,11 @@ namespace Server
 
     public static void EventSink_Logout(LogoutEventArgs e)
     {
+			if (e.Mobile is CustomPlayerMobile cp)
+			{
+				cp.TotalGameTime += DateTime.Now - cp.LastLoginTime;
+			}
+
       /*if (e.Mobile.Player)
       {
         if (e.Mobile is SolsoraPlayerMobile)

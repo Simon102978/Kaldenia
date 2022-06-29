@@ -87,7 +87,7 @@ namespace Server
 			get => m_Metier;
 			set
 			{
-				if (Classe.GetClasse(value).ClasseType == ClasseType.Metier)  // Juste pour s'assurer que personne le fasse... Genre utiliser razor pour choisir une classe combat au lieux de metier.
+				if (Classe.GetClasse(value).ClasseType == ClasseType.Metier)  //    Juste pour s'assurer que personne le fasse... Genre utiliser razor pour choisir une classe combat au lieux de metier.
 				{
 					if (m_Metier != value)
 					{

@@ -49,7 +49,7 @@ namespace Server.Scripts.Commands
                     case 0:
                         {
                             pm.Title = primaire;
-                            pm.SendMessage("Vous affichez désormais le titre de classe: {0}", primaire);
+                            pm.SendMessage("Vous affichez désormais le titre de classe: {0}", primaire );
                             break;
                         }
                     case 1:

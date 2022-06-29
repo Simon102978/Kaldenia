@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -137,7 +137,7 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 125, y + 375, 100, m_From.FEAttente.ToString());
 			AddHtmlTexte(x + 10, y + 395, 150, "FE Total:");
 			AddHtmlTexte(x + 125, y + 395, 100, m_From.FETotal.ToString());
-			AddHtmlTexte(x + 10, y + 415, 150, "Heures jou�es:");
+			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouées:");
 			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours,2).ToString());
 
 
@@ -158,7 +158,7 @@ namespace Server.Gumps
 
 			AddLabel(x + 130, y + 490, 150, m_From.Str.ToString());
 
-			AddHtmlTexte(x + 10, y + 510, 150, "Dext�rit� :");
+			AddHtmlTexte(x + 10, y + 510, 150, "Dextérité :");
 
 			if (m_From.CanDecreaseStat(StatType.Dex))
 			{
@@ -185,7 +185,7 @@ namespace Server.Gumps
 
 			AddLabel(x + 130, y + 530, 150, m_From.Int.ToString());
 
-			AddHtmlTexte(x + 10, y + 550, 150, "� placer :");
+			AddHtmlTexte(x + 10, y + 550, 150, "À placer :");
 			AddLabel(x + 130, y + 550, 150, (225 - m_From.RawStr - m_From.RawDex - m_From.RawInt - m_From.StatAttente).ToString());
 
 			AddHtmlTexte(x + 10, y + 570, 150, "En attente :");
@@ -230,7 +230,7 @@ namespace Server.Gumps
 
 			line = 0;
 
-			AddSection(x + 241, y + 453, 359, 210, "D�votions");
+			AddSection(x + 241, y + 453, 359, 210, "Dévotions");
 
 			foreach (KeyValuePair<MagieType, int> item in m_From.MagicAfinity)
 			{

@@ -226,7 +226,7 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(Torch), 1044042, "Torche", 0.0, 50.0, typeof(Board), 1044041, 2, 1044253);
 			index =  AddCraft(typeof(Ramrod), 1044042, 1095839, 0.0, 50.0, typeof(Board), 1044041, 5, 1044253);
-			index = AddCraft(typeof(FuseCord), 1044042, "M%%%#$%?%$#@!che", 0.0, 50.0, typeof(Cloth), 1044455, 1, 1044253);
+			index = AddCraft(typeof(FuseCord), 1044042, "Mèche", 0.0, 50.0, typeof(Cloth), 1044455, 1, 1044253);
 			index = AddCraft(typeof(PowderCharge), 1044042, 1116160, 0.0, 50.0, typeof(Cloth), 1044455, 1, 1044253);
 			AddRes(index, typeof(BlackPowder), 1095826, 1, 1044253);
 			SetUseAllRes(index, true);
@@ -329,9 +329,9 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(Pitchfork), 1044046, 1023719, 40.0, 90.0, typeof(IronIngot), 1044036, 4, 1044037);
 
-			index = AddCraft(typeof(BeerBreweringTools), 1044046, "Outil fabrication de bi%%%#$%?%$#@!re", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(BeerBreweringTools), 1044046, "Outil fabrication de bière", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BrewersTools), 1044046, "Outil Brasseur", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(BreweryLabelMaker), 1044046, "Marqueur de bi%%%#$%?%$#@!re", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(BreweryLabelMaker), 1044046, "Marqueur de bière", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(FarmLabelMaker), 1044046, "Farm Label Maker", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(GrapevinePlacementTool), 1044046, "Outil placement de vignes", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(GrinderExp), 1044046, "Broyeur à café", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
@@ -394,9 +394,9 @@ namespace Server.Engines.Craft
             AddCraft(typeof(Spyglass), 1044050, 1025365, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Lantern), 1044050, 1022597, 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(HeatingStand), 1044050, 1026217, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
-			index = AddCraft(typeof(Fouet4), 1044050, "Fouet 4 m%%%#$%?%$#@!tres", 50.0, 70.0, typeof(Leather), 1044462, 3, 1044463);
-			index = AddCraft(typeof(Fouet6), 1044050, "Fouet 6 m%%%#$%?%$#@!tres", 65.0, 85.0, typeof(Leather), 1044462, 4, 1044463);
-			index = AddCraft(typeof(Fouet8), 1044050, "Fouet 8 m%%%#$%?%$#@!tres", 85.0, 105.0, typeof(Leather), 1044462, 5, 1044463);
+			index = AddCraft(typeof(Fouet4), 1044050, "Fouet 4 mètres", 50.0, 70.0, typeof(Leather), 1044462, 3, 1044463);
+			index = AddCraft(typeof(Fouet6), 1044050, "Fouet 6 mètres", 65.0, 85.0, typeof(Leather), 1044462, 4, 1044463);
+			index = AddCraft(typeof(Fouet8), 1044050, "Fouet 8 mètres", 85.0, 105.0, typeof(Leather), 1044462, 5, 1044463);
 			index = AddCraft(typeof(ToileVierge), 1044050, "Toile Vierge", 30.0, 50.0, typeof(Board), 1044041, 5, 1044351);
 			index = AddCraft(typeof(CopperWire), 1044050, "Fil de cuivre", 30.0, 60.0, typeof(CopperIngot), "Lingot de cuivre", 2, 1044037);
 			index = AddCraft(typeof(SilverWire), 1044050, "Fil d'argent", 50.0, 90.0, typeof(IronIngot), "Lingot de fer", 2, 1044037);

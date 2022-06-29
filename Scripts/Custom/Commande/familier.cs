@@ -16,7 +16,7 @@ namespace Server.Commands
 		}
 
 		[Usage( "Familier" )]
-		[Description( "Pour avoir acc%%%#$%?%$#@!s au commande des familiers." )]
+		[Description( "Pour avoir accès au commande des familiers." )]
         private static void Familier ( CommandEventArgs arg )
 		{
             arg.Mobile.Target = new FamiTarget();           

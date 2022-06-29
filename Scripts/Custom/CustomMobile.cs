@@ -647,7 +647,7 @@ namespace Server.Mobiles
 			{
 				if (Banker.Deposit(this, GainGold))
 				{
-					SendMessage(HueManager.GetHue(HueManagerList.Green), "Votre guilde a déposé votre salaire de " + GainGold + " pi%%%#$%?%$#@!ces d'or dans votre coffre de banque."); 
+					SendMessage(HueManager.GetHue(HueManagerList.Green), "Votre guilde a déposé votre salaire de " + GainGold + " pièces d'or dans votre coffre de banque."); 
 				}
 			}
 			else

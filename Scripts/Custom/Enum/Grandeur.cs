@@ -9,7 +9,7 @@ namespace Server
   {
         [AppearanceAttribute("Aucun", "Aucune")]
         None,
-        [AppearanceAttribute("Tr%%%#$%?%$#@!s petit", "Tr%%%#$%?%$#@!s petite")]
+        [AppearanceAttribute("Très petit", "Très petite")]
         tresPetit,
         [AppearanceAttribute("Petit", "Petite")]
         Petit,
@@ -21,7 +21,7 @@ namespace Server
         PlutotGrand,
         [AppearanceAttribute("Grand", "Grande")]
         Grand,
-        [AppearanceAttribute("Tr%%%#$%?%$#@!s grand", "Tr%%%#$%?%$#@!s grande")]
+        [AppearanceAttribute("Très grand", "Très grande")]
         TresGrand,
         [AppearanceAttribute("Colossal", "Colossale")]
         Colossale

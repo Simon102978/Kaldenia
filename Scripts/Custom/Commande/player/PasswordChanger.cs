@@ -88,7 +88,7 @@ namespace Server.Gumps
          	
             			Account a = m.Account as Account;
             
-            			if ( !(a.CheckPassword( origPass )) ) //"Password Attuale" %%%#$%?%$#@! incorretta
+            			if ( !(a.CheckPassword( origPass )) ) //"Password Attuale" è incorretta
             			{
             				m.SendMessage(37, "Le mot de passe actuel est incorrect. [ " + origPass + " ].");
             				m.CloseGump( typeof( PasswordChanger ) );
@@ -96,10 +96,10 @@ namespace Server.Gumps
             				return;
             			}
             
-	            		if ( (a.CheckPassword( origPass )) && (newPass == confirmNewPass) ) //La "Password Attuale" %%%#$%?%$#@! corretta.
+	            		if ( (a.CheckPassword( origPass )) && (newPass == confirmNewPass) ) //La "Password Attuale" è corretta.
             			{
             				a.SetPassword( newPass );
-            				m.SendMessage(1274, "Votre mot de passe a été modifié avec succ%%%#$%?%$#@!s!");
+            				m.SendMessage(1274, "Votre mot de passe a été modifié avec succès!");
            	 			}
             			break;
             		}

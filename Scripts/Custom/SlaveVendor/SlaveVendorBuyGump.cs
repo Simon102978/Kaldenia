@@ -137,11 +137,11 @@ namespace Server.Custom.Gumps
 
 			if (!ConsumeFromBank.GoldConsumption(m_Buyer, m_Vendor.SlavePrice))
 			{
-				m_Buyer.SendMessage("Vous n'avez pas suffisamment de pi%%%#$%?%$#@!ces d'or dans votre banque pour acheter ceci.");
+				m_Buyer.SendMessage("Vous n'avez pas suffisamment de pièces d'or dans votre banque pour acheter ceci.");
 				return;
 			}
 
-			m_Buyer.SendMessage($"{m_Vendor.SlavePrice} pi%%%#$%?%$#@!ces d'or ont été débité de votre banque.");
+			m_Buyer.SendMessage($"{m_Vendor.SlavePrice} pièces d'or ont été débité de votre banque.");
 
 			var slave = (BaseHire)Activator.CreateInstance(entry.Type);
 			slave.MoveToWorld(m_Buyer.Location, m_Buyer.Map);

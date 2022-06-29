@@ -75,7 +75,7 @@ namespace Server.Items
 					m.Thirst -= 1;
 				// added to give thirst value a real meaning.
 					if ( m.Thirst < 5 )
-						m.SendMessage( "Vous avez tr%%%#$%?%$#@!s soif." );
+						m.SendMessage( "Vous avez très soif." );
 					else if ( m.Thirst < 10 )
 						m.SendMessage("Vous avez soif.");
 				}
@@ -83,7 +83,7 @@ namespace Server.Items
 				{
 					if ( m.Stam > 5 )
 						m.Stam -= 5;
-					m.SendMessage( "Vous êtes compl%%%#$%?%$#@!tement déshydraté!" );
+					m.SendMessage( "Vous êtes complètement déshydraté!" );
 				}
 			}
 		}
@@ -175,7 +175,7 @@ namespace Server.Items
 					case 0:
 					{
 						m.Stam -= 10;
-//					m.SendMessage("Vous êtes compl%%%#$%?%$#@!tement déshydraté!"); TimeSpan.FromSeconds(15);
+//					m.SendMessage("Vous êtes complètement déshydraté!"); TimeSpan.FromSeconds(15);
 						break;
 					}
 				}
@@ -202,11 +202,11 @@ namespace Server.Items
 			if (h <= 0)
 				e.Mobile.SendMessage( "Vous avez extrêmement faim." );
 			else if ( h <= 5 )
-			       	e.Mobile.SendMessage( "Vous avez tr%%%#$%?%$#@!s faim." );
+			       	e.Mobile.SendMessage( "Vous avez très faim." );
 			else if ( h <= 10)
 				e.Mobile.SendMessage( "Vous avez faim." );
 			else if ( h <= 15 )
-				e.Mobile.SendMessage( "Vous avez lég%%%#$%?%$#@!rement faim." );
+				e.Mobile.SendMessage( "Vous avez légèrement faim." );
 			else if ( h <= 20)
 				e.Mobile.SendMessage( "Vous n'avez pas faim." );
 			else
@@ -217,11 +217,11 @@ namespace Server.Items
 			if ( t <= 0 )
 				e.Mobile.SendMessage( "Vous avez extrêmement soif." );
 			else if ( t <= 5 )
-			       	e.Mobile.SendMessage( "Vous avez tr%%%#$%?%$#@!s soif." );
+			       	e.Mobile.SendMessage( "Vous avez très soif." );
 			else if ( t <= 10 )
 				e.Mobile.SendMessage( "Vous avez soif." );
 			else if ( t <= 15 )
-				e.Mobile.SendMessage( "Vous avez lég%%%#$%?%$#@!rement soif." );
+				e.Mobile.SendMessage( "Vous avez légèrement soif." );
 			else if ( t <= 20 )
 				e.Mobile.SendMessage( "Vous n'avez pas soif." );
 			else

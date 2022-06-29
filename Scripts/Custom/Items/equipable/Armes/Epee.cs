@@ -73,7 +73,7 @@ namespace Server.Items
 			: base(41569)
 		{
 
-			Name = "Rapi%%%#$%?%$#@!re";
+			Name = "Rapière";
 			Weight = 8.0;
 	//		Layer = Layer.TwoHanded;
 		}
@@ -121,7 +121,7 @@ namespace Server.Items
 			: base(41570)
 		{
 
-			Name = "Rapi%%%#$%?%$#@!re de Luxe";
+			Name = "Rapière de Luxe";
 			Weight = 8.0;
 		//	Layer = Layer.TwoHanded;
 		}
@@ -169,7 +169,7 @@ namespace Server.Items
 			: base(41571)
 		{
 
-			Name = "Rapi%%%#$%?%$#@!re Décorée";
+			Name = "Rapière Décorée";
 			Weight = 8.0;
 	//		Layer = Layer.TwoHanded;
 		}

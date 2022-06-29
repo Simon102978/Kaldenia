@@ -246,7 +246,7 @@ namespace Server.Custom.System
         }
 
         /// <summary>
-        /// Retourne tous les titres que poss%%%#$%?%$#@!dent le mobile dans toutes les guildes
+        /// Retourne tous les titres que possèdent le mobile dans toutes les guildes
         /// </summary>
         /// <param name="m">Mobile dont on veut tous les titres</param>
         /// <returns>Tableau de strings avec tous les titres à l'intérieur</returns>

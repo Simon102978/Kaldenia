@@ -815,7 +815,7 @@ public class Kilt2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Kilt à Bandouill%%%#$%?%$#@!re";
+		Name = "Kilt à Bandouillère";
 	}
 
 	public Kilt2(Serial serial)

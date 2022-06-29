@@ -281,7 +281,7 @@ namespace Server.Engines.CannedEvil
 				},
 				new List<string>()
 			    {
-					 {"Ceos: Qui est-ce qui va se cacher sous les jupons de leurs m%%%#$%?%$#@!re ?" },
+					 {"Ceos: Qui est-ce qui va se cacher sous les jupons de leurs mère ?" },
 					 {"Ceos: Revenez, on commençait juste à s'amuser !" },
 					 {"Ceos: Quoi ? Vous osez me déranger juste pour ca ?" },
 					 {"Ceos: *Soupire* Moi qui croyais que vous aviez du potentiel..." },

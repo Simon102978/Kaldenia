@@ -1630,7 +1630,7 @@ namespace Server.Mobiles
 					}
 				case TribeType.Kuya:
 					{
-						// Pas d'ennemis, car il prot%%%#$%?%$#@!ge la valorite, et renderait le tout trop simple.
+						// Pas d'ennemis, car il protège la valorite, et renderait le tout trop simple.
 
 
 

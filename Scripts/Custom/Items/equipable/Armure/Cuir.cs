@@ -284,7 +284,7 @@ namespace Server.Items
 			: base(41608)
 		{
 			Weight = 2.0;
-			Name = "épauli%%%#$%?%$#@!re Barbare";
+			Name = "épaulière Barbare";
 
 		}
 
@@ -451,7 +451,7 @@ namespace Server.Items
 		public JambiereBarbare2()
 			: base(41612)
 		{
-			Name = "Jambi%%%#$%?%$#@!re Barbare2";
+			Name = "Jambière Barbare2";
 			Weight = 6.0;
 		}
 
@@ -490,7 +490,7 @@ namespace Server.Items
 		public JambiereBarbare3()
 			: base(41613)
 		{
-			Name = "Jambi%%%#$%?%$#@!re Barbare3";
+			Name = "Jambière Barbare3";
 			Weight = 6.0;
 		}
 

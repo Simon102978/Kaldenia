@@ -25,11 +25,11 @@ namespace Server.Items
             ac = new
 
             AddonComponent(0x489);
-            ac.Name = "Cheminée en gr%%%#$%?%$#@!s";
+            ac.Name = "Cheminée en grès";
             AddComponent(ac, 0, 0, 0);
 
             ac = new AddonComponent(0x45D);
-            ac.Name = "Cheminée en gr%%%#$%?%$#@!s";
+            ac.Name = "Cheminée en grès";
             AddComponent(ac, 0, 1, 0);
              
         }

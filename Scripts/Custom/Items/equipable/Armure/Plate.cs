@@ -199,7 +199,7 @@ namespace Server.Items
 			: base(41651)
 		{
 			Weight = 7.0;
-			Name = "Jambi%%%#$%?%$#@!re Décoratif";
+			Name = "Jambière Décoratif";
 		}
 
 		public JambiereDecoratif(Serial serial)

@@ -20,7 +20,7 @@ namespace Server.Scripts.Commands
 
             if (tip == null || tip.Length < 1)
             {
-                from.SendMessage("Votre tip doit faire plus de 1 charact%%%#$%?%$#@!re !");
+                from.SendMessage("Votre tip doit faire plus de 1 charactère !");
             }
             else
             {

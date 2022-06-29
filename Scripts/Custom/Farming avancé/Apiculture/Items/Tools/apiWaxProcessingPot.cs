@@ -340,7 +340,7 @@ namespace Server.Items
 					}
 					else if( !BeeHiveHelper.Find( from, BeeHiveHelper.m_HeatSources ) )
 					{//need a heat source to melt the wax
-						from.PrivateOverheadMessage( 0, 1154, false, "Vous devez être pr%%%#$%?%$#@!s d'une source de chaleur pour fabriquer la cire d'abeille.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Vous devez être près d'une source de chaleur pour fabriquer la cire d'abeille.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}

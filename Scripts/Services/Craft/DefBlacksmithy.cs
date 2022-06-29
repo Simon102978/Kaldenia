@@ -302,7 +302,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(RingmailChest), 1111704, "Ringmail Chest", 21.9, 71.9, typeof(IronIngot), 1044036, 18, 1044037);
 
 			AddCraft(typeof(PlastronMaille2), 1111704, "Plastron de Maille", 21.9, 71.9, typeof(IronIngot), 1044036, 18, 1044037);
-			AddCraft(typeof(JambiereMaille2), 1111704, "Jambi%%%#$%?%$#@!re de Maille", 21.9, 71.9, typeof(IronIngot), 1044036, 16, 1044037);
+			AddCraft(typeof(JambiereMaille2), 1111704, "Jambière de Maille", 21.9, 71.9, typeof(IronIngot), 1044036, 16, 1044037);
 			AddCraft(typeof(BrassardMaille), 1111704, "Brassard de Maille", 21.9, 71.9, typeof(IronIngot), 1044036, 14, 1044037);
 			#endregion
 
@@ -313,7 +313,7 @@ namespace Server.Engines.Craft
 
 			AddCraft(typeof(CasqueMaille), 1111704, "Casque de Maille", 50.0, 90.0, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(GantsMaille), 1111704, "Gants de Maille", 50.0, 90.0, typeof(IronIngot), 1044036, 10, 1044037);
-			AddCraft(typeof(JambiereMaille), 1111704, "Jambi%%%#$%?%$#@!re de Maille", 50.0, 90.0, typeof(IronIngot), 1044036, 18, 1044037);
+			AddCraft(typeof(JambiereMaille), 1111704, "Jambière de Maille", 50.0, 90.0, typeof(IronIngot), 1044036, 18, 1044037);
 			AddCraft(typeof(PlastronMaille), 1111704, "Plastron de Maille", 50.0, 90.0, typeof(IronIngot), 1044036, 20, 1044037);
 
 
@@ -336,7 +336,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(PlastronChaos), 1111704, "Plastron du Chaos", 75.0, 125.0, typeof(IronIngot), 1044036, 25, 1044037);
 			AddCraft(typeof(BrassardDecoratif), 1111704, "Brassard Décoratif", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
 			AddCraft(typeof(CasqueDecoratif), 1011079, "Casque Décoratif", 75.0, 125.0, typeof(IronIngot), 1044036, 15, 1044037);
-			AddCraft(typeof(JambiereDecoratif), 1111704, "Jambi%%%#$%?%$#@!re Décoratif", 75.0, 125.0, typeof(IronIngot), 1044036, 20, 1044037);
+			AddCraft(typeof(JambiereDecoratif), 1111704, "Jambière Décoratif", 75.0, 125.0, typeof(IronIngot), 1044036, 20, 1044037);
 			AddCraft(typeof(PlastronDecoratif), 1111704, "Plastron Décoratif", 75.0, 125.0, typeof(IronIngot), 1044036, 25, 1044037);
 			AddCraft(typeof(BottesElfique), 1111704, "Bottes Elfique", 75.0, 125.0, typeof(IronIngot), 1044036, 20, 1044037);
 			AddCraft(typeof(CasqueElfique), 1011079, "Casque Elfique", 75.0, 125.0, typeof(IronIngot), 1044036, 15, 1044037);
@@ -502,9 +502,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(DoubleLames), 1011081, "Double Lames de poing", 60.0, 110.0, typeof(IronIngot), 1044036, 15, 1044037);
 
 
-			AddCraft(typeof(Rapiere), 1011081, "Rapi%%%#$%?%$#@!re", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
-			AddCraft(typeof(RapiereLuxe), 1011081, "Rapi%%%#$%?%$#@!re de Luxe", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
-			AddCraft(typeof(RapiereDecoree), 1011081, "Rapi%%%#$%?%$#@!re Décorée", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
+			AddCraft(typeof(Rapiere), 1011081, "Rapière", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
+			AddCraft(typeof(RapiereLuxe), 1011081, "Rapière de Luxe", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
+			AddCraft(typeof(RapiereDecoree), 1011081, "Rapière Décorée", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(WakizashiLong), 1011081, "Wakizashi Long", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(Runire), 1011081, "Runire", 44.1, 94.1, typeof(IronIngot), 1044036, 8, 1044037);
 			AddCraft(typeof(EpeeCourte), 1011081, "épée Courte", 44.1, 94.1, typeof(IronIngot), 1044036, 8, 1044037);

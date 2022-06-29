@@ -120,7 +120,7 @@ namespace Server.Gumps
 
 			AddHtmlTexte(x + 10, y + 220, 150, "Primaire:");
 			AddHtmlTexte(x + 10, y + 240, 150, "Secondaire: ");
-			AddHtmlTexte(x + 10, y + 260, 150, "Métier: ");
+			AddHtmlTexte(x + 10, y + 260, 150, "MÃ©tier: ");
 			AddHtmlTexte(x + 10, y + 280, 150, "Armure: ");
 			AddHtmlTexte(x + 125, y + 220, 100,  m_From.ClassePrimaire.Name);
 			AddHtmlTexte(x + 125, y + 240, 100,  m_From.ClasseSecondaire.Name);
@@ -129,7 +129,7 @@ namespace Server.Gumps
 
 			// 402
 
-			AddSection(x - 10, y + 317, 250, 135, "Expériences");
+			AddSection(x - 10, y + 317, 250, 135, "ExpÃ©riences");
 
 			AddHtmlTexte(x + 10, y + 355, 150, "FE Disponible:");
 			AddHtmlTexte(x + 125, y + 355, 100, m_From.FE.ToString());
@@ -137,7 +137,7 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 125, y + 375, 100, m_From.FEAttente.ToString());
 			AddHtmlTexte(x + 10, y + 395, 150, "FE Total:");
 			AddHtmlTexte(x + 125, y + 395, 100, m_From.FETotal.ToString());
-			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouées:");
+			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouï¿½es:");
 			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours,2).ToString());
 
 
@@ -158,7 +158,7 @@ namespace Server.Gumps
 
 			AddLabel(x + 130, y + 490, 150, m_From.Str.ToString());
 
-			AddHtmlTexte(x + 10, y + 510, 150, "Dextérité :");
+			AddHtmlTexte(x + 10, y + 510, 150, "Dextï¿½ritï¿½ :");
 
 			if (m_From.CanDecreaseStat(StatType.Dex))
 			{
@@ -185,7 +185,7 @@ namespace Server.Gumps
 
 			AddLabel(x + 130, y + 530, 150, m_From.Int.ToString());
 
-			AddHtmlTexte(x + 10, y + 550, 150, "À placer :");
+			AddHtmlTexte(x + 10, y + 550, 150, "ï¿½ placer :");
 			AddLabel(x + 130, y + 550, 150, (225 - m_From.RawStr - m_From.RawDex - m_From.RawInt - m_From.StatAttente).ToString());
 
 			AddHtmlTexte(x + 10, y + 570, 150, "En attente :");
@@ -230,7 +230,7 @@ namespace Server.Gumps
 
 			line = 0;
 
-			AddSection(x + 241, y + 453, 359, 210, "Dévotions");
+			AddSection(x + 241, y + 453, 359, 210, "Dï¿½votions");
 
 			foreach (KeyValuePair<MagieType, int> item in m_From.MagicAfinity)
 			{

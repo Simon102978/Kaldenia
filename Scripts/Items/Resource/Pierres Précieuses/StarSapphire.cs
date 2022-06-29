@@ -14,7 +14,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-			Name = "Sapphire Étoilé";
+			Name = "Sapphire étoilé";
 		}
 
         public StarSapphire(Serial serial)

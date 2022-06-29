@@ -179,7 +179,7 @@ namespace Server.Mobiles
 
 						satyr.Combatant = fighter;
 
-						Say("À moi !");
+						Say("à moi !");
 
 						//fighter.SendLocalizedMessage(1075116); // A twisted satyr scrambles onto the branch beside you and attacks!
 					}

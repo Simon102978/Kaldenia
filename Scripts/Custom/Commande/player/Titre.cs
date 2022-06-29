@@ -49,44 +49,44 @@ namespace Server.Scripts.Commands
                     case 0:
                         {
                             pm.Title = primaire;
-                            pm.SendMessage("Vous affichez désormais le titre de classe: {0}", primaire);
+                            pm.SendMessage("Vous affichez dÃ©sormais le titre de classe: {0}", primaire );
                             break;
                         }
                     case 1:
                         {
                             pm.Title = secondaire;
-                            pm.SendMessage("Vous affichez désormais le titre de classe: {0}", secondaire);
+                            pm.SendMessage("Vous affichez dÃ©sormais le titre de classe: {0}", secondaire);
                             break;
                         }
                     case 2:
                         {
                             pm.Title = metier;
-                            pm.SendMessage("Vous affichez désormais le titre de métier: {0}", metier);
+                            pm.SendMessage("Vous affichez dÃ©sormais le titre de mÃ©tier: {0}", metier);
                             break;
 						}
 					case 3:
 					{
 							pm.Title = pm.StatutSocialString();
-							pm.SendMessage("Vous affichez désormais le titre de statut social : {0}", pm.StatutSocialString());
+							pm.SendMessage("Vous affichez dÃ©sormais le titre de statut social : {0}", pm.StatutSocialString());
 							break;
 					}
 					case 4:
                         {
                             pm.Title = customTitle;
-                            pm.SendMessage("Vous affichez désormais le titre personnalisé: {0}", customTitle);
+                            pm.SendMessage("Vous affichez dÃ©sormais le titre personnalisÃ©: {0}", customTitle);
                             break;
                         }
                     case 5:
                         {
                             pm.Title = DegTitle;
-                            pm.SendMessage("Vous affichez désormais le titre de votre déguisement: {0}", DegTitle);
+                            pm.SendMessage("Vous affichez dÃ©sormais le titre de votre dÃ©guisement: {0}", DegTitle);
                             break;
                         }
 					
 					case 6:
 						{
 							pm.Title = "";
-							pm.SendMessage("Vous affichez désormais aucun titre.");
+							pm.SendMessage("Vous affichez dÃ©sormais aucun titre.");
 							break;
 						}
 
@@ -111,7 +111,7 @@ namespace Server.Scripts.Commands
 									   }
 
 									   pm.Title = titreGuilde;
-									   pm.SendMessage("Vous affichez désormais le titre de guilde: {0}", titreGuilde);
+									   pm.SendMessage("Vous affichez dÃ©sormais le titre de guilde: {0}", titreGuilde);
 									   break;
 								   }*/
 				}

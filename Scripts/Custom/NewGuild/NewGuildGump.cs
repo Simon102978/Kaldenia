@@ -477,6 +477,7 @@ namespace Server.Custom.System
 			//		AddLabel(x + 120, y + (space * line++), 43, "Menu pour " + member.Name);
 
 
+
 			if (member.CustomRank != -2)
 			{
 				AddHtmlTexteColored(x, y + (space * line++) - 1, 300, $"Salaire: {currentMember.Salaire}", "#FFFFFF");
@@ -495,6 +496,8 @@ namespace Server.Custom.System
 				AddHtmlTexteColored(x, y + (space * line) - 1, 75, "Titre: ", "#FFFFFF");
 				AddTextEntryBg(x + 100, y + (space * line++), 200, 25, 0, 2, currentMember.Titre);
 				AddButtonHtlml(x, y + (space * line++) - 1, GetButtonID2(8, 0), "Rang standard", "#FFFFFF");
+
+
 			}
 		
 		
@@ -519,7 +522,35 @@ namespace Server.Custom.System
 				return;
 			}
 
-            switch (type1)
+			try
+			{
+				TextRelay relay1 = info.GetTextEntry(1);
+				if (relay1 != null)
+				{
+					int value = Convert.ToInt32(relay1.Text);
+
+					if (value > 50000)
+					{
+						m_From.SendMessage("Un rang ne peut dépasser 50000 pièces par semaine.");
+						value = 50000;
+					}
+
+				
+					currentMember.Salaire = value;
+
+				}
+
+			}
+			catch
+			{ }
+
+
+			TextRelay relay2 = info.GetTextEntry(2);
+
+			if (relay2 != null)
+				currentMember.Titre = relay2.Text;
+
+			switch (type1)
             {
                 case 1:
                     {

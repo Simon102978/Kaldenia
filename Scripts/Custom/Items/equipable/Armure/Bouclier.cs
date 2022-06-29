@@ -125,7 +125,7 @@ namespace Server.Items
 			: base(41630)
 		{
 			Weight = 7.0;
-			Name = "Écu Long";
+			Name = "écu Long";
 		}
 
 		public EcuLong(Serial serial)

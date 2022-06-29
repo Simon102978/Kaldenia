@@ -79,8 +79,8 @@ namespace Server.Custom.System
 		public static ArrayList m_NewGuildsList;
 
 		public string NewGuildTitle = "Nouvelle Guilde";
-		public string NewGuildDescription = "Veuillez écrire la description de votre guilde ici";
-		public string NewGuildSalary = "Veuillez écrire le salaire du rang ici";
+		public string NewGuildDescription = "Veuillez écrire la description de votre guilde ici"; 
+		public string NewGuildSalary = "Veuillez écrire le salaire du rang ici"; 
 
 		public const int _RANKMAX = 8;
 
@@ -387,7 +387,7 @@ namespace Server.Custom.System
                 else
                 {
                     newGuildRank.Rank = i;
-                    newGuildRank.Title = "Non-confirmé";
+                    newGuildRank.Title = "Non-confirmé"; 
                     newGuildRank.Salary = 0;
                 }
                     

@@ -303,7 +303,7 @@ namespace Server.Items
             Hue = 1272;
             Stackable = true;
             Amount = amount;
-			Name = "Potion d'Éodon";
+			Name = "Potion d'éodon";
         }
 
         public override bool CanDoEffects(Mobile m)

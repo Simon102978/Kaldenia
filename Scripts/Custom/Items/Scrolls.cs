@@ -367,7 +367,7 @@ public class EvasionScroll : SpellScroll
 	[Constructable]
 	public EvasionScroll(int amount) : base(837, 7993, amount)
 		{
-		Name ="Évasion";
+		Name ="évasion";
 		Hue = 140;
 	}
 
@@ -1265,7 +1265,7 @@ public class FireElementalScroll : SpellScroll
 	[Constructable]
 	public FireElementalScroll(int amount) : base(789, 7993, amount)
 		{
-		Name ="Élém. : Feu";
+		Name ="élém. : Feu";
 		Hue = 498;
 	}
 
@@ -1297,7 +1297,7 @@ public class EarthElementalScroll : SpellScroll
 	[Constructable]
 	public EarthElementalScroll(int amount) : base(790, 7993, amount)
 		{
-		Name ="Élém. : Terre";
+		Name ="élém. : Terre";
 		Hue = 498;
 	}
 
@@ -1329,7 +1329,7 @@ public class AirElementalScroll : SpellScroll
 	[Constructable]
 	public AirElementalScroll(int amount) : base(791, 7993, amount)
 		{
-		Name ="Élém. : Air";
+		Name ="élém. : Air";
 		Hue = 498;
 	}
 
@@ -2257,7 +2257,7 @@ public class StrangleScroll : SpellScroll
 	[Constructable]
 	public StrangleScroll(int amount) : base(820, 7993, amount)
 		{
-		Name ="Étranglement";
+		Name ="étranglement";
 		Hue = 2052;
 	}
 
@@ -2513,7 +2513,7 @@ public class LightningScroll : SpellScroll
 	[Constructable]
 	public LightningScroll(int amount) : base(828, 7993, amount)
 		{
-		Name ="Éclair";
+		Name ="éclair";
 		Hue = 140;
 	}
 
@@ -2899,7 +2899,7 @@ public class WaterElementalScroll : SpellScroll
 	[Constructable]
 	public WaterElementalScroll(int amount) : base(840, 7993, amount)
 		{
-		Name ="Élém. : Eau";
+		Name ="élém. : Eau";
 		Hue = 498;
 	}
 

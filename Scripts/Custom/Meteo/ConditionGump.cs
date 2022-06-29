@@ -96,7 +96,7 @@ namespace Server.Gumps
 		public static string[] m_Season = new string[]
 			{
 				"Printemps",
-				"Été",
+				"été",
 				"Automne",
 				"Hiver"
 			};

@@ -94,7 +94,7 @@ public class Toge3 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Toge à Épaulettes";
+		Name = "Toge à épaulettes";
 	}
 
 	public Toge3(Serial serial)

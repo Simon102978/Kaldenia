@@ -49,9 +49,9 @@ namespace Server.Gumps
 					AddBackground(55, 43, 635, 28, 3000);
 					AddLabel(317, 47, 0, "Calendrier");
 			
-					//Saison : Été
+					//Saison : été
 					AddBackground(70, 86, 605, 28, 3000);
-					AddLabel(338, 90, 0, "Saison : Été");
+					AddLabel(338, 90, 0, "Saison : été");
 					
 					int joursx = 102;
 					int joursy = 158;
@@ -581,8 +581,8 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2+140, 60, 28, 3000);
 					AddLabel(joursx+502, joursy2+144, 0, "");
 					
-					//Bouton pour aller Saison Été
-					AddLabel(55, 545, 2101, "Saison Été");
+					//Bouton pour aller Saison été
+					AddLabel(55, 545, 2101, "Saison été");
 					AddLabel(155, 545, 2101, ":");
 					AddButton(170, 545, 4014, 4016, 2, GumpButtonType.Reply, 0);
 					

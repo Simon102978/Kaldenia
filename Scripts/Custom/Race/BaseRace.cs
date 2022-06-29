@@ -14,7 +14,7 @@ namespace Server
 	[Parsable]
 	public abstract class BaseRace : Race
 	{
-		public virtual string Background => "À venir.";
+		public virtual string Background => "à venir.";
 
 		public virtual AppearanceEnum AppearanceMin => AppearanceEnum.Monstrueux; // Pour NPC
 		public virtual AppearanceEnum AppearanceMax => AppearanceEnum.Angelique; // Pour NPC

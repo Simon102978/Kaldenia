@@ -49,7 +49,7 @@ namespace Server.Gumps
 				case StatutSocialEnum.Possession:
 					break;
 				case StatutSocialEnum.Peregrin:
-					detail = "Tout droit sortis des affres de l’esclavage, les Pérégrins restent limités dans leurs nouveaux privilèges. Ils devront faire preuve de dévotion et de patriotisme exemplaire afin de s’élever au titre de Civénien; L’étape la plus importante pour être considéré comme une personne à part entière dans la société. \n\nMalheureusement, ils vivent encore dans la crainte puisque l’État ne leur procure aucune protection dans les rues. Certains les considèrent comme des gens venus de l’extérieur pour voler leurs maisons et leurs positions. Il n’est pas rare de voir des Pérégrins se faire tuer par des Civéniens, ceux-ci profitant du fait qu’ils n’auront aucune représaille. ";
+					detail = "Tout droit sortis des affres de l’esclavage, les Pérégrins restent limités dans leurs nouveaux privilèges. Ils devront faire preuve de dévotion et de patriotisme exemplaire afin de s’élever au titre de Civénien; L’étape la plus importante pour être considéré comme une personne à part entière dans la société. \n\nMalheureusement, ils vivent encore dans la crainte puisque l’état ne leur procure aucune protection dans les rues. Certains les considèrent comme des gens venus de l’extérieur pour voler leurs maisons et leurs positions. Il n’est pas rare de voir des Pérégrins se faire tuer par des Civéniens, ceux-ci profitant du fait qu’ils n’auront aucune représaille. ";
 					break;
 				case StatutSocialEnum.Civenien:
 					break;

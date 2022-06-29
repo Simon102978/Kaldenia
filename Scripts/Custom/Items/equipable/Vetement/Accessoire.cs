@@ -386,7 +386,7 @@ namespace Server.Items
 
 				{
 					Weight = 2.0;
-					Name = "Foulard Épaule";
+					Name = "Foulard épaule";
 				}
 
 				public Foulard2(Serial serial)

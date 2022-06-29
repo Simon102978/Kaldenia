@@ -15,7 +15,7 @@ namespace Server.Items
 		: base(41831, hue)
 	{
 		Weight = 2.0;
-		Name = "Cape %%%#$%?%$#@! Vollets";
+		Name = "Cape à Vollets";
 	}
 
 	public Cape(Serial serial)
@@ -54,7 +54,7 @@ public class Cape2 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape %%%#$%?%$#@! plumes";
+		Name = "Cape à plumes";
 	}
 
 	public Cape2(Serial serial)
@@ -94,7 +94,7 @@ public class Cape3 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape %%%#$%?%$#@! voiles";
+		Name = "Cape à voiles";
 	}
 
 	public Cape3(Serial serial)
@@ -134,7 +134,7 @@ public class Cape4 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape %%%#$%?%$#@! épaulière";
+		Name = "Cape à épaulière";
 	}
 
 	public Cape4(Serial serial)
@@ -174,7 +174,7 @@ public class Cape5 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape %%%#$%?%$#@! rabat";
+		Name = "Cape à rabat";
 	}
 
 	public Cape5(Serial serial)
@@ -254,7 +254,7 @@ public class Cape7 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape %%%#$%?%$#@! bande doré";
+		Name = "Cape à bande doré";
 	}
 
 	public Cape7(Serial serial)

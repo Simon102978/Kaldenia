@@ -41,7 +41,7 @@ namespace Server.Commands
 				}
                 catch
                 {
-                    from.SendMessage("L'item {0} n'a pas été déplacé dans votre sac %%%#$%?%$#@! cause d'une erreur.");
+                    from.SendMessage("L'item {0} n'a pas été déplacé dans votre sac à cause d'une erreur.");
                 }
             }
         }

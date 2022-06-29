@@ -49,7 +49,7 @@ namespace Server.Gumps
 		{
 			if (info.ButtonID == 0)
 			{
-				m_from.SendMessage(m_to.Name + " resister %%%#$%?%$#@! la tentative de se faire coiffer.");
+				m_from.SendMessage(m_to.Name + " resister à la tentative de se faire coiffer.");
 			}
 			else
 			{

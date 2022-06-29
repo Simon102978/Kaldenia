@@ -135,7 +135,7 @@ public class Tabar3 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar %%%#$%?%$#@! cape";
+		Name = "Tabar à cape";
 	}
 
 	public Tabar3(Serial serial)
@@ -215,7 +215,7 @@ public class Tabar5 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar sombre %%%#$%?%$#@! griffon";
+		Name = "Tabar sombre à griffon";
 	}
 
 	public Tabar5(Serial serial)
@@ -255,7 +255,7 @@ public class Tabar6 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar %%%#$%?%$#@! arbre";
+		Name = "Tabar à arbre";
 	}
 
 	public Tabar6(Serial serial)

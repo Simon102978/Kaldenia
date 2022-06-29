@@ -50,7 +50,7 @@ namespace Server.Items
 			: base(41594)
 		{
 			Weight = 17.0;
-			Name = "Marteau %%%#$%?%$#@! Pointes";
+			Name = "Marteau à Pointes";
 		}
 
 		public MarteauPointes(Serial serial)
@@ -127,7 +127,7 @@ namespace Server.Items
 			: base(41596)
 		{
 			Weight = 17.0;
-			Name = "Massue %%%#$%?%$#@! Clous";
+			Name = "Massue à Clous";
 		}
 
 		public MassueClous(Serial serial)
@@ -165,7 +165,7 @@ namespace Server.Items
 			: base(41597)
 		{
 			Weight = 17.0;
-			Name = "Massue %%%#$%?%$#@! Pointes";
+			Name = "Massue à Pointes";
 		}
 
 		public MassuePointes(Serial serial)
@@ -241,7 +241,7 @@ namespace Server.Items
 			: base(41599)
 		{
 			Weight = 17.0;
-			Name = "Morgenstern %%%#$%?%$#@! Boules";
+			Name = "Morgenstern à Boules";
 		}
 
 		public MorgensternBoules(Serial serial)
@@ -279,7 +279,7 @@ namespace Server.Items
 			: base(41600)
 		{
 			Weight = 17.0;
-			Name = "Morgenstern %%%#$%?%$#@! Pointes";
+			Name = "Morgenstern à Pointes";
 		}
 
 		public MorgensternPointes(Serial serial)

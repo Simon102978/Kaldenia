@@ -97,7 +97,7 @@ namespace Server.Scripts.Commands
         }
 
         [Usage("ChangerLayer")]
-        [Description("Permet de de changer le layer %%%#$%?%$#@! un objet.")]
+        [Description("Permet de de changer le layer à un objet.")]
         public static void ChangerLayer_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;

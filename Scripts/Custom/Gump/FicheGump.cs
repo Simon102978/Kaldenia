@@ -185,7 +185,7 @@ namespace Server.Gumps
 
 			AddLabel(x + 130, y + 530, 150, m_From.Int.ToString());
 
-			AddHtmlTexte(x + 10, y + 550, 150, "%%%#$%?%$#@! placer :");
+			AddHtmlTexte(x + 10, y + 550, 150, "à placer :");
 			AddLabel(x + 130, y + 550, 150, (225 - m_From.RawStr - m_From.RawDex - m_From.RawInt - m_From.StatAttente).ToString());
 
 			AddHtmlTexte(x + 10, y + 570, 150, "En attente :");

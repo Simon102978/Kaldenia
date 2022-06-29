@@ -20,7 +20,7 @@ namespace Server.Scripts.Commands
 
 
 		[Usage("ClasseSkill")]
-		[Description("Permet de set tout les skills de classes %%%#$%?%$#@! un niveau.")]
+		[Description("Permet de set tout les skills de classes à un niveau.")]
 		public static void ClasseSkill_OnCommand(CommandEventArgs e)
 		{
             Mobile from = e.Mobile;

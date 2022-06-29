@@ -1297,7 +1297,7 @@ namespace Server.Items
         public FeatheredHat(int hue)
             : base(0x171A, hue)
         {
-			Name = "Chapeau %%%#$%?%$#@! plume";
+			Name = "Chapeau à plume";
 
 		}
 

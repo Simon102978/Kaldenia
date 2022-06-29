@@ -41,7 +41,7 @@ namespace Server.Misc
             new InternationalCode("ARH", "Arabic", "Bahrain", "العربية", "البحرين"),
             new InternationalCode("ARQ", "Arabic", "Qatar", "العربية", "قطر"),
             new InternationalCode("BGR", "Bulgarian", "Bulgaria", "Български", "България"),
-            new InternationalCode("CAT", "Catalan", "Spain", "Catal%%%#$%?%$#@!", "Espanya"),
+            new InternationalCode("CAT", "Catalan", "Spain", "Català", "Espanya"),
             new InternationalCode("CHT", "Chinese", "Taiwan", "台語", "臺灣"),
             new InternationalCode("CHS", "Chinese", "PRC", "中文", "中国"),
             new InternationalCode("ZHH", "Chinese", "Hong Kong", "中文", "香港"),

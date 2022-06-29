@@ -52,7 +52,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick(Mobile from)
 		{
-			from.PrivateOverheadMessage( 0, 1154, false,  "Cet outil est utilisé pour collecter des ressources %%%#$%?%$#@! partir d'une ruche d'abeilles.", from.NetState );				
+			from.PrivateOverheadMessage( 0, 1154, false,  "Cet outil est utilisé pour collecter des ressources à partir d'une ruche d'abeilles.", from.NetState );				
 		}
 
 		public override void Serialize( GenericWriter writer )

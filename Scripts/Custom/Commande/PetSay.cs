@@ -20,7 +20,7 @@ namespace Server.Scripts.Commands
 		}
 
         [Usage("PetSay")] 
-	    [Description( "Permet de faire dire quelque chose %%%#$%?%$#@! son animal de compagnie.")]
+	    [Description( "Permet de faire dire quelque chose à son animal de compagnie.")]
         public static void PetSay_OnCommand(CommandEventArgs e)
 		{
 			if ( e.Length != 1 )

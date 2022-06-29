@@ -277,7 +277,7 @@ namespace Server.Gumps
 			}
 			else if (focus.AccessLevel > from.AccessLevel && from.AccessLevel == AccessLevel.Player)
 			{
-				from.SendMessage("Vous ne pouvez envoyer un message %%%#$%?%$#@! un maitre du jeu. Veuillez utiliser le systèmes de pages.");
+				from.SendMessage("Vous ne pouvez envoyer un message à un maitre du jeu. Veuillez utiliser le systèmes de pages.");
 				return;
 			}
 			else if (from != focus && (focus.Hidden && from.AccessLevel < focus.AccessLevel))
@@ -376,7 +376,7 @@ namespace Server.Gumps
 							focus.MoveToWorld(from.Location, from.Map);
 							Resend(from, info);
 
-							CommandLogging.WriteLine(from, "{0} {1} amène {2} %%%#$%?%$#@! la Localisation {3}, Map {4}", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), from.Location, from.Map);
+							CommandLogging.WriteLine(from, "{0} {1} amène {2} à la Localisation {3}, Map {4}", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), from.Location, from.Map);
 						}
 
 						break;

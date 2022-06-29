@@ -77,7 +77,7 @@ namespace Server.Custom.System
             if (targeted is PlayerMobile)
             {
                 m_Guild.AddGuildMember((Mobile)targeted);
-                from.SendMessage("Le joueur a été rajouté %%%#$%?%$#@! la guilde.");
+                from.SendMessage("Le joueur a été rajouté à la guilde.");
             }
             else
             {
@@ -246,7 +246,7 @@ namespace Server.Custom.System
                         {
                             case 0:
                                 {
-                                    m_From.SendMessage("Ajouter un membre %%%#$%?%$#@! la liste des joueurs dans la guilde.");
+                                    m_From.SendMessage("Ajouter un membre à la liste des joueurs dans la guilde.");
                                     m_From.BeginTarget(-1, false, TargetFlags.None, new TargetCallback(AjouterMobile_OnTarget));
                                     break;
                                 }

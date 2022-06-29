@@ -321,7 +321,7 @@ namespace Server.Gumps
                         }
                         else if(m_Owner.AccessLevel > AccessLevel.Counselor)
                         {
-                            from.SendMessage("Vous ne pouvez pas accéder %%%#$%?%$#@! la fenêtre d'un maître de jeu.");
+                            from.SendMessage("Vous ne pouvez pas accéder à la fenêtre d'un maître de jeu.");
                             from.SendGump(new QuiGump(from, m_Mobiles, m_Page));
                         }
                         else

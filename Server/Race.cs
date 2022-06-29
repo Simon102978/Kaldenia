@@ -207,7 +207,7 @@ namespace Server
 
 		public virtual void ChangeHue(Mobile m)
 		{
-			// Sert principalement %%%#$%?%$#@! rotater sur le hue.
+			// Sert principalement à rotater sur le hue.
 		}
 
 		public virtual int RotateHue(int Hue)
@@ -233,7 +233,7 @@ namespace Server
 
 			return SkinHues[n];
 
-			// Sert principalement %%%#$%?%$#@! rotater sur le hue.
+			// Sert principalement à rotater sur le hue.
 		}
 
 

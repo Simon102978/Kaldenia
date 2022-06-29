@@ -72,7 +72,7 @@ namespace Server.Items.Crops
 				if ( cookValue == 0 ) { from.SendMessage( "Vous ignorez comment récolter cette pousse." ); return; }
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
 				{
-					if ( m_yield < 1 ) { from.SendMessage( "Il n'y a rien %%%#$%?%$#@! récolter ici." ); }
+					if ( m_yield < 1 ) { from.SendMessage( "Il n'y a rien à récolter ici." ); }
 					else
 					{
 						from.Direction = from.GetDirectionTo( this );

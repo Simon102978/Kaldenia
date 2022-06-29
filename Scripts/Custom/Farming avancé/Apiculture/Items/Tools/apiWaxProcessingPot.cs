@@ -328,7 +328,7 @@ namespace Server.Items
 					}
 					else if( m_pot.PureBeeswax > 1 )
 					{//already rendered
-						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est déj%%%#$%?%$#@! plein de cire d'abeille fondue.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est déjà plein de cire d'abeille fondue.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}

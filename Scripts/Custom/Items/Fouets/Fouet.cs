@@ -70,7 +70,7 @@ namespace Server.Items
 
 			if (item != null && item is BaseShield)
 			{
-				from.SendMessage("Vous ne pouvez pas équipper un fouet en ayant un bouclier %%%#$%?%$#@! la main.");
+				from.SendMessage("Vous ne pouvez pas équipper un fouet en ayant un bouclier à la main.");
 				return false;
 			}
 
@@ -151,7 +151,7 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 					else
-						from.SendMessage("Vous échouez %%%#$%?%$#@! voler ou %%%#$%?%$#@! faire tomber l'arme de votre cible !");
+						from.SendMessage("Vous échouez à voler ou à faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
 						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
@@ -167,7 +167,7 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 					else
-						from.SendMessage("Vous échouez %%%#$%?%$#@! faire tomber l'arme de votre cible !");
+						from.SendMessage("Vous échouez à faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
 						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
@@ -212,7 +212,7 @@ namespace Server.Items
 		{
 			if (!from.CanBeginAction(typeof(Fouet)))
 			{
-				from.SendMessage("Vous devez attendre avant d'utiliser le fouet %%%#$%?%$#@! nouveau.");
+				from.SendMessage("Vous devez attendre avant d'utiliser le fouet à nouveau.");
 			}
 			else if (from.Items.Contains(this))
 			{
@@ -246,7 +246,7 @@ namespace Server.Items
 			{
 				if (!from.CanBeginAction(typeof(Fouet)))
 				{
-					from.SendMessage("Vous devez attendre avant d'utiliser le fouet %%%#$%?%$#@! nouveau.");
+					from.SendMessage("Vous devez attendre avant d'utiliser le fouet à nouveau.");
 				}
 				else if (!from.Items.Contains(m_Fouet))
 				{

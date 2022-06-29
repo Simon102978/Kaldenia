@@ -71,7 +71,7 @@ namespace Server.Items
                     {
                         case 0:
                             {
-                                from.SendMessage("Vous devez avoir 3 bûches %%%#$%?%$#@! mettre dans le foyer");
+                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans le foyer");
                                 break;
                             }
                             default:

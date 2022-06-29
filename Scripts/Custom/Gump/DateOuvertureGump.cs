@@ -59,13 +59,13 @@ namespace Server.Gumps
 
 							if (!int.TryParse(info.GetTextEntry(1).Text, out day))
 							{
-								from.SendMessage("Le jours doit être un nombre de 0 %%%#$%?%$#@! 31.");
+								from.SendMessage("Le jours doit être un nombre de 0 à 31.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
 							else if (day < 1 || day > 31)
 							{
-								from.SendMessage("La cote doit être un nombre de 1 %%%#$%?%$#@! 31.");
+								from.SendMessage("La cote doit être un nombre de 1 à 31.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
@@ -76,13 +76,13 @@ namespace Server.Gumps
 
 							if (!int.TryParse(info.GetTextEntry(2).Text, out Month))
 							{
-								from.SendMessage("Le mois doit être un mois de 1 %%%#$%?%$#@! 12.");
+								from.SendMessage("Le mois doit être un mois de 1 à 12.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
 							else if (Month < 1 || Month > 12)
 							{
-								from.SendMessage("Le mois doit être un nombre de 1 %%%#$%?%$#@! 12.");
+								from.SendMessage("Le mois doit être un nombre de 1 à 12.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}

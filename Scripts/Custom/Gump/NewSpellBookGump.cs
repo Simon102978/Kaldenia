@@ -231,7 +231,7 @@ namespace Server.Gumps
 					// Séparateurs
 					AddImageTiled(130 + hindex * 165, 40, 130, 10, 0x3A);
 
-					//On remet %%%#$%?%$#@! 0 pour la nouvelle page
+					//On remet à 0 pour la nouvelle page
 					vindex = 0;
 					
 
@@ -416,7 +416,7 @@ namespace Server.Gumps
                     }
                     else
                     {
-                        m.SendMessage("Le sort a été ajouté %%%#$%?%$#@! votre liste de lancement rapide.");
+                        m.SendMessage("Le sort a été ajouté à votre liste de lancement rapide.");
                         m.QuickSpells.Add((int)(info.ButtonID - 1000));
                     }
 

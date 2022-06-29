@@ -59,6 +59,7 @@ namespace Server.Mobiles
 		private bool m_BaseFemale;
 		private int m_BaseHue;
 		private TimeSpan m_TotalGameTime;
+		private DateTime m_LastCountGameTime;
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
@@ -321,12 +322,23 @@ namespace Server.Mobiles
 
 				if (NetState != null)
 				{
-					return m_TotalGameTime + (DateTime.Now - LastLoginTime);
+					return m_TotalGameTime + (DateTime.Now - LastCountGameTime);
 				}
 
 				return m_TotalGameTime;
 			}
 			set { m_TotalGameTime = value; }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime LastCountGameTime
+		{
+			get
+			{
+
+				return m_LastCountGameTime;
+			}
+			set { m_LastCountGameTime = value; }
 		}
 
 		public List<int> QuickSpells
@@ -2212,6 +2224,11 @@ namespace Server.Mobiles
             base.Serialize(writer);
 
             writer.Write(21); // version
+
+
+			m_TotalGameTime += DateTime.Now - m_LastCountGameTime;
+			m_LastCountGameTime = DateTime.Now;
+
 
 			writer.Write(m_TotalGameTime);
 

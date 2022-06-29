@@ -18,10 +18,14 @@ namespace Server
     {
       if (e.Mobile.Player)
       {
-        if (e.Mobile is CustomPlayerMobile)
+        if (e.Mobile is CustomPlayerMobile cp)
         {
-          ((CustomPlayerMobile)e.Mobile).LastLoginTime = DateTime.Now;
-        }
+          cp.LastLoginTime = DateTime.Now;
+		   cp.LastCountGameTime = DateTime.Now;
+
+
+
+		}
       }
     }
 
@@ -29,7 +33,9 @@ namespace Server
     {
 			if (e.Mobile is CustomPlayerMobile cp)
 			{
-				cp.TotalGameTime += DateTime.Now - cp.LastLoginTime;
+
+				cp.TotalGameTime += DateTime.Now - cp.LastCountGameTime;
+				cp.LastCountGameTime = DateTime.Now;
 			}
 
       /*if (e.Mobile.Player)

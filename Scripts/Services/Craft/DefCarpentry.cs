@@ -674,7 +674,7 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(RusticBenchEastDeed), 1044290, 1150594, 94.7, 119.8, typeof(Board), 1044041, 35, 1044351);
 
-			AddCraft(typeof(MachineCoudre), 1044290, "Machine à Coudre", 90.0, 115.0, typeof(Board), 1044041, 30, 1044351);
+			AddCraft(typeof(MachineCoudre), 1044290, "Machine %%%#$%?%$#@! Coudre", 90.0, 115.0, typeof(Board), 1044041, 30, 1044351);
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
 
 			AddCraft(typeof(BancMachineCoudre), 1044290, 1111783, 90.0, 115.0, typeof(Board), 1044041, 8, 1044351);

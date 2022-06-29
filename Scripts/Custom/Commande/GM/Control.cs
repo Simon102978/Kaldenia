@@ -75,7 +75,7 @@ namespace Server.Commands
 			
 			if ( from != null ) 
 			{
-				from.SendMessage( "Choisissez un NPC à contrôler..." );
+				from.SendMessage( "Choisissez un NPC %%%#$%?%$#@! contrôler..." );
 				//"Choose the target to control..."
 				
 				from.Target = new InternalTarget( e.Arguments );
@@ -294,7 +294,7 @@ namespace Server.Commands
 			}
 			else
 			{
-				from.SendMessage("Le NPC a été supprimé peu être à cause d'un respawn manuel");	
+				from.SendMessage("Le NPC a été supprimé peu être %%%#$%?%$#@! cause d'un respawn manuel");	
 				//"The original NPC was deleted. Maybe because a manual respawn"
 				oldNPC.Delete();
 			}

@@ -107,7 +107,7 @@ namespace Server.Misc
 
 			if (beholder.AccessLevel == AccessLevel.Player && beheld.NameMod != null)
 			{
-				beholder.SendMessage("Vous ne réussissez pas à obtenir l'information.");
+				beholder.SendMessage("Vous ne réussissez pas %%%#$%?%$#@! obtenir l'information.");
 				return;
 			}
 

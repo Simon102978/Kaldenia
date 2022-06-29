@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41666, hue)
 	{
 		Weight = 2.0;
-		Name = "Jupe à Bande";
+		Name = "Jupe %%%#$%?%$#@! Bande";
 	}
 
 	public Jupe(Serial serial)
@@ -175,7 +175,7 @@ public class Jupe5 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Motifs";
+		Name = "Jupe %%%#$%?%$#@! Motifs";
 	}
 
 	public Jupe5(Serial serial)
@@ -215,7 +215,7 @@ public class Jupe6 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Plis";
+		Name = "Jupe %%%#$%?%$#@! Plis";
 	}
 
 	public Jupe6(Serial serial)
@@ -255,7 +255,7 @@ public class JupeVoiles :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Banquet";
+		Name = "Jupe %%%#$%?%$#@! Banquet";
 	}
 
 	public JupeVoiles(Serial serial)
@@ -295,7 +295,7 @@ public class JupeVoiles2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Volant";
+		Name = "Jupe %%%#$%?%$#@! Volant";
 	}
 
 	public JupeVoiles2(Serial serial)
@@ -455,7 +455,7 @@ public class JupeCourte3 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Mini jupe à Ceinture";
+		Name = "Mini jupe %%%#$%?%$#@! Ceinture";
 	}
 
 	public JupeCourte3(Serial serial)
@@ -535,7 +535,7 @@ public class JupeCourte5 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe courte à Vollant";
+		Name = "Jupe courte %%%#$%?%$#@! Vollant";
 	}
 
 	public JupeCourte5(Serial serial)
@@ -575,7 +575,7 @@ public class JupeCourte6 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe courte à Vollant Unie";
+		Name = "Jupe courte %%%#$%?%$#@! Vollant Unie";
 	}
 
 	public JupeCourte6(Serial serial)
@@ -815,7 +815,7 @@ public class Kilt2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Kilt à Bandouillère";
+		Name = "Kilt %%%#$%?%$#@! Bandouillère";
 	}
 
 	public Kilt2(Serial serial)
@@ -975,7 +975,7 @@ public class Jupe8 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Provocante à Volants";
+		Name = "Jupe Provocante %%%#$%?%$#@! Volants";
 	}
 
 	public Jupe8(Serial serial)
@@ -1015,7 +1015,7 @@ public class Jupe9 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Saccoche";
+		Name = "Jupe %%%#$%?%$#@! Saccoche";
 	}
 
 	public Jupe9(Serial serial)
@@ -1055,7 +1055,7 @@ public class Jupe10 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Jartelles";
+		Name = "Jupe %%%#$%?%$#@! Jartelles";
 	}
 
 	public Jupe10(Serial serial)

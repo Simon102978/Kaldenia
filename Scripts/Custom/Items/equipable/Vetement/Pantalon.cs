@@ -54,7 +54,7 @@ public class Pantalon2 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name = "Pantalon à Motifs";
+		Name = "Pantalon %%%#$%?%$#@! Motifs";
 	}
 
 	public Pantalon2(Serial serial)
@@ -94,7 +94,7 @@ public class Pantalon3 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name = "Pantalon à Fourrure";
+		Name = "Pantalon %%%#$%?%$#@! Fourrure";
 	}
 
 	public Pantalon3(Serial serial)
@@ -134,7 +134,7 @@ public class Pantalon4 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name = "Pantalon à Poches";
+		Name = "Pantalon %%%#$%?%$#@! Poches";
 	}
 
 	public Pantalon4(Serial serial)
@@ -214,7 +214,7 @@ public class Pantalon6 :  BasePants
 
 		{
 		Weight = 2.0;
-		Name = "Pantalon Court à Ceinture";
+		Name = "Pantalon Court %%%#$%?%$#@! Ceinture";
 	}
 
 	public Pantalon6(Serial serial)

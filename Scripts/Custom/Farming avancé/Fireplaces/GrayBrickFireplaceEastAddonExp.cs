@@ -64,7 +64,7 @@ namespace Server.Items
                         default:
                             {
                                 Effects.PlaySound(from.Location, from.Map, 0x137);
-                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans le foyer");
+                                from.SendMessage("Vous devez avoir 3 bûches %%%#$%?%$#@! mettre dans le foyer");
                                 ac.ItemID = 0x935;
                                 break;
                             }

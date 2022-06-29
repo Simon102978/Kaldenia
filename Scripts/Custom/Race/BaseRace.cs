@@ -14,7 +14,7 @@ namespace Server
 	[Parsable]
 	public abstract class BaseRace : Race
 	{
-		public virtual string Background => "à venir.";
+		public virtual string Background => "%%%#$%?%$#@! venir.";
 
 		public virtual AppearanceEnum AppearanceMin => AppearanceEnum.Monstrueux; // Pour NPC
 		public virtual AppearanceEnum AppearanceMax => AppearanceEnum.Angelique; // Pour NPC
@@ -84,7 +84,7 @@ namespace Server
 
         public override void ChangeHue(Mobile m)
         {
-            // Sert principalement à rotater sur le hue. Utile pour faire des screen de toute les couleurs possibles ;)
+            // Sert principalement %%%#$%?%$#@! rotater sur le hue. Utile pour faire des screen de toute les couleurs possibles ;)
 
             int hue = RotateHue(m.Hue);
 

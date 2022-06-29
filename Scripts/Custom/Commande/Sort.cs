@@ -61,7 +61,7 @@ namespace Server.Scripts.Commands
                         pm.SendMessage("Le numéro du sort est invalide !");
                 }
                 else
-                    pm.SendMessage("Vous devez choisir le grimoire à utiliser avec la commande .choisirgrimoire !");
+                    pm.SendMessage("Vous devez choisir le grimoire %%%#$%?%$#@! utiliser avec la commande .choisirgrimoire !");
             }
         }
     }

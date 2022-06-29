@@ -302,7 +302,7 @@ namespace Server.Items
 			: base(41574)
 		{
 
-			Name = "épée à Double Tranchants";
+			Name = "épée %%%#$%?%$#@! Double Tranchants";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}

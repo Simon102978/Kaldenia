@@ -50,7 +50,7 @@ namespace Server.Gumps
 			AddLabel(x + 308, y + 118, 2101, creationPerso.PointRestant().ToString());
 
 
-			string detail = "Force: \n  -Détermine les points de vie\n  -Détermine la quantité que peux porter un personnage\n  -Détermine les dégats au corps à corps\n  -Détermine si vous pouvez porter une armure \n\nDextérité:\n  -Aide au chance de parrer un coup\n  -Détermine le temps entre chaque bandage\n  -Détermine l'endurance\n\nIntelligence:\n  -Détermine la mana\n  -Influence la regénération de mana\n";
+			string detail = "Force: \n  -Détermine les points de vie\n  -Détermine la quantité que peux porter un personnage\n  -Détermine les dégats au corps %%%#$%?%$#@! corps\n  -Détermine si vous pouvez porter une armure \n\nDextérité:\n  -Aide au chance de parrer un coup\n  -Détermine le temps entre chaque bandage\n  -Détermine l'endurance\n\nIntelligence:\n  -Détermine la mana\n  -Influence la regénération de mana\n";
 
 
 

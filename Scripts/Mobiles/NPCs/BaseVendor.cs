@@ -2247,7 +2247,7 @@ namespace Server.Mobiles
 					{
 						case 0:
 							{
-								Say("Merci de votre contribution de " + taxespaye.ToString() + " à l'empire.");
+								Say("Merci de votre contribution de " + taxespaye.ToString() + " %%%#$%?%$#@! l'empire.");
 								break;
 							}
 						case 1:
@@ -2257,12 +2257,12 @@ namespace Server.Mobiles
 							}
 						case 2:
 							{
-								Say("Vous avez payé " + taxespaye.ToString() + " pour aider à défendre notre glorieur et puissant empire.");
+								Say("Vous avez payé " + taxespaye.ToString() + " pour aider %%%#$%?%$#@! défendre notre glorieur et puissant empire.");
 								break;
 							}
 						default:
 							{
-								Say("Vous avez payé " + taxespaye.ToString() + " en taxe à l'empire.");
+								Say("Vous avez payé " + taxespaye.ToString() + " en taxe %%%#$%?%$#@! l'empire.");
 								break;
 							}
 					}

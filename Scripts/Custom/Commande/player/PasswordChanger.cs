@@ -81,7 +81,7 @@ namespace Server.Gumps
 						{
 							if( !(char.IsLetterOrDigit( newPass[i] )) ) //Char is NOT a letter or digit
 							{
-								m.SendMessage(37, "Les mots de passe doivent être composés seulement de lettres (A à Z) et des chiffres (0 à 9).");
+								m.SendMessage(37, "Les mots de passe doivent être composés seulement de lettres (A %%%#$%?%$#@! Z) et des chiffres (0 %%%#$%?%$#@! 9).");
 								return;
 							}
 						}

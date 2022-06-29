@@ -1355,7 +1355,7 @@ namespace Server.Items
             : base(0x2FB9, hue)
         {
             Weight = 2.0;
-			Name = "Robe à Capuchon";
+			Name = "Robe %%%#$%?%$#@! Capuchon";
 
 		}
 

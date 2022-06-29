@@ -686,7 +686,7 @@ namespace Server.Items
 					: base(41815, hue)
 			{
 				Weight = 2.0;
-				Name = "Ceinture à pochettes";
+				Name = "Ceinture %%%#$%?%$#@! pochettes";
 			}
 
 			public Ceinture4(Serial serial)
@@ -761,7 +761,7 @@ namespace Server.Items
 					: base(41817, hue)
 			{
 				Weight = 2.0;
-				Name = "Ceinture poche à gauche";
+				Name = "Ceinture poche %%%#$%?%$#@! gauche";
 			}
 
 			public Ceinture6(Serial serial)

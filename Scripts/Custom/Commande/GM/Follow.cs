@@ -79,7 +79,7 @@ namespace Server.Scripts.Commands
                         }
                         else
                         {
-                            from.SendMessage("Vous êtes déjà en mode Follow.");
+                            from.SendMessage("Vous êtes déj%%%#$%?%$#@! en mode Follow.");
                         }
                     }
                     else

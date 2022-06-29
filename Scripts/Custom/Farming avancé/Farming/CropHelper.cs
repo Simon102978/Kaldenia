@@ -300,7 +300,7 @@ namespace Server.Items.Crops
 						from.AddToBackpack( fruit );
 						this.Delete();
 					}
-					else from.SendMessage("L'herbe est encore trop dure à arracher.");
+					else from.SendMessage("L'herbe est encore trop dure %%%#$%?%$#@! arracher.");
 				}
 				else
 				{

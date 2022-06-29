@@ -93,7 +93,7 @@ namespace Server.Items
 			: base(41583)
 		{
 			Weight = 4.0;
-			Name = "Hache à Double Piques";
+			Name = "Hache %%%#$%?%$#@! Double Piques";
 		}
 
 		public HacheDoublePiques(Serial serial)
@@ -130,7 +130,7 @@ namespace Server.Items
 			: base(41584)
 		{
 			Weight = 4.0;
-			Name = "Hache à Pique";
+			Name = "Hache %%%#$%?%$#@! Pique";
 		}
 
 		public HAchePique(Serial serial)

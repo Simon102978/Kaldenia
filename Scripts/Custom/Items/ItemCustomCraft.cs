@@ -11,7 +11,7 @@ public class MachineCoudre : CraftableFurniture
 		: base(0x994D)
 	{
 		Weight = 15.0;
-		Name = "Machine à Coudre";
+		Name = "Machine %%%#$%?%$#@! Coudre";
 	}
 
 	public MachineCoudre(Serial serial)
@@ -44,7 +44,7 @@ public class BancMachineCoudre : CraftableFurniture
 		: base(0x994F)
 	{
 		Weight = 5.0;
-		Name = "Banc Machine à Coudre";
+		Name = "Banc Machine %%%#$%?%$#@! Coudre";
 	}
 
 	public BancMachineCoudre(Serial serial)

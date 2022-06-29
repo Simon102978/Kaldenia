@@ -195,7 +195,7 @@ namespace Server.Custom.System
 		#region Methods
 
 		/// <summary>
-		/// Donne le salaire à tous les membres de la guilde. Si un membre est dans plusieurs guildes, il touche le salaire de son rang le plus élevé, mais aucun des autres.
+		/// Donne le salaire %%%#$%?%$#@! tous les membres de la guilde. Si un membre est dans plusieurs guildes, il touche le salaire de son rang le plus élevé, mais aucun des autres.
 		/// </summary>
 		public static void Pay()
         {
@@ -249,7 +249,7 @@ namespace Server.Custom.System
         /// Retourne tous les titres que possèdent le mobile dans toutes les guildes
         /// </summary>
         /// <param name="m">Mobile dont on veut tous les titres</param>
-        /// <returns>Tableau de strings avec tous les titres à l'intérieur</returns>
+        /// <returns>Tableau de strings avec tous les titres %%%#$%?%$#@! l'intérieur</returns>
   /*      public static List<String> GetTitreList(Mobile from)
         {
             List<String> titlesTable = new List<String>();
@@ -269,7 +269,7 @@ namespace Server.Custom.System
         /// Retourne toutes les guildes du mobile
         /// </summary>
         /// <param name="m">Mobile dont on veut toutes les guildes</param>
-        /// <returns>Tableau de NewGuildHandler avec tous les NewGuildHandler à l'intérieur</returns>
+        /// <returns>Tableau de NewGuildHandler avec tous les NewGuildHandler %%%#$%?%$#@! l'intérieur</returns>
  /*       public static List<GuildRecruter> GetGuilds(Mobile from)
         {
             List<GuildRecruter> guildTable = new List<GuildRecruter>();
@@ -305,7 +305,7 @@ namespace Server.Custom.System
         /// <summary>
         /// Retirer un mobile, s'il est membre de cette guilde.
         /// </summary>
-        /// <param name="m">Le mobile à retirer.</param>
+        /// <param name="m">Le mobile %%%#$%?%$#@! retirer.</param>
         public void RemoveGuildMember(Mobile m)
         {
 			if (m is CustomPlayerMobile cm)
@@ -322,7 +322,7 @@ namespace Server.Custom.System
         /// <summary>
         /// Vérifier si le rang existe
         /// </summary>
-        /// <param name="m">Le rang à vérifier</param>
+        /// <param name="m">Le rang %%%#$%?%$#@! vérifier</param>
         public static bool IsValidRank(int rank)
         {
             return (rank >= 0 && rank <= _RANKMAX);

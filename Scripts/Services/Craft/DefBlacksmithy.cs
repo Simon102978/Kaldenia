@@ -511,7 +511,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(Astoria), 1011081, "Astoria", 31.7, 81.7, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(SabreLuxe), 1011081, "Sabre Dorée de Luxe", 31.7, 81.7, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(EpeeBatardeLuxe), 1011081, "épée bâtarde de luxe", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(EpeeDoubleTranchant), 1011081, "épée à Double Tranchants", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(EpeeDoubleTranchant), 1011081, "épée %%%#$%?%$#@! Double Tranchants", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
 			AddCraft(typeof(EpeeLongue), 1011081, "épée Longue", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
 			index = AddCraft(typeof(EpeeBatarde), 1011081, "épée bâtarde", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
 			index = AddCraft(typeof(EpeeDeuxMains), 1011081, "épée Deux Mains", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
@@ -704,10 +704,10 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(HacheDouble), 1011082, "Hache Double", 60.0, 85.0, typeof(IronIngot), 1044036, 12, 1044037);
 
 
-			AddCraft(typeof(HAchePique), 1011082, "Hache à Pique", 65.0, 90.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(HAchePique), 1011082, "Hache %%%#$%?%$#@! Pique", 65.0, 90.0, typeof(IronIngot), 1044036, 14, 1044037);
 
 
-			AddCraft(typeof(HacheDoublePiques), 1011082, "Hache à Double Piques", 70.0, 95.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(HacheDoublePiques), 1011082, "Hache %%%#$%?%$#@! Double Piques", 70.0, 95.0, typeof(IronIngot), 1044036, 14, 1044037);
 
 
 			AddCraft(typeof(DoubleAxe), 1011082, "DoubleAxe",75.0, 100.0, typeof(IronIngot), 1044036, 12, 1044037);
@@ -805,13 +805,13 @@ namespace Server.Engines.Craft
 
 
 			AddCraft(typeof(GrandeMasse), 1011084, "Grande Masse", 57.0, 87.0, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(MarteauPointes), 1011084, "Marteau à Pointes", 65.0, 90.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(MarteauPointes), 1011084, "Marteau %%%#$%?%$#@! Pointes", 65.0, 90.0, typeof(IronIngot), 1044036, 14, 1044037);
 			AddCraft(typeof(Marteau), 1011084, "Marteau", 70.0, 95.0, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(MassueClous), 1011084, "Massue à Clous", 70.0, 95.0, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(MassuePointes), 1011084, "Massue à Pointes", 80.0, 100.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(MassueClous), 1011084, "Massue %%%#$%?%$#@! Clous", 70.0, 95.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(MassuePointes), 1011084, "Massue %%%#$%?%$#@! Pointes", 80.0, 100.0, typeof(IronIngot), 1044036, 14, 1044037);
 			AddCraft(typeof(Massue), 1011084, "Massue", 28.0, 78.0, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(MorgensternBoules), 1011084, "Morgenstern à Boules", 28.0, 78.0, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(MorgensternPointes), 1011084, "Morgenstern à Pointes", 60.0, 85.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(MorgensternBoules), 1011084, "Morgenstern %%%#$%?%$#@! Boules", 28.0, 78.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(MorgensternPointes), 1011084, "Morgenstern %%%#$%?%$#@! Pointes", 60.0, 85.0, typeof(IronIngot), 1044036, 14, 1044037);
 
 
 

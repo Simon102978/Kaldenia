@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41821, hue)
 	{
 		Weight = 2.0;
-		Name = "Bottes à talon";
+		Name = "Bottes %%%#$%?%$#@! talon";
 	}
 
 	public Bottes(Serial serial)
@@ -175,7 +175,7 @@ public class Bottes5 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name = "Bottes à Sangles";
+		Name = "Bottes %%%#$%?%$#@! Sangles";
 	}
 
 	public Bottes5(Serial serial)
@@ -335,7 +335,7 @@ public class Bottes9 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name = "Bottes à rebord";
+		Name = "Bottes %%%#$%?%$#@! rebord";
 	}
 
 	public Bottes9(Serial serial)
@@ -375,7 +375,7 @@ public class Bottes10 :  BaseShoes
 
 		{
 		Weight = 2.0;
-		Name = "Botte haute à sangles";
+		Name = "Botte haute %%%#$%?%$#@! sangles";
 	}
 
 	public Bottes10(Serial serial)

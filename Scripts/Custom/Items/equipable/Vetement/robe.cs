@@ -295,7 +295,7 @@ public class Robe6 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe à volants";
+		Name = "Robe %%%#$%?%$#@! volants";
 	}
 
 	public Robe6(Serial serial)
@@ -975,7 +975,7 @@ public class Robe18 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe à Col";
+		Name = "Robe %%%#$%?%$#@! Col";
 	}
 
 	public Robe18(Serial serial)

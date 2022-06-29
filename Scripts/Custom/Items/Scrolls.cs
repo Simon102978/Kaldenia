@@ -656,7 +656,7 @@ public class MagicArrowScroll : SpellScroll
 	[Constructable]
 	public MagicArrowScroll(int amount) : base(770, 7993, amount)
 		{
-		Name ="Flèche magique";
+		Name ="Fl%%%#$%?%$#@!che magique";
 		Hue = 498;
 	}
 
@@ -976,7 +976,7 @@ public class MagicTrapScroll : SpellScroll
 	[Constructable]
 	public MagicTrapScroll(int amount) : base(780, 7993, amount)
 		{
-		Name ="Piège Magique";
+		Name ="Pi%%%#$%?%$#@!ge Magique";
 		Hue = 498;
 	}
 
@@ -1008,7 +1008,7 @@ public class RemoveTrapScroll : SpellScroll
 	[Constructable]
 	public RemoveTrapScroll(int amount) : base(781, 7993, amount)
 		{
-		Name ="Sup.De Piège";
+		Name ="Sup.De Pi%%%#$%?%$#@!ge";
 		Hue = 498;
 	}
 
@@ -2803,7 +2803,7 @@ public class HolyLightScroll : SpellScroll
 	[Constructable]
 	public HolyLightScroll(int amount) : base(850, 7993, amount)
 		{
-		Name ="Lumière sacrée";
+		Name ="Lumi%%%#$%?%$#@!re sacrée";
 		Hue = 182;
 	}
 

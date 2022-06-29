@@ -23,7 +23,7 @@ namespace Server.Scripts.Commands
             if (name.Length > 0)
                 e.Mobile.Target = new RenomTarget(name);
             else
-                e.Mobile.SendMessage("Le nouveau nom doit avoir au moins un caractère.");
+                e.Mobile.SendMessage("Le nouveau nom doit avoir au moins un caract%%%#$%?%$#@!re.");
         }
 
         private class RenomTarget : Target

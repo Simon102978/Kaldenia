@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Server.Mobiles
 {
 
-    // Sert seulement pour les officiels du cercle, ceux qui dirige les guildes etcs, qui doivent avoir accès au information du cercle, jouer la dednas.. Bref pas tout les membres du cercle.
+    // Sert seulement pour les officiels du cercle, ceux qui dirige les guildes etcs, qui doivent avoir acc%%%#$%?%$#@!s au information du cercle, jouer la dednas.. Bref pas tout les membres du cercle.
 
     public class CustomGuildMember
     {

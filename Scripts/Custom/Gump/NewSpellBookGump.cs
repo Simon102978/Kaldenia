@@ -64,7 +64,7 @@ namespace Server.Gumps
 			new SpellBookEntry( 0, MagieType.Arcane,"Nourriture", new Type[] {typeof(Garlic), typeof(Ginseng), typeof(MandrakeRoot) },0x8c1, 1,767),
 			new SpellBookEntry( 0, MagieType.Arcane,"Vision de nuit", new Type[] {typeof(SulfurousAsh), typeof(SpidersSilk) },0x8c5, 1,768),
 			new SpellBookEntry( 0, MagieType.Arcane,"Guérison", new Type[] {typeof(Garlic), typeof(Ginseng), typeof(SpidersSilk) },0x8c3, 1,769),
-			new SpellBookEntry( 0, MagieType.Arcane,"Flèche magique", new Type[] {typeof(SulfurousAsh) },0x8c4, 1,770),
+			new SpellBookEntry( 0, MagieType.Arcane,"Fl%%%#$%?%$#@!che magique", new Type[] {typeof(SulfurousAsh) },0x8c4, 1,770),
 			new SpellBookEntry( 0, MagieType.Arcane,"Maladresse", new Type[] {typeof(Bloodmoss), typeof(Nightshade) },0x8C0, 1,771),
 			new SpellBookEntry( 0, MagieType.Arcane,"Abrutissement", new Type[] {typeof(Ginseng), typeof(Nightshade) },0x8C2, 1,772),
 			new SpellBookEntry( 0, MagieType.Arcane,"Faiblesse", new Type[] {typeof(Garlic), typeof(Nightshade) },0x8C7, 1,773),
@@ -74,8 +74,8 @@ namespace Server.Gumps
 			new SpellBookEntry( 0, MagieType.Arcane,"Protection", new Type[] {typeof(Garlic), typeof(Ginseng), typeof(SulfurousAsh) },0x8ce, 2,777),
 			new SpellBookEntry( 0, MagieType.Arcane,"Antidote", new Type[] {typeof(Garlic), typeof(Ginseng) },0x8ca, 2,778),
 			new SpellBookEntry( 0, MagieType.Arcane,"Malaise", new Type[] {typeof(Nightshade), typeof(SpidersSilk) },0x08e5, 2,779),
-			new SpellBookEntry( 0, MagieType.Arcane,"Piège Magique", new Type[] {typeof(Garlic), typeof(SpidersSilk), typeof(SulfurousAsh) },0x8cC, 2,780),
-			new SpellBookEntry( 0, MagieType.Arcane,"Sup. De Piège", new Type[] {typeof(Bloodmoss), typeof(SulfurousAsh) },0x8cD, 2,781),
+			new SpellBookEntry( 0, MagieType.Arcane,"Pi%%%#$%?%$#@!ge Magique", new Type[] {typeof(Garlic), typeof(SpidersSilk), typeof(SulfurousAsh) },0x8cC, 2,780),
+			new SpellBookEntry( 0, MagieType.Arcane,"Sup. De Pi%%%#$%?%$#@!ge", new Type[] {typeof(Bloodmoss), typeof(SulfurousAsh) },0x8cD, 2,781),
 			new SpellBookEntry( 0, MagieType.Arcane,"Fermeture Mag.", new Type[] {typeof(Garlic), typeof(Bloodmoss), typeof(SulfurousAsh) },0x8D2, 3,782),
 			new SpellBookEntry( 0, MagieType.Arcane,"Crochetage", new Type[] {typeof(Bloodmoss), typeof(SulfurousAsh) },0x8d6, 3,783),
 			new SpellBookEntry( 0, MagieType.Arcane,"Télékinésie", new Type[] {typeof(Bloodmoss), typeof(MandrakeRoot) },0x8d4, 3,784),
@@ -147,7 +147,7 @@ namespace Server.Gumps
 			new SpellBookEntry( 6, MagieType.Vie,"Antidote de masse", new Type[] {typeof(Garlic), typeof(Ginseng), typeof(MandrakeRoot) },0x8d8, 4,847),
 			new SpellBookEntry( 7, MagieType.Vie,"Guérison majeure", new Type[] {typeof(Garlic), typeof(Ginseng), typeof(MandrakeRoot) },0x8dc, 4,848),
 			new SpellBookEntry( 8, MagieType.Vie,"Paralysie", new Type[] {typeof(Garlic), typeof(MandrakeRoot), typeof(SpidersSilk) },0x8E5, 5,849),
-			new SpellBookEntry( 9, MagieType.Vie,"Lumière sacrée", new Type[] { },20742, 5,850),
+			new SpellBookEntry( 9, MagieType.Vie,"Lumi%%%#$%?%$#@!re sacrée", new Type[] { },20742, 5,850),
 			new SpellBookEntry( 10, MagieType.Vie,"Nobles sacrifices", new Type[] { },20743, 6,851),
 			new SpellBookEntry( 11, MagieType.Vie,"Contre-attaque", new Type[] { },21539, 4,852),
 			new SpellBookEntry( 12, MagieType.Vie,"Confiance", new Type[] { },21537, 2,853),
@@ -240,7 +240,7 @@ namespace Server.Gumps
 					AddButton(123, 15, 0x89D, 0x89D, 19, GumpButtonType.Page, totpage - 1);
 				}
 
-				//Si le livre possède le sort
+				//Si le livre poss%%%#$%?%$#@!de le sort
 
 				bool one = HasSpell(from, info.SpellID);
 				bool two = ArrayContains((MagieType[])Enum.GetValues(typeof(MagieType)), info.Affinity);
@@ -277,7 +277,7 @@ namespace Server.Gumps
             {
                 SpellBookEntry info = (SpellBookEntry)m_SpellBookEntry[i];
 
-                //Si le livre possède le sort
+                //Si le livre poss%%%#$%?%$#@!de le sort
                 if (this.HasSpell(from, info.SpellID) && ArrayContains((MagieType[])Enum.GetValues(typeof(MagieType)), info.Affinity))
                 {
                     //Si le # du sort est pair...

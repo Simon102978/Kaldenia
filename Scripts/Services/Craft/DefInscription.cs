@@ -352,7 +352,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 4;
 
-			index = AddCraft(typeof(MagicArrowScroll),"Arcane","Flèche magique", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(MagicArrowScroll),"Arcane","Fl%%%#$%?%$#@!che magique", -25.0, 25, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 4;
@@ -412,14 +412,14 @@ namespace Server.Engines.Craft
 			 craftItem = CraftItems.GetAt(index);
 			 craftItem.Mana = 6;
 
-			index = AddCraft(typeof(MagicTrapScroll),"Arcane","Piège Magique", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(MagicTrapScroll),"Arcane","Pi%%%#$%?%$#@!ge Magique", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(Garlic),"Garlic", 1,"Vous n'avez pas assez de Garlic.");
 			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
 			 AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 6;
 
-			index = AddCraft(typeof(RemoveTrapScroll),"Arcane","Sup.De Piège", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(RemoveTrapScroll),"Arcane","Sup.De Pi%%%#$%?%$#@!ge", -10.8, 39.2, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
 			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
 			 craftItem = CraftItems.GetAt(index);
@@ -761,7 +761,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 11;
 
-			index = AddCraft(typeof(HolyLightScroll),"Vie","Lumière sacrée", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(HolyLightScroll),"Vie","Lumi%%%#$%?%$#@!re sacrée", 32.1, 82.1, typeof(BlankScroll), 1044377, 1, 1044378);
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 14;
 

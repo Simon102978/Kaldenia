@@ -134,7 +134,7 @@ public class Cape4 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape à épaulière";
+		Name = "Cape à épauli%%%#$%?%$#@!re";
 	}
 
 	public Cape4(Serial serial)

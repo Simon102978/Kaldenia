@@ -149,7 +149,7 @@ namespace Server.Custom.Gumps
 			}
 
 			boxes[0].Delete();
-			m_Buyer.SendMessage($"{entry.Price} pièces d'or ont été placées dans votre sac.");
+			m_Buyer.SendMessage($"{entry.Price} pi%%%#$%?%$#@!ces d'or ont été placées dans votre sac.");
 			m_Buyer.PlaceInBackpack(new Gold(entry.Price));
 		}
 	}

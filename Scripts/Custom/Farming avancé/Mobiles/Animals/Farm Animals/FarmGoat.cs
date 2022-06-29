@@ -80,7 +80,7 @@ namespace Server.Mobiles
             LitterSize = 2;
 			MatingSeason = Seasons.Any;
 
-			Name = "Une Chèvre";
+			Name = "Une Ch%%%#$%?%$#@!vre";
 			Body = 0xD1;
 			BaseSoundID = 0x99;
 

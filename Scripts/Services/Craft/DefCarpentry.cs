@@ -863,11 +863,11 @@ namespace Server.Engines.Craft
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(SandstoneFireplaceEastAddonExp), 1044298, "Foyer en grès côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(SandstoneFireplaceEastAddonExp), 1044298, "Foyer en gr%%%#$%?%$#@!s côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(SandstoneFireplaceSouthAddonExp), 1044298, "Foyer en grès côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(SandstoneFireplaceSouthAddonExp), 1044298, "Foyer en gr%%%#$%?%$#@!s côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 

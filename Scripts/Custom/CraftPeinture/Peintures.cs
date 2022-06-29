@@ -108,7 +108,7 @@ namespace Server.Items
 		public override void GetProperties(ObjectPropertyList list)
         {
             if (!Finish)
-                list.Add("Toile à complèter");
+                list.Add("Toile à compl%%%#$%?%$#@!ter");
 			else
 			{
 				list.Add(m_Title);

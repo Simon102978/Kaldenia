@@ -272,7 +272,7 @@ namespace Server.Items
 
 		{
 			Weight = 2.0;
-			Name = "Fourreau bandouillère";
+			Name = "Fourreau bandouill%%%#$%?%$#@!re";
 		}
 
 		public fourreau3(Serial serial)
@@ -834,7 +834,7 @@ namespace Server.Items
 					: base(41819, hue)
 			{
 				Weight = 2.0;
-				Name = "Ceinture en bandouillère";
+				Name = "Ceinture en bandouill%%%#$%?%$#@!re";
 			}
 
 			public Ceinture8(Serial serial)

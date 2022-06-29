@@ -174,7 +174,7 @@ namespace Server.Custom.System
                         AddButtonLabeled(x, y + (space * line++), GetButtonID(3, 1), "<BASEFONT COLOR=#FFFFFF>Je veux quitter la guilde</BASEFONT>");
                         line++;
                         AddHtml(x, y + (space * line++), 450, 20, "<BASEFONT COLOR=#FFFFFF>Votre titre est " + m_Guild.GetTitleByRank(m_Guild.GetMobileRank(m_From)) + " (" + "Rang " + m_Guild.GetMobileRank(m_From) + ")</BASEFONT>", false, false);
-                        AddHtml(x, y + (space * line++), 450, 20, "<BASEFONT COLOR=#FFFFFF>Votre rente est de " + m_Guild.GetSalaryByRank(m_Guild.GetMobileRank(m_From)) + " pièces d'or par semaine.</BASEFONT>", false, false);
+                        AddHtml(x, y + (space * line++), 450, 20, "<BASEFONT COLOR=#FFFFFF>Votre rente est de " + m_Guild.GetSalaryByRank(m_Guild.GetMobileRank(m_From)) + " pi%%%#$%?%$#@!ces d'or par semaine.</BASEFONT>", false, false);
                         AddHtml(x, y + (space * line++), 450, 45, $"<BASEFONT COLOR=#FFFFFF>Votre rente sera déposée dans votre coffre de banque le {CustomPersistence.ProchainePay.ToLongDateString()}.</BASEFONT>", false, false);
                     }
                 }
@@ -381,7 +381,7 @@ namespace Server.Custom.System
 
 						if (value > 50000)
 						{
-							m_From.SendMessage("Un rang ne peut dépasser 50000 pièces par semaine.");
+							m_From.SendMessage("Un rang ne peut dépasser 50000 pi%%%#$%?%$#@!ces par semaine.");
 							value = 50000;
 						}
 
@@ -531,7 +531,7 @@ namespace Server.Custom.System
 
 					if (value > 50000)
 					{
-						m_From.SendMessage("Un rang ne peut dépasser 50000 pièces par semaine.");
+						m_From.SendMessage("Un rang ne peut dépasser 50000 pi%%%#$%?%$#@!ces par semaine.");
 						value = 50000;
 					}
 

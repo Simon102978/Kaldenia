@@ -328,7 +328,7 @@ namespace Server
 			}
 			else if (Name.Length < 3)
 			{
-				m_Player.SendMessage("Votre nom doit contenir plus de 3 caractères.");
+				m_Player.SendMessage("Votre nom doit contenir plus de 3 caract%%%#$%?%$#@!res.");
 				return false;
 			}
 

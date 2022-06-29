@@ -12,7 +12,7 @@ namespace Server.Items
 
         public override int BaseMana => 20;
 
-		public override string Name => "Maîtrise de la d??#$?&*fense";
+		public override string Name => "Maîtrise de la défense";
 		public override int Id => 17;
 
 		public override SkillName GetSecondarySkill(Mobile from)

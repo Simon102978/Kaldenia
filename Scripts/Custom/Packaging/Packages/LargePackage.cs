@@ -8,7 +8,7 @@
 		[Constructable]
 		public LargePackage() : base(0x996B)
 		{
-			Name = "Coffre Dor??#$?&*";
+			Name = "Coffre Doré";
 			Weight = 300.0;
 		}
 

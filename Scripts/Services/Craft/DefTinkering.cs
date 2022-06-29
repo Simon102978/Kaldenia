@@ -334,13 +334,13 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(BreweryLabelMaker), 1044046, "Marqueur de bière", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(FarmLabelMaker), 1044046, "Farm Label Maker", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(GrapevinePlacementTool), 1044046, "Outil placement de vignes", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(GrinderExp), 1044046, "Broyeur à caf??#$?&*", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(GrinderExp), 1044046, "Broyeur à café", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(JuicersTools), 1044046, "Fabrication de Jus", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(RollingPinExp), 1044046, "Rouleau à pâte avanc??#$?&*", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(SkilletExp), 1044046, "Poelon Avanc??#$?&*", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(RollingPinExp), 1044046, "Rouleau à pâte avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(SkilletExp), 1044046, "Poelon Avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(VinyardLabelMaker), 1044046, "Marqueur de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WinecraftersTools), 1044046, "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(WitchsBookofFoodCrafts), 1044046, "Livre de recette enchant??#$?&*es", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);
+			index = AddCraft(typeof(WitchsBookofFoodCrafts), 1044046, "Livre de recette enchantées", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);
 
 
 			//TODO: focus of theurgy - 20th Anniversary Event 

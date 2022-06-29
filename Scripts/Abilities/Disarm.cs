@@ -15,7 +15,7 @@ namespace Server.Items
 
         public override int BaseMana => 20;
 
-		public override string Name => "D??#$?&*sarmer";
+		public override string Name => "Désarmer";
 		public override int Id => 5;
 
 		public override bool RequiresSecondarySkill(Mobile from)

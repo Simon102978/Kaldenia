@@ -6862,7 +6862,7 @@ namespace Server
 			if (m_Hidden && IsPlayer())
 			{
 				Hidden = false;
-				SendMessage(this.Female ? "Vous avez ??#$?&*t??#$?&* d??#$?&*couverte." : "Vous avez ??#$?&*t??#$?&* d??#$?&*couvert.");
+				SendMessage(this.Female ? "Vous avez été découverte." : "Vous avez été découvert.");
 			}
 
 			m_IsStealthing = false;

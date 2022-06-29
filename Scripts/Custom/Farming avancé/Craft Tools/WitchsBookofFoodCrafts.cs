@@ -14,7 +14,7 @@ namespace Server.Items
 		{
             Weight = 1.0;
             Hue = 0x3CC;
-            Name = "Livre de Recettes Enchant??#$?&*es";
+            Name = "Livre de Recettes Enchantées";
 		}
 
 		[Constructable]
@@ -22,7 +22,7 @@ namespace Server.Items
 		{
             Weight = 1.0;
             Hue = 0x3CC;
-            Name = "Livre de Recettes Enchant??#$?&*es";
+            Name = "Livre de Recettes Enchantées";
 		}
 
         public WitchsBookofFoodCrafts(Serial serial)

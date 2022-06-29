@@ -496,7 +496,7 @@ namespace Server.Items
             : base(0x2FC4, hue)
         {
             Weight = 2.0;
-			Name = "Bottes d??#$?&*licate";
+			Name = "Bottes délicate";
 
 		}
 

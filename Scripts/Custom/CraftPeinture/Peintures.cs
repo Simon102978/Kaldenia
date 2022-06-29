@@ -58,7 +58,7 @@ namespace Server.Items
 				}
 				else 
 				{
-					from.SendMessage("Seul le cr??#$?&*ateur de la toile peut la terminer.");
+					from.SendMessage("Seul le créateur de la toile peut la terminer.");
 				}
 			
 			}

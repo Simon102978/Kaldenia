@@ -304,7 +304,7 @@ namespace Server.Items.Crops
 				}
 				else
 				{
-					from.SendMessage( "Vous êtes trop loin pour r??#$?&*colter quelque chose." );
+					from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." );
 				}
 			}
 

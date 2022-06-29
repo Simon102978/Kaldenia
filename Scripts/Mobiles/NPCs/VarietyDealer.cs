@@ -7,7 +7,7 @@ namespace Server.Mobiles
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
         public VarietyDealer()
-            : base("Vendeur de vari??#$?&*t??#$?&*s")
+            : base("Vendeur de variétés")
         {
         }
 

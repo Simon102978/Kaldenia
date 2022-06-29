@@ -247,7 +247,7 @@ namespace Server.Misc
         *
         * Server times:
         * 
-        * ??#$?&*t??#$?&*
+        * été
         *
         *  5:00 AM -> 7:59 AM : Scale to day
         *  8:00 AM -> 7:59 PM : Day
@@ -310,7 +310,7 @@ namespace Server.Misc
 
                         break;
                     }
-                case 1: // ??#$?&*t??#$?&*
+                case 1: // été
                     {
                         if (hours < 5)
                             return TimeOfDay.Night;

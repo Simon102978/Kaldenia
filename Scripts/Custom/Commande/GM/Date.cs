@@ -23,12 +23,12 @@ namespace Server.CustomScripts.Commands
 
 			Server.Misc.Time.GetDate(out  year, out  month, out  day);
          
-            e.Mobile.SendMessage("Nous sommes le " + day.ToString() + " " + ((Server.Misc.Month)month) + " de l'ann??#$?&*e " + year.ToString() + ".");
+            e.Mobile.SendMessage("Nous sommes le " + day.ToString() + " " + ((Server.Misc.Month)month) + " de l'année " + year.ToString() + ".");
 
 
 			Server.Items.Calendrier.GetDate(out year, out month, out day);
 
-			e.Mobile.SendMessage("Nous sommes le " + day.ToString() + " " + ((Month)month) + " de l'ann??#$?&*e " + year.ToString() + ".");
+			e.Mobile.SendMessage("Nous sommes le " + day.ToString() + " " + ((Month)month) + " de l'année " + year.ToString() + ".");
 
 		}
     }

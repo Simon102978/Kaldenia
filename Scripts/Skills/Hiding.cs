@@ -94,7 +94,7 @@ namespace Server.SkillHandlers
 				}
 				if (m.Mounted)
 					{
-						m.SendMessage("Vous ne pouvez pas vous d??#$?&*placer ??#$?&*tant cach??#$?&* sur une monture."); // You are busy doing something else and cannot hide.
+						m.SendMessage("Vous ne pouvez pas vous déplacer étant caché sur une monture."); // You are busy doing something else and cannot hide.
 					m.RevealingAction();
 					BuffInfo.RemoveBuff(m, BuffIcon.HidingAndOrStealth);
 					return TimeSpan.FromSeconds(2.0);

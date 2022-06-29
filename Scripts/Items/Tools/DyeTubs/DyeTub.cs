@@ -316,7 +316,7 @@ namespace Server.Items
 							}
 							else if (!item.Movable)
 							{
-								from.SendMessage("Vous devez s??#$?&*lectionner une arme"); // You cannot dye runes or runebooks that are locked down.
+								from.SendMessage("Vous devez sélectionner une arme"); // You cannot dye runes or runebooks that are locked down.
 							}
 							else
 							{

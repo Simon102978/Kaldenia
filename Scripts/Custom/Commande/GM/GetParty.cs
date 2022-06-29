@@ -21,7 +21,7 @@ namespace Server.Scripts.Commands
 		}
 
         [Usage("getinparty")] 
-	    [Description( "GM peut s'ins??#$?&*rer dans un party.")]
+	    [Description( "GM peut s'insérer dans un party.")]
         public static void getinparty_OnCommand(CommandEventArgs e)
 		{
             e.Mobile.Target = new GetInPartyTarget(e.Mobile);

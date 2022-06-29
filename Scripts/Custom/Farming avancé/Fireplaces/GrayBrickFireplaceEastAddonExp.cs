@@ -43,7 +43,7 @@ namespace Server.Items
                 {
                     ac.ItemID = 0x8CF;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("Vous ??#$?&*teignez la chemin??#$?&*e !");
+                    from.SendMessage("Vous éteignez la cheminée !");
                 }
                 else if (ac.ItemID == 0x8CF)
                 {
@@ -80,13 +80,13 @@ namespace Server.Items
                         ac.ItemID = 0x937;
                         ac.Light = LightType.Circle225;
                         Effects.PlaySound(from.Location, from.Map, 0x4BA);
-                        from.SendMessage("Vous allumez la chemin??#$?&*e !");
+                        from.SendMessage("Vous allumez la cheminée !");
                     }
                     else
                     {
                         if (matchlight == null)
                         {
-                            from.SendMessage("Vous devez avoir une allumette pour allumer la chemin??#$?&*e");
+                            from.SendMessage("Vous devez avoir une allumette pour allumer la cheminée");
                         }
                     }
                 }

@@ -37,7 +37,7 @@ namespace Server.Scripts.Commands
                     {
                         if (!m_Book.HasSpell(id))
                         {
-                            pm.SendMessage("Le grimoire que vous ciblez doit poss??#$?&*der le sort en question !");
+                            pm.SendMessage("Le grimoire que vous ciblez doit posséder le sort en question !");
                         }
                         else if (m_Book != null && (m_Book.Parent == from || (from.Backpack != null && m_Book.Parent == from.Backpack)))
                         {
@@ -58,7 +58,7 @@ namespace Server.Scripts.Commands
 						}
                     }
                     else
-                        pm.SendMessage("Le num??#$?&*ro du sort est invalide !");
+                        pm.SendMessage("Le numéro du sort est invalide !");
                 }
                 else
                     pm.SendMessage("Vous devez choisir le grimoire à utiliser avec la commande .choisirgrimoire !");

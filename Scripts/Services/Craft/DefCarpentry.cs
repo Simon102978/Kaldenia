@@ -319,9 +319,9 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(MaritimeChest), 1044292, "Cargo Maritime", 800.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			AddCraft(typeof(BarrildeVin), 1044292, "Barril de Vin", 80.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			AddCraft(typeof(CoffreFort), 1044292, "Coffre Fort", 80.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
-			AddCraft(typeof(CoffreMetalVisqueux), 1044292, "Coffre En M??#$?&*tal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
-			AddCraft(typeof(CoffreMetalRouille), 1044292, "Coffre En M??#$?&*tal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
-			AddCraft(typeof(CoffreMetalDore), 1044292, "Coffre En M??#$?&*tal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalVisqueux), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalRouille), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalDore), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
 			AddCraft(typeof(PirateChest), 1044292, "Coffre de Pirate", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
 
 			index = AddCraft(typeof(Keg), 1044292, 1023711, 57.8, 82.8, typeof(BarrelStaves), 1044288, 3, 1044253);
@@ -439,7 +439,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(WoodenShield), "Autres", 1027034, 52.6, 77.6, typeof(Board), 1044041, 9, 1044351);
 
 
-			index = AddCraft(typeof(PipeCourbee), "Autres", "Pipe Courb??#$?&*e", 46.6, 66.6, typeof(Board), "Planches", 4, "Vous n'avez pas assez de planche.");
+			index = AddCraft(typeof(PipeCourbee), "Autres", "Pipe Courbée", 46.6, 66.6, typeof(Board), "Planches", 4, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(PipeCourte), "Autres", "Pipe Courte ", 80.5, 100.5, typeof(Board), "Planches", 4, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(PipeLongue), "Autres", "Pipe Longue", 70.5, 90.5, typeof(Board), "Planches", 6, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(MatchLight), "Autres", "Allumettes", 0.0, 30.0, typeof(Kindling), "Petit Bois", 2, "Vous n'avez pas assez de petit bois.");
@@ -847,27 +847,27 @@ namespace Server.Engines.Craft
 
 			//Stone fireplaceEXP
 
-			index = AddCraft(typeof(StoneFireplaceEastAddonExp), 1044298, "Foyer en pierre côt??#$?&* Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(StoneFireplaceEastAddonExp), 1044298, "Foyer en pierre côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(StoneFireplaceSouthAddonExp), 1044298, "Foyer en pierre côt??#$?&* Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(StoneFireplaceSouthAddonExp), 1044298, "Foyer en pierre côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(GrayBrickFireplaceEastAddonExp), 1044298, "Foyer en pierre côt??#$?&* Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(GrayBrickFireplaceEastAddonExp), 1044298, "Foyer en pierre côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(GrayBrickFireplaceSouthAddonExp), 1044298, "Foyer en brique côt??#$?&* Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(GrayBrickFireplaceSouthAddonExp), 1044298, "Foyer en brique côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(SandstoneFireplaceEastAddonExp), 1044298, "Foyer en grès côt??#$?&* Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(SandstoneFireplaceEastAddonExp), 1044298, "Foyer en grès côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(SandstoneFireplaceSouthAddonExp), 1044298, "Foyer en grès côt??#$?&* Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(SandstoneFireplaceSouthAddonExp), 1044298, "Foyer en grès côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 

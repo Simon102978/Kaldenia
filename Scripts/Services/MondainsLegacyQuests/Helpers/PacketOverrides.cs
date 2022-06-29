@@ -38,7 +38,7 @@ namespace Server.Engines.Quests
             {
                 PlayerMobile from = (PlayerMobile)state.Mobile;
 
-				from.SendMessage("Menu d??#$?&*sactiv??#$?&*.");
+				from.SendMessage("Menu désactivé.");
 
             //    from.CloseGump(typeof(MondainQuestGump));
             //    from.SendGump(new MondainQuestGump(from));

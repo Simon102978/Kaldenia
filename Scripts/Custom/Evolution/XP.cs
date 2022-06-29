@@ -136,7 +136,7 @@ namespace Server
 			{
 				pm.FEAttente--;
 				pm.FE++;
-				pm.SendMessage("Vous r??#$?&*cup??#$?&*rer une FE en attente !");
+				pm.SendMessage("Vous récupérer une FE en attente !");
 			}
 
 			if (pm.StatAttente > 0)

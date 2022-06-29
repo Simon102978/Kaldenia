@@ -49,9 +49,9 @@ namespace Server.Gumps
 					AddBackground(55, 43, 635, 28, 3000);
 					AddLabel(317, 47, 0, "Calendrier");
 			
-					//Saison : ??#$?&*t??#$?&*
+					//Saison : été
 					AddBackground(70, 86, 605, 28, 3000);
-					AddLabel(338, 90, 0, "Saison : ??#$?&*t??#$?&*");
+					AddLabel(338, 90, 0, "Saison : été");
 					
 					int joursx = 102;
 					int joursy = 158;
@@ -581,8 +581,8 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2+140, 60, 28, 3000);
 					AddLabel(joursx+502, joursy2+144, 0, "");
 					
-					//Bouton pour aller Saison ??#$?&*t??#$?&*
-					AddLabel(55, 545, 2101, "Saison ??#$?&*t??#$?&*");
+					//Bouton pour aller Saison été
+					AddLabel(55, 545, 2101, "Saison été");
 					AddLabel(155, 545, 2101, ":");
 					AddButton(170, 545, 4014, 4016, 2, GumpButtonType.Reply, 0);
 					
@@ -1297,11 +1297,11 @@ namespace Server.Gumps
 										
 					int joursy2 = 366;
 					
-					//Mois : Flor??#$?&*al
+					//Mois : Floréal
 					AddBackground(joursx, joursy2-28, 540, 28, 3000);
-					AddLabel(333, joursy2-24, 0, "Mois : Flor??#$?&*al");
+					AddLabel(333, joursy2-24, 0, "Mois : Floréal");
 						
-					//Jours pour Mois Flor??#$?&*al
+					//Jours pour Mois Floréal
 					AddBackground(joursx, joursy2, 60, 28, 3000);
 					AddLabel(joursx+10, joursy2+4, 0, "Primidi");
 					AddBackground(joursx+60, joursy2, 60, 28, 3000);
@@ -1321,7 +1321,7 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2, 60, 28, 3000);
 					AddLabel(joursx+490, joursy2+4, 0, "Novindi");
 					
-					//Date 01 pour le mois Flor??#$?&*al
+					//Date 01 pour le mois Floréal
 					AddBackground(joursx, joursy2+28, 60, 28, 3000);
 					AddLabel(joursx+22, joursy2+32, 0, "");
 					AddBackground(joursx+60, joursy2+28, 60, 28, 3000);
@@ -1341,7 +1341,7 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2+28, 60, 28, 3000);
 					AddLabel(joursx+502, joursy2+32, 0, "01");
 					
-					//Dates 02 à 10 pour le mois Flor??#$?&*al
+					//Dates 02 à 10 pour le mois Floréal
 					AddBackground(joursx, joursy2+56, 60, 28, 3000);
 					AddLabel(joursx+22, joursy2+60, 0, "02");
 					AddBackground(joursx+60, joursy2+56, 60, 28, 3000);
@@ -1361,7 +1361,7 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2+56, 60, 28, 3000);
 					AddLabel(joursx+502, joursy2+60, 0, "10");
 					
-					//Dates 11 à 19 pour le mois Flor??#$?&*al
+					//Dates 11 à 19 pour le mois Floréal
 					AddBackground(joursx, joursy2+84, 60, 28, 3000);
 					AddLabel(joursx+22, joursy2+88, 0, "11");
 					AddBackground(joursx+60, joursy2+84, 60, 28, 3000);
@@ -1381,7 +1381,7 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2+84, 60, 28, 3000);
 					AddLabel(joursx+502, joursy2+88, 0, "19");
 					
-					//Dates 20 à 28 pour le mois Flor??#$?&*al
+					//Dates 20 à 28 pour le mois Floréal
 					AddBackground(joursx, joursy2+112, 60, 28, 3000);
 					AddLabel(joursx+22, joursy2+116, 0, "20");
 					AddBackground(joursx+60, joursy2+112, 60, 28, 3000);
@@ -1401,7 +1401,7 @@ namespace Server.Gumps
 					AddBackground(joursx+480, joursy2+112, 60, 28, 3000);
 					AddLabel(joursx+502, joursy2+116, 0, "28");
 					
-					//Dates 29 à 37 pour le mois Flor??#$?&*al
+					//Dates 29 à 37 pour le mois Floréal
 					AddBackground(joursx, joursy2+140, 60, 28, 3000);
 					AddLabel(joursx+22, joursy2+144, 0, "29");
 					AddBackground(joursx+60, joursy2+140, 60, 28, 3000);

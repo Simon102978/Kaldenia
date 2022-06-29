@@ -31,9 +31,9 @@ namespace Server
         Charmant,
         [AppearanceAttribute("Beau", "Belle")]
         Beau,
-        [AppearanceAttribute("??#$?&*legant", "??#$?&*legante")]
+        [AppearanceAttribute("élegant", "élegante")]
         Elegant,
-        [AppearanceAttribute("S??#$?&*duisant", "S??#$?&*duisante")]
+        [AppearanceAttribute("Séduisant", "Séduisante")]
         Seduisant,
         [AppearanceAttribute("Ravissant", "Ravissante")]
         Ravissant,
@@ -41,9 +41,9 @@ namespace Server
         Envoutant,
         [AppearanceAttribute("Fascinant", "Fascinante")]
         Fascinant,
-        [AppearanceAttribute("??#$?&*blouissant", "??#$?&*blouissante")]
+        [AppearanceAttribute("éblouissant", "éblouissante")]
         Eblouissant,
-        [AppearanceAttribute("Ang??#$?&*lique", "Ang??#$?&*lique")]
+        [AppearanceAttribute("Angélique", "Angélique")]
         Angelique  
   }
 }

@@ -804,7 +804,7 @@ namespace Server.Items
         public HornedTribalMask(int hue)
             : base(0x1549, hue)
         {
-			Name = "Masque tribal Orn??#$?&*e";
+			Name = "Masque tribal Ornée";
 
 		}
 

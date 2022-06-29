@@ -14,7 +14,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-			Name = "??#$?&*meraude";
+			Name = "émeraude";
         }
 
         public Emerald(Serial serial)

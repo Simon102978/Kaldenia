@@ -31,8 +31,8 @@ namespace Server.Items.Crops
 		}
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être r??#$?&*colt??#$?&* sur votre monture." ); return; }
-			else from.SendMessage( "Votre pousse est trop jeune pour être r??#$?&*colt??#$?&*e." );
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être récolté sur votre monture." ); return; }
+			else from.SendMessage( "Votre pousse est trop jeune pour être récoltée." );
 		}
 		public RiceSeedling( Serial serial ) : base( serial ) { }
 

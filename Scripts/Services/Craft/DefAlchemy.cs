@@ -161,7 +161,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Nightshade), 1044358, 3, 1044366);
         
 
-            index = AddCraft(typeof(JukariBurnPoiltice), 1116349, "Potion de r??#$?&*sistances", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
+            index = AddCraft(typeof(JukariBurnPoiltice), 1116349, "Potion de résistances", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
             AddRes(index, typeof(BlackPearl), 1044353, 20, 1044361);
             AddRes(index, typeof(Vanilla), 1080000, 10, 1080008);          
          

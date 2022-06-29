@@ -59,7 +59,7 @@ namespace Nucca.Commands
 				ns.Mobile.SendEverything();
             }
 
-            m.SendMessage("{0} La saison a ??#$?&*t??#$?&* chang??#$?&*e pour {1}.", map.Name, e.GetString(0));
+            m.SendMessage("{0} La saison a été changée pour {1}.", map.Name, e.GetString(0));
         }
     }
 }

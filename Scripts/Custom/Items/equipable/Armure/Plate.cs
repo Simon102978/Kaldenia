@@ -123,7 +123,7 @@ namespace Server.Items
 			: base(41649)
 		{
 			Weight = 5.0;
-			Name = "Brassard D??#$?&*coratif";
+			Name = "Brassard Décoratif";
 		}
 
 		public BrassardDecoratif(Serial serial)
@@ -162,7 +162,7 @@ namespace Server.Items
 			: base(41650)
 		{
 			Weight = 5.0;
-			Name = "Casque D??#$?&*coratif";
+			Name = "Casque Décoratif";
 		}
 
 		public CasqueDecoratif(Serial serial)
@@ -199,7 +199,7 @@ namespace Server.Items
 			: base(41651)
 		{
 			Weight = 7.0;
-			Name = "Jambière D??#$?&*coratif";
+			Name = "Jambière Décoratif";
 		}
 
 		public JambiereDecoratif(Serial serial)
@@ -236,7 +236,7 @@ namespace Server.Items
 			: base(41652)
 		{
 			Weight = 10.0;
-			Name = "Plastron D??#$?&*coratif";
+			Name = "Plastron Décoratif";
 		}
 
 		public PlastronDecoratif(Serial serial)
@@ -496,7 +496,7 @@ namespace Server.Items
 			: base(41659)
 		{
 			Weight = 10.0;
-			Name = "Plastron de plaque Dor??#$?&*e";
+			Name = "Plastron de plaque Dorée";
 		}
 
 		public PlastronPlaqueDoree(Serial serial)

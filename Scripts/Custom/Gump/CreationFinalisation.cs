@@ -20,7 +20,7 @@ namespace Server.Gumps
 
 
         public CreationFinalisationGump(CustomPlayerMobile from)
-			: base("Finalisation de la cr??#$?&*ation", 400, 350,false)
+			: base("Finalisation de la création", 400, 350,false)
         {
 			m_from = from;
             int x = XBase;
@@ -30,7 +30,7 @@ namespace Server.Gumps
 
             int space = 115;
 
-			string context = "Le bateau continuera de voger en direction de la ville principale, et vous allez perdre tous les objets pr??#$?&*sents dans votre sac. \n\nEtes-vous certain de vouloir continuer?";
+			string context = "Le bateau continuera de voger en direction de la ville principale, et vous allez perdre tous les objets présents dans votre sac. \n\nEtes-vous certain de vouloir continuer?";
 
 			AddSection(x - 5 , y, 445, 160, "Contexte", context);
 
@@ -39,7 +39,7 @@ namespace Server.Gumps
 			AddButton(x + 110,y + 172, 1, 1147);
 			AddButton(x + 250, y + 172, 0, 1144);
 
-			AddSection(x - 5, y + 222, 445, 108, "Retour", "Vous pouvez aussi retourner dans la salle de cr??#$?&*ation, pour modifier votre personnage.");
+			AddSection(x - 5, y + 222, 445, 108, "Retour", "Vous pouvez aussi retourner dans la salle de création, pour modifier votre personnage.");
 
 			AddBackground(x - 5, y + 331, 445, 60, 9270);
 

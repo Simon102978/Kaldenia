@@ -37,7 +37,7 @@ namespace Server.Scripts.Commands
 			{
 			CustomPlayerMobile from = (CustomPlayerMobile)e.Mobile;
 			
-				from.SendMessage("Vous avez " + from.FETotal + " Fioles d'Exp??#$?&*riences.");
+				from.SendMessage("Vous avez " + from.FETotal + " Fioles d'Expériences.");
 
 			}
     }

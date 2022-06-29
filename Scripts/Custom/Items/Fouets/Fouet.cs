@@ -70,7 +70,7 @@ namespace Server.Items
 
 			if (item != null && item is BaseShield)
 			{
-				from.SendMessage("Vous ne pouvez pas ??#$?&*quipper un fouet en ayant un bouclier à la main.");
+				from.SendMessage("Vous ne pouvez pas équipper un fouet en ayant un bouclier à la main.");
 				return false;
 			}
 
@@ -119,7 +119,7 @@ namespace Server.Items
 					if (chance > Utility.Random(100))
 					{
 						receveur.Spell.OnCasterHurt();
-						from.SendMessage("Vous d??#$?&*rangez votre cible !");
+						from.SendMessage("Vous dérangez votre cible !");
 						Animation(from, receveur);
 					}
 
@@ -151,7 +151,7 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 					else
-						from.SendMessage("Vous ??#$?&*chouez à voler ou à faire tomber l'arme de votre cible !");
+						from.SendMessage("Vous échouez à voler ou à faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
 						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
@@ -167,7 +167,7 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 					else
-						from.SendMessage("Vous ??#$?&*chouez à faire tomber l'arme de votre cible !");
+						from.SendMessage("Vous échouez à faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
 						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);

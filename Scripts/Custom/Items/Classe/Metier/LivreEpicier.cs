@@ -13,7 +13,7 @@ namespace Server.Items
         [Constructable]
         public LivreEpicier(Classe classe) : base(classe)
         {
-            Name = "livre d'??#$?&*picier";
+            Name = "livre d'épicier";
         }
 
         public LivreEpicier(Serial serial) : base(serial)

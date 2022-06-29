@@ -50,7 +50,7 @@ namespace Server.Mobiles
 				else
 				{				
 					missive.Destinataire.AddMissive(missive);
-					PublicOverheadMessage(MessageType.Regular, SpeechHue, false, "La missive a ??#$?&*t??#$?&* envoy??#$?&*e.", false);
+					PublicOverheadMessage(MessageType.Regular, SpeechHue, false, "La missive a été envoyée.", false);
 					return true;
 					
 				}
@@ -118,7 +118,7 @@ namespace Server.Mobiles
 			{
 
 				m_Spm = spm;
-				m_Spm.SendMessage("Veuillez s??#$?&*lectionner la missive ?");
+				m_Spm.SendMessage("Veuillez sélectionner la missive ?");
 
 			}
 
@@ -149,7 +149,7 @@ namespace Server.Mobiles
 						else
 						{
 							missive.Destinataire.AddMissive(missive);
-							from.SendMessage("La missive a ??#$?&*t??#$?&* envoy??#$?&*e.");
+							from.SendMessage("La missive a été envoyée.");
 						}
 					}
 				}

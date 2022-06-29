@@ -44,12 +44,12 @@ namespace Server.Items.Crops
 		{
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {
-                from.SendMessage("Le plant est trop petit pour pouvoir être r??#$?&*colt??#$?&* sur votre monture.");
+                from.SendMessage("Le plant est trop petit pour pouvoir être récolté sur votre monture.");
                 return;
             }
             else
             {
-                from.SendMessage("Votre pousse est trop jeune pour être r??#$?&*colt??#$?&*e.");
+                from.SendMessage("Votre pousse est trop jeune pour être récoltée.");
             }
 		}
 		public WheatSeedling( Serial serial ) : base( serial ) 

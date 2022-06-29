@@ -55,7 +55,7 @@ public class Jupe2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe D??#$?&*licate";
+		Name = "Jupe Délicate";
 	}
 
 	public Jupe2(Serial serial)
@@ -335,7 +335,7 @@ public class JupeCourte :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Courte Lac??#$?&*e";
+		Name = "Jupe Courte Lacée";
 	}
 
 	public JupeCourte(Serial serial)
@@ -375,7 +375,7 @@ public class JupeCourte2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Quadrill??#$?&*e";
+		Name = "Jupe Quadrillée";
 	}
 
 	public JupeCourte2(Serial serial)
@@ -655,7 +655,7 @@ public class JupeLacee :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name ="Jupe Lac??#$?&*e";
+		Name ="Jupe Lacée";
 	}
 
 	public JupeLacee(Serial serial)
@@ -695,7 +695,7 @@ public class JupeLacee2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Lac??#$?&*e Sombre";
+		Name = "Jupe Lacée Sombre";
 	}
 
 	public JupeLacee2(Serial serial)
@@ -735,7 +735,7 @@ public class JupeLacee3 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Lac??#$?&*e Droite";
+		Name = "Jupe Lacée Droite";
 	}
 
 	public JupeLacee3(Serial serial)
@@ -895,7 +895,7 @@ public class PareoCourt :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name ="Par??#$?&*o";
+		Name ="Paréo";
 	}
 
 	public PareoCourt(Serial serial)

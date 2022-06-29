@@ -463,7 +463,7 @@ namespace Server.Items
             : base(0x1F00, hue)
         {
             Weight = 3.0;
-			Name = "Robe ??#$?&*l??#$?&*gante";
+			Name = "Robe élégante";
 
 		}
 

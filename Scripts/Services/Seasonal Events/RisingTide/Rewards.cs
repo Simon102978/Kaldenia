@@ -160,7 +160,7 @@ namespace Server.Items
             {
                 if (_NextFly > DateTime.UtcNow)
                 {
-                    m.SendMessage("Votre Perroquet est trop ??#$?&*puis??#$?&* pour voler maintenant."); // Your parrot is too tired to fly right now.
+                    m.SendMessage("Votre Perroquet est trop épuisé pour voler maintenant."); // Your parrot is too tired to fly right now.
                 }
                 else
                 {

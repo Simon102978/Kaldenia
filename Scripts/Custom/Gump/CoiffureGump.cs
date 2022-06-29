@@ -70,7 +70,7 @@ namespace Server.Gumps
 
 				if (m_scissor.UsesRemaining < 1)
 				{
-					m_from.SendMessage("Vous avez bris??#$?&* votre outil.");
+					m_from.SendMessage("Vous avez brisé votre outil.");
 					m_scissor.Delete();
 				}
 			}
@@ -220,7 +220,7 @@ namespace Server.Gumps
 
 						if (m_Item.UsesRemaining < 1)
 						{
-							m_From.SendMessage("Vous avez bris??#$?&* votre outil.");
+							m_From.SendMessage("Vous avez brisé votre outil.");
 							m_Item.Delete();
 						}
 					}
@@ -276,14 +276,14 @@ namespace Server.Gumps
 
 				if (m_Item.UsesRemaining < 1)
 				{
-					m_From.SendMessage("Vous avez bris??#$?&* votre outil.");
+					m_From.SendMessage("Vous avez brisé votre outil.");
 					m_Item.Delete();
 				}
 			}
 			else
 			{					
 				if (enough == 1)
-					m_From.SendMessage(String.Format("Vous avez {0} en Coiffure , il vous faut au moins {1} pour r??#$?&*aliser cette coiffure", coiffure, coif[buttonID,3]));
+					m_From.SendMessage(String.Format("Vous avez {0} en Coiffure , il vous faut au moins {1} pour réaliser cette coiffure", coiffure, coif[buttonID,3]));
 
 
 

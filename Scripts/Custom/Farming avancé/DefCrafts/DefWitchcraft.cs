@@ -27,7 +27,7 @@ namespace Server.Engines.Craft
 */
 		public override string GumpTitleString
 		{
-			get { return "Recettes Enchant??#$?&*es"; } 
+			get { return "Recettes Enchantées"; } 
 		}
 
 		private static CraftSystem m_CraftSystem;
@@ -223,7 +223,7 @@ namespace Server.Engines.Craft
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'??#$?&*crivain", 0.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
+			index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'écrivain", 0.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 

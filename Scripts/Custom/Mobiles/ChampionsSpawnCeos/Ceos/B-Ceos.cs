@@ -128,7 +128,7 @@ namespace Server.Mobiles
 				if (creature.Controlled || creature.Summoned)
 				{
 
-					Say("Yummy !! *Tout en fesant une bouch??#$?&* de " + creature.Name + "*");
+					Say("Yummy !! *Tout en fesant une bouché de " + creature.Name + "*");
 
 					if (Hits < HitsMax)
 						Hits = HitsMax;

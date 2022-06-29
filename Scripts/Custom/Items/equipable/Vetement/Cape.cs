@@ -134,7 +134,7 @@ public class Cape4 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape à ??#$?&*paulière";
+		Name = "Cape à épaulière";
 	}
 
 	public Cape4(Serial serial)
@@ -254,7 +254,7 @@ public class Cape7 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Cape à bande dor??#$?&*";
+		Name = "Cape à bande doré";
 	}
 
 	public Cape7(Serial serial)
@@ -334,7 +334,7 @@ public class Cape9 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Demi cape Distingu??#$?&*e";
+		Name = "Demi cape Distinguée";
 	}
 
 	public Cape9(Serial serial)
@@ -414,7 +414,7 @@ public class Cape11 :  BaseCloak
 
 		{
 		Weight = 2.0;
-		Name = "Demi cape ??#$?&*l??#$?&*gante";
+		Name = "Demi cape élégante";
 	}
 
 	public Cape11(Serial serial)

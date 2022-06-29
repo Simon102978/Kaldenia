@@ -21,7 +21,7 @@ namespace Server.Spells
 
 				if (cp != null && !VerifyAffinity(cp, AffinityRequirements))
 				{
-					cp.SendMessage("Vous n'avez pas les affinit??#$?&*s requises.");
+					cp.SendMessage("Vous n'avez pas les affinités requises.");
 
 					if (cp.AccessLevel > AccessLevel.Counselor)
 					{

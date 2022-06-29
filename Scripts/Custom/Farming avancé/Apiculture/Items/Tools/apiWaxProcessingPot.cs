@@ -271,7 +271,7 @@ namespace Server.Items
 
 					if ( m_pot.PureBeeswax > 0 )
 					{
-						from.PrivateOverheadMessage( 0, 1154, false, "Vous ne pouvez pas m??#$?&*langer de la cire d'abeille brute avec de la cire fondue. Veuillez d'abord vider le pot.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Vous ne pouvez pas mélanger de la cire d'abeille brute avec de la cire fondue. Veuillez d'abord vider le pot.", from.NetState );
 						return;
 					}
 
@@ -322,13 +322,13 @@ namespace Server.Items
 				{
 					if( m_pot.UsesRemaining < 1 )
 					{//no uses remaining
-						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est trop endommag??#$?&* pour rendre la cire d'abeille.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est trop endommagé pour rendre la cire d'abeille.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}
 					else if( m_pot.PureBeeswax > 1 )
 					{//already rendered
-						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est d??#$?&*jà plein de cire d'abeille fondue.", from.NetState );
+						from.PrivateOverheadMessage( 0, 1154, false, "Le pot est déjà plein de cire d'abeille fondue.", from.NetState );
 						from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 						return;
 					}
@@ -362,7 +362,7 @@ namespace Server.Items
 					}
 
 					from.PlaySound( 0x21 );
-					from.PrivateOverheadMessage( 0, 1154, false, "Vous faites fondre lentement la cire d'abeille brute et enlevez les impuret??#$?&*s.", from.NetState );
+					from.PrivateOverheadMessage( 0, 1154, false, "Vous faites fondre lentement la cire d'abeille brute et enlevez les impuretés.", from.NetState );
 					
 					m_pot.PureBeeswax = m_pot.RawBeeswax - waste;
 					m_pot.RawBeeswax = 0;

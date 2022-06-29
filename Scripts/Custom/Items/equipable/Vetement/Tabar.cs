@@ -55,7 +55,7 @@ public class Tabar1 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar orn??#$?&*";
+		Name = "Tabar orné";
 	}
 
 	public Tabar1(Serial serial)
@@ -295,7 +295,7 @@ public class Tabar7 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar dor??#$?&*";
+		Name = "Tabar doré";
 	}
 
 	public Tabar7(Serial serial)
@@ -335,7 +335,7 @@ public class Tabar8 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar dor??#$?&* capiton??#$?&*";
+		Name = "Tabar doré capitoné";
 	}
 
 	public Tabar8(Serial serial)

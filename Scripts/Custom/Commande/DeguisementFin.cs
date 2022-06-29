@@ -20,11 +20,11 @@ namespace Server.Scripts.Commands
                 {
 					Server.Deguisement.RemoveDeguisement(from);
 
-                    from.SendMessage("Vous retirez votre d??#$?&*guisement.");
+                    from.SendMessage("Vous retirez votre déguisement.");
                 }
                 else
                 {
-                    from.SendMessage("Vous n'êtes pas d??#$?&*guis??#$?&*.");
+                    from.SendMessage("Vous n'êtes pas déguisé.");
                 }
             }
         }

@@ -120,7 +120,7 @@ namespace Server.Gumps
 
 			AddHtmlTexte(x + 10, y + 220, 150, "Primaire:");
 			AddHtmlTexte(x + 10, y + 240, 150, "Secondaire: ");
-			AddHtmlTexte(x + 10, y + 260, 150, "M??#$?&*tier: ");
+			AddHtmlTexte(x + 10, y + 260, 150, "Métier: ");
 			AddHtmlTexte(x + 10, y + 280, 150, "Armure: ");
 			AddHtmlTexte(x + 125, y + 220, 100,  m_From.ClassePrimaire.Name);
 			AddHtmlTexte(x + 125, y + 240, 100,  m_From.ClasseSecondaire.Name);
@@ -129,7 +129,7 @@ namespace Server.Gumps
 
 			// 402
 
-			AddSection(x - 10, y + 317, 250, 135, "Exp??#$?&*riences");
+			AddSection(x - 10, y + 317, 250, 135, "Expériences");
 
 			AddHtmlTexte(x + 10, y + 355, 150, "FE Disponible:");
 			AddHtmlTexte(x + 125, y + 355, 100, m_From.FE.ToString());
@@ -137,7 +137,7 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 125, y + 375, 100, m_From.FEAttente.ToString());
 			AddHtmlTexte(x + 10, y + 395, 150, "FE Total:");
 			AddHtmlTexte(x + 125, y + 395, 100, m_From.FETotal.ToString());
-			AddHtmlTexte(x + 10, y + 415, 150, "Heures jou??#$?&*es:");
+			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouées:");
 			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours,2).ToString());
 
 
@@ -158,7 +158,7 @@ namespace Server.Gumps
 
 			AddLabel(x + 130, y + 490, 150, m_From.Str.ToString());
 
-			AddHtmlTexte(x + 10, y + 510, 150, "Dext??#$?&*rit??#$?&* :");
+			AddHtmlTexte(x + 10, y + 510, 150, "Dextérité :");
 
 			if (m_From.CanDecreaseStat(StatType.Dex))
 			{
@@ -230,7 +230,7 @@ namespace Server.Gumps
 
 			line = 0;
 
-			AddSection(x + 241, y + 453, 359, 210, "D??#$?&*votions");
+			AddSection(x + 241, y + 453, 359, 210, "Dévotions");
 
 			foreach (KeyValuePair<MagieType, int> item in m_From.MagicAfinity)
 			{

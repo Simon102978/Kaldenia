@@ -38,7 +38,7 @@ namespace Server.Gumps
 
 			if(from.Deguisement.Count < 3)
 			{
-				AddButtonHtlml(x + 10, y + 20 + line * 20, "Ajouter une nouvelle identit??#$?&*", 200, 40, 1, "#ffffff");
+				AddButtonHtlml(x + 10, y + 20 + line * 20, "Ajouter une nouvelle identité", 200, 40, 1, "#ffffff");
 				line++;
 			}
 

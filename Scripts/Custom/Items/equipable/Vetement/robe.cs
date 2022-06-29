@@ -175,7 +175,7 @@ public class Robe4 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe orn??#$?&*e";
+		Name = "Robe ornée";
 	}
 
 	public Robe4(Serial serial)
@@ -375,7 +375,7 @@ public class Robe8 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe lac??#$?&*e large";
+		Name = "Robe lacée large";
 	}
 
 	public Robe8(Serial serial)
@@ -415,7 +415,7 @@ public class Robe9 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe d'??#$?&*rudit";
+		Name = "Robe d'érudit";
 	}
 
 	public Robe9(Serial serial)
@@ -495,7 +495,7 @@ public class Robe11 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe D??#$?&*licate sombre";
+		Name = "Robe Délicate sombre";
 	}
 
 	public Robe11(Serial serial)
@@ -535,7 +535,7 @@ public class Robe12 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe d??#$?&*licate";
+		Name = "Robe délicate";
 	}
 
 	public Robe12(Serial serial)
@@ -615,7 +615,7 @@ public class Robe14 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe Provocante d??#$?&*licate";
+		Name = "Robe Provocante délicate";
 	}
 
 	public Robe14(Serial serial)
@@ -655,7 +655,7 @@ public class Robe15 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe l??#$?&*gère";
+		Name = "Robe légère";
 	}
 
 	public Robe15(Serial serial)
@@ -735,7 +735,7 @@ public class RobeProvocante2 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe Provocante orn??#$?&*e";
+		Name = "Robe Provocante ornée";
 	}
 
 	public RobeProvocante2(Serial serial)
@@ -775,7 +775,7 @@ public class RobeProvocante3 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe dor??#$?&*e sombre";
+		Name = "Robe dorée sombre";
 	}
 
 	public RobeProvocante3(Serial serial)
@@ -815,7 +815,7 @@ public class RobeProvocante4 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe d??#$?&*colt??#$?&*e";
+		Name = "Robe décoltée";
 	}
 
 	public RobeProvocante4(Serial serial)
@@ -855,7 +855,7 @@ public class RobeProvocante5 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe provocante l??#$?&*gère";
+		Name = "Robe provocante légère";
 	}
 
 	public RobeProvocante5(Serial serial)
@@ -895,7 +895,7 @@ public class RobeProvocante6 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe dor??#$?&*e";
+		Name = "Robe dorée";
 	}
 
 	public RobeProvocante6(Serial serial)
@@ -935,7 +935,7 @@ public class Robe17 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Robe Ceinture dor??#$?&*e";
+		Name = "Robe Ceinture dorée";
 	}
 
 	public Robe17(Serial serial)

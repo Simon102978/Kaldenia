@@ -26,7 +26,7 @@ namespace Server.Items
 
          if (pack != null && pack.ConsumeTotal( typeof( HoneyComb ), 1 ) ) 
          { 
-            from.SendMessage("*Vous centrifugez le produit et s??#$?&*parez le miel et la cire*"); 
+            from.SendMessage("*Vous centrifugez le produit et séparez le miel et la cire*"); 
                 
                { 
 					

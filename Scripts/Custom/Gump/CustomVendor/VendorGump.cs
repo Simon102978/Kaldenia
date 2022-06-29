@@ -41,7 +41,7 @@ namespace Server.Gumps
 				m_SubmitData.Add(m_Stone.Bonded);
 			}
 
-			AddLabel(x+420,y+60, 5, "Monnaie d'??#$?&*change:");
+			AddLabel(x+420,y+60, 5, "Monnaie d'échange:");
 			if (m_Stone.Currency != null)
 			{
 				if (m_Stone.Currency.Name != null)

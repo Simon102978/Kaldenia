@@ -79,8 +79,8 @@ namespace Server.Custom.System
 		public static ArrayList m_NewGuildsList;
 
 		public string NewGuildTitle = "Nouvelle Guilde";
-		public string NewGuildDescription = "Veuillez ??#$?&*crire la description de votre guilde ici"; 
-		public string NewGuildSalary = "Veuillez ??#$?&*crire le salaire du rang ici"; 
+		public string NewGuildDescription = "Veuillez écrire la description de votre guilde ici"; 
+		public string NewGuildSalary = "Veuillez écrire le salaire du rang ici"; 
 
 		public const int _RANKMAX = 8;
 
@@ -97,7 +97,7 @@ namespace Server.Custom.System
 		   }*/
 
 		/// <summary>
-		/// Retourne le titre li??#$?&* au rang
+		/// Retourne le titre lié au rang
 		/// </summary>
 		/// <param name="rank">Le rang, doit être entre 0 et _RANKMAX.</param>
 		/// <returns>Le titre en string du rang. Si invalide, retourne No Title.</returns>
@@ -117,10 +117,10 @@ namespace Server.Custom.System
 		}
 
 		/// <summary>
-		/// Retourne le salaire li??#$?&* au rang
+		/// Retourne le salaire lié au rang
 		/// </summary>
 		/// <param name="rank">Le rang, doit être entre 0 et _RANKMAX.</param>
-		/// <returns>Une string contenant le salaire li??#$?&* au rang. Si le salaire est invalide, il retourne le salaire[0] par d??#$?&*faut.</returns>
+		/// <returns>Une string contenant le salaire lié au rang. Si le salaire est invalide, il retourne le salaire[0] par défaut.</returns>
 		public int GetSalaryByRank(int rank)
 		{
 			if (IsValidRank(rank))
@@ -195,7 +195,7 @@ namespace Server.Custom.System
 		#region Methods
 
 		/// <summary>
-		/// Donne le salaire à tous les membres de la guilde. Si un membre est dans plusieurs guildes, il touche le salaire de son rang le plus ??#$?&*lev??#$?&*, mais aucun des autres.
+		/// Donne le salaire à tous les membres de la guilde. Si un membre est dans plusieurs guildes, il touche le salaire de son rang le plus élevé, mais aucun des autres.
 		/// </summary>
 		public static void Pay()
         {
@@ -226,7 +226,7 @@ namespace Server.Custom.System
         }
 
         /// <summary>
-        /// Imprimer dans un fichier la liste des salaires donn??#$?&*s aux mobiles.
+        /// Imprimer dans un fichier la liste des salaires donnés aux mobiles.
         /// </summary>
         public static void PayLog(CustomGuildMember cgm, int amount)
         {
@@ -249,7 +249,7 @@ namespace Server.Custom.System
         /// Retourne tous les titres que possèdent le mobile dans toutes les guildes
         /// </summary>
         /// <param name="m">Mobile dont on veut tous les titres</param>
-        /// <returns>Tableau de strings avec tous les titres à l'int??#$?&*rieur</returns>
+        /// <returns>Tableau de strings avec tous les titres à l'intérieur</returns>
   /*      public static List<String> GetTitreList(Mobile from)
         {
             List<String> titlesTable = new List<String>();
@@ -269,7 +269,7 @@ namespace Server.Custom.System
         /// Retourne toutes les guildes du mobile
         /// </summary>
         /// <param name="m">Mobile dont on veut toutes les guildes</param>
-        /// <returns>Tableau de NewGuildHandler avec tous les NewGuildHandler à l'int??#$?&*rieur</returns>
+        /// <returns>Tableau de NewGuildHandler avec tous les NewGuildHandler à l'intérieur</returns>
  /*       public static List<GuildRecruter> GetGuilds(Mobile from)
         {
             List<GuildRecruter> guildTable = new List<GuildRecruter>();
@@ -286,7 +286,7 @@ namespace Server.Custom.System
 
         #region Actions
         /// <summary>
-        /// Ajouter un mobile, avec un rang 0 par d??#$?&*faut, puisque n'importe qui peut s'ajouter
+        /// Ajouter un mobile, avec un rang 0 par défaut, puisque n'importe qui peut s'ajouter
         /// </summary>
         /// <param name="m">Le mobile qu'on veut ajouter.</param>
         public void AddGuildMember(Mobile m)
@@ -320,9 +320,9 @@ namespace Server.Custom.System
 		}
 
         /// <summary>
-        /// V??#$?&*rifier si le rang existe
+        /// Vérifier si le rang existe
         /// </summary>
-        /// <param name="m">Le rang à v??#$?&*rifier</param>
+        /// <param name="m">Le rang à vérifier</param>
         public static bool IsValidRank(int rank)
         {
             return (rank >= 0 && rank <= _RANKMAX);
@@ -387,7 +387,7 @@ namespace Server.Custom.System
                 else
                 {
                     newGuildRank.Rank = i;
-                    newGuildRank.Title = "Non-confirm??#$?&*"; 
+                    newGuildRank.Title = "Non-confirmé"; 
                     newGuildRank.Salary = 0;
                 }
                     

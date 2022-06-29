@@ -63,11 +63,11 @@ namespace Server.Scripts.Commands
                     targ.Say(m_Message);
                 }
                 else
-                    from.SendMessage("Vous n'êtes pas le maître de cette cr??#$?&*ature ou vous ne poss??#$?&*dez pas le niveau n??#$?&*cessaire en Animal Taming pour faire agir cette cr??#$?&*ature.");
+                    from.SendMessage("Vous n'êtes pas le maître de cette créature ou vous ne possédez pas le niveau nécessaire en Animal Taming pour faire agir cette créature.");
                 
             }
             else
-                from.SendMessage(256, "Il faut cliquer sur une cr??#$?&*ature.");
+                from.SendMessage(256, "Il faut cliquer sur une créature.");
 		}
 	}
 }

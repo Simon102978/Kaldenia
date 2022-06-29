@@ -10,7 +10,7 @@ namespace Server.Items
 			: base(41621)
 		{
 			Weight = 4.0;
-			Name = "Brassard Clout??#$?&*";
+			Name = "Brassard Clouté";
 		}
 
 		public BrassardCloute(Serial serial)
@@ -49,7 +49,7 @@ namespace Server.Items
 			: base(41622)
 		{
 			Weight = 5.0;
-			Name = "Jupe Clout??#$?&*";
+			Name = "Jupe Clouté";
 		}
 
 		public JupeCloute(Serial serial)
@@ -88,7 +88,7 @@ namespace Server.Items
 			: base(41623)
 		{
 			Weight = 8.0;
-			Name = "Plastron Clout??#$?&*";
+			Name = "Plastron Clouté";
 		}
 
 		public PlastronCloute(Serial serial)
@@ -127,7 +127,7 @@ namespace Server.Items
 			: base(41624)
 		{
 			Weight = 8.0;
-			Name = "Plastron Clout??#$?&*2";
+			Name = "Plastron Clouté2";
 		}
 
 		public PlastronCloute2(Serial serial)
@@ -166,7 +166,7 @@ namespace Server.Items
 			: base(41625)
 		{
 			Weight = 8.0;
-			Name = "Plastron Clout??#$?&*3";
+			Name = "Plastron Clouté3";
 		}
 
 		public PlastronCloute3(Serial serial)
@@ -205,7 +205,7 @@ namespace Server.Items
 			: base(41626)
 		{
 			Weight = 8.0;
-			Name = "Plastron Clout??#$?&*4";
+			Name = "Plastron Clouté4";
 		}
 
 		public PlastronCloute4(Serial serial)

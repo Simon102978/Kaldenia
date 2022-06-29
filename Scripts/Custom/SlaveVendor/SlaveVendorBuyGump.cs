@@ -60,7 +60,7 @@ namespace Server.Custom.Gumps
 			AddImageTiled(10, 174, 500, 20, 0xA40);
 			AddAlphaRegion(10, 10, 500, 184);
 
-			AddHtml(14, 12, 500, 20, Color("<CENTER>Menu de s??#$?&*lection des esclaves</CENTER>", 0xFFFFFF), false, false);
+			AddHtml(14, 12, 500, 20, Color("<CENTER>Menu de sélection des esclaves</CENTER>", 0xFFFFFF), false, false);
 
 			AddButton(10, 174, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0);
 			AddHtml(45, 176, 450, 20, Color("Annuler", 0xFFFFFF), false, false);
@@ -141,7 +141,7 @@ namespace Server.Custom.Gumps
 				return;
 			}
 
-			m_Buyer.SendMessage($"{m_Vendor.SlavePrice} pièces d'or ont ??#$?&*t??#$?&* d??#$?&*bit??#$?&* de votre banque.");
+			m_Buyer.SendMessage($"{m_Vendor.SlavePrice} pièces d'or ont été débité de votre banque.");
 
 			var slave = (BaseHire)Activator.CreateInstance(entry.Type);
 			slave.MoveToWorld(m_Buyer.Location, m_Buyer.Map);

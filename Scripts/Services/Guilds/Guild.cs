@@ -681,7 +681,7 @@ namespace Server.Guilds
             }
 			else
 			{
-				pm.SendMessage("Menu d??#$?&*sactiv??#$?&*.");
+				pm.SendMessage("Menu désactivé.");
 			}
 
         /*    if (pm.Guild == null)

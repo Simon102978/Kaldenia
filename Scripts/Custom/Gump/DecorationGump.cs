@@ -143,7 +143,7 @@ namespace Server.Gumps
                         }
                     }
                     else
-                        from.SendMessage("Ceci est hors de votre port??#$?&*e.");
+                        from.SendMessage("Ceci est hors de votre portée.");
                 }
                 else
                     from.SendMessage("Vous pouvez seulement deplacer un objet !");
@@ -178,7 +178,7 @@ namespace Server.Gumps
                         }
                     }
                     else
-                        from.SendMessage("Ceci est hors de votre port??#$?&*e.");
+                        from.SendMessage("Ceci est hors de votre portée.");
                 }
                 else
                     from.SendMessage("Vous pouvez seulement deplacer un objet !");
@@ -210,7 +210,7 @@ namespace Server.Gumps
                         }
                     }
                     else
-                        from.SendMessage("Ceci est hors de votre port??#$?&*e.");
+                        from.SendMessage("Ceci est hors de votre portée.");
                 }
                 else
                     from.SendMessage("Vous pouvez seulement barrer/debarrer un objet !");
@@ -243,7 +243,7 @@ namespace Server.Gumps
                         }
                     }
                     else
-                        from.SendMessage("Ceci est hors de votre port??#$?&*e.");
+                        from.SendMessage("Ceci est hors de votre portée.");
                 }
                 else
                     from.SendMessage("Vous pouvez seulement barrer/debarrer un objet !");
@@ -312,7 +312,7 @@ namespace Server.Gumps
                         }
                     }
                     else
-                        from.SendMessage("Ceci est hors de votre port??#$?&*e.");
+                        from.SendMessage("Ceci est hors de votre portée.");
                 }
                 else
                     from.SendMessage("Vous pouvez seulement deplacer un objet !");

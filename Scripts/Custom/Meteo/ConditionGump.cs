@@ -27,10 +27,10 @@ namespace Server.Gumps
 		public static string[] m_DensityOfCloudSummerDay = new string[]
 			{
 				"Aucun",
-				"Ensoleill??#$?&*",//"Generalement ensolleil??#$?&*"
+				"Ensoleillé",//"Generalement ensolleilé"
                 "Passage nuageux",
 				"Ciel variable",
-				"Quelques Nuages",//"Nuageux avec ??#$?&*claircies"
+				"Quelques Nuages",//"Nuageux avec éclaircies"
                 "Nuageux",
 				"Faible pluie",
 				"Pluie",
@@ -41,7 +41,7 @@ namespace Server.Gumps
 		public static string[] m_DensityOfCloudWinterDay = new string[]
 			{
 				"Aucun",
-				"Ensoleill??#$?&*",
+				"Ensoleillé",
 				"Passage nuageux",
 				"Ciel variable",
 				"Quelques Nuages",
@@ -55,7 +55,7 @@ namespace Server.Gumps
 		public static string[] m_DensityOfCloudSummerNight = new string[]
 			{
 				"Aucun",
-				"D??#$?&*gag??#$?&*",
+				"Dégagé",
 				"Passage nuageux",
 				"Ciel variable",
 				"Quelques Nuages",
@@ -69,7 +69,7 @@ namespace Server.Gumps
 		public static string[] m_DensityOfCloudWinterNight = new string[]
 			{
 				"Aucun",
-				"D??#$?&*gag??#$?&*",
+				"Dégagé",
 				"Passage nuageux",
 				"Ciel variable",
 				"Quelques Nuages",
@@ -96,7 +96,7 @@ namespace Server.Gumps
 		public static string[] m_Season = new string[]
 			{
 				"Printemps",
-				"??#$?&*t??#$?&*",
+				"été",
 				"Automne",
 				"Hiver"
 			};
@@ -163,7 +163,7 @@ namespace Server.Gumps
 					}
 					int year, month, day;
 					Time.GetDate(out year, out month, out day);
-					try { AddHtml(130, 380, 200, 20, String.Format("<h3><basefont color=#5A4A31>Temp??#$?&*rature : {0}<basefont></h3>", m_Temperature[(int)weather.Temperature]), false, false); }
+					try { AddHtml(130, 380, 200, 20, String.Format("<h3><basefont color=#5A4A31>Température : {0}<basefont></h3>", m_Temperature[(int)weather.Temperature]), false, false); }
 					catch (Exception ex) { Misc.ExceptionLogging.WriteLine(ex, String.Format("m_Temperature was {0}. weather.Temperature was {1}.", m_Temperature.ToString(), weather.Temperature.ToString())); }
 					try { AddHtml(130, 410, 200, 20, String.Format("<h3><basefont color=#5A4A31>Temps : {0}<basefont></h3>", cloud[(int)c]), false, false); }
 					catch (Exception ex) { Misc.ExceptionLogging.WriteLine(ex, String.Format("cloud was {0}. c was {1}.", cloud.ToString(), c.ToString())); }
@@ -171,7 +171,7 @@ namespace Server.Gumps
 					catch (Exception ex) { Misc.ExceptionLogging.WriteLine(ex, String.Format("m_QuantityOfWind was {0}. weather.Wind was {1}.", m_QuantityOfWind.ToString(), weather.Wind.ToString())); }
 					try { AddHtml(130, 470, 200, 20, String.Format("<h3><basefont color=#5A4A31>Saison : {0}<basefont></h3>", m_Season[(int)s]), false, false); }
 					catch (Exception ex) { Misc.ExceptionLogging.WriteLine(ex, String.Format("m_Season was {0}. s was {1}.", m_Season.ToString(), s.ToString())); }
-					AddHtml(130, 500, 200, 20, String.Format("<h3><basefont color=#5A4A31>Ann??#$?&*e : {0}<basefont></h3>", year), false, false);
+					AddHtml(130, 500, 200, 20, String.Format("<h3><basefont color=#5A4A31>Année : {0}<basefont></h3>", year), false, false);
 					int gumpID;
 
 					switch (c)

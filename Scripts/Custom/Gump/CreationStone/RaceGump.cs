@@ -59,7 +59,7 @@ namespace Server.Gumps
             }
 
             string RaceName = "Aucune";
-            string RaceBG = "Aucune race de selectionn??#$?&*e";
+            string RaceBG = "Aucune race de selectionnée";
 
             if (m_Creation.Race != null)
             {

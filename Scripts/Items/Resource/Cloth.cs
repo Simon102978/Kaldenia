@@ -112,7 +112,7 @@ namespace Server.Items
         public CombineCloth()
             : base(0x1767)
         {
-			Name = "Tissus Combin??#$?&*";
+			Name = "Tissus Combiné";
         }
 
         public CombineCloth(Serial serial)

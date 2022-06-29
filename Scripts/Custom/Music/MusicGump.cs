@@ -106,7 +106,7 @@ namespace Server.Gumps
             AddButton(95, 402, 2117, 2118, 52, GumpButtonType.Reply, 0);
             AddLabel(120, 400, 1152, @"Effacer la dernière note");
 			AddButton(320, 382, 2117, 2118, 53, GumpButtonType.Reply, 0);
-            AddLabel(340, 380, 1152, @"Jouer la m??#$?&*lodie");
+            AddLabel(340, 380, 1152, @"Jouer la mélodie");
 			
 			for (int i = 0; i < size; ++i)
 			{

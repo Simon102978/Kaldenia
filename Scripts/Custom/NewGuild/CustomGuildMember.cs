@@ -98,7 +98,7 @@ namespace Server.Mobiles
 
 		#region Seriliazer
 
-		// Je veux pas me faire chier a tout marquer dans le s??#$?&*rializer du mobile, alors c'est plus simple de juste tout mettre ici, et de faire les rappels du mobiles.
+		// Je veux pas me faire chier a tout marquer dans le sérializer du mobile, alors c'est plus simple de juste tout mettre ici, et de faire les rappels du mobiles.
 
 		public void Serialize(GenericWriter writer)
         {

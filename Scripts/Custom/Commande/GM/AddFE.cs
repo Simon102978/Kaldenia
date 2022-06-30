@@ -61,7 +61,5 @@ namespace Server.Scripts.Commands
 				
 			}
 		}
-
-
 	}	
 }

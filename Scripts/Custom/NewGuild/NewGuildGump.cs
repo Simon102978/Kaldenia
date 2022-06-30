@@ -379,10 +379,10 @@ namespace Server.Custom.System
 
 						int value = Convert.ToInt32(relay3.Text);
 
-						if (value > 50000)
+						if (value >100000)
 						{
-							m_From.SendMessage("Un rang ne peut dépasser 50000 pièces par semaine.");
-							value = 50000;
+							m_From.SendMessage("Un rang ne peut dépasser 100,000 pièces par semaine.");
+							value = 100000;
 						}
 
 						if (relay3 != null)

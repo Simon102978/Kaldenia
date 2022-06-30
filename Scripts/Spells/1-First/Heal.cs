@@ -14,7 +14,7 @@ namespace Server.Spells.First
             Reagent.Ginseng,
             Reagent.SpidersSilk);
 
-		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 4) }; } }
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 0) }; } }
 		public HealSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {

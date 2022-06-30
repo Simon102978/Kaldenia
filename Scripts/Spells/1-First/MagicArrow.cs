@@ -15,7 +15,7 @@ namespace Server.Spells.First
         {
         }
 
-		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 5) }; } }
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 0) }; } }
 		public override SpellCircle Circle => SpellCircle.First;
         public override bool DelayedDamageStacking => false;
         public override bool DelayedDamage => true;

@@ -25,7 +25,7 @@ namespace Server.Spells.Mysticism
                 Reagent.SulfurousAsh
             );
 
-		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 10) }; } }
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Cycle, 8) }; } }
 		
 		public EnchantSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {

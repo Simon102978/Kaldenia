@@ -17,8 +17,8 @@ namespace Server.Mobiles
             {
                 Add(new GenericBuyInfo("1060834", typeof(Engines.Plants.PlantBowl), 2, 20, 0x15FD, 0));
 
-                Add(new GenericBuyInfo(typeof(Arrow), 3, 999, 0xF3F, 0, true));
-                Add(new GenericBuyInfo(typeof(Bolt), 3, 999, 0x1BFB, 0, true));
+                Add(new GenericBuyInfo(typeof(Arrow), 5, 999, 0xF3F, 0, true));
+                Add(new GenericBuyInfo(typeof(Bolt), 5, 999, 0x1BFB, 0, true));
 
                 Add(new GenericBuyInfo(typeof(Backpack), 15, 20, 0x9B2, 0));
                 Add(new GenericBuyInfo(typeof(Pouch), 6, 20, 0xE79, 0));

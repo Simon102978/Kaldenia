@@ -12,7 +12,7 @@ namespace Server.Items
 		[Constructable]
 		public Saddlebag() : base( 0x9B2 )
 		{
-			Name = "a saddle bag";
+			Name = "Sacoche de selle";
 			Weight = 5.0;
 		}
 
@@ -23,15 +23,15 @@ namespace Server.Items
 			{
 				if (this.IsChildOf( from.Backpack ))
 				{
-					from.SendMessage("Target Horse or Llama");
+					from.SendMessage("Choisir un cheval ou un llama");
 					from.Target = new BagTarget(this);
 				}
 				else
-					from.SendMessage("That must be in your backpack to use");
+					from.SendMessage("Cela doit être dans votre sac.");
 			}
 			else
 			{
-				from.SendMessage("You don't quite understand how to use it.");
+				from.SendMessage("Vous êtes trop bête pour savoir à quoi cela sert.");
 			}
 		}
 
@@ -76,7 +76,7 @@ namespace Server.Items
 					if ( from.InRange( bc, 1 ) )
 					{
 						if (bc.ControlMaster != from)
-							from.SendMessage("You can only put a pack on your own animal!");
+							from.SendMessage("Vous pouvez seulement le mettre sur un de vos animaux!");
 						else
 						{
 							if (targ is Horse)
@@ -92,14 +92,14 @@ namespace Server.Items
 								sb.Consume();
 							}
 							else
-								from.SendMessage("You can't put a pack on that.");
+								from.SendMessage("Vous pouvez pas mettre cela sur cette animal.");
 						}
 					}
 					else
-						from.SendMessage("That's too far away");
+						from.SendMessage("C'est trop loin.");
 				}
 				else
-					from.SendMessage("You can't put a pack on that.");
+					from.SendMessage("Vous pouvez pas mettre une sacoche sur cette animal.");
 			}
 		}
 

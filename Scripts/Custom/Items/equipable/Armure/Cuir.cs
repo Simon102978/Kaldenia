@@ -284,7 +284,7 @@ namespace Server.Items
 			: base(41608)
 		{
 			Weight = 2.0;
-			Name = "épaulière Barbare";
+			Name = "Épaulière Barbare";
 
 		}
 

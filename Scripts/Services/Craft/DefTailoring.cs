@@ -577,7 +577,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(BrassardBarbare), "Armures de Cuir", "Brassard Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
 			AddCraft(typeof(BrassardBarbare2), "Armures de Cuir", "Brassard Barbare2", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
 			AddCraft(typeof(CasqueBarbare), "Armures de Cuir", "Casque Barbare", 6.2, 31.2, typeof(Leather), 1044462, 2, 1044463);
-			AddCraft(typeof(EpauliereBarbare), "Armures de Cuir", "épaulière Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
+			AddCraft(typeof(EpauliereBarbare), "Armures de Cuir", "Épaulière Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
 			AddCraft(typeof(GantsBarbare), "Armures de Cuir", "Gants Barbare", 51.8, 76.8, typeof(Leather), 1044462, 3, 1044463);
 			AddCraft(typeof(GorgetBarbare), "Armures de Cuir", "Gorget Barbare", 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
 			AddCraft(typeof(JambiereBarbare), "Armures de Cuir", "Jambiere Barbare", 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);

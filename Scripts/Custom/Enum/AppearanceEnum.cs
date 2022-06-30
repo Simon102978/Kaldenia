@@ -31,7 +31,7 @@ namespace Server
         Charmant,
         [AppearanceAttribute("Beau", "Belle")]
         Beau,
-        [AppearanceAttribute("élegant", "élegante")]
+        [AppearanceAttribute("Élegant", "Élegante")]
         Elegant,
         [AppearanceAttribute("Séduisant", "Séduisante")]
         Seduisant,
@@ -41,7 +41,7 @@ namespace Server
         Envoutant,
         [AppearanceAttribute("Fascinant", "Fascinante")]
         Fascinant,
-        [AppearanceAttribute("éblouissant", "éblouissante")]
+        [AppearanceAttribute("Éblouissant", "Éblouissante")]
         Eblouissant,
         [AppearanceAttribute("Angélique", "Angélique")]
         Angelique  

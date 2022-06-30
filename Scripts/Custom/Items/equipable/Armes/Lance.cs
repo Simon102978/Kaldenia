@@ -13,7 +13,7 @@ namespace Server.Items
 			: base(41588)
 		{
 			Weight = 7.0;
-			Name = "épieu";
+			Name = "Épieu";
 		}
 
 		public Epieu(Serial serial)

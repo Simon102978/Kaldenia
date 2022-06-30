@@ -214,7 +214,7 @@ namespace Server.Items
 			: base(41572)
 		{
 
-			Name = "épée bâtarde";
+			Name = "Épée bâtarde";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -258,7 +258,7 @@ namespace Server.Items
 			: base(41573)
 		{
 
-			Name = "épée bâtarde de luxe";
+			Name = "Épée bâtarde de luxe";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -302,7 +302,7 @@ namespace Server.Items
 			: base(41574)
 		{
 
-			Name = "épée à Double Tranchants";
+			Name = "Épée à Double Tranchants";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -346,7 +346,7 @@ namespace Server.Items
 			: base(41575)
 		{
 
-			Name = "épée Courte";
+			Name = "Épée Courte";
 			Weight = 8.0;
 			//Layer = Layer.TwoHanded;
 		}
@@ -391,7 +391,7 @@ namespace Server.Items
 			: base(41576)
 		{
 
-			Name = "épée Deux Mains";
+			Name = "Épée Deux Mains";
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 		}
@@ -435,7 +435,7 @@ namespace Server.Items
 			: base(41577)
 		{
 
-			Name = "épée Longue";
+			Name = "Épée Longue";
 			Weight = 8.0;
 	//		Layer = Layer.TwoHanded;
 		}

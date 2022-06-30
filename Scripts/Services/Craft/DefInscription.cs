@@ -15,7 +15,7 @@ namespace Server.Engines.Craft
 		//    public override int GumpTitleNumber => 1044009;
 
 
-		public override string GumpTitleString => "écriture";
+		public override string GumpTitleString => "Écriture";
 
 		private static CraftSystem m_CraftSystem;
 
@@ -297,7 +297,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 11;
 
-			index = AddCraft(typeof(EvasionScroll),"Obeissance","évasion", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(EvasionScroll),"Obeissance","Évasion", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
 			 craftItem = CraftItems.GetAt(index);
 			 craftItem.Mana = 20;
 
@@ -469,21 +469,21 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 9;
 
-			index = AddCraft(typeof(FireElementalScroll),"Arcane","élém. : Feu", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(FireElementalScroll),"Arcane","Élém. : Feu", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
 			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
 			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 50;
 
-			index = AddCraft(typeof(EarthElementalScroll),"Arcane","élém. : Terre", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(EarthElementalScroll),"Arcane","Élém. : Terre", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
 			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
 			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 50;
 
-			index = AddCraft(typeof(AirElementalScroll),"Arcane","élém. : Air", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(AirElementalScroll),"Arcane","Élém. : Air", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
 			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
 			 AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");
@@ -663,7 +663,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 14;
 
-		   index = AddCraft(typeof(StrangleScroll),"Mort","étranglement", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
+		   index = AddCraft(typeof(StrangleScroll),"Mort","Étranglement", 46.4, 96.4, typeof(BlankScroll), 1044377, 1, 1044378);
 			 AddRes(index, typeof(DaemonBlood),"DaemonBlood", 1,"Vous n'avez pas assez de DaemonBlood.");
 			AddRes(index, typeof(NoxCrystal),"NoxCrystal", 1,"Vous n'avez pas assez de NoxCrystal.");
 			 craftItem = CraftItems.GetAt(index);
@@ -711,7 +711,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 14;
 
-			index = AddCraft(typeof(LightningScroll),"Obeissance","éclair", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(LightningScroll),"Obeissance","Éclair", 17.8, 67.8, typeof(BlankScroll), 1044377, 1, 1044378);
 			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
 			AddRes(index, typeof(SulfurousAsh),"SulfurousAsh", 1,"Vous n'avez pas assez de SulfurousAsh.");
 			craftItem = CraftItems.GetAt(index);
@@ -779,7 +779,7 @@ namespace Server.Engines.Craft
 			craftItem = CraftItems.GetAt(index);
 			craftItem.Mana = 50;
 
-			index = AddCraft(typeof(WaterElementalScroll),"Arcane","élém. : Eau", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
+			index = AddCraft(typeof(WaterElementalScroll),"Arcane","Élém. : Eau", 75.0, 125.0, typeof(BlankScroll), 1044377, 1, 1044378);
 			AddRes(index, typeof(Bloodmoss),"Bloodmoss", 1,"Vous n'avez pas assez de Bloodmoss.");
 			AddRes(index, typeof(MandrakeRoot),"MandrakeRoot", 1,"Vous n'avez pas assez de MandrakeRoot.");
 			AddRes(index, typeof(SpidersSilk),"SpidersSilk", 1,"Vous n'avez pas assez de SpidersSilk.");

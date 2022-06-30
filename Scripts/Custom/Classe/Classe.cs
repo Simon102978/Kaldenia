@@ -13,8 +13,7 @@ namespace Server.Misc
 					{
 						Classe.RegisterClasse(new Classe(-1, "Aucune",ClasseType.None,new List<SkillName>() {  },0));
 
-			     		Classe.RegisterClasse(new Classe(0,	"épéiste",ClasseType.Guerrier,new List<SkillName>() { SkillName.Swords,SkillName.Tactics,SkillName.Focus },3));
-						Classe.RegisterClasse(new Classe(1, "Massier", ClasseType.Guerrier, new List<SkillName>() { SkillName.Macing, SkillName.Tactics, SkillName.Focus }, 3));
+			     		Classe.RegisterClasse(new Classe(0,	"Épéiste",ClasseType.Guerrier,new List<SkillName>() { SkillName.Swords,SkillName.Tactics,SkillName.Focus },3));						Classe.RegisterClasse(new Classe(1, "Massier", ClasseType.Guerrier, new List<SkillName>() { SkillName.Macing, SkillName.Tactics, SkillName.Focus }, 3));
 						Classe.RegisterClasse(new Classe(2, "Dueliste", ClasseType.Guerrier, new List<SkillName>() { SkillName.Fencing, SkillName.Tactics, SkillName.Focus }, 3));
 						Classe.RegisterClasse(new Classe(3, "Bagarreur", ClasseType.Guerrier, new List<SkillName>() { SkillName.Wrestling, SkillName.Tactics, SkillName.Focus }, 3));
 						Classe.RegisterClasse(new Classe(4, "Archer", ClasseType.Guerrier, new List<SkillName>() { SkillName.Archery, SkillName.Tactics, SkillName.Focus }, 3));
@@ -32,7 +31,7 @@ namespace Server.Misc
 						Classe.RegisterClasse(new Classe(13, "Ingénieur", ClasseType.Metier, new List<SkillName>() { SkillName.Blacksmith, SkillName.Tinkering }, 0));
 						Classe.RegisterClasse(new Classe(14, "Styliste", ClasseType.Metier, new List<SkillName>() { SkillName.Carpentry, SkillName.Tailoring }, 0));
 						Classe.RegisterClasse(new Classe(15, "Palefrenier", ClasseType.Metier, new List<SkillName>() { SkillName.Herding, SkillName.Equitation }, 0));
-						Classe.RegisterClasse(new Classe(16, "épicier", ClasseType.Metier, new List<SkillName>() { SkillName.Cooking, SkillName.Alchemy }, 0));
+						Classe.RegisterClasse(new Classe(16, "Épicier", ClasseType.Metier, new List<SkillName>() { SkillName.Cooking, SkillName.Alchemy }, 0));
 					}
 		}
 }

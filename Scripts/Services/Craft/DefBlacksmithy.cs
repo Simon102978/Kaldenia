@@ -425,10 +425,10 @@ namespace Server.Engines.Craft
 
 
 
-			AddCraft(typeof(EcuBois), 1011080, "Ecu de bois", -15.2, 34.8, typeof(IronIngot), 1044036, 8, 1044037);
+			AddCraft(typeof(EcuBois), 1011080, "Écu de bois", -15.2, 34.8, typeof(IronIngot), 1044036, 8, 1044037);
 			AddCraft(typeof(BouclierRond), 1011080, "Bouclier Rond Renforcé", -25.0, 25.0, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(BouclierRond2), 1011080, "Bouclier Rond", -25.0, 25.0, typeof(IronIngot), 1044036, 10, 1044037);
-			AddCraft(typeof(EcuLong), 1011080, "écu Long", 60.0, 110.0, typeof(IronIngot), 1044036, 16, 1044037);
+			AddCraft(typeof(EcuLong), 1011080, "Écu Long", 60.0, 110.0, typeof(IronIngot), 1044036, 16, 1044037);
 			AddCraft(typeof(Pavois), 1011080, "Pavois", 65.0, 110.0, typeof(IronIngot), 1044036, 18, 1044037);
 			AddCraft(typeof(Pavois2), 1011080, "Pavois Décoratif", 70.0, 110.0, typeof(IronIngot), 1044036, 18, 1044037);
 			AddCraft(typeof(Rondache), 1011080, "Rondache", 75.0, 110.0, typeof(IronIngot), 1044036, 12, 1044037);
@@ -507,14 +507,14 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(RapiereDecoree), 1011081, "Rapière Décorée", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(WakizashiLong), 1011081, "Wakizashi Long", 35.4, 85.4, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(Runire), 1011081, "Runire", 44.1, 94.1, typeof(IronIngot), 1044036, 8, 1044037);
-			AddCraft(typeof(EpeeCourte), 1011081, "épée Courte", 44.1, 94.1, typeof(IronIngot), 1044036, 8, 1044037);
+			AddCraft(typeof(EpeeCourte), 1011081, "Épée Courte", 44.1, 94.1, typeof(IronIngot), 1044036, 8, 1044037);
 			AddCraft(typeof(Astoria), 1011081, "Astoria", 31.7, 81.7, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(SabreLuxe), 1011081, "Sabre Dorée de Luxe", 31.7, 81.7, typeof(IronIngot), 1044036, 10, 1044037);
-			AddCraft(typeof(EpeeBatardeLuxe), 1011081, "épée bâtarde de luxe", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(EpeeDoubleTranchant), 1011081, "épée à Double Tranchants", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
-			AddCraft(typeof(EpeeLongue), 1011081, "épée Longue", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
-			index = AddCraft(typeof(EpeeBatarde), 1011081, "épée bâtarde", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
-			index = AddCraft(typeof(EpeeDeuxMains), 1011081, "épée Deux Mains", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
+			AddCraft(typeof(EpeeBatardeLuxe), 1011081, "Épée bâtarde de luxe", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(EpeeDoubleTranchant), 1011081, "Épée à Double Tranchants", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(EpeeLongue), 1011081, "Épée Longue", 24.3, 74.3, typeof(IronIngot), 1044036, 14, 1044037);
+			index = AddCraft(typeof(EpeeBatarde), 1011081, "Épée bâtarde", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
+			index = AddCraft(typeof(EpeeDeuxMains), 1011081, "Épée Deux Mains", 75.0, 125.0, typeof(IronIngot), 1044036, 18, 1044037);
 
 
 			/*
@@ -765,7 +765,7 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(Spear), 1011083, "Spear", 49.0, 99.0, typeof(IronIngot), 1044036, 12, 1044037);
 
-			AddCraft(typeof(Epieu), 1011083, "épieu", 49.0, 99.0, typeof(IronIngot), 1044036, 12, 1044037);
+			AddCraft(typeof(Epieu), 1011083, "Épieu", 49.0, 99.0, typeof(IronIngot), 1044036, 12, 1044037);
 			AddCraft(typeof(GrandeFourche), 1011083, "Grande Fourche", 49.0, 99.0, typeof(IronIngot), 1044036, 12, 1044037);
 			AddCraft(typeof(Hellebarde), 1011083, "Hellebarde", 49.0, 99.0, typeof(IronIngot), 1044036, 12, 1044037);
 			AddCraft(typeof(JavelotLuxe), 1011083, "Javelot de Luxe", 49.0, 99.0, typeof(IronIngot), 1044036, 12, 1044037);

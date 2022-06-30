@@ -14,14 +14,14 @@ namespace Server.Scripts.Commands
     {
         public static void Initialize()
         {
-			CommandSystem.Register("AddFE", AccessLevel.GameMaster, new CommandEventHandler(ClasseSkill_OnCommand));
+			CommandSystem.Register("AddFE", AccessLevel.GameMaster, new CommandEventHandler(AddFe_OnCommand));
 
 		}
 
 
 		[Usage("AddFE")]
 		[Description("Permet de donner une FE.")]
-		public static void ClasseSkill_OnCommand(CommandEventArgs e)
+		public static void AddFe_OnCommand(CommandEventArgs e)
 		{
             Mobile from = e.Mobile;
 
@@ -61,9 +61,6 @@ namespace Server.Scripts.Commands
 				
 			}
 		}
-
-
-
 
 
 	}	

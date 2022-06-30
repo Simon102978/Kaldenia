@@ -855,7 +855,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Cehmise ajustée";
+		Name = "Chemise ajustée";
 	}
 
 	public Chemise5(Serial serial)

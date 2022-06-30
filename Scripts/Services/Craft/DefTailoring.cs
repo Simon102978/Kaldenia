@@ -289,7 +289,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Chemise2), "Hauts", "Chemise noble", 53.2,73.2, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(Chemise3), "Hauts", "Chemise longue lacée", 88.1,108.1, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(Chemise4), "Hauts", "Chemise simple", 97.9,117.9, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
-			index = AddCraft(typeof(Chemise5), "Hauts", "Cehmise ajustée", 91.8,111.8, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(Chemise5), "Hauts", "Chemise ajustée", 91.8,111.8, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(Chemise6), "Hauts", "Chemise lacée", 65.4,85.4, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(Chemise7), "Hauts", "Manteau élégant", 97.2,117.2, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(Doublet), "Hauts", "Doublet", 58.3,78.3, typeof(Cloth),"Tissus", 8, "Vous n'avez pas assez de tissus.");

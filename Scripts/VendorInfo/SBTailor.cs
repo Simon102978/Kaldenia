@@ -69,37 +69,37 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Scissors), 6);
+                Add(typeof(Scissors), 1);
                 Add(typeof(SewingKit), 1);
-                Add(typeof(Dyes), 4);
-                Add(typeof(DyeTub), 4);
+                Add(typeof(Dyes), 1);
+                Add(typeof(DyeTub), 1);
 
-                Add(typeof(BoltOfCloth), 50);
+                Add(typeof(BoltOfCloth), 5);
                 Add(typeof(Cloth), 1);
                 Add(typeof(UncutCloth), 1);
 
-                Add(typeof(FancyShirt), 10);
-                Add(typeof(Shirt), 6);
+                Add(typeof(FancyShirt), 1);
+                Add(typeof(Shirt), 1);
 
                 Add(typeof(ShortPants), 3);
-                Add(typeof(LongPants), 5);
+                Add(typeof(LongPants), 4);
 
                 Add(typeof(Cloak), 4);
-                Add(typeof(FancyDress), 12);
-                Add(typeof(Robe), 9);
-                Add(typeof(PlainDress), 7);
+                Add(typeof(FancyDress), 2);
+                Add(typeof(Robe), 2);
+                Add(typeof(PlainDress), 1);
 
-                Add(typeof(Skirt), 5);
-                Add(typeof(Kilt), 5);
+                Add(typeof(Skirt), 1);
+                Add(typeof(Kilt), 1);
 
-                Add(typeof(Doublet), 7);
-                Add(typeof(Tunic), 9);
-                Add(typeof(JesterSuit), 13);
+                Add(typeof(Doublet), 5);
+                Add(typeof(Tunic), 5);
+                Add(typeof(JesterSuit), 5);
 
                 Add(typeof(FullApron), 5);
                 Add(typeof(HalfApron), 5);
 
-                Add(typeof(JesterHat), 6);
+                Add(typeof(JesterHat), 5);
                 Add(typeof(FloppyHat), 3);
                 Add(typeof(WideBrimHat), 4);
                 Add(typeof(Cap), 5);
@@ -112,11 +112,11 @@ namespace Server.Mobiles
                 Add(typeof(FeatheredHat), 5);
                 Add(typeof(TricorneHat), 4);
 
-                Add(typeof(SpoolOfThread), 9);
+                Add(typeof(SpoolOfThread), 1);
 
-                Add(typeof(Flax), 51);
-                Add(typeof(Cotton), 51);
-                Add(typeof(Wool), 31);
+                Add(typeof(Flax), 1);
+                Add(typeof(Cotton), 1);
+                Add(typeof(Wool), 1);
             }
         }
     }

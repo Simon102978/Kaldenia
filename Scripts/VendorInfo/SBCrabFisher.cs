@@ -23,32 +23,32 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(LobsterTrap), 10);
-                Add(typeof(AppleCrab), 10);
-                Add(typeof(BlueCrab), 10);
-                Add(typeof(DungeonessCrab), 10);
-                Add(typeof(KingCrab), 10);
-                Add(typeof(RockCrab), 10);
-                Add(typeof(SnowCrab), 10);
-                Add(typeof(StoneCrab), 250);
-                Add(typeof(SpiderCrab), 250);
-                Add(typeof(TunnelCrab), 2500);
-                Add(typeof(VoidCrab), 2500);
+                Add(typeof(LobsterTrap), 1);
+                Add(typeof(AppleCrab), 1);
+                Add(typeof(BlueCrab), 1);
+                Add(typeof(DungeonessCrab), 1);
+                Add(typeof(KingCrab), 1);
+                Add(typeof(RockCrab), 1);
+                Add(typeof(SnowCrab), 1);
+                Add(typeof(StoneCrab), 25);
+                Add(typeof(SpiderCrab), 25);
+                Add(typeof(TunnelCrab), 25);
+                Add(typeof(VoidCrab), 25);
 
-                Add(typeof(CrustyLobster), 10);
-                Add(typeof(FredLobster), 10);
-                Add(typeof(HummerLobster), 10);
-                Add(typeof(RockLobster), 10);
-                Add(typeof(ShovelNoseLobster), 10);
-                Add(typeof(SpineyLobster), 10);
-                Add(typeof(BlueLobster), 250);
-                Add(typeof(BloodLobster), 2500);
-                Add(typeof(DreadLobster), 2500);
-                Add(typeof(VoidLobster), 2500);
+                Add(typeof(CrustyLobster), 1);
+                Add(typeof(FredLobster), 1);
+                Add(typeof(HummerLobster), 1);
+                Add(typeof(RockLobster), 1);
+                Add(typeof(ShovelNoseLobster), 1);
+                Add(typeof(SpineyLobster), 1);
+                Add(typeof(BlueLobster), 25);
+                Add(typeof(BloodLobster), 25);
+                Add(typeof(DreadLobster), 25);
+                Add(typeof(VoidLobster), 25);
 
-                Add(typeof(StoneCrabMeat), 100);
-                Add(typeof(SpiderCrabMeat), 100);
-                Add(typeof(BlueLobsterMeat), 100);
+                Add(typeof(StoneCrabMeat), 1);
+                Add(typeof(SpiderCrabMeat), 1);
+                Add(typeof(BlueLobsterMeat), 1);
             }
         }
     }

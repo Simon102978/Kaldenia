@@ -24,7 +24,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(ScribesPen), 4);
+                Add(typeof(ScribesPen), 1);
                 Add(typeof(BlankScroll), 2);
             }
         }

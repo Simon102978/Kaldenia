@@ -39,8 +39,8 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(MasonryBook), 5000);
-                Add(typeof(StoneMiningBook), 5000);
+             //   Add(typeof(MasonryBook), 5000);
+             //   Add(typeof(StoneMiningBook), 5000);
                 Add(typeof(MalletAndChisel), 1);
 
                 Add(typeof(WoodenBox), 7);
@@ -53,13 +53,13 @@ namespace Server.Mobiles
                 Add(typeof(Nightstand), 7);
                 Add(typeof(YewWoodTable), 10);
 
-                Add(typeof(Throne), 24);
+                Add(typeof(Throne), 4);
                 Add(typeof(WoodenThrone), 6);
                 Add(typeof(Stool), 6);
                 Add(typeof(FootStool), 6);
 
-                Add(typeof(FancyWoodenChairCushion), 12);
-                Add(typeof(WoodenChairCushion), 10);
+                Add(typeof(FancyWoodenChairCushion), 2);
+                Add(typeof(WoodenChairCushion), 1);
                 Add(typeof(WoodenChair), 8);
                 Add(typeof(BambooChair), 6);
                 Add(typeof(WoodenBench), 6);
@@ -77,15 +77,16 @@ namespace Server.Mobiles
                 Add(typeof(Board), 2);
                 Add(typeof(Axle), 1);
 
-                Add(typeof(WoodenShield), 31);
-                Add(typeof(BlackStaff), 24);
-                Add(typeof(GnarledStaff), 12);
-                Add(typeof(QuarterStaff), 15);
-                Add(typeof(ShepherdsCrook), 12);
-                Add(typeof(Club), 13);
+                Add(typeof(WoodenShield), 3);
+                Add(typeof(BlackStaff), 4);
+                Add(typeof(GnarledStaff), 2);
+                Add(typeof(QuarterStaff), 5);
+                Add(typeof(ShepherdsCrook), 2);
+                Add(typeof(Club), 3);
 
                 Add(typeof(Log), 1);
-            }
+				Add(typeof(Board), 2);
+			}
         }
     }
 }

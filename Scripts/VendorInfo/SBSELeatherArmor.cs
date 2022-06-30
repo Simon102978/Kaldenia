@@ -35,6 +35,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
+				/*
                 Add(typeof(LeatherJingasa), 5);
                 Add(typeof(LeatherDo), 42);
                 Add(typeof(LeatherHiroSode), 23);
@@ -47,6 +48,7 @@ namespace Server.Mobiles
                 Add(typeof(StuddedHiroSode), 32);
                 Add(typeof(StuddedSuneate), 40);
                 Add(typeof(StuddedHaidate), 37);
+				*/
             }
         }
     }

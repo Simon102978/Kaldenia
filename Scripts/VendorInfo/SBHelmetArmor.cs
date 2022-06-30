@@ -31,11 +31,11 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Bascinet), 9);
-                Add(typeof(CloseHelm), 9);
-                Add(typeof(Helmet), 9);
-                Add(typeof(NorseHelm), 9);
-                Add(typeof(PlateHelm), 10);
+                Add(typeof(Bascinet), 3);
+                Add(typeof(CloseHelm), 3);
+                Add(typeof(Helmet), 3);
+                Add(typeof(NorseHelm), 3);
+                Add(typeof(PlateHelm), 5);
             }
         }
     }

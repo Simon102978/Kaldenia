@@ -51,20 +51,20 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(CheeseWheel), 12);
-                Add(typeof(CookedBird), 8);
-                Add(typeof(RoastPig), 53);
-                Add(typeof(Cake), 5);
+                Add(typeof(CheeseWheel), 1);
+                Add(typeof(CookedBird), 1);
+                Add(typeof(RoastPig), 1);
+                Add(typeof(Cake), 1);
                 Add(typeof(JarHoney), 1);
                 Add(typeof(SackFlour), 1);
-                Add(typeof(BreadLoaf), 2);
-                Add(typeof(ChickenLeg), 3);
-                Add(typeof(LambLeg), 4);
+                Add(typeof(BreadLoaf), 1);
+                Add(typeof(ChickenLeg), 1);
+                Add(typeof(LambLeg), 1);
                 Add(typeof(Skillet), 1);
                 Add(typeof(FlourSifter), 1);
                 Add(typeof(RollingPin), 1);
                 Add(typeof(Muffins), 1);
-                Add(typeof(ApplePie), 3);
+                Add(typeof(ApplePie), 1);
 
                 Add(typeof(WoodenBowlOfCarrots), 1);
                 Add(typeof(WoodenBowlOfCorn), 1);

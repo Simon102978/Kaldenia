@@ -105,9 +105,9 @@ namespace Server.Mobiles
                 Add(typeof(SulfurousAsh), 1);
 
                 Add(typeof(BreadLoaf), 3);
-                Add(typeof(Backpack), 7);
-                Add(typeof(RecallRune), 8);
-                Add(typeof(Spellbook), 9);
+                Add(typeof(Backpack), 3);
+                Add(typeof(RecallRune), 3);
+                Add(typeof(Spellbook), 5);
                 Add(typeof(BlankScroll), 3);
 				/*
 								Add(typeof(BatWing), 1);

@@ -32,6 +32,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
+				/*
                 Add(typeof(NoDachi), 41);
                 Add(typeof(Tessen), 41);
                 Add(typeof(Wakizashi), 19);
@@ -42,6 +43,7 @@ namespace Server.Mobiles
                 Add(typeof(Shuriken), 9);
                 Add(typeof(Kama), 30);
                 Add(typeof(Sai), 28);
+				*/
             }
         }
     }

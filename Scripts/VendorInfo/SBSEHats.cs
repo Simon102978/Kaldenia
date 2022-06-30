@@ -25,9 +25,9 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Kasa), 15);
+                Add(typeof(Kasa), 5);
                 Add(typeof(LeatherJingasa), 5);
-                Add(typeof(ClothNinjaHood), 16);
+                Add(typeof(ClothNinjaHood), 6);
             }
         }
     }

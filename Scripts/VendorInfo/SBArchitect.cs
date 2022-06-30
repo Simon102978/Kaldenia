@@ -24,9 +24,9 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(InteriorDecorator), 5000);
+                Add(typeof(InteriorDecorator), 50);
 
-                Add(typeof(HousePlacementTool), 301);
+                Add(typeof(HousePlacementTool), 30);
             }
         }
     }

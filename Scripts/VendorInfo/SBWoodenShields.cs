@@ -23,7 +23,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(WoodenShield), 15);
+                Add(typeof(WoodenShield), 5);
             }
         }
     }

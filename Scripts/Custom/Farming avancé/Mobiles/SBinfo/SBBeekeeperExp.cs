@@ -40,9 +40,9 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-                Add(typeof(apiBeeHiveDeed), 1000);
+                Add(typeof(apiBeeHiveDeed), 100);
                 Add(typeof(HiveTool), 50);
-                Add(typeof(apiWaxProcessingPot), 125);
+                Add(typeof(apiWaxProcessingPot), 12);
 				Add(typeof(JarHoney), 1);
 				Add(typeof(Beeswax), 1);
 

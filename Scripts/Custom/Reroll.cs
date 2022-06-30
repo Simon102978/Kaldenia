@@ -16,15 +16,16 @@ namespace Server
     {
 		private int m_Id;
         private string m_Name;
-        private double m_Experience;
-
+        private double m_ExperienceNormal;
+		private double m_ExperienceRP;
 
 		public int Id { get => m_Id; set => m_Id = value; }
 
 		public string Name { get => m_Name; set => m_Name = value; }
-        public double Experience { get => m_Experience; set => m_Experience = value; }
+        public double ExperienceNormal { get => m_ExperienceNormal; set => m_ExperienceNormal = value; }
+		public double ExperienceRP { get => m_ExperienceRP; set => m_ExperienceRP = value; }
 
-        public Reroll()
+		public Reroll()
         {
 
         }
@@ -34,7 +35,8 @@ namespace Server
 
 			
             Name = sp.Name;
-            Experience = sp.FETotal;
+			ExperienceNormal = sp.FENormalTotal;
+			ExperienceRP = sp.FERPTotal;
         }
     }
 

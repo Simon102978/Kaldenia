@@ -359,7 +359,8 @@ namespace Server.Accounting
 						Reroll re = new Reroll();
 						re.Id = Utility.GetXMLInt32(Utility.GetText(ele, "0"), 0);
 						re.Name = Utility.GetText(ele["Name"], "empty");
-						re.Experience = Utility.GetXMLInt32(Utility.GetText(ele["Experience"], "0"), 0);
+						re.ExperienceNormal = Utility.GetXMLInt32(Utility.GetText(ele["Experience"], "0"), 0);
+						re.ExperienceRP = Utility.GetXMLInt32(Utility.GetText(ele["ExperienceRP"], "0"), 0);
 						AddReroll(re);
 					}
 					catch (Exception ex)
@@ -1574,7 +1575,11 @@ namespace Server.Accounting
 					xml.WriteEndElement();
 
 					xml.WriteStartElement("Experience");
-					xml.WriteValue(m.Experience);
+					xml.WriteValue(m.ExperienceNormal);
+					xml.WriteEndElement();
+
+					xml.WriteStartElement("ExperienceRP");
+					xml.WriteValue(m.ExperienceRP);
 					xml.WriteEndElement();
 
 					xml.WriteEndElement();

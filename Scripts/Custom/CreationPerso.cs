@@ -434,8 +434,9 @@ namespace Server
 
 			if (m_Reroll != null)
 			{
-				m_Player.FE +=  (int)Math.Round(m_Reroll.Experience * 0.75);
-				m_Player.FETotal += (int)Math.Round(m_Reroll.Experience * 0.75);
+				m_Player.FE +=  (int)(Math.Round(m_Reroll.ExperienceNormal * 0.75) + m_Reroll.ExperienceRP);
+				m_Player.FENormalTotal += (int)Math.Round(m_Reroll.ExperienceNormal * 0.75);
+				m_Player.FERPTotal += (int)m_Reroll.ExperienceRP;
 
 				Account acc = (Account)m_Player.Account;
 

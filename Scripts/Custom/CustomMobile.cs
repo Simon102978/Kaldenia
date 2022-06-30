@@ -35,7 +35,10 @@ namespace Server.Mobiles
 		private int m_StatAttente;
 		private int m_fe;
 		private int m_feAttente;
-		private int m_TotalFE;
+		private int m_TotalNormalFE;
+		private int m_TotalRPFE;
+
+
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
 
@@ -177,7 +180,16 @@ namespace Server.Mobiles
 		public int FE { get { return m_fe; } set { m_fe = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public int FETotal { get { return m_TotalFE; } set { m_TotalFE = value; } }
+		public int FENormalTotal { get { return m_TotalNormalFE; } set { m_TotalNormalFE = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int FERPTotal { get { return m_TotalRPFE; } set { m_TotalRPFE = value; } }
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int FETotal { get { return m_TotalNormalFE + m_TotalRPFE; } }
+		 
+		 
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FEAttente { get { return m_feAttente; } set { m_feAttente = value; } }
@@ -2042,6 +2054,12 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 22:
+					{
+						m_TotalRPFE = reader.ReadInt();
+
+						goto case 21;
+					}
 				case 21:
 					{
 						m_TotalGameTime = reader.ReadTimeSpan();
@@ -2191,7 +2209,7 @@ namespace Server.Mobiles
 						m_fe = reader.ReadInt();
 						m_lastLoginTime = reader.ReadDateTime();
 						m_nextFETime = reader.ReadTimeSpan();
-						m_TotalFE = reader.ReadInt();
+						m_TotalNormalFE = reader.ReadInt();
 
 
 						goto case 2;
@@ -2223,8 +2241,10 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(21); // version
+            writer.Write(22); // version
 
+
+			writer.Write(m_TotalRPFE); 
 
 			m_TotalGameTime += DateTime.Now - m_LastCountGameTime;
 			m_LastCountGameTime = DateTime.Now;
@@ -2316,7 +2336,7 @@ namespace Server.Mobiles
 			writer.Write(m_fe);
 			writer.Write(m_lastLoginTime);
 			writer.Write(m_nextFETime);
-			writer.Write(m_TotalFE);
+			writer.Write(m_TotalNormalFE);
 
 
 

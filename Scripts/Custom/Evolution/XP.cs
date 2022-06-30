@@ -49,7 +49,7 @@ namespace Server
           {
 			CustomPlayerMobile pm = (CustomPlayerMobile)m;
 			
-			if(pm.FETotal >= day * 3 )
+			if(pm.FENormalTotal >= day * 3 )
 			{
 
 			}
@@ -128,7 +128,7 @@ namespace Server
         return;
 
       pm.FE++;
-	  pm.FETotal++;
+	  pm.FENormalTotal++;
 
 	 pm.SendMessage("Vous obtenez une nouvelle FE !");
 

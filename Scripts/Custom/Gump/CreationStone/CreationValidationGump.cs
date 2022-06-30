@@ -87,7 +87,7 @@ namespace Server.Gumps
 
 			   if (m_Creation.Reroll != null)
 			  {
-				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpériences: " + Math.Round(creationPerso.Reroll.Experience * 0.75);
+				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpériences: " + Math.Round(creationPerso.Reroll.ExperienceNormal * 0.75 + creationPerso.Reroll.ExperienceRP );
 			  }
 
 			AddSection(x - 10, y, 303, 508, "Information", info);

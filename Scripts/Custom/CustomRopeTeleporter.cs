@@ -38,7 +38,7 @@ namespace Server.Items
 
 				if (package != null)
 				{
-					Moongate firstGate = new Moongate(ToLocation, ToMap);
+					CustomGate firstGate = new CustomGate(ToLocation, ToMap);
 					firstGate.MoveToWorld(this.Location, this.Map);
 
 					package.Delete();

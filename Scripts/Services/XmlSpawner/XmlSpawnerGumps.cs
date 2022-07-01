@@ -32,7 +32,7 @@ namespace Server.Mobiles
 
 			AddPage(0);
 
-            AddBackground(20, 0, 220, 354, 5054);
+            AddBackground(20, 0, 220, 354, 5100);
             AddAlphaRegion(20, 0, 220, 354);
             AddImageTiled(23, 5, 214, 270, 0x52);
             AddImageTiled(24, 6, 213, 261, 0xBBC);
@@ -226,18 +226,18 @@ namespace Server.Mobiles
             // if the expanded gump toggle has been activated then override the auto settings.
             if (m_ShowGump > 1)
             {
-                AddBackground(0, 0, 670 + xoffset + 30, 474, 5054);
+                AddBackground(0, 0, 670 + xoffset + 30, 474, 5100);
                 AddAlphaRegion(0, 0, 670 + xoffset + 30, 474);
             }
             else
                 if (m_ShowGump > 0)
             {
-                AddBackground(0, 0, 335 + xoffset, 474, 5054);
+                AddBackground(0, 0, 335 + xoffset, 474, 5100);
                 AddAlphaRegion(0, 0, 335 + xoffset, 474);
             }
             else
             {
-                AddBackground(0, 0, 305 + xoffset, 474, 5054);
+                AddBackground(0, 0, 305 + xoffset, 474, 5100);
                 AddAlphaRegion(0, 0, 305 + xoffset, 474);
             }
 

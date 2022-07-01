@@ -11,6 +11,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
 
             Body = 0x191;
+			Female = true;
             Name = NameList.RandomName("female");
 			ActiveSpeed = 1.0;
 			PassiveSpeed = 1.0;

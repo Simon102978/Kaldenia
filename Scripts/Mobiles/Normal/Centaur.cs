@@ -58,8 +58,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.Gems);
-            AddLoot(LootPack.LootItem<Arrow>(Utility.RandomMinMax(80, 90)));
+           // AddLoot(LootPack.Gems);
+            AddLoot(LootPack.LootItem<Arrow>(Utility.RandomMinMax(20, 50)));
         }
 
         public override void Serialize(GenericWriter writer)

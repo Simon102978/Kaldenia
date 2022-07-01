@@ -508,6 +508,65 @@ namespace Server
 			new LootPackItem(typeof(BaseJewel), 1)
 		};
 
+		public static readonly LootPackItem[] OtherItems = new LootPackItem[]
+		{
+				new LootPackItem( typeof( Bandage ), 3 ),
+				new LootPackItem( typeof( Bottle ), 1 ),
+				new LootPackItem( typeof( Hides ), 1 ),
+				new LootPackItem( typeof( Torch ), 1 ),
+				new LootPackItem( typeof( Bone ), 2 ),
+				new LootPackItem( typeof(Bag), 1 ),
+				new LootPackItem( typeof(Pouch), 1 ),
+				new LootPackItem( typeof(Bedroll), 1 ),
+				new LootPackItem( typeof(Backpack), 1 ),
+				new LootPackItem( typeof(Fouet4), 1 ),
+				new LootPackItem( typeof(FishingPole), 1 ),
+				new LootPackItem( typeof(PipeCourte), 1 ),
+				new LootPackItem( typeof(PipeCourbee), 1 ),
+				new LootPackItem( typeof(Axle), 1 ),
+				new LootPackItem( typeof(RollingPin), 1 ),
+				new LootPackItem( typeof(PaintsAndBrush), 1 ),
+				new LootPackItem( typeof(JointingPlane), 1 ),
+				new LootPackItem( typeof(Lockpick), 3 ),
+				new LootPackItem( typeof(DrawKnife), 1 ),
+				new LootPackItem( typeof(MortarPestle), 1 ),
+				new LootPackItem( typeof(Scorp), 1 ),
+				new LootPackItem( typeof(Saw), 1 ),
+				new LootPackItem( typeof(DovetailSaw), 1 ),
+				new LootPackItem( typeof(Froe), 1 ),
+				new LootPackItem( typeof(Hammer), 1 ),
+				new LootPackItem( typeof(Inshave), 1 ),
+				new LootPackItem( typeof(SmithHammer), 1 ),
+				new LootPackItem( typeof(Skillet), 1 ),
+				new LootPackItem( typeof(Tongs), 1 ),
+				new LootPackItem( typeof(Hinge), 1 ),
+				new LootPackItem( typeof(Springs), 1 ),
+				new LootPackItem( typeof(SpoonLeft), 1 ),
+				new LootPackItem( typeof(SpoonRight), 1 ),
+				new LootPackItem( typeof(ForkLeft), 1 ),
+				new LootPackItem( typeof(ForkRight), 1 ),
+				new LootPackItem( typeof(KnifeLeft), 1 ),
+				new LootPackItem( typeof(KnifeRight), 1 ),
+				new LootPackItem( typeof(Plate), 1 ),
+				new LootPackItem( typeof(Candle), 1 ),
+				new LootPackItem( typeof(BlankMap), 1 ),
+				new LootPackItem( typeof(Missive), 1 ),
+				new LootPackItem( typeof(OilFlask), 1 ),
+				new LootPackItem( typeof(Lantern), 1 ),
+				new LootPackItem( typeof(Dices), 1 ),
+				new LootPackItem( typeof(AxleGears), 1 ),
+				new LootPackItem( typeof(BlueBook), 1 ),
+				new LootPackItem( typeof(RedBook), 1 ),
+				new LootPackItem( typeof(TanBook), 1 ),
+				new LootPackItem( typeof(BrownBook), 1 ),
+				new LootPackItem( typeof(IronWire), 1 ),
+	};
+
+		public static readonly LootPack Others = new LootPack(new LootPackEntry[]
+	{
+				new LootPackEntry( true,false, OtherItems,    100.00, 1 )
+	});
+
 
 		#region Magic Items
 		public static readonly LootPackItem[] MagicItemsPoor = new[]
@@ -590,10 +649,10 @@ namespace Server
 					new LootPackEntry(false, false, Gold10, 20.0, 1, true),
              
 
-                    new LootPackEntry(false, false, Instruments, 1.0, 1, true),
+      /*              new LootPackEntry(false, false, Instruments, 1.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 					new LootPackEntry(false, false, MageryRegItems, 90.0, 5, true),
-							
+							*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, Marchandise, 100.0, 1, true),
@@ -609,7 +668,7 @@ namespace Server
 					new LootPackEntry(false, false, Gold25, 10.0, 1, true),
 					
 					
-                   new LootPackEntry(false, false, Instruments, 5.0, 1, true),
+        /*           new LootPackEntry(false, false, Instruments, 5.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 10, true),				
@@ -617,7 +676,7 @@ namespace Server
 
 					new LootPackEntry(false, false, PotionItems, 30.0, 1, true),
 					new LootPackEntry(false, false, PotionItems, 10.0, 1, true),
-					new LootPackEntry(false, false, LowScrollItems, 75.0, 1, true),
+					new LootPackEntry(false, false, LowScrollItems, 75.0, 1, true),*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
@@ -637,7 +696,7 @@ namespace Server
 				
 
 
-                       new LootPackEntry(false, false, Instruments, 10.0, 1, true),
+           /*         new LootPackEntry(false, false, Instruments, 10.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 
 
@@ -657,7 +716,7 @@ namespace Server
 
 					new LootPackEntry(false, false, NecroScrollItems, 25.0, 1, true),
 					new LootPackEntry(false, false, ArcanistScrollItems, 25.0, 1, true),
-					new LootPackEntry(false, false, MysticScrollItems, 25.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 25.0, 1, true),*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
@@ -682,7 +741,7 @@ namespace Server
 					new LootPackEntry(false, false, Gold250, 1.0, 1, true),
    
 
-                    new LootPackEntry(false, false, Instruments, 15.0, 1, true),
+     /*               new LootPackEntry(false, false, Instruments, 15.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 13, true),
@@ -698,7 +757,7 @@ namespace Server
 					new LootPackEntry(false, false, HighScrollItems, 25.0, 1, true),
 					new LootPackEntry(false, false, NecroScrollItems, 25.0, 1, true),
 					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
-					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
@@ -718,7 +777,7 @@ namespace Server
 					new LootPackEntry(false, false, Gold50, 75.0, 1, true),
 					new LootPackEntry(false, false, Gold75, 75.0, 1, true),
 
-                    new LootPackEntry(false, false, Instruments, 20.0, 1, true),
+ /*                   new LootPackEntry(false, false, Instruments, 20.0, 1, true),
 					new LootPackEntry(false, false, StatueItems, 0.1, 1, true),
 
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 12, true),
@@ -735,7 +794,7 @@ namespace Server
 					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, NecroScrollItems, 75.0, 1, true),
 					new LootPackEntry(false, false, ArcanistScrollItems, 75.0, 1, true),
-					new LootPackEntry(false, false, MysticScrollItems, 75.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 75.0, 1, true),*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
@@ -749,7 +808,7 @@ namespace Server
             new LootPack(
                 new[]
                 {
-						new LootPackEntry(false, false, Gold5, 100.0, 10, true),
+					new LootPackEntry(false, false, Gold5, 100.0, 10, true),
 					new LootPackEntry(false, false, Gold10, 100.0, 5, true),
 					new LootPackEntry(false, false, Gold25, 100.0, 5, true),
 					new LootPackEntry(false, false, Gold25, 100.0, 5, true),
@@ -761,7 +820,7 @@ namespace Server
 					new LootPackEntry(false, false, Gold250, 50.0, 2, true),
 
 
-                    new LootPackEntry(false, false, MageryRegItems, 100.0, 27, true),
+           /*         new LootPackEntry(false, false, MageryRegItems, 100.0, 27, true),
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 22, true),
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 25, true),
 					new LootPackEntry(false, false, MageryRegItems, 50.0, 30, true),
@@ -778,7 +837,7 @@ namespace Server
 					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, NecroScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
-					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
@@ -804,7 +863,7 @@ namespace Server
 					new LootPackEntry(false, false, Gold200, 100.0, 2, true),
 					new LootPackEntry(false, false, Gold250, 100.0, 2, true),
 
-			        new LootPackEntry(false, false, MageryRegItems, 100.0, 30, true),
+		/*	        new LootPackEntry(false, false, MageryRegItems, 100.0, 30, true),
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 20, true),
 					new LootPackEntry(false, false, MageryRegItems, 100.0, 25, true),
 					new LootPackEntry(false, false, MageryRegItems, 50.0, 30, true),
@@ -822,7 +881,7 @@ namespace Server
 					new LootPackEntry(false, false, HighScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, NecroScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
-					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),
+					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),*/
 
 					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),

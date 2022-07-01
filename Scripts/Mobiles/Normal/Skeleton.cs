@@ -59,7 +59,9 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Poor);
-        }
+			AddLoot(LootPack.Bones, Utility.RandomMinMax(3, 5));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+		}
 
         public override void OnDeath(Container c)
         {

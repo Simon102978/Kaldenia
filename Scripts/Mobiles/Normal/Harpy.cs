@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a harpy corpse")]
@@ -48,7 +50,8 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager, 2);
-        }
+			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(SilverRing), typeof(Necklace), typeof(SilverNecklace), typeof(Collier), typeof(Collier2) }, 5.0, 1, false, true));
+		}
 
         public override int GetAttackSound()
         {

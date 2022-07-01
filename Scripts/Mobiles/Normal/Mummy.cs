@@ -52,12 +52,13 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.Gems);
             AddLoot(LootPack.Potions);
             AddLoot(LootPack.LootItem<Bandage>(100.0, 10, false, true));
             AddLoot(LootPack.LootItem<Garlic>(100.0, 5, false, true));
             AddLoot(LootPack.PeculiarSeed3);
-        }
+			AddLoot(LootPack.BodyParts, Utility.RandomMinMax(3, 5));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+		}
 
         public override void Serialize(GenericWriter writer)
         {

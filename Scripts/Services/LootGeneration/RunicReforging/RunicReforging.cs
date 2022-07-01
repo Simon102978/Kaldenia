@@ -1637,8 +1637,8 @@ namespace Server.Items
                 found = false;
                 sk = possibleSkills[Utility.Random(possibleSkills.Length)];
 
-                if ((item is Ring || item is Bracelet) && sk == SkillName.Archery)
-                    sk = SkillName.Throwing;
+        //        if ((item is Ring) && sk == SkillName.Archery)
+         //           sk = SkillName.Throwing;
 
                 for (int i = 0; !found && i < 5; ++i)
                     found = (skillbonuses.GetValues(i, out check, out bonus) && check == sk);

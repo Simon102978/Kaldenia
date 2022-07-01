@@ -10,11 +10,12 @@ namespace Server
         #region List definitions
 
         #region SA equipment
-		private static readonly Type[] m_SAJewelryTypes = new[]
+/*		private static readonly Type[] m_SAJewelryTypes = new[]
         {
-            typeof(Ring), typeof(Bracelet)
-        };
-        public static Type[] SAJewelryTypes => m_SAJewelryTypes;
+   //         typeof(Ring)
+        };*/
+
+      //  public static Type[] SAJewelryTypes => m_SAJewelryTypes;
 		
 		public static readonly Type[] m_SAShieldTypes = new[] 
 		{
@@ -431,10 +432,10 @@ namespace Server
 
         public static Item RandomWeaponOrJewelry(bool inTokuno = false, bool isMondain = false, bool isStygian = false)
         {
-            if (isStygian)
+       /*     if (isStygian)
             {
-                return Construct(m_SAWeaponTypes, m_WeaponTypes, m_JewelryTypes, m_SAJewelryTypes);
-            }
+                return Construct(m_SAWeaponTypes, m_WeaponTypes, m_JewelryTypes);
+            }*/
 
             if (isMondain)
             {
@@ -451,10 +452,10 @@ namespace Server
 
         public static BaseJewel RandomJewelry(bool isStygian = false)
         {
-            if (isStygian)
+         /*   if (isStygian)
             {
                 return Construct(m_SAJewelryTypes, m_JewelryTypes) as BaseJewel;
-            }
+            }*/
 
             return Construct(m_JewelryTypes) as BaseJewel;
         }
@@ -543,7 +544,7 @@ namespace Server
         {
             if (isStygian)
             {
-                return Construct(m_SAArmorTypes, m_ArmorTypes, m_HatTypes, m_ShieldTypes, m_JewelryTypes, m_SAJewelryTypes, m_SAShieldTypes);
+                return Construct(m_SAArmorTypes, m_ArmorTypes, m_HatTypes, m_ShieldTypes, m_JewelryTypes, m_SAShieldTypes);
             }
 
             if (isMondain)
@@ -629,7 +630,7 @@ namespace Server
                     m_HatTypes,
                     m_ShieldTypes,
                     m_JewelryTypes,
-                    m_SAJewelryTypes,
+                //    m_SAJewelryTypes,
                     m_SAShieldTypes);
             }
 

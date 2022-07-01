@@ -12,12 +12,19 @@ namespace Server.Mobiles
 		{
 			Name = NameList.RandomName("male");
 			Title = "Un Kuya Mage";
-			SetStr(100, 125);
+		
 
 			BodyValue = 0x190;
 			Hue = 1281;
 
-			SetHits(1200);
+
+			SetStr(171, 200);
+			SetDex(126, 145);
+			SetInt(200, 265);
+
+			SetHits(103, 120);
+
+			//	SetHits(1200);
 			SetMana(600, 800);
 			SetDamage(10, 15);
 
@@ -31,8 +38,8 @@ namespace Server.Mobiles
 			SetResistance(ResistanceType.Energy, 50, 60);
 
 			SetSkill(SkillName.MagicResist, 125, 140);
-			SetSkill(SkillName.Tactics, 100, 120);
-			SetSkill(SkillName.Wrestling, 110, 130);
+			SetSkill(SkillName.Tactics, 50, 120);
+			SetSkill(SkillName.Wrestling, 80, 130);
 			SetSkill(SkillName.Magery, 70, 100);
 			SetSkill(SkillName.EvalInt, 70, 100);
 
@@ -112,9 +119,11 @@ namespace Server.Mobiles
 		public override TribeType Tribe => TribeType.Kuya;
 		public override void GenerateLoot()
 		{
-			AddLoot(LootPack.Rich, 2);
-	
-			AddLoot(LootPack.MageryRegs, 31);
+			AddLoot(LootPack.Rich);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+			AddLoot(LootPack.MedScrolls);
+			AddLoot(LootPack.MageryRegs, 15);
+			AddLoot(LootPack.Potions, Utility.RandomMinMax(1, 2));
 
 		}
 

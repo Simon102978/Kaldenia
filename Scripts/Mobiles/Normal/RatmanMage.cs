@@ -66,7 +66,10 @@ namespace Server.Mobiles
             AddLoot(LootPack.RandomLootItem(new Type[] { typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll),
                 typeof(CurseWeaponScroll), typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(MindRotScroll),
                 typeof(CloseWoundsScroll), typeof(WraithFormScroll), typeof(PoisonStrikeScroll) }, 20.0, 1, false, true));
-        }
+
+			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(CheeseWedge), typeof(CheeseSlice), typeof(CheeseWheel) }, 25.0, 2, false, true));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+		}
 
         public override void Serialize(GenericWriter writer)
         {

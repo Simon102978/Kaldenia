@@ -6,7 +6,7 @@ namespace Server.Items
         public TormentedChains()
             : base(Utility.Random(6663, 2))
         {
-            Name = "chains of the tormented";
+            Name = "Les chaines du tourment";
             Weight = 1.0;
         }
 

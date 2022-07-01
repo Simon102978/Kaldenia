@@ -10,7 +10,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Name = NameList.RandomName("lizardman");
-            Title = "the squatter";
+            Title = "Le squatteur";
             Body = Utility.RandomList(35, 36);
             BaseSoundID = 417;
 

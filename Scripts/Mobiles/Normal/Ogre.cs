@@ -57,7 +57,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Potions);
-        }
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+		}
 
         public override void Serialize(GenericWriter writer)
         {

@@ -60,8 +60,10 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.Potions);
-        }
+            AddLoot(LootPack.Potions,2);
+			AddLoot(LootPack.MedScrolls, 2);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+		}
 
         public override void Serialize(GenericWriter writer)
         {

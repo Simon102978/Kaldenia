@@ -58,7 +58,9 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.LootItem<Arrow>(10, 25, true));
-        }
+			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(CheeseWedge), typeof(CheeseSlice), typeof(CheeseWheel) }, 25.0, 2, false, true));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+		}
 
         public override void Serialize(GenericWriter writer)
         {

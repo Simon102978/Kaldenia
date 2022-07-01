@@ -41,12 +41,17 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.UltraRich, 2);
-            AddLoot(LootPack.ArcanistScrolls);
+         //   AddLoot(LootPack.ArcanistScrolls);
             AddLoot(LootPack.Parrot);
-            AddLoot(LootPack.LootItem<SalivasFeather>());
-        }
+   //         AddLoot(LootPack.LootItem<SalivasFeather>());
+			AddLoot(LootPack.LootItem<Items.Gold>(50, 150));
+			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(SilverRing), typeof(Necklace), typeof(SilverNecklace), typeof(Collier), typeof(Collier2),  typeof(Collier3), typeof(Couronne3),  typeof(Collier4), typeof(Tiare), }, 10.0, 1, false, true));
 
-        public override void Serialize(GenericWriter writer)
+
+
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0); // version

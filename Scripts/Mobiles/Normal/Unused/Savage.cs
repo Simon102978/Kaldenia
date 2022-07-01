@@ -56,8 +56,9 @@ namespace Server.Mobiles
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.LootItem<Bandage>(1, 15, true));
             AddLoot(LootPack.LootItem<SeveredHumanEars>(75.0, 1));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
 
-            if (LootStage == LootStage.Death)
+			if (LootStage == LootStage.Death)
             {
                 if (!Female)
                 {

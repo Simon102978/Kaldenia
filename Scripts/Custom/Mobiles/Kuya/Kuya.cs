@@ -8,16 +8,18 @@ namespace Server.Mobiles
     {
         [Constructable]
         public Kuya()
-            : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+            : base(AIType.AI_Samurai, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
             Title = "Un Kuya";
 
-            InitStats(100, 100, 25);
+			SetStr(200, 250);
+			SetDex(31, 45);
+			SetInt(75, 100);
 
-            SetSkill(SkillName.ArmsLore, 64.0, 80.0);
-            SetSkill(SkillName.Bushido, 64.0, 85.0);
-            SetSkill(SkillName.Parry, 64.0, 80.0);
-            SetSkill(SkillName.Swords, 64.0, 85.0);
+			SetSkill(SkillName.ArmsLore, 64.0, 80.0);
+            SetSkill(SkillName.Bushido, 80.0, 100.0);
+            SetSkill(SkillName.Parry, 80.0, 100.0);
+            SetSkill(SkillName.Swords, 80.0, 100.0);
 
             SpeechHue = Utility.RandomDyedHue();
 			Race = BaseRace.GetRace(Utility.Random(4));
@@ -91,8 +93,9 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-			AddLoot(LootPack.Average);
-	
+			AddLoot(LootPack.Rich);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+
 		}
 
 		public override TribeType Tribe => TribeType.Kuya;

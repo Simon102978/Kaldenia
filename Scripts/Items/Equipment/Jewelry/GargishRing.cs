@@ -1,4 +1,4 @@
-namespace Server.Items
+/*namespace Server.Items
 {
     public class Ring : BaseRing
     {
@@ -26,4 +26,4 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
-}
+}*/

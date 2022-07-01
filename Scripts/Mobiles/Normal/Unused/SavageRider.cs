@@ -58,7 +58,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<BolaBall>(10.0));
             AddLoot(LootPack.LootItem<Bandage>(1, 15, true));
             AddLoot(LootPack.LootItem<SeveredHumanEars>(75.0, 1));
-        }
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+		}
 
         public override bool OnBeforeDeath()
         {

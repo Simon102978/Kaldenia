@@ -50,7 +50,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Poor);
-            AddLoot(LootPack.Gems);
+          //  AddLoot(LootPack.Gems);
         }
 
         public override bool CheckMovement(Direction d, out int newZ)

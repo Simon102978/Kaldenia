@@ -59,6 +59,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.FilthyRich, 2);
+
         }
 
         public override void Serialize(GenericWriter writer)

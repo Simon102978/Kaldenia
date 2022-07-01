@@ -78,7 +78,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Gems, 6);
             AddLoot(LootPack.BonsaiSeed);
-        }
+			AddLoot(LootPack.LootItem<Items.Gold>(250, 500));
+		}
 
         // TODO: Hit Lightning Area
         public override void OnDamagedBySpell(Mobile attacker)

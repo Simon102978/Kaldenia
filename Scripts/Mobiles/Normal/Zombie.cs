@@ -49,6 +49,11 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
+
+			AddLoot(LootPack.BodyParts, Utility.RandomMinMax(3, 5));
+
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+
 		}
 
         public override bool IsEnemy(Mobile m)

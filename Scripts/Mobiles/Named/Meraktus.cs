@@ -34,7 +34,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee)
         {
             Name = "Meraktus";
-            Title = "the Tormented";
+            Title = "Le tourmenté";
             Body = 263;
             BaseSoundID = 680;
             Hue = 0x835;
@@ -73,14 +73,16 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.SuperBoss, 5);
-            AddLoot(LootPack.Talisman, 5);
-            AddLoot(LootPack.PeerlessResource, 8);
+    //        AddLoot(LootPack.Talisman, 5);
+        //    AddLoot(LootPack.PeerlessResource, 8);
             AddLoot(LootPack.LootItem<MalletAndChisel>());
-            AddLoot(LootPack.RandomLootItem(new Type[] { typeof(MinotaurHedge), typeof(BonePile), typeof(LightYarn) }, 100.0, 1, false, true));
+         //   AddLoot(LootPack.RandomLootItem(new Type[] { typeof(MinotaurHedge), typeof(BonePile), typeof(LightYarn) }, 100.0, 1, false, true));
             AddLoot(LootPack.LootItem<TormentedChains>(50.0, 1));
-            AddLoot(LootPack.LootItem<CrimsonCincture>(2.25, 1));
+      //      AddLoot(LootPack.LootItem<CrimsonCincture>(2.25, 1));
             AddLoot(LootPack.ArcanistScrolls, 1);
-        }
+
+			AddLoot(LootPack.LootItem<Items.Gold>(500, 1500));
+		}
 
         public override int GetAngerSound()
         {

@@ -62,7 +62,9 @@ namespace Server.Mobiles
             AddLoot(LootPack.MedScrolls, 2);
             AddLoot(LootPack.NecroRegs, 17, 24);
             AddLoot(LootPack.RandomLootItem(new Type[] { typeof(LichFormScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll) }, false, true));
-        }
+			AddLoot(LootPack.BodyPartsAndBones, Utility.RandomMinMax(3, 5));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
+		}
 
         public override void Serialize(GenericWriter writer)
         {

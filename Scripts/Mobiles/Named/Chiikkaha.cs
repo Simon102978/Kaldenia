@@ -6,7 +6,7 @@ namespace Server.Mobiles
         [Constructable]
         public Chiikkaha()
         {
-            Name = "Chiikkaha the Toothed";
+            Name = "Chiikkaha l'édenté";
 
             SetStr(450, 476);
             SetDex(157, 179);
@@ -38,8 +38,14 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
-		
-        public override bool CanBeParagon => false;
+
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<Items.Gold>(50, 100));
+			base.GenerateLoot();
+		}
+
+		public override bool CanBeParagon => false;
 		
         public override void Serialize(GenericWriter writer)
         {

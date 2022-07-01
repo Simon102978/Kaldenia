@@ -9,7 +9,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             SpeechHue = Utility.RandomDyedHue();
-            Title = "the executioner";
+            Title = "L'éxécuteur";
             Hue = Utility.RandomSkinHue();
 
             if (Female = Utility.RandomBool())
@@ -88,7 +88,10 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Meager);
-        }
+			AddLoot(LootPack.Others, Utility.RandomMinMax(5, 6));
+			AddLoot(LootPack.LootItem<Items.Gold>(50, 150));
+
+		}
 
         public override void Serialize(GenericWriter writer)
         {

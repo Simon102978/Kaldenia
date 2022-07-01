@@ -15,11 +15,13 @@ namespace Server.Mobiles
         [Constructable]
         public CoraTheSorceress() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.1)
         {
+			Female = true;
             Body = 0x191;
             Name = "Cora";
-            Title = "the sorceress";
+            Title = "La sorcière";
+			Race = BaseRace.GetRace(Utility.Random(4));
 
-            HairItemID = 0x2045;
+			HairItemID = 0x2045;
             HairHue = 452;
 
             SetStr(909, 949);
@@ -88,7 +90,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.UltraRich, 3);
             AddLoot(LootPack.SuperBoss, 3);
-        }
+			AddLoot(LootPack.LootItem<Items.Gold>(3000,5000));
+		}
 
         private void AddAndEquip(Item item, int hue = 0)
         {

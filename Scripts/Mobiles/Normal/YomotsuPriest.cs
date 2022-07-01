@@ -58,7 +58,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.Gems, 4);
+   //         AddLoot(LootPack.Gems, 4);
             AddLoot(LootPack.LootItem<GreenGourd>(true));
             AddLoot(LootPack.BonsaiSeed);
         }

@@ -2,12 +2,12 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-    [TypeAlias("Server.Mobiles.HumanBrigand")]
-    public class Brigand : BaseCreature
+  
+    public class BrigandArcher : BaseCreature
     {
         [Constructable]
-        public Brigand()
-            : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+        public BrigandArcher()
+            : base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             SpeechHue = Utility.RandomDyedHue();
             Title = "Un Brigand";
@@ -32,10 +32,9 @@ namespace Server.Mobiles
 
             SetDamage(10, 23);
 
-            SetSkill(SkillName.Fencing, 66.0, 97.5);
-            SetSkill(SkillName.Macing, 65.0, 87.5);
+
             SetSkill(SkillName.MagicResist, 25.0, 47.5);
-            SetSkill(SkillName.Swords, 65.0, 87.5);
+            SetSkill(SkillName.Archery, 65.0, 87.5);
             SetSkill(SkillName.Tactics, 65.0, 87.5);
             SetSkill(SkillName.Wrestling, 15.0, 37.5);
 
@@ -46,35 +45,12 @@ namespace Server.Mobiles
             AddItem(new FancyShirt());
             AddItem(new Bandana());
 
-            switch (Utility.Random(7))
-            {
-                case 0:
-                    AddItem(new Longsword());
-                    break;
-                case 1:
-                    AddItem(new Cutlass());
-                    break;
-                case 2:
-                    AddItem(new Broadsword());
-                    break;
-                case 3:
-                    AddItem(new Axe());
-                    break;
-                case 4:
-                    AddItem(new Club());
-                    break;
-                case 5:
-                    AddItem(new Dagger());
-                    break;
-                case 6:
-                    AddItem(new Spear());
-                    break;
-            }
+			AddItem(new Bow());
 
-            Utility.AssignRandomHair(this);
+			Utility.AssignRandomHair(this);
         }
 
-        public Brigand(Serial serial)
+        public BrigandArcher(Serial serial)
             : base(serial)
         {
         }
@@ -97,6 +73,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
+			AddLoot(LootPack.LootItem<Arrow>(10, 25, true));
 			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
 		}
 

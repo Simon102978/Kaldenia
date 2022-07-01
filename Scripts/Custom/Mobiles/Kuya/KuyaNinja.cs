@@ -128,8 +128,12 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
         {
 			AddLoot(LootPack.Rich, 2);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+			AddLoot(LootPack.Potions, Utility.RandomMinMax(1, 2));
+			AddLoot(LootPack.Statue,1,5);
+		
 
-			AddLoot(LootPack.MageryRegs, 31);
+			//AddLoot(LootPack.MageryRegs, 31);
 		}
 
 

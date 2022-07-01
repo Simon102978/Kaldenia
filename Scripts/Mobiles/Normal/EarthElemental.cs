@@ -52,7 +52,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Meager);
-            AddLoot(LootPack.Gems);
+          //  AddLoot(LootPack.Gems);
             AddLoot(LootPack.LootItemCallback(SpawnOre, 100.0, 5, false, true));
             AddLoot(LootPack.LootItem<FertileDirt>(1, 4, true));
             AddLoot(LootPack.LootItem<MandrakeRoot>(true));

@@ -558,7 +558,7 @@ namespace Server.Items
         public static Type[][] _JewelTable = new Type[][]
             {
                 new Type[] { typeof(GoldRing), typeof(GoldBracelet), typeof(SilverRing), typeof(SilverBracelet) }, // standard
-                new Type[] { typeof(GoldRing), typeof(GoldBracelet), typeof(SilverRing), typeof(SilverBracelet), typeof(Bracelet) }, // Ranger/TerMur
+                new Type[] { typeof(GoldRing), typeof(GoldBracelet), typeof(SilverRing), typeof(SilverBracelet) }, // Ranger/TerMur
             };
 
         public static Type[][] _DecorativeTable = new Type[][]

@@ -15,16 +15,41 @@ namespace Server.Mobiles
         {
             SpeechHue = Utility.RandomDyedHue();
             Hue = Utility.RandomSkinHue();
-            Name = "a ronin";
-            Body = ((Female = Utility.RandomBool()) ? Body = 0x191 : Body = 0x190);
 
-            Hue = Utility.RandomSkinHue();
+
+
+
+
+
+			Female = Utility.RandomBool();
+
+
+
+
+		
+
+			if (Female = Utility.RandomBool())
+			{
+				Body = 0x191;
+				Name = NameList.RandomName("tokuno female");
+				
+			}
+			else
+			{
+				Body = 0x190;
+				Name = NameList.RandomName("tokuno male");
+			}
+
+			Title = "Ronin";
+
+
+			Hue = Utility.RandomSkinHue();
 
             SetStr(326, 375);
-            SetDex(31, 45);
+            SetDex(100, 150);
             SetInt(101, 110);
 
-            SetHits(301, 400);
+            SetHits(500, 700);
             SetMana(101, 110);
 
             SetDamage(17, 25);
@@ -88,16 +113,20 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.Gems, 2);
+    //        AddLoot(LootPack.Gems, 2);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(5, 6));
+			AddLoot(LootPack.LootItem<Items.Gold>(50, 150));
 
-            AddLoot(LootPack.LootItem<BookOfBushido>());
-        }
+			//       AddLoot(LootPack.LootItem<BookOfBushido>());
+		}
 
         public override bool AlwaysMurderer => true;
         public override bool BardImmune => true;
         public override bool CanRummageCorpses => true;
 
-        public override double WeaponAbilityChance
+		public override TribeType Tribe => TribeType.Kuya;
+
+		public override double WeaponAbilityChance
         {
             get
             {

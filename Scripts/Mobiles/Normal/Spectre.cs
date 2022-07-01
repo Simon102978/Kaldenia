@@ -51,7 +51,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.MageryRegs, 10);
-        }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

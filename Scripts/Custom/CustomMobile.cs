@@ -1084,6 +1084,14 @@ namespace Server.Mobiles
 
 		public override bool OnEquip(Item item)
 		{
+			if (this.AccessLevel > AccessLevel.Player)
+			{
+				return true;
+			}
+
+
+
+
 			if (item is BaseArmor)
 			{
 				int req = 10;

@@ -217,9 +217,9 @@ namespace Server.Commands
 			MoveEquip(from, playerClone, items);
 			//Equip from target to player
 			MoveEquip(target, from, items);
-			
-			
-					
+
+			target.Race.AddRace(from, target.Hue);
+
 			target.Internalize();
 			playerClone.Internalize();
 
@@ -247,6 +247,10 @@ namespace Server.Commands
 					
 					//Equip: from -> oldNPC
 					MoveEquip(from, oldNPC, items);
+
+
+
+
 				}
 				else
 				{
@@ -290,8 +294,11 @@ namespace Server.Commands
 				return;
 			
 			from.SendMessage("Vous reprenez votre corps");
-			//"You are in your original Body"
+
 			
+
+			//"You are in your original Body"
+
 			//NPC wiederherstellen
 			if ( oldNPC != null && !oldNPC.Deleted )
 			{
@@ -306,6 +313,8 @@ namespace Server.Commands
 				
 				//Equip from -> oldNPC
 				MoveEquip( from, oldNPC, items );
+
+				oldNPC.Race.AddRace(oldNPC, oldNPC.Hue);
 			}
 			else
 			{
@@ -321,8 +330,12 @@ namespace Server.Commands
 				CopyProps( from, oldPlayer, true, true );
 				//Equip: oldPlayer -> player
 				MoveEquip( oldPlayer, from, true );
-					
+
+				oldPlayer.Race.AddRace(from, oldPlayer.Hue);
+
 				oldPlayer.Delete();
+				from.Hidden = true;
+
 			}
 		}
 
@@ -441,6 +454,11 @@ namespace Server.Commands
 			{
 				if ( from.Map == Map.Internal )
 					from.MoveToWorld(target.Location, target.Map);
+
+
+
+
+
 				
 				if ( stats )
 					CopyMobileProps( target, from, "Parent", "NetState", "Player", "AccessLevel" );

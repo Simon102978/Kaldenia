@@ -53,7 +53,7 @@ namespace Server.Mobiles
                 Add(typeof(Scissors), 6);
                 Add(typeof(Dyes), 4);
                 Add(typeof(DyeTub), 4);
-                Add(typeof(BoltOfCloth), 60);
+                Add(typeof(BoltOfCloth), 6);
                 Add(typeof(LightYarnUnraveled), 9);
                 Add(typeof(LightYarn), 9);
                 Add(typeof(DarkYarn), 9);

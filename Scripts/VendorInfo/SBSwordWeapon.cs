@@ -37,6 +37,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
+				/*
                 Add(typeof(Broadsword), 17);
                 Add(typeof(Cutlass), 12);
                 Add(typeof(Katana), 16);
@@ -54,6 +55,7 @@ namespace Server.Mobiles
                 Add(typeof(DoubleBladedStaff), 17);
                 Add(typeof(Lance), 17);
                 Add(typeof(CrescentBlade), 18);
+				*/
             }
         }
     }

@@ -25,9 +25,9 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Spear), 15);
-                Add(typeof(Pitchfork), 9);
-                Add(typeof(ShortSpear), 11);
+                Add(typeof(Spear), 5);
+                Add(typeof(Pitchfork), 4);
+                Add(typeof(ShortSpear), 1);
             }
         }
     }

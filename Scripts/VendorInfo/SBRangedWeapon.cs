@@ -38,12 +38,12 @@ namespace Server.Mobiles
           //      Add(typeof(Shaft), 1);
         //        Add(typeof(Feather), 1);
 
-                Add(typeof(HeavyCrossbow), 27);
-                Add(typeof(Bow), 17);
-                Add(typeof(Crossbow), 25);
+                Add(typeof(HeavyCrossbow), 7);
+                Add(typeof(Bow), 7);
+                Add(typeof(Crossbow), 5);
 
-                Add(typeof(CompositeBow), 23);
-                Add(typeof(RepeatingCrossbow), 22);
+                Add(typeof(CompositeBow), 6);
+                Add(typeof(RepeatingCrossbow), 6);
             }
         }
     }

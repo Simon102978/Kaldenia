@@ -26,10 +26,10 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(ButcherKnife), 7);
-                Add(typeof(Cleaver), 7);
-                Add(typeof(Dagger), 10);
-                Add(typeof(SkinningKnife), 7);
+                Add(typeof(ButcherKnife), 2);
+                Add(typeof(Cleaver), 2);
+                Add(typeof(Dagger), 1);
+                Add(typeof(SkinningKnife), 1);
             }
         }
     }

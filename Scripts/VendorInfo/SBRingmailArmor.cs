@@ -26,10 +26,10 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(RingmailArms), 42);
-                Add(typeof(RingmailChest), 60);
-                Add(typeof(RingmailGloves), 26);
-                Add(typeof(RingmailLegs), 45);
+                Add(typeof(RingmailArms), 4);
+                Add(typeof(RingmailChest), 6);
+                Add(typeof(RingmailGloves), 6);
+                Add(typeof(RingmailLegs), 5);
             }
         }
     }

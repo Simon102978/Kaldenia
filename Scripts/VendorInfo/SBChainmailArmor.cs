@@ -25,9 +25,9 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(ChainCoif), 6);
-                Add(typeof(ChainChest), 71);
-                Add(typeof(ChainLegs), 74);
+                Add(typeof(ChainCoif), 5);
+                Add(typeof(ChainChest), 17);
+                Add(typeof(ChainLegs), 17);
             }
         }
     }

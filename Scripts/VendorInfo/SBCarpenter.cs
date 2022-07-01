@@ -45,19 +45,19 @@ namespace Server.Mobiles
                 Add(typeof(SmallCrate), 5);
                 Add(typeof(MediumCrate), 6);
                 Add(typeof(LargeCrate), 7);
-                Add(typeof(WoodenChest), 15);
+                Add(typeof(WoodenChest), 7);
 
-                Add(typeof(LargeTable), 10);
-                Add(typeof(Nightstand), 7);
-                Add(typeof(YewWoodTable), 10);
+                Add(typeof(LargeTable), 5);
+                Add(typeof(Nightstand), 3);
+                Add(typeof(YewWoodTable), 5);
 
-                Add(typeof(Throne), 24);
+                Add(typeof(Throne), 12);
                 Add(typeof(WoodenThrone), 6);
                 Add(typeof(Stool), 6);
                 Add(typeof(FootStool), 6);
 
-                Add(typeof(FancyWoodenChairCushion), 12);
-                Add(typeof(WoodenChairCushion), 10);
+                Add(typeof(FancyWoodenChairCushion), 5);
+                Add(typeof(WoodenChairCushion), 5);
                 Add(typeof(WoodenChair), 8);
                 Add(typeof(BambooChair), 6);
                 Add(typeof(WoodenBench), 6);
@@ -75,7 +75,7 @@ namespace Server.Mobiles
                 Add(typeof(Board), 2);
                 Add(typeof(Axle), 1);
 
-                Add(typeof(Club), 13);
+                Add(typeof(Club), 5);
 
                 Add(typeof(Lute), 10);
                 Add(typeof(LapHarp), 10);

@@ -158,8 +158,8 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-				Add( typeof( MilkBucket ), 400 );
-				Add( typeof( CheeseForm ), 400 );
+				Add( typeof( MilkBucket ), 40 );
+				Add( typeof( CheeseForm ), 40 );
 
 				Add( typeof( Apple ), 1 );
 				Add( typeof( Grapes ), 1 );

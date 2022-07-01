@@ -69,8 +69,8 @@ namespace Server.Mobiles
                 Add(typeof(LesserPoisonPotion), 7);
                 Add(typeof(LesserExplosionPotion), 10);
 
-                Add(typeof(GlassblowingBook), 5000);
-                Add(typeof(SandMiningBook), 5000);
+              //  Add(typeof(GlassblowingBook), 5000);
+              //  Add(typeof(SandMiningBook), 5000);
                 Add(typeof(Blowpipe), 10);
             }
         }

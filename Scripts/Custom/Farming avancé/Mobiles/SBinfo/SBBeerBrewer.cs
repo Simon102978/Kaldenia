@@ -34,16 +34,16 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-        Add( typeof( LongNeckBottleOfBudLight ), 20 );
-        Add( typeof( LongNeckBottleOfBudWiser ), 20 );
-        Add( typeof( LongNeckBottleOfCoolersLite ), 20 );
-        Add( typeof( LongNeckBottleOfCorna ), 40 );
-        Add( typeof( LongNeckBottleOfCornaLite ), 40 );
-        Add( typeof( LongNeckBottleOfMillerLite ), 20 );
-        Add( typeof( LongNeckBottleOfMGD ), 20 );
-        Add( typeof( LongNeckBottleOfWildturkey ), 50 );
-        Add( typeof( BeerKeg ), 50 );
-        Add( typeof( PonyKeg ), 60 );
+        Add( typeof( LongNeckBottleOfBudLight ), 2 );
+        Add( typeof( LongNeckBottleOfBudWiser ), 2 );
+        Add( typeof( LongNeckBottleOfCoolersLite ), 2 );
+        Add( typeof( LongNeckBottleOfCorna ), 4 );
+        Add( typeof( LongNeckBottleOfCornaLite ), 4 );
+        Add( typeof( LongNeckBottleOfMillerLite ), 2 );
+        Add( typeof( LongNeckBottleOfMGD ), 2 );
+        Add( typeof( LongNeckBottleOfWildturkey ), 5 );
+        Add( typeof( BeerKeg ), 10 );
+        Add( typeof( PonyKeg ), 10 );
      
 			}
 		}

@@ -60,7 +60,7 @@ namespace Server.Mobiles
             public InternalSellInfo()
             {
                 Add(typeof(WizardsHat), 15);
-                Add(typeof(Runebook), 1250);
+                Add(typeof(Runebook), 12);
                 Add(typeof(BlackPearl), 3);
                 Add(typeof(Bloodmoss), 4);
                 Add(typeof(MandrakeRoot), 2);

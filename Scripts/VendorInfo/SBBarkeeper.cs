@@ -82,7 +82,7 @@ namespace Server.Mobiles
                 Add(typeof(Grapes), 1);
                 Add(typeof(Apple), 1);
                 Add(typeof(Banana), 1);
-                Add(typeof(Candle), 3);
+                Add(typeof(Candle), 1);
                 Add(typeof(Chessboard), 1);
                 Add(typeof(CheckerBoard), 1);
                 Add(typeof(Backgammon), 1);

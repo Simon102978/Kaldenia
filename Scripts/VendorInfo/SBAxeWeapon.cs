@@ -30,14 +30,14 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(BattleAxe), 13);
-                Add(typeof(DoubleAxe), 26);
-                Add(typeof(ExecutionersAxe), 15);
-                Add(typeof(LargeBattleAxe), 16);
-                Add(typeof(Pickaxe), 11);
-                Add(typeof(TwoHandedAxe), 16);
-                Add(typeof(WarAxe), 14);
-                Add(typeof(Axe), 20);
+                Add(typeof(BattleAxe), 3);
+                Add(typeof(DoubleAxe), 6);
+                Add(typeof(ExecutionersAxe), 5);
+                Add(typeof(LargeBattleAxe), 6);
+                Add(typeof(Pickaxe), 1);
+                Add(typeof(TwoHandedAxe), 6);
+                Add(typeof(WarAxe), 4);
+                Add(typeof(Axe), 2);
             }
         }
     }

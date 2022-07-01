@@ -29,13 +29,14 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(StuddedArms), 43);
-                Add(typeof(StuddedChest), 64);
-                Add(typeof(StuddedGloves), 39);
-                Add(typeof(StuddedGorget), 36);
-                Add(typeof(StuddedLegs), 51);
-                Add(typeof(FemaleStuddedChest), 71);
-                Add(typeof(StuddedBustierArms), 60);
+
+                Add(typeof(StuddedArms), 4);
+                Add(typeof(StuddedChest), 6);
+                Add(typeof(StuddedGloves), 3);
+                Add(typeof(StuddedGorget), 3);
+                Add(typeof(StuddedLegs), 5);
+                Add(typeof(FemaleStuddedChest), 7);
+                Add(typeof(StuddedBustierArms), 6);
             }
         }
     }

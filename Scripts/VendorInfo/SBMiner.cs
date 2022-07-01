@@ -29,14 +29,15 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Pickaxe), 12);
-                Add(typeof(Shovel), 6);
+                Add(typeof(Pickaxe), 1);
+                Add(typeof(Shovel), 2);
                 Add(typeof(Lantern), 1);
                 //Add( typeof( OilFlask ), 4 );
                 Add(typeof(Torch), 3);
                 Add(typeof(Bag), 3);
                 Add(typeof(Candle), 3);
-            }
+				Add(typeof(IronIngot), 2);
+			}
         }
     }
 }

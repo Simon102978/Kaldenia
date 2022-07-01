@@ -33,7 +33,7 @@ namespace Server.Mobiles
 		{ 
 			public InternalSellInfo() 
 			{ 
-				Add( typeof( BottleOfWine ), 20 );
+				Add( typeof( BottleOfWine ), 2 );
 			} 
 		} 
 	} 

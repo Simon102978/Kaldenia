@@ -24,8 +24,8 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Bardiche), 30);
-                Add(typeof(Halberd), 21);
+                Add(typeof(Bardiche), 3);
+                Add(typeof(Halberd), 2);
             }
         }
     }

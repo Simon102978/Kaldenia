@@ -27,13 +27,13 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(PlateArms), 94);
-                Add(typeof(PlateChest), 121);
-                Add(typeof(PlateGloves), 72);
-                Add(typeof(PlateGorget), 52);
-                Add(typeof(PlateLegs), 109);
+                Add(typeof(PlateArms), 4);
+                Add(typeof(PlateChest), 12);
+                Add(typeof(PlateGloves), 7);
+                Add(typeof(PlateGorget), 5);
+                Add(typeof(PlateLegs), 10);
 
-                Add(typeof(FemalePlateChest), 113);
+                Add(typeof(FemalePlateChest), 11);
             }
         }
     }

@@ -185,6 +185,21 @@ namespace Server.Commands
 		
 		private static void StartControl( Mobile from, Mobile target, bool stats, bool skills, bool items )
 		{
+
+			if (from is CustomPlayerMobile cp)
+			{
+				if (cp.Deguise)
+				{
+					Server.Deguisement.RemoveDeguisement(cp);
+				}
+
+				if (cp.Masque)
+				{
+					cp.Masque = false;
+				}
+			}
+			
+			
 			from.SendMessage("Vous contrôlez le NPC {0}, {1}", target.Name, target.Title);
 			//"You leave your Body an control {0}, {1}"
 			

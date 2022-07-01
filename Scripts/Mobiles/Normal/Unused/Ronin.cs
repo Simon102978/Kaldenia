@@ -45,7 +45,9 @@ namespace Server.Mobiles
 
 			Hue = Utility.RandomSkinHue();
 
-            SetStr(326, 375);
+			Race = BaseRace.GetRace(Utility.Random(4));
+
+			SetStr(326, 375);
             SetDex(100, 150);
             SetInt(101, 110);
 

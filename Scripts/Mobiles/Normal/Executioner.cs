@@ -9,7 +9,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             SpeechHue = Utility.RandomDyedHue();
-            Title = "L'éxécuteur";
+            Title = "L'executeur";
             Hue = Utility.RandomSkinHue();
 
             if (Female = Utility.RandomBool())
@@ -25,7 +25,9 @@ namespace Server.Mobiles
                 AddItem(new ShortPants(Utility.RandomRedHue()));
             }
 
-            SetStr(386, 400);
+			Race = BaseRace.GetRace(Utility.Random(4));
+
+			SetStr(386, 400);
             SetDex(151, 165);
             SetInt(161, 175);
 

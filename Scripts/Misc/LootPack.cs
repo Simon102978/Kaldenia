@@ -654,7 +654,7 @@ namespace Server
 					new LootPackEntry(false, false, MageryRegItems, 90.0, 5, true),
 							*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 5.0, 1, true),
 					new LootPackEntry(false, false, Marchandise, 100.0, 1, true),
 
 				});
@@ -678,10 +678,10 @@ namespace Server
 					new LootPackEntry(false, false, PotionItems, 10.0, 1, true),
 					new LootPackEntry(false, false, LowScrollItems, 75.0, 1, true),*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 15.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 20.0, 1, true),
 
-					new LootPackEntry(false, false, Marchandise, 100.0, 1, true),
+					new LootPackEntry(false, false, Marchandise, 25.0, 1, true),
 
 				});
 
@@ -718,10 +718,10 @@ namespace Server
 					new LootPackEntry(false, false, ArcanistScrollItems, 25.0, 1, true),
 					new LootPackEntry(false, false, MysticScrollItems, 25.0, 1, true),*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 15.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 35.0, 1, true),
 
-					new LootPackEntry(false, false, Marchandise, 100.0, 2, true),
+					new LootPackEntry(false, false, Marchandise, 50.0, 2, true),
 				});
 
         public static readonly LootPack LootRich =
@@ -759,11 +759,11 @@ namespace Server
 					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 15.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 
-					new LootPackEntry(false, false, Marchandise, 100.0, 4, true),
+
+					new LootPackEntry(false, false, Marchandise, 75.0, 4, true),
 				});
 
         public static readonly LootPack LootFilthyRich =
@@ -796,12 +796,11 @@ namespace Server
 					new LootPackEntry(false, false, ArcanistScrollItems, 75.0, 1, true),
 					new LootPackEntry(false, false, MysticScrollItems, 75.0, 1, true),*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 15.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 60.0, 1, true),
 
-					new LootPackEntry(false, false, Marchandise, 100.0, 5, true),
+
+					new LootPackEntry(false, false, Marchandise, 75.0, 5, true),
 				});
 
         public static readonly LootPack LootUltraRich =
@@ -839,11 +838,10 @@ namespace Server
 					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 25.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 35.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 40.0, 1, true),
+
 
 					new LootPackEntry(false, false, Marchandise, 100.0, 6, true),
 				});
@@ -883,11 +881,10 @@ namespace Server
 					new LootPackEntry(false, false, ArcanistScrollItems, 50.0, 1, true),
 					new LootPackEntry(false, false, MysticScrollItems, 50.0, 1, true),*/
 
-					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
-					new LootPackEntry(false, false, ItemsNormaux, 100.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
 					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+					new LootPackEntry(false, false, ItemsNormaux, 50.0, 1, true),
+
 
 					new LootPackEntry(false, false, Marchandise, 100.0, 7, true),
 				});

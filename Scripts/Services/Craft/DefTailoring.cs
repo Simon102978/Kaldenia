@@ -537,6 +537,8 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Bag), "Divers", "Sac", 5, 30.0, typeof(Leather), 1044462, 4, 1044463);
 			index = AddCraft(typeof(Saddlebag), "Divers", "Sacoche de selle", 35.0, 50.0, typeof(Leather), 1044462, 10, 1044463);
 
+			index = AddCraft(typeof(Corde), "Divers", "Corde", 60.0, 75.0, typeof(Cloth), "Tissus", 10, "Vous n'avez pas assez de tissus.");
+
 
 			#endregion
 

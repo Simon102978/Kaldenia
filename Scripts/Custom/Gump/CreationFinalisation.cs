@@ -98,7 +98,9 @@ namespace Server.Gumps
 						break;
 				}
 
-				from.MoveToWorld(p, Map.Felucca);		
+				from.MoveToWorld(p, Map.Felucca);
+				from.Thirst = 20;
+				from.Hunger = 20;
 			}
 			if (info.ButtonID == 2)
 			{
@@ -114,6 +116,9 @@ namespace Server.Gumps
 
 				}
 
+				from.EquipItem(new Backpack());
+				from.Thirst = 20;
+				from.Hunger = 20;
 
 
 

@@ -21,7 +21,7 @@ namespace Server
         if (e.Mobile is CustomPlayerMobile cp)
         {
           cp.LastLoginTime = DateTime.Now;
-		   cp.LastCountGameTime = DateTime.Now;
+		  cp.LastCountGameTime = DateTime.Now;
 
 
 

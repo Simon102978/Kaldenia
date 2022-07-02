@@ -202,10 +202,14 @@ namespace Server.Commands
 			
 			from.SendMessage("Vous contrôlez le NPC {0}, {1}", target.Name, target.Title);
 			//"You leave your Body an control {0}, {1}"
-			
+
 			//Clone Player
-			PlayerMobile playerClone = (PlayerMobile)DupeMobile(from);
-								
+			CustomPlayerMobile playerClone = (CustomPlayerMobile)DupeMobile(from);
+
+			playerClone.Beaute = ((CustomPlayerMobile)from).Beaute;
+			playerClone.Grosseur = ((CustomPlayerMobile)from).Grosseur;
+			playerClone.Grandeur = ((CustomPlayerMobile)from).Grandeur;
+
 			//Create ControlItem
 			ControlItem controlItem = new ControlItem(from, playerClone, target, stats, skills, items);
 			from.Backpack.DropItem(controlItem);
@@ -220,6 +224,15 @@ namespace Server.Commands
 
 			target.Race.AddRace(from, target.Hue);
 
+
+			if (target is BaseHire bh && from is CustomPlayerMobile cp1)
+			{
+				cp1.Beaute = bh.Beaute;
+				cp1.Grosseur = bh.Grosseur;
+				cp1.Grandeur = bh.Grandeur;
+			}
+
+
 			target.Internalize();
 			playerClone.Internalize();
 
@@ -229,7 +242,7 @@ namespace Server.Commands
 		private static void ChangeControl( Mobile target, ControlItem controlItem, bool stats, bool skills, bool items )
 		{
 			Mobile from							= controlItem.Owner;
-			PlayerMobile oldPlayer 	= controlItem.Player;
+			CustomPlayerMobile oldPlayer 	= controlItem.Player;
 			Mobile oldNPC 				 	= controlItem.NPC;
 			
 			if ( oldNPC != null )
@@ -315,6 +328,8 @@ namespace Server.Commands
 				MoveEquip( from, oldNPC, items );
 
 				oldNPC.Race.AddRace(oldNPC, oldNPC.Hue);
+
+
 			}
 			else
 			{
@@ -332,6 +347,13 @@ namespace Server.Commands
 				MoveEquip( oldPlayer, from, true );
 
 				oldPlayer.Race.AddRace(from, oldPlayer.Hue);
+
+				if (from is CustomPlayerMobile bh && oldPlayer is CustomPlayerMobile cp)
+				{
+					bh.Beaute = cp.Beaute;
+					bh.Grosseur = cp.Grosseur;
+					bh.Grandeur = cp.Grandeur;
+				}
 
 				oldPlayer.Delete();
 				from.Hidden = true;
@@ -463,7 +485,7 @@ namespace Server.Commands
 				if ( stats )
 					CopyMobileProps( target, from, "Parent", "NetState", "Player", "AccessLevel" );
 				else
-					CopyMobileProps( target, from, "Parent", "NetState", "Player", "AccessLevel", "RawStr", "Str", "RawDex", "Dex", "RawInt", "Int", "Hits", "Mana", "Stam" );
+					CopyMobileProps( target, from, "Parent", "NetState", "Player", "AccessLevel", "RawStr", "Str", "RawDex", "Dex", "RawInt", "Int", "Hits", "Mana", "Stam");
 			  
 				if ( skills )
 				  //Console.WriteLine("Copy {2} Skills from {0} to {1}", from, target, target.Skills.Length);
@@ -473,6 +495,10 @@ namespace Server.Commands
 						target.Skills[i].Base = from.Skills[i].Base;
 						
 					}
+
+
+
+
 			}
 			catch
 			{
@@ -610,7 +636,7 @@ namespace Server.Items
 	public class ControlItem : Item
 	{
 		private Mobile m_Owner;
-		private Mobile m_Player;
+		private CustomPlayerMobile m_Player;
 		private Mobile m_NPC;
 		
 		private bool m_Stats;
@@ -629,12 +655,12 @@ namespace Server.Items
 		}
 		
 		[CommandProperty( AccessLevel.GameMaster )]
-		public PlayerMobile Player
+		public CustomPlayerMobile Player
 		{
 			get
 			{ 
-				if ( m_Player is PlayerMobile )
-					return (PlayerMobile)m_Player; 
+				if ( m_Player is CustomPlayerMobile)
+					return (CustomPlayerMobile)m_Player; 
 				else return null;
 			}
 		}
@@ -668,7 +694,7 @@ namespace Server.Items
 		}
 	
 		
-		public ControlItem( Mobile owner, Mobile player, Mobile npc, bool stats, bool skills, bool items ) : base( 0x2106 )
+		public ControlItem( Mobile owner, CustomPlayerMobile player, Mobile npc, bool stats, bool skills, bool items ) : base( 0x2106 )
 		{
 			m_Owner = owner;
 			m_Player = player;
@@ -682,7 +708,7 @@ namespace Server.Items
 			LootType = LootType.Blessed;
 		}
 		
-		public ControlItem( Mobile owner, Mobile player, Mobile npc ) : base( 0x2106 )
+		public ControlItem( Mobile owner, CustomPlayerMobile player, Mobile npc ) : base( 0x2106 )
 		{
 			m_Owner = owner;
 			m_Player = player;
@@ -771,7 +797,7 @@ namespace Server.Items
 				case 0:
 				{
 					m_Owner = reader.ReadMobile();
-					m_Player = reader.ReadMobile();
+					m_Player = (CustomPlayerMobile)reader.ReadMobile();
 					m_NPC = reader.ReadMobile();
 					break;
 				}

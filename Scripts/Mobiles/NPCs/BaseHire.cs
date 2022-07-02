@@ -1,6 +1,6 @@
 using Server.ContextMenus;
 using Server.Items;
-
+using System.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,15 @@ namespace Server.Mobiles
 {
 	public class BaseHire : BaseCreature
 	{
+
+		private GrandeurEnum m_Grandeur;
+		private GrosseurEnum m_Grosseur;
+		private AppearanceEnum m_Beaute;
+
+
+
+
+
 		public override bool IsBondable => true;
 		public override bool CanAutoStable => false;
 		public override bool CanDetectHidden => false;
@@ -40,18 +49,54 @@ namespace Server.Mobiles
 			}
 		}
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public GrosseurEnum Grosseur { get => m_Grosseur; set => m_Grosseur = value; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public GrandeurEnum Grandeur { get => m_Grandeur; set => m_Grandeur = value; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public AppearanceEnum Beaute { get => m_Beaute; set => m_Beaute = value; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string customTitle { get; set; }
+
+
+
+
+
 		public BaseHire(AIType AI)
 			: base(AI, FightMode.Aggressor, 10, 1, 0.1, 4.0)
 		{
 
+
+			Grosseur = (GrosseurEnum)Utility.Random(1,8);
+			Grandeur = (GrandeurEnum)Utility.Random(1,8);
+			Beaute =  (AppearanceEnum)Utility.Random(1,18);
+
+			Race = BaseRace.GetRace(Utility.Random(4));
+
+
+
 			Race.AddRace(this);
 			ControlSlots = 2;
 			HoldGold = 8;
+
+
+
+
+
 		}
 
 		public BaseHire()
 			: base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.1, 4.0)
 		{
+			Grosseur = (GrosseurEnum)Utility.Random(1,8);
+			Grandeur = (GrandeurEnum)Utility.Random(1,8);
+			Beaute = (AppearanceEnum)Utility.Random(1,18);
+
+			Race = BaseRace.GetRace(Utility.Random(4));
+
 			ControlSlots = 2;
 			Race.AddRace(this);
 		}
@@ -65,7 +110,12 @@ namespace Server.Mobiles
 		{
 			base.Serialize(writer);
 
-			writer.Write(1);// version
+			writer.Write(2);// version
+
+			writer.Write(customTitle);
+			writer.Write((int)m_Grandeur);
+			writer.Write((int)m_Grosseur);
+			writer.Write((int)m_Beaute);
 
 			writer.Write(NextPay);
 			writer.Write(IsHired);
@@ -80,6 +130,14 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 2:
+					{
+						customTitle = reader.ReadString();
+						m_Grandeur = (GrandeurEnum)reader.ReadInt();
+						m_Grosseur = (GrosseurEnum)reader.ReadInt();
+						m_Beaute = (AppearanceEnum)reader.ReadInt();
+						goto case 1;
+					}
 				case 1:
 					NextPay = reader.ReadDateTime();
 					goto case 0;
@@ -160,6 +218,88 @@ namespace Server.Mobiles
 			return from == GetOwner();
 
 		}
+
+
+
+
+		#region [Apparence]
+
+		public string Apparence()
+		{
+			AppearanceEnum gros = m_Beaute;
+		
+			if (gros < 0)
+			{
+				gros = 0;
+			}
+			else if ((int)gros > 19)
+			{
+				gros = (AppearanceEnum)19;
+			}
+
+			var type = typeof(AppearanceEnum);
+			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
+			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
+			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
+		}
+
+
+		public string GrosseurString()
+		{
+
+			GrosseurEnum gros = m_Grosseur;
+
+			if (gros < 0)
+			{
+				gros = 0;
+			}
+			else if ((int)gros > 8)
+			{
+				gros = (GrosseurEnum)8;
+			}
+
+			var type = typeof(GrosseurEnum);
+			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
+			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
+			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
+		}
+
+		public string GrandeurString()
+		{
+
+			GrandeurEnum gros = m_Grandeur;
+
+			var type = typeof(GrandeurEnum);
+			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
+			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
+			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
+
+		}
+		#endregion
+
+
+
+
+
+
+
+		public override void GetProperties(ObjectPropertyList list)
+		{
+			base.GetProperties(list);
+
+			if (NameMod == null)
+			{
+				list.Add(1050045, "{0}, \t{1}\t", Race.Name, Apparence()); // ~1_PREFIX~~2_NAME~~3_SUFFIX~
+				list.Add(1050045, "{0}, \t{1}\t", GrandeurString(), GrosseurString());
+			}
+
+		}
+
+
+
+
+
+
 
 		#region [ GetOwner ]
 		public virtual Mobile GetOwner()

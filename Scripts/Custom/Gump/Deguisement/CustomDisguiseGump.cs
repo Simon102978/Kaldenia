@@ -18,7 +18,7 @@ namespace Server.Gumps
 		private Deguisement m_Deg;
 
         public CustomDisguiseGump(CustomPlayerMobile from, Deguisement deg)
-            : base("D�guisement", 560, 622, false)
+            : base("Déguisement", 560, 622, false)
         {
 
 			m_Deg = deg;

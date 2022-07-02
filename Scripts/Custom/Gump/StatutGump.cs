@@ -43,8 +43,9 @@ namespace Server.Gumps
 					{
 						AddHtmlTexteColored(x + 10, y + 20 + line * 25, 250, cp.Name, "#ffffff");
 						AddHtmlTexteColored(x + 175, y + 20 + line * 25, 100, cp.StatutSocial.ToString(), "#ffffff");
+						line++;
 					}
-					line++;
+					i++;
 				}
 			}
 

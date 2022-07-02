@@ -2169,6 +2169,7 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 25:
 				case 24:
 					{
 						m_Maitre = (CustomPlayerMobile)reader.ReadMobile();
@@ -2352,7 +2353,10 @@ namespace Server.Mobiles
 					}
 				case 0:
                     {
-
+						if (version < 25)
+						{
+							m_TotalGameTime = TimeSpan.FromSeconds(0);
+						}
                         break;
                     }
             }
@@ -2363,7 +2367,7 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(24); // version
+            writer.Write(25); // version
 
 			writer.Write(m_Maitre);
 

@@ -65,17 +65,12 @@ namespace Server.Gumps
 
 				}
 
-
-
 				CharacterCreation.AddBackpack(from);
 
 				if (m_from.StatutSocial != StatutSocialEnum.Dechet)
 				{
 					from.AddToBackpack(new Gold(500));
-				}
-
-
-				
+				}		
 
 				Point3D p = new Point3D();
 
@@ -98,7 +93,11 @@ namespace Server.Gumps
 						break;
 				}
 
-				from.MoveToWorld(p, Map.Felucca);		
+				from.MoveToWorld(p, Map.Felucca);
+				from.Thirst = 20;
+				from.Hunger = 20;
+
+				from.TotalGameTime = TimeSpan.FromSeconds(0);
 			}
 			if (info.ButtonID == 2)
 			{
@@ -114,6 +113,9 @@ namespace Server.Gumps
 
 				}
 
+				from.EquipItem(new Backpack());
+				from.Thirst = 20;
+				from.Hunger = 20;
 
 
 

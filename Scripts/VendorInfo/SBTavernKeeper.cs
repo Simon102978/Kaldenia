@@ -28,7 +28,15 @@ namespace Server.Mobiles
                 Add(new BeverageBuyInfo(typeof(Pitcher), BeverageType.Wine, 11, 20, 0x1F9B, 0));
                 Add(new BeverageBuyInfo(typeof(Pitcher), BeverageType.Water, 11, 20, 0x1F9D, 0));
 
-                Add(new GenericBuyInfo(typeof(BreadLoaf), 6, 10, 0x103B, 0, true));
+				Add(new BeverageBuyInfo(typeof(GlassMug), BeverageType.Milk, 5, 20, 0x1F8C, 0));
+				Add(new BeverageBuyInfo(typeof(GlassMug), BeverageType.Ale, 7, 20, 0x9EF, 0));
+				Add(new BeverageBuyInfo(typeof(GlassMug), BeverageType.Cider, 7, 20, 0x9EF, 0));
+				Add(new BeverageBuyInfo(typeof(GlassMug), BeverageType.Liquor, 7, 20, 0x1F88, 0));
+				Add(new BeverageBuyInfo(typeof(GlassMug), BeverageType.Wine, 7, 20, 0x1F90, 0));
+				Add(new BeverageBuyInfo(typeof(GlassMug), BeverageType.Water, 7, 20, 0x1F94, 0));
+
+
+				Add(new GenericBuyInfo(typeof(BreadLoaf), 6, 10, 0x103B, 0, true));
                 Add(new GenericBuyInfo(typeof(CheeseWheel), 21, 10, 0x97E, 0, true));
                 Add(new GenericBuyInfo(typeof(CookedBird), 17, 20, 0x9B7, 0, true));
                 Add(new GenericBuyInfo(typeof(LambLeg), 8, 20, 0x160A, 0, true));

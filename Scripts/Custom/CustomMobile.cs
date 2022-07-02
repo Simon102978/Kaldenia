@@ -29,6 +29,9 @@ namespace Server.Mobiles
 		private Classe m_ClasseSecondaire = Classe.GetClasse(-1);
 		private Classe m_Metier = Classe.GetClasse(-1);
 
+		private List<Mobile> m_Esclaves = new List<Mobile>();
+		private CustomPlayerMobile m_Maitre;
+
 		private StatutSocialEnum m_StatutSocial = StatutSocialEnum.Aucun;
 
 		private Container m_Corps;
@@ -104,8 +107,6 @@ namespace Server.Mobiles
 					RecalculeClasse(value, 1);
 
 					m_ClassePrimaire = value; // S'assurer que le metier, soit un metier...
-
-
 				}
 			}
 
@@ -147,7 +148,18 @@ namespace Server.Mobiles
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public StatutSocialEnum StatutSocial { get => m_StatutSocial; set => m_StatutSocial = value; }
+		public StatutSocialEnum StatutSocial 
+		{ 
+			get => m_StatutSocial; 
+			set 
+			{
+				if (m_StatutSocial ==  StatutSocialEnum.Possession && value >= StatutSocialEnum.Peregrin && m_Maitre != null)
+				{
+					m_Maitre.RemoveEsclave(this, false);
+				}		
+				m_StatutSocial = value;
+			}
+		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastLoginTime
@@ -188,8 +200,8 @@ namespace Server.Mobiles
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FETotal { get { return m_TotalNormalFE + m_TotalRPFE; } }
-		 
-		 
+
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FEAttente { get { return m_feAttente; } set { m_feAttente = value; } }
@@ -220,41 +232,41 @@ namespace Server.Mobiles
 		public AffinityDictionary MagicAfinity { get { return m_MagicAfinity; } set { m_MagicAfinity = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public TribeRelation TribeRelation { get { return m_TribeRelation; } set { m_TribeRelation = value; } }	
+		public TribeRelation TribeRelation { get { return m_TribeRelation; } set { m_TribeRelation = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Item ChosenSpellbook { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Dictionary<int,Deguisement> Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
+		public Dictionary<int, Deguisement> Deguisement { get { return m_Deguisement; } set { m_Deguisement = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public int IdentiteID 
-		{ 
+		public int IdentiteID
+		{
 			get => m_IdentiteId;
-			set 
+			set
 			{
 				if (!m_Deguisement.ContainsKey(value))
 				{
 					m_Deguisement.Add(value, new Deguisement(this));
 				}
 
-				m_IdentiteId = value; 
+				m_IdentiteId = value;
 			}
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Race BaseRace 
-		{ 
-			get 
-			{ 
-				return m_BaseRace; 
-			} 
-			set 
-			{ 
+		public Race BaseRace
+		{
+			get
+			{
+				return m_BaseRace;
+			}
+			set
+			{
 				m_BaseRace = value;
 				Race = value;
-			} 
+			}
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -300,13 +312,13 @@ namespace Server.Mobiles
 		public List<MissiveContent> MissiveEnAttente { get { return m_MissiveEnAttente; } set { m_MissiveEnAttente = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public bool Masque 
-		{ 
-			get 
-			{ 
-				return m_Masque; 
-			} 
-			set 
+		public bool Masque
+		{
+			get
+			{
+				return m_Masque;
+			}
+			set
 			{
 				if (m_Masque)
 				{
@@ -322,8 +334,8 @@ namespace Server.Mobiles
 				{
 					NameMod = "Identite masquee";
 					m_Masque = value;
-				}			
-			} 
+				}
+			}
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -358,6 +370,11 @@ namespace Server.Mobiles
 			get { return m_QuickSpells; }
 			set { m_QuickSpells = value; }
 		}
+
+
+		public List<Mobile> Esclaves { get { return m_Esclaves; } set { m_Esclaves = value; } }
+
+		public CustomPlayerMobile Maitre { get { return m_Maitre; } set { m_Maitre = value; } }
 
 		public CustomPlayerMobile()
 		{
@@ -399,13 +416,13 @@ namespace Server.Mobiles
 		{
 			for (int i = 0; i < MissiveEnAttente.Count; ++i)
 			{
-			     	MissiveContent entry = MissiveEnAttente[i];
-		
-					if (entry != null)
-					{
-						AddToBackpack( new Missive(entry));
-						
-					}	
+				MissiveContent entry = MissiveEnAttente[i];
+
+				if (entry != null)
+				{
+					AddToBackpack(new Missive(entry));
+
+				}
 			}
 
 			MissiveEnAttente = new List<MissiveContent>();
@@ -419,6 +436,115 @@ namespace Server.Mobiles
 		{
 
 		}
+
+
+		public bool AddEsclave(Mobile m)
+		{
+			if (RoomForSlave())
+			{
+				if (m is CustomPlayerMobile cp)
+				{
+
+					cp.Maitre = this;
+					cp.StatutSocial = StatutSocialEnum.Possession;
+					m_Esclaves.Add(m);
+
+				}
+				else
+				{
+					m_Esclaves.Add(m);
+				}
+				
+				return true;
+			}
+			else
+			{
+				SendMessage("Vous avez déjà atteint votre maximum d'esclaves.");
+				return false;
+			}
+		}
+
+		public void RemoveEsclave(Mobile m, bool affranchir = false)
+		{
+
+			if (m is CustomPlayerMobile cp)
+			{
+
+				if (affranchir)
+				{
+					cp.Maitre = null;
+					cp.StatutSocial = StatutSocialEnum.Peregrin;
+					cp.SendMessage("Vous êtes maintenenant un Pérégrin.");
+				}
+				else
+				{
+					cp.Maitre = null;
+					cp.StatutSocial = StatutSocialEnum.Dechet;
+					cp.SendMessage("Vous êtes maintenenant un Déchet.");
+				}
+			}
+
+				List<Mobile> newEsclave = new List<Mobile>();
+
+				foreach (Mobile item in m_Esclaves)
+				{
+					if (m != item)
+					{
+						newEsclave.Add(item);
+					}
+				}
+				m_Esclaves = newEsclave;
+						
+		}
+
+		public bool RoomForSlave()
+		{
+			if (AccessLevel > AccessLevel.Player)
+			{
+				return true;
+			}
+
+
+			return MaxEsclave() >= m_Esclaves.Count + 1;
+
+
+		}
+
+		public int MaxEsclave()
+		{
+			if (AccessLevel > AccessLevel.Player)
+			{
+				return 1000;
+			}
+
+			switch (StatutSocial)
+			{
+				case StatutSocialEnum.Aucun:
+					return 0;
+
+				case StatutSocialEnum.Dechet:
+					return 0;
+				case StatutSocialEnum.Possession:
+					return 0;
+				case StatutSocialEnum.Peregrin:
+					return 0;
+				case StatutSocialEnum.Civenien:
+					return 2;
+				case StatutSocialEnum.Equite:
+					return 5;
+				case StatutSocialEnum.Patre:
+					return 10;
+				case StatutSocialEnum.Magistrat:
+					return 30;
+				case StatutSocialEnum.Empereur:
+					return 1000;
+				default:
+					return 0;
+			}
+
+
+		}
+
 
 		#region Hiding
 
@@ -2043,6 +2169,23 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 24:
+					{
+						m_Maitre = (CustomPlayerMobile)reader.ReadMobile();
+						goto case 23;
+					}
+
+				case 23:
+					{
+						int count = reader.ReadInt();
+
+						for (int i = 0; i < count; i++)
+						{
+							m_Esclaves.Add(reader.ReadMobile());
+						}
+
+						goto case 22;
+					}
 				case 22:
 					{
 						m_TotalRPFE = reader.ReadInt();
@@ -2111,8 +2254,6 @@ namespace Server.Mobiles
 						}
 						goto case 13;
 					}
-
-
 				case 13:
 					{
 						QuiOptions = (QuiOptions)reader.ReadInt();
@@ -2144,14 +2285,10 @@ namespace Server.Mobiles
 						else
 						{
 							goto case 8;
-						}
-
-						
+						}	
 					}
-
 				case 9:
-					{
-						
+					{	
 						Deguisement.Add(0,Server.Deguisement.Deserialize(reader));
 						goto case 8;
 					}
@@ -2167,17 +2304,13 @@ namespace Server.Mobiles
 						int count = reader.ReadInt();
 						for (int i = 0; i < count; i++)
 							QuickSpells.Add(reader.ReadInt());
-
 						goto case 6;
 					}
-
-
 				case 6:
 					{
 						God = God.GetGod(reader.ReadInt());
 
-						MagicAfinity = new AffinityDictionary(this, reader);
-					
+						MagicAfinity = new AffinityDictionary(this, reader);					
 						goto case 5;
 					}
 				case 5:
@@ -2230,7 +2363,17 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(22); // version
+            writer.Write(24); // version
+
+			writer.Write(m_Maitre);
+
+			writer.Write(m_Esclaves.Count);
+
+
+			foreach (Mobile item in m_Esclaves)
+			{
+				writer.Write(item);			
+			}
 
 
 			writer.Write(m_TotalRPFE); 

@@ -4,6 +4,9 @@ using System.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
+using Server.Network;
+using Server.Commands;
 
 namespace Server.Mobiles
 {
@@ -14,14 +17,12 @@ namespace Server.Mobiles
 		private GrosseurEnum m_Grosseur;
 		private AppearanceEnum m_Beaute;
 
-
-
-
-
 		public override bool IsBondable => true;
 		public override bool CanAutoStable => false;
 		public override bool CanDetectHidden => false;
-		public override bool KeepsItemsOnDeath => true;
+		public override bool KeepsItemsOnDeath => false;
+
+		public override bool DeleteOnRelease =>true;
 
 		private bool _IsHired;
 
@@ -61,10 +62,6 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public string customTitle { get; set; }
 
-
-
-
-
 		public BaseHire(AIType AI)
 			: base(AI, FightMode.Aggressor, 10, 1, 0.1, 4.0)
 		{
@@ -81,7 +78,7 @@ namespace Server.Mobiles
 			Race.AddRace(this);
 			ControlSlots = 2;
 			HoldGold = 8;
-
+			IsBonded = true;
 
 
 
@@ -96,6 +93,7 @@ namespace Server.Mobiles
 			Beaute = (AppearanceEnum)Utility.Random(1,18);
 
 			Race = BaseRace.GetRace(Utility.Random(4));
+
 
 			ControlSlots = 2;
 			Race.AddRace(this);
@@ -155,6 +153,11 @@ namespace Server.Mobiles
 
 		public override bool OnBeforeDeath()
 		{
+			if (GetOwner() != null)
+			{
+				IsBonded = true;
+			}
+
 			if (Backpack != null)
 			{
 				Item[] AllGold = Backpack.FindItemsByType(typeof(Gold), true);
@@ -171,8 +174,21 @@ namespace Server.Mobiles
 			return base.OnBeforeDeath();
 		}
 
+		public override void DoSpeech(string text, int[] keywords, MessageType type, int hue)
+		{
+			DoCustomSpeech(text, keywords, type);
+		}
+
+
 		public override void Delete()
 		{
+			if (GetOwner() != null && GetOwner() is CustomPlayerMobile cp)
+			{
+				cp.RemoveEsclave(this);
+			}
+
+
+
 			base.Delete();
 
 			PayTimer.RemoveTimer(this);
@@ -180,13 +196,119 @@ namespace Server.Mobiles
 
 		public override void OnDeath(Container c)
 		{
-			if (GoldOnDeath > 0)
+			if (GetOwner() != null)
 			{
-				c.DropItem(new Gold(GoldOnDeath));
+				Warmode = false;
+
+				BodyMod = 0;
+				//Body = this.Female ? 0x193 : 0x192;
+				Body = Race.GhostBody(this);
+
+				var deathShroud = new Item(0x204E)
+				{
+					Movable = false,
+					Layer = Layer.OuterTorso
+				};
+
+				AddItem(deathShroud);
+
+				Items.Remove(deathShroud);
+				Items.Insert(0, deathShroud);
+
+				Poison = null;
+				Combatant = null;
+
+				Hits = 0;
+				Stam = 0;
+				Mana = 0;
 			}
+
+
 
 			base.OnDeath(c);
 		}
+
+		public override bool CanBeControlledBy(Mobile m)
+		{
+			if (m is CustomPlayerMobile cp)
+			{
+				if (cp.StatutSocial >= StatutSocialEnum.Civenien || cp.AccessLevel > AccessLevel.Player)
+				{
+
+					if (cp.RoomForSlave())
+					{
+						return base.CanBeControlledBy(m);
+					}
+					else
+					{
+						return false;
+					}			
+				}
+			}
+			return false;
+		}
+
+		public override void ResurrectPet()
+		{
+			base.ResurrectPet();
+
+			if (Alive)
+			{
+				for (var i = Items.Count - 1; i >= 0; --i)
+				{
+					if (i >= Items.Count)
+					{
+						continue;
+					}
+
+					var item = Items[i];
+
+					if (item.ItemID == 8270)
+					{
+						item.Delete();
+					}
+				}
+
+				Race.AddRace(this, this.Hue);
+			}
+
+		
+	}
+
+		public override void OnAfterResurrect()
+		{
+			base.OnAfterResurrect();
+
+			if (Corpse != null)
+			{
+				ArrayList list = new ArrayList();
+
+				foreach (Item item in Corpse.Items)
+				{
+					list.Add(item);
+				}
+
+				foreach (Item item in list)
+				{
+					if (item.Layer == Layer.Hair || item.Layer == Layer.FacialHair)
+						item.Delete();
+
+					if (item is BaseRaceGumps || (Corpse is Corpse && ((Corpse)Corpse).EquipItems.Contains(item)))
+					{
+						if (!EquipItem(item))
+							AddToBackpack(item);
+					}
+					else
+					{
+						AddToBackpack(item);
+					}
+				}
+
+		//		Corpse.Delete();
+				
+			}
+		}
+
 
 		public override bool AllowEquipFrom(Mobile from)
 		{
@@ -285,7 +407,10 @@ namespace Server.Mobiles
 
 		public override void GetProperties(ObjectPropertyList list)
 		{
-			base.GetProperties(list);
+			//	base.GetProperties(list);
+
+			
+			AddNameProperties(list);
 
 			if (NameMod == null)
 			{
@@ -295,7 +420,17 @@ namespace Server.Mobiles
 
 		}
 
+		public override void AddNameProperties(ObjectPropertyList list)
+		{
+			var name = Name;
 
+			if (name == null)
+			{
+				name = String.Empty;
+			}
+		
+			list.Add(1050045, name); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      
+		}
 
 
 
@@ -339,6 +474,14 @@ namespace Server.Mobiles
                 m.SendLocalizedMessage(1043283, owner.Name);// I am following ~1_NAME~. 
                 return false;
             }
+		    
+			if (m is CustomPlayerMobile cp )
+			{
+				if (!cp.AddEsclave(this))
+				{
+					return false;
+				}
+			}
 
             if (SetControlMaster(m))
             {
@@ -346,6 +489,8 @@ namespace Server.Mobiles
 
                 return true;
             }
+
+
 
             return false;
         }

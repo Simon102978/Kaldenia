@@ -237,7 +237,7 @@ namespace Server.Gumps
                         if (msg != "")
                         {
 
-                            c.DoSpeech("*" + info.GetTextEntry(0).Text + "*", new int[] { }, MessageType.Regular, m.EmoteHue);
+                            c.DoSpeech("*" + info.GetTextEntry(0).Text + "*", new int[] { }, MessageType.Emote, m.EmoteHue);
                             ((PlayerMobile)from).SendGump(new FamilierGump(m, c));
                             break;
                         }

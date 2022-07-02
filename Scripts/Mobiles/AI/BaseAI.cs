@@ -1827,8 +1827,11 @@ namespace Server.Mobiles
             {
                 if (master != null)
                 {
-                    m_Mobile.SayTo(master, 502034, 0x3B2); // I thank thee for thy kindness!
-                    m_Mobile.SayTo(master, 502005, 0x3B2); // I quit.
+					if (master is CustomPlayerMobile cp)
+					{
+						cp.RemoveEsclave(m_Mobile);
+					}
+
                 }
             }
             else
@@ -2042,6 +2045,27 @@ namespace Server.Mobiles
 
                         from.SendLocalizedMessage(1043253, args); // You have transferred your pet to ~3_GETTER~.
                         to.SendLocalizedMessage(1043252, args); // ~1_NAME~ has transferred the allegiance of ~2_PET_NAME~ to you.
+
+
+						if (m_Creature is BaseHire)
+						{
+							if (from is CustomPlayerMobile cp)
+							{
+								cp.RemoveEsclave(m_Creature);
+							}
+
+							if (to is CustomPlayerMobile tocp)
+							{
+								tocp.AddEsclave(m_Creature);
+							}
+
+
+
+						}
+
+
+
+
                     }
                 }
             }

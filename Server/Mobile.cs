@@ -4892,32 +4892,63 @@ namespace Server
 				return;
 			}
 
-			var range = 15;
+			
 
 			switch (type)
 			{
 				case MessageType.Regular:
 				m_SpeechHue = hue;
-				this.RevealingAction();
 				break;
 				case MessageType.Emote:
 				m_EmoteHue = hue;
 				break;
 				case MessageType.Whisper:
-				m_WhisperHue = hue;
-				text = "- " + text;
-				range = 1;
+				m_WhisperHue = hue;		
 				break;
 				case MessageType.Yell:
 				m_YellHue = hue;
-				this.RevealingAction();
-				range = 18;
 				break;
 				default:
 				type = MessageType.Regular;
-				this.RevealingAction();
 				break;
 			}
+
+			DoCustomSpeech(text, keywords, type);
+		}
+
+
+		public virtual void DoCustomSpeech(string text, int[] keywords, MessageType type)
+		{
+
+			int hue = m_SpeechHue;
+
+			var range = 15;
+
+			switch (type)
+			{
+				case MessageType.Regular:
+					hue = m_SpeechHue;
+					this.RevealingAction();
+					break;
+				case MessageType.Emote:
+					hue = m_EmoteHue;
+					break;
+				case MessageType.Whisper:
+					text = "- " + text;
+					hue = m_WhisperHue;
+					range = 1;
+					break;
+				case MessageType.Yell:
+					hue = m_YellHue;
+					range = 18;
+					this.RevealingAction();
+					break;
+				default:
+					type = MessageType.Regular;
+					this.RevealingAction();
+					break;
+			}
+
 
 			var regArgs = new SpeechEventArgs(this, text, type, hue, keywords);
 

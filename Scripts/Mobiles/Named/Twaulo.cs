@@ -80,9 +80,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.UltraRich, 2);
             AddLoot(LootPack.Average);
-            AddLoot(LootPack.Gems);
+      //      AddLoot(LootPack.Gems);
             AddLoot(LootPack.LootItem<Arrow>(Utility.RandomMinMax(500, 700)));
-        }
+
+			AddLoot(LootPack.LootItem<Items.Gold>(500,750));
+		}
 
         public void SpawnPixies(Mobile target)
         {

@@ -60,7 +60,7 @@ namespace Server.Mobiles
         {
         }
 
-        public override ChampionSkullType SkullType => ChampionSkullType.Pain;
+       // public override ChampionSkullType SkullType => ChampionSkullType.Pain;
         public override Type[] UniqueList => new Type[] { };
         public override Type[] SharedList => new Type[]
                 {
@@ -78,9 +78,10 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.UltraRich, 4);
+			AddLoot(LootPack.LootItem<Items.Gold>(500, 750));
+			AddLoot(LootPack.UltraRich, 4);
             AddLoot(LootPack.FilthyRich);
-            AddLoot(LootPack.Talisman, 5);
+        //    AddLoot(LootPack.Talisman, 5);
             AddLoot(LootPack.ArcanistScrolls, Utility.RandomMinMax(1, 3));
         }
 

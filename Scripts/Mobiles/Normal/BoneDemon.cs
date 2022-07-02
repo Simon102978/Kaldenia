@@ -53,7 +53,8 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 1;
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.FilthyRich, 8);
+			AddLoot(LootPack.LootItem<Items.Gold>(500, 1000));
+			AddLoot(LootPack.FilthyRich, 8);
         }
 
         public override void Serialize(GenericWriter writer)

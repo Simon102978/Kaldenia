@@ -60,7 +60,7 @@ namespace Server.Mobiles
         {
         }
 
-       // public override ChampionSkullType SkullType => ChampionSkullType.Pain;
+        public override ChampionSkullType SkullType => ChampionSkullType.Pain;
         public override Type[] UniqueList => new Type[] { };
         public override Type[] SharedList => new Type[]
                 {

@@ -65,16 +65,8 @@ namespace Server.Gumps
 					//	AddHtmlTexte(x + 525, y + 40 + line * 25, 150, m_From.Skills[item].Base.ToString("##0"));
 					AddLabel(x + 550, y + 40 + line * 25, 150, item.Value.ToString());
 					line++;
-				}
-
-				
-
-				
+				}		
 			}
-
-
-
-
 		}
 
 		public override void OnResponse(NetState sender, RelayInfo info)

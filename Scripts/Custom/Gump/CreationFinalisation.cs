@@ -69,7 +69,13 @@ namespace Server.Gumps
 
 				CharacterCreation.AddBackpack(from);
 
-				from.AddToBackpack(new Gold(500));
+				if (m_from.StatutSocial != StatutSocialEnum.Dechet)
+				{
+					from.AddToBackpack(new Gold(500));
+				}
+
+
+				
 
 				Point3D p = new Point3D();
 

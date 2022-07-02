@@ -496,7 +496,7 @@ namespace Server.Items
     {
         public override int EmptyLabelNumber => 1022456;// mug
         public override int BaseLabelNumber => 1042976;// a mug of Ale
-        public override int MaxQuantity => 5;
+        public override int MaxQuantity => 2;
 
         public override int ComputeItemID()
         {

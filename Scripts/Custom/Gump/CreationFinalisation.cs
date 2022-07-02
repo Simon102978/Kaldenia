@@ -96,6 +96,8 @@ namespace Server.Gumps
 				from.MoveToWorld(p, Map.Felucca);
 				from.Thirst = 20;
 				from.Hunger = 20;
+
+				from.TotalGameTime = TimeSpan.FromSeconds(0);
 			}
 			if (info.ButtonID == 2)
 			{

@@ -79,7 +79,7 @@ namespace Server.Misc
             Mobile beholder = e.Beholder;
             Mobile beheld = e.Beheld;
 
-            if (!beheld.Player)
+            if (!beheld.Player && !(beheld is BaseHire))
                 return;
 
             if (beholder.Map != beheld.Map || !beholder.InRange(beheld, 12) || !beholder.CanSee(beheld))

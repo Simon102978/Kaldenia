@@ -6,7 +6,7 @@ namespace Server.Misc
     public class FoodDecayTimer : Timer
     {
         public FoodDecayTimer()
-            : base(TimeSpan.FromMinutes(20), TimeSpan.FromMinutes(20))
+            : base(TimeSpan.FromMinutes(30), TimeSpan.FromMinutes(30))
         {
             Priority = TimerPriority.OneMinute;
         }

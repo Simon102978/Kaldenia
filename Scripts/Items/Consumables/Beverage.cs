@@ -1395,10 +1395,22 @@ namespace Server.Items
             }
             else if (from == targ)
             {
-                if (from.Thirst < 20)
-                    from.Thirst += 1;
+				switch (Content)
+				{
+					case BeverageType.Water: from.Thirst += 5; break;
+					case BeverageType.Milk: from.Thirst += 4; break;
+					case BeverageType.Ale: from.Thirst -= 3; break;
+					case BeverageType.Wine: from.Thirst -= 1; break;
+					case BeverageType.Cider: from.Thirst += 3; break;
+					case BeverageType.Liquor: from.Thirst -= 2; break;
+				}
 
-                if (ContainsAlchohol)
+
+				if (from.Thirst > 20)
+					from.Thirst = 20;
+
+
+				if (ContainsAlchohol)
                 {
                     int bac = 0;
 

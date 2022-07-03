@@ -1218,23 +1218,23 @@ namespace Server.Items
                     int iThirst = from.Thirst;
                     if (iThirst < 5)
                     {
-                        from.SendMessage("You take a drink but are still extremely thirsty");
+                        from.SendMessage("Vous êtes complètement déshydraté!");
                     }
                     else if (iThirst < 10)
                     {
-                        from.SendMessage("You take a drink and feel less thirsty");
+                        from.SendMessage("Vous avez très soif.");
                     }
                     else if (iThirst < 14)
                     {
-                        from.SendMessage("You take a drink and feel much less thirsty");
+                        from.SendMessage("Vous avez soif.");
                     }
                     else if (iThirst < 18)
                     {
-                        from.SendMessage("You take a drink and feel more refreshed");
+                        from.SendMessage("Vous vous sentez rafraichi.");
                     }
                     else
                     {
-                        from.SendMessage("You take a drink and are no longer thirsty");
+                        from.SendMessage("Vous ne pouvez plus rien boire.");
                     }
                 }
                 else

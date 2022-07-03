@@ -15,7 +15,7 @@ namespace Server.Scripts.Commands
         
         public static void Initialize()
 		{
-		   CommandSystem.Register( "Follow", AccessLevel.Counselor, new CommandEventHandler( Follow_OnCommand ) );
+            CommandSystem.Register("Follow", AccessLevel.GameMaster, new CommandEventHandler(Follow_OnCommand));
             EventSink.Logout += new LogoutEventHandler(OnLogout);
         }
 
@@ -27,7 +27,7 @@ namespace Server.Scripts.Commands
 
             if (from != null && !from.Deleted)
             {
-                from.SendMessage("Select a target to follow");
+                from.SendMessage("Sélectionner la cible à suivre. Sélectionner votre personnage pour arrêter de suivre quelqu'un.");
                 from.Target = new FollowTarget();
             }
 		}
@@ -55,57 +55,60 @@ namespace Server.Scripts.Commands
 
         protected override void OnTarget(Mobile from, object target)
         {
-            Mobile targetted = null;
+            if (from == null || from.Deleted)
+                return;
 
-            if (from != null && !from.Deleted)
+            if ( target == null || !(target is Mobile))
             {
-                if ( target != null && target is Mobile)
+                from.SendMessage("Cette cible est inadéquate.");
+                return;
+            }
+
+            var targetted = target as Mobile;
+
+            if (target != from)
+            {
+                if (!Follow.Collection.Contains(from))
                 {
-                    targetted = target as Mobile;
-                    if (target != from)
+                    if (from.AccessLevel >= targetted.AccessLevel)
                     {
-                        if (!Follow.Collection.Contains(from))
-                        {
-                            if (from.AccessLevel >= targetted.AccessLevel)
-                            {
-                                Follow.Collection[from] = targetted;
-                                m_Timer = new FollowTimer(from, targetted);
-                                m_Timer.Start();
-                            }
-                            else
-                            {
-                                from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus élevé.");
-                            }
-                        }
-                        else
-                        {
-                            from.SendMessage("Vous êtes déjà en mode Follow.");
-                        }
+                        Follow.Collection[from] = targetted;
+                        m_Timer = new FollowTimer(from, targetted);
+                        m_Timer.Start();
                     }
                     else
                     {
-                        from.SendMessage("Vous ne pouvez pas vous suivre vous-mêmes.");                        
+                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus élevé que vous.");
+                        return;
                     }
                 }
                 else
                 {
-                    from.SendMessage("Cette cible est inadéquate.");
+                    from.SendMessage("Vous êtes déjà en mode Follow.");
                 }
             }
-
+            else
+            {
+                if (Follow.Collection.Contains(from))
+                {
+                    Follow.Collection.Remove(from);
+                    from.SendMessage("Vous ne suivez plus personne.");
+                }
+            }
         }
     }
 
     public class FollowTimer : Timer
     {
         private Mobile m_From, m_Target;
+        private int m_LastX, m_LastY;
 
-        public FollowTimer(Mobile from, Mobile target): base(TimeSpan.FromSeconds(0.25), TimeSpan.FromSeconds(2.5))
+        public FollowTimer(Mobile from, Mobile target): base(TimeSpan.FromSeconds(2.0), TimeSpan.FromSeconds(2.0))
         {
             m_From = from;
             m_Target = target;
 
-            m_From.SendGump( new FollowGump( from, target, this ));
+            //m_From.SendGump( new FollowGump( from, target, this ));
         }
 
         protected override void OnTick()
@@ -115,7 +118,7 @@ namespace Server.Scripts.Commands
                 if (!Follow.Collection.Contains(m_From))
                 {
                     Stop();
-                    m_From.CloseGump(typeof(FollowGump));
+                    //m_From.CloseGump(typeof(FollowGump));
                     return;
                 }
 
@@ -128,7 +131,7 @@ namespace Server.Scripts.Commands
                         {
                             m_From.SendMessage("Le personnage s'est caché, vous ne pouvez plus le suivre.");
                             Stop();
-                            m_From.CloseGump(typeof(FollowGump));
+                            //m_From.CloseGump(typeof(FollowGump));
                             Follow.Collection.Remove(m_From);
                             return;
                         }
@@ -150,7 +153,7 @@ namespace Server.Scripts.Commands
                     {
                         m_From.SendMessage("Le joueur s'est déconnecté.");
                         Stop();
-                        m_From.CloseGump(typeof(FollowGump));
+                        //m_From.CloseGump(typeof(FollowGump));
                         Follow.Collection.Remove(m_From);
                         return;
                     }
@@ -160,7 +163,7 @@ namespace Server.Scripts.Commands
                     m_From.SendMessage("Le joueur est supprimé.");
                     m_From.SendMessage("Vous ne suivez plus le joueur.");
                     Stop();
-                    m_From.CloseGump(typeof(FollowGump));
+                    //m_From.CloseGump(typeof(FollowGump));
                     Follow.Collection.Remove(m_From);
                     return;
                 }
@@ -168,66 +171,66 @@ namespace Server.Scripts.Commands
         }
     }
 
-    public class FollowGump : Gump
-    {
-        Mobile m_From;
-        Mobile m_Following;
-        Timer m_Timer;
+    //public class FollowGump : Gump
+    //{
+    //    Mobile m_From;
+    //    Mobile m_Following;
+    //    Timer m_Timer;
         
-        public FollowGump(Mobile from, Mobile following, Timer timer): base(20, 30)
-        {
-            Dragable = true;
-            Resizable = false;
-            Closable = false;
+    //    public FollowGump(Mobile from, Mobile following, Timer timer): base(20, 30)
+    //    {
+    //        Dragable = true;
+    //        Resizable = false;
+    //        Closable = false;
 
-            m_From = from;
-            m_Following = following;
-            m_Timer = timer;
+    //        m_From = from;
+    //        m_Following = following;
+    //        m_Timer = timer;
 
-            AddBackground(0, 0, 165, 55, 5054); // 5054
+    //        AddBackground(0, 0, 165, 55, 5054); // 5054
 
-            AddHtml(0, 0, 165, 50, Resize(Color(Center("Vous suivez :"), 0xFFFFFF), 100), (bool)false, (bool)false);
-            AddHtml(0, 14, 165, 50, Resize(Color(Center(String.Format("{0}", following.Name)), 0x0000CC), 100), (bool)false, (bool)false);
-            AddButton(47, 30, 241, 242, 1, GumpButtonType.Reply, 0);
-        }
+    //        AddHtml(0, 0, 165, 50, Resize(Color(Center("Vous suivez :"), 0xFFFFFF), 100), (bool)false, (bool)false);
+    //        AddHtml(0, 14, 165, 50, Resize(Color(Center(String.Format("{0}", following.Name)), 0x0000CC), 100), (bool)false, (bool)false);
+    //        AddButton(47, 30, 241, 242, 1, GumpButtonType.Reply, 0);
+    //    }
 
-        public override void OnResponse(NetState state, RelayInfo info)
-        {
-            switch (info.ButtonID)
-            {
-                case 1:
-                    {
-                        if (m_From != null && !m_From.Deleted)
-                        {
-                            if (Follow.Collection.Contains(m_From))
-                            {
-                                Follow.Collection.Remove(m_From);
-                            }
-                            if (m_Timer != null)
-                                m_Timer.Stop();
+    //    public override void OnResponse(NetState state, RelayInfo info)
+    //    {
+    //        switch (info.ButtonID)
+    //        {
+    //            case 1:
+    //                {
+    //                    if (m_From != null && !m_From.Deleted)
+    //                    {
+    //                        if (Follow.Collection.Contains(m_From))
+    //                        {
+    //                            Follow.Collection.Remove(m_From);
+    //                        }
+    //                        if (m_Timer != null)
+    //                            m_Timer.Stop();
 
-                            if ( m_Following != null && !m_Following.Deleted )
-                                m_From.SendMessage("Vous ne suivez plus {0}", m_Following.Name);
-                        }
+    //                        if ( m_Following != null && !m_Following.Deleted )
+    //                            m_From.SendMessage("Vous ne suivez plus {0}", m_Following.Name);
+    //                    }
 
-                        break;
-                    }
-            }
-        }
+    //                    break;
+    //                }
+    //        }
+    //    }
 
-        public string Center(string text)
-        {
-            return String.Format("<CENTER>{0}</CENTER>", text);
-        }
+    //    public string Center(string text)
+    //    {
+    //        return String.Format("<CENTER>{0}</CENTER>", text);
+    //    }
 
-        public string Color(string text, int color)
-        {
-            return String.Format("<BASEFONT COLOR=#{0:X6}>{1}</BASEFONT>", color, text);
-        }
+    //    public string Color(string text, int color)
+    //    {
+    //        return String.Format("<BASEFONT COLOR=#{0:X6}>{1}</BASEFONT>", color, text);
+    //    }
 
-        public string Resize(string text, int size)
-        {
-            return String.Format("<BASEFONT SIZE=#{0}>{1}</BASEFONT>", size, text);
-        }
-    }
+    //    public string Resize(string text, int size)
+    //    {
+    //        return String.Format("<BASEFONT SIZE=#{0}>{1}</BASEFONT>", size, text);
+    //    }
+    //}
 }

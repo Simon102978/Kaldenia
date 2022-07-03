@@ -155,7 +155,7 @@ namespace Server.Mobiles
 				meatbonus += 1;
 			}
 			DropResources(from, meatbonus, corpse);
-			corpse.DropItem(new DeerHide((int)meatbonus + 2));
+			corpse.DropItem(new Hides((int)meatbonus + 2));
 			//if (((int)(meatbonus *10))>1) corpse.DropItem( new RawRibs((int)(meatbonus * 10)));
 			//corpse.DropItem( new BeefHock( 4 ) );
 		}

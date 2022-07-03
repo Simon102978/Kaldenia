@@ -2145,7 +2145,11 @@ namespace Server.Mobiles
 		{
 			Server.Accounting.Account accFrom = (Server.Accounting.Account)this.Account;
 
-			accFrom.AddReroll(new Reroll(this));
+			if (accFrom != null)
+			{
+				accFrom.AddReroll(new Reroll(this));
+			}
+			
 		}
 
 		public override bool CheckPackage()

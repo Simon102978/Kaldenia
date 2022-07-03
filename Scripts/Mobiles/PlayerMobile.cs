@@ -3380,12 +3380,12 @@ namespace Server.Mobiles
 
 			if (Alive && !wasAlive)
 			{
-				Item deathRobe = new DeathRobe();
+		/*		Item deathRobe = new DeathRobe();
 
 				if (!EquipItem(deathRobe))
 				{
 					deathRobe.Delete();
-				}
+				}*/
 
 				if (NetState != null /*&& NetState.IsEnhancedClient*/)
 				{

@@ -782,6 +782,12 @@ namespace Server.Mobiles
 			int GainGold = gold;
 			int taxesGold = 0;
 
+
+			if (Race.RaceID != 0)
+			{
+				taxesGold = (int)Math.Round((GainGold * 0.1), 0, MidpointRounding.AwayFromZero);
+			}
+
 			switch (m_StatutSocial)
 			{
 				case StatutSocialEnum.Aucun:
@@ -791,23 +797,23 @@ namespace Server.Mobiles
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Possession:
-					taxesGold = (int)Math.Round((GainGold * 0.6), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.5), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Peregrin:
-					taxesGold = (int)Math.Round((GainGold * 0.6), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.5), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Civenien:
-					taxesGold = (int)Math.Round((GainGold * 0.25), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.25), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Equite:
-					taxesGold = (int)Math.Round((GainGold * 0.1), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.1), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Patre:
-					taxesGold = (int)Math.Round((GainGold * 0.05), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.05), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Magistrat:

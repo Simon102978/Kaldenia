@@ -6112,6 +6112,13 @@ namespace Server.Mobiles
             {
                 m_HasGeneratedLoot = true;
                 GenerateLoot(LootStage.Death);
+
+				if (IsParagon)
+				{
+					GenerateLoot(LootStage.Death);
+					GenerateLoot(LootStage.Death);
+				}
+
             }
 
             if (!NoKillAwards && Region.IsPartOf("Doom"))

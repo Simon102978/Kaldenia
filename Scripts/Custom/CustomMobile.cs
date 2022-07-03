@@ -95,7 +95,7 @@ namespace Server.Mobiles
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Vulnerability { get; set; }
-		public int VulnerabilityDuration => 1; //minutes
+		public int VulnerabilityDuration => 5; //minutes
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime PreventPvpAttackTime { get; set; }

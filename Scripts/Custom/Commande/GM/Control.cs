@@ -355,6 +355,11 @@ namespace Server.Commands
 					bh.Grandeur = cp.Grandeur;
 				}
 
+				if (from.Account == null && oldNPC.Account != null)
+				{
+					from.Account = oldNPC.Account;
+				}
+
 				oldPlayer.Delete();
 				from.Hidden = true;
 

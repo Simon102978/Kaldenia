@@ -69,6 +69,23 @@ namespace Server.Mobiles
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
+		#region Possess
+		private Mobile m_Possess;
+		private Mobile m_PossessStorage;
+
+		public Mobile Possess
+		{
+			get { return m_Possess; }
+			set { m_Possess = value; }
+		}
+
+		public Mobile PossessStorage
+		{
+			get { return m_PossessStorage; }
+			set { m_PossessStorage = value; }
+		}
+		#endregion
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastDeathTime { get; private set; }
 		public double DeathDuration => 1; //minutes
@@ -1989,9 +2006,31 @@ namespace Server.Mobiles
 			{
 				return false;
 			}
+			if (m_PossessStorage != null)
+			{
+				Server.Possess.CopySkills(this, m_Possess);
+				Server.Possess.CopyProps(this, m_Possess);
+				Server.Possess.MoveItems(this, m_Possess);
+
+				m_Possess.Location = Location;
+				m_Possess.Direction = Direction;
+				m_Possess.Map = Map;
+				m_Possess.Frozen = false;
+
+				Server.Possess.CopySkills(m_PossessStorage, this);
+				Server.Possess.CopyProps(m_PossessStorage, this);
+				Server.Possess.MoveItems(m_PossessStorage, this);
+
+				m_PossessStorage.Delete();
+				m_PossessStorage = null;
+				m_Possess.Kill();
+				m_Possess = null;
+				Hidden = true;
+				return false;
+			}
+
 		}
-
-
+	
 		public override void OnDeath(Container c)
 		{
 			base.OnDeath(c);

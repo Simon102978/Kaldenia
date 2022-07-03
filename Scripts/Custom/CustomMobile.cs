@@ -791,11 +791,11 @@ namespace Server.Mobiles
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Possession:
-					taxesGold = (int)Math.Round((GainGold * 0.5), 0, MidpointRounding.AwayFromZero);
+					taxesGold = (int)Math.Round((GainGold * 0.6), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Peregrin:
-					taxesGold = (int)Math.Round((GainGold * 0.5), 0, MidpointRounding.AwayFromZero);
+					taxesGold = (int)Math.Round((GainGold * 0.6), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Civenien:

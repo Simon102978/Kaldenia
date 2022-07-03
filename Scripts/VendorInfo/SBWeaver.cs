@@ -34,7 +34,7 @@ namespace Server.Mobiles
 
                 Add(new GenericBuyInfo(typeof(Scissors), 11, 20, 0xF9F, 0));
 
-                Add(new GenericBuyInfo("1154003", typeof(LeatherBraid), 50, 500, 5152, 2968));
+               
             }
 
             private void PurchaseCloth(UncutCloth cloth, GenericBuyInfo info)

@@ -74,6 +74,9 @@ namespace Server.Items
                 attacker.MovingEffect(damageable, EffectID, 18, 1, false, false, Hue, 0);
             }
 
+			HitPoints -= 1;
+
+
             return true;
         }
 
@@ -84,6 +87,8 @@ namespace Server.Items
             if (!(WeaponAbility.GetCurrentAbility(attacker) is MysticArc))
                 Timer.DelayCall(TimeSpan.FromMilliseconds(333.0), ThrowBack);
 
+			
+
             base.OnHit(attacker, damageable, damageBonus);
         }
 
@@ -93,6 +98,8 @@ namespace Server.Items
 
             if (!(WeaponAbility.GetCurrentAbility(attacker) is MysticArc))
                 Timer.DelayCall(TimeSpan.FromMilliseconds(333.0), ThrowBack);
+
+
 
             base.OnMiss(attacker, damageable);
         }

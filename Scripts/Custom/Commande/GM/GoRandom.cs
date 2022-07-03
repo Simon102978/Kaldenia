@@ -18,17 +18,18 @@ namespace Server.Scripts.Commands
 		public static void Initialize()
 		{
             CommandSystem.Register("GoRandom", AccessLevel.Counselor, new CommandEventHandler(GoRandom_OnCommand));
+			CommandSystem.Register("GoR", AccessLevel.Counselor, new CommandEventHandler(GoRandom_OnCommand));
 		}
 
-        [Usage("GoRandom")] 
-	    [Description("Teleporte sur un joueurs au hasard")]
+        [Usage("GoRandom")]
+		[Description("Teleporte sur un joueurs au hasard")]
         public static void GoRandom_OnCommand(CommandEventArgs e)
 		{
 			try
 			{
 				int count = NetState.Instances.Count;
 
-				for (int i = 0; i < 10; ++i)
+				for (int i = 0; i < 25; ++i)
 				{
 					NetState ns = (NetState)NetState.Instances[Utility.Random(NetState.Instances.Count)];
 					Mobile target = ns.Mobile;
@@ -37,8 +38,18 @@ namespace Server.Scripts.Commands
 					{
 						Mobile from = e.Mobile;
 
-						from.MoveToWorld(target.Location, target.Map);
-						break;
+						if (i > 5 || !from.InRange(target.Location,25))
+						{
+							from.MoveToWorld(target.Location, target.Map);
+							break;
+						}
+						else
+						{
+							continue;
+						}
+
+				
+						
 					}
 					else
 					{

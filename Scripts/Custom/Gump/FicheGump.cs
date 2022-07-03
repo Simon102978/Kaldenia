@@ -138,7 +138,7 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 10, y + 395, 150, "FE Total:");
 			AddHtmlTexte(x + 125, y + 395, 100, m_From.FETotal.ToString());
 			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouées:");
-			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.TotalGameTime.TotalHours,2).ToString());
+			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours, 2).ToString());
 
 
 			AddSection(x - 10, y + 453, 250, 210, "Statistique");

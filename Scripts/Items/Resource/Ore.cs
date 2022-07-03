@@ -323,31 +323,31 @@ namespace Server.Items
                     switch (m_Ore.Resource)
                     {
                         default:
-                            difficulty = 50.0;
+                            difficulty = 30.0;
                             break;
                         case CraftResource.DullCopper:
-                            difficulty = 65.0;
+                            difficulty = 35.0;
                             break;
                         case CraftResource.ShadowIron:
-                            difficulty = 70.0;
+                            difficulty = 40.0;
                             break;
                         case CraftResource.Copper:
-                            difficulty = 75.0;
+                            difficulty = 45.0;
                             break;
                         case CraftResource.Bronze:
-                            difficulty = 80.0;
+                            difficulty = 50.0;
                             break;
                         case CraftResource.Gold:
-                            difficulty = 85.0;
+                            difficulty = 55.0;
                             break;
                         case CraftResource.Agapite:
-                            difficulty = 90.0;
+                            difficulty = 60.0;
                             break;
                         case CraftResource.Verite:
-                            difficulty = 95.0;
+                            difficulty = 65.0;
                             break;
                         case CraftResource.Valorite:
-                            difficulty = 99.0;
+                            difficulty = 70.0;
                             break;
                     }
 

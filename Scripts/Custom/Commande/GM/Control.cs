@@ -224,6 +224,10 @@ namespace Server.Commands
 
 			target.Race.AddRace(from, target.Hue);
 
+			from.Account = playerClone.Account;
+			from.Thirst = 20;
+			from.Hunger = 20;
+
 
 			if (target is BaseHire bh && from is CustomPlayerMobile cp1)
 			{
@@ -231,6 +235,9 @@ namespace Server.Commands
 				cp1.Grosseur = bh.Grosseur;
 				cp1.Grandeur = bh.Grandeur;
 			}
+
+
+
 
 
 			target.Internalize();
@@ -288,6 +295,9 @@ namespace Server.Commands
 				CopyProps( from, target, stats, skills );
 				//Equip: target -> player
 				MoveEquip(target, from, items);
+
+				from.Hunger = 20;
+				from.Thirst = 20;
 				
 				target.Internalize();
 			}
@@ -353,6 +363,11 @@ namespace Server.Commands
 					bh.Beaute = cp.Beaute;
 					bh.Grosseur = cp.Grosseur;
 					bh.Grandeur = cp.Grandeur;
+				}
+
+				if (from.Account == null && oldNPC.Account != null)
+				{
+					from.Account = oldNPC.Account;
 				}
 
 				oldPlayer.Delete();

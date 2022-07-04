@@ -301,6 +301,15 @@ namespace Server.Items
                 {
                     value = m_MaxHits;
                 }
+				else if (value == 0)
+				{
+					if (GetUser() != null)
+					{
+						GetUser().SendMessage(37, "Votre arme se brise.");
+					}
+
+					this.Delete();
+				}
 
                 m_Hits = value;
 
@@ -3155,6 +3164,31 @@ namespace Server.Items
 
             return bonus / 100;
         }
+
+
+
+		public Mobile GetUser()
+		{
+			if (this.Parent is Mobile m)
+			{
+				return m;
+			}
+
+			return null;
+
+
+
+
+
+		}
+
+
+
+
+
+
+
+
 
         public virtual void GetStatusDamage(Mobile from, out int min, out int max)
         {

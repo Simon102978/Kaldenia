@@ -74,7 +74,7 @@ namespace Server.Items
                 attacker.MovingEffect(damageable, EffectID, 18, 1, false, false, Hue, 0);
             }
 
-			HitPoints -= 1;
+		
 
 
             return true;
@@ -87,9 +87,10 @@ namespace Server.Items
             if (!(WeaponAbility.GetCurrentAbility(attacker) is MysticArc))
                 Timer.DelayCall(TimeSpan.FromMilliseconds(333.0), ThrowBack);
 
-			
+			HitPoints -= 1;
 
-            base.OnHit(attacker, damageable, damageBonus);
+
+			base.OnHit(attacker, damageable, damageBonus);
         }
 
         public override void OnMiss(Mobile attacker, IDamageable damageable)

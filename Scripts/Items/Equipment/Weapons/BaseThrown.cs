@@ -87,7 +87,9 @@ namespace Server.Items
             if (!(WeaponAbility.GetCurrentAbility(attacker) is MysticArc))
                 Timer.DelayCall(TimeSpan.FromMilliseconds(333.0), ThrowBack);
 
-			HitPoints -= 1;
+
+
+			HitPoints -= Utility.Random(1);
 
 
 			base.OnHit(attacker, damageable, damageBonus);

@@ -89,7 +89,7 @@ namespace Server.Items
 
 
 
-			HitPoints -= Utility.Random(1);
+			HitPoints -= 1;
 
 
 			base.OnHit(attacker, damageable, damageBonus);

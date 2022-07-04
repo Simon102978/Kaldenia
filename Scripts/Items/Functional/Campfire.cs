@@ -164,6 +164,7 @@ namespace Server.Items
 			DoBuff(entry.Player);
 		   	entry.IsBuffed = true;
 		    }
+
 	    	}
 
             }
@@ -188,23 +189,27 @@ namespace Server.Items
             eable.Free();
         }
 
-        public bool DoBuff(Mobile from)
+        public bool DoBuff(PlayerMobile from)
         {
 	    TimeSpan Duration = TimeSpan.FromMinutes(10);
             int scale = 5;
-            if (Spells.SpellHelper.AddStatOffset(from, StatType.Str, scale, Duration) 
-	    && Spells.SpellHelper.AddStatOffset(from, StatType.Dex, scale, Duration)
- 	    && Spells.SpellHelper.AddStatOffset(from, StatType.Int, scale, Duration))
-            {
-                from.FixedEffect(0x375A, 10, 15);
-                from.PlaySound(0x1E7);
-	//	from.SendMessage("You feel comforted by the warmth of the campfire.");
+			if (Spells.SpellHelper.AddStatOffset(from, StatType.Str, scale, Duration)
+		&& Spells.SpellHelper.AddStatOffset(from, StatType.Dex, scale, Duration)
+		 && Spells.SpellHelper.AddStatOffset(from, StatType.Int, scale, Duration))
+			{
+				from.FixedEffect(0x375A, 10, 15);
+				from.PlaySound(0x1E7);
+				//	from.SendMessage("You feel comforted by the warmth of the campfire.");
 
-                return true;
-            }
+				return true;
 
-
-            from.SendLocalizedMessage(502173); // You are already under a similar effect.
+			}
+			if (Spells.SpellHelper.CheckCombat(from))
+			{
+				from.SendMessage("Vous ne pouvez bénéficier du feu de camp pendant le combat."); 
+				return false;
+			}
+			from.SendLocalizedMessage(502173); // You are already under a similar effect.
             return false;
         }
 

@@ -61,7 +61,7 @@ namespace Server.Commands
 
 		public static void Initialize()
 		{
-			CommandSystem.Register( "Posseder", accessLevel, new CommandEventHandler( Control_OnCommand ) );
+		//	CommandSystem.Register( "Posseder", accessLevel, new CommandEventHandler( Control_OnCommand ) );
 		}
 	
 		[Usage( "Posseder [target]" )]

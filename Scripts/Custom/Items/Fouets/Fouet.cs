@@ -175,7 +175,7 @@ namespace Server.Items
 				}
 				else
 				{
-					from.SendMessage("Votre cible ne porte aucune arme !");
+					from.SendMessage("Vous ne parvenez pas à fouetter cette cible!");
 					receveur.PlaySound(0x238);
 
 					if (from is PlayerMobile)
@@ -217,7 +217,7 @@ namespace Server.Items
 			else if (from.Items.Contains(this))
 			{
 				from.Target = new TargetSystem(this);
-				from.SendMessage("Qui voulez-vous foueter ?");
+				from.SendMessage("Qui voulez-vous fouetter ?");
 			}
 			else
 				from.SendMessage("Vous devez avoir le fouet en main pour l'utiliser.");

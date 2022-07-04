@@ -49,7 +49,7 @@ namespace Server
           {
 			CustomPlayerMobile pm = (CustomPlayerMobile)m;
 			
-			if(pm.FENormalTotal >= day * 3 )
+			if(pm.FENormalTotal >= day * 5 )
 			{
 
 			}

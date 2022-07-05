@@ -113,11 +113,7 @@ namespace Server.Items.Crops
 		{
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
 
-			if ( from != m_sower )
-            { 
-                from.SendMessage( "Ce plant ne vous appartient pas !" ); 
-                return; 
-            }
+
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) 
             { 
                 from.SendMessage( "Vous ne pouvez récolter sur une monture." );

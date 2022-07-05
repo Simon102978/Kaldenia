@@ -155,7 +155,7 @@ namespace Server.Items.Crops
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
-			if ( from != m_sower ) { from.SendMessage( "Ce plant ne vous appartient pas !" ); return; }
+		
 
 			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez récolter sur une monture." ); return; }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )

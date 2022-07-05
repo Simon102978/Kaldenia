@@ -75,11 +75,7 @@ namespace Server.Items.Crops
                 m_sower = from;
             }
 
-            if (from != m_sower)
-            {
-                from.SendMessage("Ce plant ne vous appartient pas !");
-                return;
-            }
+         
 
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {

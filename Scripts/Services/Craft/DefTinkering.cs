@@ -354,7 +354,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(SextantParts), 1044047, 1024185, 30.0, 80.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(BarrelHoops), 1044047, 1024321, -15.0, 35.0, typeof(IronIngot), 1044036, 5, 1044037);
             AddCraft(typeof(Hinge), 1044047, 1024181, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
-            AddCraft(typeof(BolaBall), 1044047, 1023699, 45.0, 95.0, typeof(IronIngot), 1044036, 10, 1044037);
+            AddCraft(typeof(BolaBall), 1044047, "Balle de Bola", 45.0, 95.0, typeof(IronIngot), 1044036, 10, 1044037);
 
             index = AddCraft(typeof(JeweledFiligree), 1044047, 1072894, 70.0, 110.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddRes(index, typeof(StarSapphire), 1044231, 1, 1044253);

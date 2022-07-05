@@ -79,7 +79,7 @@ namespace Server
 
     public static void ResetFETime(CustomPlayerMobile pm)
     {
-			pm.NextFETime = TimeSpan.FromMinutes(45); /*m_CoteTimeSpan[GetCoteMoyenne(pm) - 1];*/
+			pm.NextFETime = TimeSpan.FromMinutes(30); /*m_CoteTimeSpan[GetCoteMoyenne(pm) - 1];*/
     }
 
   /*  public static void ResetEndOfDay()

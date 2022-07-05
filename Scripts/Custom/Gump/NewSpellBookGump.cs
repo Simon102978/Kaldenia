@@ -172,7 +172,7 @@ namespace Server.Gumps
             m_NameColors[MagieType.Arcane] = 498;
 			m_NameColors[MagieType.Anarchique] = 37;
 			m_NameColors[MagieType.Cycle] = 72;   
-			m_NameColors[MagieType.Mort] = 2052;
+			m_NameColors[MagieType.Mort] = 986;
 			m_NameColors[MagieType.Obeissance] = 140;
 			m_NameColors[MagieType.Vie] = 182;
 

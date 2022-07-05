@@ -99,16 +99,16 @@ namespace Server.Engines.Craft
 
 
             #region Bone Armor
-            index = AddCraft(typeof(BoneHelm), "Armure d'os", 1025206, 85.0, 110.0, typeof(Bone), "Os", 4, 1044463);
+            index = AddCraft(typeof(BoneHelm), "Armure d'os", 1025206, 50, 80, typeof(Bone), "Os", 4, 1044463);
 
 
-            index = AddCraft(typeof(BoneGloves), "Armure d'os", 1025205, 89.0, 114.0, typeof(Bone), "Os", 6, 1044463);
+            index = AddCraft(typeof(BoneGloves), "Armure d'os", 1025205, 50, 80, typeof(Bone), "Os", 6, 1044463);
 
-            index = AddCraft(typeof(BoneArms), "Armure d'os", 1025203, 92.0, 117.0, typeof(Bone), "Os", 8, 1044463);
+            index = AddCraft(typeof(BoneArms), "Armure d'os", 1025203, 50, 80, typeof(Bone), "Os", 8, 1044463);
 
-            index = AddCraft(typeof(BoneLegs), "Armure d'os", 1025202, 95.0, 120.0, typeof(Bone), "Os", 10, 1044463);
+            index = AddCraft(typeof(BoneLegs), "Armure d'os", 1025202, 50, 80, typeof(Bone), "Os", 10, 1044463);
 
-            index = AddCraft(typeof(BoneChest), "Armure d'os", 1025199, 96.0, 121.0, typeof(Bone), "Os", 12, 1044463);
+            index = AddCraft(typeof(BoneChest), "Armure d'os", 1025199, 50, 80, typeof(Bone), "Os", 12, 1044463);
 
             index = AddCraft(typeof(OrcHelm), "Armure d'os", 1027947, 90.0, 115.0, typeof(Bone), "Os", 6, 1044463);
 

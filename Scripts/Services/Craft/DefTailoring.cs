@@ -566,12 +566,12 @@ namespace Server.Engines.Craft
 
 			
 
-			AddCraft(typeof(LeatherGorget), "Armures de Cuir", 1025063, 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
-            AddCraft(typeof(LeatherCap), "Armures de Cuir", 1027609, 6.2, 31.2, typeof(Leather), 1044462, 2, 1044463);
-            AddCraft(typeof(LeatherGloves), "Armures de Cuir", 1025062, 51.8, 76.8, typeof(Leather), 1044462, 3, 1044463);
-            AddCraft(typeof(LeatherArms), "Armures de Cuir", 1025061, 53.9, 78.9, typeof(Leather), 1044462, 4, 1044463);
-            AddCraft(typeof(LeatherLegs), "Armures de Cuir", 1025067, 66.3, 91.3, typeof(Leather), 1044462, 10, 1044463);
-            AddCraft(typeof(LeatherChest), "Armures de Cuir", 1025068, 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
+			AddCraft(typeof(LeatherGorget), "Armures de Cuir", 1025063, 45, 78.9, typeof(Leather), 1044462, 4, 1044463);
+            AddCraft(typeof(LeatherCap), "Armures de Cuir", 1027609, 45, 31.2, typeof(Leather), 1044462, 2, 1044463);
+            AddCraft(typeof(LeatherGloves), "Armures de Cuir", 1025062, 45, 76.8, typeof(Leather), 1044462, 3, 1044463);
+            AddCraft(typeof(LeatherArms), "Armures de Cuir", 1025061, 45, 78.9, typeof(Leather), 1044462, 4, 1044463);
+            AddCraft(typeof(LeatherLegs), "Armures de Cuir", 1025067, 45, 91.3, typeof(Leather), 1044462, 10, 1044463);
+            AddCraft(typeof(LeatherChest), "Armures de Cuir", 1025068, 45, 95.5, typeof(Leather), 1044462, 12, 1044463);
 
 
 
@@ -656,11 +656,11 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Studded Armor
-            AddCraft(typeof(StuddedGorget), "Armures Cloutée", 1025078, 78.8, 103.8, typeof(Leather), 1044462, 6, 1044463);
-            AddCraft(typeof(StuddedGloves), "Armures Cloutée", 1025077, 82.9, 107.9, typeof(Leather), 1044462, 8, 1044463);
-            AddCraft(typeof(StuddedArms), "Armures Cloutée", 1025076, 87.1, 112.1, typeof(Leather), 1044462, 10, 1044463);
-            AddCraft(typeof(StuddedLegs), "Armures Cloutée", 1025082, 91.2, 116.2, typeof(Leather), 1044462, 12, 1044463);
-            AddCraft(typeof(StuddedChest), "Armures Cloutée", 1025083, 94.0, 119.0, typeof(Leather), 1044462, 14, 1044463);
+            AddCraft(typeof(StuddedGorget), "Armures Cloutée", 1025078, 55, 83.0, typeof(Leather), 1044462, 6, 1044463);
+            AddCraft(typeof(StuddedGloves), "Armures Cloutée", 1025077, 55, 83.0, typeof(Leather), 1044462, 8, 1044463);
+            AddCraft(typeof(StuddedArms), "Armures Cloutée", 1025076, 55, 83.0, typeof(Leather), 1044462, 10, 1044463);
+            AddCraft(typeof(StuddedLegs), "Armures Cloutée", 1025082, 55, 83.0, typeof(Leather), 1044462, 12, 1044463);
+            AddCraft(typeof(StuddedChest), "Armures Cloutée", 1025083, 55, 83.0, typeof(Leather), 1044462, 14, 1044463);
 
 
 

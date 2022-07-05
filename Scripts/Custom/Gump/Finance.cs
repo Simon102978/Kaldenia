@@ -6,6 +6,7 @@ using Server.Mobiles;
 using Server.Items;
 using Server.Misc;
 using Server.Custom;
+using Server.Prompts;
 
 
 namespace Server.Gumps
@@ -49,7 +50,10 @@ namespace Server.Gumps
 			AddHtmlTexteColored(x, y + line * scale, 120, "Dépenses :", "#FFFFFF");
 			line++;
 
-
+			if (from.AccessLevel == AccessLevel.Owner)
+			{
+				AddButton(xSecondColum - 20, y + line * scale, 1, 2117);
+			}		
 			AddHtmlTexteColored(xSecondColum, y + line * scale, 300, $"Salaire - {CustomPersistence.ProchainePay.ToLongDateString()} - {CustomPersistence.ProchainePay.ToShortTimeString()}", "#FFFFFF");
 			int SalaireGold = CustomPersistence.Salaire;
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + SalaireGold.ToString("### ### ##0") + "</p>", "#FFFFFF");
@@ -75,13 +79,57 @@ namespace Server.Gumps
 			Mobile from = sender.Mobile;
 
 
-			if (from is CustomPlayerMobile)
+			if (from is CustomPlayerMobile cp)
 			{
-				CustomPlayerMobile cp = (CustomPlayerMobile)from;
+				
+
+				if (info.ButtonID == 1)
+				{
+
+					cp.Prompt = new AjustSalairePrompt(cp);
+					cp.SendMessage("Veuillez écrire le nouveau montant.");
+				}
 
 
-		
+
 			}
         }
-    }
+
+		private class AjustSalairePrompt : Prompt
+		{
+			private CustomPlayerMobile m_From;
+
+
+			public AjustSalairePrompt(CustomPlayerMobile from)
+			{
+				m_From = from;
+
+			}
+
+			public override void OnCancel(Mobile from)
+			{
+				m_From.SendGump(new FinanceGump(m_From));
+			}
+
+			public override void OnResponse(Mobile from, string text)
+			{
+				int Salaire = 0;
+
+				int.TryParse(text, out Salaire);
+
+				if (Salaire != 0)
+				{
+					CustomPersistence.Salaire = Salaire;
+
+				}
+
+				m_From.SendGump(new FinanceGump(m_From));
+			}
+		}
+
+
+
+
+
+	}
 }

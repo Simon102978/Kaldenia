@@ -50,7 +50,7 @@ namespace Server.Gumps
 			line++;
 
 
-			AddHtmlTexteColored(xSecondColum, y + line * scale, 120, "Salaire", "#FFFFFF");
+			AddHtmlTexteColored(xSecondColum, y + line * scale, 300, $"Salaire - {CustomPersistence.ProchainePay.ToLongDateString()} - {CustomPersistence.ProchainePay.ToShortTimeString()}", "#FFFFFF");
 			int SalaireGold = CustomPersistence.Salaire;
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + SalaireGold.ToString("### ### ##0") + "</p>", "#FFFFFF");
 			line++;

@@ -881,7 +881,13 @@ namespace Server.Mobiles
 				
 				Server.Custom.System.GuildRecruter.PayLog(cgm, Payment);
 				GainGold(Payment, true);
-				CustomPersistence.Salaire += Payment;
+
+				if (AccessLevel > AccessLevel.Player)
+				{
+					CustomPersistence.Salaire += Payment;
+				}
+
+				
 
 				Salaire = Payment;
 			}

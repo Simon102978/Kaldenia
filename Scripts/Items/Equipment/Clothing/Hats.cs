@@ -281,7 +281,7 @@ namespace Server.Items
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(2); // version
+            writer.Write(3); // version
 
             writer.Write(m_IsShipwreckedItem);
         }
@@ -291,9 +291,24 @@ namespace Server.Items
             base.Deserialize(reader);
             int version = reader.ReadInt();
 
-            switch (version)
-            {
-                case 2: goto case 1;
+			switch (version)
+			{
+				case 3:
+					{
+
+					goto case 1;
+					}
+                case 2:
+					{
+						Resistances.Physical = 0;
+						Resistances.Fire = 0;
+						Resistances.Cold = 0;
+						Resistances.Poison = 0;
+						Resistances.Energy = 0;
+
+						goto case 1;
+					}
+					
                 case 1:
                     {
                         m_IsShipwreckedItem = reader.ReadBool();
@@ -327,10 +342,10 @@ namespace Server.Items
         {
             Quality = (ItemQuality)quality;
 
-            if (Quality == ItemQuality.Exceptional)
+         /*   if (Quality == ItemQuality.Exceptional)
             {
                 DistributeBonuses(from, tool is BaseRunicTool ? 0 : 0);
-            }
+            }*/
 
             return base.OnCraft(quality, makersMark, from, craftSystem, typeRes, tool, craftItem, resHue);
         }

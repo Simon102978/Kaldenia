@@ -49,10 +49,17 @@ namespace Server.Scripts.Commands
 
 					if (targeted is CustomPlayerMobile cp )
 					{
-						Fe fe = new Fe(cp);
-						cp.AddToBackpack(fe);
-						cp.SendMessage("Félicitation ! Vous venez de recevoir une FE pour bon rp !");
-
+						if ((DateTime.Now - cp.LastFERP).TotalHours > 1)
+						{
+							Fe fe = new Fe(cp);
+							cp.AddToBackpack(fe);
+							cp.LastFERP = DateTime.Now;
+							cp.SendMessage("Félicitation ! Vous venez de recevoir une FE pour bon rp !");
+						}
+						else
+						{
+							from.SendMessage("Ce joueur a recu une fe rp il y a moin d'une heure.");
+						}
 					}
 					else
 					{

@@ -41,9 +41,12 @@ namespace Server.Mobiles
 		private int m_TotalNormalFE;
 		private int m_TotalRPFE;
 
+	
+
 
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
+		private DateTime m_LastFERP;
 
 		private DateTime m_LastPay;
 		private int m_Salaire;
@@ -204,6 +207,28 @@ namespace Server.Mobiles
 			get { return m_nextFETime; }
 			set { m_nextFETime = value; }
 		}
+
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime LastFERP
+		{
+			get { return m_LastFERP; }
+			set { m_LastFERP = value; }
+		}
+
+
+
+
+	
+
+
+
+
+
+
+
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FE { get { return m_fe; } set { m_fe = value; } }
@@ -2224,6 +2249,12 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 26:
+					{
+						m_LastFERP = reader.ReadDateTime();
+
+						goto case 24;
+					}
 				case 25:
 				case 24:
 					{
@@ -2422,7 +2453,9 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(25); // version
+            writer.Write(26); // version
+
+			writer.Write(LastFERP);
 
 			writer.Write(m_Maitre);
 

@@ -64,11 +64,11 @@ namespace Server.Gumps
 			{
 				if (i2 >= page * 60  )
 				{
-					
 
-	
 
-					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0,  item.Key.Name + "-" + item.Value.ToString());
+					AddHtmlTexteColored(x + 10 + colonne * 300, y + 20 + line * 20, 300, item.Key.Name + "-" + item.Value.ToString(), "#ffffff");
+
+//					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0,  item.Key.Name + "-" + item.Value.ToString());
 
 					line++;
 

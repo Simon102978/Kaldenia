@@ -11,7 +11,7 @@ namespace Server.Scripts.Commands
     {
         public static void Initialize()
         {
-            CommandSystem.Register("Money", AccessLevel.Administrator, new CommandEventHandler(Money_OnCommand));
+            CommandSystem.Register("Money", AccessLevel.GameMaster, new CommandEventHandler(Money_OnCommand));
         }
 
         public static void Money_OnCommand(CommandEventArgs e)

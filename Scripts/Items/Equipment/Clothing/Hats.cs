@@ -329,7 +329,7 @@ namespace Server.Items
 
             if (Quality == ItemQuality.Exceptional)
             {
-                DistributeBonuses(from, tool is BaseRunicTool ? 6 : 15);
+                DistributeBonuses(from, tool is BaseRunicTool ? 0 : 0);
             }
 
             return base.OnCraft(quality, makersMark, from, craftSystem, typeRes, tool, craftItem, resHue);

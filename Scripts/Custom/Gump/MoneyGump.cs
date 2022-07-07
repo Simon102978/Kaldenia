@@ -45,7 +45,7 @@ namespace Server.Gumps
 				{
 					for (int i = 0; i < acct.Length; i++)
 					{
-						if (acct[i] != null)
+						if (acct[i] != null && acct.AccessLevel == AccessLevel.Player)
 						{
 							mydict.Add(acct[i], Banker.GetBalance(acct[i]));
 						}

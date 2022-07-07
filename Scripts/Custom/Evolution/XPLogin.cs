@@ -21,7 +21,6 @@ namespace Server
         if (e.Mobile is CustomPlayerMobile cp)
         {
           cp.LastLoginTime = DateTime.Now;
-		  cp.LastCountGameTime = DateTime.Now;
 
 
 
@@ -31,12 +30,7 @@ namespace Server
 
     public static void EventSink_Logout(LogoutEventArgs e)
     {
-			if (e.Mobile is CustomPlayerMobile cp)
-			{
 
-				cp.TotalGameTime += DateTime.Now - cp.LastCountGameTime;
-				cp.LastCountGameTime = DateTime.Now;
-			}
 
       /*if (e.Mobile.Player)
       {

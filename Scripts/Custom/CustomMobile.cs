@@ -67,8 +67,6 @@ namespace Server.Mobiles
 		private Race m_BaseRace;
 		private bool m_BaseFemale;
 		private int m_BaseHue;
-		private TimeSpan m_TotalGameTime;
-		private DateTime m_LastCountGameTime;
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
@@ -378,33 +376,6 @@ namespace Server.Mobiles
 					m_Masque = value;
 				}
 			}
-		}
-
-		[CommandProperty(AccessLevel.GameMaster)]
-		public TimeSpan TotalGameTime
-		{
-			get
-			{
-
-				if (NetState != null)
-				{
-					return m_TotalGameTime + (DateTime.Now - LastCountGameTime);
-				}
-
-				return m_TotalGameTime;
-			}
-			set { m_TotalGameTime = value; }
-		}
-
-		[CommandProperty(AccessLevel.GameMaster)]
-		public DateTime LastCountGameTime
-		{
-			get
-			{
-
-				return m_LastCountGameTime;
-			}
-			set { m_LastCountGameTime = value; }
 		}
 
 		public List<int> QuickSpells
@@ -2249,6 +2220,7 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 27:
 				case 26:
 					{
 						m_LastFERP = reader.ReadDateTime();
@@ -2277,11 +2249,18 @@ namespace Server.Mobiles
 					{
 						m_TotalRPFE = reader.ReadInt();
 
-						goto case 21;
+						if (version >= 27)
+						{
+							goto case 20;
+						}
+						else
+						{
+							goto case 21;
+						}					
 					}
 				case 21:
 					{
-						m_TotalGameTime = reader.ReadTimeSpan();
+						reader.ReadTimeSpan();
 
 						goto case 20;
 					}
@@ -2439,10 +2418,7 @@ namespace Server.Mobiles
 					}
 				case 0:
                     {
-						if (version < 25)
-						{
-							m_TotalGameTime = TimeSpan.FromSeconds(0);
-						}
+
                         break;
                     }
             }
@@ -2453,7 +2429,7 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(26); // version
+            writer.Write(27); // version
 
 			writer.Write(LastFERP);
 
@@ -2470,11 +2446,11 @@ namespace Server.Mobiles
 
 			writer.Write(m_TotalRPFE); 
 
-			m_TotalGameTime += DateTime.Now - m_LastCountGameTime;
-			m_LastCountGameTime = DateTime.Now;
+	//		m_TotalGameTime += DateTime.Now - m_LastCountGameTime;
+	//		m_LastCountGameTime = DateTime.Now;
 
 
-			writer.Write(m_TotalGameTime);
+	//		writer.Write(m_TotalGameTime);
 
 			writer.Write(m_Salaire);
 			writer.Write(m_LastPay);

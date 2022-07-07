@@ -120,8 +120,7 @@ namespace Server.Misc
 				pm.Metier = Classe.GetClasse(-1);
 				pm.ClassePrimaire = Classe.GetClasse(-1);
 				pm.ClasseSecondaire = Classe.GetClasse(-1);
-				pm.LastCountGameTime = DateTime.Now;
-
+			
 
 
 

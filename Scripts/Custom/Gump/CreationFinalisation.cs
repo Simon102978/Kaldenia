@@ -97,7 +97,7 @@ namespace Server.Gumps
 				from.Thirst = 20;
 				from.Hunger = 20;
 
-				from.TotalGameTime = TimeSpan.FromSeconds(0);
+				
 			}
 			if (info.ButtonID == 2)
 			{

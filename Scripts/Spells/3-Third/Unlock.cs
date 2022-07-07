@@ -72,6 +72,10 @@ namespace Server.Spells.Third
                             from.SendLocalizedMessage(501666); // You can't unlock that!
                         else if (cont is TreasureMapChest && ((TreasureMapChest)cont).Level > 1)
                             from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 503099); // My spell does not seem to have an effect on that lock.
+						else if (cont is BaseDungeonChest && !(cont is TreasureLevel1))
+						{
+							from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 503099); // My spell does not seem to have an effect on that lock.
+						}
                         else
                         {
                             int level;

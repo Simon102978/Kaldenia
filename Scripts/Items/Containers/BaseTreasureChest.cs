@@ -38,6 +38,38 @@ namespace Server.Items
             Level5,
             Level6,
         }
+
+		public int GetLevel()
+		{
+			switch (m_TreasureLevel)
+			{
+				case TreasureLevel.Level1:
+					return 1;
+				case TreasureLevel.Level2:
+					return 2;
+				case TreasureLevel.Level3:
+					return 3;
+				case TreasureLevel.Level4:
+					return 4;
+				case TreasureLevel.Level5:
+					return 5;
+				case TreasureLevel.Level6:
+					return 6;
+				default:
+					return 0;
+			}
+
+
+
+		}
+
+
+
+
+
+
+
+
         [CommandProperty(AccessLevel.GameMaster)]
         public TreasureLevel Level
         {

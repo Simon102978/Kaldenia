@@ -11,18 +11,19 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 1 * Utility.Random(1, 25);
+            TrapPower = 1 * Utility.Random(50, 45);
 
-            DropItem(new Gold(30, 100));
+      //      DropItem(new Gold(30, 100));
             DropItem(new Bolt(10));
 			DropItem(new Arrow(10));
-			
 
-           
+			DropItem(new Tourmaline(Utility.Random(3)));
+			DropItem(new Amber(Utility.Random(2)));
+			DropItem(new Citrine(Utility.Random(5)));
 
-            for (int i = Utility.Random(3) + 1; i > 0; i--) // random 1 to 3
-                DropItem(Loot.RandomGem());
-        }
+			//     for (int i = Utility.Random(3) + 1; i > 0; i--) // random 1 to 3
+			//       DropItem(Loot.RandomGem());
+		}
 
         public TreasureLevel1(Serial serial) : base(serial)
         {
@@ -52,10 +53,16 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 2 * Utility.Random(1, 25);
+            TrapPower = 2 * Utility.Random(25, 15);
 
-            DropItem(new Gold(70, 100));
-            DropItem(new Arrow(10));
+			DropItem(new Gold(50, 75));
+			DropItem(new Tourmaline(Utility.Random(3)));
+			DropItem(new Amber(Utility.Random(2)));
+			DropItem(new Citrine(Utility.Random(5)));
+
+
+
+			DropItem(new Arrow(10));
             DropItem(Loot.RandomPotion());
             for (int i = Utility.Random(1, 2); i > 1; i--)
             {
@@ -102,10 +109,13 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 3 * Utility.Random(1, 25);
+            TrapPower = 3 * Utility.Random(25, 15);
 
-            DropItem(new Gold(200, 500));
-            DropItem(new Arrow(10));
+			DropItem(new Gold(200, 500));
+
+
+
+			DropItem(new Arrow(10));
 
             for (int i = Utility.Random(1, 3); i > 1; i--)
             {
@@ -156,7 +166,7 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 4 * Utility.Random(1, 25);
+            TrapPower = 4 * Utility.Random(25, 15); 
 
             DropItem(new Gold(350, 700));
             DropItem(new BlankScroll(Utility.Random(1, 4)));

@@ -59,8 +59,8 @@ namespace Server.Items
             }
 
             base.OnTelekinesis(from);
-            Name = "a treasure chest";
-            StartDeleteTimer();
+            Name = "coffre au trésor";
+			StartDeleteTimer();
         }
 
         public override void OnDoubleClick(Mobile from)
@@ -69,7 +69,7 @@ namespace Server.Items
                 return;
 
             base.OnDoubleClick(from);
-            Name = "a treasure chest";
+            Name = "coffre au trésor";
             StartDeleteTimer();
         }
 

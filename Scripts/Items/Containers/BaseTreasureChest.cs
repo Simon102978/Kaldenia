@@ -182,16 +182,16 @@ namespace Server.Items
             switch (m_TreasureLevel)
             {
                 case TreasureLevel.Level1:
-                    MinGold = 100;
-                    MaxGold = 300;
+                    MinGold = 0;
+                    MaxGold = 0;
                     break;
                 case TreasureLevel.Level2:
-                    MinGold = 300;
-                    MaxGold = 600;
+                    MinGold = 150;
+                    MaxGold = 300;
                     break;
                 case TreasureLevel.Level3:
-                    MinGold = 600;
-                    MaxGold = 900;
+                    MinGold = 300;
+                    MaxGold = 450;
                     break;
                 case TreasureLevel.Level4:
                     MinGold = 900;

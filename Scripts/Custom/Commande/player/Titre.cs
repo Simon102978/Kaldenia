@@ -33,7 +33,7 @@ namespace Server.Scripts.Commands
 
                 pm.TitleCycle += 1;
 
-				if (pm.TitleCycle == 4 && !pm.Deguise)
+				if (pm.TitleCycle == 5 && !pm.Deguise)
 				{
 					pm.TitleCycle += 1;
 				}

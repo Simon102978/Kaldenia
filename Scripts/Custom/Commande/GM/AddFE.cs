@@ -58,7 +58,7 @@ namespace Server.Scripts.Commands
 						}
 						else
 						{
-							from.SendMessage("Ce joueur a recu une fe rp il y a moin d'une heure.");
+							from.SendMessage("Ce joueur a reçu une fe rp il y a moins d'une heure.");
 						}
 					}
 					else

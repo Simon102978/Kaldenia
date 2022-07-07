@@ -54,9 +54,10 @@ namespace Server.ContextMenus
                     }
                     else
                     {
-                        m_From.SendMessage("Veuillez attendre la confirmation de la personne.");
-                        target.SendGump(new ConfirmGump(m_From, target, m_Carnet));
-                    }
+                 //       m_From.SendMessage("Veuillez attendre la confirmation de la personne.");
+						m_Carnet.Adresses.Add(new Adresse(target, target.Name));
+						//   target.SendGump(new ConfirmGump(m_From, target, m_Carnet));
+					}
                 }
                 else if (o is Missive)
                 {
@@ -64,7 +65,7 @@ namespace Server.ContextMenus
 
                     if (missive.Destinateur == null || missive.Destinateur.Deleted)
                     {
-                        m_From.SendMessage("La personne que vous désirez entrer dans votre carnet d'adresse est décédée et a rejoint Kalos.");
+                        m_From.SendMessage("La personne que vous désirez entrer dans votre carnet d'adresse est décédée.");
                     }
                     else if (m_Carnet.Contains(missive.DestinateurName))
                     {

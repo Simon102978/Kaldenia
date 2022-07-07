@@ -206,8 +206,6 @@ namespace Server.Items
                 {
                     CustomPlayerMobile pm = from as CustomPlayerMobile;
 
-
-
                     from.SendGump(new MissiveGump(from, this));
                 }
                 else if (from.Backpack != null)

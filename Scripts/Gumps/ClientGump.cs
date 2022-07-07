@@ -29,9 +29,9 @@ namespace Server.Gumps
 			AddPage(0);
 
 			if (nameSender != "" || receivedText != "")
-				AddBackground(0, 0, 400, 400, 5054);
+				AddBackground(0, 0, 400, 400, 5100);
 			else
-				AddBackground(0, 0, 400, 274, 5054);
+				AddBackground(0, 0, 400, 274, 5100);
 
 			AddImageTiled(10, 10, 380, 19, 0xA40);
 			AddAlphaRegion(10, 10, 380, 19);
@@ -80,6 +80,7 @@ namespace Server.Gumps
 					AddHtml(14, 36 + (line * 20), 200, 20, Color("Location:", LabelColor32), false, false);
 					AddHtml(70, 36 + (line++ * 20), 200, 20, Color(String.Format("{0} [{1}]", m.Location, m.Map), LabelColor32), false, false);
 				}
+
 				AddButton(13, 157, 0xFAB, 0xFAD, 2, GumpButtonType.Reply, 0);
 				AddHtml(48, 158, 200, 20, Color("Envoyer", LabelColor32), false, false);
 

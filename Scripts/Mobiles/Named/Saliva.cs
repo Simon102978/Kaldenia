@@ -109,7 +109,7 @@ namespace Server.Mobiles
 
 					foreach (Mobile m in eable)
 					{
-						if (this != m && !(m is Harpy) && !(m is StoneHarpy))
+						if (this != m && !(m is Harpy) && !(m is StoneHarpy) && !m.IsStaff())
 						{
 
 
@@ -188,7 +188,7 @@ namespace Server.Mobiles
 
 				foreach (Mobile m in eable)
 				{
-					if (this != m && !(m is Harpy) && !(m is StoneHarpy))
+					if (this != m && !(m is Harpy) && !(m is StoneHarpy) && !m.IsStaff())
 					{
 
 

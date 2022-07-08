@@ -49,6 +49,7 @@ namespace Server.Mobiles
                     price = (int)(buyInfo.Price * .75);
 
                     return Math.Max(1, price);
+
                 }
             }
 

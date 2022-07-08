@@ -175,11 +175,11 @@ namespace Server.Engines.Craft
 		//	AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
         //    SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( HealerPear ), "Mets Magiques", "Poire du Soigneur ( Healing )", 0.0, 100.0, typeof( Pear ), "Pear", 1, "You don't have a pear." );
+			index = AddCraft( typeof( HealerPear ), "Mets Magiques", "Poire du Soigneur ( Healing )", 80.0, 100.0, typeof( Pear ), "Pear", 1, "You don't have a pear." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( HunterApple ), "Mets Magiques", "Pomme du Chasseur ( Cartography )", 0.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
+			index = AddCraft( typeof( HunterApple ), "Mets Magiques", "Pomme du Chasseur ( Cartography )", 80.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
@@ -187,19 +187,19 @@ namespace Server.Engines.Craft
 		//	AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
         //    SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( LumberjackCoconut ), "Mets Magiques", "Noix de Coco du Bucheron ( Lumberjacking )", 0.0, 100.0, typeof( Coconut ), "Coconut", 1, "You don't have a coconut." );
+			index = AddCraft( typeof( LumberjackCoconut ), "Mets Magiques", "Noix de Coco du Bucheron ( Lumberjacking )", 80.0, 100.0, typeof( Coconut ), "Coconut", 1, "You don't have a coconut." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( MacerPear ), "Mets Magiques", "Poire du Massier ( Macefighting )", 0.0, 100.0, typeof( Pear ), "Pear", 1, "You don't have a pear." );
+			index = AddCraft( typeof( MacerPear ), "Mets Magiques", "Poire du Massier ( Macefighting )", 80.0, 100.0, typeof( Pear ), "Pear", 1, "You don't have a pear." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( MageMango ), "Mets Magiques", "Mangue du Mage ( Magery )", 0.0, 100.0, typeof( Mango ), "Mango", 1, "You don't have a mango." );
+			index = AddCraft( typeof( MageMango ), "Mets Magiques", "Mangue du Mage ( Magery )", 80.0, 100.0, typeof( Mango ), "Mango", 1, "You don't have a mango." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( MinerPear ), "Mets Magiques", "Lime du mineur ( Mining )", 0.0, 100.0, typeof(Lime), "Lime", 1, "You don't have a pear." );
+			index = AddCraft( typeof( MinerPear ), "Mets Magiques", "Lime du mineur ( Mining )", 80.0, 100.0, typeof(Lime), "Lime", 1, "You don't have a pear." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
@@ -207,55 +207,55 @@ namespace Server.Engines.Craft
 	//		AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
      //       SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( PirateGrapes ), "Mets Magiques", "Raisin du Pirate ", 0.0, 100.0, typeof( Grapes ), "Grapes", 1, "You don't have any grapes." );
+			index = AddCraft( typeof( PirateGrapes ), "Mets Magiques", "Raisin du Pirate ", 80.0, 100.0, typeof( Grapes ), "Grapes", 1, "You don't have any grapes." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
             SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( RangerGrapes ), "Mets Magiques", "Raisin Du Rôdeur", 0.0, 100.0, typeof( Grapes ), "Grapes", 1, "You don't have any grapes." );
+			index = AddCraft( typeof( RangerGrapes ), "Mets Magiques", "Raisin Du Rôdeur", 80.0, 100.0, typeof( Grapes ), "Grapes", 1, "You don't have any grapes." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( RogueLemon ), "Mets Magiques", "Citron du Roublard", 0.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
+			index = AddCraft( typeof( RogueLemon ), "Mets Magiques", "Citron du Roublard", 80.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( SageMelon ), "Mets Magiques", "Melon du Sage", 0.0, 100.0, typeof( Watermelon ), "Watermelon", 1, "You don't have a watermelon." );
+			index = AddCraft( typeof( SageMelon ), "Mets Magiques", "Melon du Sage", 80.0, 100.0, typeof( Watermelon ), "Watermelon", 1, "You don't have a watermelon." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'écrivain", 0.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
+			index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'écrivain", 80.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( ShepherdLime ), "Mets Magiques", "Lime du Berger", 0.0, 100.0, typeof( Lime ), "Lime", 1, "You don't have a lime." );
+			index = AddCraft( typeof( ShepherdLime ), "Mets Magiques", "Lime du Berger", 80.0, 100.0, typeof( Lime ), "Lime", 1, "You don't have a lime." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( SmithMelon ), "Mets Magiques", "Melon du Forgeron", 0.0, 100.0, typeof( HoneydewMelon ), "Honeydew Melon", 1, "You don't have a honeydew melon." );
+			index = AddCraft( typeof( SmithMelon ), "Mets Magiques", "Melon du Forgeron", 80.0, 100.0, typeof( HoneydewMelon ), "Honeydew Melon", 1, "You don't have a honeydew melon." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( TacticBerry ), "Mets Magiques", "Baie du Tacticien", 0.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
+			index = AddCraft( typeof( TacticBerry ), "Mets Magiques", "Baie du Tacticien", 80.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( TailorPeach ), "Mets Magiques", "Pêche du Couturier", 0.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
+			index = AddCraft( typeof( TailorPeach ), "Mets Magiques", "Pêche du Couturier", 80.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( ThiefOrange ), "Mets Magiques", "Orange du Voleur", 0.0, 100.0, typeof( Orange ), "Orange", 1, "You don't have an orange." );
+			index = AddCraft( typeof( ThiefOrange ), "Mets Magiques", "Orange du Voleur", 80.0, 100.0, typeof( Orange ), "Orange", 1, "You don't have an orange." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( TinkerApple ), "Mets Magiques", "Pomme du Bricoleur", 0.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
+			index = AddCraft( typeof( TinkerApple ), "Mets Magiques", "Pomme du Bricoleur", 80.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( WarriorPeach ), "Mets Magiques", "Pêche du Guerrier", 0.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
+			index = AddCraft( typeof( WarriorPeach ), "Mets Magiques", "Pêche du Guerrier", 80.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( WoodworkerApple ), "Mets Magiques", "Pomme du Charpentier", 0.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
+			index = AddCraft( typeof( WoodworkerApple ), "Mets Magiques", "Pomme du Charpentier", 80.0, 100.0, typeof( Apple ), "Apple", 1, "You don't have an apple." );
 			AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
 			SetNeedCauldron(index, true);
 		}

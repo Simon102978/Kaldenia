@@ -135,8 +135,8 @@ namespace Server.Items.Crops
 		public WhiteRoseCrop( Mobile sower ) : base( 0x234D )
 		{
 			Movable = false;
-			Name = "White Rose Plant";
-			Hue = 1953;
+			Name = "Plant de rose blanche";
+			Hue = 1972;
 			m_sower = sower;
 			m_lastvisit = DateTime.UtcNow;
 			init( this, false );

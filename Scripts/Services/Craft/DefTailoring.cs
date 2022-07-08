@@ -567,7 +567,7 @@ namespace Server.Engines.Craft
 			
 
 			AddCraft(typeof(LeatherGorget), "Armures de Cuir", 1025063, 45, 78.9, typeof(Leather), 1044462, 4, 1044463);
-            AddCraft(typeof(LeatherCap), "Armures de Cuir", 1027609, 45, 31.2, typeof(Leather), 1044462, 2, 1044463);
+            AddCraft(typeof(LeatherCap), "Armures de Cuir", 1027609, 30, 45, typeof(Leather), 1044462, 2, 1044463);
             AddCraft(typeof(LeatherGloves), "Armures de Cuir", 1025062, 45, 76.8, typeof(Leather), 1044462, 3, 1044463);
             AddCraft(typeof(LeatherArms), "Armures de Cuir", 1025061, 45, 78.9, typeof(Leather), 1044462, 4, 1044463);
             AddCraft(typeof(LeatherLegs), "Armures de Cuir", 1025067, 45, 91.3, typeof(Leather), 1044462, 10, 1044463);

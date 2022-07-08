@@ -26,7 +26,7 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(IronIngot), 4);
+                Add(typeof(IronIngot), 2);
                 Add(typeof(Tongs), 7);
             }
         }

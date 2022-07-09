@@ -322,12 +322,13 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(MalletAndChisel), 1044046, "Maillet", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Pinceaux), 1044046, "Pinceaux", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BarberScissors), 1044046, "Ciseaux de Barbier", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-		//	index = AddCraft(typeof(MetalContainerEngraver), 1044046, 1072154, 75.0, 100.0, typeof(IronIngot), 1044036, 4, 1044037);
-        //    AddRes(index, typeof(Springs), 1044171, 1, 1044253);
-        //    AddRes(index, typeof(Gears), 1044254, 2, 1044253);
-         //   AddRes(index, typeof(Diamond), 1062608, 1, 1044240);
+			index = AddCraft(typeof(Bait), 1044046, "Appats", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			//	index = AddCraft(typeof(MetalContainerEngraver), 1044046, 1072154, 75.0, 100.0, typeof(IronIngot), 1044036, 4, 1044037);
+			//    AddRes(index, typeof(Springs), 1044171, 1, 1044253);
+			//    AddRes(index, typeof(Gears), 1044254, 2, 1044253);
+			//   AddRes(index, typeof(Diamond), 1062608, 1, 1044240);
 
-            AddCraft(typeof(Pitchfork), 1044046, 1023719, 40.0, 90.0, typeof(IronIngot), 1044036, 4, 1044037);
+			AddCraft(typeof(Pitchfork), 1044046, 1023719, 40.0, 90.0, typeof(IronIngot), 1044036, 4, 1044037);
 
 			index = AddCraft(typeof(BeerBreweringTools), 1044046, "Outil fabrication de bière", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BrewersTools), 1044046, "Outil Brasseur", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);

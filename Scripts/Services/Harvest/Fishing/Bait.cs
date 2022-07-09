@@ -51,7 +51,7 @@ namespace Server.Items
         }
 
         [Constructable]
-        public Bait() : base(2454)
+        public Bait() : base(0xDCF)
         {
             m_UsesRemaining = 1;
         }

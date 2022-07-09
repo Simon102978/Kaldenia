@@ -165,7 +165,7 @@ namespace Server.Mobiles
 
 		}
 
-		[CommandProperty(AccessLevel.GameMaster)]
+		[CommandProperty(AccessLevel.Owner)]
 		public StatutSocialEnum StatutSocial 
 		{ 
 			get => m_StatutSocial; 

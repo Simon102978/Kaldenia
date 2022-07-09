@@ -118,6 +118,7 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 3:
 				case 2:
 					{
 						customTitle = reader.ReadString();

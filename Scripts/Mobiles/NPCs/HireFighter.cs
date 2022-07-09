@@ -21,7 +21,7 @@ namespace Server.Mobiles
                 Name = NameList.RandomName("male");
             }
 
-            Title = "the fighter";
+     //       Title = "the fighter";
             HairItemID = Race.RandomHair(Female);
             HairHue = Race.RandomHairHue();
             Race.RandomFacialHair(this);

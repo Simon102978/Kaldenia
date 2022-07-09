@@ -13,43 +13,43 @@ namespace Server.Items
         public static void Configure()
         {
             //Rare Fish; 0 - 15
-            m_FishInfos.Add(new FishInfo(2506, typeof(AutumnDragonfish), 1116090, "Ilshenar", false, RareChance, 105.4));//Confirmed
-            m_FishInfos.Add(new FishInfo(2591, typeof(BlueLobster), 1116366, "Ice", false, RareChance, 103.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1157, typeof(BullFish), 1116095, "Labyrinth", false, RareChance, 105.4)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1167, typeof(CrystalFish), 1116092, "Prism of Light", false, RareChance, 105.4)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2578, typeof(FairySalmon), 1116089, "TerMur", false, RareChance, 85.8)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1461, typeof(FireFish), 1116093, "Shame", false, RareChance, 95.8)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1257, typeof(GiantKoi), 1116088, "Tokuno", true, RareChance, 95.8)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2579/*1287*/, typeof(GreatBarracuda), 1116100, "Felucca", true, RareChance, 89.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2959, typeof(HolyMackerel), 1116087, "Gravewater Lake", false, RareChance, 102.9)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2075, typeof(LavaFish), 1116096, "Abyss", false, RareChance, 110.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2075/*1152*/, typeof(ReaperFish), 1116094, "Doom", false, RareChance, 98.1));  //Confirmed
-            m_FishInfos.Add(new FishInfo(2539, typeof(SpiderCrab), 1116367, "Terathan Keep", false, RareChance, 103.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2558, typeof(StoneCrab), 1116365, "T2A", true, RareChance, 103.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(43, typeof(SummerDragonfish), 1116091, "Destard", false, RareChance, 105.2));  //Confirmed
-            m_FishInfos.Add(new FishInfo(1154, typeof(UnicornFish), 1116086, "Twisted Weald", false, RareChance, 110.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2515, typeof(YellowtailBarracuda), 1116098, "Trammel", true, RareChance, 81.9));//Confirmed
+            m_FishInfos.Add(new FishInfo(2506, typeof(AutumnDragonfish), 1116090, "Felucca", false, RareChance, 50.0));//Confirmed
+            m_FishInfos.Add(new FishInfo(2591, typeof(BlueLobster), 1116366, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1157, typeof(BullFish), 1116095, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1167, typeof(CrystalFish), 1116092, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2578, typeof(FairySalmon), 1116089, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1461, typeof(FireFish), 1116093, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1257, typeof(GiantKoi), 1116088, "Felucca", true, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2579/*1287*/, typeof(GreatBarracuda), 1116100, "Felucca", true, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2959, typeof(HolyMackerel), 1116087, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2075, typeof(LavaFish), 1116096, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2075/*1152*/, typeof(ReaperFish), 1116094, "Felucca", false, RareChance, 50.0));  //Confirmed
+            m_FishInfos.Add(new FishInfo(2539, typeof(SpiderCrab), 1116367, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2558, typeof(StoneCrab), 1116365, "Felucca", true, RareChance, 103.1)); //Confirmed
+            m_FishInfos.Add(new FishInfo(43, typeof(SummerDragonfish), 1116091, "Felucca", false, RareChance, 50.0));  //Confirmed
+            m_FishInfos.Add(new FishInfo(1154, typeof(UnicornFish), 1116086, "Felucca", false, RareChance, 50.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2515, typeof(YellowtailBarracuda), 1116098, "Felucca", true, RareChance, 50.0));//Confirmed
 
             //Legendary Fish ; 16-34
-            m_FishInfos.Add(new FishInfo(2406, typeof(AbyssalDragonfish), 1116118, "Destard", false, LegendaryChance, 120.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2500, typeof(BlackMarlin), 1116099, "Felucca", true, LegendaryChance, 110.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2117, typeof(BloodLobster), 1116370, "Shame", false, LegendaryChance, 115.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(0, typeof(BlueMarlin), 1116097, "Trammel", true, LegendaryChance, 105.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1777, typeof(DreadLobster), 1116371, "Doom", false, LegendaryChance, 115.1));
-            m_FishInfos.Add(new FishInfo(1158, typeof(DungeonPike), 1116107, "Terathan Keep", false, LegendaryChance, 105.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2576, typeof(GiantSamuraiFish), 1116103, "Tokuno", true, LegendaryChance, 110.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1281, typeof(GoldenTuna), 1116102, "Tokuno", true, LegendaryChance, 105.0));  //Confirmed
-            m_FishInfos.Add(new FishInfo(2604, typeof(Kingfish), 1116085, "TrammelAndFelucca", true, LegendaryChance, 92.2));   //Confirmed
-            m_FishInfos.Add(new FishInfo(1463, typeof(LanternFish), 1116106, "Prism of Light", false, LegendaryChance, 105.1));  //Confirmed
-            m_FishInfos.Add(new FishInfo(1283, typeof(RainbowFish), 1116108, "Twisted Weald", false, LegendaryChance, 105.1));
-            m_FishInfos.Add(new FishInfo(2076, typeof(SeekerFish), 1116109, "Labyrinth", false, LegendaryChance, 105.1));
-            m_FishInfos.Add(new FishInfo(0, typeof(SpringDragonfish), 1116104, "Ilshenar", false, LegendaryChance, 120.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(1837, typeof(StoneFish), 1116110, "T2A", true, LegendaryChance, 115.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2600, typeof(TunnelCrab), 1116372, "Underworld", false, LegendaryChance, 115.1)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2069, typeof(VoidCrab), 1116368, "TerMur", false, LegendaryChance, 120.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2071, typeof(VoidLobster), 1116369, "Abyss", false, LegendaryChance, 120.0));
-            m_FishInfos.Add(new FishInfo(2499, typeof(WinterDragonfish), 1116105, "Ice", false, LegendaryChance, 120.0)); //Confirmed
-            m_FishInfos.Add(new FishInfo(2551, typeof(ZombieFish), 1116101, "Gravewater Lake", false, LegendaryChance, 115.1)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2406, typeof(AbyssalDragonfish), 1116118, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2500, typeof(BlackMarlin), 1116099, "Felucca", true, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2117, typeof(BloodLobster), 1116370, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(0, typeof(BlueMarlin), 1116097, "Felucca", true, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1777, typeof(DreadLobster), 1116371, "Felucca", false, LegendaryChance, 60.0));
+            m_FishInfos.Add(new FishInfo(1158, typeof(DungeonPike), 1116107, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2576, typeof(GiantSamuraiFish), 1116103, "Felucca", true, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1281, typeof(GoldenTuna), 1116102, "Felucca", true, LegendaryChance, 60.0));  //Confirmed
+            m_FishInfos.Add(new FishInfo(2604, typeof(Kingfish), 1116085, "Felucca", true, LegendaryChance, 60.0));   //Confirmed
+            m_FishInfos.Add(new FishInfo(1463, typeof(LanternFish), 1116106, "Felucca", false, LegendaryChance, 60.0));  //Confirmed
+            m_FishInfos.Add(new FishInfo(1283, typeof(RainbowFish), 1116108, "Felucca", false, LegendaryChance, 60.0));
+            m_FishInfos.Add(new FishInfo(2076, typeof(SeekerFish), 1116109, "Felucca", false, LegendaryChance, 60.0));
+            m_FishInfos.Add(new FishInfo(0, typeof(SpringDragonfish), 1116104, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(1837, typeof(StoneFish), 1116110, "Felucca", true, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2600, typeof(TunnelCrab), 1116372, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2069, typeof(VoidCrab), 1116368, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2071, typeof(VoidLobster), 1116369, "Felucca", false, LegendaryChance, 60.0));
+            m_FishInfos.Add(new FishInfo(2499, typeof(WinterDragonfish), 1116105, "Felucca", false, LegendaryChance, 60.0)); //Confirmed
+            m_FishInfos.Add(new FishInfo(2551, typeof(ZombieFish), 1116101, "Felucca", false, LegendaryChance, 115.1)); //Confirmed
 
             //Cannot fish up but used for bait
             m_FishInfos.Add(new FishInfo(1170, typeof(Charydbis), 1150208, "cannotfishup", true, LegendaryChance, 120.0));
@@ -281,9 +281,9 @@ namespace Server.Items
 
                 if (fishing && chance >= Utility.RandomDouble())
                 {
-                    if (dungeon && skill >= 106.0)
+                    if (dungeon && skill >= 50.0)
                         item = BaseHighseasFish.DungeonFish[Utility.Random(BaseHighseasFish.DungeonFish.Length)];
-                    else if (deep && skill >= 80.0)
+                    else if (deep && skill >= 50.0)
                         item = BaseHighseasFish.DeepWaterFish[Utility.Random(BaseHighseasFish.DeepWaterFish.Length)];
                     else if (shore && skill >= 50.0)
                         item = BaseHighseasFish.ShoreFish[Utility.Random(BaseHighseasFish.ShoreFish.Length)];

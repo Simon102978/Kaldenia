@@ -50,7 +50,7 @@ namespace Server.Engines.Craft
 
 		//   public override int GumpTitleNumber => 1044007;
 
-		public override string GumpTitleString => "Bricoleur";
+		public override string GumpTitleString => "Bricolage";
 
 		private static CraftSystem m_CraftSystem;
 
@@ -136,7 +136,7 @@ namespace Server.Engines.Craft
         public override int PlayEndingEffect(Mobile from, bool failed, bool lostMaterial, bool toolBroken, int quality, bool makersMark, CraftItem item)
         {
             if (toolBroken)
-                from.SendLocalizedMessage(1044038); // You have worn out your tool
+                from.SendMessage("Vous avez brisé votre outil."); ; // You have worn out your tool
 
             if (failed)
             {

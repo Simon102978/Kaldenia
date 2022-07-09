@@ -77,8 +77,8 @@ namespace Server.Items
         public double BaseChance => m_BaseChance;
         public double MinSkill => m_MinSkill;
 
-        public static readonly double RareChance = 0.08;
-        public static readonly double LegendaryChance = 0.02;
+        public static readonly double RareChance = 0.008;
+        public static readonly double LegendaryChance = 0.002;
 
         public static bool m_InvalidatedLocations;
 

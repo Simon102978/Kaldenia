@@ -2796,7 +2796,7 @@ namespace Server.Mobiles
         {
             base.Serialize(writer);
 
-            writer.Write(32); // version
+            writer.Write(33); // version
 
             writer.Write(StealPackGenerated);
             writer.Write(HasBeenStolen);
@@ -2984,6 +2984,7 @@ namespace Server.Mobiles
 
             switch (version)
             {
+				case 33:
                 case 32:
                 case 31:
                     StealPackGenerated = reader.ReadBool();
@@ -3010,8 +3011,19 @@ namespace Server.Mobiles
                     break;
             }
 
-            m_CurrentAI = (AIType)reader.ReadInt();
-            m_DefaultAI = (AIType)reader.ReadInt();
+			if (version < 33)
+			{
+				reader.ReadInt();
+				m_DefaultAI = (AIType)reader.ReadInt();
+				m_CurrentAI = m_DefaultAI;
+			}
+			else
+			{
+				m_CurrentAI = (AIType)reader.ReadInt();
+				m_DefaultAI = (AIType)reader.ReadInt();
+			}
+
+
 
             m_iRangePerception = reader.ReadInt();
             m_iRangeFight = reader.ReadInt();
@@ -3337,7 +3349,7 @@ namespace Server.Mobiles
             }
 
        //     if (AI == AIType.AI_UNUSED1 || AI == AIType.AI_UNUSED2)
-                AI = AIType.AI_Melee; // Can be safely removed on 1/1/2021 - Dan
+          //      AI = AIType.AI_Melee; // Can be safely removed on 1/1/2021 - Dan
         }
 
         public virtual bool IsHumanInTown()
@@ -3761,7 +3773,10 @@ namespace Server.Mobiles
         [CommandProperty(AccessLevel.Administrator)]
         public bool Debug { get { return m_bDebugAI; } set { m_bDebugAI = value; } }
 
-        [CommandProperty(AccessLevel.GameMaster)]
+		[CommandProperty(AccessLevel.Administrator)]
+		public AIType AIDEFAULT { get { return m_DefaultAI; } set { m_DefaultAI = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
         public int Team
         {
             get { return m_iTeam; }

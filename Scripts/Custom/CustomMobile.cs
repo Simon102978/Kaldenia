@@ -9,6 +9,7 @@ using System.Collections;
 using Server.Custom;
 using Server.Movement;
 using Server.Gumps;
+using Server.Multis;
 
 
 #endregion
@@ -1279,6 +1280,9 @@ namespace Server.Mobiles
 			//true s'il ne tombe pas, false s'il tombe
 
 			if (!Mounted)
+				return true;
+
+			if(Mount is Server.Multis.RowBoat)
 				return true;
 
 			if (AccessLevel >= AccessLevel.GameMaster)

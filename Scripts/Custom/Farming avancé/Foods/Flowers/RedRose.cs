@@ -8,8 +8,8 @@ namespace Server.Items
 		[Constructable]
 		public RedRose( int amount ) : base( 0x234B )
 		{
-			Name = "Red Rose";
-			Hue = 2495;
+			Name = "Rose Rouge";
+			Hue = 1676;
 		}
 
 		public RedRose( Serial serial ) : base( serial ) { }

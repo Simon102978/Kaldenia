@@ -211,7 +211,7 @@ namespace Server.Misc
 
             GetDate(out year, out month, out day);
 
-            Map.Felucca.Season = Convert.ToInt32(Months[month - 1].Season);
+         //   Map.Felucca.Season = Convert.ToInt32(Months[month - 1].Season);
 
             OnSeasonChange(Months[month - 1].Season);
         }

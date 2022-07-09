@@ -308,7 +308,7 @@ namespace Server.Misc
 
             if (Map.Felucca.Season != (int)season)
             {
-                Map.Felucca.Season = (int)season;
+  ///              Map.Felucca.Season = (int)season;
   ///              Time.OnSeasonChange(season);
                 seasonHasChanged = true;
             }

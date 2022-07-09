@@ -17,6 +17,8 @@ namespace Server.Mobiles
 		private GrosseurEnum m_Grosseur;
 		private AppearanceEnum m_Beaute;
 
+		public override FoodType FavoriteFood => FoodType.Meat;
+
 		public override bool IsBondable => true;
 		public override bool CanAutoStable => false;
 		public override bool CanDetectHidden => false;
@@ -25,17 +27,6 @@ namespace Server.Mobiles
 		public override bool DeleteOnRelease =>true;
 
 		private bool _IsHired;
-
-		[CommandProperty(AccessLevel.GameMaster)]
-		public DateTime NextPay { get; set; }
-
-		[CommandProperty(AccessLevel.GameMaster)]
-		public int Pay => PerDayCost();
-
-		[CommandProperty(AccessLevel.GameMaster)]
-		public int HoldGold { get; set; }
-
-		public int GoldOnDeath { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool IsHired
@@ -76,8 +67,7 @@ namespace Server.Mobiles
 
 
 			Race.AddRace(this);
-			ControlSlots = 2;
-			HoldGold = 8;
+			ControlSlots = 2;	
 			IsBonded = true;
 
 
@@ -108,16 +98,16 @@ namespace Server.Mobiles
 		{
 			base.Serialize(writer);
 
-			writer.Write(2);// version
+			writer.Write(3);// version
 
 			writer.Write(customTitle);
 			writer.Write((int)m_Grandeur);
 			writer.Write((int)m_Grosseur);
 			writer.Write((int)m_Beaute);
 
-			writer.Write(NextPay);
+
 			writer.Write(IsHired);
-			writer.Write(HoldGold);
+
 		}
 
 		public override void Deserialize(GenericReader reader)
@@ -134,21 +124,33 @@ namespace Server.Mobiles
 						m_Grandeur = (GrandeurEnum)reader.ReadInt();
 						m_Grosseur = (GrosseurEnum)reader.ReadInt();
 						m_Beaute = (AppearanceEnum)reader.ReadInt();
-						goto case 1;
+
+						if (version < 3)
+						{
+							goto case 1;
+						}
+						else
+						{
+							IsHired = reader.ReadBool();
+							break;
+						}
+
+
+						
 					}
 				case 1:
-					NextPay = reader.ReadDateTime();
+					reader.ReadDateTime();
 					goto case 0;
 				case 0:
 					IsHired = reader.ReadBool();
-					HoldGold = reader.ReadInt();
+					reader.ReadInt();
 					break;
 			}
 
-			if (IsHired)
+		/*	if (IsHired)
 			{
 				PayTimer.RegisterTimer(this);
-			}
+			}*/
 		}
 
 		public override bool OnBeforeDeath()
@@ -158,7 +160,7 @@ namespace Server.Mobiles
 				IsBonded = true;
 			}
 
-			if (Backpack != null)
+	/*		if (Backpack != null)
 			{
 				Item[] AllGold = Backpack.FindItemsByType(typeof(Gold), true);
 
@@ -170,7 +172,7 @@ namespace Server.Mobiles
 					}
 				}
 			}
-
+	*/
 			return base.OnBeforeDeath();
 		}
 
@@ -191,7 +193,7 @@ namespace Server.Mobiles
 
 			base.Delete();
 
-			PayTimer.RemoveTimer(this);
+	//		PayTimer.RemoveTimer(this);
 		}
 
 		public override void OnDeath(Container c)
@@ -514,7 +516,7 @@ namespace Server.Mobiles
         #endregion 
 
         #region [ OnDragDrop ]
-        public override bool OnDragDrop(Mobile from, Item item)
+ /*       public override bool OnDragDrop(Mobile from, Item item)
         {
             if (Pay != 0)
             {
@@ -570,14 +572,14 @@ namespace Server.Mobiles
             }
 
             return base.OnDragDrop(from, item);
-        }
+        }*/
 
         #endregion 
 
         #region [ OnSpeech ] 
         internal void SayHireCost()
         {
-            Say(1043256, string.Format("{0}", Pay), 0x3B2);// "I am available for hire for ~1_AMOUNT~ gold coins a day. If thou dost give me gold, I will work for thee."
+ //           Say(1043256, string.Format("{0}", Pay), 0x3B2);// "I am available for hire for ~1_AMOUNT~ gold coins a day. If thou dost give me gold, I will work for thee."
         }
 
         public override void OnSpeech(SpeechEventArgs e)
@@ -618,7 +620,7 @@ namespace Server.Mobiles
                 if (CanPaperdollBeOpenedBy(from))
                     list.Add(new PaperdollEntry(this));
 
-                list.Add(new HireEntry(from, this));
+       //         list.Add(new HireEntry(from, this));
             }
             else
             {
@@ -628,7 +630,7 @@ namespace Server.Mobiles
 
         #endregion
 
-        #region [ Class PayTimer ]
+   /*    #region [ Class PayTimer ]
         public class PayTimer : Timer
         {
             public static PayTimer Instance { get; set; }
@@ -728,6 +730,6 @@ namespace Server.Mobiles
                 m_Hire.SayHireCost();
             }
         }
-        #endregion
+        #endregion*/
     }
 }

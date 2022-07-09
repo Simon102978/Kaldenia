@@ -215,19 +215,6 @@ namespace Server.Mobiles
 			set { m_LastFERP = value; }
 		}
 
-
-
-
-	
-
-
-
-
-
-
-
-
-
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int FE { get { return m_fe; } set { m_fe = value; } }
 
@@ -960,15 +947,10 @@ namespace Server.Mobiles
 				gros = GetDeguisement().Grandeur;
 			}
 
-
-
-
 			var type = typeof(GrandeurEnum);
 			MemberInfo[] memberInfo = type.GetMember(gros.ToString());
 			Attribute attribute = memberInfo[0].GetCustomAttribute(typeof(AppearanceAttribute), false);
 			return (Female ? ((AppearanceAttribute)attribute).FemaleAdjective : ((AppearanceAttribute)attribute).MaleAdjective);
-
-
 
 		}
 		#endregion
@@ -1411,8 +1393,6 @@ namespace Server.Mobiles
 
 			TribeRelation.SetValue(tribe, TribeRelation.GetValue(tribe) + value);
 		}
-
-
 
 		#region Classe
 

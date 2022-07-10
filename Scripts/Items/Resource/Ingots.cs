@@ -41,7 +41,7 @@ namespace Server.Items
                 InvalidateProperties();
             }
         }
-        public override double DefaultWeight => 0.1;
+        public override double DefaultWeight => 0.5;
         public override int LabelNumber
         {
             get

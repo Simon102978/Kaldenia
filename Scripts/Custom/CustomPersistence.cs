@@ -15,6 +15,28 @@ namespace Server.Custom
 
 		public static DateTime ProchainePay { get; set; }
 
+		public static Dictionary<string, double> SellItems = new Dictionary<string, double>();
+
+
+		public static void AddSellItem(string items, double value)
+		{
+			if (SellItems.ContainsKey(items))
+			{
+				SellItems[items] += value;
+			}
+			else
+			{
+				SellItems.Add(items, value);
+			}
+
+
+		}
+
+
+
+
+
+
 
 
 		public static void Configure()
@@ -35,7 +57,15 @@ namespace Server.Custom
                 FilePath,
                 writer =>
                 {
-                    writer.Write(2);
+                    writer.Write(3);
+
+					writer.Write(SellItems.Count);
+
+					foreach (KeyValuePair<string, double> item in SellItems)
+					{
+						writer.Write(item.Key);
+						writer.Write(item.Value);
+					}
 
 					writer.Write(ProchainePay);
 					writer.Write(Salaire);
@@ -55,6 +85,18 @@ namespace Server.Custom
 
 					switch (version)
 					{
+
+						case 3:
+							{
+								int count = reader.ReadInt();
+
+								for (int i = 0; i < count; i++)
+								{
+									SellItems.Add(reader.ReadString(), reader.ReadDouble());
+								}
+								goto case 2;
+							}
+
 						case 2:
 							{
 								ProchainePay = reader.ReadDateTime();

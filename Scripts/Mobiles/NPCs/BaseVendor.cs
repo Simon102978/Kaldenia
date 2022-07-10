@@ -2225,7 +2225,10 @@ namespace Server.Mobiles
                         int singlePrice = ssi.GetSellPriceFor(resp.Item, this);
                         GiveGold += singlePrice * amount;
 
-                        EventSink.InvokeValidVendorSell(new ValidVendorSellEventArgs(seller, this, resp.Item, singlePrice));
+						Server.Custom.CustomPersistence.AddSellItem(resp.Item.GetType().ToString(), singlePrice * amount);
+
+
+						EventSink.InvokeValidVendorSell(new ValidVendorSellEventArgs(seller, this, resp.Item, singlePrice));
 
                         break;
                     }

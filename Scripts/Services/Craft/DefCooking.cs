@@ -282,7 +282,6 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(GingerBreadCookie), 1044497, 1031233, 35.0, 85.0, typeof(CookieMix), 1044474, 1, 1044253);
             AddRes(index, typeof(FreshGinger), 1031235, 1, 1044253);
-            AddRecipe(index, (int)CookRecipes.GingerbreadCookie);
             SetNeedOven(index, true);
 
    /*         index = AddCraft(typeof(ThreeTieredCake), 1044497, 1154465, 60.0, 110.0, typeof(CakeMix), 1044471, 3, 1044253);

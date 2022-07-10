@@ -2796,9 +2796,17 @@ namespace Server.Mobiles
         {
             base.Serialize(writer);
 
-            writer.Write(33); // version
+            writer.Write(34);
+			
+			
+				writer.Write(m_level);
+				writer.Write(m_realLevel);
+				writer.Write(m_experience);
+				writer.Write(m_maxLevel);
+				writer.Write(m_traits);
+			
 
-            writer.Write(StealPackGenerated);
+			writer.Write(StealPackGenerated);
             writer.Write(HasBeenStolen);
 
             writer.Write(m_ForceActiveSpeed);
@@ -2939,8 +2947,9 @@ namespace Server.Mobiles
             // Mondain's Legacy version 19
             writer.Write(m_Allured);
 
-            // Pet Branding version 22
-            writer.Write(m_EngravedText);
+
+			// Pet Branding version 22
+			writer.Write(m_EngravedText);
 
             // Version 24 Pet Training
             writer.Write(ControlSlotsMin);
@@ -2984,6 +2993,17 @@ namespace Server.Mobiles
 
             switch (version)
             {
+				case 34:
+					{
+							
+						m_level = reader.ReadUInt();
+						m_realLevel = reader.ReadUInt();
+						m_experience = reader.ReadUInt();
+						m_maxLevel = reader.ReadUInt();
+						m_traits = reader.ReadUInt();
+						goto case 33;
+					}
+
 				case 33:
                 case 32:
                 case 31:
@@ -3256,8 +3276,8 @@ namespace Server.Mobiles
             {
                 reader.ReadInt();
             }
-
-            if (version < 26)
+			
+			if (version < 26)
             {
                 CanMove = true;
 

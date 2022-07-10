@@ -6,7 +6,7 @@ namespace Server.Items
 		public Hay() : this( 1 ) { }
 
 		[Constructable]
-		public Hay( int amount ) : base( 0xF36 )
+		public Hay( int amount ) : base( 0X1EBD )
 		{
             this.Name = "Hay Sheath";
             this.Weight = 4.0;

@@ -53,7 +53,7 @@ namespace Server.Items
 					m.Hunger -= 1;
 					// added to give hunger value a real meaning.
 					if ( m.Hunger < 5 )
-						m.SendMessage( "Vous avez extrêmement faim." );
+						m.SendMessage( "Vous avez extrï¿½mement faim." );
 					else if ( m.Hunger < 10 )
 						m.SendMessage( "Vous avez faim." );
 				}	
@@ -75,7 +75,7 @@ namespace Server.Items
 					m.Thirst -= 1;
 				// added to give thirst value a real meaning.
 					if ( m.Thirst < 5 )
-						m.SendMessage( "Vous avez très soif." );
+						m.SendMessage( "Vous avez trï¿½s soif." );
 					else if ( m.Thirst < 10 )
 						m.SendMessage("Vous avez soif.");
 				}
@@ -83,7 +83,7 @@ namespace Server.Items
 				{
 					if ( m.Stam > 5 )
 						m.Stam -= 5;
-					m.SendMessage( "Vous êtes complètement déshydraté!" );
+					m.SendMessage( "Vous ï¿½tes complï¿½tement dï¿½shydratï¿½!" );
 				}
 			}
 		}
@@ -175,7 +175,7 @@ namespace Server.Items
 					case 0:
 					{
 						m.Stam -= 5;
-							m.SendMessage(("Vous êtes complètement déshydraté!"), TimeSpan.FromSeconds(15));
+							m.SendMessage(("Vous Ãªtes complÃ¨tement dÃ©shydratÃ©!"), TimeSpan.FromSeconds(15));
 						break;
 					}
 				}
@@ -200,13 +200,13 @@ namespace Server.Items
 			// these values are taken from Food.cs and relate directly to the message
 			// you get when you eat.
 			if (h <= 0)
-				e.Mobile.SendMessage( "Vous avez extrêmement faim." );
+				e.Mobile.SendMessage( "Vous avez extrÃªmement faim." );
 			else if ( h <= 5 )
-			       	e.Mobile.SendMessage( "Vous avez très faim." );
+			       	e.Mobile.SendMessage( "Vous avez trÃ¨s faim." );
 			else if ( h <= 10)
 				e.Mobile.SendMessage( "Vous avez faim." );
 			else if ( h <= 15 )
-				e.Mobile.SendMessage( "Vous avez légèrement faim." );
+				e.Mobile.SendMessage( "Vous avez lÃ©gÃ¨rement faim." );
 			else if ( h <= 20)
 				e.Mobile.SendMessage( "Vous n'avez pas faim." );
 			else
@@ -215,13 +215,13 @@ namespace Server.Items
 			int t = e.Mobile.Thirst; // Variable to hold the thirst value of the player
 			// read the comments above to see where these values came from
 			if ( t <= 0 )
-				e.Mobile.SendMessage( "Vous avez extrêmement soif." );
+				e.Mobile.SendMessage( "Vous avez extrÃªmement soif." );
 			else if ( t <= 5 )
-			       	e.Mobile.SendMessage( "Vous avez très soif." );
+			       	e.Mobile.SendMessage( "Vous avez trÃ¨s soif." );
 			else if ( t <= 10 )
 				e.Mobile.SendMessage( "Vous avez soif." );
 			else if ( t <= 15 )
-				e.Mobile.SendMessage( "Vous avez légèrement soif." );
+				e.Mobile.SendMessage( "Vous avez lÃ©gÃ¨rement soif." );
 			else if ( t <= 20 )
 				e.Mobile.SendMessage( "Vous n'avez pas soif." );
 			else

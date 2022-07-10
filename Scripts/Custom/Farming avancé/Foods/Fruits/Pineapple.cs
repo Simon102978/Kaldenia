@@ -12,7 +12,8 @@ namespace Server.Items
 		{
 			FillFactor = 2;
 			Hue = 0x46E;
-			Name = "Pineapple";
+			this.Stackable = true;
+			Name = "Ananas";
 		}
 
 		public Pineapple( Serial serial ) : base( serial )

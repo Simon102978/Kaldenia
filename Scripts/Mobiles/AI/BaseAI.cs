@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+
 #endregion
 
 namespace Server.Mobiles
@@ -1361,9 +1362,42 @@ namespace Server.Mobiles
                 else
                 {
                     m_Mobile.DebugSay("My master told me come");
+					//Change Speed
+					var mOnHorse = m_Mobile.ControlMaster.Mount != null;
+					var mDirection = m_Mobile.ControlMaster.Direction;
+					var mRunning = (mDirection & Direction.Running) != 0;
 
-                    // Not exactly OSI style, but better than nothing.
-                    bool bRun = CanRun && (iCurrDist > 5);
+					bool WMR;
+
+					if (mOnHorse)
+					{
+						m_Mobile.CurrentSpeed = (mRunning ? .1 : .15);
+						WMR = WalkMobileRange(m_Mobile.ControlMaster, 2, true, 0, 1);
+					}
+					else
+					{
+						m_Mobile.CurrentSpeed = (mRunning ? .2 : .25);
+						WMR = WalkMobileRange(m_Mobile.ControlMaster, 2, mRunning, 0, 1);
+					}
+					if (WMR)
+					{
+						if (m_Mobile.Combatant != null && !m_Mobile.Combatant.Deleted && m_Mobile.Combatant.Alive /*&&
+							!m_Mobile.Combatant.IsDeadBondedPet*/)
+						{
+							m_Mobile.Warmode = true;
+
+							if (!DirectionLocked)
+							{
+								m_Mobile.Direction = m_Mobile.GetDirectionTo(m_Mobile.Combatant);
+							}
+						}
+						else
+						{
+							m_Mobile.Warmode = false;
+						}
+					}
+					// Not exactly OSI style, but better than nothing.
+					bool bRun = CanRun && (iCurrDist > 5);
 
                     if (WalkMobileRange(m_Mobile.ControlMaster, 1, bRun, 0, 1))
                     {
@@ -1481,9 +1515,48 @@ namespace Server.Mobiles
                 else
                 {
                     m_Mobile.DebugSay("My master told me to follow: {0}", m_Mobile.ControlTarget.Name);
+					//Change Speed
+					var mOnHorse = m_Mobile.ControlTarget.Direction != null;
+					var mDirection = m_Mobile.ControlTarget.Direction;
+					var mRunning = (mDirection & Direction.Running) != 0;
 
-                    // Not exactly OSI style, but better than nothing.
-                    bool bRun = (iCurrDist > 5);
+					bool WMR;
+
+					if (mOnHorse)
+					{
+						m_Mobile.CurrentSpeed = (mRunning ? .1 : .15);
+						WMR = WalkMobileRange(m_Mobile.ControlTarget, 2, true, 0, 1);
+					}
+					else
+					{
+						m_Mobile.CurrentSpeed = (mRunning ? .2 : .25);
+						WMR = WalkMobileRange(m_Mobile.ControlTarget, 2, mRunning, 0, 1);
+					}
+
+					if (WMR)
+					{
+						if (m_Mobile.Combatant != null && !m_Mobile.Combatant.Deleted && m_Mobile.Combatant.Alive /*&&
+							!m_Mobile.Combatant.IsDeadBondedPet*/)
+						{
+							m_Mobile.Warmode = true;
+
+							if (!DirectionLocked)
+							{
+								m_Mobile.Direction = m_Mobile.GetDirectionTo(m_Mobile.Combatant);
+							}
+						}
+						else
+						{
+							m_Mobile.Warmode = false;
+
+							if (Core.AOS)
+							{
+								m_Mobile.CurrentSpeed = 0.1;
+							}
+						}
+					}
+					// Not exactly OSI style, but better than nothing.
+					bool bRun = (iCurrDist > 5);
 
                     if (WalkMobileRange(m_Mobile.ControlTarget, 1, bRun, 0, 1))
                     {
@@ -1692,7 +1765,23 @@ namespace Server.Mobiles
 
                 m_Mobile.Warmode = false;
 
-                m_Mobile.CurrentSpeed = m_Mobile.ActiveSpeed;
+				//Change Speed
+				var mOnHorse = m_Mobile.ControlMaster.Mount != null;
+				var mDirection = m_Mobile.ControlMaster.Direction;
+				var mRunning = (mDirection & Direction.Running) != 0;
+
+				if (mOnHorse)
+				{
+					m_Mobile.CurrentSpeed = (mRunning ? .1 : .15);
+					WalkMobileRange(m_Mobile.ControlMaster, 2, true, 0, 1);
+				}
+				else
+				{
+					m_Mobile.CurrentSpeed = (mRunning ? .2 : .25);
+					WalkMobileRange(m_Mobile.ControlMaster, 2, mRunning, 0, 1);
+				}
+
+				m_Mobile.CurrentSpeed = m_Mobile.ActiveSpeed;
 
                 WalkMobileRange(controlMaster, 1, false, 0, 1);
             }

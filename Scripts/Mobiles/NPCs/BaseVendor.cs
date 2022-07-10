@@ -2227,6 +2227,15 @@ namespace Server.Mobiles
 
 						Server.Custom.CustomPersistence.AddSellItem(resp.Item.GetType().ToString(), singlePrice * amount);
 
+						if (seller is CustomPlayerMobile cp )
+						{
+
+
+
+							Server.Custom.CustomPersistence.SellingLog(cp, m_Contrebandier, resp.Item.GetType().ToString(), amount, singlePrice);
+
+						}
+
 
 						EventSink.InvokeValidVendorSell(new ValidVendorSellEventArgs(seller, this, resp.Item, singlePrice));
 

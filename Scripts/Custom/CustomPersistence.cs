@@ -33,6 +33,28 @@ namespace Server.Custom
 		}
 
 
+		public static void SellingLog(CustomPlayerMobile player,bool contrebandier, string item, int amount, int pricebyitem)
+		{
+		
+
+			if (player != null && player.Account != null)
+			{
+				string path = "Logs/SellLog/";
+				string fileName = path + "SellItem.csv";
+
+				if (!Directory.Exists(path))
+				{
+					Directory.CreateDirectory(path);
+
+					using (StreamWriter sw = new StreamWriter(fileName, true))
+						sw.WriteLine("Date;Nom;Account;Contrebandier;Item;Prix;Qte;Total");  // CSV fIle type..
+				}
+					
+
+				using (StreamWriter sw = new StreamWriter(fileName, true))
+					sw.WriteLine(DateTime.Now.ToString() + ";" + player.Name + ";" + player.Account.Username + ";" + contrebandier.ToString() + ";" + item + ";" + pricebyitem.ToString() + ";" + amount.ToString() + ";" + (amount * pricebyitem).ToString());  // CSV fIle type..
+			}
+		}
 
 
 

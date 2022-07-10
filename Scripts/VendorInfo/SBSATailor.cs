@@ -34,9 +34,9 @@ namespace Server.Mobiles
         {
             public InternalSellInfo()
             {
-                Add(typeof(Cotton), 51);
-                Add(typeof(Wool), 31);
-                Add(typeof(Flax), 51);
+          //      Add(typeof(Cotton), 51);
+            //    Add(typeof(Wool), 31);
+              //  Add(typeof(Flax), 51);
                 Add(typeof(SpoolOfThread), 9);
                 Add(typeof(SewingKit), 1);
                 Add(typeof(Scissors), 6);

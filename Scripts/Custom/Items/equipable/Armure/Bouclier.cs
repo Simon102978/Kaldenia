@@ -17,9 +17,9 @@ namespace Server.Items
 		{
 		}
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Studded;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
 
-		public override int BasePhysicalResistance => 2;
+		public override int BasePhysicalResistance => 4;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 0;
@@ -42,7 +42,7 @@ namespace Server.Items
 
 	public class BouclierRond : BaseShield // buckler
 	{
-		public override int BasePhysicalResistance => 1;
+		public override int BasePhysicalResistance => 5;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 1;
@@ -51,7 +51,7 @@ namespace Server.Items
 		public override int InitMaxHits => 50;
 		public override int StrReq => 20;
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Cloth;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
 
 		[Constructable]
 		public BouclierRond()
@@ -81,7 +81,7 @@ namespace Server.Items
 
 	public class BouclierRond2 : BaseShield // buckler
 	{
-		public override int BasePhysicalResistance => 1;
+		public override int BasePhysicalResistance => 4;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 1;
@@ -90,7 +90,7 @@ namespace Server.Items
 		public override int InitMaxHits => 50;
 		public override int StrReq => 20;
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Cloth;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
 
 		[Constructable]
 		public BouclierRond2()
@@ -133,7 +133,7 @@ namespace Server.Items
 		{
 		}
 
-		public override int BasePhysicalResistance => 4;
+		public override int BasePhysicalResistance => 7;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 0;
@@ -142,7 +142,7 @@ namespace Server.Items
 		public override int InitMaxHits => 60;
 		public override int StrReq => 45;
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
 
 
 		public override void Deserialize(GenericReader reader)
@@ -173,7 +173,7 @@ namespace Server.Items
 		{
 		}
 
-		public override int BasePhysicalResistance => 5;
+		public override int BasePhysicalResistance => 6;
 		public override int BaseFireResistance => 1;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 0;
@@ -211,7 +211,7 @@ namespace Server.Items
 		{
 		}
 
-		public override int BasePhysicalResistance => 5;
+		public override int BasePhysicalResistance => 7;
 		public override int BaseFireResistance => 1;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 0;
@@ -220,7 +220,7 @@ namespace Server.Items
 		public override int InitMaxHits => 65;
 		public override int StrReq => 90;
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Chainmail;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize(reader);
@@ -236,7 +236,7 @@ namespace Server.Items
 
 	public class Rondache : BaseShield // BronzeShield
 	{
-		public override int BasePhysicalResistance => 3;
+		public override int BasePhysicalResistance => 5;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 1;
 		public override int BasePoisonResistance => 0;
@@ -245,7 +245,7 @@ namespace Server.Items
 		public override int InitMaxHits => 30;
 		public override int StrReq => 35;
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Studded;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Ringmail;
 
 		[Constructable]
 		public Rondache()
@@ -289,7 +289,7 @@ namespace Server.Items
 			: base(serial)
 		{
 		}
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Chainmail;
 
 		public override int BasePhysicalResistance => 6;
 		public override int BaseFireResistance => 0;
@@ -330,7 +330,7 @@ namespace Server.Items
 		}
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
 
-		public override int BasePhysicalResistance => 6;
+		public override int BasePhysicalResistance => 7;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 0;
@@ -367,9 +367,9 @@ namespace Server.Items
 			: base(serial)
 		{
 		}
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Plate;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
 
-		public override int BasePhysicalResistance => 6;
+		public override int BasePhysicalResistance => 4;
 		public override int BaseFireResistance => 0;
 		public override int BaseColdResistance => 0;
 		public override int BasePoisonResistance => 0;

@@ -16,7 +16,7 @@ namespace Server.Items
 
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Studded;
 
-		public override int BasePhysicalResistance => 2;
+		public override int BasePhysicalResistance => 3;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 0;
         public override int BasePoisonResistance => 0;

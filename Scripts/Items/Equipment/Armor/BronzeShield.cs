@@ -5,7 +5,7 @@ namespace Server.Items
     [Alterable(typeof(DefBlacksmithy), typeof(SmallPlateShield))]
     public class BronzeShield : BaseShield
     {
-        public override int BasePhysicalResistance => 3;
+        public override int BasePhysicalResistance => 4;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 1;
         public override int BasePoisonResistance => 0;
@@ -14,7 +14,7 @@ namespace Server.Items
         public override int InitMaxHits => 30;
         public override int StrReq => 35;
 
-		public override ArmorMaterialType MaterialType => ArmorMaterialType.Studded;
+		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
 
 		[Constructable]
         public BronzeShield()

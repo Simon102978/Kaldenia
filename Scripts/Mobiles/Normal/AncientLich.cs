@@ -58,9 +58,9 @@ namespace Server.Mobiles
 		
         public override int TreasureMapLevel => 5;
 
-		public override int Bones => 12;
-		public override BoneType BoneType => BoneType.Ancien;
-
+/*		public override int Bones => 12;
+		public override BoneType BoneType => BoneType.;
+*/
 		public override int GetIdleSound()
         {
             return 0x19D;

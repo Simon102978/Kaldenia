@@ -2225,7 +2225,19 @@ namespace Server.Mobiles
                         int singlePrice = ssi.GetSellPriceFor(resp.Item, this);
                         GiveGold += singlePrice * amount;
 
-                        EventSink.InvokeValidVendorSell(new ValidVendorSellEventArgs(seller, this, resp.Item, singlePrice));
+						Server.Custom.CustomPersistence.AddSellItem(resp.Item.GetType().ToString(), singlePrice * amount);
+
+						if (seller is CustomPlayerMobile cp )
+						{
+
+
+
+							Server.Custom.CustomPersistence.SellingLog(cp, m_Contrebandier, resp.Item.GetType().ToString(), amount, singlePrice);
+
+						}
+
+
+						EventSink.InvokeValidVendorSell(new ValidVendorSellEventArgs(seller, this, resp.Item, singlePrice));
 
                         break;
                     }

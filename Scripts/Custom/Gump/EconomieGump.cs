@@ -8,19 +8,20 @@ using Server.Misc;
 using System.Collections.Generic;
 using Server.Accounting;
 using System.Linq;
+using Server.Custom;
 
 
 namespace Server.Gumps
 {
-    public class HallOfShameGump : BaseProjectMGump
+    public class EconomieGump : BaseProjectMGump
 	{
    
         private CustomPlayerMobile m_From;
 		private int m_Page;
-		Dictionary<Account, double> Dictionnairy;
+		Dictionary<string, double> Dictionnairy;
 
-		public HallOfShameGump(CustomPlayerMobile from,  Dictionary<Account, double> dict, int page = 0)
-            : base("Hall of Shame", 560, 622, true)
+		public EconomieGump(CustomPlayerMobile from,  Dictionary<string, double> dict, int page = 0)
+            : base("Économie", 560, 622, true)
         {
 
 			m_From = from;
@@ -28,45 +29,29 @@ namespace Server.Gumps
 
 			int x = XBase;
 			int y = YBase;
-
 	
 			int line = 0;
 			int colonne = 0;
 			Dictionnairy = dict;
 
-
-
 			if (Dictionnairy.Count == 0)
 			{
-
-				Dictionary<Account, double> mydict = new Dictionary<Account, double>();
-
-				foreach (Account acct in Accounts.GetAccounts())
-				{
-					
-						if (acct != null && acct.AccessLevel == AccessLevel.Player)
-						{
-							mydict.Add(acct, acct.TotalGameTime.TotalHours);
-						}
-			
-					
-				}
-
-				Dictionnairy =  (from entry in mydict orderby entry.Value descending select entry).ToDictionary(pair => pair.Key, pair => pair.Value); ;
+				Dictionnairy =  (from entry in CustomPersistence.SellItems orderby entry.Value descending select entry).ToDictionary(pair => pair.Key, pair => pair.Value); ;
 			}
 
 
 			int i2 = 0;
 
 
-			foreach (KeyValuePair<Account, double> item in Dictionnairy)
+			foreach (KeyValuePair<string, double> item in Dictionnairy)
 			{
 				if (i2 >= page * 60  )
 				{
 
 
-					AddHtmlTexteColored(x + 10 + colonne * 250, y + 20 + line * 20, 300, item.Key.Username, "#ffffff");
-					AddHtmlTexteColored(x + 200 + colonne * 250, y + 20 + line * 20, 300,Math.Round(item.Value, 2).ToString(), "#ffffff");
+					AddHtmlTexteColored(x + 10 + colonne * 250, y + 20 + line * 20, 300, item.Key, "#ffffff");
+
+					AddHtmlTexteColored(x + 200 + colonne * 275, y + 20 + line * 20, 300,Math.Round(item.Value, 2).ToString(), "#ffffff");
 
 					//					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0,  item.Key.Name + "-" + item.Value.ToString());
 
@@ -93,9 +78,6 @@ namespace Server.Gumps
 			{
 				AddButton(x + 535, y + 610, 2, 4502);
 			}
-
-
-
 		}
 
 		public override void OnResponse(NetState sender, RelayInfo info)
@@ -107,12 +89,12 @@ namespace Server.Gumps
 				 {
 					 case 1:
 						 {
-							sender.Mobile.SendGump(new HallOfShameGump(m_From, Dictionnairy, m_Page - 1));
+							sender.Mobile.SendGump(new EconomieGump(m_From, Dictionnairy, m_Page - 1));
 							 break;
 						 }
 					 case 2:
 						 {
-							sender.Mobile.SendGump(new HallOfShameGump(m_From, Dictionnairy, m_Page + 1));
+							sender.Mobile.SendGump(new EconomieGump(m_From, Dictionnairy, m_Page + 1));
 							break;
 						 }
 

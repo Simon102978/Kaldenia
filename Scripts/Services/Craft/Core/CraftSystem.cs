@@ -9,7 +9,8 @@ namespace Server.Engines.Craft
     {
         ChanceMinusSixty,
         FiftyPercentChanceMinusTenPercent,
-        ChanceMinusSixtyToFourtyFive
+        ChanceMinusSixtyToFourtyFive,
+		Chance3Max
     }
 
     public abstract class CraftSystem

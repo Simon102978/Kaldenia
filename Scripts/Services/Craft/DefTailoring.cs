@@ -107,7 +107,7 @@ namespace Server.Engines.Craft
 		//    public override int GumpTitleNumber => 1044005;
 
 		public override string GumpTitleString => "Couture";
-		public override CraftECA ECA => CraftECA.ChanceMinusSixtyToFourtyFive;
+		public override CraftECA ECA => CraftECA.Chance3Max;
 
         public override double GetChanceAtMin(CraftItem item)
         {

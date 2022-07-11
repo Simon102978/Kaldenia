@@ -103,7 +103,7 @@ namespace Server.Engines.Craft
             }
         }
 
-        public override CraftECA ECA => CraftECA.FiftyPercentChanceMinusTenPercent;
+        public override CraftECA ECA => CraftECA.Chance3Max;
 
         public override void InitCraftList()
         {

@@ -76,7 +76,7 @@ namespace Server.Engines.Quests
         {
             new Type[][]
             {
-                new Type[] { typeof(Bait) },
+                new Type[] { typeof(Baits) },
                 new Type[] { typeof(LavaLobsterTrap) },
                 new Type[] { typeof(FishingGuideBook1), typeof(FishingGuideBook2) },
                 new Type[] { typeof(PowerScroll), typeof(FishingPole) },
@@ -84,7 +84,7 @@ namespace Server.Engines.Quests
 
             new Type[][]
             {
-                new Type[] { typeof(Bait) },
+                new Type[] { typeof(Baits) },
                 new Type[] { typeof(LavaHook), typeof(LavaLobsterTrap), typeof(JunkProofHook) },
                 new Type[] { typeof(FishingGuideBook1), typeof(FishingGuideBook2), typeof(FishingGuideBook3), typeof(FishingPole) },
                 new Type[] { typeof(PowerScroll), typeof(OracleOfTheSea), typeof(DredgingHook) },
@@ -92,7 +92,7 @@ namespace Server.Engines.Quests
 
             new Type[][]
             {
-                new Type[] { typeof(Bait) },
+                new Type[] { typeof(Baits) },
                 new Type[] { typeof(LavaHook), typeof(DredgingHook), typeof(JunkProofHook), typeof(FishingPole) },
                 new Type[] { typeof(FishingGuideBook3), typeof(FishingGuideBook4), typeof(FishingGuideBook5), },
                 new Type[] { typeof(PowerScroll), typeof(OracleOfTheSea) },
@@ -100,7 +100,7 @@ namespace Server.Engines.Quests
 
             new Type[][]
             {
-                new Type[] { typeof(Bait),  typeof(JunkProofHook) },
+                new Type[] { typeof(Baits),  typeof(JunkProofHook) },
                 new Type[] { typeof(OracleOfTheSea), typeof(LavaHook), typeof(FishingPole) },
                 new Type[] { typeof(FishingGuideBook4), typeof(FishingGuideBook5), typeof(FishingGuideBook6) },
                 new Type[] { typeof(PowerScroll), typeof(PermanentBoatPaint) },
@@ -181,55 +181,55 @@ namespace Server.Engines.Quests
                 }
                 else if (item is BaseBook)
                     from.SendLocalizedMessage(1149590); //You receive a rare book.
-                else if (item is Bait)
+                else if (item is Baits)
                 {
-                    Bait bait = (Bait)item;
+                    Baits Baits = (Baits)item;
 
                     switch (tier)
                     {
                         case 1:
-                            bait.Index = Utility.Random(15);
+                            Baits.Index = Utility.Random(15);
                             if (0.001 >= Utility.RandomDouble())
-                                bait.Enhanced = true;
+                                Baits.Enhanced = true;
                             break;
                         case 2:
-                            bait.Index = Utility.Random(34);
+                            Baits.Index = Utility.Random(34);
                             if (0.005 >= Utility.RandomDouble())
-                                bait.Enhanced = true;
+                                Baits.Enhanced = true;
                             break;
                         case 3:
-                            bait.Index = Utility.Random(34);
+                            Baits.Index = Utility.Random(34);
                             if (0.01 >= Utility.RandomDouble())
-                                bait.Enhanced = true;
+                                Baits.Enhanced = true;
                             break;
                         case 4:
                             if (Utility.RandomBool())
-                                bait.Index = 35;
+                                Baits.Index = 35;
                             else
-                                bait.Index = Utility.RandomMinMax(16, 34);
+                                Baits.Index = Utility.RandomMinMax(16, 34);
                             if (0.05 >= Utility.RandomDouble())
-                                bait.Enhanced = true;
+                                Baits.Enhanced = true;
                             break;
                     }
 
-                    if (FishInfo.GetTypeFromIndex(bait.Index) == typeof(Charydbis))
+                    if (FishInfo.GetTypeFromIndex(Baits.Index) == typeof(Charydbis))
                     {
-                        bait.UsesRemaining = 5;
-                        from.SendLocalizedMessage(1150871); //You receive charybdis bait
+                        Baits.UsesRemaining = 5;
+                        from.SendLocalizedMessage(1150871); //You receive charybdis Baits
 
                         if (0.08 >= Utility.RandomDouble())
-                            bait.Enhanced = true;
+                            Baits.Enhanced = true;
                     }
                     else
                     {
-                        object label = FishInfo.GetFishLabel(bait.Index);
+                        object label = FishInfo.GetFishLabel(Baits.Index);
 
                         if (label is int)
-                            from.SendLocalizedMessage(1149588, string.Format("#{0}\t", (int)label)); //You receive bait to catch ~1_val~
+                            from.SendLocalizedMessage(1149588, string.Format("#{0}\t", (int)label)); //You receive Baits to catch ~1_val~
                         else
-                            from.SendLocalizedMessage(1149588, (string)label);      //You receive bait to catch ~1_val~
+                            from.SendLocalizedMessage(1149588, (string)label);      //You receive Baits to catch ~1_val~
 
-                        bait.UsesRemaining = (int)Math.Min(200, points / 2);
+                        Baits.UsesRemaining = (int)Math.Min(200, points / 2);
                     }
                 }
                 else if (item is PermanentBoatPaint)

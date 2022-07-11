@@ -323,7 +323,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(MalletAndChisel), 1044046, "Maillet", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Pinceaux), 1044046, "Pinceaux", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BarberScissors), 1044046, "Ciseaux de Barbier", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(Bait), 1044046, "Appats", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			//index = AddCraft(typeof(Bait), 1044046, "Appats", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
 			//	index = AddCraft(typeof(MetalContainerEngraver), 1044046, 1072154, 75.0, 100.0, typeof(IronIngot), 1044036, 4, 1044037);
 			//    AddRes(index, typeof(Springs), 1044171, 1, 1044253);
 			//    AddRes(index, typeof(Gears), 1044254, 2, 1044253);
@@ -347,7 +347,44 @@ namespace Server.Engines.Craft
 
 			//TODO: focus of theurgy - 20th Anniversary Event 
 			#endregion
-
+			#region Appat
+			index = AddCraft(typeof(BaitAutumnDragonfish), "Appats", "AutumnDragonfish", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitBlueLobster), "Appats", "BlueLobster", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitBullFish), "Appats", "BullFish", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitCrystalFish), "Appats", "CrystalFish", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitFairySalmon), "Appats", "FairySalmon", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitFireFish), "Appats", "FireFish", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitGiantKoi), "Appats", "GiantKoi", 20.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitGreatBarracuda), "Appats", "GreatBarracuda", 20.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitHolyMackerel), "Appats", "HolyMackerel", 20.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitLavaFish), "Appats", "LavaFish", 20.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitReaperFish), "Appats", "ReaperFish", 30.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 3, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitSpiderCrab), "Appats", "SpiderCrab", 30.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 3, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitStoneCrab), "Appats", "StoneCrab", 30.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 3, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitSummerDragonfish), "Appats", "SummerDragonfish", 30.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 3, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitUnicornFish), "Appats", "UnicornFish", 30.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 3, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitYellowtailBarracuda), "Appats", "YellowtailBarracuda", 30.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 3, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitAbyssalDragonfish), "Appats", "AbyssalDragonfish", 40.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 4, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitBlackMarlin), "Appats", "BlackMarlin", 40.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 4, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitBloodLobster), "Appats", "BloodLobster", 40.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 4, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitBlueMarlin), "Appats", "BlueMarlin", 40.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 4, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitDreadLobster), "Appats", "DreadLobster", 40.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 4, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitDungeonPike), "Appats", "DungeonPike", 50.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 5, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitGiantSamuraiFish), "Appats", "GiantSamuraiFish", 50.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 5, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitGoldenTuna), "Appats", "GoldenTuna", 50.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 5, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitKingfish), "Appats", "Kingfish", 50.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 5, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitLanternFish), "Appats", "LanternFish", 50.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 5, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitRainbowFish), "Appats", "RainbowFish", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitSeekerFish), "Appats", "SeekerFish", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitSpringDragonfish), "Appats", "SpringDragonfish", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitStoneFish), "Appats", "StoneFish", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitTunnelCrab), "Appats", "TunnelCrab", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitVoidCrab), "Appats", "VoidCrab", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitVoidLobster), "Appats", "VoidLobster", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitWinterDragonfish), "Appats", "WinterDragonfish", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+			index = AddCraft(typeof(BaitZombieFish), "Appats", "ZombieFish", 60.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 6, "Vous n'avez pas suffisament de poisson cru");
+		
+			#endregion
 			#region Parts
 			AddCraft(typeof(Gears), 1044047, 1024179, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(ClockParts), 1044047, 1024175, 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);

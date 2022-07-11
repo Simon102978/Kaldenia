@@ -18,7 +18,7 @@ namespace Server.Mobiles
                 
 
                 Add(new GenericBuyInfo(typeof(FishingPole), 15, 20, 0xDC0, 0));
-				Add(new GenericBuyInfo(typeof(Bait), 3, 100, 0xDCF, 0));
+			///	Add(new GenericBuyInfo(typeof(), 3, 100, 0xDCF, 0));
 				
 				Add(new GenericBuyInfo("Cage à Homards Vide", typeof(LobsterTrap), 10, 50, 17615, 0));
             }

@@ -108,11 +108,11 @@ namespace Server.Engines.Points
 
                     points = sot.Value / 0.1 * 2;
                 }
-                else if (item is Bait)
+                else if (item is Baits)
                 {
-                    Bait bait = (Bait)item;
+                    Baits Baits = (Baits)item;
 
-                    points = 10 * bait.UsesRemaining;
+                    points = 10 * Baits.UsesRemaining;
                 }
                 else if (item is TreasureMap)
                 {

@@ -561,15 +561,6 @@ namespace Server.Engines.Craft
 			*/
 		}
 
-		private Item CraftCharydbisBait(Mobile m, CraftItem craftItem, ITool tool)
-        {
-            var bait = new Bait
-            {
-                Index = 35,
-                UsesRemaining = 5
-            };
-
-            return bait;
-        }
+	
     }
 }

@@ -250,13 +250,13 @@ namespace Server.Items
             Type item = null;
             bool enhanced = false;
 
-            var baitable = harvestItem as IBaitable;
+       //     var baitable = harvestItem as IBaitable;
 
-            if (baitable != null)
-            {
-                bait = baitable.BaitType;
-                enhanced = baitable.EnhancedBait;
-            }
+       //     if (baitable != null)
+        //    {
+         //       bait = baitable.BaitType;
+          //      enhanced = baitable.EnhancedBait;
+          //  }
 
             var infos = GetInfoFor(from);
 

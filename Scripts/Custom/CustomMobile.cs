@@ -2036,11 +2036,11 @@ namespace Server.Mobiles
 			}
 			else
 			{
-				if (m_StatutSocial < StatutSocialEnum.Possession)
+			/*	if (m_StatutSocial < StatutSocialEnum.Possession)
 				{
 					MoveToWorld(new Point3D(5340,2861,0), Map.Felucca);
 					return;
-				}
+				}*/
 
 
 

@@ -32,11 +32,11 @@ namespace Server.Engines.ArenaSystem
     public enum EntryFee
     {
         Zero,
+        OneHundred = 100,
+        FiveHundred = 500,
         OneThousand = 1000,
-        FiveThousand = 5000,
-        TenThousand = 10000,
-        TwentyFiveThousand = 25000,
-        FiftyThousand = 50000
+        TwoThousandFiveHundred = 2500,
+        FiveThousand = 5000
     }
 
     public enum PotionRules

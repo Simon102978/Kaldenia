@@ -178,11 +178,11 @@ namespace Server.Engines.ArenaSystem
             {
                 default:
                 case EntryFee.Zero: return "0 gold";
-                case EntryFee.OneThousand: return "1,000 gold";
-                case EntryFee.FiveThousand: return "5,000 gold";
-                case EntryFee.TenThousand: return "10,000 gold";
-                case EntryFee.TwentyFiveThousand: return "25,000 gold";
-                case EntryFee.FiftyThousand: return "50,000 gold";
+                case EntryFee.OneHundred: return "100 gold";
+                case EntryFee.FiveHundred: return "500 gold";
+                case EntryFee.OneThousand: return "1000 gold";
+                case EntryFee.TwoThousandFiveHundred: return "2500 gold";
+                case EntryFee.FiveThousand: return "5000 gold";
             }
         }
 
@@ -421,12 +421,12 @@ namespace Server.Engines.ArenaSystem
                     case 7:
                         switch (Duel.EntryFee)
                         {
-                            case EntryFee.Zero: Duel.EntryFee = EntryFee.OneThousand; break;
-                            case EntryFee.OneThousand: Duel.EntryFee = EntryFee.FiveThousand; break;
-                            case EntryFee.FiveThousand: Duel.EntryFee = EntryFee.TenThousand; break;
-                            case EntryFee.TenThousand: Duel.EntryFee = EntryFee.TwentyFiveThousand; break;
-                            case EntryFee.TwentyFiveThousand: Duel.EntryFee = EntryFee.FiftyThousand; break;
-                            case EntryFee.FiftyThousand: Duel.EntryFee = EntryFee.Zero; break;
+                            case EntryFee.Zero: Duel.EntryFee = EntryFee.OneHundred; break;
+                            case EntryFee.OneHundred: Duel.EntryFee = EntryFee.FiveHundred; break;
+                            case EntryFee.FiveHundred: Duel.EntryFee = EntryFee.OneThousand; break;
+                            case EntryFee.OneThousand: Duel.EntryFee = EntryFee.TwoThousandFiveHundred; break;
+                            case EntryFee.TwoThousandFiveHundred: Duel.EntryFee = EntryFee.FiveThousand; break;
+                            case EntryFee.FiveThousand: Duel.EntryFee = EntryFee.Zero; break;
                         }
                         Refresh();
                         break;

@@ -754,13 +754,19 @@ namespace Knives.TownHouses
 						"You pay {0} {1} to purchase this house.",
 						price.ToString("#,0"),
 						SpaceWords(Currency.Name));
+
+					Server.Custom.CustomPersistence.Location += price;
 				}
 				else if (m.AccessLevel == AccessLevel.Player)
 				{
 					m.SendLocalizedMessage(
 						1060398,
 						price.ToString("#,0")); // ~1_AMOUNT~ gold has been withdrawn from your bank box.
+
+					Server.Custom.CustomPersistence.Location += price;
 				}
+
+
 
 				Visible = false;
 
@@ -1396,6 +1402,8 @@ namespace Knives.TownHouses
 			{
 				House.Owner.SendMessage("You pay your rent with {0} {1}.", c_Price, SpaceWords(Currency.Name));
 			}
+
+			Server.Custom.CustomPersistence.Location += c_Price;
 
 			OnRentPaid();
 

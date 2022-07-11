@@ -29,18 +29,22 @@ namespace Server.Gumps
 			int space = 80;
 
 
-			AddHtmlTexteColored(x, y + line * scale, 120, "Revenues :", "#FFFFFF");
+			AddHtmlTexteColored(x, y + line * scale, 120, "Revenues:", "#FFFFFF");
 			line++;
 
-			AddHtmlTexteColored(xSecondColum, y + line * scale, 120, "Taxes", "#FFFFFF");
+			AddHtmlTexteColored(xSecondColum, y + line * scale, 120, "Taxes:", "#FFFFFF");
 			int TaxesGold = CustomPersistence.TaxesMoney;
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + TaxesGold.ToString("### ### ##0") + "</p>", "#FFFFFF");
 			line++;
 
+			AddHtmlTexteColored(xSecondColum, y + line * scale, 120, "Locations:", "#FFFFFF");
+			int LocationTaxes = CustomPersistence.Location;
+			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + LocationTaxes.ToString("### ### ##0") + "</p>", "#FFFFFF");
+
 			AddHorizontalLigne(xAmountColum - 20, y + line * scale + 15, 120);
 			line++;
 
-			int Revenue = TaxesGold;
+			int Revenue = TaxesGold + LocationTaxes;
 			AddHtmlTexteColored(xSecondColum, y + line * scale, 200, "Total des revenues :", "#FFFFFF");
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + Revenue.ToString("### ### ##0") + "</p>", "#FFFFFF");
 
@@ -48,6 +52,7 @@ namespace Server.Gumps
 			line++;
 
 			AddHtmlTexteColored(x, y + line * scale, 120, "Dépenses :", "#FFFFFF");
+
 			line++;
 
 			if (from.AccessLevel == AccessLevel.Owner)

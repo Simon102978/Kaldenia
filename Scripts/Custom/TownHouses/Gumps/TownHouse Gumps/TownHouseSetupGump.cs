@@ -136,13 +136,13 @@ namespace Knives.TownHouses
 				BuildTabs(width, ref y);
 			}
 
-			AddBackgroundZero(0, 0, width, y += 30, 0x13BE);
+			AddBackgroundZero(0, 0, width, y += 30, 9270);
 
 			if (c_Sign.PriceReady && !c_Sign.Owned)
 			{
-				AddBackground(width / 2 - 50, y, 100, 30, 0x13BE);
-				AddHtml(width / 2 - 50 + 25, y + 5, 100, "Claim Home");
-				AddButton(width / 2 - 50 + 5, y + 10, 0x837, 0x838, "Claim", Claim);
+				AddBackground(0, y, width, 50, 9270);
+				AddHtml(width / 2 - 50 + 25, y + 15, 100, "Claim Home");
+				AddButton(width / 2 - 50 + 5, y + 20, 0x837, 0x838, "Claim", Claim);
 			}
 		}
 

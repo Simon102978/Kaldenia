@@ -94,7 +94,7 @@ namespace Server.SkillHandlers
                     {
                         from.PlaySound(0x241);
 
-                        if (from.CheckTargetSkill(SkillName.RemoveTrap, targ, targ.TrapPower - 10, targ.TrapPower + 10))
+                        if (from.CheckTargetSkill(SkillName.Lockpicking, targ, targ.TrapPower - 10, targ.TrapPower + 10))
                         {
                             targ.TrapPower = 0;
                             targ.TrapLevel = 0;
@@ -118,7 +118,7 @@ namespace Server.SkillHandlers
                     }
                     else
                     {
-                        if (from == trap.Owner || ((from.Skills[SkillName.RemoveTrap].Value - 80.0) / 20.0) > Utility.RandomDouble())
+                        if (from == trap.Owner || ((from.Skills[SkillName.Lockpicking].Value - 80.0) / 20.0) > Utility.RandomDouble())
                         {
                             VvVTrapKit kit = new VvVTrapKit(trap.TrapType);
                             trap.Delete();
@@ -200,7 +200,7 @@ namespace Server.SkillHandlers
                 _Table = new Dictionary<Mobile, RemoveTrapTimer>();
             }
 
-            _Table[from] = new RemoveTrapTimer(from, chest, from.Skills[SkillName.RemoveTrap].Value >= 100);
+            _Table[from] = new RemoveTrapTimer(from, chest, from.Skills[SkillName.Lockpicking].Value >= 100);
         }
 
         public static void EndChestDisarmTimer(Mobile from)
@@ -303,7 +303,7 @@ namespace Server.SkillHandlers
                 }
                 else
                 {
-                    if (From.CheckTargetSkill(SkillName.RemoveTrap, Chest, 80, 120 + (Chest.Level * 10)))
+                    if (From.CheckTargetSkill(SkillName.Lockpicking, Chest, 80, 120 + (Chest.Level * 10)))
                     {
                         DisarmTrap();
                     }
@@ -319,9 +319,9 @@ namespace Server.SkillHandlers
             {
                 From.RevealingAction();
 
-                double min = Math.Ceiling(From.Skills[SkillName.RemoveTrap].Value * .75);
+                double min = Math.Ceiling(From.Skills[SkillName.Lockpicking].Value * .75);
 
-                if (From.CheckTargetSkill(SkillName.RemoveTrap, Chest, min, min > 50 ? min + 50 : 100))
+                if (From.CheckTargetSkill(SkillName.Lockpicking, Chest, min, min > 50 ? min + 50 : 100))
                 {
                     DisarmTrap();
                     RemoveTrap.EndChestDisarmTimer(From);

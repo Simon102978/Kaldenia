@@ -268,7 +268,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(ElvenPodium), 1044291, 1073399, 80.0, 105.0, typeof(Board), 1044041, 20, 1044351);
 
             index = AddCraft(typeof(OrnateElvenChair), 1044291, 1072870, 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
-            AddRecipe(index, (int)CarpRecipes.OrnateElvenChair);
+           
 
             AddCraft(typeof(BigElvenChair), 1044291, 1072872, 85.0, 110.0, typeof(Board), 1044041, 40, 1044351);
 
@@ -316,7 +316,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(CherryArmoire), 1044292, 1030334, 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 
 //Ajouts Carpentry 
-			AddCraft(typeof(MaritimeChest), 1044292, "Cargo Maritime", 800.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			AddCraft(typeof(MaritimeChest), 1044292, "Cargo Maritime", 80.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			AddCraft(typeof(BarrildeVin), 1044292, "Barril de Vin", 80.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			AddCraft(typeof(CoffreFort), 1044292, "Coffre Fort", 80.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
 			AddCraft(typeof(CoffreMetalVisqueux), 1044292, "Coffre En Métal", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);

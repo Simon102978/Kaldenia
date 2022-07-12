@@ -343,7 +343,8 @@ namespace Server.Engines.Craft
 			0x197A, 0x19A9, // Large Forge 
 			0x0FB1, 0x0FB1, // Small Forge
 			0x2DD8, 0x2DD8, // Elven Forge
-            0xA2A4, 0xA2A5, 0xA2A8, 0xA2A9 // Wood Stove
+            0xA2A4, 0xA2A5, 0xA2A8, 0xA2A9, // Wood Stove
+			0x29FD, 0xFB1,
         };
 
         private static readonly int[] m_Ovens =
@@ -351,6 +352,7 @@ namespace Server.Engines.Craft
             0x461, 0x46F, // Sandstone oven
 			0x92B, 0x93F, // Stone oven
 			0x2DDB, 0x2DDC, //Elven stove
+			0x29FD
 		};
 
         private static readonly int[] m_Makers =
@@ -1440,7 +1442,148 @@ namespace Server.Engines.Craft
             return (chance > Utility.RandomDouble());
         }
 
-        public double GetSuccessChance(Mobile from, Type typeRes, CraftSystem craftSystem, bool gainSkills, ref bool allRequiredSkills)
+		private static Type[] m_UseLeathers = new Type[]
+		   {
+				typeof(FemaleLeatherChest),
+				typeof(LeatherArms),
+				typeof(LeatherBustierArms),
+				typeof(LeatherCap),
+				typeof(LeatherChest),
+				typeof(LeatherGloves),
+				typeof(LeatherGorget),
+				typeof(LeatherLegs),
+				typeof(LeatherShorts),
+				typeof(LeatherSkirt),
+
+				typeof(FemaleStuddedChest),
+				typeof(StuddedArms),
+				typeof(StuddedBustierArms),
+				typeof(StuddedChest),
+				typeof(StuddedGloves),
+				typeof(StuddedGorget),
+				typeof(StuddedLegs)
+		   };
+
+		private static Type[] m_UseBones = new Type[]
+			{
+				typeof(BoneArms),
+				typeof(BoneChest),
+				typeof(BoneGloves),
+				typeof(BoneHelm),
+				typeof(BoneLegs)
+			};
+
+		private static Type[] m_UseIngots = new Type[]
+			{
+				typeof(RingmailArms),
+				typeof(RingmailChest),
+				typeof(RingmailGloves),
+				typeof(RingmailLegs),
+
+				typeof(ChainChest),
+				typeof(ChainLegs),
+
+				typeof(FemalePlateChest),
+				typeof(PlateArms),
+				typeof(PlateChest),
+				typeof(PlateGloves),
+				typeof(PlateGorget),
+				typeof(PlateLegs),
+
+				typeof(Bascinet),
+				typeof(ChainCoif),
+				typeof(CloseHelm),
+				typeof(Helmet),
+				typeof(NorseHelm),
+				typeof(PlateHelm)
+			};
+		public double AdjustSkill(double skill, Mobile from, CraftSystem craftSystem)
+		{
+			CraftSubResCol res = craftSystem.CraftSubRes;
+			CraftContext context = craftSystem.GetContext(from);
+			int resIndex = (context == null ? -1 : context.LastResourceIndex);
+			string name = "";
+
+			if (resIndex > -1)
+			{
+				CraftSubRes subResource = res.GetAt(resIndex);
+
+				name = subResource.ItemType.Name;
+			}
+
+			bool contains = false;
+
+			for (int i = 0; !contains && i < m_UseLeathers.Length; ++i)
+				contains = (ItemType == m_UseLeathers[i]);
+
+			if (contains)
+			{
+				switch (name)
+				{
+					case "LupusLeather": skill += 5.0; break;
+					case "ReptilienLeather": skill += 10.0; break;
+					case "GeantLeather": skill += 15.0; break;
+					case "OphidienLeather": skill += 20.0; break;
+					case "ArachnideLeather": skill += 20.0; break;
+					case "DragoniqueLeather": skill += 25.0; break;
+					case "DemoniaqueLeather": skill += 30.0; break;
+					case "AncienLeather": skill += 35.0; break;
+					
+				}
+
+				return skill;
+			}
+
+			contains = false;
+
+			for (int i = 0; !contains && i < m_UseBones.Length; ++i)
+				contains = (ItemType == m_UseBones[i]);
+
+			if (contains)
+			{
+				switch (name)
+				{
+					case "LupusBone": skill += 5.0; break;
+					case "ReptilienBone": skill += 10.0; break;
+					case "GeantBone": skill += 15.0; break;
+					case "OphidienBone": skill += 20.0; break;
+					case "ArachnideBone": skill += 20.0; break;
+					case "DragoniqueBone": skill += 25.0; break;
+					case "DemoniaqueBone": skill += 30.0; break;
+					case "AncienBone": skill += 35.0; break;
+					
+				}
+
+				return skill;
+			}
+
+			contains = false;
+
+			for (int i = 0; !contains && i < m_UseIngots.Length; ++i)
+				contains = (ItemType == m_UseIngots[i]);
+
+			if (contains)
+			{
+				switch (name)
+				{
+					case "DullCopperIngot": skill += 5.0; break;
+					case "ShadowIronIngot": skill += 10.0; break;
+					case "CopperIngot": skill += 15.0; break;
+					case "BronzeIngot": skill += 20.0; break;
+					case "GoldIngot": skill += 20.0; break;
+					case "AgapiteIngot": skill += 25.0; break;
+					case "VeriteIngot": skill += 30.0; break;
+					case "ValoriteIngot": skill += 35.0; break;
+					
+				}
+
+				return skill;
+			}
+
+			return skill;
+		}
+
+		public double GetSuccessChance(Mobile from, Type typeRes, CraftSystem craftSystem, bool gainSkills, ref bool allRequiredSkills)
         {
             return GetSuccessChance(from, typeRes, craftSystem, gainSkills, ref allRequiredSkills, 1);
         }

@@ -223,12 +223,13 @@ namespace Server.Multis
         private Timer m_MoveTimer;
         private DateTime m_DecayTime;
         private bool m_Decaying;
+		private bool m_Stuck = false;
 
-        #endregion
+		#endregion
 
-        #region Properties
+		#region Properties
 
-        [CommandProperty(AccessLevel.GameMaster)]
+		[CommandProperty(AccessLevel.GameMaster)]
         public bool Anchored { get; set; }
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -393,9 +394,39 @@ namespace Server.Multis
         [CommandProperty(AccessLevel.GameMaster)]
         public BoatMountItem VirtualMount { get; private set; }
 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool Stuck
+		{
+			get { return m_Stuck; }
+			set
+			{
+				if (!m_Stuck && value)
+				{
+					if (Pilot is PlayerMobile pm && Pilot.Mount != null)
+					{
 
-        #region Movement Offset
-        private Direction Forward => Facing;
+						PublicOverheadMessage(MessageType.Regular, 0, false, "*Le bateau est coincé.*");
+
+						RemovePilot(pm);
+
+						pm.SetMountBlock(BlockMountType.DismountRecovery, TimeSpan.FromSeconds(30), true);
+
+						Timer.DelayCall(TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30), Unstuck);
+
+					}			
+				}
+				else if (m_Stuck && !value)
+				{
+					PublicOverheadMessage(MessageType.Regular, 0, false, "*Le bateau se déprend*");
+				}
+
+				m_Stuck = value;
+			}
+		}
+
+
+		#region Movement Offset
+		private Direction Forward => Facing;
         private Direction ForwardLeft => (Facing - 1) & Direction.Mask;
         private Direction ForwardRight => (Facing + 1) & Direction.Mask;
         private Direction Backward => (Facing - 4) & Direction.Mask;
@@ -769,6 +800,21 @@ namespace Server.Multis
                 SPlank.Map = Map;
         }
 
+
+		public void Unstuck()
+		{
+
+			if (m_Stuck)
+			{
+				
+
+				Stuck = false;
+			}
+
+
+
+		}
+
         public override void GetProperties(ObjectPropertyList list)
         {
             base.GetProperties(list);
@@ -957,9 +1003,20 @@ namespace Server.Multis
         public virtual bool CanCommand(Mobile m)
         {
 
-			if (m is CustomPlayerMobile)
+		
+
+
+
+
+			if (m is CustomPlayerMobile cm)
 			{
-				CustomPlayerMobile cm = (CustomPlayerMobile)m;
+
+
+				if (m_Stuck)
+				{
+					cm.SendMessage("Le bateau est pris, vous ne pouvez pas le déplacer.");
+					return false;
+				}
 
 				if (cm.Skills[SkillName.Cartography].Value >= 50)
 				{

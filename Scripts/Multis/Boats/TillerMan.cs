@@ -96,7 +96,10 @@ namespace Server.Items
 				{
 				from.SendMessage("Vous n'êtes pas assez doué en cartographie pour pouvoir naviguer!"); // Cartographie < 50 
 			}
-
+			else if (boat.Stuck)
+			{
+				from.SendMessage("Le bateau est pris, vous ne pouvez pas le déplacer.");
+			}
 			else if (from.Mounted && !(mount is BoatMountItem))
             {
                 from.SendLocalizedMessage(1010097); // You cannot use this while mounted or flying.

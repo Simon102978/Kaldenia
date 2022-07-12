@@ -301,6 +301,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(DrawKnife), 1044046, 1024324, 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(SewingKit), 1044046, 1023997, 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BoneSewingKit), 1044046, "Kit de couture (Os)", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(WaxCraftingPot), 1044046, "Fabrication Cire", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 
 			AddCraft(typeof(Saw), 1044046, 1024148, 30.0, 80.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(DovetailSaw), 1044046, 1024136, 30.0, 80.0, typeof(IronIngot), 1044036, 4, 1044037);
@@ -426,8 +427,12 @@ namespace Server.Engines.Craft
 
 			#region Misc
 			AddCraft(typeof(KeyRing), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
-            AddCraft(typeof(Candelabra), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
-            AddCraft(typeof(Scales), 1044050, 1026225, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
+			AddCraft(typeof(CandleLarge), 1044050, "Chandelier Simple", 45.0, 105.0, typeof(IronIngot), 1044036, 2, 1044037);
+			AddCraft(typeof(Candelabra), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
+			AddCraft(typeof(CandelabraStand), 1044050, "Grand Chandelier", 65.0, 105.0, typeof(IronIngot), 1044036, 8, 1044037);
+			AddCraft(typeof(WallSconce), 1044050, "Chandelle Murale", 35.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
+			AddCraft(typeof(WallTorch), 1044050, "Torche murale", 35.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
+			AddCraft(typeof(Scales), 1044050, 1026225, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Key), 1044050, 1024112, 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
             AddCraft(typeof(Globe), 1044050, 1024167, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Spyglass), 1044050, 1025365, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
@@ -443,8 +448,12 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(MetalKeg), 1044050, "Metal Keg", 85.0, 100.0, typeof(IronIngot), 1044036, 25, 1044253);
 			index = AddCraft(typeof(ShojiLantern), 1044050, 1029404, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
             AddRes(index, typeof(Board), 1044041, 5, 1044351);
+			index = AddCraft(typeof(RewardBrazier), 1044050, "Brasero court", 25.0, 100.0, typeof(IronIngot), 1044036, 25, 1044253);
+			index = AddCraft(typeof(Brazier), 1044050, "Brasero", 45.0, 100.0, typeof(IronIngot), 1044036, 25, 1044253);
+			index = AddCraft(typeof(BrazierTall), 1044050, "Brasero Long", 65.0, 100.0, typeof(IronIngot), 1044036, 25, 1044253);
+			index = AddCraft(typeof(DragonBrazier), 1044050, "Brasero Cage", 85.0, 100.0, typeof(IronIngot), 1044036, 25, 1044253);
 
-            index = AddCraft(typeof(PaperLantern), 1044050, 1029406, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
+			index = AddCraft(typeof(PaperLantern), 1044050, 1029406, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
             AddRes(index, typeof(Board), 1044041, 5, 1044351);
 
             index = AddCraft(typeof(RoundPaperLantern), 1044050, 1029418, 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);

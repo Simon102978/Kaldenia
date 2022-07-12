@@ -1,20 +1,26 @@
 using Server.Items;
 using System;
+using Server.Multis;
+using System.Collections.Generic;
+using Server.Spells;
 
 namespace Server.Mobiles
 {
-    [CorpseName("a krakens corpse")]
+    [CorpseName("Corps de Kraken")]
     public class Kraken : BaseCreature
     {
         private DateTime m_NextWaterBall;
+		private DateTime m_NextStuck;
+		private DateTime m_NextSpawn;
+		private DateTime m_tentaHit;
 
-        [Constructable]
+		[Constructable]
         public Kraken()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             m_NextWaterBall = DateTime.UtcNow;
 
-            Name = "a kraken";
+            Name = "Kraken";
             Body = 77;
             BaseSoundID = 353;
 
@@ -54,7 +60,195 @@ namespace Server.Mobiles
 
         public override int TreasureMapLevel => 4;
 
-        public override void OnActionCombat()
+
+		public override void OnThink()
+		{
+
+
+
+			base.OnThink();
+
+
+
+
+
+
+			if (Combatant != null)
+			{
+				if (this.InRange(Combatant.Location, 10))
+				{
+					switch (Utility.Random(3))
+					{
+						case 0:
+							StuckBoat();
+							break;
+						case 1:
+							SpawnTentacle();
+							break;
+						case 2:
+							TentaclesHit();
+							break;
+						default:
+							break;
+					}
+				}
+			}
+
+		}
+
+	
+
+
+
+
+
+		public void TentaclesHit()
+		{
+
+
+
+			if (m_tentaHit < DateTime.UtcNow)
+			{
+
+				Emote("Frappe le bateau de ses tentacules.");
+
+				int Range = 10;
+				List<CustomPlayerMobile> targets = new List<CustomPlayerMobile>();
+
+				IPooledEnumerable eable = this.GetMobilesInRange(Range);
+
+				foreach (Mobile m in eable)
+				{
+					if (this != m && !m.IsStaff() && m is CustomPlayerMobile cp)
+					{
+						targets.Add(cp);
+					}
+				}
+
+				eable.Free();
+
+
+
+				if (targets.Count > 0)
+				{
+
+					for (int i = 0; i < targets.Count; ++i)
+					{
+						
+
+							
+							int dmg = 30;
+
+							AOS.Damage(targets[i], this, dmg, 100, 0, 0, 0, 0);
+
+
+							if (Utility.RandomBool())
+							{
+								targets[i].ApplyPoison(this,Poison.Greater);
+							}
+
+
+
+						
+					}
+				}
+
+
+				m_tentaHit = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(15, 30));
+
+			}
+
+
+		}
+
+
+
+
+
+
+
+		public void StuckBoat()
+		{
+			if (m_NextStuck < DateTime.UtcNow)
+			{
+				Emote("Coince le navire entre ses tentacules.");
+
+
+				IPooledEnumerable eable = this.GetItemsInRange(10);
+
+				foreach (Item m in eable)
+				{
+					if (m is BaseBoat boat)
+					{
+						if (!boat.Stuck)
+							boat.Stuck = true;
+					}
+				}
+
+				eable.Free();
+
+				m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(60, 120));
+
+			}
+
+		}
+
+
+		public void SpawnTentacle()
+		{
+			if (m_NextSpawn < DateTime.UtcNow)
+			{
+
+				Emote("Spawn Tentacles");
+
+				int Range = 10;
+
+				List<CustomPlayerMobile> targets = new List<CustomPlayerMobile>();
+
+				IPooledEnumerable eable = this.GetMobilesInRange(Range);
+
+				foreach (Mobile m in eable)
+				{
+					if (this != m && !m.IsStaff() && m is CustomPlayerMobile cp)
+					{
+						targets.Add(cp);
+					}
+				}
+
+				eable.Free();
+
+
+
+				if (targets.Count > 0)
+				{
+
+					for (int i = 0; i < targets.Count; ++i)
+					{
+						if (Utility.Random(100) < 60)
+						{
+
+							targets[i].Emote("Une tentacule sort de nul part pour vous agresser.");
+
+						
+
+							KakrenTentacle tentacle = new KakrenTentacle();
+						
+							BaseCreature.Summon(tentacle, false, this, targets[i].Location, 353, TimeSpan.FromMinutes(2));			
+
+						}
+					}
+				}
+
+
+				m_NextSpawn = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 120));
+
+			}
+
+
+		}
+
+
+		public override void OnActionCombat()
         {
             Mobile combatant = Combatant as Mobile;
 

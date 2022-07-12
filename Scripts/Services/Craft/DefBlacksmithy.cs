@@ -75,7 +75,7 @@ namespace Server.Engines.Craft
 
 		public static CraftSystem CraftSystem => m_CraftSystem ?? (m_CraftSystem = new DefBlacksmithy());
 
-		public override CraftECA ECA => CraftECA.ChanceMinusSixtyToFourtyFive;
+		public override CraftECA ECA => CraftECA.Chance3Max;
 
 		public override double GetChanceAtMin(CraftItem item)
 		{

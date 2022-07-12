@@ -42,7 +42,7 @@ namespace Server.Engines.Craft
 			get { return "<CENTER>Armures d'os</CENTER>"; }
 		}
 
-		public override CraftECA ECA => CraftECA.ChanceMinusSixtyToFourtyFive;
+		public override CraftECA ECA => CraftECA.Chance3Max;
 
 		public override double GetChanceAtMin(CraftItem item)
 		{

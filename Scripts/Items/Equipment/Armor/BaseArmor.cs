@@ -804,8 +804,16 @@ namespace Server.Items
                 {
                     m_HitPoints = value;
 
-                    if (m_HitPoints < 0)
-                        Delete();
+                    if (m_HitPoints <= 0)
+					{
+						if (GetUser() != null)
+						{
+							GetUser().SendMessage(37, $"Votre {this.Name} se brise.");
+						}
+
+						Delete();
+
+					}   				
                     else if (m_HitPoints > MaxHitPoints)
                         m_HitPoints = MaxHitPoints;
 
@@ -814,7 +822,20 @@ namespace Server.Items
             }
         }
 
-        [CommandProperty(AccessLevel.GameMaster)]
+
+		public Mobile GetUser()
+		{
+			if (this.Parent is Mobile m)
+			{
+				return m;
+			}
+
+			return null;
+		}
+
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
         public Mobile Crafter
         {
             get
@@ -1348,7 +1369,7 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-            writer.Write(16); // version
+            writer.Write(17); // version
 
             // Version 16 - Removed Pre-AOS Armor Properties
             // Version 14 - removed VvV Item (handled in VvV System) and BlockRepair (Handled as negative attribute)
@@ -1559,8 +1580,13 @@ namespace Server.Items
 
             int version = reader.ReadInt();
 
+
+
+
+
             switch (version)
             {
+				case 17:
                 case 16:
                 case 15:
                 case 14:
@@ -1726,7 +1752,19 @@ namespace Server.Items
                             m_MaxHitPoints = reader.ReadEncodedInt();
 
                         if (GetSaveFlag(flags, SaveFlag.HitPoints))
-                            m_HitPoints = reader.ReadEncodedInt();
+						{
+							int point = reader.ReadEncodedInt();
+
+							if (point == 0 && version < 17)
+							{
+								point = 1;
+							}
+
+
+							m_HitPoints = point;
+
+						}
+                           
 
                         if (GetSaveFlag(flags, SaveFlag.Crafter))
                             m_Crafter = reader.ReadMobile();
@@ -1738,6 +1776,12 @@ namespace Server.Items
 
                         if (version == 5 && m_Quality == ItemQuality.Low)
                             m_Quality = ItemQuality.Normal;
+
+						if (version == 16 && m_Quality == ItemQuality.Exceptional)
+						{
+						//	DistributeExceptionalBonuses(true);
+							Quality = ItemQuality.Normal;						
+						}
 
                         if (version < 16 && GetSaveFlag(flags, SaveFlag.Empty1))
                         {
@@ -2564,6 +2608,7 @@ namespace Server.Items
 			switch (Resource)
 			{
 				case CraftResource.None:
+					Mod += 1;
 					break;
 				case CraftResource.Iron:
 					Mod += 1;

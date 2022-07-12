@@ -1380,7 +1380,24 @@ namespace Server.Engines.Craft
                 case CraftECA.FiftyPercentChanceMinusTenPercent:
                     chance = chance * 0.5 - 0.1;
                     break;
-                case CraftECA.ChanceMinusSixtyToFourtyFive:
+				case CraftECA.Chance3Max:
+					{
+						chance = chance * 0.5 - 0.1;
+
+						if (chance > 0.03)
+						{
+							chance = 0.03;
+						}
+
+						break;
+					}
+					
+					
+
+
+
+					
+				case CraftECA.ChanceMinusSixtyToFourtyFive:
                     {
                         double offset = 0.60 - ((from.Skills[system.MainSkill].Value - 95.0) * 0.03);
 

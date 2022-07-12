@@ -20,10 +20,7 @@ namespace Server.Items
 
         public static readonly TimeSpan Duration = TimeSpan.FromSeconds(8);
 
-        public override SkillName GetSecondarySkill(Mobile from)
-        {
-            return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
-        }
+
 
         public override void OnHit(Mobile attacker, Mobile defender, int damage)
         {

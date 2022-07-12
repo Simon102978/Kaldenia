@@ -15,11 +15,6 @@ namespace Server.Items
 		public override string Name => "Maîtrise de la défense";
 		public override int Id => 17;
 
-		public override SkillName GetSecondarySkill(Mobile from)
-        {
-            return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
-        }
-
         public static bool GetMalus(Mobile targ, ref int damageMalus)
         {
             DefenseMasteryInfo info = m_Table[targ] as DefenseMasteryInfo;

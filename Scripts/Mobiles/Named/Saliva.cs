@@ -58,7 +58,7 @@ namespace Server.Mobiles
          //   AddLoot(LootPack.ArcanistScrolls);
             AddLoot(LootPack.Parrot);
    //         AddLoot(LootPack.LootItem<SalivasFeather>());
-			AddLoot(LootPack.LootItem<Items.Gold>(50, 150));
+			AddLoot(LootPack.LootItem<Items.Gold>(200, 300));
 			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(SilverRing), typeof(Necklace), typeof(SilverNecklace), typeof(Collier), typeof(Collier2),  typeof(Collier3), typeof(Couronne3),  typeof(Collier4), typeof(Tiare), }, 10.0, 1, false, true));
 
 

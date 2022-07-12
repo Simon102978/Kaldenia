@@ -5237,7 +5237,10 @@ namespace Server.Items
                         break; // skill required: archery
                     case SkillName.Throwing:
                         list.Add(1112075); // skill required: throwing
-                        break;
+						break;
+					case SkillName.Wrestling:
+						list.Add("Skill Required: Wrestling"); // skill required: throwing
+						break;
                 }
             }
 

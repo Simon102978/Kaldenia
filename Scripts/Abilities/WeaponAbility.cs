@@ -132,7 +132,7 @@ namespace Server.Items
 
             if (from.Skills[secondarySkill].Base < reqSecondarySkill)
             {
-				from.SendMessage($"Vous devez avoir {reqSecondarySkill.ToString()} {secondarySkill.ToString()} ");
+				from.SendMessage($"Vous devez avoir {reqSecondarySkill.ToString()} {secondarySkill.ToString()}.");
 
                 return false;
             }

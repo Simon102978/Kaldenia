@@ -132,16 +132,7 @@ namespace Server.Items
 
             if (from.Skills[secondarySkill].Base < reqSecondarySkill)
             {
-                int loc = GetSkillLocalization(secondarySkill);
-
-                if (loc == 1060184)
-                {
-                    from.SendLocalizedMessage(loc);
-                }
-                else
-                {
-                    from.SendLocalizedMessage(loc, reqSecondarySkill.ToString());
-                }
+				from.SendMessage($"Vous devez avoir {reqSecondarySkill.ToString()} {secondarySkill.ToString()}.");
 
                 return false;
             }

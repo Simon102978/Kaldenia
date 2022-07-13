@@ -16,10 +16,6 @@ namespace Server.Items
 		public override string Name => "Tourbillon frénétique";
 
 		public override int Id => 15;
-		public override SkillName GetSecondarySkill(Mobile from)
-        {
-            return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
-        }
 
         public override int BaseMana => 20;
 

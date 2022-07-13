@@ -23,8 +23,8 @@ namespace Server.Items
         public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
         public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
         public override int StrengthReq => 50;
-        public override int MinDamage => 12;
-        public override int MaxDamage => 16;
+        public override int MinDamage => 6;
+        public override int MaxDamage => 10;
         public override float Speed => 3.00f;
         public override int InitMinHits => 31;
         public override int InitMaxHits => 60;

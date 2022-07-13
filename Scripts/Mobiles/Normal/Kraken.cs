@@ -13,6 +13,8 @@ namespace Server.Mobiles
 		private DateTime m_NextStuck;
 		private DateTime m_NextSpawn;
 		private DateTime m_tentaHit;
+	//	private Point3D m_Water ;
+	//	private bool m_OnBoat = false;
 
 		[Constructable]
         public Kraken()
@@ -110,7 +112,7 @@ namespace Server.Mobiles
 			if (m_tentaHit < DateTime.UtcNow)
 			{
 
-				Emote("Frappe le bateau de ses tentacules.");
+				Emote("*Frappe le bateau de ses tentacules.*");
 
 				int Range = 10;
 				List<CustomPlayerMobile> targets = new List<CustomPlayerMobile>();
@@ -142,9 +144,9 @@ namespace Server.Mobiles
 							AOS.Damage(targets[i], this, dmg, 100, 0, 0, 0, 0);
 
 
-							if (Utility.RandomBool())
+							if (Utility.Random(100) < 33)
 							{
-								targets[i].ApplyPoison(this,Poison.Greater);
+								targets[i].ApplyPoison(this,Poison.Regular);
 							}
 
 
@@ -154,7 +156,7 @@ namespace Server.Mobiles
 				}
 
 
-				m_tentaHit = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(15, 30));
+				m_tentaHit = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 50));
 
 			}
 
@@ -171,7 +173,8 @@ namespace Server.Mobiles
 		{
 			if (m_NextStuck < DateTime.UtcNow)
 			{
-				Emote("Coince le navire entre ses tentacules.");
+
+			
 
 
 				IPooledEnumerable eable = this.GetItemsInRange(10);
@@ -181,25 +184,60 @@ namespace Server.Mobiles
 					if (m is BaseBoat boat)
 					{
 						if (!boat.Stuck)
+						{
+							Emote("*Coince le navire entre ses tentacules.*");
 							boat.Stuck = true;
+
+							
+						}
+				/*		else if(!m_OnBoat)
+						{
+							Emote("*Monte sur le bateau*");
+							m_Water = this.Location;
+							this.Location = Combatant.Location;
+
+							Timer.DelayCall(TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30), RetourEau);
+
+							m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(75, 90));
+
+						}*/
+							
 					}
 				}
 
+				m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(45, 60));
+
 				eable.Free();
 
-				m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(60, 120));
+			
 
 			}
 
 		}
 
 
+	/*	public void RetourEau()
+		{
+
+			if (m_OnBoat)
+			{
+				Emote("*Retourne dans l'eau*");
+
+				this.Location = m_Water;
+				m_Water = new Point3D(0, 0, 0);
+
+
+			}
+
+
+
+		}*/
+
+
 		public void SpawnTentacle()
 		{
 			if (m_NextSpawn < DateTime.UtcNow)
 			{
-
-				Emote("Spawn Tentacles");
 
 				int Range = 10;
 
@@ -224,10 +262,10 @@ namespace Server.Mobiles
 
 					for (int i = 0; i < targets.Count; ++i)
 					{
-						if (Utility.Random(100) < 60)
+						if (Utility.Random(100) < 33)
 						{
 
-							targets[i].Emote("Une tentacule sort de nul part pour vous agresser.");
+							targets[i].Emote("*Une tentacule sort de nul part pour vous agresser.*");
 
 						
 

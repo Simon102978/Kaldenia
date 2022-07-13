@@ -25,11 +25,7 @@ namespace Server.Items
 		public override int Id => 16;
 		public override int AccuracyBonus => -15;
 
-        public override SkillName GetSecondarySkill(Mobile from)
-        {
-            return from.Skills[SkillName.Ninjitsu].Base > from.Skills[SkillName.Bushido].Base ? SkillName.Ninjitsu : SkillName.Bushido;
-        }
-
+    
         public static bool IsBlocking(Mobile m)
         {
             return _Table != null && _Table.ContainsKey(m);

@@ -43,10 +43,10 @@ namespace Server.Engines.Craft
     public class DefTinkering : CraftSystem
     {
         #region Mondain's Legacy
-        public override CraftECA ECA => CraftECA.ChanceMinusSixtyToFourtyFive;
-        #endregion
+        public override CraftECA ECA => CraftECA.Chance3Max;
+		#endregion
 
-        public override SkillName MainSkill => SkillName.Tinkering;
+		public override SkillName MainSkill => SkillName.Tinkering;
 
 		//   public override int GumpTitleNumber => 1044007;
 

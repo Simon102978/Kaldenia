@@ -20,7 +20,9 @@ namespace Server.Items
 
         public override WeaponAbility PrimaryAbility => WeaponAbility.InfectiousStrike;
         public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
-        public override int StrengthReq => 10;
+
+		public override SkillName DefSkill => SkillName.Fencing;
+		public override int StrengthReq => 10;
         public override int MinDamage => 10;
         public override int MaxDamage => 13;
         public override float Speed => 2.25f;

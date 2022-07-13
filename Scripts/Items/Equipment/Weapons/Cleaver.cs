@@ -18,7 +18,9 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
+		public override SkillName DefSkill => SkillName.Fencing;
+
+		public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
         public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
         public override int StrengthReq => 10;
         public override int MinDamage => 10;

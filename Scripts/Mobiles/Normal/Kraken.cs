@@ -12,9 +12,12 @@ namespace Server.Mobiles
         private DateTime m_NextWaterBall;
 		private DateTime m_NextStuck;
 		private DateTime m_NextSpawn;
-		private DateTime m_tentaHit;
-	//	private Point3D m_Water ;
-	//	private bool m_OnBoat = false;
+		private DateTime m_NextJump;
+		private DateTime m_GlobalTimer;
+
+		//	private DateTime m_tentaHit;
+		//	private Point3D m_Water ;
+		private bool m_OnBoat = false;
 
 		[Constructable]
         public Kraken()
@@ -65,51 +68,42 @@ namespace Server.Mobiles
 
 		public override void OnThink()
 		{
-
-
-
 			base.OnThink();
-
-
-
-
-
 
 			if (Combatant != null)
 			{
-				if (this.InRange(Combatant.Location, 10))
+
+				if (m_GlobalTimer < DateTime.UtcNow)
 				{
-					switch (Utility.Random(3))
+					if (this.InRange(Combatant.Location, 10))
 					{
-						case 0:
-							StuckBoat();
-							break;
-						case 1:
-							SpawnTentacle();
-							break;
-						case 2:
-							TentaclesHit();
-							break;
-						default:
-							break;
+						switch (Utility.Random(3))
+						{
+							case 0:
+								StuckBoat();
+								break;
+							case 1:
+								SpawnTentacle();
+								break;
+							case 2:
+								JumpOnBoard();
+								break;
+							default:
+								break;
+						}
 					}
+					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
+
 				}
+
+				
 			}
 
 		}
 
-	
-
-
-
-
-
 		public void TentaclesHit()
 		{
-
-
-
-			if (m_tentaHit < DateTime.UtcNow)
+	//		if (m_tentaHit < DateTime.UtcNow) // Retrait du CD, parce qu'il est inclut dans le cd des autres attaques. C'est juste une substitution si la cible est pas dans un boat.
 			{
 
 				Emote("*Frappe le bateau de ses tentacules.*");
@@ -129,16 +123,11 @@ namespace Server.Mobiles
 
 				eable.Free();
 
-
-
 				if (targets.Count > 0)
 				{
 
 					for (int i = 0; i < targets.Count; ++i)
-					{
-						
-
-							
+					{					
 							int dmg = 30;
 
 							AOS.Damage(targets[i], this, dmg, 100, 0, 0, 0, 0);
@@ -146,35 +135,41 @@ namespace Server.Mobiles
 
 							if (Utility.Random(100) < 33)
 							{
-								targets[i].ApplyPoison(this,Poison.Regular);
-							}
-
-
-
-						
+								targets[i].ApplyPoison(this,Poison.Greater);
+							}						
 					}
 				}
-
-
-				m_tentaHit = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 50));
-
+			//	m_tentaHit = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 50));
 			}
-
-
 		}
 
+		
 
 
+		public void JumpOnBoard()
+		{
+			if (m_NextJump < DateTime.UtcNow)
+			{
 
+				if (BaseBoat.FindBoatAt(Combatant.Location, Combatant.Map) != null && !m_OnBoat)
+				{
+					Emote("*Monte sur le bateau*");					
+					this.Location = Combatant.Location;
 
+					m_OnBoat = true;
+					Timer.DelayCall(TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30), RetourEau);
 
+					m_NextJump = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(75, 90));
+				}
+			}
+		}
 
 		public void StuckBoat()
 		{
 			if (m_NextStuck < DateTime.UtcNow)
 			{
 
-			
+				bool BoatFind = false;
 
 
 				IPooledEnumerable eable = this.GetItemsInRange(10);
@@ -187,22 +182,16 @@ namespace Server.Mobiles
 						{
 							Emote("*Coince le navire entre ses tentacules.*");
 							boat.Stuck = true;
+							BoatFind = true;
 
 							
-						}
-				/*		else if(!m_OnBoat)
-						{
-							Emote("*Monte sur le bateau*");
-							m_Water = this.Location;
-							this.Location = Combatant.Location;
-
-							Timer.DelayCall(TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30), RetourEau);
-
-							m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(75, 90));
-
-						}*/
-							
+						}						
 					}
+				}
+
+				if (!BoatFind)
+				{
+					TentaclesHit();
 				}
 
 				m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(45, 60));
@@ -216,22 +205,40 @@ namespace Server.Mobiles
 		}
 
 
-	/*	public void RetourEau()
+	    public void RetourEau()
 		{
+				int i = 0;
 
-			if (m_OnBoat)
-			{
-				Emote("*Retourne dans l'eau*");
+				while (m_OnBoat && i < 25)
+				{
+					int X = Utility.Random(-10, 20);
+					int Y = Utility.Random(-10, 20);
 
-				this.Location = m_Water;
-				m_Water = new Point3D(0, 0, 0);
+					Point3D total = this.Location;
 
+					IPoint3D p = new Point3D(total.X + X, total.Y + Y, total.Z);
 
-			}
+					IPoint3D orig = p;
+					Map map = this.Map;
 
+					SpellHelper.GetSurfaceTop(ref p);
 
+					Point3D point = new Point3D(p);
 
-		}*/
+					LandTile ld = Map.Tiles.GetLandTile(point.X, point.Y);
+
+					if (ld.ID == 168 || ld.ID == 169 || ld.ID == 170 || ld.ID == 171)
+					{
+						if (BaseBoat.FindBoatAt(point, this.Map) == null)
+						{
+							Emote("*Retourne dans l'eau*");
+							this.Location = point;
+							m_OnBoat = false;
+						}
+					}
+					i++;
+				}	
+		}
 
 
 		public void SpawnTentacle()
@@ -318,7 +325,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.LootItem<Rope>(5.0));
+            AddLoot(LootPack.LootItem<Corde>(5.0));
         }
 
         public override void Serialize(GenericWriter writer)

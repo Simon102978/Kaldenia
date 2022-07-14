@@ -30,7 +30,9 @@ namespace Server.Items
             if (skill != null && skill.Value >= 80.0)
                 return true;
 
-            from.SendLocalizedMessage(1060183); // You lack the required stealth to perform that attack
+			from.SendMessage("Il vous faut plus de 80 de hiding.");
+
+         //   from.SendLocalizedMessage(1060183); // You lack the required stealth to perform that attack
 
             return false;
         }

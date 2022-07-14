@@ -59,6 +59,7 @@ namespace Server.Items
 			DropItem(new Tourmaline(Utility.Random(3)));
 			DropItem(new Amber(Utility.Random(2)));
 			DropItem(new Citrine(Utility.Random(5)));
+			DropItem(new DragonBlood(0, 1);
 
 
 
@@ -110,6 +111,7 @@ namespace Server.Items
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
             TrapPower = 3 * Utility.Random(25, 15);
+			DropItem(new DragonBlood(Utility.Random(1, 2)));
 
 			DropItem(new Gold(200, 500));
 
@@ -170,8 +172,9 @@ namespace Server.Items
 
             DropItem(new Gold(350, 700));
             DropItem(new BlankScroll(Utility.Random(1, 4)));
+			DropItem(new DragonBlood(Utility.Random(1, 3)));
 
-            for (int i = Utility.Random(1, 4); i > 1; i--)
+			for (int i = Utility.Random(1, 4); i > 1; i--)
             {
                 Item ReagentLoot = Loot.RandomReagent();
                 ReagentLoot.Amount = Utility.Random(6, 12);

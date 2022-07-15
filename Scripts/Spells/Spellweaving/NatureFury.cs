@@ -10,7 +10,10 @@ namespace Server.Spells.Spellweaving
         private static readonly SpellInfo m_Info = new SpellInfo(
             "Nature's Fury", "Rauvvrae",
             -1,
-            false);
+            false,
+					Reagent.Bloodmoss,
+				  Reagent.MandrakeRoot,
+				  Reagent.SpidersSilk);
         public NatureFurySpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {

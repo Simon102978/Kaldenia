@@ -15,6 +15,8 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
 		public override CraftResource DefaultResource => CraftResource.RegularLeather;
 
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
+
 		[Constructable]
 		public BrassardOs()
 			: base(41641)
@@ -52,7 +54,8 @@ namespace Server.Items
 		public override int InitMaxHits => 30;
 		public override int StrReq => 20;
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
-		public override CraftResource DefaultResource => CraftResource.RegularLeather;
+		public override CraftResource DefaultResource => CraftResource.RegularBone;
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
 
 		[Constructable]
 		public CasqueOS()
@@ -91,7 +94,9 @@ namespace Server.Items
 		public override int InitMaxHits => 30;
 		public override int StrReq => 55;
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
-		public override CraftResource DefaultResource => CraftResource.RegularLeather;
+		public override CraftResource DefaultResource => CraftResource.RegularBone;
+
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
 
 		[Constructable]
 		public GantsOS()
@@ -130,7 +135,9 @@ namespace Server.Items
 		public override int InitMaxHits => 30;
 		public override int StrReq => 55;
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
-		public override CraftResource DefaultResource => CraftResource.RegularLeather;
+		public override CraftResource DefaultResource => CraftResource.RegularBone;
+
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
 
 		[Constructable]
 		public JambiereOs()
@@ -169,7 +176,9 @@ namespace Server.Items
 		public override int InitMaxHits => 30;
 		public override int StrReq => 60;
 		public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
-		public override CraftResource DefaultResource => CraftResource.RegularLeather;
+		public override CraftResource DefaultResource => CraftResource.RegularBone;
+
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
 
 		[Constructable]
 		public PlastronOs()

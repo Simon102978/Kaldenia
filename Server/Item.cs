@@ -5832,6 +5832,7 @@ namespace Server
 		}
 
 		internal int m_TypeRef;
+		public bool GmLocked;
 
 		public Item()
 		{

@@ -91,7 +91,7 @@ namespace Server.Items
 
         private void StartDeleteTimer()
         {
-            TimerRegistry.Register(m_DeleteTimerID, this, TimeSpan.FromMinutes(Utility.RandomMinMax(2, 5)), chest => chest.Delete());
+            TimerRegistry.Register(m_DeleteTimerID, this, TimeSpan.FromMinutes(Utility.RandomMinMax(10, 15)), chest => chest.Delete());
         }
     }
 }

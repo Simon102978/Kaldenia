@@ -11,7 +11,7 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 1 * Utility.Random(50, 45);
+            TrapPower = 1 * Utility.Random(35, 45);
 
       //      DropItem(new Gold(30, 100));
             DropItem(new Bolt(10));
@@ -53,7 +53,7 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 2 * Utility.Random(25, 15);
+            TrapPower = 2 * Utility.Random(25, 40);
 
 			DropItem(new Gold(50, 75));
 			DropItem(new Tourmaline(Utility.Random(3)));
@@ -110,7 +110,7 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 3 * Utility.Random(25, 15);
+            TrapPower = 3 * Utility.Random(20, 30);
 			DropItem(new DragonBlood(Utility.Random(1, 2)));
 
 			DropItem(new Gold(200, 500));
@@ -168,7 +168,7 @@ namespace Server.Items
             LockLevel = RequiredSkill - Utility.Random(1, 10);
             MaxLockLevel = RequiredSkill;
             TrapType = TrapType.MagicTrap;
-            TrapPower = 4 * Utility.Random(25, 15); 
+            TrapPower = 4 * Utility.Random(15, 25); 
 
             DropItem(new Gold(350, 700));
             DropItem(new BlankScroll(Utility.Random(1, 4)));

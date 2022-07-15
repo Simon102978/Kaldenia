@@ -587,13 +587,27 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(SextantParts), 1044051, 1024185, 0.0, 0.0, typeof(AxleGears), 1044170, 1, 1044253);
             AddRes(index, typeof(Hinge), 1044172, 1, 1044253);
 
-            index = AddCraft(typeof(ClockRight), 1044051, 1044257, 0.0, 0.0, typeof(ClockFrame), 1044174, 1, 1044253);
+            index = AddCraft(typeof(ClockRight), 1044051, 1044257, 30.0, 60.0, typeof(ClockFrame), 1044174, 1, 1044253);
             AddRes(index, typeof(ClockParts), 1044173, 1, 1044253);
 
-            index = AddCraft(typeof(ClockLeft), 1044051, 1044256, 0.0, 0.0, typeof(ClockFrame), 1044174, 1, 1044253);
+            index = AddCraft(typeof(ClockLeft), 1044051, 1044256, 30.0, 60.0, typeof(ClockFrame), 1044174, 1, 1044253);
             AddRes(index, typeof(ClockParts), 1044173, 1, 1044253);
 
-            AddCraft(typeof(Sextant), 1044051, 1024183, 0.0, 0.0, typeof(SextantParts), 1044175, 1, 1044253);
+			index = AddCraft(typeof(SmallGrandfatherClock), 1044051, "Petite Horloge Grand Père", 50.0, 90.0, typeof(ClockFrame), 1044174, 1, 1044253);
+			AddRes(index, typeof(ClockParts), 1044173, 2, 1044253);
+			AddRes(index, typeof(Board), 1044041, 8, 1044351);
+
+			index = AddCraft(typeof(LargeGrandfatherClock), 1044051, "Horloge Grand Père", 50.0, 90.0, typeof(ClockFrame), 1044174, 1, 1044253);
+			AddRes(index, typeof(ClockParts), 1044173, 2, 1044253);
+			AddRes(index, typeof(Board), 1044041, 8, 1044351);
+
+			index = AddCraft(typeof(WhiteGrandfatherClock), 1044051, "Horloge Grand Père Blanche", 50.0, 90.0, typeof(ClockFrame), 1044174, 1, 1044253);
+			AddRes(index, typeof(ClockParts), 1044173, 2, 1044253);
+			AddRes(index, typeof(Board), 1044041, 8, 1044351);
+
+
+
+			AddCraft(typeof(Sextant), 1044051, 1024183, 0.0, 0.0, typeof(SextantParts), 1044175, 1, 1044253);
 
             index = AddCraft(typeof(Bola), 1044051, 1046441, 60.0, 80.0, typeof(BolaBall), 1046440, 4, 1042613);
             AddRes(index, typeof(Leather), 1044462, 3, 1044463);

@@ -16,7 +16,7 @@ namespace Server.Mobiles
 		public DateTime DelayHurlement;
 		public DateTime DelayCoupVent;
 		public DateTime DelayAttraction;
-
+		private DateTime m_GlobalTimer;
 
 
 		[Constructable]
@@ -32,7 +32,7 @@ namespace Server.Mobiles
 
             SetHits(409, 842);
 
-            SetDamage(19, 28);
+            SetDamage(12, 20);
 
             SetDamageType(ResistanceType.Physical, 100);
 
@@ -55,14 +55,10 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.UltraRich, 2);
-         //   AddLoot(LootPack.ArcanistScrolls);
+
             AddLoot(LootPack.Parrot);
-   //         AddLoot(LootPack.LootItem<SalivasFeather>());
-			AddLoot(LootPack.LootItem<Items.Gold>(200, 300));
+			AddLoot(LootPack.LootItem<Items.Gold>(100, 175));
 			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(SilverRing), typeof(Necklace), typeof(SilverNecklace), typeof(Collier), typeof(Collier2),  typeof(Collier3), typeof(Couronne3),  typeof(Collier4), typeof(Tiare), }, 10.0, 1, false, true));
-
-
-
 		}
 
 		public override void OnThink()
@@ -74,27 +70,36 @@ namespace Server.Mobiles
 
 			if (Combatant != null)
 			{
-				if (!this.InRange(Combatant.Location,3))
+				if (m_GlobalTimer < DateTime.UtcNow)
 				{
-					switch (Utility.Random(3))
+
+					if (!this.InRange(Combatant.Location,3))
 					{
-						case 0:
-							Hurlement();
-							break;
-						case 1:
-							CoupVent();
-							break;
-						case 2:
-							Attraction();
-							break;
+						switch (Utility.Random(3))
+						{
+							case 0:
+								Hurlement();
+								break;
+							case 1:
+								CoupVent();
+								break;
+							case 2:
+								Attraction();
+								break;
 
-						default:
-							break;
+							default:
+								break;
+						}
 					}
-				}
-			}
 
+					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
+				}
+			
+
+			}
 		}
+
+		
 
 		public void Hurlement()
 		{

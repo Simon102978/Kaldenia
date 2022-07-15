@@ -59,7 +59,7 @@ namespace Server.Items
 			DropItem(new Tourmaline(Utility.Random(3)));
 			DropItem(new Amber(Utility.Random(2)));
 			DropItem(new Citrine(Utility.Random(5)));
-			DropItem(new DragonBlood(0, 1);
+			DropItem(new DragonBlood(Utility.Random(0, 1)));
 
 
 

@@ -27,9 +27,9 @@ namespace Server.Items
         public override int StrReq => 30;
         public override double DefaultWeight => 5;
         public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
-        public override CraftResource DefaultResource => CraftResource.RegularLeather;
-        public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.None;
-        public override void Serialize(GenericWriter writer)
+		public override CraftResource DefaultResource => CraftResource.RegularBone;
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(1);

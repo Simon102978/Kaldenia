@@ -12,7 +12,9 @@ namespace Server.Items
         public override int InitMaxHits => 30;
         public override int StrReq => 55;
         public override ArmorMaterialType MaterialType => ArmorMaterialType.Bone;
-        public override CraftResource DefaultResource => CraftResource.RegularLeather;
+		public override CraftResource DefaultResource => CraftResource.RegularBone;
+
+		public override ArmorMeditationAllowance DefMedAllowance => ArmorMeditationAllowance.Half;
 
 		[Constructable]
         public BoneGloves()

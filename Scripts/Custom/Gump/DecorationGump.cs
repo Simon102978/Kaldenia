@@ -5,6 +5,7 @@ using Server.Mobiles;
 using Server.Items;
 using Server.Network;
 using Server.Targeting;
+using Server.Multis;
 
 namespace Server.Gumps
 {
@@ -107,11 +108,37 @@ namespace Server.Gumps
                     from.Target = new DecoMoveTarget(DecoDirection.NorthWest);
                     break;
                 case 11:
-                    from.Target = new DecoLockTarget();
-                    break;
+					{
+
+						BaseHouse House = BaseHouse.FindHouseAt(from);
+
+						if (House != null)
+						{
+							from.Target = new LockdownTarget(false, House);
+						}
+						else
+						{
+							from.Target = new DecoLockTarget();
+						}					
+						break;
+
+
+					}	
                 case 12:
-                    from.Target = new DecoUnLockTarget();
-                    break;
+					{
+
+						BaseHouse House = BaseHouse.FindHouseAt(from);
+
+						if (House != null)
+						{
+							from.Target = new LockdownTarget(true, House);
+						}
+						else
+						{
+							from.Target = new DecoUnLockTarget();
+						}
+						break;
+					}
                 default: break;
             }
         }

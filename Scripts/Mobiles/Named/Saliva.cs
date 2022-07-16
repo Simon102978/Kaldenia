@@ -32,7 +32,7 @@ namespace Server.Mobiles
 
             SetHits(409, 842);
 
-            SetDamage(12, 20);
+            SetDamage(17, 25);
 
             SetDamageType(ResistanceType.Physical, 100);
 
@@ -170,9 +170,9 @@ namespace Server.Mobiles
 
 				AOS.Damage(Combatant, this, dmg, 100, 0, 0, 0, 0); // C'est un coup de vent, donc rien d'electrique...
 
-				Emote($"*Envoit une bourasque en direction de {Combatant.Name}*");
+				Emote($"*Attire une bourasque provenant de {Combatant.Name}*");
 
-				KnockBack(this.Location, Combatant as Mobile, 5);
+				KnockBack(this.Location, Combatant as Mobile, -5);
 
 				DelayCoupVent = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 60));
 			}
@@ -260,14 +260,14 @@ namespace Server.Mobiles
 
 				if (Distance < 0)
 				{
-					Distance2 = -Distance;   // Sert a faire en sorte, que si c'est négative, ca va avancer.
+					Distance2 = -Distance;   // Sert a faire en sorte, que si c'est nï¿½gative, ca va avancer.
 					Neg = -1;
 				}
 
 
 
 
-				for (int i = 0; i < Distance2; i++)  // Le script valide toute les tiles jusqu'a la distance maximum. Si une d'entre elle est bloquer, il revient a la précédente (ou player location du départ) et stun la target.
+				for (int i = 0; i < Distance2; i++)  // Le script valide toute les tiles jusqu'a la distance maximum. Si une d'entre elle est bloquer, il revient a la prï¿½cï¿½dente (ou player location du dï¿½part) et stun la target.
 				{
 					Point3D point = KnockBackCalculation(destination, target, i * Neg);
 

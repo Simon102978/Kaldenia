@@ -545,12 +545,14 @@ namespace Server.Items
             {
                 if (!Locked && TrapType != TrapType.None)
                 {
-                    from.SendLocalizedMessage(1159008); // That appears to be trapped, using the remove trap skill would yield better results...
+					from.SendMessage("Le coffre est piègé, veuillez la retirer avant de tenter de l'ouvrir.");
+                   // from.SendLocalizedMessage(1159008); // That appears to be trapped, using the remove trap skill would yield better results...
                     return false;
                 }
                 else if (AncientGuardians.Any(ag => ag.Alive))
                 {
-                    from.SendLocalizedMessage(1046448); // You must first kill the guardians before you may open this chest.
+					from.SendMessage("Vous devez tuer tout les gardiens.");
+                  //  from.SendLocalizedMessage(1046448); // You must first kill the guardians before you may open this chest.
                     return false;
                 }
             }

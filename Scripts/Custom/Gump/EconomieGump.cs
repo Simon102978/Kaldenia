@@ -21,7 +21,7 @@ namespace Server.Gumps
 		Dictionary<string, double> Dictionnairy;
 
 		public EconomieGump(CustomPlayerMobile from,  Dictionary<string, double> dict, int page = 0)
-            : base("Économie", 560, 622, true)
+            : base("Ã‰conomie", 560, 622, true)
         {
 
 			m_From = from;
@@ -49,9 +49,9 @@ namespace Server.Gumps
 				{
 
 
-					AddHtmlTexteColored(x + 10 + colonne * 250, y + 20 + line * 20, 300, item.Key, "#ffffff");
+					AddHtmlTexteColored(x + 10 + colonne * 300, y + 20 + line * 20, 300, item.Key, "#ffffff");
 
-					AddHtmlTexteColored(x + 200 + colonne * 275, y + 20 + line * 20, 300,Math.Round(item.Value, 2).ToString(), "#ffffff");
+					AddHtmlTexteColored(x + 250 + colonne * 325, y + 20 + line * 20, 300,Math.Round(item.Value, 2).ToString(), "#ffffff");
 
 					//					AddLabel(x + 10 + colonne * 300, y + 20 + line * 20, 0,  item.Key.Name + "-" + item.Value.ToString());
 

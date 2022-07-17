@@ -1520,14 +1520,14 @@ namespace Server.Engines.Craft
 			{
 				switch (name)
 				{
-					case "LupusLeather": skill += 5.0; break;
-					case "ReptilienLeather": skill += 10.0; break;
-					case "GeantLeather": skill += 15.0; break;
-					case "OphidienLeather": skill += 20.0; break;
-					case "ArachnideLeather": skill += 20.0; break;
-					case "DragoniqueLeather": skill += 25.0; break;
-					case "DemoniaqueLeather": skill += 30.0; break;
-					case "AncienLeather": skill += 35.0; break;
+					case "Lupus": skill += 5.0; break;
+					case "Reptilien": skill += 10.0; break;
+					case "Geant": skill += 15.0; break;
+					case "Ophidien": skill += 20.0; break;
+					case "Arachnide": skill += 20.0; break;
+					case "Dragonique": skill += 25.0; break;
+					case "Demoniaque": skill += 30.0; break;
+					case "Ancien": skill += 35.0; break;
 					
 				}
 
@@ -1543,14 +1543,14 @@ namespace Server.Engines.Craft
 			{
 				switch (name)
 				{
-					case "LupusBone": skill += 5.0; break;
-					case "ReptilienBone": skill += 10.0; break;
-					case "GeantBone": skill += 15.0; break;
-					case "OphidienBone": skill += 20.0; break;
-					case "ArachnideBone": skill += 20.0; break;
-					case "DragoniqueBone": skill += 25.0; break;
-					case "DemoniaqueBone": skill += 30.0; break;
-					case "AncienBone": skill += 35.0; break;
+					case "Lupus": skill += 5.0; break;
+					case "Reptilien": skill += 10.0; break;
+					case "Geant": skill += 15.0; break;
+					case "Ophidien": skill += 20.0; break;
+					case "Arachnide": skill += 20.0; break;
+					case "Dragonique": skill += 25.0; break;
+					case "Demoniaque": skill += 30.0; break;
+					case "Ancien": skill += 35.0; break;
 					
 				}
 
@@ -1566,14 +1566,14 @@ namespace Server.Engines.Craft
 			{
 				switch (name)
 				{
-					case "DullCopperIngot": skill += 5.0; break;
-					case "ShadowIronIngot": skill += 10.0; break;
-					case "CopperIngot": skill += 15.0; break;
-					case "BronzeIngot": skill += 20.0; break;
-					case "GoldIngot": skill += 20.0; break;
-					case "AgapiteIngot": skill += 25.0; break;
-					case "VeriteIngot": skill += 30.0; break;
-					case "ValoriteIngot": skill += 35.0; break;
+					case "DullCopper": skill += 5.0; break;
+					case "ShadowIron": skill += 10.0; break;
+					case "Copper": skill += 15.0; break;
+					case "Bronze": skill += 20.0; break;
+					case "Gold": skill += 20.0; break;
+					case "Agapite": skill += 25.0; break;
+					case "Verite": skill += 30.0; break;
+					case "Valorite": skill += 35.0; break;
 					
 				}
 

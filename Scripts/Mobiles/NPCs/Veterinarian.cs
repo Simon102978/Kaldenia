@@ -36,11 +36,15 @@ namespace Server.Mobiles
             foreach (Mobile m in eable)
             {
                 BaseCreature bc = m as BaseCreature;
+				BaseHire bh = m as BaseHire;
 
-                if (bc != null && bc.IsDeadBondedPet && bc.ControlMaster == from && from.InLOS(bc))
-                    pets.Add(bc);
-            }
-            eable.Free();
+				if (bc != null && bc.IsDeadBondedPet && bc.ControlMaster == from && from.InLOS(bc))
+                    pets.Add(bc);			
+				
+				if (bh != null && bh.IsDeadBondedPet && bh.ControlMaster == from && from.InLOS(bh))
+				pets.Add(bh);
+			}
+			eable.Free();
 
             if (from.Backpack != null)
             {
@@ -60,10 +64,10 @@ namespace Server.Mobiles
 
             int fee = (int)(100 + Math.Pow(1.1041, bc.MinTameSkill));
 
-            if (fee > 30000)
-                fee = 30000;
+            if (fee > 100)
+                fee = 50;
             else if (fee < 100)
-                fee = 100;
+                fee = 50;
 
             return fee;
         }

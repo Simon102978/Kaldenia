@@ -9,7 +9,7 @@ namespace Server.Items
         public WallSconce()
             : base(0x9FB)
         {
-            Movable = false;
+            Movable = true;
             Duration = TimeSpan.Zero; // Never burnt out
             Burning = false;
             Light = LightType.WestBig;

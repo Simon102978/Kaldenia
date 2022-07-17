@@ -430,6 +430,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(CandelabraStand), 1044050, "Grand Chandelier", 65.0, 105.0, typeof(IronIngot), 1044036, 8, 1044037);
 			AddCraft(typeof(WallSconce), 1044050, "Chandelle Murale", 35.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
 			AddCraft(typeof(WallTorch), 1044050, "Torche murale", 35.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
+			AddCraft(typeof(DyeTub), 1044050, "Bac de Teinture", 35.0, 65.0, typeof(Board), 1044041, 5, 1044351);	
 			AddCraft(typeof(Scales), 1044050, 1026225, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Key), 1044050, 1024112, 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
             AddCraft(typeof(Globe), 1044050, 1024167, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);

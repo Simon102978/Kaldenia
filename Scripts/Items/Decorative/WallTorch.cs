@@ -9,7 +9,7 @@ namespace Server.Items
         public WallTorch()
             : base(0xA05)
         {
-            Movable = false;
+            Movable = true;
             Duration = TimeSpan.Zero; // Never burnt out
             Burning = false;
             Light = LightType.WestBig;

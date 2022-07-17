@@ -122,7 +122,7 @@ namespace Server.Items.Crops
 		public PumpkinCrop() : this(null) { }
 
 		[Constructable]
-		public PumpkinCrop( Mobile sower ) : base( 15375 )
+		public PumpkinCrop( Mobile sower ) : base( 0x0C5E )
 		{
 			Movable = false;
 			Name = "Pumpkin Plant";
@@ -134,8 +134,8 @@ namespace Server.Items.Crops
 
 		public static void init ( PumpkinCrop plant, bool full )
 		{
-			plant.PickGraphic = ( 15375 );
-			plant.FullGraphic = ( 15375 );
+			plant.PickGraphic = (0x0C5E);
+			plant.FullGraphic = (0x0C6A);
 			plant.LastPick = DateTime.UtcNow;
 			plant.regrowTimer = new CropTimer( plant );
 			if ( full ) { plant.Yield = plant.Capacity; ((Item)plant).ItemID = plant.FullGraphic; }

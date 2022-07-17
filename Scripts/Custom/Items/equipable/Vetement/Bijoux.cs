@@ -649,9 +649,77 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
+	public class DiademeFeuilleOr : BaseNecklace
+
+	{
 
 
-	
+		[Constructable]
+		public DiademeFeuilleOr()
+				: base(41860)
+
+		{
+			Weight = 2.0;
+			Name = "Diademe Feuille Or";
+		}
+
+		public DiademeFeuilleOr(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class EpauletteDoree : BaseNecklace
+
+	{
+
+
+		[Constructable]
+		public EpauletteDoree()
+				: base(0xA3D8)
+
+		{
+			Weight = 2.0;
+			Name = "Epaulette Doree";
+		}
+
+		public EpauletteDoree(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
 
 
 

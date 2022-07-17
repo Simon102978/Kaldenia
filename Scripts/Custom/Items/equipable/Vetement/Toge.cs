@@ -318,9 +318,87 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
+	public class TogeSparte : BaseOuterTorso
+
+	{
+		[Constructable]
+		public TogeSparte()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public TogeSparte(int hue)
+				: base(0xA3C9, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Toge Sparte";
+		}
+
+		public TogeSparte(Serial serial)
+				: base(serial)
+
+		{
+		}
 
 
-	
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class TogeKoraine : BaseOuterTorso
+
+	{
+		[Constructable]
+		public TogeKoraine()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public TogeKoraine(int hue)
+				: base(0xA3CA, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Toge Koraine";
+		}
+
+		public TogeKoraine(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
 
 
 

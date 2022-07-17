@@ -36,13 +36,11 @@ namespace Server.Mobiles
             foreach (Mobile m in eable)
             {
                 BaseCreature bc = m as BaseCreature;
-				BaseHire bh = m as BaseHire;
+				
 
 				if (bc != null && bc.IsDeadBondedPet && bc.ControlMaster == from && from.InLOS(bc))
                     pets.Add(bc);			
 				
-				if (bh != null && bh.IsDeadBondedPet && bh.ControlMaster == from && from.InLOS(bh))
-				pets.Add(bh);
 			}
 			eable.Free();
 

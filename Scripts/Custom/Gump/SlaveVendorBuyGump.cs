@@ -107,11 +107,11 @@ namespace Server.Gumps
 				sender.Mobile.SendGump(new SlaveVendorBuyGump(m_From, m_Vendor, m_Page - 1));			
 			else if (info.ButtonID == 2 )
 				sender.Mobile.SendGump(new SlaveVendorBuyGump(m_From, m_Vendor, m_Page + 1));
-			else if (info.ButtonID >= 1000 && info.ButtonID < 2000)
+			else if (info.ButtonID >= 1000 && info.ButtonID < 2000)
 			{
 				if (!BaseVendor.ConsumeGold(m_From.Backpack, m_Vendor.Inventory[info.ButtonID - 1000].Price))
 				{
-					m_From.SendMessage("Vous n'avez pas l'or nécessaire pour acheter cette esclave.");
+					m_From.SendMessage("Vous n'avez pas l'or nÃ©cessaire pour acheter cette esclave.");
 				}
 				else
 				{

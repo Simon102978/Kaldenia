@@ -19,6 +19,7 @@ namespace Server.Items
 		public override void OnDoubleClick( Mobile from )
 		{
 			bool CanUse = from.CheckSkill( SkillName.AnimalTaming, 30, 80 );
+
 			if (CanUse)
 			{
 				if (this.IsChildOf( from.Backpack ))
@@ -62,6 +63,7 @@ namespace Server.Items
 				to.Traits = from.Traits;
 				to.NextMate = from.NextMate;
 				to.Female = from.Female;
+				to.IsBonded = from.IsBonded;
 
 
 

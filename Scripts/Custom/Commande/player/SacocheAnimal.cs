@@ -63,6 +63,7 @@ namespace Server.Scripts.Commands
 				to.Traits = from.Traits;
 				to.NextMate = from.NextMate;
 				to.Female = from.Female;
+				to.IsBonded = from.IsBonded;
 
 				for (int i = 0; i < from.Skills.Length; ++i)
 				{

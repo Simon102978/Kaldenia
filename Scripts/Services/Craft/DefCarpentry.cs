@@ -600,17 +600,13 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Ruby), 1026254, 2, 1053098);
             ForceNonExceptional(index);
 
-  /*          index = AddCraft(typeof(TallElvenBedSouthDeed), 1044290, 1072858, 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);
-            AddSkill(index, SkillName.Tailoring, 75.0, 80.0);
+            index = AddCraft(typeof(TallElvenBedSouthDeed), 1044290, 1072858, 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);
             AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
-            AddRecipe(index, (int)CarpRecipes.TallElvenBedSouth);
             ForceNonExceptional(index);
 
-            index = AddCraft(typeof(TallElvenBedEastDeed), 1044290, 1072859, 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);
-            AddSkill(index, SkillName.Tailoring, 75.0, 80.0);
+            index = AddCraft(typeof(TallElvenBedEastDeed), 1044290, 1072859, 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);         
             AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
-            AddRecipe(index, (int)CarpRecipes.TallElvenBedEast);
-            ForceNonExceptional(index);*/
+            ForceNonExceptional(index);
 
             index = AddCraft(typeof(ElvenBedSouthDeed), 1044290, 1072860, 94.7, 119.7, typeof(Board), 1044041, 100, 1044351);
             AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
@@ -655,8 +651,9 @@ namespace Server.Engines.Craft
             AddCraft(typeof(DartBoardSouthDeed), 1044290, 1044325, 15.7, 40.7, typeof(Board), 1044041, 5, 1044351);
             AddCraft(typeof(DartBoardEastDeed), 1044290, 1044326, 15.7, 40.7, typeof(Board), 1044041, 5, 1044351);
             AddCraft(typeof(BallotBoxDeed), 1044290, 1044327, 47.3, 72.3, typeof(Board), 1044041, 5, 1044351);
+			AddCraft(typeof(VanityDeed), 1044290, 1044327, 60.3, 95.0, typeof(Board), 1044041, 15, 1044351);
 
-            index = AddCraft(typeof(PentagramDeed), 1044290, 1044328, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);
+			index = AddCraft(typeof(PentagramDeed), 1044290, 1044328, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);
             AddRes(index, typeof(IronIngot), 1044036, 40, 1044037);
 
             index = AddCraft(typeof(AbbatoirDeed), 1044290, 1044329, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);

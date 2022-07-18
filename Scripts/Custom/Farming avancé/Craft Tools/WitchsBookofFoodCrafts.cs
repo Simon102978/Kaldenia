@@ -10,18 +10,20 @@ namespace Server.Items
 		public override CraftSystem CraftSystem{ get{ return DefWitchcraft.CraftSystem; } }
 
 		[Constructable]
-		public WitchsBookofFoodCrafts() : base(0x0EFA)
+		public WitchsBookofFoodCrafts() : base(9120)
 		{
-            Weight = 1.0;
-            Hue = 0x3CC;
+			Weight = 3.0;
+			Layer = Layer.OneHanded;
+			Hue = 0x3CC;
             Name = "Livre de Recettes Enchantées";
 		}
 
 		[Constructable]
-		public WitchsBookofFoodCrafts( int uses ) : base( uses, 0x9981 )
+		public WitchsBookofFoodCrafts( int uses ) : base( uses, 9120)
 		{
-            Weight = 1.0;
-            Hue = 0x3CC;
+			Weight = 3.0;
+			Layer = Layer.OneHanded;
+			Hue = 0x3CC;
             Name = "Livre de Recettes Enchantées";
 		}
 

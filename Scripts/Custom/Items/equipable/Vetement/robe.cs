@@ -1000,7 +1000,292 @@ public override void Deserialize(GenericReader reader)
 }
     }
 
-	
+	public class RobeCourteLacet : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeCourteLacet()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeCourteLacet(int hue)
+				: base(0xA3CB, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Courte Lacet";
+		}
+
+		public RobeCourteLacet(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class RobeBleudecolte : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeBleudecolte()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeBleudecolte(int hue)
+				: base(0xA3CC, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Bleue decoltee";
+		}
+
+		public RobeBleudecolte(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class RobeLacetCuir : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeLacetCuir()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeLacetCuir(int hue)
+				: base(0xA3CD, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Lacet Cuir";
+		}
+
+		public RobeLacetCuir(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class RobeDessin : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeDessin()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeDessin(int hue)
+				: base(0xA3CE, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Dessin";
+		}
+
+		public RobeDessin(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class RobeCorset : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeCorset()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeCorset(int hue)
+				: base(0xA3CF, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Corset";
+		}
+
+		public RobeCorset(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class RobeNobleDecolte : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeNobleDecolte()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeNobleDecolte(int hue)
+				: base(0xA3D0, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Noble Decoltee";
+		}
+
+		public RobeNobleDecolte(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class RobeDoree : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeDoree()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeDoree(int hue)
+				: base(0xA3D6, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Doree";
+		}
+
+		public RobeDoree(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+
 
 
 

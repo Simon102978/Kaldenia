@@ -438,9 +438,87 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
+	public class CapeBleu : BaseCloak
+
+	{
+		[Constructable]
+		public CapeBleu()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CapeBleu(int hue)
+				: base(0xA3C8, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Cape Bleue";
+		}
+
+		public CapeBleu(Serial serial)
+				: base(serial)
+
+		{
+		}
 
 
-	
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class Drapee : BaseCloak
+
+	{
+		[Constructable]
+		public Drapee()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public Drapee(int hue)
+				: base(0xA3D9, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Drapee";
+		}
+
+		public Drapee(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
 
 
 

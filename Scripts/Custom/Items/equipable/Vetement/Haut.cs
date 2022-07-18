@@ -1718,11 +1718,128 @@ public override void Deserialize(GenericReader reader)
 
 	int version = reader.ReadInt();
 }
-    } 
+    }
 
-	
+	public class TuniqueCeinture : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public TuniqueCeinture()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public TuniqueCeinture(int hue)
+				: base(0xA3C7, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Tunique Ceinture";
+		}
+
+		public TuniqueCeinture(Serial serial)
+				: base(serial)
+
+		{
+		}
 
 
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class ManteauDore : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public ManteauDore()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ManteauDore(int hue)
+				: base(0xA3D1, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Manteau Dore";
+		}
+
+		public ManteauDore(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class HautLacet : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public HautLacet()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public HautLacet(int hue)
+				: base(0xA3D3, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Haut Lacet";
+		}
+
+		public HautLacet(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 }
 

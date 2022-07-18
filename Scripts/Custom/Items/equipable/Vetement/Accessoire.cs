@@ -895,6 +895,161 @@ namespace Server.Items
 				int version = reader.ReadInt();
 			}
 		}
+
+	public class CeintureBaril : BaseWaist
+	{
+
+		[Constructable]
+		public CeintureBaril()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public CeintureBaril(int hue)
+				: base(0xA3DA, hue)
+		{
+			Weight = 2.0;
+			Name = "Ceinture Barril";
+		}
+
+		public CeintureBaril(Serial serial)
+				: base(serial)
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CacheOeil1 : BaseWaist
+	{
+
+		[Constructable]
+		public CacheOeil1()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public CacheOeil1(int hue)
+				: base(0xA3DC, hue)
+		{
+			Weight = 2.0;
+			Name = "Cache Oeil";
+		}
+
+		public CacheOeil1(Serial serial)
+				: base(serial)
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CacheOeil2 : BaseWaist
+	{
+
+		[Constructable]
+		public CacheOeil2()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public CacheOeil2(int hue)
+				: base(0xA3DD, hue)
+		{
+			Weight = 2.0;
+			Name = "Cache Oeil";
+		}
+
+		public CacheOeil2(Serial serial)
+				: base(serial)
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CacheOeil3 : BaseWaist
+	{
+
+		[Constructable]
+		public CacheOeil3()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public CacheOeil3(int hue)
+				: base(0xA3DE, hue)
+		{
+			Weight = 2.0;
+			Name = "Cache Oeil";
+		}
+
+		public CacheOeil3(Serial serial)
+				: base(serial)
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+
 }
 
 

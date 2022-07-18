@@ -13,7 +13,7 @@ namespace Server.Items
 		public Wheat( int amount ) : base( 0x1EBD )
 		{
             Amount = amount;
-            Weight = 3.0;
+            Weight = 1.0;
             Stackable = true;
 		}
 

@@ -362,6 +362,454 @@ public override void Deserialize(GenericReader reader)
 		}
 	}
 
+	public class CapucheToile : BaseHat
+
+	{
+		[Constructable]
+		public CapucheToile()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CapucheToile(int hue)
+				: base(0xA3BE, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Capuche de Toile";
+		}
+
+		public CapucheToile(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class ChapeauFoulard : BaseHat
+
+	{
+		[Constructable]
+		public ChapeauFoulard()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ChapeauFoulard(int hue)
+				: base(0xA3BF, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Chapeau Foulard";
+		}
+
+		public ChapeauFoulard(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class ChapeauMousquetaire : BaseHat
+
+	{
+		[Constructable]
+		public ChapeauMousquetaire()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ChapeauMousquetaire(int hue)
+				: base(0xA3C0, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Chapeau Mousquetaire";
+		}
+
+		public ChapeauMousquetaire(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CoiffeSanglier : BaseHat
+
+	{
+		[Constructable]
+		public CoiffeSanglier()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CoiffeSanglier(int hue)
+				: base(0xA3C1, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Coiffe Sanglier";
+		}
+
+		public CoiffeSanglier(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CoiffeLion : BaseHat
+
+	{
+		[Constructable]
+		public CoiffeLion()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CoiffeLion(int hue)
+				: base(0xA3C2, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Coiffe Lion";
+		}
+
+		public CoiffeLion(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class CoiffeLoupBlanc : BaseHat
+
+	{
+		[Constructable]
+		public CoiffeLoupBlanc()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CoiffeLoupBlanc(int hue)
+				: base(0xA3C3, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Coiffe Loup Blanc";
+		}
+
+		public CoiffeLoupBlanc(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class CoiffeEgypte : BaseHat
+
+	{
+		[Constructable]
+		public CoiffeEgypte()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CoiffeEgypte(int hue)
+				: base(0xA3C4, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Coiffe Egypte";
+		}
+
+		public CoiffeEgypte(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CoiffeColore : BaseHat
+
+	{
+		[Constructable]
+		public CoiffeColore()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CoiffeColore(int hue)
+				: base(0xA3C5, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Coiffe Coloree";
+		}
+
+		public CoiffeColore(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class ToqueBouffon : BaseHat
+
+	{
+		[Constructable]
+		public ToqueBouffon()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ToqueBouffon(int hue)
+				: base(0xA3C6, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Toque Bouffon";
+		}
+
+		public ToqueBouffon(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CoiffeGuepard : BaseHat
+
+	{
+		[Constructable]
+		public CoiffeGuepard()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CoiffeGuepard(int hue)
+				: base(0xA3D4, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Coiffe Guepard";
+		}
+
+		public CoiffeGuepard(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class MasqueEpouvantail : BaseHat
+
+	{
+		[Constructable]
+		public MasqueEpouvantail()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public MasqueEpouvantail(int hue)
+				: base(0xA3D7, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Masque Epouvantail";
+		}
+
+		public MasqueEpouvantail(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+
+
+
 
 
 }

@@ -251,6 +251,10 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(NaturalDye), 1116353, 1112136, 75.0, 100.0, typeof(GraveDust), 1112132, 10, 1044253);
             SetItemHue(index, 2101);
             SetRequireResTarget(index);
+
+			index = AddCraft(typeof(HairDye), 1116353, "Teinture à Cheveux", 75.0, 100.0, typeof(DyeTub), "Bac à teinture", 1, "Il vous faut un bac à teinture");
+			AddRes(index, typeof(Charcoal), "Charbon", 5, "Vous n'avez pas suffisament de Charbon");
+
 			/*
 						index = AddCraft(typeof(NexusCore), 1116353, 1153501, 90.0, 120.0, typeof(MandrakeRoot), 1015013, 10, 1044253);
 						AddRes(index, typeof(SpidersSilk), 1015007, 10, 1044253);

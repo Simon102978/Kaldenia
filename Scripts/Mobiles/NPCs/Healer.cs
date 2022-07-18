@@ -1,3 +1,9 @@
+using Server.Gumps;
+using Server.Items;
+using Server.Network;
+using System;
+using System.Collections.Generic;
+
 namespace Server.Mobiles
 {
     public class Healer : BaseHealer
@@ -56,7 +62,48 @@ namespace Server.Mobiles
             return true;
         }
 
-        public override void Serialize(GenericWriter writer)
+		private static readonly Dictionary<Mobile, Timer> m_ExpireTable = new Dictionary<Mobile, Timer>();
+		public static BaseCreature[] GetDeadPets(Mobile from)
+		{
+			List<BaseCreature> pets = new List<BaseCreature>();
+			IPooledEnumerable eable = from.GetMobilesInRange(12);
+
+			foreach (Mobile m in eable)
+			{
+				BaseHire bc = m as BaseHire;
+				
+
+				if (bc != null && bc.IsDeadBondedPet && bc.ControlMaster == from && from.InLOS(bc))
+					pets.Add(bc);			
+			}
+			eable.Free();
+
+			if (from.Backpack != null)
+			{
+				BrokenAutomatonHead head = from.Backpack.FindItemByType(typeof(BrokenAutomatonHead)) as BrokenAutomatonHead;
+
+				if (head != null && head.Automaton != null && !head.Automaton.Deleted)
+					pets.Add(head.Automaton);
+			}
+
+			return pets.ToArray();
+		}
+
+		public static int GetResurrectionFee(BaseCreature bc)
+		{
+			if (bc is KotlAutomaton)
+				return 0;
+
+			int fee = (int)(100 + Math.Pow(1.1041, bc.MinTameSkill));
+
+			if (fee > 100)
+				fee = 50;
+			else if (fee < 100)
+				fee = 50;
+
+			return fee;
+		}
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0); // version

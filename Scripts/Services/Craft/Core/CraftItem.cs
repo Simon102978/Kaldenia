@@ -605,9 +605,11 @@ namespace Server.Engines.Craft
         {
             bool contains = false;
 
-            for (int i = 0; !contains && i < itemIDs.Length; i += 2)
+            for (int i = 0; !contains && i + 1 < itemIDs.Length; i += 2)
             {
+	
                 contains = (itemID >= itemIDs[i] && itemID <= itemIDs[i + 1]);
+
             }
 
             return contains;

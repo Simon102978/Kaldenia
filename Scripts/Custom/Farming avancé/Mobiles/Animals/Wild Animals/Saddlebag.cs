@@ -54,7 +54,17 @@ namespace Server.Items
 				to.DamageMax = from.DamageMax;
 				to.Str = from.Str;
 				to.Dex = from.Dex;
-				to.Int = from.Int;							
+				to.Int = from.Int;
+				to.Level = from.Level;
+				to.RealLevel = from.RealLevel;
+				to.MaxLevel = from.MaxLevel;
+				to.Experience = from.Experience;
+				to.Traits = from.Traits;
+				to.NextMate = from.NextMate;
+				to.Female = from.Female;
+
+
+
 				for ( int i = 0; i < from.Skills.Length; ++i )
 				{
 					to.Skills[i].Base = from.Skills[i].Base;

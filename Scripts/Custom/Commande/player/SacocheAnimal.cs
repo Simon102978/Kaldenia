@@ -56,6 +56,14 @@ namespace Server.Scripts.Commands
 				to.Str = from.Str;
 				to.Dex = from.Dex;
 				to.Int = from.Int;
+				to.Level = from.Level;
+				to.RealLevel = from.RealLevel;
+				to.MaxLevel = from.MaxLevel;
+				to.Experience = from.Experience;
+				to.Traits = from.Traits;
+				to.NextMate = from.NextMate;
+				to.Female = from.Female;
+
 				for (int i = 0; i < from.Skills.Length; ++i)
 				{
 					to.Skills[i].Base = from.Skills[i].Base;
@@ -67,7 +75,9 @@ namespace Server.Scripts.Commands
 				to.ControlMaster = from.ControlMaster;
 				to.MoveToWorld(from.Location, from.Map);
 				from.Delete();
+
 			}
+
 
 			protected override void OnTarget(Mobile from, object targeted)
 			{
@@ -92,11 +102,7 @@ namespace Server.Scripts.Commands
 								else
 								{
 									from.SendMessage("La saccoche doit être vide.");
-								}
-
-
-
-								
+								}								
 							}
 							else if (targeted is PackLlama pl1)
 							{
@@ -117,7 +123,6 @@ namespace Server.Scripts.Commands
 					}
 					else
 						from.SendMessage("C'est trop loin.");
-
 				}
 				else
 				{

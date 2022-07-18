@@ -1935,11 +1935,11 @@ namespace Server.Mobiles
 		public bool CanDecreaseSkill(SkillName skills)
 		{
 
-			if (Skills[skills].Value > 50) // sert à rien de calculer ca..
+			if (Skills[skills].Base > 50) // sert à rien de calculer ca..
 			{
 				return true;
 			}
-			else if (Skills[skills].Value == 0) // sert à rien de calculer ca..
+			else if (Skills[skills].Base == 0) // sert à rien de calculer ca..
 			{
 				return false;
 			}
@@ -1968,7 +1968,7 @@ namespace Server.Mobiles
 			foreach (SkillName item in ClasseSecondaire.Skill)
 			{
 
-				if (item == skills && Skills[skills].Value == 30)
+				if (item == skills && Skills[skills].Base == 30)
 				{
 					return false;
 				}
@@ -1976,7 +1976,7 @@ namespace Server.Mobiles
 
 			foreach (SkillName item in SkillGeneral)
 			{
-				if (item == skills && Skills[skills].Value == 30)
+				if (item == skills && Skills[skills].Base == 30)
 				{
 					return false;
 				}

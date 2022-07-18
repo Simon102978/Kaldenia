@@ -55,7 +55,7 @@ namespace Server.Spells.First
 
                 int toHeal;
 
-                toHeal = Caster.Skills.Magery.Fixed / 120;
+                toHeal = Caster.Skills.EvalInt.Fixed / 120;
                 toHeal += Utility.RandomMinMax(1, 4);
 
                 if (Caster != m)

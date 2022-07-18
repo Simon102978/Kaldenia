@@ -15,8 +15,8 @@ namespace Server.Spells.Chivalry
         public abstract int RequiredMana { get; }
         public abstract int RequiredTithing { get; }
         public abstract int MantraNumber { get; }
-        public override SkillName CastSkill => SkillName.Chivalry;
-        public override SkillName DamageSkill => SkillName.Chivalry;
+        public override SkillName CastSkill => SkillName.Magery;
+        public override SkillName DamageSkill => SkillName.Magery;
         public override bool ClearHandsOnCast => false;
         public override int CastRecoveryBase => 7;
 
@@ -103,7 +103,8 @@ namespace Server.Spells.Chivalry
         {
             Caster.PlaySound(0x1D6);
             Caster.NextSpellTime = Core.TickCount;
-        }
+			Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 502632); // The spell fizzles.
+		}
 
         public override void DoHurtFizzle()
         {

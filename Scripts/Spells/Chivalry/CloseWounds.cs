@@ -69,8 +69,8 @@ namespace Server.Spells.Chivalry
                 // TODO: Should caps be applied?
                 if (toHeal < 7)
                     toHeal = 7;
-                else if (toHeal > 39)
-                    toHeal = 39;
+                else if (toHeal > 15)
+                    toHeal = 15;
 
                 if ((m.Hits + toHeal) > m.HitsMax)
                     toHeal = m.HitsMax - m.Hits;

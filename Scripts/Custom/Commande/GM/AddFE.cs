@@ -55,7 +55,8 @@ namespace Server.Scripts.Commands
 							cp.AddToBackpack(fe);
 							cp.LastFERP = DateTime.Now;
 							cp.SendMessage("Félicitation ! Vous venez de recevoir une FE pour bon rp !");
-						}
+					    	CommandLogging.WriteLine(from, "{0} {1} a donné une FE rp à {2}.", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(cp));
+					}
 						else
 						{
 							from.SendMessage("Ce joueur a reçu une fe rp il y a moins d'une heure.");

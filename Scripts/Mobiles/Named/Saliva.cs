@@ -7,15 +7,13 @@ namespace Server.Mobiles
 {
 
 
-
-
-
     [CorpseName("Corps de Saliva")]
     public class Saliva : Harpy
     {
 		public DateTime DelayHurlement;
 		public DateTime DelayCoupVent;
 		public DateTime DelayAttraction;
+		public DateTime TuerSummoneur;
 		private DateTime m_GlobalTimer;
 
 
@@ -86,13 +84,16 @@ namespace Server.Mobiles
 							case 2:
 								Attraction();
 								break;
-
 							default:
 								break;
 						}
 					}
+					else
+					{
+						AntiSummon();
+					}
 
-					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
+					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(2, 5));
 				}
 			
 
@@ -157,7 +158,32 @@ namespace Server.Mobiles
 			}
 		}
 
+		public void AntiSummon()
+		{
+			if (TuerSummoneur < DateTime.UtcNow)
+			{
+				if (Combatant is BaseCreature bc)
+				{
+					if (bc.Summoned)
+					{
+						if (bc.ControlMaster is CustomPlayerMobile cp)
+						{
+							Combatant = cp;
 
+							Emote($"*se met à voler et plonge en piquer sur {cp.Name}*");
+
+							cp.Damage(10);
+
+							cp.Freeze(TimeSpan.FromSeconds(3));
+
+							this.Location = cp.Location;
+
+						}
+					}
+				}
+				TuerSummoneur = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 50));
+			}
+		}
 
 		public void CoupVent()
 		{

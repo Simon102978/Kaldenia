@@ -563,7 +563,7 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-            writer.Write(4); // version
+            writer.Write(5); // version
 
             writer.Write(m_PlayerConstructed);
             writer.Write(m_LowerStatReq);
@@ -604,6 +604,7 @@ namespace Server.Items
 
             switch (version)
             {
+				case 5:
                 case 4:
                     m_PlayerConstructed = reader.ReadBool();
                     m_LowerStatReq = reader.ReadInt();
@@ -612,16 +613,22 @@ namespace Server.Items
                     m_UsesRemaining = reader.ReadInt();
                     m_ShowUsesRemaining = reader.ReadBool();
                     goto case 2;
-                case 2:
-                    m_OriginalHue = reader.ReadInt();
-                    int idx = reader.ReadInt();
-                    m_BaitType = FishInfo.GetTypeFromIndex(idx);
-                    m_HookType = (HookType)reader.ReadInt();
+                case 2:         
+
+
+					m_Bait = (Bait)reader.ReadInt();
+					m_Charge = reader.ReadInt();
+					m_OriginalHue = reader.ReadInt();
+
+					int idx = reader.ReadInt();
+					m_BaitType = FishInfo.GetTypeFromIndex(idx);
+					m_HookType = (HookType)reader.ReadInt();
+
                     m_HookUses = reader.ReadInt();
                     m_BaitUses = reader.ReadInt();
                     m_EnhancedBait = reader.ReadBool();
-					m_Bait = (Bait)reader.ReadInt();
-					m_Charge = reader.ReadInt();
+				
+				
 
 					SaveFlag flags = (SaveFlag)reader.ReadInt();
 
@@ -684,6 +691,29 @@ namespace Server.Items
                     DistributeMaterialBonus();
                 }
             }
+
+
+			if (version <= 4)
+			{
+				Hue = 0;
+
+				m_Bait = Bait.Aucun;
+				m_Charge = 0;
+				m_OriginalHue = 0;
+				m_BaitType = null;
+				m_HookType = HookType.None;
+				m_HookUses = -1;
+				m_BaitUses = 0;
+			}
+
+
+
+
+
+
+
+
+
         }
 
         private enum SaveFlag

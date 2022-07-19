@@ -211,7 +211,11 @@ namespace Server.Items
         public int UsesRemaining
         {
             get { return m_UsesRemaining; }
-            set { m_UsesRemaining = value; InvalidateProperties(); }
+            set 
+			{ 
+				m_UsesRemaining = value; 
+				InvalidateProperties(); 
+			}
         }
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -299,6 +303,15 @@ namespace Server.Items
                     from.SendLocalizedMessage(1149854); //As the magic of the hook fades, it transforms to a normal fishhook.  The fishing pole returns to normal.
             }
 
+			UsesRemaining--;
+
+			if (UsesRemaining <= 0)
+			{
+				from.SendMessage("Votre canne à pêche se brise.");
+				this.Delete();
+			}
+
+
             if (caughtAnything && m_BaitType != null)
                 BaitUses--;
         }
@@ -334,13 +347,13 @@ namespace Server.Items
             Fishing.System.BeginHarvesting(from, this);
         }
 
-     /*   public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
+    /*    public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
         {
             base.GetContextMenuEntries(from, list);
 
             BaseHarvestTool.AddContextMenuEntries(from, this, list, Fishing.System);
-        }
-	 */
+        }*/
+	 
         public override bool CanEquip(Mobile from)
         {
             if (from.Str < GetStrRequirement())
@@ -418,7 +431,7 @@ namespace Server.Items
 
         public override void AddUsesRemainingProperties(ObjectPropertyList list)
         {
-            if (Siege.SiegeShard && m_ShowUsesRemaining)
+      //      if (Siege.SiegeShard && m_ShowUsesRemaining)
             {
                 list.Add(1060584, UsesRemaining.ToString()); // uses remaining: ~1_val~
             }
@@ -428,7 +441,9 @@ namespace Server.Items
         {
             base.GetProperties(list);
 
-            if (m_AosAttributes.Brittle != 0)
+			AddUsesRemainingProperties(list);
+
+			if (m_AosAttributes.Brittle != 0)
                 list.Add(1116209); // Brittle
 
             if (m_AosSkillBonuses != null)
@@ -704,6 +719,7 @@ namespace Server.Items
 				m_HookType = HookType.None;
 				m_HookUses = -1;
 				m_BaitUses = 0;
+				
 			}
 
 

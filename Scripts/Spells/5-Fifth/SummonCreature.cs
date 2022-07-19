@@ -72,7 +72,7 @@ namespace Server.Spells.Fifth
 				{
 					BaseCreature creature = (BaseCreature)Activator.CreateInstance(m_Creature);
 
-					//creature.ControlSlots = 2;
+					creature.ControlSlots = 2;
 
 					TimeSpan duration = TimeSpan.FromSeconds(4.0 * Caster.Skills[SkillName.Magery].Value);
 

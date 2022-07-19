@@ -1492,7 +1492,7 @@ namespace Server.Engines.Craft
 				#endregion
 			*/
 		
-			#region High Seas
+	/*		#region High Seas
 			if (Core.HS)
             {
                 // Fish Oil Flask ( Oléo de peixe )
@@ -1500,7 +1500,7 @@ namespace Server.Engines.Craft
                 AddRes(index, typeof(RawFishSteak), 1044476, 8, 1044253);
                 AddRes(index, typeof(SackFlour), 1044468, 1, 1044253);
             }
-            #endregion
+            #endregion*/
         }
     }
 }

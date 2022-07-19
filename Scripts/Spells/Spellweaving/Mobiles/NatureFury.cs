@@ -33,7 +33,7 @@ namespace Server.Mobiles
             Fame = 0;
             Karma = 0;
 
-            ControlSlots = 2;
+            ControlSlots = 4;
         }
 
         public NatureFury(Serial serial)

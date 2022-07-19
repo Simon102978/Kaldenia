@@ -35,10 +35,11 @@ namespace Server.Items
                 // The item must be in your backpack to use it.
                 from.SendLocalizedMessage(1060640);
             }
-            else if (from.Skills.Ninjitsu.Value < 50.0)
+            else if (from.Skills.Hiding.Value < 50.0)
             {
-                // You need at least ~1_SKILL_REQUIREMENT~ ~2_SKILL_NAME~ skill to use that ability.
-                from.SendLocalizedMessage(1063013, "50\tNinjitsu");
+				// You need at least ~1_SKILL_REQUIREMENT~ ~2_SKILL_NAME~ skill to use that ability.
+				from.SendMessage("Vous devez au moins avoir 50 en hiding pour utiliser la bombe.");
+             //   from.SendLocalizedMessage(1063013, "50\tHiding");
             }
             else if (from.NextSkillTime > Core.TickCount)
             {

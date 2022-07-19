@@ -1038,6 +1038,12 @@ namespace Server
 			return -100;
 		}
 
+		public virtual string GetBaseName()
+		{
+			return m_Name;
+		}
+
+
 		public virtual int GetMaxResistance(ResistanceType type)
 		{
 			if (m_Player)

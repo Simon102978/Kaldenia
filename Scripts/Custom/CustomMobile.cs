@@ -131,6 +131,16 @@ namespace Server.Mobiles
 
 		}
 
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string BaseName
+		{
+			get => GetBaseName();		
+		}
+
+
+
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Classe ClasseSecondaire {
 			get => m_ClasseSecondaire;

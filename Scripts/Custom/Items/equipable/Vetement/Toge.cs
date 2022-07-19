@@ -281,7 +281,10 @@ public override void Deserialize(GenericReader reader)
 public class Toge8 :  BaseOuterTorso
 
 	{
-	[Constructable]
+
+		public override bool Disguise { get { return true; } }
+
+		[Constructable]
 	public Toge8()
             : this(0)
 

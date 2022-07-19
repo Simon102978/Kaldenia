@@ -143,11 +143,14 @@ namespace Server.Items
             /* <UBWS> */
             if (weapon.WeaponAttributes.UseBestSkill > 0 && (from.Skills[SkillName.Swords].Base >= reqSkill || from.Skills[SkillName.Macing].Base >= reqSkill || from.Skills[SkillName.Fencing].Base >= reqSkill))
                 return true;
-            /* </UBWS> */
+			/* </UBWS> */
 
-            from.SendLocalizedMessage(1060182, reqSkill.ToString()); // You need ~1_SKILL_REQUIREMENT~ weapon skill to perform that attack
 
-            return false;
+			from.SendMessage($"Vous devez avoir {reqSkill.ToString()} {skill.ToString()}.");
+
+			//    from.SendLocalizedMessage(1060182, reqSkill.ToString()); // You need ~1_SKILL_REQUIREMENT~ weapon skill to perform that attack
+
+			return false;
         }
 
         private int GetSkillLocalization(SkillName skill)

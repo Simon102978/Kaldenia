@@ -5,6 +5,9 @@ namespace Server.Items
 {
 	public class Potato : BaseFood
 	{
+
+		public override double DefaultWeight => 0.4;
+
 		[Constructable]
 		public Potato() : this( 1 )
 		{

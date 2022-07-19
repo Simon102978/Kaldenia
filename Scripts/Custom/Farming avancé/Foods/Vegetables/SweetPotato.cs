@@ -5,6 +5,8 @@ namespace Server.Items
 {
 	public class SweetPotato : BaseFood
 	{
+		public override double DefaultWeight => 0.4;
+
 		[Constructable]
 		public SweetPotato() : this( 1 )
 		{
@@ -16,6 +18,7 @@ namespace Server.Items
 			FillFactor = 2;
 			Name = "Sweet Potato";
 			Hue = 0x45E;
+
 		}
 
 		public SweetPotato( Serial serial ) : base( serial )

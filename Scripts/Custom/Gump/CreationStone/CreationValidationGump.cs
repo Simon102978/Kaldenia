@@ -64,10 +64,6 @@ namespace Server.Gumps
 				}			
 			}
 
-
-
-
-
 			info = info + "Skills: \n\n";
 
 			foreach (KeyValuePair<SkillName,int> item in Skill)
@@ -87,7 +83,7 @@ namespace Server.Gumps
 
 			   if (m_Creation.Reroll != null)
 			  {
-				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpériences: " + Math.Round(creationPerso.Reroll.ExperienceNormal * 0.75 + creationPerso.Reroll.ExperienceRP );
+				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpériences: " + Math.Round(creationPerso.Reroll.ExperienceNormal  + creationPerso.Reroll.ExperienceRP * 0.5 );
 			  }
 
 			AddSection(x - 10, y, 303, 508, "Information", info);

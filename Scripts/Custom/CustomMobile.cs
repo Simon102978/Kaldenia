@@ -2186,9 +2186,14 @@ namespace Server.Mobiles
 		{
 			Server.Accounting.Account accFrom = (Server.Accounting.Account)this.Account;
 
-			if (accFrom != null)
+			if (accFrom != null )
 			{
-				accFrom.AddReroll(new Reroll(this));
+				if (accFrom.AccessLevel == AccessLevel.Player)
+				{
+					accFrom.AddReroll(new Reroll(this));
+				}
+
+			
 			}
 			
 		}

@@ -1,12 +1,16 @@
 using Server.Items;
 using Server.Misc;
+using System;
 
 namespace Server.Mobiles
 {
 	[CorpseName("Le corps d'un Kuya")]
 	public class Kuya : BaseCreature
     {
-        [Constructable]
+		public DateTime DelayCharge;
+		private DateTime m_GlobalTimer;
+
+		[Constructable]
         public Kuya()
             : base(AIType.AI_Samurai, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
@@ -97,6 +101,56 @@ namespace Server.Mobiles
 			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
 
 		}
+
+
+		public override void OnThink()
+		{
+			base.OnThink();
+
+			if (Combatant != null)
+			{
+				if (m_GlobalTimer < DateTime.UtcNow)
+				{
+
+					if (!this.InRange(Combatant.Location, 3))
+					{
+						Charge();
+					}
+					
+
+					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 15));
+				}
+
+
+			}
+		}
+
+		public void Charge()
+		{
+			if (DelayCharge < DateTime.UtcNow)
+			{				
+					if (Combatant is CustomPlayerMobile cp)
+					{
+
+						if (cp.CheckRoux())
+						{
+							Emote($"*Effectue l'attaque anti-roux vers {cp.Name}*");
+							Say($"Mort aux roux !");
+
+							cp.Damage(35);
+
+							cp.Freeze(TimeSpan.FromSeconds(3));
+
+							this.Location = cp.Location;
+						}
+						
+					}
+				
+
+				DelayCharge = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 50));
+			}
+		}
+
 
 		public override TribeType Tribe => TribeType.Kuya;
 

@@ -42,7 +42,7 @@ namespace Server.Mobiles
 		private int m_TotalNormalFE;
 		private int m_TotalRPFE;
 
-	
+
 
 
 		private DateTime m_lastLoginTime;
@@ -135,7 +135,7 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public string BaseName
 		{
-			get => GetBaseName();		
+			get => GetBaseName();
 		}
 
 
@@ -177,15 +177,15 @@ namespace Server.Mobiles
 		}
 
 		[CommandProperty(AccessLevel.Owner)]
-		public StatutSocialEnum StatutSocial 
-		{ 
-			get => m_StatutSocial; 
-			set 
+		public StatutSocialEnum StatutSocial
+		{
+			get => m_StatutSocial;
+			set
 			{
-				if (m_StatutSocial ==  StatutSocialEnum.Possession && value >= StatutSocialEnum.Peregrin && m_Maitre != null)
+				if (m_StatutSocial == StatutSocialEnum.Possession && value >= StatutSocialEnum.Peregrin && m_Maitre != null)
 				{
 					m_Maitre.RemoveEsclave(this, false);
-				}		
+				}
 				m_StatutSocial = value;
 			}
 		}
@@ -465,7 +465,7 @@ namespace Server.Mobiles
 				{
 					m_Esclaves.Add(m);
 				}
-				
+
 				return true;
 			}
 			else
@@ -495,17 +495,17 @@ namespace Server.Mobiles
 				}
 			}
 
-				List<Mobile> newEsclave = new List<Mobile>();
+			List<Mobile> newEsclave = new List<Mobile>();
 
-				foreach (Mobile item in m_Esclaves)
+			foreach (Mobile item in m_Esclaves)
+			{
+				if (m != item)
 				{
-					if (m != item)
-					{
-						newEsclave.Add(item);
-					}
+					newEsclave.Add(item);
 				}
-				m_Esclaves = newEsclave;
-						
+			}
+			m_Esclaves = newEsclave;
+
 		}
 
 		public bool RoomForSlave()
@@ -708,7 +708,7 @@ namespace Server.Mobiles
 			}
 
 
-		//	bonus += GetAptitudeValue(AptitudeEnum.Predation) * 3;
+			//	bonus += GetAptitudeValue(AptitudeEnum.Predation) * 3;
 			// Mettre l'aptitude de rodeur ici
 
 			return base.GetDetectionBonus(mobile) + bonus;
@@ -822,7 +822,7 @@ namespace Server.Mobiles
 			{
 				if (Banker.Deposit(this, GainGold))
 				{
-					SendMessage(HueManager.GetHue(HueManagerList.Green), "Votre guilde a déposé votre salaire de " + GainGold + " pièces d'or dans votre coffre de banque."); 
+					SendMessage(HueManager.GetHue(HueManagerList.Green), "Votre guilde a déposé votre salaire de " + GainGold + " pièces d'or dans votre coffre de banque.");
 				}
 			}
 			else
@@ -872,7 +872,7 @@ namespace Server.Mobiles
 			if (gold > Salaire)
 			{
 				int Payment = gold - Salaire;
-				
+
 				Server.Custom.System.GuildRecruter.PayLog(cgm, Payment);
 				GainGold(Payment, true);
 
@@ -881,7 +881,7 @@ namespace Server.Mobiles
 					CustomPersistence.Salaire += Payment;
 				}
 
-				
+
 
 				Salaire = Payment;
 			}
@@ -1103,7 +1103,7 @@ namespace Server.Mobiles
 							return false;
 						}
 					}
-					case Server.DeguisementAction.Identite:
+				case Server.DeguisementAction.Identite:
 					{
 						if (skill > 80)
 						{
@@ -1163,7 +1163,7 @@ namespace Server.Mobiles
 				return m_Deguisement[IdentiteID];
 			}
 
-			return new Deguisement(this);	
+			return new Deguisement(this);
 		}
 
 		public Deguisement GetDeguisement(int Identite)
@@ -1187,7 +1187,7 @@ namespace Server.Mobiles
 				m_Deguisement.Add(IdentiteID, deg);
 			}
 
-			
+
 		}
 
 
@@ -1278,7 +1278,7 @@ namespace Server.Mobiles
 
 		public int TileToDontFall { get; set; }
 		// 0   1    2    3    4    5    6    7    8    9    10   11   12
-		private static int[] m_RunningTable = new int[] {100, 100, 100, 050, 025, 000, 000, 000, 000, 000, 000, 000 };
+		private static int[] m_RunningTable = new int[] { 100, 100, 100, 050, 025, 000, 000, 000, 000, 000, 000, 000 };
 		private static int[] m_BeingAttackedTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 075, 050, 005 };
 		private static int[] m_MeleeAttackingTable = new int[] { 100, 100, 100, 100, 100, 075, 050, 025, 005, 000, 000 };
 		private static int[] m_CastAttackingTable = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
@@ -1292,7 +1292,7 @@ namespace Server.Mobiles
 			if (!Mounted)
 				return true;
 
-			if(Mount is Server.Multis.RowBoat)
+			if (Mount is Server.Multis.RowBoat)
 				return true;
 
 			if (AccessLevel >= AccessLevel.GameMaster)
@@ -1472,7 +1472,7 @@ namespace Server.Mobiles
 						Skills[item].Base = 100;
 					}
 				}
-				
+
 				ClasseSecondaire = Classe.GetClasse(-1);
 				return false;
 			}
@@ -1498,7 +1498,7 @@ namespace Server.Mobiles
 
 				foreach (SkillName item in cl.Skill)
 				{
-					Skills[item].Base -= 20;			
+					Skills[item].Base -= 20;
 				}
 
 				ClassePrimaire = Classe.GetClasse(-1);
@@ -1556,7 +1556,7 @@ namespace Server.Mobiles
 			{
 				case 1:
 					{
-						if (ClassePrimaire != null )
+						if (ClassePrimaire != null)
 						{
 							foreach (SkillName item in ClassePrimaire.Skill)
 							{
@@ -1610,7 +1610,7 @@ namespace Server.Mobiles
 						}
 
 						// classe primaire
-					
+
 						break;
 					}
 				case 2:
@@ -1662,7 +1662,7 @@ namespace Server.Mobiles
 							}
 						}
 
-						
+
 						break;
 					}
 				case 3:
@@ -1712,10 +1712,10 @@ namespace Server.Mobiles
 
 									if (Skills[item].Base > 100)
 									{
-								     	m_feAttente += (int)Math.Round(Skills[item].Base) - 100;
+										m_feAttente += (int)Math.Round(Skills[item].Base) - 100;
 										Skills[item].Base = 100;
 									}
-									
+
 
 
 								}
@@ -1726,7 +1726,7 @@ namespace Server.Mobiles
 							}
 						}
 
-						
+
 
 
 						break;
@@ -1783,7 +1783,7 @@ namespace Server.Mobiles
 					else
 					{
 						return true;
-					}				
+					}
 				case StatType.Dex:
 					if (RawDex == 25)
 					{
@@ -1827,8 +1827,8 @@ namespace Server.Mobiles
 						else
 						{
 							return true;
-						}				
-					}					
+						}
+					}
 				case StatType.Dex:
 					{
 						if (RawDex == 100)
@@ -1874,7 +1874,7 @@ namespace Server.Mobiles
 						RawInt++;
 						break;
 				}
-			}			
+			}
 		}
 
 		public void DecreaseStat(StatType stats)
@@ -2032,7 +2032,7 @@ namespace Server.Mobiles
 			}
 
 		}
-	
+
 		public override void OnDeath(Container c)
 		{
 			base.OnDeath(c);
@@ -2046,11 +2046,11 @@ namespace Server.Mobiles
 			}
 			else
 			{
-			/*	if (m_StatutSocial < StatutSocialEnum.Possession)
-				{
-					MoveToWorld(new Point3D(5340,2861,0), Map.Felucca);
-					return;
-				}*/
+				/*	if (m_StatutSocial < StatutSocialEnum.Possession)
+					{
+						MoveToWorld(new Point3D(5340,2861,0), Map.Felucca);
+						return;
+					}*/
 
 
 
@@ -2085,7 +2085,7 @@ namespace Server.Mobiles
 
 			Frozen = false;
 
-			if (Corpse != null )
+			if (Corpse != null)
 			{
 				ArrayList list = new ArrayList();
 
@@ -2186,26 +2186,37 @@ namespace Server.Mobiles
 		{
 			Server.Accounting.Account accFrom = (Server.Accounting.Account)this.Account;
 
-			if (accFrom != null )
+			if (accFrom != null)
 			{
 				if (accFrom.AccessLevel == AccessLevel.Player)
 				{
 					accFrom.AddReroll(new Reroll(this));
 				}
 
-			
+
 			}
-			
+
 		}
 
 		public override bool CheckPackage()
 		{
-			Item package =  (Item)Backpack.FindItemByType(typeof(Server.Custom.Packaging.Packages.CustomPackaging));
+			Item package = (Item)Backpack.FindItemByType(typeof(Server.Custom.Packaging.Packages.CustomPackaging));
 
 			if (package != null)
 			{
 				return true;
 			}
+
+			return false;
+		}
+
+		public bool CheckRoux()
+		{
+			if (HairHue >= 1502 && < 1534)
+			{
+				return true;
+			}
+		
 
 			return false;
 		}

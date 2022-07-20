@@ -2212,7 +2212,7 @@ namespace Server.Mobiles
 
 		public bool CheckRoux()
 		{
-			if (HairHue >= 1502 && < 1534)
+			if ((HairHue >= 1602 && HairHue  < 1655) || (HairHue >= 1502 && HairHue < 1534) || (HairHue >= 1202 && HairHue < 1226))
 			{
 				return true;
 			}

@@ -1,6 +1,7 @@
 using Server.Items;
 using Server.Misc;
 using System;
+using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
@@ -98,7 +99,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
 			AddLoot(LootPack.Rich);
-			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
 
 		}
 
@@ -123,6 +124,72 @@ namespace Server.Mobiles
 
 
 			}
+		}
+
+		public override void OnDamage(int amount, Mobile from, bool willKill)
+		{
+
+			if (Hits / HitsMax < 0.25 && GetDistanceToSqrt(Home) > 10)
+			{
+
+				int Range = 10;
+				List<KuyaMage> targets = new List<KuyaMage>();
+
+				IPooledEnumerable eable =  Map.GetMobilesInRange(Home);
+
+				foreach (Mobile m in eable)
+				{
+					if (this != m && (m is KuyaMage km))
+					{
+						targets.Add(km);
+					}
+				}
+
+				eable.Free();
+
+
+
+				if (targets.Count > 0)
+				{
+
+
+
+
+
+					for (int i = 0; i < targets.Count; ++i)
+					{
+						KuyaMage m = targets[i];
+
+						if (m.Hits == m.HitsMax)
+						{
+							Point3D location = this.Location;
+
+							FixedParticles(0x3709, 1, 30, 9904, 1108, 6, EffectLayer.RightFoot);
+							PlaySound(0x22F);
+
+							this.Location = m.Location;
+
+
+							m.FixedParticles(0x3709, 1, 30, 9904, 1108, 6, EffectLayer.RightFoot);
+							m.PlaySound(0x22F);
+
+							m.Location = location;
+							m.Warmode = true;
+							m.Combatant = this.Combatant;
+
+							m.Say("Substitution !");
+
+						}
+
+
+
+
+					}
+				}
+			}
+
+		
+		
 		}
 
 		public void Charge()

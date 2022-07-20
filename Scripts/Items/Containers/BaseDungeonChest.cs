@@ -5,7 +5,6 @@ namespace Server.Items
     public abstract class BaseDungeonChest : LockableContainer
     {
         public static readonly string m_DeleteTimerID = "DungeonChest";
-
         public override int DefaultGumpID => 0x42;
         public override int DefaultDropSound => 0x42;
         public override Rectangle2D Bounds => new Rectangle2D(20, 105, 150, 180);

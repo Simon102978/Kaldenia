@@ -147,7 +147,12 @@ namespace Server
             bool ranged = type == DamageType.Ranged;
             BaseQuiver quiver = null;
 
-            quiver = from.FindItemOnLayer(Layer.Cloak) as BaseQuiver;
+			if (from != null)
+			{
+				quiver = from.FindItemOnLayer(Layer.Cloak) as BaseQuiver;
+			}
+
+           
 
             int totalDamage;
 

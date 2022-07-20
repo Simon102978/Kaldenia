@@ -78,7 +78,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Gems, 6);
             AddLoot(LootPack.BonsaiSeed);
-			AddLoot(LootPack.LootItem<Items.Gold>(250, 500));
+			AddLoot(LootPack.LootItem<Items.Gold>(2500, 5000));
 		}
 
         // TODO: Hit Lightning Area

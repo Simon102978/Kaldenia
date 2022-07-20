@@ -74,7 +74,7 @@ namespace Server.Gumps
 			{
 				if (i2 >= page * 28 && line < 28)
 				{
-					AddHtmlTexteColored(x + 10 , y + 40 + line * 20, 300, item.Key.Name, "#ffffff");
+					AddHtmlTexteColored(x + 10 , y + 40 + line * 20, 300, item.Key.GetBaseName(), "#ffffff");
 					AddHtmlTexteColored(x + 300, y + 40 + line * 20, 300, item.Value.ToString(), "#ffffff");
 					AddHtmlTexteColored(x + 400, y + 40 + line * 20, 300, item.Key.FENormalTotal.ToString(), "#ffffff");
 					AddHtmlTexteColored(x + 500, y + 40 + line * 20, 300, item.Key.FERPTotal.ToString(), "#ffffff");

@@ -94,7 +94,7 @@ namespace Server.Gumps
 			AddSection(x - 10, y, 250, 180, "Informations");
 
 			AddHtmlTexte(x +10, y + 40, 100, "Nom:");
-			AddHtmlTexte(x + 125, y + 40, 150, from.Name);
+			AddHtmlTexte(x + 125, y + 40, 150, from.GetBaseName());
 
 			AddHtmlTexte(x + 10, y + 60, 100, "Race:");
 			AddHtmlTexte(x + 125, y + 60, 150, from.Race.Name);

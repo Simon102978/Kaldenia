@@ -54,7 +54,7 @@ namespace Server.Custom
 					
 
 				using (StreamWriter sw = new StreamWriter(fileName, true))
-					sw.WriteLine(DateTime.Now.ToString() + ";" + player.Name + ";" + player.Account.Username + ";" + contrebandier.ToString() + ";" + item + ";" + pricebyitem.ToString() + ";" + amount.ToString() + ";" + (amount * pricebyitem).ToString());  // CSV fIle type..
+					sw.WriteLine(DateTime.Now.ToString() + ";" + player.GetBaseName() + ";" + player.Account.Username + ";" + contrebandier.ToString() + ";" + item + ";" + pricebyitem.ToString() + ";" + amount.ToString() + ";" + (amount * pricebyitem).ToString());  // CSV fIle type..
 			}
 		}
 

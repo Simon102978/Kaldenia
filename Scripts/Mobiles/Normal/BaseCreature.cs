@@ -7618,7 +7618,17 @@ namespace Server.Mobiles
         public virtual int FindPlayerDelayHigh => 10;
         public virtual int FindPlayerDelayLow => 9;
 
-        public virtual void TryFindPlayer()
+
+		public override int GetDetectionBonus(Mobile mobile)
+		{
+			
+
+			return base.GetDetectionBonus(mobile) + (int)Skills[SkillName.Tactics].Value;
+		}
+
+
+
+		public virtual void TryFindPlayer()
         {
             if (Deleted || Map == null)
             {

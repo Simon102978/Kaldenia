@@ -1,10 +1,15 @@
 using Server.Items;
+using System;
 
 namespace Server.Mobiles
 {
     public class Executioner : BaseCreature
     {
-        [Constructable]
+		public DateTime DelayCharge;
+		public DateTime TuerSummoneur;
+		private DateTime m_GlobalTimer;
+
+		[Constructable]
         public Executioner()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
@@ -70,7 +75,87 @@ namespace Server.Mobiles
 		public override TribeType Tribe => TribeType.Brigand;
 		public bool BlockReflect { get; set; }
 
-        public override int Damage(int amount, Mobile from, bool informMount, bool checkDisrupt)
+
+
+
+		public override void OnThink()
+		{
+			base.OnThink();
+
+			if (Combatant != null)
+			{
+				if (m_GlobalTimer < DateTime.UtcNow)
+				{
+
+					if (!this.InRange(Combatant.Location, 3))
+					{
+						Charge();
+					}
+					else
+					{
+						AntiSummon();
+					}
+
+					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 15));
+				}
+
+
+			}
+		}
+
+		public void Charge()
+		{
+			if (DelayCharge < DateTime.UtcNow)
+			{
+				if (TuerSummoneur < DateTime.UtcNow)
+				{
+					if (Combatant is CustomPlayerMobile cp)
+					{
+
+						Emote($"*Effectue une charge vers {cp.Name}*");
+
+						cp.Damage(35);
+
+						cp.Freeze(TimeSpan.FromSeconds(3));
+
+						this.Location = cp.Location;
+					}
+				}
+
+				DelayCharge = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 50));
+			}
+		}
+
+		public void AntiSummon()
+		{
+			if (TuerSummoneur < DateTime.UtcNow)
+			{
+				if (Combatant is BaseCreature bc)
+				{
+					if (bc.Summoned)
+					{
+						if (bc.ControlMaster is CustomPlayerMobile cp)
+						{
+							Combatant = cp;
+
+							Emote($"*Effectue une charge vers {cp.Name}*");
+
+							cp.Damage(35);
+
+							cp.Freeze(TimeSpan.FromSeconds(3));
+
+							this.Location = cp.Location;
+
+						}
+					}
+				}
+				TuerSummoneur = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 50));
+			}
+		}
+
+
+
+		public override int Damage(int amount, Mobile from, bool informMount, bool checkDisrupt)
         {
             int dam = base.Damage(amount, from, informMount, checkDisrupt);
 

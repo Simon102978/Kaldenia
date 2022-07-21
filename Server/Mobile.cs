@@ -2961,7 +2961,7 @@ namespace Server
 				bonus += 30;
 			}
 
-			ComputeLightLevels(out int global, out int personal);
+	/*		ComputeLightLevels(out int global, out int personal);
 
 			int lightLevel = global + personal;
 
@@ -2976,7 +2976,7 @@ namespace Server
 			else
 			{
 				bonus += 20;
-			}
+			}*/
 
 			return bonus;
 		}

@@ -146,6 +146,15 @@ namespace Server.Items
                 item.SendLocalizedMessageTo(from, 502076); // The lock quickly yields to your skill.
                 from.PlaySound(0x4A);
                 lockpickable.LockPick(from);
+
+				if (Utility.Random(4) == 0)
+				{
+					SendLocalizedMessageTo(from, 502074);
+					from.PlaySound(0x3A4);
+					Consume();
+				}
+
+
             }
             else
             {

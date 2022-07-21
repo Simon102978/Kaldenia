@@ -395,9 +395,23 @@ namespace Server.Multis
         public BoatMountItem VirtualMount { get; private set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime LastStuck { get; set; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Stuck
 		{
-			get { return m_Stuck; }
+			get 
+			{
+
+				if (LastStuck.AddSeconds(30) < DateTime.Now)
+				{
+					Stuck = false;
+					return false;
+				}
+
+
+				return m_Stuck; 
+			}
 			set
 			{
 				if (!m_Stuck && value)
@@ -411,7 +425,7 @@ namespace Server.Multis
 
 						pm.SetMountBlock(BlockMountType.DismountRecovery, TimeSpan.FromSeconds(30), true);
 
-						Timer.DelayCall(TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30), Unstuck);
+						LastStuck = DateTime.Now;
 
 					}			
 				}
@@ -799,21 +813,6 @@ namespace Server.Multis
             if (SPlank != null)
                 SPlank.Map = Map;
         }
-
-
-		public void Unstuck()
-		{
-
-			if (m_Stuck)
-			{
-				
-
-				Stuck = false;
-			}
-
-
-
-		}
 
         public override void GetProperties(ObjectPropertyList list)
         {

@@ -1,4 +1,5 @@
 using System;
+using Server.Mobiles;
 
 namespace Server.Items
 {
@@ -91,7 +92,18 @@ namespace Server.Items
                                 else
                                     damage = m_TrapPower;
 
-                                AOS.Damage(from, damage, 0, 100, 0, 0, 0);
+
+								if (from is CustomPlayerMobile cp)
+								{
+									cp.TrapDamage(damage, 0, 100, 0, 0, 0);
+								}
+								else
+								{
+									AOS.Damage(from, damage, 0, 100, 0, 0, 0);
+								}
+
+
+								
 
                                 // Your skin blisters from the heat!
                                 from.LocalOverheadMessage(Network.MessageType.Regular, 0x2A, 503000);
@@ -103,9 +115,25 @@ namespace Server.Items
                             break;
                         }
                     case TrapType.MagicTrap:
-                        {
-                            if (from.InRange(loc, 1))
-                                from.Damage(m_TrapPower);
+						{
+							if (from.InRange(loc, 2))
+							{
+
+								if (from is CustomPlayerMobile cp)
+								{
+									cp.TrapDamage(m_TrapPower, 0, 100, 0, 0, 0);
+								}
+								else
+								{
+									from.Damage(m_TrapPower);
+								}
+
+								
+
+							}
+
+
+                               
                             //AOS.Damage( from, m_TrapPower, 0, 100, 0, 0, 0 );
 
                             Effects.PlaySound(loc, Map, 0x307);
@@ -133,7 +161,18 @@ namespace Server.Items
                                 else
                                     damage = m_TrapPower;
 
-                                AOS.Damage(from, damage, 100, 0, 0, 0, 0);
+								if (from is CustomPlayerMobile cp)
+								{
+									cp.TrapDamage(damage, 100, 0, 0, 0, 0);
+								}
+								else
+								{
+									AOS.Damage(from, damage, 100, 0, 0, 0, 0);
+									
+								}
+
+
+								
 
                                 // A dart imbeds itself in your flesh!
                                 from.LocalOverheadMessage(Network.MessageType.Regular, 0x62, 502998);
@@ -157,7 +196,17 @@ namespace Server.Items
                                 }
                                 else
                                 {
-                                    AOS.Damage(from, m_TrapPower, 0, 0, 0, 100, 0);
+									if (from is CustomPlayerMobile cp)
+									{
+										cp.TrapDamage(m_TrapPower, 0, 0, 0, 100, 0);
+									}
+									else
+									{
+										AOS.Damage(from, m_TrapPower, 0, 0, 0, 100, 0);
+
+									}
+									
+									
                                     poison = Poison.Greater;
                                 }
 

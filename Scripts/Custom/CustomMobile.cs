@@ -97,6 +97,9 @@ namespace Server.Mobiles
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Vulnerability { get; set; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool DeathShot { get; set; }
 		public int VulnerabilityDuration => 5; //minutes
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -2039,7 +2042,7 @@ namespace Server.Mobiles
 
 			LastDeathTime = DateTime.Now;
 
-			if (!Vulnerability)
+			if (!Vulnerability && !DeathShot)
 			{
 				Frozen = true;
 				Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration), new TimerStateCallback(RessuciterOverTime_Callback), this);
@@ -2076,6 +2079,22 @@ namespace Server.Mobiles
 			Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration + PreventPvpAttackDuration), new TimerStateCallback(RetourCombatPvP_Callback), this);
 
 			Server.Spells.Fifth.IncognitoSpell.StopTimer(this);
+		}
+
+
+
+
+
+
+
+		public void TrapDamage(int damage, int phys, int fire, int cold, int pois, int nrgy)
+		{
+			DeathShot = true;
+
+			AOS.Damage(this, damage, phys, fire, cold, pois, nrgy);
+
+			DeathShot = false;
+
 		}
 
 

@@ -94,7 +94,7 @@ namespace Server.SkillHandlers
                     {
                         from.PlaySound(0x241);
 
-                        if (from.CheckTargetSkill(SkillName.Lockpicking, targ, targ.TrapPower - 10, targ.TrapPower + 10))
+                        if (from.CheckTargetSkill(SkillName.Lockpicking, targ, targ.TrapPower * 0.5, targ.TrapPower + 10))
                         {
                             targ.TrapPower = 0;
                             targ.TrapLevel = 0;

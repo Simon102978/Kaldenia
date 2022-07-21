@@ -13,6 +13,8 @@ namespace Server.Custom
 		public static int TaxesMoney { get; set; }
 		public static int Salaire { get; set; }
 
+		public static int SlaveSell { get; set; }
+
 		public static DateTime ProchainePay { get; set; }
 
 		public static Dictionary<string, double> SellItems = new Dictionary<string, double>();
@@ -81,7 +83,9 @@ namespace Server.Custom
                 FilePath,
                 writer =>
                 {
-                    writer.Write(4);
+                    writer.Write(5);
+
+					writer.Write(SlaveSell);
 
 					writer.Write(Location);
 
@@ -111,6 +115,11 @@ namespace Server.Custom
 
 					switch (version)
 					{
+						case 5:
+							{
+								SlaveSell = reader.ReadInt();
+								goto case 4;
+							}
 						case 4:
 							{
 								Location = reader.ReadInt();

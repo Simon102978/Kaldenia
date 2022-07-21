@@ -40,11 +40,16 @@ namespace Server.Gumps
 			AddHtmlTexteColored(xSecondColum, y + line * scale, 120, "Locations:", "#FFFFFF");
 			int LocationTaxes = CustomPersistence.Location;
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + LocationTaxes.ToString("### ### ##0") + "</p>", "#FFFFFF");
+			line++;
+
+			AddHtmlTexteColored(xSecondColum, y + line * scale, 120, "Esclave:", "#FFFFFF");
+			int SlaveSell = CustomPersistence.SlaveSell;
+			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + SlaveSell.ToString("### ### ##0") + "</p>", "#FFFFFF");
 
 			AddHorizontalLigne(xAmountColum - 20, y + line * scale + 15, 120);
 			line++;
 
-			int Revenue = TaxesGold + LocationTaxes;
+			int Revenue = TaxesGold + LocationTaxes + SlaveSell;
 			AddHtmlTexteColored(xSecondColum, y + line * scale, 200, "Total des revenues :", "#FFFFFF");
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + Revenue.ToString("### ### ##0") + "</p>", "#FFFFFF");
 

@@ -133,6 +133,13 @@ namespace Server.Gumps
 						}
 						else if (esclave.AddHire(m_From))
 						{
+							if (m_From.AccessLevel == AccessLevel.Player)
+							{
+								Server.Custom.CustomPersistence.SlaveSell += m_Vendor.Inventory[info.ButtonID - 1000].Price;
+							}
+
+							
+
 							m_Vendor.RemoveSlave(info.ButtonID - 1000);
 
 							esclave.Say("Je vous suis maitre.");

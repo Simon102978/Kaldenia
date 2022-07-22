@@ -114,6 +114,13 @@ namespace Server.Engines.Craft
 			#region Ingrédients secs
 			index = AddCraft(typeof(SackFlour), "Ingrédients secs", "Sac de farine", 0.0, 50.0, typeof(WheatSheaf), 1044489, 2, 1044490);
 			SetNeedMill(index, true);
+			index = AddCraft(typeof(DriedOnions), "Ingrédients secs", "Onions Déshydratés", 60.0, 100.0, typeof(Onion), "Onions", 5, 1044253);			
+			index = AddCraft(typeof(DriedHerbs), "Ingrédients secs", "Herbes sèches", 60.0, 100.0, typeof(Garlic), "Garlic", 2, 1044253);
+			AddRes(index, typeof(Ginseng), "Ginseng", 2, 1044253);
+			AddRes(index, typeof(FreshGinger), "Gingembre", 2, "You need more ginger");		
+			index = AddCraft(typeof(BasketOfHerbsFarm), "Ingrédients secs", "Panier d'herbes fraiches", 60.0, 100.0, typeof(DriedHerbs), "Dried Herbs", 1, 1044253);
+			AddRes(index, typeof(DriedOnions), "Dried Onions", 1, 1044253);
+			
 			#endregion
 			#region Ingrédients humides
 			index = AddCraft(typeof(CocoaButter), "Ingrédients humides", "Beurre de cacao", 0.0, 50.0, typeof(CocoaPulp), 1080530, 1, 1044253);
@@ -145,7 +152,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(WasabiClumps), "Sauces", "Motte de wasabi", 40.0, 60.0, typeof(BaseBeverage), 1046458, 1, 1044253);
 			AddRes(index, typeof(WoodenBowlOfPeas), 1025633, 3, 1044253);
 			index = AddCraft(typeof(Vinegar), "Sauces", "Vinaigre", 40.0, 60.0, typeof(Apple), "apples", 5, 1044253);
-			AddRes(index, typeof(BottleOfWine), "Vin", 1, 1044253);
+			//AddRes(index, typeof(BottleOfWine), "Vin", 1, 1044253);
 			////AddRecipe(index, (int)CookRecipesExp.Vinegar);
 			SetNeedHeat(index, true);
 			index = AddCraft(typeof(BarbecueSauce), "Sauces", "Sauce BBQ", 40.0, 60.0, typeof(Tomato), "Tomato", 1, 1044253);
@@ -183,8 +190,16 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(JarHoney), "Miel", 1, 1044253);
 			////AddRecipe(index, (int)CookRecipesExp.Teriyaki);
 			SetNeedHeat(index, true);
+
+			index = AddCraft(typeof(PeanutButter), "Sauces", "Beurre d'Arachide", 55.0, 100.0, typeof(Peanut), "Peanuts", 30, 1044253);
+			////AddRecipe(index, (int)CookRecipesExp.PeanutButter);
+
+			index = AddCraft(typeof(FruitJam), "Sauces", "Confiture de fruits", 55.0, 100.0, typeof(FruitBasket), "Fruit Basket", 1, 1044253);
+			AddRes(index, typeof(BagOfSugar), "Bag of Sugar", 1, 1044253);
+			////AddRecipe(index, (int)CookRecipesExp.FruitJam);
+			SetNeedOven(index, true);
 			#endregion
-			
+
 			#region Cerf
 			index = AddCraft(typeof(VenisonSteak), "Viandes", "Steak de cerf", 25.0, 70.0, typeof(RawVenisonSteak), "Steak de cerf cru", 1, "You need more Raw Venison Steak");
 			////AddRecipe(index, (int)CookRecipesExp.VenisonSteak);
@@ -256,6 +271,9 @@ namespace Server.Engines.Craft
 			SetNeedHeat(index, true);
 			index = AddCraft(typeof(PigHead), "Viandes", "Tête de porc", 25.0, 70.0, typeof(RawPigHead), "Tête de porc cru", 1, "You need more Raw Pig Head");
 			////AddRecipe(index, (int)CookRecipesExp.PigHead);
+			SetNeedHeat(index, true);
+			index = AddCraft(typeof(PorkChop), "Viandes", "Escalope de Porc", 25.0, 70.0, typeof(RawPorkChop), "Raw Pork Chop", 1, "You need more Raw Pork Chop");
+			////AddRecipe(index, (int)CookRecipesExp.PorkChop);
 			SetNeedHeat(index, true);
 			index = AddCraft(typeof(PorkRoast), "Viandes", "Côtelettes de porc", 25.0, 70.0, typeof(RawPorkRoast), "Côtelettes de porc cru", 1, "You need more Raw Pork Roast");
 			////AddRecipe(index, (int)CookRecipesExp.PorkRoast);
@@ -355,32 +373,161 @@ namespace Server.Engines.Craft
 			SetNeedHeat(index, true);
 			index = AddCraft(typeof(CookedShrimp), "Poissons et fruits de mer", "Crevette cuite", 50.0, 70.0, typeof(RawShrimp), "Crevette crue", 1, "you need more Raw Shrimp");
 			SetNeedHeat(index, true);
+
+			index = AddCraft(typeof(GreatBarracudaPie), "Poissons et fruits de mer", 1116214, 61.0, 110.0, typeof(GreatBarracudaSteak), 1116298, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116299, 1, 1044253);
+			AddRes(index, typeof(ZoogiFungus), 1029911, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(GiantKoiPie), "Poissons et fruits de mer", 1116216, 61.0, 110.0, typeof(GiantKoiSteak), 1044253, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116299, 1, 1044253);
+			AddRes(index, typeof(WoodenBowlOfPeas), 1025628, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(FireFishPie), "Poissons et fruits de mer", 1116217, 55.0, 105.0, typeof(FireFishSteak), 1116307, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Carrot), 1023191, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(StoneCrabPie), "Poissons et fruits de mer", 1116227, 55.0, 105.0, typeof(StoneCrabMeat), 1116317, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Cabbage), 1023195, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(BlueLobsterPie), "Poissons et fruits de mer", 1116228, 55.0, 105.0, typeof(BlueLobsterMeat), 1116318, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Cherry), 1040001, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(ReaperFishPie), "Poissons et fruits de mer", 1116218, 55.0, 105.0, typeof(ReaperFishSteak), 1116308, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Pumpkin), 1023178, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(CrystalFishPie), "Poissons et fruits de mer", 1116219, 55.0, 105.0, typeof(CrystalFishSteak), 1116309, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Apple), 1022512, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(BullFishPie), "Poissons et fruits de mer", 1116220, 55.0, 105.0, typeof(BullFishSteak), 1116310, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Squash), 1023186, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(SummerDragonfishPie), "Poissons et fruits de mer", 1116221, 55.0, 105.0, typeof(SummerDragonfishSteak), 1116311, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Onion), 1023182, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(FairySalmonPie), "Poissons et fruits de mer", 1116222, 55.0, 105.0, typeof(FairySalmonSteak), 1116312, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(EarOfCorn), 1023199, 1, 1044253);
+			
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(LavaFishPie), "Poissons et fruits de mer", 1116223, 55.0, 105.0, typeof(LavaFishSteak), 1116313, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(CheeseWheel), 1044486, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(AutumnDragonfishPie), "Poissons et fruits de mer", 1116224, 55.0, 105.0, typeof(AutumnDragonfishSteak), 1116314, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Pear), 1022452, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(SpiderCrabPie), "Poissons et fruits de mer", 1116229, 55.0, 105.0, typeof(SpiderCrabMeat), 1116320, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(Lettuce), 1023184, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(YellowtailBarracudaPie), "Poissons et fruits de mer", 1116098, 55.0, 105.0, typeof(YellowtailBarracudaSteak), 1116301, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(BaseBeverage), 1022503, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(HolyMackerelPie), "Poissons et fruits de mer", 1116225, 55.0, 105.0, typeof(HolyMackerelSteak), 1116315, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(JarHoney), 1022540, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(UnicornFishPie), "Poissons et fruits de mer", 1116226, 55.0, 105.0, typeof(UnicornFishSteak), 1116316, 1, 1044253);
+			AddRes(index, typeof(Dough), 1024157, 1, 1044253);
+			AddRes(index, typeof(FreshGinger), 1031235, 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), 1116338, 1, 1044253);
+
+			SetNeedOven(index, true);
+
 			#endregion
 			#region Préparations repas
 			index = AddCraft(typeof(Dough), "Préparations repas", "Pâte", 20.0, 50.0, typeof(SackFlourOpen), 1044468, 1, 1151092);
 			AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
 			index = AddCraft(typeof(UnbakedQuiche), "Préparations repas", "Quiche crue", 20.0, 50.0, typeof(Dough), 1044469, 1, 1044253);
 			AddRes(index, typeof(Eggs), 1044477, 1, 1044253);
-
-			// TODO: This must also support chicken and lamb legs
+			index = AddCraft(typeof(AsianVegMix), "Préparations repas", "Mélange de Légumes Asiatique", 60.0, 100.0, typeof(Cabbage), "Cabbage", 1, 1044253);
+			AddRes(index, typeof(Onion), "Onion", 1, 1044253);
+			AddRes(index, typeof(RedMushroom), "Red Mushroom", 1, "You need a Red Mushroom");
+			AddRes(index, typeof(Carrot), "Carrot", 1, 1044253);
+			index = AddCraft(typeof(MixedVegetables), "Préparations repas", "Mélange de Légumes", 60.0, 100.0, typeof(Potato), "Potato", 2, 1044253);
+			AddRes(index, typeof(Carrot), "Carrot", 1, 1044253);
+			AddRes(index, typeof(Celery), "Celery", 1, 1044253);
+			AddRes(index, typeof(Onion), "Onion", 1, 1044253);
 			index = AddCraft(typeof(UnbakedMeatPie), "Préparations repas", "Pâté à la viande cru", 20.0, 50.0, typeof(Dough), 1044469, 1, 1044253);
 			AddRes(index, typeof(RawRibs), 1044482, 1, 1044253);
 			index = AddCraft(typeof(UncookedSausagePizza), "Préparations repas", "Pizza saucisse crue", 20.0, 50.0, typeof(Dough), 1044469, 1, 1044253);
 			AddRes(index, typeof(Sausage), 1044483, 1, 1044253);
 			index = AddCraft(typeof(UncookedCheesePizza), "Préparations repas", "Pizza fromage crue", 20.0, 50.0, typeof(Dough), 1044469, 1, 1044253);
 			AddRes(index, typeof(CheeseWheel), 1044486, 1, 1044253);
+			index = AddCraft(typeof(PotatoStrings), "Préparations repas", "Lanière de Patate", 70.0, 100.0, typeof(Potato), "Potato", 1, 1044253);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(TacoShell), "Préparations repas", "Coquille de Taco", 60.0, 100.0, typeof(Tortilla), "Tortilla", 1, 1044253);
+			SetNeedHeat(index, true);
 			#endregion
 			#region Préparations desserts
 			index = AddCraft(typeof(SweetDough), "Préparations desserts", "Pâte sucrée", 40.0, 75.0, typeof(Dough), "Pâte", 1, 1044253);
 			AddRes(index, typeof(JarHoney), "Miel", 1, 1044253);
 			index = AddCraft(typeof(CakeMix), "Préparations desserts", "Mélange à gâteau", 40.0, 75.0, typeof(SackFlourOpen), "Sac de farine ouvert", 1, 1151092);
 			AddRes(index, typeof(SweetDough), "Pâte sucrée", 1, 1044253);
-			index = AddCraft(typeof(CookieMix), , "Mélange à biscuit", 40.0, 75.0, typeof(JarHoney), "Miel", 1, 1044253);
+			index = AddCraft(typeof(PieMix), "Préparations desserts", "Mélange à tarte", 60.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
+			AddRes(index, typeof(Butter), "Butter", 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.PieMix);
+			index = AddCraft(typeof(ChocolateMix), "Préparations desserts", "Mélange chocolaté", 45.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
+			AddRes(index, typeof(BagOfCocoa), "Bag of Cocoa", 1, 1044253);
+			AddRes(index, typeof(BagOfSugar), "Bag of Sugar", 1, 1044253);
+			index = AddCraft(typeof(CookieMix), "Préparations desserts", "Mélange à biscuit", 40.0, 75.0, typeof(JarHoney), "Miel", 1, 1044253);
 			AddRes(index, typeof(SweetDough), "Pâte sucrée", 1, 1044253);
 			index = AddCraft(typeof(SweetCocoaButter), "Préparations desserts", "Beurre de cacao sucré", 40.0, 75.0, typeof(SackOfSugar), "Sac de sucre", 1, 1044253);
 			AddRes(index, typeof(CocoaButter), "Beurre de cacao", 1, 1044253);
 			SetItemHue(index, 0x457);
 			SetNeedOven(index, true);
+			index = AddCraft(typeof(WaffleMix), "Préparations desserts", "Mélange à Gaufres", 60.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
+			AddRes(index, typeof(Eggs), "Eggs", 2, 1044253);
+			AddRes(index, typeof(CookingOil), "Cooking Oil", 1, 1044253);
+			index = AddCraft(typeof(BowlCornFlakes), "Préparations desserts", "Bol de Corn Flakes", 60.0, 100.0, typeof(BagOfCornmeal), "Bag of Cornmeal", 1, 1044253);
+			AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.BowlCornFlakes);
+
+			index = AddCraft(typeof(BowlRiceKrisps), "Préparations desserts", "Bol de Rice Krisps", 60.0, 100.0, typeof(BagOfRicemeal), "Bag of Ricemeal", 1, 1044253);
+			AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
 			index = AddCraft(typeof(UnbakedFruitPie), "Préparations desserts", "Tarte aux fruits crue", 40.0, 75.0, typeof(Dough), "Pâte", 1, 1044253);
 			AddRes(index, typeof(Pear), "Poire", 1, 1044253);
 			index = AddCraft(typeof(UnbakedPeachCobbler), "Préparations desserts", "Tarte aux pêches crue", 40.0, 75.0, typeof(Dough), "Pâte", 1, 1044253);
@@ -494,6 +641,44 @@ namespace Server.Engines.Craft
 			SetNeedOven(index, true);
 			index = AddCraft(typeof(CheesePizza), "Plâts préparés", "Pizza fromage", 50.0, 80.0, typeof(UncookedCheesePizza), 1044521, 1, 1044253);
 			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(HamPineapplePizza), "Plâts préparés", "Pizza jambon ananas", 70.0, 100.0, typeof(UncookedPizza), "Uncooked Pizza", 1, 1044253);
+			AddRes(index, typeof(RawHamSlices), "Raw Ham Slices", 1, 1044253);
+			AddRes(index, typeof(Pineapple), "Pineapple", 2, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.HamPineapplePizza);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(MushroomOnionPizza), "Plâts préparés", "Pizza Onion Champignon", 70.0, 100.0, typeof(UncookedPizza), "Uncooked Pizza", 1, 1044253);
+			AddRes(index, typeof(TanMushroom), "Tan Mushrooms", 3, 1044253);
+			AddRes(index, typeof(Onion), "Onion", 3, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.MushroomOnionPizza);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(SausOnionMushPizza), "Plâts préparés", "Pizza Saucisse Onion Champignon", 70.0, 100.0, typeof(UncookedPizza), "Uncooked Pizza", 1, 1044253);
+			AddRes(index, typeof(Sausage), "Sausage", 2, 1044253);
+			AddRes(index, typeof(Onion), "Onion", 2, 1044253);
+			AddRes(index, typeof(RedMushroom), "Red Mushrooms", 2, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.SausOnionMushPizza);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(TacoPizza), "Plâts préparés", "Pizza Taco", 70.0, 100.0, typeof(UncookedPizza), "Uncooked Pizza", 1, 1044253);
+			AddRes(index, typeof(GroundBeef), "Ground Beef", 1, 1044253);
+			AddRes(index, typeof(CheeseWheel), "CheeseWheel", 1, 1044253);
+			AddRes(index, typeof(EnchiladaSauce), "Enchilada Sauce", 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.TacoPizza);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(VeggiePizza), "Plâts préparés", "Pizza Végée", 70.0, 100.0, typeof(UncookedPizza), "Uncooked Pizza", 1, 1044253);
+			AddRes(index, typeof(MixedVegetables), "Mixed Vegetables", 1, 1044523);
+			//AddRecipe(index, (int)CookRecipesExp.VeggiePizza);
+			SetNeedOven(index, true);
+
+
+
+
+
+
+
 			index = AddCraft(typeof(Hotwings), "Plâts préparés", "Ailes de poulet", 50.0, 80.0, typeof(RawChickenLeg), "Cuisse de poulet cru", 1, 1044253);
 			AddRes(index, typeof(JarHoney), "Miel", 1, 1044253);
 			AddRes(index, typeof(HotSauce), "Sauce piquante", 1, 1044253);
@@ -674,8 +859,15 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(RawFishSteak), "Poisson cru", 10, 1044253);
 			#endregion
 			#region Pâtisseries et boulangerie
+			index = AddCraft(typeof(Tortilla), "Pâtisserie et boulangerie", "Tortilla", 70.0, 90.0, typeof(BagOfCornmeal), "Bag of Cornmeal", 1, 1044253);
+			AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
+			////AddRecipe(index, (int)CookRecipesExp.Tortilla);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(PizzaCrust), "Pâtisserie et boulangerie", "Pizza Crust", 60.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.PizzaCrust);
 			index = AddCraft(typeof(BreadLoaf), "Pâtisserie et boulangerie", "Miche de pain", 70.0, 90.0, typeof(Dough), "Pâte", 1, 1044253);
 			SetNeedOven(index, true);
+
 			index = AddCraft(typeof(BowlOatmeal), "Pâtisserie et boulangerie", "Bol de gruau", 70.0, 90.0, typeof(BagOfOats), "Sac d’avoine", 1, 1044253);
 			AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
 			AddRes(index, typeof(JarHoney), "Miel", 1, 1044253);
@@ -688,10 +880,108 @@ namespace Server.Engines.Craft
 			SetNeedOven(index, true);
 			index = AddCraft(typeof(Cookies), "Pâtisserie et boulangerie", "Biscuit", 80.0, 99.0, typeof(CookieMix), "Mélange à biscuit", 1, 1044253);
 			SetNeedOven(index, true);
+			index = AddCraft(typeof(AlmondCookies), "Pâtisserie et boulangerie", "Biscuits aux amandes", 70.0, 100.0, typeof(CookieMix), "Cookie Mix", 1, 1044253);
+			AddRes(index, typeof(Almond), "Almond", 12, 1044253);
+			AddRes(index, typeof(FoodPlate), "Plate", 1, "You need a plate!");
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(ChocChipCookies), "Pâtisserie et boulangerie", "Biscuits aux pépites de chocolat", 70.0, 100.0, typeof(CookieMix), "Cookie Mix", 1, 1044253);
+			AddRes(index, typeof(BagOfCocoa), "Bag of Cocoa", 1, "You need a bag of cocoa");
+			AddRes(index, typeof(FoodPlate), "Plate", 1, "You need a plate!");
+			//AddRecipe(index, (int)CookRecipesExp.ChocChipCookies);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(GingerSnaps), "Pâtisserie et boulangerie", "Biscuits au gingembre", 70.0, 100.0, typeof(CookieMix), "Cookie Mix", 1, 1044253);
+			AddRes(index, typeof(FreshGinger), "Gingembre frais", 12, 1044253);
+			AddRes(index, typeof(FoodPlate), "Plate", 1, "You need a plate!");
+			//AddRecipe(index, (int)CookRecipesExp.GingerSnaps);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(PeanutButterCookies), "Pâtisserie et boulangerie", "Biscuits au beurre d'arachide", 70.0, 100.0, typeof(CookieMix), "Cookie Mix", 1, 1044253);
+			AddRes(index, typeof(PeanutButter), "Peanut Butter", 1, 1044253);
+			AddRes(index, typeof(FoodPlate), "Plate", 1, "You need a plate!");
+			//AddRecipe(index, (int)CookRecipesExp.PeanutButterCookies);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(OatmealCookies), "Pâtisserie et boulangerie", "Biscuit à l'avoine", 70.0, 100.0, typeof(CookieMix), "Cookie Mix", 1, 1044253);
+			AddRes(index, typeof(BagOfOats), "Bag of Oats", 1, 1044253);
+			AddRes(index, typeof(FoodPlate), "Plate", 1, "You need a plate!");
+			//AddRecipe(index, (int)CookRecipesExp.OatmealCookies);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(PumpkinCookies), "Pâtisserie et boulangerie", "Biscuits à la citrouille", 70.0, 100.0, typeof(CookieMix), "Cookie Mix", 1, 1044253);
+			AddRes(index, typeof(Pumpkin), "Pumpkin", 6, 1044253);
+			AddRes(index, typeof(FoodPlate), "Plate", 1, "You need a plate!");
+			//AddRecipe(index, (int)CookRecipesExp.PumpkinCookies);
+			SetNeedOven(index, true);
 			index = AddCraft(typeof(Cake), "Pâtisserie et boulangerie", "Gâteau", 80.0, 99.0, typeof(CakeMix), "Mélange à gâteau", 1, 1044253);
+			SetNeedOven(index, true);
+
+
+			index = AddCraft(typeof(BananaCake), "Pâtisserie et boulangerie", "Gâteau aux Bananes", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(Banana), "Banana", 4, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.BananaCake);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(CarrotCake), "Pâtisserie et boulangerie", "Gâteau aux Carottes", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(Carrot), "Carrot", 6, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.CarrotCake);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(ChocolateCake), "Pâtisserie et boulangerie", "Gâteau au Chocolat", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(BagOfCocoa), "Bag of Cocoa", 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.ChocolateCake);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(CoconutCake), "Pâtisserie et boulangerie", "Gâteau noix de coco", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(Coconut), "Coconut", 2, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.CoconutCake);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(LemonCake), "Pâtisserie et boulangerie", "Gâteau au citron", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(Lemon), "Lemon", 4, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.LemonCake);
+			SetNeedOven(index, true);
+
+
+
+
+
+
+
+
+
+			index = AddCraft(typeof(BreadLoaf), "Pâtisserie et boulangerie", "Miche de pain", 70.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(GarlicBread), "Pâtisserie et boulangerie", "Pain à l'Ail", 70.0, 100.0, typeof(BreadLoaf), 1024156, 1, 1044253);
+			AddRes(index, typeof(Butter), "Butter", 1, 1044253);
+			AddRes(index, typeof(Garlic), "Garlic", 2, 1044253);
+			AddRes(index, typeof(BasketOfHerbsFarm), "Herbs", 1, 1044253);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(BananaBread), "Pâtisserie et boulangerie", "Pain aux Bananes", 70.0, 100.0, typeof(SweetDough), "Sweet Dough", 1, 1044253);
+			AddRes(index, typeof(Banana), "Banana", 6, 1044253);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(PumpkinBread), "Pâtisserie et boulangerie", "Pain à la Citrouille", 70.0, 100.0, typeof(SweetDough), "Sweet Dough", 1, 1044253);
+			AddRes(index, typeof(Pumpkin), "Pumpkin", 3, 1044253);
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(CornBread), "Pâtisserie et boulangerie", "Pain de Mais", 70.0, 100.0, typeof(BagOfCornmeal), "Bag of Cornmeal", 1, 1044253);
+			AddRes(index, typeof(Batter), "Batter", 1, 1044253);
+			AddRes(index, typeof(BagOfSugar), "Bag of Sugar", 1, 1044253);
 			SetNeedOven(index, true);
 			index = AddCraft(typeof(Muffins), "Pâtisserie et boulangerie", "Muffins", 80.0, 99.0, typeof(SweetDough), "Pâte sucrée", 1, 1044253);
 			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(BlueberryMuffins), "Pâtisserie et boulangerie", "Muffins aux bleuts", 70.0, 100.0, typeof(SweetDough), "Sweet Dough", 1, 1044253);
+			AddRes(index, typeof(Blueberry), "Blueberry", 6, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.BlueberryMuffins);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(PumpkinMuffins), "Pâtisserie et boulangerie", "Muffins à la Citrouille", 70.0, 100.0, typeof(SweetDough), "Sweet Dough", 1, 1044253);
+			AddRes(index, typeof(Pumpkin), "Pumpkin", 2, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.PumpkinMuffins);
+			SetNeedOven(index, true);
+
+
+
+
+
+
+
 			index = AddCraft(typeof(FruitPie), "Pâtisserie et boulangerie", "Tarte aux fruits", 80.0, 99.0, typeof(UnbakedFruitPie), "Tarte aux fruits crue", 1, 1044253);
 			SetNeedOven(index, true);
 			index = AddCraft(typeof(PeachCobbler), "Pâtisserie et boulangerie", "Tarte aux pêches", 80.0, 99.0, typeof(UnbakedPeachCobbler), "Tarte aux pêches crue", 1, 1044253);
@@ -731,6 +1021,18 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(CookingOil), "Huile de cuisson", 1, 1044253);
 			//AddRecipe(index, (int)CookRecipesExp.Brownies);
 			SetNeedOven(index, true);
+
+
+			index = AddCraft(typeof(Pancakes), "Pâtisserie et boulangerie", "Pancakes", 70.0, 100.0, typeof(Batter), "Batter", 1, 1044253);
+			AddRes(index, typeof(JarHoney), "Honey", 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.Pancakes);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(Waffles), "Pâtisserie et boulangerie", "Gaufres", 70.0, 100.0, typeof(WaffleMix), "Waffle Mix", 1, 1044253);
+			AddRes(index, typeof(JarHoney), "Honey", 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.Waffles);
+			SetNeedOven(index, true);
+
 			index = AddCraft(typeof(DarkChocolate), "Pâtisserie et boulangerie", "Chocolat noir", 80.0, 99.0, typeof(SackOfSugar), "Sac de sucre", 1, 1044253);
 			AddRes(index, typeof(CocoaButter), "Beurre de cacao", 1, 1044253);
 			AddRes(index, typeof(CocoaLiquor), "Liqueur de cacao", 1, 1044253);
@@ -747,8 +1049,31 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(BaseBeverage), 1022544, 1, 1044253);
 			SetBeverageType(index, BeverageType.Milk);
 			SetItemHue(index, 0x47E);
-			#endregion 
-			#region Teinture
+			#endregion
+			#region Meli Melo
+			index = AddCraft(typeof(GreenTea), "Meli Melo", "Thé Vert", 80.0, 120.0, typeof(GreenTeaBasket), 1030316, 1, 1044253);
+			AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);	
+			SetNeedOven(index, true);
+			index = AddCraft(typeof(FruitBasket), "Meli Melo", "Panier de Fruits", 60.0, 100.0, typeof(Apple), "Apple", 5, 1044253);
+			AddRes(index, typeof(Peach), "Peach", 5, 1044253);
+			AddRes(index, typeof(Pear), "Pear", 5, 1044253);
+			AddRes(index, typeof(Cherry), "Cherries", 5, 1044253);
+			index = AddCraft(typeof(Tofu), "Meli Melo", "Tofu", 60.0, 100.0, typeof(BagOfSoy), "Bag of Soy", 1, 1044253);
+
+			index = AddCraft(typeof(ChocSunflowerSeeds), "Meli Melo", "Graine de tournesol au chocolat", 70.0, 100.0, typeof(EdibleSun), "Sunflower Seeds", 1, 1044253);
+			AddRes(index, typeof(BagOfCocoa), "Bag of Cocoa", 1, "you need a bag oc cocoa");
+			//AddRecipe(index, (int)CookRecipesExp.ChocSunflowerSeeds);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(RiceKrispTreat), "Meli Melo", "Carré Rice Krispies", 70.0, 100.0, typeof(BowlRiceKrisps), "Bowl Of Rice Krips", 1, 1044253);
+			AddRes(index, typeof(Butter), "Butter", 1, 1044253);
+			AddRes(index, typeof(BagOfSugar), "Bag of Sugar", 1, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.RiceKrispTreat);
+			SetNeedOven(index, true);
+
+
+			#endregion
+			#region Teintures
 			index = AddCraft(typeof(TribalPaint), "Teinture", "Peinture tribale", 80.0, 99.0, typeof(SackFlourOpen), "Sac de farine", 1, 1151092);
 			AddRes(index, typeof(TribalBerry), "Baies tribales", 1, 1044253);
 			index = AddCraft(typeof(EggBomb), "Teinture", "Bombe à oeuf", 80.0, 99.0, typeof(Eggs), "Oeufs", 1, 1044253);

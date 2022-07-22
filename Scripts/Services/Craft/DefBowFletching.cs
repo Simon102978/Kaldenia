@@ -238,7 +238,9 @@ namespace Server.Engines.Craft
             AddSubRes(typeof(BloodwoodBoard), 1072648, 95.0, 1044041, 1072653);
             AddSubRes(typeof(FrostwoodBoard), 1072649, 95.0, 1044041, 1072653);
 
-            MarkOption = true;
+
+			Resmelt = true;
+			MarkOption = true;
             Repair = true;
             CanEnhance = true;
         }

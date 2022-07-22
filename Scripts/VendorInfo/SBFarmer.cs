@@ -15,9 +15,11 @@ namespace Server.Mobiles
         {
             public InternalBuyInfo()
             {
-                Add(new GenericBuyInfo("1031235", typeof(FreshGinger), 505, 10, 11235, 0));
-                Add(new GenericBuyInfo(typeof(Cabbage), 5, 20, 0xC7B, 0, true));
-                Add(new GenericBuyInfo(typeof(Cantaloupe), 6, 20, 0xC79, 0, true));
+                Add(new GenericBuyInfo("1031235", typeof(FreshGinger), 5, 100, 11235, 0));
+                Add(new GenericBuyInfo(typeof(BasketOfHerbsFarm), 30, 100, 0x194F, 0, true));
+				Add(new GenericBuyInfo(typeof(DriedHerbs), 30, 100, 0xC42, 0, true));
+				Add(new GenericBuyInfo(typeof(Cabbage), 5, 20, 0xC7B, 0, true));
+				Add(new GenericBuyInfo(typeof(Cantaloupe), 6, 20, 0xC79, 0, true));
                 Add(new GenericBuyInfo(typeof(Carrot), 3, 20, 0xC78, 0, true));
                 Add(new GenericBuyInfo(typeof(HoneydewMelon), 7, 20, 0xC74, 0, true));
                 Add(new GenericBuyInfo(typeof(Squash), 3, 20, 0xC72, 0, true));
@@ -26,9 +28,7 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Pumpkin), 11, 20, 0xC6A, 0, true));
                 Add(new GenericBuyInfo(typeof(GreenGourd), 3, 20, 0xC66, 0, true));
                 Add(new GenericBuyInfo(typeof(YellowGourd), 3, 20, 0xC64, 0, true));
-                //Add( new GenericBuyInfo( typeof( Turnip ), 6, 20, XXXXXX, 0 ) );
-                Add(new GenericBuyInfo(typeof(Watermelon), 7, 20, 0xC5C, 0, true));
-                //Add( new GenericBuyInfo( typeof( EarOfCorn ), 3, 20, XXXXXX, 0 ) );
+				Add(new GenericBuyInfo(typeof(Watermelon), 7, 20, 0xC5C, 0, true));               
                 Add(new GenericBuyInfo(typeof(Eggs), 3, 20, 0x9B5, 0, true));
                 Add(new BeverageBuyInfo(typeof(Pitcher), BeverageType.Milk, 7, 20, 0x9AD, 0));
                 Add(new GenericBuyInfo(typeof(Peach), 3, 20, 0x9D2, 0, true));

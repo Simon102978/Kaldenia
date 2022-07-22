@@ -963,6 +963,8 @@ namespace Server.Items
         public DriedUpInkWellArtifact()
             : base(0x2D61)
         {
+			Name = "Pot d'encre rare";
+				Weight = 1.0;
         }
 
         public DriedUpInkWellArtifact(Serial serial)

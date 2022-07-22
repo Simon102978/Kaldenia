@@ -32,7 +32,7 @@ namespace Server.Items
             {
                 pm.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
             }
-            else if (pm.Skills.Carpentry.Base < 50.0)
+            else if (pm.Skills[SkillName.Carpentry].Base < 50.0)
           {
 				pm.SendMessage("Vous devez avoir 50.0 dans votre skill de Carpentry"); // Only a Grandmaster Carpenter can learn from this book.
 			}

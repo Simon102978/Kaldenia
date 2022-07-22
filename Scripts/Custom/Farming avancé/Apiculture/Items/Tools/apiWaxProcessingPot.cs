@@ -346,7 +346,7 @@ namespace Server.Items
 					}
 
 					m_pot.ItemID = 0x142b; //pot overflowing with wax
-
+					m_pot.Name = "Chaudon de Cire";
 					m_pot.UsesRemaining--;
 					if( m_pot.UsesRemaining < 0 )
 						m_pot.UsesRemaining = 0;

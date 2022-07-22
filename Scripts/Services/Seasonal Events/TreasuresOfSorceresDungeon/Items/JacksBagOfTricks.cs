@@ -293,6 +293,8 @@ namespace Server.Items
             : base(0x142A)
         {
             Hue = 2711;
+			Name = "Marmite";
+			Weight = 5.0;
         }
 
         public SpikedEggnog(Serial serial)

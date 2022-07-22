@@ -844,27 +844,27 @@ namespace Server.Engines.Craft
 
 			//Stone fireplaceEXP
 
-			index = AddCraft(typeof(StoneFireplaceEastAddonExp), 1044298, "Foyer en pierre côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(StoneFireplaceEastDeedExp), 1044298, "Foyer en pierre côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(StoneFireplaceSouthAddonExp), 1044298, "Foyer en pierre côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(StoneFireplaceSouthDeedExp), 1044298, "Foyer en pierre côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(GrayBrickFireplaceEastAddonExp), 1044298, "Foyer en pierre côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(GrayBrickFireplaceEastDeedExp), 1044298, "Foyer en pierre côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(GrayBrickFireplaceSouthAddonExp), 1044298, "Foyer en brique côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(GrayBrickFireplaceSouthDeedExp), 1044298, "Foyer en brique côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(SandstoneFireplaceEastAddonExp), 1044298, "Foyer en grès côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(SandstoneFireplaceEastDeedExp), 1044298, "Foyer en grès côté Est", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 
-			index = AddCraft(typeof(SandstoneFireplaceSouthAddonExp), 1044298, "Foyer en grès côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
+			index = AddCraft(typeof(SandstoneFireplaceSouthDeedExp), 1044298, "Foyer en grès côté Sud", 68.4, 93.4, typeof(Board), 1044041, 85, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddRes(index, typeof(IronIngot), 1044036, 125, 1044037);
 

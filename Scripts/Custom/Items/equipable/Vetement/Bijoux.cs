@@ -442,7 +442,7 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
-public class Ceinture10 :  BaseCouronne
+public class Ceinture10 :  BaseWaist
 
 	{
 
@@ -453,6 +453,7 @@ public class Ceinture10 :  BaseCouronne
 		{
 		Weight = 2.0;
 		Name ="Ceinture10";
+			Layer = Layer.Waist;
 	}
 
 	public Ceinture10(Serial serial)

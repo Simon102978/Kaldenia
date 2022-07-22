@@ -383,9 +383,20 @@ namespace Server.Items
             base.DoEffects(m);
 
             ResistanceMod mod = new ResistanceMod(ResistanceType.Fire, 10);
-            m.AddResistanceMod(mod);
+			m.AddResistanceMod(mod);
+			Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod));
 
-            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod));
+			ResistanceMod mod1 = new ResistanceMod(ResistanceType.Cold, 10);
+			m.AddResistanceMod(mod1);
+			Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod1));
+			
+			ResistanceMod mod2 = new ResistanceMod(ResistanceType.Energy, 10);
+			m.AddResistanceMod(mod2);
+			Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod2));
+
+			ResistanceMod mod3 = new ResistanceMod(ResistanceType.Poison, 10);
+			m.AddResistanceMod(mod3);
+	         Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod3));
         }
 
         public static int GetStamBuff(Mobile m)
@@ -475,12 +486,7 @@ namespace Server.Items
             ResistanceMod mod1 = new ResistanceMod(ResistanceType.Physical, 10);
             m.AddResistanceMod(mod1);
 
-            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod1));
-
-            ResistanceMod mod2 = new ResistanceMod(ResistanceType.Cold, 5);
-            m.AddResistanceMod(mod1);
-
-            Timer.DelayCall(TimeSpan.FromMinutes(2), () => m.RemoveResistanceMod(mod2));
+            Timer.DelayCall(TimeSpan.FromMinutes(10), () => m.RemoveResistanceMod(mod1));
         }
 
         public BarakoDraftOfMight(Serial serial)

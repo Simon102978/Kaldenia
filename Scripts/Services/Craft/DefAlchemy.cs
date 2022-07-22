@@ -166,8 +166,8 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Vanilla), 1080000, 10, 1080008);          
          
 
- //          index = AddCraft(typeof(KurakAmbushersEssence), 1116349, "Essence de Kurak", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
- //           AddRes(index, typeof(Bloodmoss), 1044354, 20, 1044362);
+         index = AddCraft(typeof(KurakAmbushersEssence), 1116349, "Essence de Kurak", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
+            AddRes(index, typeof(Bloodmoss), 1044354, 20, 1044362);
          
 
             index = AddCraft(typeof(BarakoDraftOfMight), 1116349, "Brassage de Barako", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);

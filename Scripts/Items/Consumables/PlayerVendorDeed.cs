@@ -11,6 +11,7 @@ namespace Server.Items
         public ContractOfEmployment()
             : base(0x14F0)
         {
+			Name = "Contrat de vendeur";
             Weight = 1.0;
         }
 
@@ -37,7 +38,7 @@ namespace Server.Items
             {
                 from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
             }
-            else if (from.AccessLevel >= AccessLevel.GameMaster)
+            else if (from.AccessLevel >= AccessLevel.Player)
             {
                 from.SendLocalizedMessage(503248); // Your godly powers allow you to place this vendor whereever you wish.
 

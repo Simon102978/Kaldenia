@@ -19,7 +19,8 @@ namespace Server.Engines.CannedEvil
         Infuse,
         DragonTurtle,
         Khaldun,
-		Ceos
+		Ceos,
+		Titus
 	}
 
     public class ChampionSpawnInfo
@@ -286,6 +287,30 @@ namespace Server.Engines.CannedEvil
 					 {"Ceos: Quoi ? Vous osez me déranger juste pour ca ?" },
 					 {"Ceos: *Soupire* Moi qui croyais que vous aviez du potentiel..." },
 					 {"Ceos: Si c'est comme ca, vous êtes plus mes amis !" },
+				}
+			),
+		   new ChampionSpawnInfo( "Titus", typeof( Serado ), new[]{ "Explorer", "Huntsman", "Msafiri" } , new[] // Titus (Serado doit etre remplacer un de ses quatres);
+            {
+				new[]{ typeof(TitusFanatiqueArcher), typeof(TitusFatiguant) },
+				new[]{ typeof(TitusRouxNin),  typeof(TitusRouxTresse)   },
+				new[]{ typeof(RouxvolutionaireArcher), typeof(TitusRouxValier)  },
+				new[]{ typeof(TitusRouxMage), typeof(TitusRouxTisane)   }
+			},
+
+				new Dictionary<int, string>()
+				{
+					   {1 , "Titus: En avant soldat de la roux-volution !" },
+					   {2 , "Titus: Nous vaincrons." },
+					   {3 , "Titus: Allez expert roux-volutionnaire !" },
+					   {4 , "Titus: QUOI ! IMPOSSIBLE, LA ROUX-VOLUTION NE PEUT ETRE ARRETER !" },
+				},
+				new List<string>()
+				{
+					 {"Titus: La ROUX-Volution a triompé !" },
+					 {"Titus: Allez vous teindre les cheveux en roux !" },
+					 {"Titus: Mou-ha-ha ! La roux-volution vaincra !" },
+					 {"Titus: Gloire a la ROUX-Volution !" },
+					 {"Titus: Roux-Volution ! Roux-VOlution ! Roux-Volution !" },
 				}
 			),
 		};

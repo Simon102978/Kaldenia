@@ -166,7 +166,8 @@ namespace Server.Mobiles
         GreenGoblin,
 		Kuya,
 		Brigand,
-		Pirate
+		Pirate,
+		Titusien
     }
 
     public enum LootStage
@@ -1035,7 +1036,7 @@ namespace Server.Mobiles
         public virtual bool AllowFemaleTamer => true;
         public virtual bool SubdueBeforeTame => false;
         public virtual bool StatLossAfterTame => SubdueBeforeTame;
-        public virtual bool ReduceSpeedWithDamage => true;
+        public virtual bool ReduceSpeedWithDamage => false;
         public virtual bool IsSubdued => SubdueBeforeTame && (Hits < ((double)HitsMax / 10));
 
         public virtual bool Commandable => true;

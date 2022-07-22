@@ -43,14 +43,14 @@ namespace Server.Mobiles
             {
                 IBuyItemInfo buyInfo = vendor.GetBuyInfo().OfType<GenericBuyInfo>().FirstOrDefault(info => info.EconomyItem && info.Type == item.GetType());
 
-                if (buyInfo != null)
-                {
-                    int sold = buyInfo.TotalSold;
-                    price = (int)(buyInfo.Price * .75);
+       //         if (buyInfo != null)
+       //         {
+       //             int sold = buyInfo.TotalSold;
+        //            price = (int)(buyInfo.Price * .75);
 
                     return Math.Max(1, price);
 
-                }
+     //           }
             }
 
             if (item is BaseArmor)

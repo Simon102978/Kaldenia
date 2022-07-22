@@ -74,7 +74,7 @@ namespace Server.Mobiles
                 Add(typeof(Dyes), 1);
                 Add(typeof(DyeTub), 1);
 
-             //   Add(typeof(BoltOfCloth), 5);
+                Add(typeof(BoltOfCloth), 5);
             //    Add(typeof(Cloth), 1);
             //    Add(typeof(UncutCloth), 1);
 

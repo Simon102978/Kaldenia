@@ -188,8 +188,8 @@ namespace Server.Mobiles
 				}
 			}
 
-		
-		
+				base.OnDamage(amount, from, willKill);
+
 		}
 
 		public void Charge()

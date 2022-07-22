@@ -69,7 +69,7 @@ namespace Server.Items
                 }
 
                 if (attacker is BaseCreature)
-                    PetTrainingHelper.OnWeaponAbilityUsed((BaseCreature)attacker, SkillName.Ninjitsu);
+                    PetTrainingHelper.OnWeaponAbilityUsed((BaseCreature)attacker, SkillName.Tactics);
             }
         }
 
@@ -126,8 +126,8 @@ namespace Server.Items
                         m_Attacker.FixedEffect(0x3728, 10, 15);
                         m_Attacker.PlaySound(0x2A1);
 
-                        int skill = m_Attacker is BaseCreature ? (int)m_Attacker.Skills[SkillName.Ninjitsu].Value :
-                                                              (int)Math.Max(m_Attacker.Skills[SkillName.Bushido].Value, m_Attacker.Skills[SkillName.Ninjitsu].Value);
+                        int skill = m_Attacker is BaseCreature ? (int)m_Attacker.Skills[SkillName.Tactics].Value :
+                                                              (int)Math.Max(m_Attacker.Skills[SkillName.Bushido].Value, m_Attacker.Skills[SkillName.Tactics].Value);
 
                         int baseMin = Math.Max(5, (skill / 50) * 5);
                         AOS.Damage(m, m_Attacker, Utility.RandomMinMax(baseMin, (baseMin * 3) + 2), 100, 0, 0, 0, 0);

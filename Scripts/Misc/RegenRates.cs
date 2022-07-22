@@ -165,7 +165,7 @@ namespace Server.Misc
                 points += 20;
 
             if (CheckAnimal(from, typeof(Dog)) || CheckAnimal(from, typeof(Cat)))
-                points += from.Skills[SkillName.Ninjitsu].Fixed / 30;
+                points += from.Skills[SkillName.Magery].Fixed / 30;
 
             // Skill Masteries - goes after cap
             points += RampageSpell.GetBonus(from, RampageSpell.BonusType.HitPointRegen);

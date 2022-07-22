@@ -33,7 +33,7 @@ namespace Server.Items
 
             defender.FixedParticles(0x373A, 1, 17, 0x26BC, 0x662, 0, EffectLayer.Waist);
 
-            Timer t = new InternalTimer(defender, (int)(10.0 * (attacker.Skills[SkillName.Ninjitsu].Value - 50.0) / 70.0 + 5));	//5 - 15 damage
+            Timer t = new InternalTimer(defender, (int)(10.0 * (attacker.Skills[SkillName.Tactics].Value - 50.0) / 70.0 + 5));	//5 - 15 damage
 
             BuffInfo.AddBuff(defender, new BuffInfo(BuffIcon.TalonStrike, 1028856, 1151309, TimeSpan.FromSeconds(5.0), defender, "40"));
 
@@ -42,7 +42,7 @@ namespace Server.Items
             Registry.Add(defender, t);
 
             if (attacker is BaseCreature creature)
-                PetTrainingHelper.OnWeaponAbilityUsed(creature, SkillName.Ninjitsu);
+                PetTrainingHelper.OnWeaponAbilityUsed(creature, SkillName.Tactics);
         }
 
         private class InternalTimer : Timer

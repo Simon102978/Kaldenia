@@ -121,7 +121,7 @@ namespace Server.Items
 
             bool creature = attacker is BaseCreature;
             double skill = creature ? attacker.Skills[SkillName.Bushido].Value :
-                                      Math.Max(attacker.Skills[SkillName.Bushido].Value, attacker.Skills[SkillName.Ninjitsu].Value);
+                                      Math.Max(attacker.Skills[SkillName.Bushido].Value, attacker.Skills[SkillName.Tactics].Value);
 
             int dcibonus = (int)(10.0 * ((skill - 50.0) / 70.0 + 5));
             int spellblock = parry <= 70 ? 70 : parry <= 100 ? 40 : 20;

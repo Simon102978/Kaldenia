@@ -11,7 +11,7 @@ namespace Server.Mobiles
 	public class WildGreatHart : BaseAnimal // BaseCreature
 	{
 		[Constructable]
-		public WildGreatHart() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public WildGreatHart() : base( AIType.AI_Animal, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Activity = ActivityType.Twilight;
 			Eats = EatType.Herbivore;

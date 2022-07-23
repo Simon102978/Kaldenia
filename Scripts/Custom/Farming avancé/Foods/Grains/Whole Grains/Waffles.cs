@@ -9,9 +9,9 @@ namespace Server.Items
         {
             Weight = 1.0;
             Stackable = true;
-            Hue = 0x1C7;
+            Hue = 350;
             FillFactor = 4;
-            Name = "Waffles";
+            Name = "Gaufres";
         }
         public Waffles(Serial serial) : base(serial) { }
         public override void Serialize(GenericWriter writer) { base.Serialize(writer); writer.Write((int)0); }

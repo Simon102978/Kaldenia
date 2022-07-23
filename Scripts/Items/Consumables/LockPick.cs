@@ -70,6 +70,10 @@ namespace Server.Items
         {
             if (item.Locked)
             {
+
+				from.JetDetection(-25);
+
+
                 if (item is TreasureMapChest && TreasureMapInfo.NewSystem && !((TreasureMapChest)item).Guardians.All(g => g.Deleted))
                 {
                     from.SendLocalizedMessage(1115991); // You must destroy all the guardians before you can unlock the chest.

@@ -20,7 +20,7 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Backpack), 15, 20, 0x9B2, 0));
                 Add(new GenericBuyInfo(typeof(Leather), 6, 20, 0x1081, 0, true));
                 Add(new GenericBuyInfo(typeof(Dagger), 20, 20, 0x902, 0));
-                Add(new GenericBuyInfo(typeof(TaxidermyKit), 100000, 20, 0x1EBA, 0));
+                Add(new GenericBuyInfo(typeof(TaxidermyKit), 1000, 20, 0x1EBA, 0));
 
 
                 Add(new GenericBuyInfo(typeof(LeatherArms), 80, 20, 0x302, 0));

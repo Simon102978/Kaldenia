@@ -347,6 +347,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(VinyardLabelMaker), 1044046, "Marqueur de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WinecraftersTools), 1044046, "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WitchsBookofFoodCrafts), 1044046, "Livre de recette enchantées", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);
+			index = AddCraft(typeof(TaxidermyKit), 1044046, "Outil de Taxidermie", 80.0, 110.0, typeof(IronIngot), 1044036, 5, 1044037);
 
 
 			//TODO: focus of theurgy - 20th Anniversary Event 

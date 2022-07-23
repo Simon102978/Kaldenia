@@ -333,7 +333,7 @@ namespace Server.Engines.Craft
         {
             0x461, 0x48E, // Sandstone oven/fireplace
 			0x92B, 0x96C, // Stone oven/fireplace
-			0xDE3, 0xDE9, // Campfire
+			0xDE3, 0xDE9,0x29FD, // Campfire
 			0xFAC, 0xFAC, // Firepit
 			0x184A, 0x184C, // Heating stand (left)
 			0x184E, 0x1850, // Heating stand (right)
@@ -344,7 +344,7 @@ namespace Server.Engines.Craft
 			0x0FB1, 0x0FB1, // Small Forge
 			0x2DD8, 0x2DD8, // Elven Forge
             0xA2A4, 0xA2A5, 0xA2A8, 0xA2A9, // Wood Stove
-			0x29FD, 0xFB1,
+			0x29FD, 10749 // Firepit
         };
 
         private static readonly int[] m_Ovens =

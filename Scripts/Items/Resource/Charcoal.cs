@@ -19,7 +19,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-            Hue = 1190;
+            Hue = 1109;
         }
 
         public Charcoal(Serial serial)

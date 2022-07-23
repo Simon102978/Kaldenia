@@ -91,9 +91,11 @@ namespace Server.Items
 			else if ( itemID == 0xFAC ) return true;
 			else if ( itemID == 11739 ) return true;
 			else if ( itemID == 11740 ) return true;
+			else if (itemID == 0x29FD) return true;
 			else if ( itemID >= 0x184A && itemID <= 0x184C ) return true;
 			else if ( itemID >= 0x184E && itemID <= 0x1850 ) return true;
 			else if ( itemID >= 0x398C && itemID <= 0x399F ) return true;
+			
 			return false;
 		}
 

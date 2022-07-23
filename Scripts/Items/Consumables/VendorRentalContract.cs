@@ -181,10 +181,10 @@ namespace Server.Items
 
                 BaseHouse house = BaseHouse.FindHouseAt(from);
 
-                if (house == null || !house.IsOwner(from))
+               if (house == null || !house.IsOwner(from))
                 {
                     from.SendLocalizedMessage(1062333); // You must be standing inside of a house that you own to make use of this contract.
-                }
+               }
                 else if (!house.Public)
                 {
                     from.SendLocalizedMessage(1062335); // Rental contracts can only be placed in public houses.

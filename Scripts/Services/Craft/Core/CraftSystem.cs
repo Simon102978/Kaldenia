@@ -366,6 +366,11 @@ namespace Server.Engines.Craft
             CraftItem craftItem = CraftItems.GetAt(index);
             craftItem.NeedMill = needMill;
         }
+		public void SetNeedCauldron(int index, bool needCauldron)
+		{
+			CraftItem craftItem = CraftItems.GetAt(index);
+			craftItem.NeedCauldron = needCauldron;
+		}
 		#region Cooking System
 		public void SetNeedSteamPoweredBeverageMaker(int index, bool needSteamPoweredBeverageMaker)
 		{

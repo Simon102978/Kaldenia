@@ -326,6 +326,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(MalletAndChisel), 1044046, "Maillet", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Pinceaux), 1044046, "Pinceaux", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BarberScissors), 1044046, "Ciseaux de Barbier", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			AddCraft(typeof(FoodPlate), 1044046, "Plat de Nourriture", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			//index = AddCraft(typeof(Bait), 1044046, "Appats", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
 			//	index = AddCraft(typeof(MetalContainerEngraver), 1044046, 1072154, 75.0, 100.0, typeof(IronIngot), 1044036, 4, 1044037);
 			//    AddRes(index, typeof(Springs), 1044171, 1, 1044253);
@@ -341,8 +342,8 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(GrapevinePlacementTool), 1044046, "Outil placement de vignes", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(GrinderExp), 1044046, "Broyeur à café", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(JuicersTools), 1044046, "Fabrication de Jus", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(RollingPinExp), 1044046, "Rouleau à pâte avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(SkilletExp), 1044046, "Poelon Avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+		//	index = AddCraft(typeof(RollingPinExp), 1044046, "Rouleau à pâte avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+		//	index = AddCraft(typeof(SkilletExp), 1044046, "Poelon Avancé", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(VinyardLabelMaker), 1044046, "Marqueur de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WinecraftersTools), 1044046, "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WitchsBookofFoodCrafts), 1044046, "Livre de recette enchantées", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);

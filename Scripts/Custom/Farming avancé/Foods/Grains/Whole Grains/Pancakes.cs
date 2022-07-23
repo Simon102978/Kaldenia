@@ -9,7 +9,7 @@ namespace Server.Items
         {
             Weight = 1.0;
             Stackable = true;
-            Hue = 0x22A;
+            Hue = 0x15F;
             FillFactor = 5;
             Name = "Pancakes";
         }

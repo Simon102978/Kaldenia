@@ -182,7 +182,7 @@ namespace Server.Engines.Craft
             if (m_CraftSystem.Resmelt)
             {
                 AddButton(415, 442, 4005, 4007, GetButtonID(6, 1), GumpButtonType.Reply, 0);
-                AddHtml(450, 445, 150, 20, "<h3><basefont color=#FFFFFF>Fondre<basefont></h3>", false, false);
+                AddHtml(450, 445, 150, 20, "<h3><basefont color=#FFFFFF>Détruire<basefont></h3>", false, false);
 
 
                 //AddButton(15, 342, 4005, 4007, GetButtonID(6, 1), GumpButtonType.Reply, 0);

@@ -4,7 +4,10 @@ namespace Server.Items
     [Engines.Craft.Anvil]
     public class Anvil : Item
     {
-        [Constructable]
+
+		public override bool CanBeLock => false;
+		
+		[Constructable]
         public Anvil()
             : base(0xFAF)
         {

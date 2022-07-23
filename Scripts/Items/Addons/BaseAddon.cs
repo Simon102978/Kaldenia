@@ -50,7 +50,9 @@ namespace Server.Items
 
         private List<AddonComponent> m_Components;
 
-        public void AddComponent(AddonComponent c, int x, int y, int z)
+		public override bool CanBeLock => false;
+
+		public void AddComponent(AddonComponent c, int x, int y, int z)
         {
             if (Deleted)
                 return;

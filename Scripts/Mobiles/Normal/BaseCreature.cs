@@ -7624,7 +7624,7 @@ namespace Server.Mobiles
 		{
 			
 
-			return base.GetDetectionBonus(mobile) + (int)Skills[SkillName.Tactics].Value;
+			return base.GetDetectionBonus(mobile) + (int)Skills[SkillName.Tactics].Value - 25;
 		}
 
 

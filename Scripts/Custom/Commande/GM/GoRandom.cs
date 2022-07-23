@@ -40,7 +40,17 @@ namespace Server.Scripts.Commands
 
 						if (i > 5 || !from.InRange(target.Location,25))
 						{
+						
+
+
+							if (Follow.Collection.Contains(from))
+							{
+								Follow.Collection.Remove(from);
+								from.SendMessage("Vous ne suivez plus personne.");
+							}
+
 							from.MoveToWorld(target.Location, target.Map);
+
 							break;
 						}
 						else

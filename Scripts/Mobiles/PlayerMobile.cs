@@ -5059,7 +5059,7 @@ namespace Server.Mobiles
                 InvisibilityPotion.Iterrupt(this);
             }
 
-            return true;
+            return base.OnMove(d);
         }
 
         public bool BedrollLogout { get; set; }

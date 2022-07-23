@@ -231,11 +231,15 @@ namespace Server.Gumps
 
                     if ((from.GetDistanceToSqrt(item.Location) <= 1) && (from.InLOS(item)))
                     {
- ///                       if (item.CanBeAltered)
-                        {
+						if (item.CanBeLock)
+						{
                             item.Movable = false;
                         }
-                    }
+						else
+						{
+							from.SendMessage("Vous ne pouvez pas barrer/debarrer cet objet.");
+						}
+					}
                     else
                         from.SendMessage("Ceci est hors de votre portée.");
                 }
@@ -263,11 +267,15 @@ namespace Server.Gumps
 
                     if ((from.GetDistanceToSqrt(item.Location) <= 1) && (from.InLOS(item)))
                     {
- ///                       if (item.CanBeAltered)
+                       if (item.CanBeLock)
                         {
                             item.SetLastMoved();
                             item.Movable = true;
                         }
+						else
+						{
+							from.SendMessage("Vous ne pouvez pas barrer/debarrer cet objet.");
+						}
                     }
                     else
                         from.SendMessage("Ceci est hors de votre portée.");

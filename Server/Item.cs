@@ -1914,6 +1914,8 @@ namespace Server
 		/// </summary>
 		public bool Deleted => GetFlag(ImplFlag.Deleted);
 
+		public virtual bool CanBeLock => true;
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public LootType LootType
 		{

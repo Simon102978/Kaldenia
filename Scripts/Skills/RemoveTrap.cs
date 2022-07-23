@@ -87,7 +87,7 @@ namespace Server.SkillHandlers
 
                             from.PrivateOverheadMessage(MessageType.Regular, 1150, 1159057, from.NetState); // *You delicately manipulate the trigger mechanism...*
 
-							from.JetDetection(-25);
+							from.JetDetection(25);
 
 							StartChestDisarmTimer(from, tChest);
                         }

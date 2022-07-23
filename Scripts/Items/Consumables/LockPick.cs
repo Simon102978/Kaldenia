@@ -71,7 +71,7 @@ namespace Server.Items
             if (item.Locked)
             {
 
-				from.JetDetection(-25);
+				from.JetDetection(25);
 
 
                 if (item is TreasureMapChest && TreasureMapInfo.NewSystem && !((TreasureMapChest)item).Guardians.All(g => g.Deleted))

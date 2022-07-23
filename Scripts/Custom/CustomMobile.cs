@@ -2198,6 +2198,18 @@ namespace Server.Mobiles
 		{
 			Reroll(); // Ok, c'est un peu bizard de faire quand on delete le perso, que sa reroll automatique, mais ca facilite la pierre de reroll (fait juste deleter le personnage) et ca diminue aussi l'impacte d'un Rage Quit, puisque si le joueur a deleter son perso, il va automatiquement recevoir l'experience et va pouvoir revenir en rerollant.
 
+			if (Maitre != null)
+			{
+				Maitre.RemoveEsclave(this);
+			}
+
+
+
+
+
+
+
+
 			base.OnDelete();
 		}
 
@@ -2249,6 +2261,7 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 28:
 				case 27:
 				case 26:
 					{
@@ -2452,13 +2465,27 @@ namespace Server.Mobiles
                     }
             }
 
+			if (version <= 27)
+			{
+				foreach (Mobile item in m_Esclaves)
+				{
+					if (item == null)
+					{
+						RemoveEsclave(item);
+					}
+
+				}
+			}
+
+
+
 		}
 
 		public override void Serialize(GenericWriter writer)
         {        
             base.Serialize(writer);
 
-            writer.Write(27); // version
+            writer.Write(28); // version
 
 			writer.Write(LastFERP);
 

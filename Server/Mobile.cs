@@ -4985,8 +4985,11 @@ namespace Server
 				{
 					if (o is Mobile heard)
 					{
-						if (heard.CanSee(this) && (m_NoSpeechLOS || !heard.Player || heard.InLOS(this)))
+						if ((heard.CanSee(this) || (type == MessageType.Whisper)) && (m_NoSpeechLOS || !heard.Player || heard.InLOS(this)))
 						{
+
+
+
 							if (heard.m_NetState != null)
 							{
 								hears.Add(heard);
@@ -5051,7 +5054,11 @@ namespace Server
 				{
 					var heard = hears[i];
 
-					if (mutatedArgs == null || !CheckHearsMutatedSpeech(heard, mutateContext))
+					if (!heard.CanSee(this))					
+					{
+						heard.SendMessage(hue, $"{Name}: {text}");
+					}
+					else if (mutatedArgs == null || !CheckHearsMutatedSpeech(heard, mutateContext))
 					{
 						heard.OnSpeech(regArgs);
 
@@ -5060,10 +5067,9 @@ namespace Server
 						if (ns != null)
 						{
 							if (regp == null)
-							{
-								regp = Packet.Acquire(new UnicodeMessage(m_Serial, Body, type, hue, 3, m_Language, Name, text));
+							{					
+									regp = Packet.Acquire(new UnicodeMessage(m_Serial, Body, type, hue, 3, m_Language, Name, text));											
 							}
-
 							ns.Send(regp);
 						}
 					}
@@ -5079,7 +5085,6 @@ namespace Server
 							{
 								mutp = Packet.Acquire(new UnicodeMessage(m_Serial, Body, type, hue, 3, m_Language, Name, mutatedText));
 							}
-
 							ns.Send(mutp);
 						}
 					}

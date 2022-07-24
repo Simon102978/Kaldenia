@@ -49,8 +49,9 @@ namespace Server.Mobiles
             SetSkill(SkillName.Parry, 45, 60);
             SetSkill(SkillName.Musicianship, 66.0, 97.5);
             SetSkill(SkillName.Peacemaking, 65.0, 87.5);
+			SetSkill(SkillName.Provocation, 65.0, 87.5);
 
-            Fame = 100;
+			Fame = 100;
             Karma = 100;
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
@@ -66,7 +67,10 @@ namespace Server.Mobiles
             }
         }
 
-        public override void GenerateLoot()
+		public override bool CanPeace => true;
+		public override bool CanProvoke => true;
+
+		public override void GenerateLoot()
         {
         /*    AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(Harp), typeof(Lute), typeof(Drums), typeof(Tambourine) }));
             AddLoot(LootPack.LootItem<Longsword>(true));

@@ -36,13 +36,14 @@ namespace Server.Mobiles
 
             SetSkill(SkillName.Wrestling, 15, 37);
             SetSkill(SkillName.Parry, 45, 60);
-            SetSkill(SkillName.Archery, 66, 97);
+            SetSkill(SkillName.Archery, 50, 80);
             SetSkill(SkillName.Magery, 62, 62);
             SetSkill(SkillName.Swords, 35, 57);
             SetSkill(SkillName.Fencing, 15, 37);
             SetSkill(SkillName.Tactics, 65, 87);
+			SetSkill(SkillName.Tracking, 65, 87);
 
-            Fame = 100;
+			Fame = 100;
             Karma = 125;
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));

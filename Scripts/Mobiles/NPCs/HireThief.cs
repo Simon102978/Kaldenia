@@ -56,7 +56,7 @@ namespace Server.Mobiles
             Karma = 0;
 
             AddItem(new Sandals(Utility.RandomNeutralHue()));
-            AddItem(new Dagger());
+   //         AddItem(new Dagger());
             switch (Utility.Random(2))
             {
                 case 0:
@@ -67,7 +67,7 @@ namespace Server.Mobiles
                     break;
             }
 
-            PackGold(0, 25);
+    //        PackGold(0, 25);
         }
 
         public HireThief(Serial serial)

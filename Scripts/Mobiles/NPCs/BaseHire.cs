@@ -514,71 +514,117 @@ namespace Server.Mobiles
             return pay;
         }
 
-        #endregion 
+		#endregion
 
-        #region [ OnDragDrop ]
- /*       public override bool OnDragDrop(Mobile from, Item item)
-        {
-            if (Pay != 0)
-            {
-                // Is the creature already hired
-                if (!Controlled)
-                {
-                    // Is the item the payment in gold
-                    if (item is Gold)
-                    {
-                        // Is the payment in gold sufficient
-                        if (item.Amount >= Pay)
-                        {
-                            if (from.Followers + ControlSlots > from.FollowersMax)
-                            {
-                                SayTo(from, 500896, 0x3B2); // I see you already have an escort.
-                                return false;
-                            }
+		#region [ OnDragDrop ]
+		/*       public override bool OnDragDrop(Mobile from, Item item)
+			   {
+				   if (Pay != 0)
+				   {
+					   // Is the creature already hired
+					   if (!Controlled)
+					   {
+						   // Is the item the payment in gold
+						   if (item is Gold)
+						   {
+							   // Is the payment in gold sufficient
+							   if (item.Amount >= Pay)
+							   {
+								   if (from.Followers + ControlSlots > from.FollowersMax)
+								   {
+									   SayTo(from, 500896, 0x3B2); // I see you already have an escort.
+									   return false;
+								   }
 
-                            // Try to add the hireling as a follower
-                            if (AddHire(from))
-                            {
-                                SayTo(from, 1043258, string.Format("{0}", item.Amount / Pay), 0x3B2);//"I thank thee for paying me. I will work for thee for ~1_NUMBER~ days.", (int)item.Amount / Pay );
-                                HoldGold += item.Amount;
+								   // Try to add the hireling as a follower
+								   if (AddHire(from))
+								   {
+									   SayTo(from, 1043258, string.Format("{0}", item.Amount / Pay), 0x3B2);//"I thank thee for paying me. I will work for thee for ~1_NUMBER~ days.", (int)item.Amount / Pay );
+									   HoldGold += item.Amount;
 
-                                NextPay = DateTime.UtcNow + PayTimer.GetInterval();
+									   NextPay = DateTime.UtcNow + PayTimer.GetInterval();
 
-                                PayTimer.RegisterTimer(this);
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        }
-                        else
-                        {
-                            SayHireCost();
-                        }
-                    }
-                    else
-                    {
-                        SayTo(from, 1043268, 0x3B2);// Tis crass of me, but I want gold
-                    }
-                }
-                else
-                {
-                    SayTo(from, 1042495, 0x3B2);// I have already been hired.
-                }
-            }
-            else
-            {
-                SayTo(from, 500200, 0x3B2);// I have no need for that.
-            }
+									   PayTimer.RegisterTimer(this);
+									   return true;
+								   }
+								   else
+								   {
+									   return false;
+								   }
+							   }
+							   else
+							   {
+								   SayHireCost();
+							   }
+						   }
+						   else
+						   {
+							   SayTo(from, 1043268, 0x3B2);// Tis crass of me, but I want gold
+						   }
+					   }
+					   else
+					   {
+						   SayTo(from, 1042495, 0x3B2);// I have already been hired.
+					   }
+				   }
+				   else
+				   {
+					   SayTo(from, 500200, 0x3B2);// I have no need for that.
+				   }
 
-            return base.OnDragDrop(from, item);
-        }*/
+				   return base.OnDragDrop(from, item);
+			   }*/
 
-        #endregion 
+		public override bool OnDragDrop(Mobile from, Item item)
+		{
+			if (CheckFeed(from, item))
+				return true;
 
-        #region [ OnSpeech ] 
-        internal void SayHireCost()
+			if (PackAnimal.CheckAccess(this, from))
+			{
+				AddToBackpack(item);
+				return true;
+			}
+
+			return base.OnDragDrop(from, item);
+		}
+
+		public override bool CheckNonlocalDrop(Mobile from, Item item, Item target)
+		{
+			if (IsOwner(from))
+			{
+				return true;
+			}
+
+			return base.CheckNonlocalDrop(from, item, target);
+		}
+
+
+
+		/*		public override bool CheckNonlocalDrop(Mobile from, Item item, Item target)
+				{
+					return PackAnimal.CheckAccess(this, from);
+				}
+
+				public override bool CheckNonlocalLift(Mobile from, Item item)
+				{
+					return PackAnimal.CheckAccess(this, from);
+				}
+		*/
+
+
+
+
+
+
+
+
+
+
+		#endregion
+
+		#region [ OnSpeech ] 
+		internal void SayHireCost()
         {
  //           Say(1043256, string.Format("{0}", Pay), 0x3B2);// "I am available for hire for ~1_AMOUNT~ gold coins a day. If thou dost give me gold, I will work for thee."
         }
@@ -621,13 +667,22 @@ namespace Server.Mobiles
                 if (CanPaperdollBeOpenedBy(from))
                     list.Add(new PaperdollEntry(this));
 
-       //         list.Add(new HireEntry(from, this));
-            }
+				
+
+				//         list.Add(new HireEntry(from, this));
+			}
             else
             {
                 base.GetContextMenuEntries(from, list);
             }
-        }
+
+			if (IsOwner(from))
+			{
+				PackAnimal.GetContextMenuEntries(this, from, list);
+			}
+
+		
+		}
 
         #endregion
 

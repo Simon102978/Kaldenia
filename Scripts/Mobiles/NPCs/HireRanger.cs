@@ -14,6 +14,7 @@ namespace Server.Mobiles
             {
                 Body = 0x191;
                 Name = NameList.RandomName("female");
+
             }
             else
             {
@@ -46,8 +47,9 @@ namespace Server.Mobiles
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
             AddItem(new Shirt());
+		    AddItem(new ShortPants(Utility.RandomNeutralHue()));
 
-            // Pick a random sword
+/*            // Pick a random sword
             switch (Utility.Random(3))
             {
                 case 0:
@@ -60,12 +62,12 @@ namespace Server.Mobiles
                     AddItem(new Broadsword());
                     break;
             }
-
+/*
             SetWearable(new StuddedChest(), 0x59C);
             SetWearable(new StuddedArms(), 0x59C);
             SetWearable(new StuddedGloves(), 0x59C);
             SetWearable(new StuddedLegs(), 0x59C);
-            SetWearable(new StuddedGorget(), 0x59C);
+            SetWearable(new StuddedGorget(), 0x59C);*/
         }
 
         public override void GenerateLoot()

@@ -62,7 +62,7 @@ namespace Server.Mobiles
                     break;
             }
 
-            PackGold(0, 25);
+      //      PackGold(0, 25);
         }
 
         public HireBeggar(Serial serial)

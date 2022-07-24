@@ -52,7 +52,7 @@ namespace Server.Mobiles
             else
                 AddItem(new ThighBoots());
 
-            PackGold(20, 100);
+       //     PackGold(20, 100);
         }
 
         public HireMage(Serial serial)

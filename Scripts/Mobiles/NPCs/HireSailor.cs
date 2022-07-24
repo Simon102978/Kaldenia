@@ -47,7 +47,7 @@ namespace Server.Mobiles
             Karma = 0;
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
-            AddItem(new Cutlass());
+  //          AddItem(new Cutlass());
 
             switch (Utility.Random(2))
             {

@@ -165,16 +165,6 @@ namespace Server.Items
 					{
 						from.SendMessage("Vous ne pouvez que soigner les corps de joueurs.");
 					}
-
-
-
-
-
-
-
-
-
-
 				}
                 else if (targeted is PlagueBeastInnard)
                 {
@@ -721,6 +711,10 @@ namespace Server.Items
             {
                 healer.SendLocalizedMessage(501042); // Target cannot be resurrected at that location.
             }
+			else if (patient is CustomPlayerMobile cp && cp.Vulnerability)
+			{
+				healer.SendMessage("Vous ne pouvez pas soigner une cible qui vient d'être assomer avec des bandages.");
+			}
             else if (healer.CanBeBeneficial(patient, true, true))
             {
                 healer.DoBeneficial(patient);

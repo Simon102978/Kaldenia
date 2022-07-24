@@ -45,7 +45,7 @@ namespace Server.SkillHandlers
                 if (root != null && !root.Alive)
                     return;
 
-                if (from.IsPlayer() && root is BaseCreature && !(cont is StrongBackpack))
+                if (from.IsPlayer() && root is BaseCreature && !(cont is StrongBackpack) && !(root is BaseHire))
                     return;
 
                 if (root != null && root.IsStaff() && from.IsPlayer())
@@ -72,24 +72,28 @@ namespace Server.SkillHandlers
                     }
                 }
 
-                if (from.IsPlayer())
-                    Titles.AwardKarma(from, -4, true);
+				//            if (from.IsPlayer())
+				//                Titles.AwardKarma(from, -4, true);
+				if (root is BaseHire bh && bh.GetOwner() == from)
+				{
+					cont.DisplayTo(from);
 
-                if (from.IsStaff() || from.CheckTargetSkill(SkillName.Snooping, cont, 0.0, 100.0))
+				}
+				else if (from.IsStaff() || from.CheckTargetSkill(SkillName.Snooping, cont, 0.0, 100.0))
                 {
                     if (cont is TrapableContainer && ((TrapableContainer)cont).ExecuteTrap(from))
                         return;
 
                     cont.DisplayTo(from);
                 }
-                else
+				else
                 {
                     from.SendLocalizedMessage(500210); // You failed to peek into the container.
 
                     if (from.Skills[SkillName.Hiding].Value / 2 < Utility.Random(100))
                         from.RevealingAction();
                 }
-            }
+            }			
             else
             {
                 from.SendLocalizedMessage(500446); // That is too far away.

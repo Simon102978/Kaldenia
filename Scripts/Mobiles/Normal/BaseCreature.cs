@@ -1743,6 +1743,11 @@ namespace Server.Mobiles
                 }
             }
 
+			if (m is BaseCreature bc && bc.Tribe == Tribe)
+			{
+				return false;
+			}
+
 			if (Tribe != TribeType.None && IsTribeEnemy(m))
 			{
 				return true;

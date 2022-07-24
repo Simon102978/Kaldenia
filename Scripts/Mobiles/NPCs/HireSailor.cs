@@ -33,21 +33,20 @@ namespace Server.Mobiles
 
             SetDamage(10, 23);
 
-            SetSkill(SkillName.Stealing, 66.0, 97.5);
-            SetSkill(SkillName.Peacemaking, 65.0, 87.5);
+
+
             SetSkill(SkillName.MagicResist, 25.0, 47.5);
             SetSkill(SkillName.Healing, 65.0, 87.5);
             SetSkill(SkillName.Tactics, 65.0, 87.5);
             SetSkill(SkillName.Fencing, 65.0, 87.5);
-            SetSkill(SkillName.Parry, 45.0, 60.5);
-            SetSkill(SkillName.Lockpicking, 65, 87);
-            SetSkill(SkillName.Hiding, 65, 87);
-            SetSkill(SkillName.Snooping, 65, 87);
+			SetSkill(SkillName.Poisoning, 65.0, 87.5);
+			SetSkill(SkillName.Parry, 45.0, 60.5);
+
             Fame = 100;
             Karma = 0;
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
-            AddItem(new Cutlass());
+  //          AddItem(new Cutlass());
 
             switch (Utility.Random(2))
             {

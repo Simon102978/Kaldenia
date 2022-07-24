@@ -36,7 +36,7 @@ namespace Server.Mobiles
             HairHue = Race.RandomHairHue();
             Race.RandomFacialHair(this);
 
-            AddItem(new Katana());
+     //       AddItem(new Katana());
 
             SetStr(26, 26);
             SetDex(21, 21);
@@ -62,7 +62,7 @@ namespace Server.Mobiles
                     break;
             }
 
-            PackGold(0, 25);
+     //       PackGold(0, 25);
         }
 
         public HirePeasant(Serial serial)

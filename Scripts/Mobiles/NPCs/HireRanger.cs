@@ -14,6 +14,7 @@ namespace Server.Mobiles
             {
                 Body = 0x191;
                 Name = NameList.RandomName("female");
+
             }
             else
             {
@@ -35,19 +36,21 @@ namespace Server.Mobiles
 
             SetSkill(SkillName.Wrestling, 15, 37);
             SetSkill(SkillName.Parry, 45, 60);
-            SetSkill(SkillName.Archery, 66, 97);
+            SetSkill(SkillName.Archery, 50, 80);
             SetSkill(SkillName.Magery, 62, 62);
             SetSkill(SkillName.Swords, 35, 57);
             SetSkill(SkillName.Fencing, 15, 37);
             SetSkill(SkillName.Tactics, 65, 87);
+			SetSkill(SkillName.Tracking, 65, 87);
 
-            Fame = 100;
+			Fame = 100;
             Karma = 125;
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
             AddItem(new Shirt());
+		    AddItem(new ShortPants(Utility.RandomNeutralHue()));
 
-            // Pick a random sword
+/*            // Pick a random sword
             switch (Utility.Random(3))
             {
                 case 0:
@@ -60,12 +63,12 @@ namespace Server.Mobiles
                     AddItem(new Broadsword());
                     break;
             }
-
+/*
             SetWearable(new StuddedChest(), 0x59C);
             SetWearable(new StuddedArms(), 0x59C);
             SetWearable(new StuddedGloves(), 0x59C);
             SetWearable(new StuddedLegs(), 0x59C);
-            SetWearable(new StuddedGorget(), 0x59C);
+            SetWearable(new StuddedGorget(), 0x59C);*/
         }
 
         public override void GenerateLoot()

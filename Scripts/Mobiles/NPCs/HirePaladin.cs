@@ -25,7 +25,7 @@ namespace Server.Mobiles
             HairItemID = Race.RandomHair(Female);
             HairHue = Race.RandomHairHue();
             Race.RandomFacialHair(this);
-
+/*
             switch (Utility.Random(5))
             {
                 case 0:
@@ -42,7 +42,7 @@ namespace Server.Mobiles
                 case 4:
                     AddItem(new Helmet());
                     break;
-            }
+            }*/
 
             SetStr(86, 100);
             SetDex(81, 95);
@@ -64,14 +64,15 @@ namespace Server.Mobiles
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
             AddItem(new Shirt());
-            AddItem(new VikingSword());
+			    AddItem(new ShortPants(Utility.RandomNeutralHue()));
+/*            AddItem(new VikingSword());
             AddItem(new MetalKiteShield());
 
             AddItem(new PlateChest());
             AddItem(new PlateLegs());
             AddItem(new PlateArms());
             AddItem(new LeatherGorget());
-            PackGold(20, 100);
+            PackGold(20, 100);*/
         }
 
         public HirePaladin(Serial serial)

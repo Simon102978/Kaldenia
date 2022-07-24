@@ -54,8 +54,9 @@ namespace Server.Mobiles
             }
 
             AddItem(new Shirt());
+			AddItem(new ShortPants(Utility.RandomNeutralHue()));
 
-            // Pick a random sword
+    /*        // Pick a random sword
             switch (Utility.Random(5))
             {
                 case 0:
@@ -154,7 +155,7 @@ namespace Server.Mobiles
                     break;
             }
 
-            PackGold(25, 100);
+            PackGold(25, 100);*/
         }
 
         public HireFighter(Serial serial)

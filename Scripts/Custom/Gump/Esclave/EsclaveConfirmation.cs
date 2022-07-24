@@ -37,7 +37,7 @@ namespace Server.Gumps
 
 
 
-			string detail = $"Avantages:\n\n-En cas de déces, vous ne saurez plus victime de la mort permanente\n-Vous allez avoir accès à un banque\n-Vous allez avoir accès au même vendeur qu'un pérégrin\n-Vous serez taxé au même niveau qu'un pérégrin \n\n Désavantages:\n\n-Vous devrez obéir à {master.Name}\n-{master.Name} aura accès à votre banque \n-{master.Name} peut vous remettre déchêt sans préavis\n-{master.Name} connaitra vos talents";
+			string detail = $"Avantages:\n\n-Vous allez avoir accès à un banque\n-Vous allez avoir accès au même vendeur qu'un pérégrin\n-Vous serez taxé au même niveau qu'un pérégrin \n\n Désavantages:\n\n-Vous devrez obéir à {master.Name}\n-{master.Name} aura accès à votre banque \n-{master.Name} peut vous remettre déchêt sans préavis\n-{master.Name} connaitra vos talents";
 
 
 			AddSection(x - 15 , y + 66, 430, 200, "Conséquences", detail);

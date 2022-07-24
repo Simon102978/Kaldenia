@@ -26,8 +26,11 @@ namespace Server.Mobiles
 			"Meurt roux-étique !",
 			"Tu as penser à te teindre les cheveux?! Le roux t'irait mieux ?",
 			"Titus vous tueras tous !",
-			"Gloire à Titus et à la Roux-volution !"
+			"Gloire à Titus et à la Roux-volution !",
+			"ROUCISTE !"
 		};
+
+		public override TribeType Tribe => TribeType.Titusien;
 
 		public override bool CanBeParagon => false;
 		public DateTime m_LastParole = DateTime.MinValue;

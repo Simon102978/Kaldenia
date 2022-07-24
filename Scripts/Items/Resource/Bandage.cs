@@ -165,16 +165,6 @@ namespace Server.Items
 					{
 						from.SendMessage("Vous ne pouvez que soigner les corps de joueurs.");
 					}
-
-
-
-
-
-
-
-
-
-
 				}
                 else if (targeted is PlagueBeastInnard)
                 {
@@ -262,7 +252,13 @@ namespace Server.Items
             }
 
             m_Timer = null;
-        }
+
+
+			if (m_Healer is CustomPlayerMobile cp)
+			{
+				m_Healer.SendSpeedControl(SpeedControlType.Disable);
+			}
+		}
 
         private static readonly Dictionary<Mobile, BandageContext> m_Table = new Dictionary<Mobile, BandageContext>();
 
@@ -647,6 +643,11 @@ namespace Server.Items
                 BuffInfo.RemoveBuff(m_Healer, BuffIcon.Healing);
             else
                 BuffInfo.RemoveBuff(m_Healer, BuffIcon.Veterinary);
+
+
+
+			
+
         }
 
         private class InternalTimer : Timer
@@ -710,6 +711,10 @@ namespace Server.Items
             {
                 healer.SendLocalizedMessage(501042); // Target cannot be resurrected at that location.
             }
+			else if (patient is CustomPlayerMobile cp1 && cp1.Vulnerability && cp1.Alive)
+			{
+				healer.SendMessage("Vous ne pouvez pas soigner une cible qui vient d'être assomer avec des bandages.");
+			}
             else if (healer.CanBeBeneficial(patient, true, true))
             {
                 healer.DoBeneficial(patient);
@@ -731,6 +736,13 @@ namespace Server.Items
                 context = new BandageContext(healer, patient, delay, enhanced, corpse);
 
                 m_Table[healer] = context;
+
+
+				if (healer is CustomPlayerMobile cp)
+				{
+					cp.SendSpeedControl(SpeedControlType.WalkSpeed);
+				}
+
 
                 if (healer != patient)
                 {

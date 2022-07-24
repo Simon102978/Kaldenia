@@ -41,11 +41,11 @@ namespace Server.Gumps
 
 			AddButtonHtlml(x + 5, y + 40 + line++ * 25, 7, $"Changer le titre - {m_Esclave.customTitle}", "#FFFFFF");
 
-			if (m_From.IsStaff())
+	/*		if (m_From.IsStaff())
 			{
 				AddButtonHtlml(x + 5, y + 40 + line++ * 25, 3, "Accèder à la banque", "#FFFFFF");
 			}
-
+	*/
 			
 
 

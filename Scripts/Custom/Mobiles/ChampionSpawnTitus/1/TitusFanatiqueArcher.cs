@@ -56,8 +56,6 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override TribeType Tribe => TribeType.Titusien;
-
 		public override bool ClickTitle => false;
 		public override bool AlwaysMurderer => true;
 

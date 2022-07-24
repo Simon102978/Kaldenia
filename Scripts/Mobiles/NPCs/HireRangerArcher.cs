@@ -47,7 +47,7 @@ namespace Server.Mobiles
             AddItem(new Shoes(Utility.RandomNeutralHue()));
             AddItem(new Shirt());
 
-            // Pick a random sword
+  /*          // Pick a random sword
             switch (Utility.Random(2))
             {
                 case 0:
@@ -62,7 +62,7 @@ namespace Server.Mobiles
             AddItem(new RangerArms());
             AddItem(new RangerGloves());
             AddItem(new RangerGorget());
-            AddItem(new RangerLegs());
+            AddItem(new RangerLegs());*/
         }
 
         public override void GenerateLoot()

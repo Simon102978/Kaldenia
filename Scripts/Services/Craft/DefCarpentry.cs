@@ -152,8 +152,8 @@ namespace Server.Engines.Craft
             AddCraft(typeof(EasleSouth), 1044294, 1044317, 86.8, 111.8, typeof(Board), 1044041, 20, 1044351);
             AddCraft(typeof(EasleEast), 1044294, 1044318, 86.8, 111.8, typeof(Board), 1044041, 20, 1044351);
             AddCraft(typeof(EasleNorth), 1044294, 1044319, 86.8, 111.8, typeof(Board), 1044041, 20, 1044351);
-
-            index = AddCraft(typeof(RedHangingLantern), 1044294, 1029412, 65.0, 90.0, typeof(Board), 1044041, 5, 1044351);
+			index = AddCraft(typeof(Watertub), 1044294, "Barril d'eau", 86.8, 111.8, typeof(Board), 1044041, 15, 1044351);
+			index = AddCraft(typeof(RedHangingLantern), 1044294, 1029412, 65.0, 90.0, typeof(Board), 1044041, 5, 1044351);
             AddRes(index, typeof(BlankScroll), 1044377, 10, 1044378);
 
             index = AddCraft(typeof(WhiteHangingLantern), 1044294, 1029416, 65.0, 90.0, typeof(Board), 1044041, 5, 1044351);

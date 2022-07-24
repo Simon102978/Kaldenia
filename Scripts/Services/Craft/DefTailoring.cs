@@ -571,6 +571,14 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(LargeSquarePillow), "Divers", "Coussin Carré", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(ThrowPillow), "Divers", "Coussin à Motifs", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
 
+			index = AddCraft(typeof(Coussin1), "Divers", "Coussin", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(Coussin2), "Divers", "Coussin", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(Coussin3), "Divers", "Coussin", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(Coussin4), "Divers", "Coussin", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(Coussin5), "Divers", "Coussin", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(Coussin6), "Divers", "Coussin", 55.0, 80.0, typeof(Cloth), "Tissus", 20, "Vous n'avez pas assez de tissus.");
+
+
 			index = AddCraft(typeof(Backpack), "Divers", "Sac à dos", 10, 35.0, typeof(Leather), 1044462, 5, 1044463);
 			index = AddCraft(typeof(Pouch), "Divers", "Bourse", 0.0, 25.0, typeof(Leather), 1044462, 3, 1044463);
 			index = AddCraft(typeof(Bag), "Divers", "Sac", 5, 30.0, typeof(Leather), 1044462, 4, 1044463);

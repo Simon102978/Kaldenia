@@ -61,7 +61,7 @@ namespace Server.Mobiles
         public BaseShipCaptain() : this(null) { }
 
         public BaseShipCaptain(BaseGalleon galleon)
-            : this(galleon, AIType.AI_Melee, FightMode.Weakest, 10, 1, .2, .4)
+            : this(galleon, AIType.AI_Melee, FightMode.Weakest, 30, 1, .2, .4)
         {
         }
 

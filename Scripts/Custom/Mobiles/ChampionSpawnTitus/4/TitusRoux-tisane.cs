@@ -91,7 +91,6 @@ namespace Server.Mobiles
         public override bool AlwaysMurderer => true;
         public override bool ShowFameTitle => false;
 
-        public override TribeType Tribe => TribeType.Titusien;
 
         public override void GenerateLoot()
         {

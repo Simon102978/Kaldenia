@@ -39,8 +39,8 @@ namespace Server.Mobiles
             : base(serial)
         {
         }
-
-        public override Poison PoisonImmune => Poison.Lesser;
+		public override TribeType Tribe => TribeType.Titusien;
+		public override Poison PoisonImmune => Poison.Lesser;
         public override Poison HitPoison => Poison.Lesser;
         public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish | FoodType.FruitsAndVegies | FoodType.GrainsAndHay | FoodType.Eggs;
 

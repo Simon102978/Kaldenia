@@ -55,7 +55,6 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override TribeType Tribe => TribeType.Titusien;
 
 		public override bool CanRummageCorpses => true;
 

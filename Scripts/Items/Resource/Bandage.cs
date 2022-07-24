@@ -254,10 +254,10 @@ namespace Server.Items
             m_Timer = null;
 
 
-			if (m_Healer is CustomPlayerMobile cp)
+	/*		if (m_Healer is CustomPlayerMobile cp)
 			{
 				m_Healer.SendSpeedControl(SpeedControlType.Disable);
-			}
+			}*/
 		}
 
         private static readonly Dictionary<Mobile, BandageContext> m_Table = new Dictionary<Mobile, BandageContext>();
@@ -738,10 +738,10 @@ namespace Server.Items
                 m_Table[healer] = context;
 
 
-				if (healer is CustomPlayerMobile cp)
+	/*			if (healer is CustomPlayerMobile cp)
 				{
 					cp.SendSpeedControl(SpeedControlType.WalkSpeed);
-				}
+				}*/
 
 
                 if (healer != patient)

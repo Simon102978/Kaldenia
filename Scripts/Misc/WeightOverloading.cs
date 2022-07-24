@@ -71,7 +71,35 @@ namespace Server.Misc
             int maxWeight = from.MaxWeight + OverloadAllowance;
             int overWeight = (Mobile.BodyWeight + from.TotalWeight) - maxWeight;
 
-            if (overWeight > 0)
+
+
+
+
+			if (from is CustomPlayerMobile && (e.Direction & Direction.Running) != 0)
+			{
+				CustomPlayerMobile cp = (CustomPlayerMobile)from;
+
+				cp.CheckEquitation(EquitationType.Running);
+
+				if (BandageContext.GetContext(cp) != null)
+				{
+					BandageContext context = BandageContext.GetContext(cp);
+
+					context.StopHeal();
+
+					cp.SendMessage("Vous ne pouvez pas soigner en courrant.");
+				}
+
+			}
+
+
+
+
+
+
+
+
+			if (overWeight > 0)
             {
                 from.Stam -= GetStamLoss(from, overWeight, (e.Direction & Direction.Running) != 0);
 
@@ -102,12 +130,9 @@ namespace Server.Misc
 
 
 
-			if (from is CustomPlayerMobile && (e.Direction & Direction.Running) != 0)
-			{
-				CustomPlayerMobile cp = (CustomPlayerMobile)from;
 
-				cp.CheckEquitation(EquitationType.Running);
-			}
+
+
 		}
 
 

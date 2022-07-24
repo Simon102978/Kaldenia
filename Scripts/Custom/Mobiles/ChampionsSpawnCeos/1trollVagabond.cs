@@ -10,7 +10,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Name = "troll vagabond";
-            Body = Utility.RandomList(53, 54);
+            Body = 53;
             BaseSoundID = 461;
 
 			SetStr(146, 175);

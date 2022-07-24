@@ -8,7 +8,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Name = "troll villageois";
-            Body = Utility.RandomList(53, 54);
+            Body = 53;
             BaseSoundID = 461;
 
 

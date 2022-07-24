@@ -167,8 +167,8 @@ public class RepairTable : CraftableFurniture
 }
 [Furniture]
 [Flipable(0x9967, 0x9968)]
-public class Puit : CraftableFurniture
-{
+public class Puit : CraftableFurniture, IWaterSource
+	{
 	[Constructable]
 	public Puit()
 		: base(0x9967)
@@ -181,8 +181,17 @@ public class Puit : CraftableFurniture
 		: base(serial)
 	{
 	}
-
-	public override void Serialize(GenericWriter writer)
+		public int Quantity
+		{
+			get
+			{
+				return 500;
+			}
+			set
+			{
+			}
+		}
+		public override void Serialize(GenericWriter writer)
 	{
 		base.Serialize(writer);
 
@@ -197,7 +206,38 @@ public class Puit : CraftableFurniture
 
 	}
 }
-[Furniture]
+	[Flipable(0x0A3C, 0x0A3D, 0x0A44, 0x0A45)]
+	public class NormDresser : CraftableFurniture
+	{
+		[Constructable]
+		public NormDresser()
+			: base(0x0A3C)
+		{
+			Weight = 15.0;
+			Name = "Coiffeuse";
+		}
+
+		public NormDresser(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
 [Flipable(0x996D, 0x996D)]
 public class Ancre : CraftableFurniture
 {

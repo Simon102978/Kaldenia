@@ -508,6 +508,7 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(Cloth), 1044286, 2, 1044287);
 			AddCraft(typeof(LightShipCannonDeed), "Canons", "Canon Léger", 65.0, 120.0, typeof(IronIngot), 1044036, 500, 1044037);
 			AddCraft(typeof(HeavyShipCannonDeed), "Canons", "Canon Lourd", 70.0, 120.0, typeof(IronIngot), 1044036, 800, 1044037);
+			AddCraft(typeof(Ancre), "Canons", "Ancre", 90.0, 115.0, typeof(IronIngot), 1044036, 15, 1044037);
 			#endregion
 
 			// Set the overridable material

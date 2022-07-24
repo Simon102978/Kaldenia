@@ -721,7 +721,111 @@ public override void Deserialize(GenericReader reader)
 		}
 	}
 
+	public class Lunettes1 : BaseNecklace
 
+	{
+
+
+		[Constructable]
+		public Lunettes1()
+				: base(0x2FB8)
+
+		{
+			Weight = 1.0;
+			Name = "Lunettes";
+		}
+
+		public Lunettes1(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class Lunettes2 : BaseNecklace
+
+	{
+
+
+		[Constructable]
+		public Lunettes2()
+				: base(0x45B1)
+
+		{
+			Weight = 1.0;
+			Name = "Lunettes";
+		}
+
+		public Lunettes2(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class Lunettes3 : BaseNecklace
+
+	{
+
+
+		[Constructable]
+		public Lunettes3()
+				: base(0x4644)
+
+		{
+			Weight = 1.0;
+			Name = "Lunettes";
+		}
+
+		public Lunettes3(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 
 }

@@ -55,7 +55,10 @@ namespace Server.Items
         private static readonly TrophyInfo[] m_Table = new TrophyInfo[]
         {
             new TrophyInfo( typeof( BrownBear ),      0x1E60,       1041093, 1041107 ),
-            new TrophyInfo( typeof( GreatHart ),      0x1E61,       1041095, 1041109 ),
+			new TrophyInfo( typeof( GrizzlyBear ),    0x1E60,       1041093, 1041107 ),
+			new TrophyInfo( typeof( BlackBear ),      0x1E60,       1041093, 1041107 ),
+
+			new TrophyInfo( typeof( GreatHart ),      0x1E61,       1041095, 1041109 ),
             new TrophyInfo( typeof( BigFish ),        0x1E62,       1041096, 1041110 ),
             new TrophyInfo( typeof( Gorilla ),        0x1E63,       1041091, 1041105 ),
             new TrophyInfo( typeof( Orc ),            0x1E64,       1041090, 1041104 ),

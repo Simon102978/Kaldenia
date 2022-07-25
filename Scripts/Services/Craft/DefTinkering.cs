@@ -471,7 +471,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Orchid1), 1044050, "Orchidée", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");
 			
 			index = AddCraft(typeof(Orchid2), 1044050, "Orchidée", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");
-			
+			index = AddCraft(typeof(Lunettes1), 1044050, "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(Lunettes2), 1044050, "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(Lunettes3), 1044050, "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
 
 			/*         index = AddCraft(typeof(BroadcastCrystal), 1044050, 1153097, 80.0, 130.0, typeof(IronIngot), 1044036, 20, 1044037);
 					 AddRes(index, typeof(Emerald), 1062601, 10, 1044240);

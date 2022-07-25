@@ -100,7 +100,7 @@ namespace Server.Mobiles
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool DeathShot { get; set; }
-		public int VulnerabilityDuration => 10; //minutes
+		public int VulnerabilityDuration => 5; //minutes
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime PreventPvpAttackTime { get; set; }
@@ -2042,9 +2042,12 @@ namespace Server.Mobiles
 
 			LastDeathTime = DateTime.Now;
 
+			bool Assomage = false;
+
 			if (!Vulnerability && !DeathShot)
 			{
 				Frozen = true;
+				Assomage = true;
 				Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration), new TimerStateCallback(RessuciterOverTime_Callback), this);
 			}
 			else
@@ -2071,7 +2074,8 @@ namespace Server.Mobiles
 			}
 
 			Vulnerability = true;
-			EndOfVulnerabilityTime = DateTime.Now + TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration);
+			EndOfVulnerabilityTime = DateTime.Now + TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration * (Assomage ? 1 : 5));
+
 			Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration), new TimerStateCallback(RemoveVulnerability_Callback), this);
 
 			PreventPvpAttack = true;

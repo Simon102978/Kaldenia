@@ -194,8 +194,8 @@ namespace Server.Items
                 //m_Valuestone = valuestone;
                 //m_Valuegem = valuegem;
 
-                bool canMineStone = (mobile.StoneMining && mobile.Skills[SkillName.Mining].Base >= 100.0);
-                bool canMineGems = (mobile.GemMining && mobile.Skills[SkillName.Mining].Base >= 100.0);
+                bool canMineStone = (mobile.StoneMining && mobile.Skills[SkillName.Mining].Base >= 60.0);
+                bool canMineGems = (mobile.GemMining && mobile.Skills[SkillName.Mining].Base >= 60.0);
 
                 switch (type)
                 {
@@ -239,7 +239,7 @@ namespace Server.Items
                             {
                                 m_Mobile.SendLocalizedMessage(1054023); // You are already set to mine both ore and stone!
                             }
-                            else if (!m_Mobile.StoneMining || m_Mobile.Skills[SkillName.Mining].Base < 100.0)
+                            else if (!m_Mobile.StoneMining || m_Mobile.Skills[SkillName.Mining].Base < 60.0)
                             {
                                 m_Mobile.SendLocalizedMessage(1054024); // You have not learned how to mine stone or you do not have enough skill!
                             }
@@ -258,7 +258,7 @@ namespace Server.Items
                             {
                                 m_Mobile.SendLocalizedMessage(1112235); // You are already set to mine both ore and gems!
                             }
-                            else if (!m_Mobile.GemMining || m_Mobile.Skills[SkillName.Mining].Base < 100.0)
+                            else if (!m_Mobile.GemMining || m_Mobile.Skills[SkillName.Mining].Base < 60.0)
                             {
                                 m_Mobile.SendLocalizedMessage(1112234); // You have not learned how to mine gems or you do not have enough skill!
                             }
@@ -277,7 +277,7 @@ namespace Server.Items
                             {
                                 m_Mobile.SendLocalizedMessage(1156866); // You are already mining only stone.
                             }
-                            else if (!m_Mobile.StoneMining || m_Mobile.Skills[SkillName.Mining].Base < 100.0)
+                            else if (!m_Mobile.StoneMining || m_Mobile.Skills[SkillName.Mining].Base < 60.0)
                             {
                                 m_Mobile.SendLocalizedMessage(1054024); // You have not learned how to mine stone or you do not have enough skill!
                             }

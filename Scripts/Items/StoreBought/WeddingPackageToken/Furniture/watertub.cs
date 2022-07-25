@@ -1,9 +1,9 @@
 namespace Server.Items
 {
-    public class Watertub : Item
-    {
+	[Flipable(0x0E7B, 0x154D)]
+	public class Watertub : Item, IWaterSource
+	{
         
-
         [Constructable]
         public Watertub()
             : base(0x0E7B)
@@ -18,8 +18,17 @@ namespace Server.Items
             : base(serial)
         {
         }
-
-        public override void Serialize(GenericWriter writer)
+		public int Quantity
+		{
+			get
+			{
+				return 500;
+			}
+			set
+			{
+			}
+		}
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

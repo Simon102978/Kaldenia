@@ -274,6 +274,12 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(ElvenReadingChair), 1044291, 1072873, 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
 
+			index = AddCraft(typeof(BarComptoir), 1044291, "Bar", 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
+			ForceNonExceptional(index);
+
+			index = AddCraft(typeof(Comptoir), 1044291, "Comptoir", 80.0, 105.0, typeof(Board), 1044041, 20, 1044351);
+			ForceNonExceptional(index);
+
 			/*        AddCraft(typeof(TerMurStyleChair), 1044291, 1095291, 85.0, 110.0, typeof(Board), 1044041, 40, 1044351);
 
 					AddCraft(typeof(TerMurStyleTable), 1044291, 1095321, 75.0, 100.0, typeof(Board), 1044041, 50, 1044351);
@@ -329,7 +335,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(BarrelLid), 1044251, 1, 1044253);
             ForceNonExceptional(index);
 
-      /*      index = AddCraft(typeof(ArcaneBookShelfDeedSouth), 1044292, 1072871, 94.7, 119.7, typeof(Board), 1044041, 80, 1044351);
+           index = AddCraft(typeof(ArcaneBookShelfDeedSouth), 1044292, 1072871, 94.7, 119.7, typeof(Board), 1044041, 80, 1044351);
             AddRecipe(index, (int)CarpRecipes.ArcaneBookshelfSouth);
             ForceNonExceptional(index);
 
@@ -343,7 +349,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(OrnateElvenChestEastDeed), 1044292, 1073383, 94.7, 119.7, typeof(Board), 1044041, 40, 1044351);
             AddRecipe(index, (int)CarpRecipes.OrnateElvenChestEast);
-            ForceNonExceptional(index);*/
+            ForceNonExceptional(index);
 
             index = AddCraft(typeof(ElvenWashBasinSouthWithDrawerDeed), 1044292, 1072865, 70.0, 95.0, typeof(Board), 1044041, 40, 1044351);
             ForceNonExceptional(index);
@@ -351,7 +357,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(ElvenWashBasinEastWithDrawerDeed), 1044292, 1073387, 70.0, 95.0, typeof(Board), 1044041, 40, 1044351);
             ForceNonExceptional(index);
 
-     /*       index = AddCraft(typeof(ElvenDresserDeedSouth), 1044292, 1072864, 75.0, 100.0, typeof(Board), 1044041, 45, 1044351);
+            index = AddCraft(typeof(ElvenDresserDeedSouth), 1044292, 1072864, 75.0, 100.0, typeof(Board), 1044041, 45, 1044351);
             AddRecipe(index, (int)CarpRecipes.ElvenDresserSouth);
             ForceNonExceptional(index);
 
@@ -361,7 +367,7 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(FancyElvenArmoire), 1044292, 1072866, 80.0, 105.0, typeof(Board), 1044041, 60, 1044351);
             AddRecipe(index, (int)CarpRecipes.FancyElvenArmoire);
-            ForceNonExceptional(index);*/
+            ForceNonExceptional(index);
 
             index = AddCraft(typeof(SimpleElvenArmoire), 1044292, 1073401, 80.0, 105.0, typeof(Board), 1044041, 60, 1044351);
             ForceNonExceptional(index);
@@ -443,6 +449,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(PipeCourte), "Autres", "Pipe Courte ", 80.5, 100.5, typeof(Board), "Planches", 4, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(PipeLongue), "Autres", "Pipe Longue", 70.5, 90.5, typeof(Board), "Planches", 6, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(MatchLight), "Autres", "Allumettes", 0.0, 30.0, typeof(Kindling), "Petit Bois", 2, "Vous n'avez pas assez de petit bois.");
+			index = AddCraft(typeof(Lunettes1), "Autres", "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(Lunettes2), "Autres", "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(Lunettes3), "Autres", "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
 
 
 
@@ -667,7 +676,9 @@ namespace Server.Engines.Craft
 
             AddCraft(typeof(TerMurDresserSouthDeed), 1044290, 1111783, 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 
-            AddCraft(typeof(RusticBenchSouthDeed), 1044290, 1150593, 94.7, 119.8, typeof(Board), 1044041, 35, 1044351);
+			AddCraft(typeof(NormDresser), 1044290, "Coiffeuse", 70.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+
+			AddCraft(typeof(RusticBenchSouthDeed), 1044290, 1150593, 94.7, 119.8, typeof(Board), 1044041, 35, 1044351);
 
             AddCraft(typeof(RusticBenchEastDeed), 1044290, 1150594, 94.7, 119.8, typeof(Board), 1044041, 35, 1044351);
 
@@ -681,7 +692,7 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
 			AddCraft(typeof(FeedingThrough), 1044290, "Mangeoir", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 			AddCraft(typeof(Puit), 1044290, "Puit", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
-			AddCraft(typeof(Ancre), 1044290, "Ancre", 90.0, 115.0, typeof(IronIngot), 1044036, 15, 1044037);
+		
 			AddCraft(typeof(RackaVin), 1044290, "Cellier", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
 			AddRes(index, typeof(BottleOfWine), "Bouteille de vin", 15, "Vous n'avez pas suffisament de bouteille de vin.");
 			AddCraft(typeof(RangementAlchimie), 1044290, "Rangement Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
@@ -750,7 +761,7 @@ namespace Server.Engines.Craft
 					AddCraft(typeof(LongWoodenTableSouthDeed), 1044290, 1154166, 80.0, 105.0, typeof(Board), 1044041, 80, 1044351);
 
 					AddCraft(typeof(LongWoodenTableEastDeed), 1044290, 1154167, 80.0, 105.0, typeof(Board), 1044041, 80, 1044351);
-
+			*/
 					index = AddCraft(typeof(SmallDisplayCaseSouthDeed), 1044290, 1155842, 95.0, 120.0, typeof(Board), 1044041, 40, 1044351);
 					AddSkill(index, SkillName.Tinkering, 75.0, 80.0);
 					AddRes(index, typeof(IronIngot), 1044036, 10, 1044037);
@@ -759,7 +770,7 @@ namespace Server.Engines.Craft
 					AddSkill(index, SkillName.Tinkering, 75.0, 80.0);
 					AddRes(index, typeof(IronIngot), 1044036, 10, 1044037);
 
-					index = AddCraft(typeof(FancyLoveseatNorthDeed), 1044290, 1156560, 70.0, 120.0, typeof(Board), 1044041, 80, 1044351);
+			/*  		index = AddCraft(typeof(FancyLoveseatNorthDeed), 1044290, 1156560, 70.0, 120.0, typeof(Board), 1044041, 80, 1044351);
 					AddSkill(index, SkillName.Tailoring, 55.0, 60.0);
 					AddRes(index, typeof(Cloth), 1044286, 48, 1044287);
 

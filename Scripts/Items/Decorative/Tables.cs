@@ -161,8 +161,72 @@ namespace Server.Items
                 Weight = 1.0;
         }
     }
+	[Flipable(0x1910, 0x1911, 0x1912, 0x1913, 0x1918, 0x1919, 0x191A, 0x191B, 0x191C, 0x191D, 0x191E, 0x191F)]
+	public class BarComptoir : CraftableFurniture
+	{
 
-    [Furniture]
+
+		[Constructable]
+		public BarComptoir()
+			: base(0x1910)
+		{
+			Weight = 15;
+			Name = "Comptoir Bar";
+		}
+
+
+
+		public BarComptoir(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			reader.ReadInt();
+		}
+	}
+	[Flipable(0x0B3D, 0x0B3E, 0x0B3F, 0x0B40)]
+	public class Comptoir : CraftableFurniture
+	{
+
+
+		[Constructable]
+		public Comptoir()
+			: base(0x0B3D)
+		{
+			Weight = 15;
+			Name = "Comptoir";
+		}
+
+
+
+		public Comptoir(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			reader.ReadInt();
+		}
+	}
+
+	[Furniture]
     public class TerMurStyleTable : Item
     {
         public override int LabelNumber => 1095321;  // Ter-Mur style table

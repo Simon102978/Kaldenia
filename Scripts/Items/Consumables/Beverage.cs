@@ -1189,6 +1189,10 @@ namespace Server.Items
 				0x0B41, 0x1797,
 				0x0B42, 0x1798,
 				0x0B43, 0x1799,
+				0x9967, 0x9968,
+				0xE7B, 0x154D,
+				39271, 39272,
+				3707, 5453,
 			};
 
 		private static int[] m_StaticTiles = new int[]
@@ -1231,6 +1235,10 @@ namespace Server.Items
 				0x0B41, 0x1797,
 				0x0B42, 0x1798,
 				0x0B43, 0x1799,
+				0x9967, 0x9968,
+				0xE7B, 0x154D,
+				39271, 39272,
+				3707, 5453,
 			};
 
 		#region Effects of achohol

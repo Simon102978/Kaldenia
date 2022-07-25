@@ -49,7 +49,11 @@ namespace Server.Items
                 {
                     from.LocalOverheadMessage(MessageType.Regular, 0x22, 1005000); // You can not heal yourself in your current state.
                 }
-                else if (from.CanBeginAction(typeof(BaseHealPotion)) && from.CanBeginAction(typeof(HealingStone)))
+				else if (!from.CanHeal())
+				{
+					from.SendMessage("Vous ne pouvez pas boire cette potion pour le moment.");
+				}
+				else if (from.CanBeginAction(typeof(BaseHealPotion)) && from.CanBeginAction(typeof(HealingStone)))
                 {
                     from.BeginAction(typeof(BaseHealPotion));
 

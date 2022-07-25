@@ -293,7 +293,10 @@ namespace Server.Items
 
     public class BarrabHemolymphConcentrate : EodonianPotion
     {
-        [Constructable]
+
+		public override TimeSpan Cooldown => TimeSpan.FromMinutes(5);
+
+		[Constructable]
         public BarrabHemolymphConcentrate() : this(1) { }
 
         [Constructable]
@@ -316,7 +319,11 @@ namespace Server.Items
             {
                 m.SendLocalizedMessage(1156868); // You may not use this while poisoned!
             }
-            else if (Spells.Bushido.Confidence.IsConfident(m))
+			else if (!m.CanHeal())
+			{
+				m.SendMessage("Vous ne pouvez pas boire cette potion pour le moment.");
+			}
+			else if (Spells.Bushido.Confidence.IsConfident(m))
             {
                 m.SendLocalizedMessage(1156873); // You may not use this while under the effects of confidence!
             }

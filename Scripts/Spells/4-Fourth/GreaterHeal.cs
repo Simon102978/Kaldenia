@@ -49,6 +49,10 @@ namespace Server.Spells.Fourth
             {
                 Caster.LocalOverheadMessage(MessageType.Regular, 0x22, (Caster == m) ? 1005000 : 1010398);
             }
+			else if (!m.CanHeal())
+			{
+				Caster.SendMessage("Vous ne pouvez pas soigner cette cible pour le moment.");
+			}
             else if (CheckBSequence(m))
             {
                 SpellHelper.Turn(Caster, m);

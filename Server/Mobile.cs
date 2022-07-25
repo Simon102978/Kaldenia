@@ -5551,6 +5551,16 @@ namespace Server
 			eable.Free();
 		}
 
+		public virtual bool CanHeal()
+		{
+			if (Poisoned)
+			{
+				return false;
+			}
+
+			return true;
+		}
+
 		public virtual int Heal(int amount)
 		{
 			return Heal(amount, this, true);

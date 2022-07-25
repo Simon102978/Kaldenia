@@ -151,7 +151,7 @@ namespace Server.Items
 				if (entry.Safe = true)
 				{
 
-					if (entry.Player.Hits < entry.Player.HitsMax)
+					if (entry.Player.Hits < entry.Player.HitsMax && entry.Player.CanHeal())
 						entry.Player.Hits += 1;
 					//  if(entry.Player.Mana < entry.Player.ManaMax)
 					//	entry.Player.Mana +=1;

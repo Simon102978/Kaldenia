@@ -2082,10 +2082,14 @@ namespace Server.Mobiles
 		}
 
 
-
-
-
-
+		public override bool CanHeal()
+		{
+			if (Vulnerability || Server.Items.MortalStrike.IsWounded(this))
+			{
+				return false;
+			}
+			return base.CanHeal();
+		}
 
 		public void TrapDamage(int damage, int phys, int fire, int cold, int pois, int nrgy)
 		{

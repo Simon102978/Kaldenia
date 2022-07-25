@@ -38,7 +38,27 @@ namespace Server
             return true;
         }
 
-        private static int GetMaxMovementDex(BaseCreature bc)
+		public static bool GetCustomSpeeds(BaseCreature bc, ref double activeSpeed, ref double passiveSpeed) // pour certains mobs que je veux mettre courreur.
+		{
+			int maxDex = GetMaxMovementDex(bc);
+			int dex = Math.Min(maxDex, Math.Max(25, bc.Dex));
+
+			double min = 0.1;
+			double max = 0.2;
+
+			activeSpeed = max - ((max - min) * ((double)dex / maxDex));
+
+			if (activeSpeed < min)
+			{
+				activeSpeed = min;
+			}
+
+			passiveSpeed = activeSpeed * 2;
+
+			return true;
+		}
+
+		private static int GetMaxMovementDex(BaseCreature bc)
         {
             return bc.IsMonster ? 150 : 190;
         }

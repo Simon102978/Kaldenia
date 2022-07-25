@@ -5610,7 +5610,7 @@ namespace Server.Mobiles
             }
         }
 
-        public void AdjustSpeeds()
+        public virtual void AdjustSpeeds()
         {
             double activeSpeed = 0.0;
             double passiveSpeed = 0.0;

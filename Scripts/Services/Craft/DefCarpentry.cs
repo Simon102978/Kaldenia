@@ -336,19 +336,18 @@ namespace Server.Engines.Craft
             ForceNonExceptional(index);
 
            index = AddCraft(typeof(ArcaneBookShelfDeedSouth), 1044292, 1072871, 94.7, 119.7, typeof(Board), 1044041, 80, 1044351);
-            AddRecipe(index, (int)CarpRecipes.ArcaneBookshelfSouth);
-            ForceNonExceptional(index);
+                        ForceNonExceptional(index);
 
             index = AddCraft(typeof(ArcaneBookShelfDeedEast), 1044292, 1073371, 94.7, 119.7, typeof(Board), 1044041, 80, 1044351);
-            AddRecipe(index, (int)CarpRecipes.ArcaneBookshelfEast);
+           
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(OrnateElvenChestSouthDeed), 1044292, 1072862, 94.7, 119.7, typeof(Board), 1044041, 40, 1044351);
-            AddRecipe(index, (int)CarpRecipes.OrnateElvenChestSouth);
+            
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(OrnateElvenChestEastDeed), 1044292, 1073383, 94.7, 119.7, typeof(Board), 1044041, 40, 1044351);
-            AddRecipe(index, (int)CarpRecipes.OrnateElvenChestEast);
+            
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(ElvenWashBasinSouthWithDrawerDeed), 1044292, 1072865, 70.0, 95.0, typeof(Board), 1044041, 40, 1044351);
@@ -358,15 +357,15 @@ namespace Server.Engines.Craft
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(ElvenDresserDeedSouth), 1044292, 1072864, 75.0, 100.0, typeof(Board), 1044041, 45, 1044351);
-            AddRecipe(index, (int)CarpRecipes.ElvenDresserSouth);
+           
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(ElvenDresserDeedEast), 1044292, 1073388, 75.0, 100.0, typeof(Board), 1044041, 45, 1044351);
-            AddRecipe(index, (int)CarpRecipes.ElvenDresserEast);
+            
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(FancyElvenArmoire), 1044292, 1072866, 80.0, 105.0, typeof(Board), 1044041, 60, 1044351);
-            AddRecipe(index, (int)CarpRecipes.FancyElvenArmoire);
+            
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(SimpleElvenArmoire), 1044292, 1073401, 80.0, 105.0, typeof(Board), 1044041, 60, 1044351);
@@ -449,9 +448,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(PipeCourte), "Autres", "Pipe Courte ", 80.5, 100.5, typeof(Board), "Planches", 4, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(PipeLongue), "Autres", "Pipe Longue", 70.5, 90.5, typeof(Board), "Planches", 6, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(MatchLight), "Autres", "Allumettes", 0.0, 30.0, typeof(Kindling), "Petit Bois", 2, "Vous n'avez pas assez de petit bois.");
-			index = AddCraft(typeof(Lunettes1), "Autres", "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
-			index = AddCraft(typeof(Lunettes2), "Autres", "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
-			index = AddCraft(typeof(Lunettes3), "Autres", "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
+			
 
 
 

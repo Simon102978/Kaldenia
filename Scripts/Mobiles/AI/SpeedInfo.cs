@@ -43,8 +43,8 @@ namespace Server
 			int maxDex = GetMaxMovementDex(bc);
 			int dex = Math.Min(maxDex, Math.Max(25, bc.Dex));
 
-			double min = 0.1;
-			double max = 0.2;
+			double min = 0.075;
+			double max = 0.125;
 
 			activeSpeed = max - ((max - min) * ((double)dex / maxDex));
 

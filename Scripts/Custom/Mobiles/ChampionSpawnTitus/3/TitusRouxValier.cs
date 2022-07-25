@@ -16,6 +16,9 @@ namespace Server.Mobiles
 
 			Race = Race.GetRace(Utility.Random(4));
 
+			double dActiveSpeed = 0.05;
+			double dPassiveSpeed = 0.1;
+
 
 			SpeedInfo.GetCustomSpeeds(this, ref dActiveSpeed, ref dPassiveSpeed);
 
@@ -87,7 +90,10 @@ namespace Server.Mobiles
 			Utility.AssignRandomHair(this, RouxCouleur());
 
 			new Horse().Rider = this;
-        }
+
+			AdjustSpeeds();
+
+		}
 
 
 		public override void AdjustSpeeds()

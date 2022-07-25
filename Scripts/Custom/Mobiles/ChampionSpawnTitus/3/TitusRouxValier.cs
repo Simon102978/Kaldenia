@@ -16,6 +16,13 @@ namespace Server.Mobiles
 
 			Race = Race.GetRace(Utility.Random(4));
 
+
+			SpeedInfo.GetCustomSpeeds(this, ref dActiveSpeed, ref dPassiveSpeed);
+
+			ActiveSpeed = dActiveSpeed;
+			PassiveSpeed = dPassiveSpeed;
+			CurrentSpeed = dPassiveSpeed;
+
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
@@ -82,12 +89,42 @@ namespace Server.Mobiles
 			new Horse().Rider = this;
         }
 
-        public TitusRouxValier(Serial serial)
+
+		public override void AdjustSpeeds()
+		{
+			double activeSpeed = 0.0;
+			double passiveSpeed = 0.0;
+
+
+			if (Mounted)
+			{
+				SpeedInfo.GetCustomSpeeds(this, ref activeSpeed, ref passiveSpeed);
+			}
+			else
+			{
+				SpeedInfo.GetSpeeds(this, ref activeSpeed, ref passiveSpeed);
+			}
+
+			
+
+			ActiveSpeed = activeSpeed;
+			PassiveSpeed = passiveSpeed;
+			CurrentSpeed = passiveSpeed;
+		}
+
+
+		public TitusRouxValier(Serial serial)
             : base(serial)
         {
         }
 
-        public override int Meat => 1;
+		public override void OnDamage(int amount, Mobile from, bool willKill)
+		{
+			AdjustSpeeds();
+
+			base.OnDamage(amount, from, willKill);
+		}
+		public override int Meat => 1;
         public override bool AlwaysMurderer => true;
         public override bool ShowFameTitle => false;
 

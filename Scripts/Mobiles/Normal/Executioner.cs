@@ -87,7 +87,7 @@ namespace Server.Mobiles
 				if (m_GlobalTimer < DateTime.UtcNow)
 				{
 
-					if (!this.InRange(Combatant.Location, 3))
+					if (!this.InRange(Combatant.Location, 3) && this.InRange(Combatant.Location, 10))
 					{
 						Charge();
 					}

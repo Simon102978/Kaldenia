@@ -36,13 +36,21 @@ namespace Server.Items
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
+
+			if (version == 0)
+			{
+				Pages = new BookPageInfo[100];
+
+				for (int i = 0; i < Pages.Length; ++i)
+					Pages[i] = new BookPageInfo();
+			}
         }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
-            writer.Write(0); // version
+            writer.Write(1); // version
         }
     }
 }

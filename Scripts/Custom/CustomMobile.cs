@@ -99,7 +99,7 @@ namespace Server.Mobiles
 		{
 			get 
 			{
-				if (Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
+				if (m_Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
 				{
 					CustomPlayerMobile.RemoveVulnerability_Callback(this);
 				}
@@ -234,8 +234,6 @@ namespace Server.Mobiles
 			get { return m_nextFETime; }
 			set { m_nextFETime = value; }
 		}
-
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastFERP
@@ -2091,7 +2089,7 @@ namespace Server.Mobiles
 			Vulnerability = true;
 			EndOfVulnerabilityTime = DateTime.Now + TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration * (Assomage ? 1 : 5));
 
-			Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration), new TimerStateCallback(RemoveVulnerability_Callback), this);
+			Timer.DelayCall(TimeSpan.FromMinutes(DeathDuration + VulnerabilityDuration * (Assomage ? 1 : 5)), new TimerStateCallback(RemoveVulnerability_Callback), this);
 
 			PreventPvpAttack = true;
 			PreventPvpAttackTime = DateTime.Now + TimeSpan.FromMinutes(DeathDuration + PreventPvpAttackDuration);

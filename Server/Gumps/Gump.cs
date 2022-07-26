@@ -207,6 +207,15 @@ namespace Server.Gumps
 			Add(new GumpHtmlLocalized(x, y, width, height, number, background, scrollbar));
 		}
 
+		public void AddButtonLabeled(int x, int y, int buttonID, int color, string text)
+		{
+
+			AddButton(x, y, 4005, 4007, buttonID, GumpButtonType.Reply, 0);
+
+			AddLabel(x + 35, y, color, text);
+
+		}
+
 		public void AddHtmlLocalized(
 			int x,
 			int y,

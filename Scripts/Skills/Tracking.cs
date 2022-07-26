@@ -85,7 +85,7 @@ namespace Server.SkillHandlers
 
             AddPage(0);
 
-            AddBackground(0, 0, 440, 135, 5054);
+            AddBackground(0, 0, 440, 135, 5120);
 
             AddBackground(10, 10, 420, 75, 2620);
             AddBackground(10, 85, 420, 25, 3000);
@@ -126,45 +126,79 @@ namespace Server.SkillHandlers
         private readonly Mobile m_From;
         private readonly int m_Range;
         private readonly List<Mobile> m_List;
-        private TrackWhoGump(Mobile from, List<Mobile> list, int range)
-            : base(20, 30)
+		private readonly int m_Page;
+
+		private TrackWhoGump(Mobile from, List<Mobile> list, int range, int page = 0)
+			: base(20, 30)
         {
             m_From = from;
             m_List = list;
             m_Range = range;
+			m_Page = page;
 
-            AddPage(0);
+			AddPage(0);
 
-            AddBackground(0, 0, 440, 155, 5054);
+            AddBackground(0, 0, 440, 155, 5120);
 
             AddBackground(10, 10, 420, 75, 2620);
             AddBackground(10, 85, 420, 45, 3000);
 
-            if (list.Count > 4)
+			int Item = 1;
+
+			if (list.Count > 4 + page * 12)
             {
-                AddBackground(0, 155, 440, 155, 5054);
+                AddBackground(0, 155, 440, 155, 5120);
+				AddBackground(12, 165, 415, 75, 2620);
 
-                AddBackground(10, 165, 420, 75, 2620);
-                AddBackground(10, 240, 420, 45, 3000);
+				//	AddBackground(10, 165, 420, 75, 2620);
+				//  AddBackground(10, 240, 420, 45, 3000);
 
-                if (list.Count > 8)
+				Item++;
+
+				if (list.Count > 8 + page * 12)
                 {
-                    AddBackground(0, 310, 440, 155, 5054);
+                    AddBackground(0, 310, 440, 155, 5120);
+					AddBackground(12, 320, 415, 75, 2620);
 
-                    AddBackground(10, 320, 420, 75, 2620);
-                    AddBackground(10, 395, 420, 45, 3000);
+					Item++;
+
+				//	AddBackground(10, 320, 420, 75, 2620);
+                //  AddBackground(10, 395, 420, 45, 3000);
                 }
             }
 
-            for (int i = 0; i < list.Count && i < 12; ++i)
-            {
+			if (list.Count > 12 + page * 12 || m_Page != 0)
+			{
+
+				AddBackground(0, Item * 155, 440, 60, 5120);
+
+			}
+
+			if (list.Count > 12 + page * 12)
+			{
+				AddButtonLabeled(320, Item * 155 + 20, 10001, 0, "Suivant");
+			}
+
+			if (m_Page != 0)
+			{
+				AddButtonLabeled(20, Item * 155 + 20, 10002, 0, "Précédent");
+			}
+
+
+
+
+
+			for (int i = page * 12; i < list.Count && i < 12 + page * 12; ++i)
+			{
                 Mobile m = list[i];
 
-                AddItem(20 + ((i % 4) * 100), 20 + ((i / 4) * 155), ShrinkTable.Lookup(m));
-                AddButton(20 + ((i % 4) * 100), 130 + ((i / 4) * 155), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
+				int OuPAge = i - 12 * page;
 
-                if (m.Name != null)
-                    AddHtml(20 + ((i % 4) * 100), 90 + ((i / 4) * 155), 90, 40, m.Name, false, false);
+				AddItem(20 + ((OuPAge % 4) * 100), 20 + ((OuPAge / 4) * 155), ShrinkTable.Lookup(m));
+				AddButton(20 + ((OuPAge % 4) * 100), 115 + ((OuPAge / 4) * 155), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
+
+				if (m.Name != null)
+					AddHtml(20 + ((OuPAge % 4) * 100), 90 + ((OuPAge / 4) * 155), 90, 40, m.Name, false, false);
             }
         }
 
@@ -185,7 +219,9 @@ namespace Server.SkillHandlers
 
             from.CheckSkill(SkillName.Tracking, 21.1, 100.0); // Passive gain
 
-		    int range = 10 + (int)(from.Skills[SkillName.Tracking].Value / 3);
+			//int range = 10 + (int)(from.Skills[SkillName.Tracking].Value / 3);
+
+			int range = 25 + (int)(from.Skills[SkillName.Tracking].Value / 2);
 
 			List <Mobile> list = new List<Mobile>();
             IPooledEnumerable eable = from.GetMobilesInRange(range);
@@ -202,7 +238,7 @@ namespace Server.SkillHandlers
             {
                 list.Sort(new InternalSorter(from));
 
-                from.SendGump(new TrackWhoGump(from, list, range));
+                from.SendGump(new TrackWhoGump(from, list, range, 0));
                 from.SendLocalizedMessage(1018093); // Select the one you would like to track.
             }
             else
@@ -220,9 +256,17 @@ namespace Server.SkillHandlers
         {
             int index = info.ButtonID - 1;
 
-            if (index >= 0 && index < m_List.Count && index < 12)
-            {
-                Mobile m = m_List[index];
+			if (index == 10000)
+			{
+				m_From.SendGump(new TrackWhoGump(m_From, m_List, m_Range, m_Page + 1));
+			}
+			if (index == 10001)
+			{
+				m_From.SendGump(new TrackWhoGump(m_From, m_List, m_Range, m_Page - 1));
+			}
+			else if (index >= 0 && index < m_List.Count && index < 12 + m_Page * 12)
+			{
+				Mobile m = m_List[index];
 
                 m_From.QuestArrow = new TrackArrow(m_From, m, m_Range * 2);
 

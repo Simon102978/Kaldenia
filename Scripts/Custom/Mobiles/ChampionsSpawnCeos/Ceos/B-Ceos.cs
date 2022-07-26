@@ -24,7 +24,7 @@ namespace Server.Mobiles
 			SetInt(76, 85);
 
 
-			SetHits(50000);
+			SetHits(10000);
 			SetStam(507, 669);
 			SetMana(1200, 1300);
 
@@ -51,7 +51,7 @@ namespace Server.Mobiles
 			//SetAreaEffect(AreaEffect.PoisonBreath);
 		}
 
-
+		public override TribeType Tribe => TribeType.Terathan;
 		public override void OnDamage(int amount, Mobile from, bool willKill)
 		{
 			base.OnDamage(amount, from, willKill);

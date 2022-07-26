@@ -4,8 +4,8 @@ using System;
 namespace Server.Mobiles
 {
 	[CorpseName("Le corps d'un Kuya")]
-	public class KuyaNinja : BaseCreature
-    {
+	public class KuyaNinja : KuyaBase
+	{
         public override bool ClickTitle => false;
 		public override bool AlwaysMurderer => true;
 		public override bool CanStealth => true;
@@ -131,11 +131,7 @@ namespace Server.Mobiles
 			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
 			AddLoot(LootPack.Potions, Utility.RandomMinMax(1, 2));
 			AddLoot(LootPack.Statue,1,5);
-		
-
-			//AddLoot(LootPack.MageryRegs, 31);
 		}
-
 
         private void ChangeWeapon()
         {

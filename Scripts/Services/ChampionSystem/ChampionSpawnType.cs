@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Server.Engines.CannedEvil
 {
-    public enum ChampionSpawnType
+	public enum ChampionSpawnType
     {
         Abyss,
         Arachnid,
@@ -289,7 +289,7 @@ namespace Server.Engines.CannedEvil
 					 {"Ceos: Si c'est comme ca, vous êtes plus mes amis !" },
 				}
 			),
-		   new ChampionSpawnInfo( "Titus", typeof( Serado ), new[]{ "Explorer", "Huntsman", "Msafiri" } , new[] // Titus (Serado doit etre remplacer un de ses quatres);
+		   new ChampionSpawnInfo( "Titus", typeof( Titus ), new[]{ "Explorer", "Huntsman", "Msafiri" } , new[] // Titus (Serado doit etre remplacer un de ses quatres);
             {
 				new[]{ typeof(TitusFanatiqueArcher), typeof(TitusFatiguant) },
 				new[]{ typeof(TitusRouxNin),  typeof(TitusRouxTresse)   },

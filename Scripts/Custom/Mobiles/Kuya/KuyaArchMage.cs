@@ -12,7 +12,7 @@ namespace Server.Mobiles
 		{
 		
 			SpeechHue = Utility.RandomDyedHue();
-			Title = "Un Kuya Archimage";
+			Title = "Kuya Archimage";
 			Race = Race.GetRace(Utility.Random(4));
 
 			if (Female = Utility.RandomBool())
@@ -58,8 +58,8 @@ namespace Server.Mobiles
 
 		}
 
-		public override bool CanRummageCorpses => true;
-		public override bool AlwaysMurderer => true;
+
+
 
 		public override TribeType Tribe => TribeType.Kuya;
 		public override void GenerateLoot()

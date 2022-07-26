@@ -11,7 +11,9 @@ namespace Server.Mobiles
             SpeechHue = Utility.RandomDyedHue();
             Hue = Utility.RandomSkinHue();
 
-            if (Female = Utility.RandomBool())
+			Title = "Kuya barde";
+
+			if (Female = Utility.RandomBool())
             {
                 Body = 0x191;
                 Name = NameList.RandomName("female");
@@ -25,6 +27,8 @@ namespace Server.Mobiles
                         AddItem(new Kilt(Utility.RandomNeutralHue()));
                         break;
                 }
+				
+				
             }
             else
             {

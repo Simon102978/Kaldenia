@@ -99,6 +99,9 @@ namespace Server.Mobiles
 
 		}
 
+		public override bool CanRummageCorpses => true;
+
+		public override bool AlwaysMurderer => true;
 
 		public KuyaBase(AIType aiType, FightMode fightMode, int rangePerception, int rangeFight, double activeSpeed, double passiveSpeed)
 			: base(aiType, fightMode, rangePerception, rangeFight, activeSpeed, passiveSpeed)

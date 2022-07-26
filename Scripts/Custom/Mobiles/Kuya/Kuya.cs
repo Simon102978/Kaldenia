@@ -11,19 +11,21 @@ namespace Server.Mobiles
 			: base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.05, 0.2)
 		{
 			SpeechHue = Utility.RandomDyedHue();
-			Title = Utility.RandomBool() ? "Fatiguant Roux" : "Fatiguant de Titus";
+			
 			Race = Race.GetRace(Utility.Random(4));
 
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
 				Name = NameList.RandomName("female");
+				Title = "Kuya Guerriere";
 				AddItem(new Skirt(Utility.RandomNeutralHue()));
 			}
 			else
 			{
 				Body = 0x190;
 				Name = NameList.RandomName("male");
+				Title = "Kuya Guerrier";
 				AddItem(new ShortPants(Utility.RandomNeutralHue()));
 			}
 
@@ -102,7 +104,7 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override bool CanRummageCorpses => true;
+	
 
 		public override bool ClickTitle => false;
 		public override bool AlwaysMurderer => true;

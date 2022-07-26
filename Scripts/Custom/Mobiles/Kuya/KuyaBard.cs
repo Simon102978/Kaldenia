@@ -9,7 +9,7 @@ namespace Server.Mobiles
 			: base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.05, 0.2)
 		{
 			SpeechHue = Utility.RandomDyedHue();
-			Title = "Kuya barde";
+			
 			Race = Race.GetRace(Utility.Random(4));
 
 			if (Female = Utility.RandomBool())
@@ -17,12 +17,14 @@ namespace Server.Mobiles
 				Body = 0x191;
 				Name = NameList.RandomName("female");
 				AddItem(new Skirt(Utility.RandomNeutralHue()));
+				Title = "Kuya Envoutante";
 			}
 			else
 			{
 				Body = 0x190;
 				Name = NameList.RandomName("male");
 				AddItem(new ShortPants(Utility.RandomNeutralHue()));
+				Title = "Kuya Envoutant";
 			}
 			
 			HairItemID = Race.RandomHair(Female);

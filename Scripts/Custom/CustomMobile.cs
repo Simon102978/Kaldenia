@@ -42,6 +42,9 @@ namespace Server.Mobiles
 		private int m_TotalNormalFE;
 		private int m_TotalRPFE;
 
+
+
+
 		private DateTime m_lastLoginTime;
 		private TimeSpan m_nextFETime;
 		private DateTime m_LastFERP;
@@ -65,8 +68,6 @@ namespace Server.Mobiles
 		private Race m_BaseRace;
 		private bool m_BaseFemale;
 		private int m_BaseHue;
-
-		public bool m_Vulnerability;
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
 
@@ -95,23 +96,7 @@ namespace Server.Mobiles
 		public DateTime EndOfVulnerabilityTime { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public bool Vulnerability 
-		{
-			get 
-			{
-				if (Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
-				{
-					CustomPlayerMobile.RemoveVulnerability_Callback(this);
-				}
-
-				return m_Vulnerability; 
-			}
-			set 
-			{ 
-				m_Vulnerability = value; 
-			}
-
-		}
+		public bool Vulnerability { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool DeathShot { get; set; }

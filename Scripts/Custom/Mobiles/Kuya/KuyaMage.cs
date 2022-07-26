@@ -1,66 +1,53 @@
 using Server.Items;
-using Server.Misc;
+using Server.Mobiles;
 
 namespace Server.Mobiles
 {
-	[CorpseName("Le corps d'un Kuya")]
-	public class KuyaMage : BaseCreature
+
+	public class KuyaMage : KuyaBase
 	{
-
 		[Constructable]
-		public KuyaMage() : base(AIType.AI_Mage, FightMode.Aggressor, 10, 1, 0.4, 0.2)
+		public KuyaMage()
+			: base(AIType.AI_Mage, FightMode.Evil, 10, 1, 0.05, 0.2)
 		{
-			Name = NameList.RandomName("male");
-			Title = "Un Kuya Mage";
-		
-
-			BodyValue = 0x190;
-			Hue = 1281;
-
-
-			SetStr(171, 200);
-			SetDex(126, 145);
-			SetInt(200, 265);
-
-			SetHits(103, 120);
-
-			//	SetHits(1200);
-			SetMana(600, 800);
-			SetDamage(10, 15);
-
-			SetDamageType(ResistanceType.Physical, 50);
-			SetDamageType(ResistanceType.Fire, 50);
-
-			SetResistance(ResistanceType.Physical, 50, 60);
-			SetResistance(ResistanceType.Fire, 50, 60);
-			SetResistance(ResistanceType.Cold, 50, 60);
-			SetResistance(ResistanceType.Poison, 50, 60);
-			SetResistance(ResistanceType.Energy, 50, 60);
-
-			SetSkill(SkillName.MagicResist, 125, 140);
-			SetSkill(SkillName.Tactics, 50, 120);
-			SetSkill(SkillName.Wrestling, 80, 130);
-			SetSkill(SkillName.Magery, 70, 100);
-			SetSkill(SkillName.EvalInt, 70, 100);
-
-			AddItem(new ClothNinjaJacket(1156));
-			AddItem(new NinjaTabi());
-
 			SpeechHue = Utility.RandomDyedHue();
-			Race = BaseRace.GetRace(Utility.Random(4));
-
-			Hue = Utility.RandomSkinHue();
+			Title = "Kuya Mage";
+			Race = Race.GetRace(Utility.Random(4));
 
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
-				Name = NameList.RandomName("tokuno female");
+				Name = NameList.RandomName("female");
+				AddItem(new Skirt(Utility.RandomNeutralHue()));
 			}
 			else
 			{
 				Body = 0x190;
-				Name = NameList.RandomName("tokuno male");
+				Name = NameList.RandomName("male");
+				AddItem(new ShortPants(Utility.RandomNeutralHue()));
 			}
+
+			SetStr(20);
+			SetDex(150);
+			SetInt(125);
+
+			SetDamage(9, 15);
+
+			SetDamageType(ResistanceType.Physical, 100);
+
+			SetResistance(ResistanceType.Physical, 80, 90);
+			SetResistance(ResistanceType.Fire, 40, 50);
+			SetResistance(ResistanceType.Cold, 40, 50);
+			SetResistance(ResistanceType.Poison, 40, 50);
+			SetResistance(ResistanceType.Energy, 40, 50);
+
+			SetSkill(SkillName.EvalInt, 70.1, 80.0);
+			SetSkill(SkillName.Magery, 70.1, 80.0);
+			SetSkill(SkillName.Meditation, 70.1, 80.0);
+			SetSkill(SkillName.MagicResist, 50.5, 100.0);
+			SetSkill(SkillName.Tactics, 10.1, 20.0);
+			SetSkill(SkillName.Wrestling, 10.1, 12.5);
+
 
 
 			switch (Utility.Random(6))
@@ -102,8 +89,6 @@ namespace Server.Mobiles
 			}
 
 			AddItem(new MaleKimono());
-			
-			
 
 			int hairHue = Utility.RandomNondyedHue();
 
@@ -113,35 +98,42 @@ namespace Server.Mobiles
 				Utility.AssignRandomFacialHair(this, hairHue);
 		}
 
-		public override bool CanRummageCorpses => true;
-		public override bool AlwaysMurderer => true;
-
-		public override TribeType Tribe => TribeType.Kuya;
-		public override void GenerateLoot()
-		{
-			AddLoot(LootPack.Rich);
-			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
-			AddLoot(LootPack.MedScrolls);
-			AddLoot(LootPack.MageryRegs, 15);
-			AddLoot(LootPack.Potions, Utility.RandomMinMax(1, 2));
-
-		}
-
 		public KuyaMage(Serial serial)
 			: base(serial)
 		{
 		}
 
+
+		public override bool CanRummageCorpses => true;
+
+		public override bool ClickTitle => false;
+		public override bool AlwaysMurderer => true;
+
+		public override bool ShowFameTitle => false;
+
+		public override void OnDeath(Container c)
+		{
+			base.OnDeath(c);
+
+
+		}
+
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.Average);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+		}
+
 		public override void Serialize(GenericWriter writer)
 		{
 			base.Serialize(writer);
-			writer.Write(0);
+			writer.Write(0); // version
 		}
 
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize(reader);
-			int version = reader.ReadInt();
+			var version = reader.ReadInt();
 		}
 	}
 }

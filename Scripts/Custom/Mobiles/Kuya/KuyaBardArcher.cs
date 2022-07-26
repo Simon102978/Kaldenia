@@ -2,12 +2,12 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-    public class HireBardArcher : BaseHire
-    {
+    public class KuyaBardArcher : KuyaBase
+	{
         [Constructable]
-        public HireBardArcher()
-            : base(AIType.AI_Archer)
-        {
+        public KuyaBardArcher()
+		   : base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.05, 0.2)
+		{
             SpeechHue = Utility.RandomDyedHue();
             Hue = Utility.RandomSkinHue();
 
@@ -59,30 +59,63 @@ namespace Server.Mobiles
 
             AddItem(new Shoes(Utility.RandomNeutralHue()));
 
-            switch (Utility.Random(2))
-            {
-                case 0:
-                    AddItem(new Doublet(Utility.RandomDyedHue()));
-                    break;
-                case 1:
-                    AddItem(new Shirt(Utility.RandomDyedHue()));
-                    break;
-            }
-        }
+
+			switch (Utility.Random(6))
+			{
+				case 0:
+					AddItem(new MaleKimono());
+					break;
+				case 1:
+					AddItem(new FemaleKimono());
+					break;
+				case 2:
+					AddItem(new ClothNinjaJacket());
+					break;
+				case 3:
+					AddItem(new Hakama());
+					break;
+				case 4:
+					AddItem(new HakamaShita());
+					break;
+				case 5:
+					AddItem(new Obi());
+					break;
+			}
+
+			switch (Utility.Random(2))
+			{
+				case 0:
+					AddItem(new Kasa());
+					break;
+				case 1:
+					AddItem(new Kasa());
+					break;
+				case 2:
+					AddItem(new HeavyPlateJingasa());
+					break;
+				case 3:
+					AddItem(new DecorativePlateKabuto());
+					break;
+			}
+
+			AddItem(new Bow());
+
+			AddItem(new MaleKimono());
+		}
 
 		public override bool CanDiscord => true;
 
 
 		public override void GenerateLoot()
         {
-    /*        AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(Harp), typeof(Lute), typeof(Drums), typeof(Tambourine) }));
+            AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(Harp), typeof(Lute), typeof(Drums), typeof(Tambourine) }));
             AddLoot(LootPack.LootItem<Longsword>(true));
             AddLoot(LootPack.LootItem<Bow>(true));
             AddLoot(LootPack.LootItem<Arrow>(100, true));
-            AddLoot(LootPack.LootGold(10, 50));*/
+      //      AddLoot(LootPack.LootGold(10, 50));
         }
 
-        public HireBardArcher(Serial serial)
+        public KuyaBardArcher(Serial serial)
             : base(serial)
         {
         }

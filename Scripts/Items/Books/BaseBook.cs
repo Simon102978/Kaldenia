@@ -112,7 +112,11 @@ namespace Server.Items
             set { BuildBookFromString(value); }
         }
 
-        public BookPageInfo[] Pages => m_Pages;
+        public BookPageInfo[] Pages
+		{
+			get { return m_Pages; }
+			set { m_Pages = value; }
+		}
 
         [Constructable]
         public BaseBook(int itemID)

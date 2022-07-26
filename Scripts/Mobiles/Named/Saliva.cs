@@ -251,7 +251,7 @@ namespace Server.Mobiles
 
 
 						DoHarmful(m);
-						AOS.Damage(this, m, dmg, 100, 0, 0, 0, 0); // C'est un coup de vent, donc rien d'electrique...
+						AOS.Damage(m, this, dmg, 100, 0, 0, 0, 0); // C'est un coup de vent, donc rien d'electrique...
 
 						int Distance = 3;
 

@@ -99,7 +99,7 @@ namespace Server.Mobiles
 		{
 			get 
 			{
-				if (Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
+				if (m_Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
 				{
 					CustomPlayerMobile.RemoveVulnerability_Callback(this);
 				}
@@ -234,8 +234,6 @@ namespace Server.Mobiles
 			get { return m_nextFETime; }
 			set { m_nextFETime = value; }
 		}
-
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime LastFERP

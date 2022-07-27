@@ -2940,28 +2940,33 @@ namespace Server
 
 			double Range = GetDistanceToSqrt(mobile.Location);
 
-			if (Range >= 8)
+			if (Range >=8)
+			{
+				bonus -= 50;
+			}
+			if (Range >= 6)
+			{
+				bonus -= 30;
+			}
+			else if (Range >= 5)
 			{
 				bonus -= 20;
 			}
-			else if (Range >= 6)
-			{
-				bonus -= 10;
-			}
-			else if (Range >= 4)
-			{
-				bonus += 5;
-			}
 			else if (Range >= 3)
 			{
-				bonus += 20;
+				bonus += 0;
 			}
-			else
+			else if (Range >= 2)
 			{
-				bonus += 30;
+				bonus += 25;
+			}
+			else 
+			{
+				bonus += 40;
 			}
 
-			ComputeLightLevels(out int global, out int personal);
+
+/*			ComputeLightLevels(out int global, out int personal);
 
 			int lightLevel = global + personal;
 
@@ -2976,7 +2981,7 @@ namespace Server
 			else
 			{
 				bonus += 20;
-			}
+			}*/
 
 			return bonus;
 		}
@@ -6914,7 +6919,7 @@ namespace Server
 			if (m_Hidden && IsPlayer())
 			{
 				Hidden = false;
-				SendMessage(this.Female ? "Vous avez été découverte." : "Vous avez été découvert.");
+				SendMessage(this.Female ? "Vous avez ï¿½tï¿½ dï¿½couverte." : "Vous avez ï¿½tï¿½ dï¿½couvert.");
 			}
 
 			m_IsStealthing = false;

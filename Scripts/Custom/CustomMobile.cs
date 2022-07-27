@@ -99,10 +99,6 @@ namespace Server.Mobiles
 		{
 			get 
 			{
-				if (m_Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
-				{
-					CustomPlayerMobile.RemoveVulnerability_Callback(this);
-				}
 
 				return m_Vulnerability; 
 			}

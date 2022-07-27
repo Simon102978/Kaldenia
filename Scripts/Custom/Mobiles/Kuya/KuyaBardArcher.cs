@@ -10,6 +10,8 @@ namespace Server.Mobiles
 		{
             SpeechHue = Utility.RandomDyedHue();
             Hue = Utility.RandomSkinHue();
+            Title = "Kuya menestrel";
+
 
             if (Female = Utility.RandomBool())
             {
@@ -112,6 +114,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<Longsword>(true));
             AddLoot(LootPack.LootItem<Bow>(true));
             AddLoot(LootPack.LootItem<Arrow>(100, true));
+            AddLoot(LootPack.Average);
+			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
       //      AddLoot(LootPack.LootGold(10, 50));
         }
 

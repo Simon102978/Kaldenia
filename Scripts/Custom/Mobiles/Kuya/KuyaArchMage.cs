@@ -58,10 +58,6 @@ namespace Server.Mobiles
 
 		}
 
-		public override bool CanRummageCorpses => true;
-		public override bool AlwaysMurderer => true;
-
-		public override TribeType Tribe => TribeType.Kuya;
 		public override void GenerateLoot()
 		{
 			AddLoot(LootPack.Rich);

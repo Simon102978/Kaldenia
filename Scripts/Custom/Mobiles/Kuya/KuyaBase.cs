@@ -17,6 +17,13 @@ namespace Server.Mobiles
 			"Mourrez !"
 		};
 
+		public override bool CanRummageCorpses => true;
+
+		public override bool ClickTitle => false;
+		public override bool AlwaysMurderer => true;
+
+		public override bool ShowFameTitle => false;
+
 		public override TribeType Tribe => TribeType.Kuya;
 
 		public override bool CanBeParagon => false;

@@ -13,7 +13,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public Veterinarian()
-            : base("Vétérinaire")
+            : base("Vï¿½tï¿½rinaire")
         {
             SetSkill(SkillName.AnimalLore, 85.0, 100.0);
             SetSkill(SkillName.Veterinary, 90.0, 100.0);
@@ -213,8 +213,8 @@ namespace Server.Mobiles
                                     from.SendLocalizedMessage(500643); // Target is too far away.
                                 else if (pet.ControlMaster != from)
                                     from.SendLocalizedMessage(1113200); // You must be the owner of that pet to have it resurrected.
-                                else if (pet.Corpse != null && !pet.Corpse.Deleted)
-                                    from.SendLocalizedMessage(1113279); // That creature's spirit lacks cohesion. Try again in a few minutes.
+        //                        else if (pet.Corpse != null && !pet.Corpse.Deleted)
+          //                          from.SendLocalizedMessage(1113279); // That creature's spirit lacks cohesion. Try again in a few minutes.
                                 else if (Banker.Withdraw(from, fee))
                                 {
                                     pet.PlaySound(0x214);

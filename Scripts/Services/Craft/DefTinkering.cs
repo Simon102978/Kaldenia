@@ -348,6 +348,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(WinecraftersTools), 1044046, "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WitchsBookofFoodCrafts), 1044046, "Livre de recette enchantées", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);
 			index = AddCraft(typeof(TaxidermyKit), 1044046, "Outil de Taxidermie", 80.0, 110.0, typeof(IronIngot), 1044036, 5, 1044037);
+			index = AddCraft(typeof(RecallRune), 1044046, "Rune Vierge", 30.0, 70.0, typeof(Board), 1044041, 1, 1044351);
 
 
 			//TODO: focus of theurgy - 20th Anniversary Event 
@@ -474,6 +475,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Lunettes1), 1044050, "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(Lunettes2), 1044050, "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(Lunettes3), 1044050, "Lunettes", 50.0, 90.0, typeof(IronIngot), 1044036, 3, 1044037);
+			
 
 			/*         index = AddCraft(typeof(BroadcastCrystal), 1044050, 1153097, 80.0, 130.0, typeof(IronIngot), 1044036, 20, 1044037);
 					 AddRes(index, typeof(Emerald), 1062601, 10, 1044240);

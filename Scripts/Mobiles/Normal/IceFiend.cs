@@ -54,11 +54,11 @@ namespace Server.Mobiles
             m.SendLocalizedMessage(1008111, false, Name); //  : The intense cold is damaging you!
         }
 		public override int Hides => 4;
-		public override HideType HideType => HideType.Demoniaque;
+		public override HideType HideType => HideType.Reptilien;
 
 
 		public override int Bones => 4;
-		public override BoneType BoneType => BoneType.Demoniaque;
+		public override BoneType BoneType => BoneType.Reptilien;
 
 		public override void GenerateLoot()
         {

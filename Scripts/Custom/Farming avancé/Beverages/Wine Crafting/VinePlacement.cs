@@ -105,66 +105,77 @@ namespace Server.Misc
 
 		public static bool ValidatePlayerPlacement( Point3D loc, Mobile m_From, Map m_Map, object o )
 		{
-			BaseHouse house = BaseHouse.FindHouseAt( m_From.Location, m_Map, 20 );
-			if( house == null || !house.IsOwner( m_From ) )
+
+			LandTarget land = o as LandTarget;
+			BaseHouse house = BaseHouse.FindHouseAt(loc, m_Map, 20);
+
+			if (land == null && house == null)
 			{
-				m_From.SendMessage( "You must be standing in your house to place this");
 				return false;
 			}
 
-			if ( !AllowPlayerYards )
-			{
-				if ( !CheckHouse( m_From, loc, m_Map, 20 ) )
+			return true;
+		}
+		/*		BaseHouse house = BaseHouse.FindHouseAt( m_From.Location, m_Map, 20 );
+				if( house == null || !house.IsOwner( m_From ) )
 				{
-					m_From.SendMessage( "The grapevines must be placed inside your house." );
-					return false;
+				//	m_From.SendMessage( "You must be standing in your house to place this");
+					return true;
 				}
-				else
-				{
-                    if (!AllowAllHouseTiles && (!ValidateHouseTiles(m_Map, loc.X, loc.Y) && !ValidateVinyardPlot( m_Map, loc.X, loc.Y )))
-					{
-						m_From.SendMessage( "The grapevines must be placed on dirt tiles or a vinyard ground addon." );
-						return false;
-					}
-				}
-			}
-			else
-			{
-				if ( CheckHouse( m_From, loc, m_Map, 20 ) )
-				{
-                    if (!AllowAllHouseTiles && (!ValidateHouseTiles(m_Map, loc.X, loc.Y) && !ValidateVinyardPlot(m_Map, loc.X, loc.Y)) )
-					{
-						m_From.SendMessage( "Grapevines placed inside your house must be placed on dirt tiles or a vinyard ground addon." );
-						return false;
-					}
-				}
-				else
-				{
-					if( loc.Y > m_From.Location.Y+5 || loc.Y < m_From.Location.Y-5 )
-					{
-						m_From.SendMessage( "This is outside of your yard. Please re-try the placement" );
-						return false;
-					}
 
-					if( loc.X > m_From.Location.X+5 || loc.X < m_From.Location.X-5 )
+				if ( !AllowPlayerYards )
+				{
+					if ( !CheckHouse( m_From, loc, m_Map, 20 ) )
 					{
-						m_From.SendMessage( "This is outside of your yard. Please re-try the placement" );
-						return false;
+					//	m_From.SendMessage( "The grapevines must be placed inside your house." );
+						return true;
 					}
-
-					if ( !AllowAllYardTiles )
+					else
 					{
-						if ( !ValidateFarmLand( m_Map, loc.X, loc.Y) && !ValidateDirt( m_Map, loc.X, loc.Y) && !ValidateGround( m_Map, loc.X, loc.Y) )
+						if (!AllowAllHouseTiles && (!ValidateHouseTiles(m_Map, loc.X, loc.Y) && !ValidateVinyardPlot( m_Map, loc.X, loc.Y )))
 						{
-							m_From.SendMessage( "Grapevines must be placed on dirt, ground, or farm tiles." );
-							return false;
+							m_From.SendMessage( "The grapevines must be placed on dirt tiles or a vinyard ground addon." );
+							return true;
 						}
 					}
 				}
-			}
-			return true;
-		}
+				else
+				{
+					if ( CheckHouse( m_From, loc, m_Map, 20 ) )
+					{
+						if (!AllowAllHouseTiles && (!ValidateHouseTiles(m_Map, loc.X, loc.Y) && !ValidateVinyardPlot(m_Map, loc.X, loc.Y)) )
+						{
+							m_From.SendMessage( "Grapevines placed inside your house must be placed on dirt tiles or a vinyard ground addon." );
+							return false;
+						}
+					}
+					else
+					{
+						if( loc.Y > m_From.Location.Y+5 || loc.Y < m_From.Location.Y-5 )
+						{
+							m_From.SendMessage( "This is outside of your yard. Please re-try the placement" );
+							return false;
+						}
 
+						if( loc.X > m_From.Location.X+5 || loc.X < m_From.Location.X-5 )
+						{
+							m_From.SendMessage( "This is outside of your yard. Please re-try the placement" );
+							return false;
+						}
+
+						if ( !AllowAllYardTiles )
+						{
+							if ( !ValidateFarmLand( m_Map, loc.X, loc.Y) && !ValidateDirt( m_Map, loc.X, loc.Y) && !ValidateGround( m_Map, loc.X, loc.Y) )
+							{
+								m_From.SendMessage( "Grapevines must be placed on dirt, ground, or farm tiles." );
+								return false;
+							}
+						}
+					}
+				}
+				return true;
+			}
+		*/
 		public static bool CheckHouse( Mobile from, Point3D p, Map map, int height )
 		{
 			if ( from == null || from.AccessLevel >= AccessLevel.GameMaster )

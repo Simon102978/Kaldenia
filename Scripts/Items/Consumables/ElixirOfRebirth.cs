@@ -50,8 +50,8 @@ namespace Server.Items
 
                     if (!petPatient.IsDeadBondedPet)
                         from.SendLocalizedMessage(1112764); // This may only be used to resurrect dead pets.
-                    else if (petPatient.Corpse != null && !petPatient.Corpse.Deleted)
-                        from.SendLocalizedMessage(1113279); // That creature's spirit lacks cohesion. Try again in a few minutes.
+               //     else if (petPatient.Corpse != null && !petPatient.Corpse.Deleted)
+                 //       from.SendLocalizedMessage(1113279); // That creature's spirit lacks cohesion. Try again in a few minutes.
                     else if (!from.InRange(petPatient, 2))
                         from.SendLocalizedMessage(501042); // Target is not close enough.
                     else if (!from.Alive)

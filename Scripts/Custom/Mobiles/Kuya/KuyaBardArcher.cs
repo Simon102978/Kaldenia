@@ -9,7 +9,8 @@ namespace Server.Mobiles
 		   : base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.05, 0.2)
 		{
             SpeechHue = Utility.RandomDyedHue();
-            Hue = Utility.RandomSkinHue();
+            Race = Race.GetRace(Utility.Random(4));
+           
             Title = "Kuya menestrel";
 
 
@@ -102,7 +103,7 @@ namespace Server.Mobiles
 
 			AddItem(new Bow());
 
-			AddItem(new MaleKimono());
+		//	AddItem(new MaleKimono());
 		}
 
 		public override bool CanDiscord => true;

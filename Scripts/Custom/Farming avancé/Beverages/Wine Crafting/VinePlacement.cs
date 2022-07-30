@@ -17,7 +17,7 @@ namespace Server.Misc
 		public static bool AllowAllHouseTiles = true;
 		public static bool AllowAllYardTiles = true;
 
-		public const int m_VinePrice = 250;
+		public const int m_VinePrice = 50;
 
 		public static int[] FarmTiles = new int[]
 		{

@@ -17,7 +17,7 @@ namespace Server.Engines.Craft
             CraftItem craftItem = CraftItems.GetAt(index);
             craftItem.NeedDistillery = needDistillery;
         }
-        public override SkillName MainSkill { get { return SkillName.Cooking; } }
+        public override SkillName MainSkill { get { return SkillName.Alchemy; } }
 
 	//	public override int GumpTitleNumber { get { return 0; } }
 

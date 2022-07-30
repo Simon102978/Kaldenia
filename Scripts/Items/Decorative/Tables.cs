@@ -226,6 +226,103 @@ namespace Server.Items
 		}
 	}
 
+	[Flipable(0x118B, 0x118C, 0x118D, 0x118E)]
+	public class TableNappe : CraftableFurniture
+	{
+
+
+		[Constructable]
+		public TableNappe()
+			: base(0x118B)
+		{
+			Weight = 15;
+			Name = "Table avec Nappe";
+		}
+
+
+
+		public TableNappe(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			reader.ReadInt();
+		}
+	}
+	[Flipable(0x1667, 0x1668, 0x1669, 0x166A, 0x166B, 0x166C)]
+	public class TableNappe2 : CraftableFurniture
+	{
+
+
+		[Constructable]
+		public TableNappe2()
+			: base(0x1667)
+		{
+			Weight = 15;
+			Name = "Table avec Nappe érable";
+		}
+
+
+
+		public TableNappe2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			reader.ReadInt();
+		}
+	}
+	[Flipable(0x118F, 0x1190, 0x1191, 0x1192)]
+	public class ComptoirNappe : CraftableFurniture
+	{
+
+
+		[Constructable]
+		public ComptoirNappe()
+			: base(0x118F)
+		{
+			Weight = 15;
+			Name = "Comptoir";
+		}
+
+
+
+		public ComptoirNappe(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			reader.ReadInt();
+		}
+	}
+
 	[Furniture]
     public class TerMurStyleTable : Item
     {

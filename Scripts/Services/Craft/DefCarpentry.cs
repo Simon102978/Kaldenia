@@ -167,7 +167,9 @@ namespace Server.Engines.Craft
             AddSkill(index, SkillName.Tailoring, 50.0, 55.0);
             AddRes(index, typeof(Cloth), 1044286, 60, 1044287);
 
-            index = AddCraft(typeof(FishingPole), 1044294, 1023519, 68.4, 93.4, typeof(Board), 1044041, 5, 1044351); //This is in the categor of Other during AoS
+			index = AddCraft(typeof(Paravent), 1044294, "Paravent de bois", 80.0, 105.0, typeof(Board), 1044041, 50, 1044351);
+
+			index = AddCraft(typeof(FishingPole), 1044294, 1023519, 68.4, 93.4, typeof(Board), 1044041, 5, 1044351); //This is in the categor of Other during AoS
             AddSkill(index, SkillName.Tailoring, 40.0, 45.0);
             AddRes(index, typeof(Cloth), 1044286, 5, 1044287);
 
@@ -249,8 +251,11 @@ namespace Server.Engines.Craft
             AddCraft(typeof(WritingTable), 1044291, 1022890, 63.1, 88.1, typeof(Board), 1044041, 17, 1044351);
             AddCraft(typeof(LargeTable), 1044291, 1044308, 84.2, 109.2, typeof(Board), 1044041, 27, 1044351);
             AddCraft(typeof(YewWoodTable), 1044291, 1044307, 63.1, 88.1, typeof(Board), 1044041, 23, 1044351);
+			AddCraft(typeof(TableNappe), 1044291, "Table avec Nappe (Flip)", 73.1, 98.1, typeof(Board), 1044041, 23, 1044351);
+			AddCraft(typeof(TableNappe2), 1044291, "Table avec Nappe Érable (Flip)", 73.1, 98.1, typeof(Board), 1044041, 23, 1044351);
+			AddCraft(typeof(ComptoirNappe), 1044291, "Comptoir avec Nappe (Flip)", 83.1, 108.1, typeof(Board), 1044041, 23, 1044351);
 
-            AddCraft(typeof(ElegantLowTable), 1044291, 1030265, 80.0, 105.0, typeof(Board), 1044041, 35, 1044351);
+			AddCraft(typeof(ElegantLowTable), 1044291, 1030265, 80.0, 105.0, typeof(Board), 1044041, 35, 1044351);
             AddCraft(typeof(PlainLowTable), 1044291, 1030266, 80.0, 105.0, typeof(Board), 1044041, 35, 1044351);
 
             index = AddCraft(typeof(OrnateElvenTableSouthDeed), 1044291, 1072869, 85.0, 110.0, typeof(Board), 1044041, 60, 1044351);
@@ -371,7 +376,13 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(SimpleElvenArmoire), 1044292, 1073401, 80.0, 105.0, typeof(Board), 1044041, 60, 1044351);
             ForceNonExceptional(index);
 
-            AddCraft(typeof(RarewoodChest), 1044292, 1073402, 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
+			index = AddCraft(typeof(Drawer), 1044292, "Commode", 70.0, 95.0, typeof(Board), 1044041, 30, 1044351);
+			ForceNonExceptional(index);
+
+			index = AddCraft(typeof(FancyDrawer), 1044292, "Commode huppée", 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
+			ForceNonExceptional(index);
+
+			AddCraft(typeof(RarewoodChest), 1044292, 1073402, 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
 
             AddCraft(typeof(DecorativeBox), 1044292, 1073403, 80.0, 105.0, typeof(Board), 1044041, 25, 1044351);
 
@@ -689,7 +700,9 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
 			AddCraft(typeof(FeedingThrough), 1044290, "Mangeoir", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 			AddCraft(typeof(Puit), 1044290, "Puit", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
-		
+			AddCraft(typeof(PoteauChaine), 1044290, "Poteau avec Chaine", 90.0, 115.0, typeof(Board), 1044041, 10, 1044351);
+			AddRes(index, typeof(IronIngot), "Lingot de fer", 3, "Vous n'avez pas suffisament de lingot de fer");
+
 			AddCraft(typeof(RackaVin), 1044290, "Cellier", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
 			AddRes(index, typeof(BottleOfWine), "Bouteille de vin", 15, "Vous n'avez pas suffisament de bouteille de vin.");
 			AddCraft(typeof(RangementAlchimie), 1044290, "Rangement Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);

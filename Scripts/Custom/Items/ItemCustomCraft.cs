@@ -365,6 +365,38 @@ public class RangementAlchimie : CraftableFurniture
 
 		}
 	}
+
+	[Flipable(0x1945, 0x1946)]
+	public class Paravent : CraftableFurniture
+	{
+		[Constructable]
+		public Paravent()
+			: base(0x1945)
+		{
+			Weight = 10.0;
+			Name = "Paravent de bois";
+		}
+
+		public Paravent(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
 	public class GoldPile1 : CraftableFurniture
 	{
 		[Constructable]
@@ -413,6 +445,37 @@ public class RangementAlchimie : CraftableFurniture
 		}
 
 		public GoldPile2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	public class PoteauChaine : CraftableFurniture
+	{
+		[Constructable]
+		public PoteauChaine()
+			: base(0x166D)
+		{
+			Weight = 15.0;
+			Name = "Poteau avec chaines";
+			
+		}
+
+		public PoteauChaine(Serial serial)
 			: base(serial)
 		{
 		}

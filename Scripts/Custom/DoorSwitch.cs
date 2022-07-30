@@ -86,14 +86,8 @@ namespace Server.Items
 				m.SendMessage("Vous devez être à moin de deux cases pour activer un levier.");
 				return false;
 			}
-
-
-
 			return true;
 		}
-
-
-
 
 		public void switchit()
 		{

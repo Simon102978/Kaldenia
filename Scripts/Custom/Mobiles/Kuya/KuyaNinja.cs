@@ -6,6 +6,8 @@ namespace Server.Mobiles
 	[CorpseName("Le corps d'un Kuya")]
 	public class KuyaNinja : KuyaBase
 	{
+        public override bool ClickTitle => false;
+		public override bool AlwaysMurderer => true;
 		public override bool CanStealth => true;
 
         private DateTime m_NextWeaponChange;
@@ -120,6 +122,9 @@ namespace Server.Mobiles
         }
 
         public override bool BardImmune => true;
+
+		public override TribeType Tribe => TribeType.Kuya;
+
 		public override void GenerateLoot()
         {
 			AddLoot(LootPack.Rich, 2);

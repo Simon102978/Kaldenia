@@ -104,7 +104,20 @@ namespace Server.Items
             return TimeSpan.FromSeconds(0.25);
         }
 
-        public override void OnHit(Mobile attacker, IDamageable damageable, double damageBonus)
+		public virtual double GetDefendSkillValue(Mobile attacker, Mobile defender)
+		{
+			if (defender.Weapon is BaseMeleeWeapon)
+			{
+				return defender.Skills[GetUsedSkill(defender, true)].Value - 20;
+			}
+			else
+			{
+				return defender.Skills[GetUsedSkill(defender, true)].Value;
+			}		
+		}
+
+
+		public override void OnHit(Mobile attacker, IDamageable damageable, double damageBonus)
         {
             if (AmmoType != null && attacker.Player && damageable is Mobile && !((Mobile)damageable).Player && (((Mobile)damageable).Body.IsAnimal || ((Mobile)damageable).Body.IsMonster) &&
                 0.4 >= Utility.RandomDouble())

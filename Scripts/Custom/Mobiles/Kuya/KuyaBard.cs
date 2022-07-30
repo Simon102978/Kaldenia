@@ -9,22 +9,22 @@ namespace Server.Mobiles
 			: base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.05, 0.2)
 		{
 			SpeechHue = Utility.RandomDyedHue();
-	
+			
 			Race = Race.GetRace(Utility.Random(4));
 
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
 				Name = NameList.RandomName("female");
-				Title = "Kuya Envoutante";
 				AddItem(new Skirt(Utility.RandomNeutralHue()));
+				Title = "Kuya Envoutante";
 			}
 			else
 			{
 				Body = 0x190;
 				Name = NameList.RandomName("male");
-				Title = "Kuya Envoutant";
 				AddItem(new ShortPants(Utility.RandomNeutralHue()));
+				Title = "Kuya Envoutant";
 			}
 			
 			HairItemID = Race.RandomHair(Female);
@@ -91,7 +91,7 @@ namespace Server.Mobiles
 
 			AddItem(new Bow());
 
-		
+			AddItem(new MaleKimono());
 		}
 
 		public override bool CanPeace => true;
@@ -102,10 +102,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(Harp), typeof(Lute), typeof(Drums), typeof(Tambourine) }));
             AddLoot(LootPack.LootItem<Longsword>(true));
             AddLoot(LootPack.LootItem<Bow>(true));
-            AddLoot(LootPack.LootItem<Arrow>(100, true));			
-			AddLoot(LootPack.Average);
-			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
-
+            AddLoot(LootPack.LootItem<Arrow>(100, true));
 //            AddLoot(LootPack.LootGold(10, 50));
         }
 

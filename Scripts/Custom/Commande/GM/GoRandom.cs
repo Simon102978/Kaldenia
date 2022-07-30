@@ -49,6 +49,14 @@ namespace Server.Scripts.Commands
 								from.SendMessage("Vous ne suivez plus personne.");
 							}
 
+							if (!from.Hidden)
+							{
+								from.Hidden = true;
+							}
+
+
+
+
 							from.MoveToWorld(target.Location, target.Map);
 
 							break;

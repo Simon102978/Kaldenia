@@ -9,12 +9,11 @@ namespace Server.Mobiles
 		   : base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.05, 0.2)
 		{
             SpeechHue = Utility.RandomDyedHue();
-            Race = Race.GetRace(Utility.Random(4));
-           
-            Title = "Kuya menestrel";
+            Hue = Utility.RandomSkinHue();
 
+			Title = "Kuya barde";
 
-            if (Female = Utility.RandomBool())
+			if (Female = Utility.RandomBool())
             {
                 Body = 0x191;
                 Name = NameList.RandomName("female");
@@ -28,6 +27,8 @@ namespace Server.Mobiles
                         AddItem(new Kilt(Utility.RandomNeutralHue()));
                         break;
                 }
+				
+				
             }
             else
             {
@@ -103,7 +104,7 @@ namespace Server.Mobiles
 
 			AddItem(new Bow());
 
-		//	AddItem(new MaleKimono());
+			AddItem(new MaleKimono());
 		}
 
 		public override bool CanDiscord => true;
@@ -115,8 +116,6 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<Longsword>(true));
             AddLoot(LootPack.LootItem<Bow>(true));
             AddLoot(LootPack.LootItem<Arrow>(100, true));
-            AddLoot(LootPack.Average);
-			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
       //      AddLoot(LootPack.LootGold(10, 50));
         }
 

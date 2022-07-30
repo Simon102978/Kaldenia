@@ -192,18 +192,13 @@ namespace Server.Mobiles
 
 		
 
-
-		public override TribeType Tribe => TribeType.Kuya;
-
 		public KuyaSamurai(Serial serial)
             : base(serial)
         {
         }
 
 		public override bool ClickTitle => false;
-		public override bool AlwaysMurderer => true;
 
-		public override bool ShowFameTitle => false;
 
 		public override void Serialize(GenericWriter writer)
         {

@@ -2911,7 +2911,7 @@ namespace Server
 
 		public virtual void Detection(Mobile mobile, int boni)
 		{
-			int bonus = boni + 50;  // donne 50% de chances de base a detecter la personne... le reste depends des bonus malus.
+			int bonus = boni;  // donne 50% de chances de base a detecter la personne... le reste depends des bonus malus.
 
 
 			bonus += GetDetectionBonus(mobile);
@@ -2940,33 +2940,28 @@ namespace Server
 
 			double Range = GetDistanceToSqrt(mobile.Location);
 
-			if (Range >=8)
-			{
-				bonus -= 50;
-			}
-			if (Range >= 6)
-			{
-				bonus -= 30;
-			}
-			else if (Range >= 5)
+			if (Range >= 8)
 			{
 				bonus -= 20;
 			}
+			else if (Range >= 6)
+			{
+				bonus -= 10;
+			}
+			else if (Range >= 4)
+			{
+				bonus += 5;
+			}
 			else if (Range >= 3)
 			{
-				bonus += 0;
+				bonus += 20;
 			}
-			else if (Range >= 2)
+			else
 			{
-				bonus += 25;
-			}
-			else 
-			{
-				bonus += 40;
+				bonus += 60;
 			}
 
-
-/*			ComputeLightLevels(out int global, out int personal);
+			ComputeLightLevels(out int global, out int personal);
 
 			int lightLevel = global + personal;
 
@@ -2981,7 +2976,7 @@ namespace Server
 			else
 			{
 				bonus += 20;
-			}*/
+			}
 
 			return bonus;
 		}
@@ -6919,7 +6914,7 @@ namespace Server
 			if (m_Hidden && IsPlayer())
 			{
 				Hidden = false;
-				SendMessage(this.Female ? "Vous avez ï¿½tï¿½ dï¿½couverte." : "Vous avez ï¿½tï¿½ dï¿½couvert.");
+				SendMessage(this.Female ? "Vous avez été découverte." : "Vous avez été découvert.");
 			}
 
 			m_IsStealthing = false;

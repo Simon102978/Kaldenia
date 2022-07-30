@@ -12,8 +12,6 @@ namespace Server.Items
         public DragonBlood(int amount)
             : base(0x4077, amount)
         {
-			Name = "Sang de Dragon";
-			Weight = 0.2;
         }
 
         public DragonBlood(Serial serial)

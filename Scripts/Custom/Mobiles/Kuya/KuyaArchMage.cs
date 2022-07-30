@@ -12,7 +12,7 @@ namespace Server.Mobiles
 		{
 		
 			SpeechHue = Utility.RandomDyedHue();
-			Title = "Un Kuya Archimage";
+			Title = "Kuya Archimage";
 			Race = Race.GetRace(Utility.Random(4));
 
 			if (Female = Utility.RandomBool())
@@ -28,8 +28,8 @@ namespace Server.Mobiles
 				AddItem(new ShortPants(Utility.RandomNeutralHue()));
 			}
 
-			//BodyValue = 0x190;
-			//Hue = 1281;
+			BodyValue = 0x190;
+			Hue = 1281;
 
 			SetStr(171, 200);
 			SetDex(126, 145);
@@ -58,6 +58,10 @@ namespace Server.Mobiles
 
 		}
 
+
+
+
+		public override TribeType Tribe => TribeType.Kuya;
 		public override void GenerateLoot()
 		{
 			AddLoot(LootPack.Rich);

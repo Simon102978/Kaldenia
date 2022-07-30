@@ -14,11 +14,11 @@ namespace Server.StartUp
                 *   Winter      = 3
                 *   Desolation  = 4
             */
-			Map.Felucca.Season = 1;
-			Map.Trammel.Season = 1;
-			Map.Ilshenar.Season = 1;
+			Map.Felucca.Season = 0;
+			Map.Trammel.Season = 0;
+			Map.Ilshenar.Season = 0;
 			Console.ForegroundColor = ConsoleColor.Cyan;
-			Console.WriteLine("La Saison a été changée pour l'été");
+			Console.WriteLine("La Saison a été changée pour le Printemps");
 			Console.ResetColor();
 			#endregion
 		}

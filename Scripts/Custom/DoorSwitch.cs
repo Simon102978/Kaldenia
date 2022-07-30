@@ -11,38 +11,42 @@ using System.Collections;
 
 namespace Server.Items
 {
- 
+
 	public class DoorSwitch : Item
 	{
-     
-        private ArrayList m_doors;
+
+		private ArrayList m_doors;
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Lock { get; set; }
 
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string Emote { get; set; }
+
 		[Constructable]
-        public DoorSwitch() : base(0x1095)
+		public DoorSwitch() : base(0x1095)
 		{
 			LootType = LootType.Blessed;
 			Movable = true;
 			Name = "Levier";
-            m_doors = new ArrayList();
+			m_doors = new ArrayList();
 		}
 
-		public DoorSwitch( Serial serial ) : base( serial )
+		public DoorSwitch(Serial serial) : base(serial)
 		{
 		}
 
-	/*	public override void GetProperties( ObjectPropertyList list )
-		{
+		/*	public override void GetProperties( ObjectPropertyList list )
+			{
 
-			base.GetProperties( list );
-            int count = m_doors.Count;
-            list.Add("Doors controlled: {0}", count);
+				base.GetProperties( list );
+				int count = m_doors.Count;
+				list.Add("Doors controlled: {0}", count);
 
-		}
+			}
 
-       */
+		   */
 
 		public override void OnDoubleClick(Mobile m)
 		{
@@ -53,16 +57,47 @@ namespace Server.Items
 				m.Target = new AddDoor(m_doors);
 				InvalidateProperties();
 			}
-			else if (!Lock)
+			else if (Lock)
+			{
+				m.SendMessage("Le levier semble cadenassé");
+
+			}
+			else if (CanOpen(m))
 			{
 				switchit();
 
 			}
-			else m.SendMessage("Le levier semble cadenassé");
-
 		}
 
-		public void switchit(){
+		public bool CanOpen(Mobile m)
+		{
+			if (m.IsStaff())
+			{
+				m.SendMessage("Du a vos pouvoirs divins, vous ouvrez la porte.");
+				return true;
+			}
+			else if (!m.InLOS(this))
+			{
+				m.SendMessage("Vous devez avoir la vision du levier pour pouvoir l'activer.");
+				return false;
+			}
+			else if (!m.InRange(this.Location,2))
+			{
+				m.SendMessage("Vous devez être à moin de deux cases pour activer un levier.");
+				return false;
+			}
+			return true;
+		}
+
+		public void switchit()
+		{
+
+			if (Emote != null)
+			{
+				PublicOverheadMessage(MessageType.Regular, 0, false, $"*{Emote}*");
+			}
+
+
             BaseDoor oc;
             foreach(Item i in m_doors){
                 oc = i as BaseDoor;
@@ -138,7 +173,9 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 ); // version
+			writer.Write( (int) 1 ); // version
+
+			writer.Write(Emote);
 
             writer.WriteItemList(m_doors);
 
@@ -150,7 +187,25 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-            m_doors = reader.ReadItemList();
+
+
+			switch (version)
+			{
+				case 1:
+					Emote = reader.ReadString();
+					goto case 0;
+				case 0:
+					m_doors = reader.ReadItemList();
+					break;
+				default:
+					break;
+			}
+
+
+
+
+
+			
 
 		}
 

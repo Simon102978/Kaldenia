@@ -2911,7 +2911,7 @@ namespace Server
 
 		public virtual void Detection(Mobile mobile, int boni)
 		{
-			int bonus = boni + 50;  // donne 50% de chances de base a detecter la personne... le reste depends des bonus malus.
+			int bonus = boni;  // donne 50% de chances de base a detecter la personne... le reste depends des bonus malus.
 
 
 			bonus += GetDetectionBonus(mobile);
@@ -2958,7 +2958,7 @@ namespace Server
 			}
 			else
 			{
-				bonus += 30;
+				bonus += 60;
 			}
 
 			ComputeLightLevels(out int global, out int personal);

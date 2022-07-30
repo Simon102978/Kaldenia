@@ -411,6 +411,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(RuneBlade), "Épées", "Lame vorpal", 40.0, 80.0, typeof(IronIngot), 1044036, 15, 1044037);
 			AddCraft(typeof(ElvenMachete), "Épées", "Machette runique", 40.0, 80.0, typeof(IronIngot), 1044036, 14, 1044037);
 			AddCraft(typeof(DoubleEpee), "Épées", "Double épée", 40.0, 80.0, typeof(IronIngot), 1044036, 15, 1044037);
+			AddCraft(typeof(CrescentBlade), "Épées", "Épée Croissant", 40.0, 80.0, typeof(IronIngot), 1044036, 15, 1044037);
 			AddCraft(typeof(WakizashiLong), "Épées", "Wakizashi Long", 40.0, 80.0, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(Runire), "Épées", "Runire", 40.0, 80.0, typeof(IronIngot), 1044036, 8, 1044037);
 			AddCraft(typeof(Daisho), "Épées", "Les jumelles", 40.0, 80.0, typeof(IronIngot), 1044036, 15, 1044037);

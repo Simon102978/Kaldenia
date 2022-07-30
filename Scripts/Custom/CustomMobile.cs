@@ -404,7 +404,6 @@ namespace Server.Mobiles
 		public CustomPlayerMobile Maitre { get { return m_Maitre; } set { m_Maitre = value; } }
 
 
-
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime JailTime { get; set; }
 
@@ -2441,7 +2440,7 @@ namespace Server.Mobiles
 						JailLocation = reader.ReadPoint3D();
 						JailMap = reader.ReadMap();
 						JailTime = reader.ReadDateTime();
-						Jail = reader.ReadBool();
+						m_Jail = reader.ReadBool();
 						JailBy = reader.ReadMobile();
 
 

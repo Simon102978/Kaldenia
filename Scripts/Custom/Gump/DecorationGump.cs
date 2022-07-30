@@ -317,8 +317,8 @@ namespace Server.Gumps
                                     point.Y -= 1;
                                     break;
                                 case DecoDirection.South:
-                                    point.X -= 1;
-                                    point.Y -= 1;
+                                    point.X += 1;
+                                    point.Y += 1;
                                     break;
                                 case DecoDirection.East:
                                     point.X += 1;
@@ -341,7 +341,7 @@ namespace Server.Gumps
                                     point.Y += 1;
                                     break;
                             }
-                            point.Z -= 1;
+                    //        point.Z -= 1;
 
                             item.Location = point;
                         }

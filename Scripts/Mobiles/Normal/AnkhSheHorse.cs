@@ -1,18 +1,18 @@
 namespace Server.Mobiles
 {
     [CorpseName("a horse corpse")]
-    public class Palomino : BaseMount
+    public class AnkhShe : BaseMount
     {
         [Constructable]
-        public Palomino() : this("a horse")
+        public AnkhShe() : this("a horse")
         {
         }
 
         [Constructable]
-        public Palomino(string name) : base(name, 228, 0x3EA1, AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+        public AnkhShe(string name) : base(name, 228, 0x3EA1, AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             BaseSoundID = 0xA8;
-			Hue = 1408;
+			Hue = 2490;
             SetStr(55, 98);
             SetDex(56, 75);
             SetInt(6, 10);
@@ -42,7 +42,7 @@ namespace Server.Mobiles
         public override int Hides => 10;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
 
-        public Palomino(Serial serial) : base(serial)
+        public AnkhShe(Serial serial) : base(serial)
         {
         }
 
@@ -58,5 +58,4 @@ namespace Server.Mobiles
             int version = reader.ReadInt();
         }
     }
-
 }

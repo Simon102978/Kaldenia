@@ -20,9 +20,10 @@ namespace Server.Mobiles
             {
                 Add(new AnimalBuyInfo(1, typeof(Cat), 132, 10, 201, 0));
                 Add(new AnimalBuyInfo(1, typeof(Dog), 170, 10, 217, 0));
-    //            Add(new AnimalBuyInfo(1, typeof(Horse), 550, 10, 204, 0));
-                Add(new AnimalBuyInfo(1, typeof(PackHorse), 631, 10, 291, 0));
-                Add(new AnimalBuyInfo(1, typeof(PackLlama), 565, 10, 292, 0));
+                Add(new AnimalBuyInfo(1, typeof(Horse), 650, 10, 204, 0));
+				Add(new AnimalBuyInfo(1, typeof(RidableLlama), 650, 10, 220, 0));
+				Add(new AnimalBuyInfo(1, typeof(PackHorse), 650, 10, 291, 0));
+                Add(new AnimalBuyInfo(1, typeof(PackLlama), 650, 10, 292, 0));
                 
 
 				Add(new AnimalBuyInfo(1, typeof(FarmBull), 500, 10, 233, 0));

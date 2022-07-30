@@ -433,7 +433,7 @@ namespace Server.Mobiles
 			}
 			set
 			{
-				if (!m_Jail)
+				if (!m_Jail && value)
 				{
 					JailP(null,TimeSpan.FromDays(7));
 				}
@@ -2675,7 +2675,7 @@ namespace Server.Mobiles
 			writer.Write(JailLocation);
 			writer.Write(JailMap);
 			writer.Write(JailTime);
-			writer.Write(Jail);
+			writer.Write(m_Jail);
 			writer.Write(JailBy);
 		
 

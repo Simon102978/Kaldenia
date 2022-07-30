@@ -95,20 +95,20 @@ namespace Server.Mobiles
 		public DateTime EndOfVulnerabilityTime { get; set; }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public bool Vulnerability 
+		public bool Vulnerability
 		{
-			get 
+			get
 			{
 				if (m_Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
 				{
 					CustomPlayerMobile.RemoveVulnerability_Callback(this);
 				}
 
-				return m_Vulnerability; 
+				return m_Vulnerability;
 			}
-			set 
-			{ 
-				m_Vulnerability = value; 
+			set
+			{
+				m_Vulnerability = value;
 			}
 
 		}
@@ -402,6 +402,58 @@ namespace Server.Mobiles
 		public List<Mobile> Esclaves { get { return m_Esclaves; } set { m_Esclaves = value; } }
 
 		public CustomPlayerMobile Maitre { get { return m_Maitre; } set { m_Maitre = value; } }
+
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public DateTime JailTime { get; set; }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Point3D JailLocation { get; set; }
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Map JailMap { get; set; }
+
+		private bool m_Jail = false;
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public bool Jail
+		{
+			get
+			{
+
+				if (m_Jail && DateTime.Now >= JailTime)
+				{
+					JailRelease();
+				}
+
+
+				return m_Jail;
+			}
+			set
+			{
+				if (!m_Jail)
+				{
+					JailP(null,TimeSpan.FromDays(7));
+				}
+				else
+				{
+					JailRelease();
+				}
+
+				m_Jail = value;
+
+			}
+		}
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Mobile JailBy { get; set; }
+
+
+
 
 		public CustomPlayerMobile()
 		{
@@ -2264,16 +2316,118 @@ namespace Server.Mobiles
 
 		public bool CheckRoux()
 		{
-			if ((HairHue >= 1602 && HairHue  < 1655) || (HairHue >= 1502 && HairHue < 1534) || (HairHue >= 1202 && HairHue < 1226))
+			if ((HairHue >= 1602 && HairHue < 1655) || (HairHue >= 1502 && HairHue < 1534) || (HairHue >= 1202 && HairHue < 1226))
 			{
 				return true;
 			}
-		
+
 
 			return false;
 		}
 
-		public override void Deserialize(GenericReader reader)
+
+		public void JailP(Mobile Jailor, TimeSpan Time)
+		{
+			JailLocation = Location;
+			JailMap = Map;
+			JailTime = DateTime.Now.Add(Time);
+			m_Jail = true;
+
+			if (Jailor != null)
+			{
+				Say($"Mis en tole par {Jailor.Name}. Ne passez pas go et ne reclamez pas 200$.");
+
+				JailBy = Jailor;
+			}
+
+			switch (Utility.Random(9))
+			{
+				case 0:
+					Location = new Point3D(5276, 1164, 0);
+					Map = Map.Trammel;
+					break;
+				case 1:
+					Location = new Point3D(5286, 1164, 0);
+					Map = Map.Trammel;
+					break;
+				case 2:
+					Location = new Point3D(5296, 1164, 0);
+					Map = Map.Trammel;
+					break;
+				case 3:
+					Location = new Point3D(5306, 1164, 0);
+					Map = Map.Trammel;
+					break;
+				case 4:
+					Location = new Point3D(5276, 1174, 0);
+					Map = Map.Trammel;
+					break;
+				case 5:
+					Location = new Point3D(5276, 1174, 0);
+					Map = Map.Trammel;
+					break;
+				case 6:
+					Location = new Point3D(5286, 1174, 0);
+					Map = Map.Trammel;
+					break;
+				case 7:
+					Location = new Point3D(5306, 1174, 0);
+					Map = Map.Trammel;
+					break;
+				case 8:
+					Location = new Point3D(5283, 1184, 0);
+					Map = Map.Trammel;
+					break;
+				case 9:
+					Location = new Point3D(5304, 1184, 0);
+					Map = Map.Trammel;
+					break;
+				default:
+					break;
+			}
+
+			if (Time.TotalMinutes <= 60)
+			{
+				Timer.DelayCall(Time.Add(TimeSpan.FromSeconds(15)), new TimerStateCallback(ReleaseJail_Callback), this);
+			}
+		}
+		private static void ReleaseJail_Callback(object state)
+		{
+			if ((Mobile)state is CustomPlayerMobile cp)
+			{				
+				if (cp.Jail)
+				{
+
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+		public void JailRelease()
+		{
+			if (m_Jail && DateTime.Now >= JailTime)
+			{
+				Say($"Vous venez d'être libéré.");
+
+				Location = JailLocation;
+				Map = JailMap;
+				JailTime = DateTime.MinValue;
+				m_Jail = false;
+				JailBy = null;
+			}
+			
+		}
+	
+
+	public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
 
@@ -2282,6 +2436,17 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 29:
+					{
+						JailLocation = reader.ReadPoint3D();
+						JailMap = reader.ReadMap();
+						JailTime = reader.ReadDateTime();
+						Jail = reader.ReadBool();
+						JailBy = reader.ReadMobile();
+
+
+						goto case 28;
+					}
 				case 28:
 				case 27:
 				case 26:
@@ -2506,7 +2671,14 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(28); // version
+            writer.Write(29); // version
+
+			writer.Write(JailLocation);
+			writer.Write(JailMap);
+			writer.Write(JailTime);
+			writer.Write(Jail);
+			writer.Write(JailBy);
+		
 
 			writer.Write(LastFERP);
 

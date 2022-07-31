@@ -423,10 +423,10 @@ namespace Server.Mobiles
 			get
 			{
 
-				if (m_Jail && DateTime.Now >= JailTime)
+	/*			if (m_Jail && DateTime.Now >= JailTime)
 				{
 					JailRelease();
-				}
+				}*/
 
 
 				return m_Jail;
@@ -2670,13 +2670,13 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(29); // version
+            writer.Write(28); // version
 
-			writer.Write(JailLocation);
+/*			writer.Write(JailLocation);
 			writer.Write(JailMap);
 			writer.Write(JailTime);
 			writer.Write(m_Jail);
-			writer.Write(JailBy);
+			writer.Write(JailBy);*/
 		
 
 			writer.Write(LastFERP);

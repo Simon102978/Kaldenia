@@ -21,9 +21,9 @@ namespace Server.Commands
         {
             CommandSystem.Prefix = ".";
 
-            Register("Go", AccessLevel.Counselor, Go_OnCommand);
+            Register("Go", AccessLevel.GameMaster, Go_OnCommand);
 
-            Register("DropHolding", AccessLevel.Counselor, DropHolding_OnCommand);
+            Register("DropHolding", AccessLevel.GameMaster, DropHolding_OnCommand);
 
             Register("GetFollowers", AccessLevel.GameMaster, GetFollowers_OnCommand);
 
@@ -31,14 +31,14 @@ namespace Server.Commands
 
             Register("Where", AccessLevel.Counselor, Where_OnCommand);
 
-            Register("AutoPageNotify", AccessLevel.Counselor, APN_OnCommand);
-            Register("APN", AccessLevel.Counselor, APN_OnCommand);
+            Register("AutoPageNotify", AccessLevel.GameMaster, APN_OnCommand);
+            Register("APN", AccessLevel.GameMaster, APN_OnCommand);
 
             Register("Animate", AccessLevel.GameMaster, Animate_OnCommand);
 
-            Register("Cast", AccessLevel.Counselor, Cast_OnCommand);
+            Register("Cast", AccessLevel.GameMaster, Cast_OnCommand);
 
-            Register("Stuck", AccessLevel.Counselor, Stuck_OnCommand);
+            Register("Stuck", AccessLevel.GameMaster, Stuck_OnCommand);
 
             Register("Help", AccessLevel.Player, Help_OnCommand);
 
@@ -48,11 +48,11 @@ namespace Server.Commands
             Register("SaveBG", AccessLevel.Administrator, BackgroundSave_OnCommand);
 
             Register("Move", AccessLevel.GameMaster, Move_OnCommand);
-            Register("Client", AccessLevel.Counselor, Client_OnCommand);
+            Register("Client", AccessLevel.GameMaster, Client_OnCommand);
 
-            Register("SMsg", AccessLevel.Counselor, StaffMessage_OnCommand);
-            Register("SM", AccessLevel.Counselor, StaffMessage_OnCommand);
-            Register("S", AccessLevel.Counselor, StaffMessage_OnCommand);
+            Register("SMsg", AccessLevel.GameMaster, StaffMessage_OnCommand);
+            Register("SM", AccessLevel.GameMaster, StaffMessage_OnCommand);
+            Register("S", AccessLevel.GameMaster, StaffMessage_OnCommand);
 
             Register("BCast", AccessLevel.GameMaster, BroadcastMessage_OnCommand);
             Register("BC", AccessLevel.GameMaster, BroadcastMessage_OnCommand);
@@ -60,18 +60,18 @@ namespace Server.Commands
 
             Register("Bank", AccessLevel.GameMaster, Bank_OnCommand);
 
-            Register("Echo", AccessLevel.Counselor, Echo_OnCommand);
+            Register("Echo", AccessLevel.GameMaster, Echo_OnCommand);
 
             Register("Sound", AccessLevel.GameMaster, Sound_OnCommand);
 
             Register("ViewEquip", AccessLevel.GameMaster, ViewEquip_OnCommand);
 
-            Register("Light", AccessLevel.Counselor, Light_OnCommand);
-            Register("Stats", AccessLevel.Counselor, Stats_OnCommand);
+            Register("Light", AccessLevel.GameMaster, Light_OnCommand);
+            Register("Stats", AccessLevel.GameMaster, Stats_OnCommand);
 
             Register("ReplaceBankers", AccessLevel.Administrator, ReplaceBankers_OnCommand);
 
-            Register("SpeedBoost", AccessLevel.Counselor, SpeedBoost_OnCommand);
+            Register("SpeedBoost", AccessLevel.GameMaster, SpeedBoost_OnCommand);
         }
 
         public static void Register(string command, AccessLevel access, CommandEventHandler handler)

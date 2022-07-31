@@ -18,7 +18,7 @@ namespace Knives.TownHouses
 
 		public static void Initialize()
 		{
-			RUOVersion.AddCommand("TownHouses", AccessLevel.Counselor, OnHouses);
+			RUOVersion.AddCommand("TownHouses", AccessLevel.GameMaster, OnHouses);
 		}
 
 		private static void OnHouses(CommandInfo info)

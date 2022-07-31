@@ -155,7 +155,7 @@ namespace Server.Gumps
                         list.Add(m);
                     else if (m.Hidden && owner.AccessLevel >= m.AccessLevel)
                         list.Add(m);
-                    else if (owner.AccessLevel >= AccessLevel.Counselor)
+                    else if (owner.AccessLevel >= AccessLevel.GameMaster)
                         list.Add(m);
                     else if (m is PlayerMobile && ((PlayerMobile)m).VisibilityList.Contains(owner))
                         list.Add(m);
@@ -319,7 +319,7 @@ namespace Server.Gumps
                                 from.SendGump(new ClientGump(from, m.NetState));
                             }
                         }
-                        else if(m_Owner.AccessLevel > AccessLevel.Counselor)
+                        else if(m_Owner.AccessLevel > AccessLevel.GameMaster)
                         {
                             from.SendMessage("Vous ne pouvez pas accéder à la fenêtre d'un maître de jeu.");
                             from.SendGump(new QuiGump(from, m_Mobiles, m_Page));

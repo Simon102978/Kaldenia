@@ -17,8 +17,8 @@ namespace Server.Scripts.Commands
 	{
 		public static void Initialize()
 		{
-            CommandSystem.Register("GoRandom", AccessLevel.Counselor, new CommandEventHandler(GoRandom_OnCommand));
-			CommandSystem.Register("GoR", AccessLevel.Counselor, new CommandEventHandler(GoRandom_OnCommand));
+            CommandSystem.Register("GoRandom", AccessLevel.GameMaster, new CommandEventHandler(GoRandom_OnCommand));
+			CommandSystem.Register("GoR", AccessLevel.GameMaster, new CommandEventHandler(GoRandom_OnCommand));
 		}
 
         [Usage("GoRandom")]

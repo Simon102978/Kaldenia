@@ -8,7 +8,7 @@ namespace Server.Commands.Generic
         {
             Accessors = new string[] { "Multi", "m" };
             SupportRequirement = CommandSupport.Multi;
-            AccessLevel = AccessLevel.Counselor;
+            AccessLevel = AccessLevel.GameMaster;
             Usage = "Multi <command>";
             Description = "Invokes the command on multiple targeted objects.";
         }

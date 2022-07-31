@@ -33,7 +33,7 @@ namespace Server.Commands
 {
 	public class ControlCommand
 	{
-		public static AccessLevel accessLevel = AccessLevel.Counselor;
+		public static AccessLevel accessLevel = AccessLevel.GameMaster;
 
 		private static Layer[] m_DesiredLayerOrder = new Layer[]
 		{

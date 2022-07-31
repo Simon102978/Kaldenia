@@ -528,7 +528,7 @@ namespace Server.Commands.Generic
     {
         public TeleCommand()
         {
-            AccessLevel = AccessLevel.Counselor;
+            AccessLevel = AccessLevel.GameMaster;
             Supports = CommandSupport.Simple;
             Commands = new[] { "Teleport", "Tele" };
             ObjectTypes = ObjectTypes.All;
@@ -1067,7 +1067,7 @@ namespace Server.Commands.Generic
         {
             m_Value = value;
 
-            AccessLevel = AccessLevel.Counselor;
+            AccessLevel = AccessLevel.GameMaster;
             Supports = CommandSupport.AllMobiles;
             Commands = new[] { value ? "Hide" : "Unhide" };
             ObjectTypes = ObjectTypes.Mobiles;

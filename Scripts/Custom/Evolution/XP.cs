@@ -45,25 +45,22 @@ namespace Server
         {
           Mobile m = state.Mobile;
 
-          if (m != null && m is CustomPlayerMobile pm)
-          {			
-            if (pm.NextFETime <= TimeSpan.FromMinutes(10))
+          if (m != null && m is CustomPlayerMobile)
+          {
+			CustomPlayerMobile pm = (CustomPlayerMobile)m;
+			
+			if(pm.FENormalTotal >= day * 5 )
+			{
+
+			}
+            else if (pm.NextFETime < TimeSpan.FromMinutes(10))
             {
-              if(pm.FENormalTotal >= day * 5)
-              {
-                if (pm.FEAttente > 0)
-                {
-                  pm.FEAttente--;
-                  pm.FE++;
-                  pm.SendMessage("Vous récupérer une FE en attente !");
-                }           
-              }
-              else
-              {
+             // if (pm.DailyFECount < 4)
+             // {
                 GainFE(pm);
-              }
-              ResetFETime(pm);
-			      }   
+                ResetFETime(pm);
+            //  }
+            }
             else
             {
               if (pm.LastLoginTime < DateTime.Now - TimeSpan.FromMinutes(10))

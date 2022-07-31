@@ -167,7 +167,8 @@ namespace Server.Mobiles
 		Kuya,
 		Brigand,
 		Pirate,
-		Titusien
+		Titusien,
+        Geant
     }
 
     public enum LootStage
@@ -1126,7 +1127,7 @@ namespace Server.Mobiles
 		}
 
 		public virtual uint TraitsGiven(uint atLevel) { return (atLevel == 10) ? (uint)3 : (uint)1; }
-		public string SexString { get { return (Female ? "Femelle" : "Mâle"); } }
+		public string SexString { get { return (Female ? "Femelle" : "Mï¿½le"); } }
 		public JakoAttributes m_jakoAttributes = new JakoAttributes();
 
 
@@ -1631,7 +1632,7 @@ namespace Server.Mobiles
 					}
 				case TribeType.Kuya:
 					{
-						// Pas d'ennemis, car il protège la valorite, et renderait le tout trop simple.
+						// Pas d'ennemis, car il protï¿½ge la valorite, et renderait le tout trop simple.
 
 
 

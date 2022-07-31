@@ -101,7 +101,8 @@ namespace Server.Mobiles
 			{
 				if (m_Vulnerability && EndOfVulnerabilityTime <= DateTime.Now)
 				{
-					CustomPlayerMobile.RemoveVulnerability_Callback(this);
+					m_Vulnerability = false;
+					SendMessage(HueManager.GetHue(HueManagerList.Green), "Vous n'êtes plus vulnérable. La prochaine fois que vous tomberez au combat, vous serez assomé.");
 				}
 
 				return m_Vulnerability;

@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using Server;
 using Server.Mobiles;
@@ -41,7 +41,7 @@ namespace Server.Scripts.Commands
 					}
 
 
-					from.SendMessage("Sélectionner la personne à mettre en prison.");
+					from.SendMessage("Sï¿½lectionner la personne ï¿½ mettre en prison.");
 					from.Target = new JailTarget(TimeSpan.FromMinutes(Minutes));
 				}
 				else
@@ -98,7 +98,7 @@ namespace Server.Scripts.Commands
 
             if ( target == null || !(target is CustomPlayerMobile))
             {
-                from.SendMessage("Cette cible est inadéquate.");
+                from.SendMessage("Cette cible est inadï¿½quate.");
                 return;
             }
 
@@ -117,7 +117,7 @@ namespace Server.Scripts.Commands
 					}
                     else
                     {
-                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus élevé que vous.");
+                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus ï¿½levï¿½ que vous.");
                         return;
                     }              
             }
@@ -125,3 +125,4 @@ namespace Server.Scripts.Commands
     }
 
 }
+*/

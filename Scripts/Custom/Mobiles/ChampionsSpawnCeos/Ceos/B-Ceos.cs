@@ -48,10 +48,10 @@ namespace Server.Mobiles
 			Fame = 25000;
 			Karma = -25000;
 
-			//SetAreaEffect(AreaEffect.PoisonBreath);
+			SetAreaEffect(AreaEffect.PoisonBreath);
 		}
 
-		public override TribeType Tribe => TribeType.Terathan;
+		public override TribeType Tribe => TribeType.Titusien;
 		public override void OnDamage(int amount, Mobile from, bool willKill)
 		{
 			base.OnDamage(amount, from, willKill);
@@ -128,7 +128,7 @@ namespace Server.Mobiles
 				if (creature.Controlled || creature.Summoned)
 				{
 
-					Say("Yummy !! *Tout en fesant une bouché de " + creature.Name + "*");
+					Say("Yummy !! *Tout en fesant une bouchÃ© de " + creature.Name + "*");
 
 					if (Hits < HitsMax)
 						Hits = HitsMax;
@@ -179,7 +179,7 @@ namespace Server.Mobiles
 
 						satyr.Combatant = fighter;
 
-						Say("à moi !");
+						Say("Ã€ moi !");
 
 						//fighter.SendLocalizedMessage(1075116); // A twisted satyr scrambles onto the branch beside you and attacks!
 					}

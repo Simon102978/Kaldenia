@@ -22,9 +22,9 @@ namespace Server
         {
           cp.LastLoginTime = DateTime.Now;
 
-			if (cp.Jail) // Pour liberer si necessaire;
+		/*	if (cp.Jail) // Pour liberer si necessaire;
 			{}
-		
+		*/
 
 		}
       }

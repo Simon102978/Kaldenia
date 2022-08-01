@@ -49,7 +49,7 @@ namespace Server.Spells.Necromancy
                 Caster.FixedParticles(0x37B9, 1, 14, 9502, 32, 5, (EffectLayer)255);
                 new SoundEffectTimer(Caster).Start();
 
-                TimeSpan duration = TimeSpan.FromSeconds((Caster.Skills[SkillName.SpiritSpeak].Value / 3.4) + 1.0);
+                TimeSpan duration = TimeSpan.FromSeconds((Caster.Skills[SkillName.EvalInt].Value / 3.4) + 1.0);
 
                 ExpireTimer t = null;
 

@@ -35,7 +35,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 100.0);
             SetSkill(SkillName.Wrestling, 85.0);
 
-            ControlSlots = 3;
+            ControlSlots = 4;
             CanSwim = true;
         }
 

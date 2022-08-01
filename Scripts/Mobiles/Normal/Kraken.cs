@@ -225,17 +225,22 @@ namespace Server.Mobiles
 
 					Point3D point = new Point3D(p);
 
-					LandTile ld = Map.Tiles.GetLandTile(point.X, point.Y);
-
-					if (ld.ID == 168 || ld.ID == 169 || ld.ID == 170 || ld.ID == 171)
+					if (map != null)
 					{
-						if (BaseBoat.FindBoatAt(point, this.Map) == null)
+						LandTile ld = Map.Tiles.GetLandTile(point.X, point.Y);
+
+						if (ld.ID == 168 || ld.ID == 169 || ld.ID == 170 || ld.ID == 171)
 						{
-							Emote("*Retourne dans l'eau*");
-							this.Location = point;
-							m_OnBoat = false;
+							if (BaseBoat.FindBoatAt(point, this.Map) == null)
+							{
+								Emote("*Retourne dans l'eau*");
+								this.Location = point;
+								m_OnBoat = false;
+							}
 						}
 					}
+
+
 					i++;
 				}	
 		}

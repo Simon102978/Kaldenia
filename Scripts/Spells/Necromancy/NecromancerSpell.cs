@@ -16,7 +16,7 @@ namespace Server.Spells.Necromancy
 
         public override bool ClearHandsOnCast => false;
 
-        public override int ComputeKarmaAward()
+/*        public override int ComputeKarmaAward()
         {
             //TODO: Verify this formula being that Necro spells don't HAVE a circle.
             //int karma = -(70 + (10 * (int)Circle));
@@ -25,7 +25,7 @@ namespace Server.Spells.Necromancy
             karma += AOS.Scale(karma, AosAttributes.GetValue(Caster, AosAttribute.IncreasedKarmaLoss));
 
             return karma;
-        }
+        }*/
 
         public override void GetCastSkills(out double min, out double max)
         {

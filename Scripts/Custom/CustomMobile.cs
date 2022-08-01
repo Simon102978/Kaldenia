@@ -404,7 +404,7 @@ namespace Server.Mobiles
 
 		public CustomPlayerMobile Maitre { get { return m_Maitre; } set { m_Maitre = value; } }
 
-/*
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime JailTime { get; set; }
 
@@ -424,12 +424,12 @@ namespace Server.Mobiles
 			get
 			{
 
-	/*			if (m_Jail && DateTime.Now >= JailTime)
+				if (m_Jail && DateTime.Now >= JailTime)
 				{
 					JailRelease();
-				}*/
+				}
 
-/*
+
 				return m_Jail;
 			}
 			set
@@ -451,9 +451,6 @@ namespace Server.Mobiles
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Mobile JailBy { get; set; }
-
-*/
-
 
 		public CustomPlayerMobile()
 		{
@@ -2325,7 +2322,7 @@ namespace Server.Mobiles
 			return false;
 		}
 
-/*
+
 		public void JailP(Mobile Jailor, TimeSpan Time)
 		{
 			JailLocation = Location;
@@ -2402,15 +2399,6 @@ namespace Server.Mobiles
 			}
 		}
 
-
-
-
-
-
-
-
-
-
 		public void JailRelease()
 		{
 			if (m_Jail && DateTime.Now >= JailTime)
@@ -2425,7 +2413,7 @@ namespace Server.Mobiles
 			}
 			
 		}
-*/	
+	
 
 	public override void Deserialize(GenericReader reader)
         {
@@ -2438,11 +2426,11 @@ namespace Server.Mobiles
 			{
 				case 29:
 					{
-						/*JailLocation =*/ reader.ReadPoint3D();
-						/*JailMap = */ reader.ReadMap();
-						/*JailTime =*/ reader.ReadDateTime();
-						/*m_Jail = */ reader.ReadBool();
-						/*JailBy = */ reader.ReadMobile();
+						JailLocation = reader.ReadPoint3D();
+						JailMap =  reader.ReadMap();
+						JailTime = reader.ReadDateTime();
+						m_Jail =  reader.ReadBool();
+						JailBy =  reader.ReadMobile();
 
 
 						goto case 28;
@@ -2671,13 +2659,13 @@ namespace Server.Mobiles
         {        
             base.Serialize(writer);
 
-            writer.Write(28); // version
+            writer.Write(29); // version
 
-/*			writer.Write(JailLocation);
+			writer.Write(JailLocation);
 			writer.Write(JailMap);
 			writer.Write(JailTime);
 			writer.Write(m_Jail);
-			writer.Write(JailBy);*/
+			writer.Write(JailBy);
 		
 
 			writer.Write(LastFERP);

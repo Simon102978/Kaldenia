@@ -4,7 +4,7 @@ namespace Server.Mobiles
     public class Palomino : BaseMount
     {
         [Constructable]
-        public Palomino() : this("a horse")
+        public Palomino() : this("Cheval Palomino")
         {
         }
 

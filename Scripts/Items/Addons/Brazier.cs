@@ -23,7 +23,7 @@ namespace Server.Items
         public RewardBrazier(int itemID)
             : base(itemID)
         {
-            LootType = LootType.Blessed;
+           
             Weight = 10.0;
         }
 

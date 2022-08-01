@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections;
 using Server;
 using Server.Mobiles;
@@ -41,7 +41,7 @@ namespace Server.Scripts.Commands
 					}
 
 
-					from.SendMessage("S�lectionner la personne � mettre en prison.");
+					from.SendMessage("Sélectionner la personne à mettre en prison.");
 					from.Target = new JailTarget(TimeSpan.FromMinutes(Minutes));
 				}
 				else
@@ -117,7 +117,7 @@ namespace Server.Scripts.Commands
 					}
                     else
                     {
-                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus �lev� que vous.");
+                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus élevé que vous.");
                         return;
                     }              
             }
@@ -125,4 +125,3 @@ namespace Server.Scripts.Commands
     }
 
 }
-*/

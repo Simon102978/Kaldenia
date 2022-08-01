@@ -288,7 +288,7 @@ namespace Server.Items
             if (m_MaxHitPoints == 0)
                 return damage;
 
-            int chance = m_NegativeAttributes.Antique > 0 ? 50 : 25;
+            int chance = m_NegativeAttributes.Antique > 0 ? 50 : 75;
 
             if (chance > Utility.Random(100)) // 25% chance to lower durability
             {

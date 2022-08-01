@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "ServUO": {
+      "commandName": "Project",
+      "jsWebView2Debugging": false,
+      "sqlDebugging": false,
+      "remoteDebugEnabled": false,
+      "nativeDebugging": false
+    },
+    "Profil 1": {
+      "commandName": "Executable"
+    }
+  }
+}

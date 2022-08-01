@@ -11,7 +11,7 @@ namespace Server.Items
         public DragonBrazier()
             : base(0x194D)
         {
-            LootType = LootType.Blessed;
+           
             Weight = 10;
             Light = LightType.Circle150;
             Burning = true;

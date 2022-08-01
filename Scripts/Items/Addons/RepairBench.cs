@@ -113,10 +113,10 @@ namespace Server.Items
             switch (type)
             {
                 case DirectionType.South:
-                    AddComponent(new RepairBenchComponent(0xA278), 0, 0, 0);
+                    AddComponent(new RepairBenchComponent(0x9961), 0, 0, 0);
                     break;
                 case DirectionType.East:
-                    AddComponent(new RepairBenchComponent(0xA27F), 0, 0, 0);
+                    AddComponent(new RepairBenchComponent(0x9962), 0, 0, 0);
                     break;
             }
 

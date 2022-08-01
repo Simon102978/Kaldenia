@@ -8,7 +8,7 @@ namespace Server.Items
         public Brazier()
             : base(0xE31)
         {
-            Movable = false;
+            Movable = true;
             Duration = TimeSpan.Zero; // Never burnt out
             Burning = true;
             Light = LightType.Circle225;

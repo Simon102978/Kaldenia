@@ -4,7 +4,7 @@ namespace Server.Mobiles
     public class AnkhShe : BaseMount
     {
         [Constructable]
-        public AnkhShe() : this("a horse")
+        public AnkhShe() : this("Cheval AnkhShe")
         {
         }
 

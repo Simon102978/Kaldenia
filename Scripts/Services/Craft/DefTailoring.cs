@@ -414,29 +414,6 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(ChapeauPirate), "Chapeaux",  "Chapeau de Pirate", 53.3,73.3, typeof(Cloth),"Tissus", 6, "Vous n'avez pas assez de tissus.");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             #region Materials
             index = AddCraft(typeof(CutUpCloth), "Divers", "Bout de tissus", 0.0, 0.0, typeof(BoltOfCloth), 1044453, 1, 1044253);
             AddCraftAction(index, CutUpCloth);
@@ -537,23 +514,22 @@ namespace Server.Engines.Craft
     //        AddCraft(typeof(Obi), "Divers", 1030219, 20.0, 45.0, typeof(Cloth), "Tissus", 6, "Vous n'avez pas assez de tissus.");
 
             index = AddCraft(typeof(ElvenQuiver), "Divers", "Petit Carquois", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
-          
+			AddRes(index, typeof(Gemme), "Gemmes", 1, "Vous n'avez pas assez de gemmes.");
 
-            index = AddCraft(typeof(QuiverOfFire), "Divers", "Carquois de feu", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
-            
+			index = AddCraft(typeof(QuiverOfFire), "Divers", "Carquois de feu", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
+			AddRes(index, typeof(GemmeFeu), "Gemmes de Feu", 1, "Vous n'avez pas assez de gemmes de feu.");
+
+			index = AddCraft(typeof(QuiverOfIce), "Divers", "Carquois de glace", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
+			AddRes(index, typeof(GemmeGlace), "Gemmes de glace", 1, "Vous n'avez pas assez de gemmes de glace.");
+
+			index = AddCraft(typeof(QuiverOfBlight), "Divers", "Carquois de poison", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
+			AddRes(index, typeof(GemmePoison), "Gemmes de poison", 1, "Vous n'avez pas assez de gemmes de poison.");
+
+			index = AddCraft(typeof(QuiverOfLightning), "Divers", "Carquois de foudre", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
+			AddRes(index, typeof(GemmeFoudre), "Gemmes de foudre", 1, "Vous n'avez pas assez de gemmes de foudre.");
 
 
-            index = AddCraft(typeof(QuiverOfIce), "Divers", "Carquois de glace", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
-           
-
-            index = AddCraft(typeof(QuiverOfBlight), "Divers", "Carquois de poison", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
-            
-
-            index = AddCraft(typeof(QuiverOfLightning), "Divers", "Carquois de foudre", 65.0, 115.0, typeof(Leather), 1044462, 28, 1044463);
-            
-
-
-            AddCraft(typeof(GargoyleHalfApron), "Divers", "Demi trablié élégant", 20.7, 45.7, typeof(Cloth), "Tissus", 6, "Vous n'avez pas assez de tissus.");
+			AddCraft(typeof(GargoyleHalfApron), "Divers", "Demi trablié élégant", 20.7, 45.7, typeof(Cloth), "Tissus", 6, "Vous n'avez pas assez de tissus.");
             AddCraft(typeof(Sash), "Divers", "Cocarde élégant", 4.1, 29.1, typeof(Cloth), "Tissus", 4, "Vous n'avez pas assez de tissus.");
 
 			index = AddCraft(typeof(OilCloth), "Divers", 1041498, 74.6, 99.6, typeof(Cloth), "Tissus", 1, "Vous n'avez pas assez de tissus.");

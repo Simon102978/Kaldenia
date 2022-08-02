@@ -81,8 +81,9 @@ namespace Server.Mobiles
 			AddLoot(LootPack.LootItem<Items.Gold>(500, 750));
 			AddLoot(LootPack.UltraRich, 4);
             AddLoot(LootPack.FilthyRich);
-        //    AddLoot(LootPack.Talisman, 5);
-            AddLoot(LootPack.ArcanistScrolls, Utility.RandomMinMax(1, 3));
+			AddLoot(LootPack.LootItem<Items.GemmePoison>(), (double)5);
+			//    AddLoot(LootPack.Talisman, 5);
+			AddLoot(LootPack.ArcanistScrolls, Utility.RandomMinMax(1, 3));
         }
 
         public override void OnDamage(int amount, Mobile from, bool willKill)

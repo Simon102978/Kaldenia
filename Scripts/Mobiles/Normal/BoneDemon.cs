@@ -55,7 +55,9 @@ namespace Server.Mobiles
         {
 			AddLoot(LootPack.LootItem<Items.Gold>(500, 1000));
 			AddLoot(LootPack.FilthyRich, 8);
-        }
+
+			AddLoot(LootPack.LootItem<Items.GemmeGlace>(), (double)5);
+		}
 
         public override void Serialize(GenericWriter writer)
         {

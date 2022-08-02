@@ -331,7 +331,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.LootItem<Corde>(5.0));
-        }
+			AddLoot(LootPack.LootItem<Items.GemmeFoudre>(), (double)5);
+		}
 
         public override void Serialize(GenericWriter writer)
         {

@@ -709,6 +709,9 @@ namespace Server
 
 		private ItemDelta m_DeltaFlags;
 		private ImplFlag m_Flags;
+		private Mobile m_Createur;
+		private string m_Description;
+
 
 		#region Packet caches
 		private Packet m_WorldPacket;
@@ -1180,6 +1183,8 @@ namespace Server
 					list.Add(1050039, "{0}\t{1}", m_Amount, Name); // ~1_NUMBER~ ~2_ITEMNAME~
 				}
 			}
+
+
 		}
 
 		/// <summary>
@@ -1273,6 +1278,14 @@ namespace Server
 		public virtual void AddNameProperties(ObjectPropertyList list)
 		{
 			AddNameProperty(list);
+
+			var desc = Description ?? String.Empty;
+
+
+			if (!String.IsNullOrWhiteSpace(Description))
+			{
+				list.Add(m_Description);
+			}
 
 			if (IsSecure)
 			{
@@ -2465,7 +2478,23 @@ namespace Server
 
 		public virtual void Serialize(GenericWriter writer)
 		{
-			writer.Write(14); // version
+			writer.Write(15); // version
+
+
+
+
+			// 15
+
+			writer.Write(m_Createur);
+			writer.Write(m_Description);
+
+
+
+
+
+
+
+
 
 			// 14
 			writer.Write(Sockets != null ? Sockets.Count : 0);
@@ -2972,6 +3001,12 @@ namespace Server
 
 			switch (version)
 			{
+				case 15:
+					{
+						m_Createur = reader.ReadMobile();
+						m_Description = reader.ReadString();
+						goto case 14;
+					}
 				case 14:
 				var socketCount = reader.ReadInt();
 
@@ -4763,6 +4798,27 @@ namespace Server
 
 					Delta(ItemDelta.Update);
 				}
+			}
+		}
+
+
+		[CommandProperty(AccessLevel.Decorator)]
+		public Mobile Createur
+		{
+			get => m_Createur;
+			set
+			{
+				m_Createur = value;
+			}
+		}
+
+		[CommandProperty(AccessLevel.Decorator)]
+		public string Description
+		{
+			get => m_Description;
+			set
+			{
+				m_Description = value;
 			}
 		}
 

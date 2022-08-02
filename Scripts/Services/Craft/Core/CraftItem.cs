@@ -2103,6 +2103,10 @@ namespace Server.Engines.Craft
                         Caddellite.TryInfuse(from, item, craftSystem);
                     }
 
+
+					item.Createur = from;
+
+
                     if (tool is Item && ((Item)tool).Parent is Container)
                     {
                         Container cntnr = (Container)((Item)tool).Parent;

@@ -294,6 +294,7 @@ namespace Server.Engines.Craft
 			int index;
 			#region "Anneaux"
 			AddCraft(typeof(RingmailGloves), "Anneaux", "Gants d’anneaux", 30.0, 70.0, typeof(IronIngot), 1044036, 10, 1044037);
+			AddCraft(typeof(RingmailGorget), "Anneaux", "Gorgerin d’anneaux", 30.0, 70.0, typeof(IronIngot), 1044036, 12, 1044037);
 			AddCraft(typeof(RingmailLegs), "Anneaux", "Jambes d’anneaux", 30.0, 70.0, typeof(IronIngot), 1044036, 16, 1044037);
 			AddCraft(typeof(RingmailArms), "Anneaux", "Brassard d’anneaux", 30.0, 70.0, typeof(IronIngot), 1044036, 14, 1044037);
 			AddCraft(typeof(RingmailChest), "Anneaux", "Torse d’anneaux", 30.0, 70.0, typeof(IronIngot), 1044036, 18, 1044037);
@@ -305,6 +306,8 @@ namespace Server.Engines.Craft
 			#region "Mailles"
 			AddCraft(typeof(ChainCoif), "Mailles", "Coiffe de mailles", 40.0, 80.0, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(CasqueKorain), "Mailles", "Casque Korain", 40.0, 80.0, typeof(IronIngot), 1044036, 12, 1044037);
+			AddCraft(typeof(ChainGorget), "Mailles", "Gorgerin de mailles", 40.0, 80.0, typeof(IronIngot), 1044036, 14, 1044037);
+			AddCraft(typeof(ChainmailArms), "Mailles", "Brassards de mailles", 40.0, 80.0, typeof(IronIngot), 1044036, 16, 1044037);
 			AddCraft(typeof(ChainLegs), "Mailles", "Jambes de mailles", 40.0, 80.0, typeof(IronIngot), 1044036, 18, 1044037);
 			AddCraft(typeof(ChainChest), "Mailles", "Tunique de maille", 40.0, 80.0, typeof(IronIngot), 1044036, 20, 1044037);
 

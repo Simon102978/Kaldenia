@@ -71,7 +71,7 @@ namespace Server.Mobiles
 
 								foreach (Mobile m in eable)
 								{
-									if (this != m && CanBeHarmful(m, false) && !(m is BaseCeosSpawn))
+									if (this != m && CanBeHarmful(m, false) && !(m is BaseCeosSpawn) && !m.IsStaff())
 									{
 										targets.Add(m);
 									}

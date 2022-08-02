@@ -98,7 +98,7 @@ namespace Server.Mobiles
 
 						foreach (Mobile m in eable)
 						{
-							if (this != m && CanBeHarmful(m, false) && !(m is BaseCeosSpawn))
+							if (this != m && CanBeHarmful(m, false) && !(m is BaseCeosSpawn) && !m.IsStaff())
 							{
 								targets.Add(m);
 							}
@@ -188,7 +188,7 @@ namespace Server.Mobiles
 			else
 			{
 				for (int i = 0; i < count; i++)
-					SpawnHelper(new EnslavedSatyr(), 4);
+					SpawnHelper(new Ogresse(), 4);
 			}
 		}
 

@@ -237,12 +237,18 @@ namespace Server.Misc
 
 			string customTitle = beheld.Title;
 
-			if (customTitle != null && (customTitle = customTitle.Trim()).Length > 0)
+			if (beheld is CustomPlayerMobile cp && cp.Masque)
 			{
-				title.AppendFormat(", {0}", customTitle);
+
 			}
+			else
+			{
+				if (customTitle != null && (customTitle = customTitle.Trim()).Length > 0)
+				{
+					title.AppendFormat(", {0}", customTitle);
+				}
 
-
+			}
 
 			return title.ToString();
 

@@ -159,9 +159,13 @@ namespace Server.Items
 
             if (level == 0)
             {
-                cont.LockLevel = 0; // Can't be unlocked
+                cont.LockLevel = 1; // Can't be unlocked
 
-                cont.DropItem(new Gold(Utility.RandomMinMax(50, 100)));
+				cont.TrapType = TrapType.None;
+				cont.TrapPower = 0;
+				cont.TrapLevel = 0;
+
+				cont.DropItem(new Gold(Utility.RandomMinMax(50, 100)));
 
                 if (Utility.RandomDouble() < 0.75)
                     cont.DropItem(new TreasureMap(0, Map.Trammel));
@@ -543,7 +547,7 @@ namespace Server.Items
         {
             if (TreasureMapInfo.NewSystem)
             {
-                if (!Locked && TrapType != TrapType.None)
+                if ((!Locked && TrapType != TrapType.None) && Level != 0)
                 {
 					from.SendMessage("Le coffre est piègé, veuillez la retirer avant de tenter de l'ouvrir.");
                    // from.SendLocalizedMessage(1159008); // That appears to be trapped, using the remove trap skill would yield better results...
@@ -806,7 +810,10 @@ namespace Server.Items
                 Effects.SendLocationEffect(from.Location, from.Map, 0x36BD, 15, 10);
                 Effects.PlaySound(from.Location, from.Map, 0x307);
 
-                return true;
+				TrapType = TrapType.None;
+
+
+				return true;
             }
             else
             {

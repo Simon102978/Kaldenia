@@ -187,7 +187,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(ArcanistStatueEastDeed), 1044294, 1072886, 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
             ForceNonExceptional(index);
 
-    /*        index = AddCraft(typeof(WarriorStatueSouthDeed), 1044294, 1072887, 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
+           index = AddCraft(typeof(WarriorStatueSouthDeed), 1044294, 1072887, 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
             AddRecipe(index, (int)CarpRecipes.WarriorStatueSouth);
             ForceNonExceptional(index);
 
@@ -196,17 +196,15 @@ namespace Server.Engines.Craft
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(SquirrelStatueSouthDeed), 1044294, 1072884, 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
-            AddRecipe(index, (int)CarpRecipes.SquirrelStatueSouth);
+            
             ForceNonExceptional(index);
 
             index = AddCraft(typeof(SquirrelStatueEastDeed), 1044294, 1073398, 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
-            AddRecipe(index, (int)CarpRecipes.SquirrelStatueEast);
-            ForceNonExceptional(index);*/
+             ForceNonExceptional(index);
 
             AddCraft(typeof(GiantReplicaAcorn), 1044294, 1072889, 80.0, 105.0, typeof(Board), 1044041, 35, 1044351);
 
             index = AddCraft(typeof(MountedDreadHorn), 1044294, 1032632, 90.0, 115.0, typeof(Board), 1044041, 50, 1044351);
-            AddRes(index, typeof(PristineDreadHorn), 1032634, 1, 1053098);
             ForceNonExceptional(index);
 
   /*          index = AddCraft(typeof(AcidProofRope), 1044294, 1074886, 80, 130.0, typeof(GreaterStrengthPotion), 1073466, 2, 1044253);
@@ -215,10 +213,9 @@ namespace Server.Engines.Craft
             AddRecipe(index, (int)CarpRecipes.AcidProofRope);
             ForceNonExceptional(index);*/
 
-    /*        index = AddCraft(typeof(Banner), 1044294, 1095312, 94.7, 115.0, typeof(Board), 1044041, 50, 1044351);
-            AddSkill(index, SkillName.Tailoring, 75.0, 105.0);
+           index = AddCraft(typeof(Banner), 1044294, 1095312, 94.7, 115.0, typeof(Board), 1044041, 50, 1044351);
             AddRes(index, typeof(Cloth), 1044286, 50, 1044287);
-*/
+
             AddCraft(typeof(Incubator), 1044294, 1112479, 90.0, 115.0, typeof(Board), 1044041, 100, 1044351);
 
             AddCraft(typeof(ChickenCoop), 1044294, 1112570, 90.0, 115.0, typeof(Board), 1044041, 150, 1044351);

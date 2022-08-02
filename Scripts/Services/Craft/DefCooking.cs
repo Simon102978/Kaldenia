@@ -145,6 +145,12 @@ namespace Server.Engines.Craft
 			SetNeedHeat(index, true);
 			#endregion
 			#region Sauces
+			index = AddCraft(typeof(SamuelsSecretSauce), "Sauces", "Sauce Secrete de Samuel", 20.0, 60.0, typeof(Tomato), "Tomate", 5, 1044253);
+			AddRes(index, typeof(BasketOfHerbsFarm), "Herbes", 1, 1044253);
+			AddRes(index, typeof(JarHoney), "Miel", 1, 1044253);
+			AddRes(index, typeof(Vinegar), "Vinaigre", 1, 1044253);
+			AddRes(index, typeof(BarbecueSauce), "Vinaigre", 1, 1044253);
+
 			index = AddCraft(typeof(TomatoSauce), "Sauces", "Sauce tomate", 20.0, 60.0, typeof(Tomato), "Tomate", 3, 1044253);
 			AddRes(index, typeof(BasketOfHerbsFarm), "Herbes", 1, 1044253);
 			////AddRecipe(index, (int)CookRecipesExp.TomatoSauce);

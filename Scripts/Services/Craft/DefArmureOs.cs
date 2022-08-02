@@ -106,7 +106,9 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(BoneArms), "Armure d'os", 1025203, 50, 80, typeof(Bone), "Os", 8, 1044463);
 
-            index = AddCraft(typeof(BoneLegs), "Armure d'os", 1025202, 50, 80, typeof(Bone), "Os", 10, 1044463);
+			index = AddCraft(typeof(BoneGorget), "Armure d'os", "Gorgerin d'os", 50, 80, typeof(Bone), "Os", 5, 1044463);
+
+			index = AddCraft(typeof(BoneLegs), "Armure d'os", 1025202, 50, 80, typeof(Bone), "Os", 10, 1044463);
 
             index = AddCraft(typeof(BoneChest), "Armure d'os", 1025199, 50, 80, typeof(Bone), "Os", 12, 1044463);
 

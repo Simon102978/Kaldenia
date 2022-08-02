@@ -284,18 +284,36 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(SmallRoundBasket), 1044042, 1112298, 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
             AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
-            
 
-    /*        index = AddCraft(typeof(EnchantedPicnicBasket), 1044042, 1158333, 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
-            AddRes(index, typeof(Shaft), 1027125, 3, 1044351);
-            AddRecipe(index, (int)TinkerRecipes.EnchantedPicnicBasket);
-            SetRequireResTarget(index);
-            SetRequiresBasketWeaving(index);
-	*/
-            #endregion
+			index = AddCraft(typeof(GiftBoxAngel), 1044042, "Boite Cadeau, Ange", 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+			AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
 
-            #region Tools
-            AddCraft(typeof(Scissors), 1044046, 1023998, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(GiftBoxCube), 1044042, "Boite Cadeau, Carré", 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+			AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
+
+			index = AddCraft(typeof(GiftBoxCylinder), 1044042, "Boite Cadeau, Cylindre", 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+			AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
+
+			index = AddCraft(typeof(GiftBoxOctogon), 1044042, "Boite Cadeau, Octogone", 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+			AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
+
+			index = AddCraft(typeof(GiftBoxRectangle), 1044042, "Boite Cadeau, Rectangle", 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+			AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
+
+			index = AddCraft(typeof(RedVelvetGiftBox), 1044042, "Boite Cadeau, Petite rouge", 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+			AddRes(index, typeof(Shaft), 1027125, 2, 1044351);
+
+
+			/*        index = AddCraft(typeof(EnchantedPicnicBasket), 1044042, 1158333, 75.0, 100.0, typeof(Kindling), "Petit Bois", 5, "Vous manquez de petit bois");
+					AddRes(index, typeof(Shaft), 1027125, 3, 1044351);
+					AddRecipe(index, (int)TinkerRecipes.EnchantedPicnicBasket);
+					SetRequireResTarget(index);
+					SetRequiresBasketWeaving(index);
+			*/
+			#endregion
+
+			#region Tools
+			AddCraft(typeof(Scissors), 1044046, 1023998, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(MortarPestle), 1044046, 1023739, 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
             AddCraft(typeof(Scorp), 1044046, 1024327, 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(TinkerTools), 1044046, 1044164, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);

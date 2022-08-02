@@ -456,6 +456,8 @@ namespace Server.Mobiles
 		public DateTime NextFaimMessage { get; set; }
 
 		public DateTime NextSoifMessage { get; set; }
+
+		public DateTime NextFrapper { get; set; }
 		public CustomPlayerMobile()
 		{
 			MagicAfinity = new AffinityDictionary(this);

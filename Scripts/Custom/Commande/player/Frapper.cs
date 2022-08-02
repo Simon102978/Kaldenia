@@ -38,7 +38,7 @@ namespace Server.Commands
 
         protected override void OnTarget(Mobile from, object target)
         {
-            if (target is BaseDoor targ)
+            if (target is BaseDoor targ && from is CustomPlayerMobile cp)
             {
 				bool canKnock = true;
 
@@ -57,10 +57,18 @@ namespace Server.Commands
 					from.SendMessage("Vous devez être à moin de deux cases pour cogner à la porte.");
 					canKnock = false;
 				}
+				else if (cp.NextFrapper > DateTime.Now)
+				{
+					from.SendMessage("Vous devez attendre avant de cogner à nouveau.");
+					canKnock = false;
+				}
 
 				if (canKnock)
 				{
 					targ.PublicOverheadMessage(MessageType.Emote, 0, false, String.Format("*On frappe à la porte.*"));
+					cp.NextFrapper = DateTime.Now.AddSeconds(30);
+
+
 				}
 
 			}

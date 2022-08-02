@@ -4,7 +4,7 @@ namespace Server.Items
     {
         [Constructable]
         public GargoyleBook200()
-            : base(0x42B8, 200, true)
+            : base(0x42B8, 100, true)
         {
         }
 
@@ -37,7 +37,7 @@ namespace Server.Items
 
             int version = reader.ReadInt();
 
-			if (version == 0)
+			if (version < 2)
 			{
 				Pages = new BookPageInfo[100];
 
@@ -50,7 +50,7 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-            writer.Write(1); // version
+            writer.Write(2); // version
         }
     }
 }

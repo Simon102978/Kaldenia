@@ -22,7 +22,7 @@ namespace Server.Items
 			new FoodDecayTimer().Start();
 		}
 
-		public FoodDecayTimer() : base( TimeSpan.FromMinutes( 10 ), TimeSpan.FromMinutes( 10 ) )
+		public FoodDecayTimer() : base( TimeSpan.FromMinutes( 45 ), TimeSpan.FromMinutes( 45 ) )
 		{
 			Priority = TimerPriority.OneMinute;
 		}
@@ -53,7 +53,7 @@ namespace Server.Items
 					m.Hunger -= 1;
 					// added to give hunger value a real meaning.
 					if ( m.Hunger < 5 )
-						m.SendMessage( "Vous avez extr�mement faim." );
+						m.SendMessage( "Vous avez extrêmement faim." );
 					else if ( m.Hunger < 10 )
 						m.SendMessage( "Vous avez faim." );
 				}	
@@ -75,7 +75,7 @@ namespace Server.Items
 					m.Thirst -= 1;
 				// added to give thirst value a real meaning.
 					if ( m.Thirst < 5 )
-						m.SendMessage( "Vous avez tr�s soif." );
+						m.SendMessage( "Vous avez très soif." );
 					else if ( m.Thirst < 10 )
 						m.SendMessage("Vous avez soif.");
 				}
@@ -83,7 +83,7 @@ namespace Server.Items
 				{
 					if ( m.Stam > 5 )
 						m.Stam -= 5;
-					m.SendMessage( "Vous �tes compl�tement d�shydrat�!" );
+					m.SendMessage( "Vous êtes complétement déshydraté!" );
 				}
 			}
 		}
@@ -128,7 +128,15 @@ namespace Server.Items
 					case 0:
 					{
 						m.Hits -= 5;
-					m.SendMessage(("Vous mourrez de faim!"), TimeSpan.FromSeconds(60));
+
+							if (m is CustomPlayerMobile cp && cp.NextFaimMessage < DateTime.Now)
+							{
+								m.SendMessage(43, "Vous mourrez de faim!");
+
+								cp.NextFaimMessage = DateTime.UtcNow + TimeSpan.FromMinutes(1);
+							}
+
+					
 							break;
 					}
 				}
@@ -175,7 +183,14 @@ namespace Server.Items
 					case 0:
 					{
 						m.Stam -= 5;
-							m.SendMessage(("Vous êtes complètement déshydraté!"), TimeSpan.FromSeconds(60));
+
+						if (m is CustomPlayerMobile cp && cp.NextSoifMessage < DateTime.Now)
+						{
+								m.SendMessage(43, "Vous êtes complètement déshydraté!");
+								cp.NextSoifMessage = DateTime.UtcNow + TimeSpan.FromMinutes(1);
+						}
+
+						
 						break;
 					}
 				}

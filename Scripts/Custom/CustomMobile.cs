@@ -452,6 +452,10 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Mobile JailBy { get; set; }
 
+
+		public DateTime NextFaimMessage { get; set; }
+
+		public DateTime NextSoifMessage { get; set; }
 		public CustomPlayerMobile()
 		{
 			MagicAfinity = new AffinityDictionary(this);

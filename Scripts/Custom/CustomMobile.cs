@@ -2325,10 +2325,15 @@ namespace Server.Mobiles
 
 		public void JailP(Mobile Jailor, TimeSpan Time)
 		{
-			JailLocation = Location;
-			JailMap = Map;
-			JailTime = DateTime.Now.Add(Time);
-			m_Jail = true;
+
+			if (!m_Jail)
+			{
+				JailLocation = Location;
+				JailMap = Map;
+				m_Jail = true;
+			}
+
+			JailTime = DateTime.Now.Add(Time);		
 
 			if (Jailor != null)
 			{
@@ -2401,7 +2406,7 @@ namespace Server.Mobiles
 
 		public void JailRelease()
 		{
-			if (m_Jail && DateTime.Now >= JailTime)
+			if (m_Jail)
 			{
 				Say($"Vous venez d'être libéré.");
 

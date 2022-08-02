@@ -147,14 +147,17 @@ namespace Server.Mobiles
             if (bc is BaseChampion || bc is Harrower || bc is BaseVendor || bc is Clone || bc.IsParagon)
                 return false;
 
-            int fame = bc.Fame;
+ /*           int fame = bc.Fame;
 
             if (fame > 32000)
                 fame = 32000;
 
             double chance = 1 / Math.Round(20.0 - (fame / 3200));
 
-            return (chance > Utility.RandomDouble());
+			double change = Utility.RandomDouble();*/
+
+
+			return (Utility.RandomDouble() <= 0.03);
         }
 
         public static bool CheckArtifactChance(Mobile m, BaseCreature bc)

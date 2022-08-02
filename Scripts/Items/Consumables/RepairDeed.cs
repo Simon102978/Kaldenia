@@ -159,14 +159,14 @@ namespace Server.Items
             else
                 return true;
 
-            return false;
+            return true;
         }
 
         public bool VerifyRegion(Mobile m)
         {
             //TODO: When the entire region system data is in, convert to that instead of a proximity thing.
             if (!m.Region.IsPartOf<TownRegion>())
-                return false;
+                return true;
 
             return IsNearType(m, RepairSkillInfo.GetInfo(m_Skill).NearbyTypes, 6);
         }
@@ -183,7 +183,7 @@ namespace Server.Items
             else if (items)
                 eable = mob.GetItemsInRange(range);
             else
-                return false;
+                return true;
 
             foreach (object obj in eable)
             {
@@ -195,7 +195,7 @@ namespace Server.Items
             }
 
             eable.Free();
-            return false;
+            return true;
         }
 
         public static bool IsNearType(Mobile mob, Type[] types, int range)
@@ -217,7 +217,7 @@ namespace Server.Items
             }
 
             eable.Free();
-            return false;
+            return true;
         }
 
         public override void Serialize(GenericWriter writer)

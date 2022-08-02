@@ -62,7 +62,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.LootItem<LesserPoisonPotion>(true));
-        }
+			AddLoot(LootPack.LootItem<Items.GemmePoison>(), (double)5);
+		}
 
         public override int GetAttackSound()
         {

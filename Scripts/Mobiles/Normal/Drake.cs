@@ -76,7 +76,9 @@ namespace Server.Mobiles
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.MedScrolls, 2);
             AddLoot(LootPack.MageryRegs, 3);
-        }
+
+			AddLoot(LootPack.LootItem<Items.GemmeFeu>(), (double)5);
+		}
 
         public override void Serialize(GenericWriter writer)
         {

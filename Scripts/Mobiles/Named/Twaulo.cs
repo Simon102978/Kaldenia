@@ -84,6 +84,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<Arrow>(Utility.RandomMinMax(500, 700)));
 
 			AddLoot(LootPack.LootItem<Items.Gold>(500,750));
+
+			AddLoot(LootPack.LootItem<Items.GemmeFoudre>(), (double)5);
 		}
 
         public void SpawnPixies(Mobile target)

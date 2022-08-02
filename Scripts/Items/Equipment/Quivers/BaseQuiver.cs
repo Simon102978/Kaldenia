@@ -15,13 +15,16 @@ namespace Server.Items
 
     [Alterable(typeof(DefTailoring), typeof(Cyclone), true)]
     public class BaseQuiver : Container, ICraftable, ISetItem, IVvVItem, IOwnerRestricted, IRangeDamage, IArtifact, ICanBeElfOrHuman
-    {
+	{
         private bool _VvVItem;
         private Mobile _Owner;
         private string _OwnerName;
         private bool _ElvesOnly;
+		private int m_MaxHitPoints;
+		private int m_HitPoints;
 
-        [CommandProperty(AccessLevel.GameMaster)]
+
+		[CommandProperty(AccessLevel.GameMaster)]
         public bool IsVvVItem
         {
             get { return _VvVItem; }
@@ -48,7 +51,8 @@ namespace Server.Items
             set { _ElvesOnly = value; }
         }
 
-        public override int DefaultGumpID => 0x108;
+
+		public override int DefaultGumpID => 0x108;
 
         public override int DefaultMaxItems => 1;
 
@@ -67,7 +71,58 @@ namespace Server.Items
             }
         }
 
-        public virtual int ArtifactRarity => 0;
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int MaxHitPoints
+		{
+			get
+			{
+				return m_MaxHitPoints;
+			}
+			set
+			{
+				m_MaxHitPoints = value;
+
+				InvalidateProperties();
+			}
+		}
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public int HitPoints
+		{
+			get
+			{
+				return m_HitPoints;
+			}
+			set
+			{
+				if (value != m_HitPoints && MaxHitPoints > 0)
+				{
+					m_HitPoints = value;
+
+					if (m_HitPoints <= 0)
+					{
+						if (GetUser() != null)
+						{
+							GetUser().SendMessage(37, $"Votre {this.Name} se brise.");
+						}
+
+
+
+
+						Delete();
+
+					}
+					else if (m_HitPoints > MaxHitPoints)
+						m_HitPoints = MaxHitPoints;
+
+					InvalidateProperties();
+				}
+			}
+		}
+
+		public virtual int ArtifactRarity => 0;
 
         private AosAttributes m_Attributes;
         private AosSkillBonuses m_AosSkillBonuses;
@@ -220,7 +275,18 @@ namespace Server.Items
 
         public Item Ammo => Items.Count > 0 ? Items[0] : null;
 
-        public BaseQuiver()
+		public Mobile GetUser()
+		{
+			if (this.Parent is Mobile m)
+			{
+				return m;
+			}
+
+			return null;
+		}
+
+
+		public BaseQuiver()
             : this(0x2FB7)
         {
         }
@@ -239,6 +305,9 @@ namespace Server.Items
             m_SetSkillBonuses = new AosSkillBonuses(this);
             DamageIncrease = 10;
             IsArrowAmmo = true;
+
+			HitPoints = 75;
+			MaxHitPoints = 75;
         }
 
         public BaseQuiver(Serial serial)
@@ -450,7 +519,21 @@ namespace Server.Items
             return base.OnDragLift(from);
         }
 
-        public override bool CanEquip(Mobile m)
+		public override void OnDelete()
+		{
+
+
+			if (Ammo != null)
+			{
+				GetUser().AddToBackpack(Ammo);				
+			}
+
+			
+
+			base.OnDelete();
+		}
+
+		public override bool CanEquip(Mobile m)
         {
      /*       if (m.Race.ValidateEquipment(this))
             { 
@@ -677,9 +760,13 @@ namespace Server.Items
                 list.Add(1072378); // <br>Only when full set is present:				
                 SetHelper.GetSetProperties(list, this);
             }
-        }
 
-        public int SetResistBonus(ResistanceType resist)
+
+			if (m_HitPoints >= 0 && m_MaxHitPoints > 0)
+				list.Add(1060639, "{0}\t{1}", m_HitPoints, m_MaxHitPoints); // durability ~1_val~ / ~2_val~
+		}
+
+		public int SetResistBonus(ResistanceType resist)
         {
             switch (resist)
             {
@@ -734,12 +821,16 @@ namespace Server.Items
             base.GetContextMenuEntries(from, list);
             if (from.Items.Contains(this) || (from.Backpack != null && IsChildOf(from.Backpack)))
                 list.Add(new RefillQuiverEntry(this));
-        }
+
+		}
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(4); // version
+            writer.Write(5); // version
+
+			writer.Write(m_HitPoints);
+			writer.Write(m_MaxHitPoints);
 
             writer.Write(_VvVItem);
             writer.Write(_Owner);
@@ -844,6 +935,12 @@ namespace Server.Items
 
             switch (version)
             {
+				case 5:
+					{
+						m_HitPoints = reader.ReadInt();
+						m_MaxHitPoints = reader.ReadInt();
+						goto case 4;
+					}
                 case 4:
                     {
                         _VvVItem = reader.ReadBool();
@@ -966,6 +1063,14 @@ namespace Server.Items
                 m_AosSkillBonuses.AddTo((Mobile)Parent);
                 ((Mobile)Parent).CheckStatTimers();
             }
+
+			if (version == 4)
+			{
+				m_HitPoints = 75;
+				m_MaxHitPoints = 75;
+			}
+
+
         }
 
         public int ComputeStatBonus(StatType type)
@@ -1003,7 +1108,19 @@ namespace Server.Items
         {
             Quality = (ItemQuality)quality;
 
-            if (makersMark)
+
+			if (Quality == ItemQuality.Exceptional)
+			{
+				m_MaxHitPoints = 150;
+			}
+			else
+			{
+				m_MaxHitPoints = 75;
+			}
+
+			m_HitPoints = m_MaxHitPoints; 
+
+			if (makersMark)
                 Crafter = from;
 
             return quality;

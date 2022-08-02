@@ -170,7 +170,23 @@ namespace Server
                 totalDamage += damage * direct / 100;
 
                 if (quiver != null)
-                    totalDamage += totalDamage * quiver.DamageIncrease / 100;
+				{
+					totalDamage += totalDamage * quiver.DamageIncrease / 100;
+
+					int random = Utility.Random(5);
+
+
+					if (random < 1)
+					{
+							quiver.HitPoints--;
+
+							if (quiver.Deleted)
+							{
+								quiver = null;
+							}
+					}
+				}
+                   
 
                 if (m != null)
                     BaseFishPie.ScaleDamage(from, m, ref totalDamage, phys, fire, cold, pois, nrgy, direct);

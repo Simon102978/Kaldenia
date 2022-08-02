@@ -431,11 +431,6 @@ namespace Server.Custom.System
 
 			AddSection(x - 20, YBase, 520, 520, "Liste des membres");
 
-			//          AddBackground(0, 0, 385, 380, 5054);
-			//          AddAlphaRegion(10, 10, 365, 365);
-
-			//    AddHtml(x, y + (space * line++), 345, 20, "<CENTER><BASEFONT COLOR=#FFFFFF>Liste des membres de " + m_Guild.NewGuildTitle, false, false);
-
 			for (int i = 0; i < list.Count; i++)
             {
                 if (i >= ((page + 1) * 20))
@@ -448,8 +443,9 @@ namespace Server.Custom.System
 
 				if (m_Mobile.CustomRank != -2)
 				{
-					AddHtmlTexteColored(x + 300, y + (space * line++), 200, m_Guild.GetTitleByRank(m_Mobile.CustomRank), "#FFFFFF");
+					AddHtmlTexteColored(x + 300, y + (space * line), 200, m_Guild.GetTitleByRank(m_Mobile.CustomRank), "#FFFFFF");
 				}
+				line++;
 			}
 		
 			AddButton(x, y + 428, GetButtonID2(2, 0), 4506);
@@ -457,7 +453,6 @@ namespace Server.Custom.System
 			AddHtmlTexteColored(x + 235, y + 445, 50, "-" + currentPage.ToString() + "-", "#FFFFFF");
 
 			AddButton(x + 430, y + 428, GetButtonID2(1, 0), 4502); // ou 470
-
         }
 
         public NewGuildMembersList(CustomPlayerMobile from, GuildRecruter handler, CustomGuildMember member)
@@ -474,8 +469,12 @@ namespace Server.Custom.System
 
 			AddSection(x - 20, YBase, 520, 520, member.GetName());
 
-			//		AddLabel(x + 120, y + (space * line++), 43, "Menu pour " + member.Name);
 
+			if (currentMember.Mobile != null && from.IsStaff())
+			{
+				AddHtmlTexteColored(x, y + (space * line++) - 1, 300, $"Nom: {currentMember.Mobile.GetBaseName()}", "#FFFFFF");
+			}
+			
 
 
 			if (member.CustomRank != -2)
@@ -496,11 +495,7 @@ namespace Server.Custom.System
 				AddHtmlTexteColored(x, y + (space * line) - 1, 75, "Titre: ", "#FFFFFF");
 				AddTextEntryBg(x + 100, y + (space * line++), 200, 25, 0, 2, currentMember.Titre);
 				AddButtonHtlml(x, y + (space * line++) - 1, GetButtonID2(8, 0), "Rang standard", "#FFFFFF");
-
-
-			}
-		
-		
+			}	
 			AddButtonHtlml(x, y + (space * line++) - 1, GetButtonID2(5, 0), "Retirer de la guilde", "#FFFFFF");
 			AddButtonHtlml(x, y + (space * line++) - 1, GetButtonID2(7, 0), "Retour", "#FFFFFF");
         }
@@ -533,11 +528,8 @@ namespace Server.Custom.System
 					{
 						m_From.SendMessage("Un rang ne peut dépasser 50000 pièces par semaine.");
 						value = 50000;
-					}
-
-				
+					}	
 					currentMember.Salaire = value;
-
 				}
 
 			}
@@ -582,7 +574,6 @@ namespace Server.Custom.System
                         if (currentMember != null)
 						{
 							currentMember.IncreaseRank(m_Guild);
-							//RankUpMobile_OnTarget(m_From, currentMember);
 						}       
 						
                         m_From.SendGump(new NewGuildMembersList(m_From, m_Guild, currentMember));
@@ -594,11 +585,8 @@ namespace Server.Custom.System
                         if (currentMember != null)
 						{
 							currentMember.DecreaseRank(m_Guild);
-						//	RankDownMobile_OnTarget(m_From, currentMember);
-						}
-                            
+						}                        
                         m_From.SendGump(new NewGuildMembersList(m_From, m_Guild, currentMember));
-
                         break;
                     }
                 case 5:
@@ -606,9 +594,8 @@ namespace Server.Custom.System
                         if (currentMember != null)
 						{
 							m_Guild.Members.Remove(currentMember);
-						}                    
+						}  					
                         m_From.SendGump(new NewGuildMembersList(m_From, m_Guild, currentPage));
-
                         break;
                     }
                 case 6:
@@ -631,8 +618,6 @@ namespace Server.Custom.System
 						{
 							currentMember.CustomRank = -2;
 						}
-
-						
 						m_From.SendGump(new NewGuildMembersList(m_From, m_Guild,currentMember));
 						break;
 					}

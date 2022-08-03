@@ -15,14 +15,14 @@ namespace Server.Mobiles
 			if (Female = Utility.RandomBool())
 			{
 				Body = 0x191;
-				Name = NameList.RandomName("female");
+				Name = NameList.RandomName("tokuno female");
 				AddItem(new Skirt(Utility.RandomNeutralHue()));
 				Title = "Kuya Envoutante";
 			}
 			else
 			{
 				Body = 0x190;
-				Name = NameList.RandomName("male");
+				Name = NameList.RandomName("tokuno male");
 				AddItem(new ShortPants(Utility.RandomNeutralHue()));
 				Title = "Kuya Envoutant";
 			}

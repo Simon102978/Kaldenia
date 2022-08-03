@@ -16,7 +16,7 @@ namespace Server.Mobiles
 			if (Female = Utility.RandomBool())
             {
                 Body = 0x191;
-                Name = NameList.RandomName("female");
+                Name = NameList.RandomName("tokuno female");
 
                 switch (Utility.Random(2))
                 {
@@ -33,7 +33,7 @@ namespace Server.Mobiles
             else
             {
                 Body = 0x190;
-                Name = NameList.RandomName("male");
+                Name = NameList.RandomName("tokuno male");
                 AddItem(new ShortPants(Utility.RandomNeutralHue()));
             }
     //        Title = "the bard";

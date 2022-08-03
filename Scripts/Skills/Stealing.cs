@@ -9,6 +9,7 @@ using Server.Spells.Ninjitsu;
 using Server.Spells.Seventh;
 using Server.Targeting;
 using Server.Multis;
+using System.IO;
 
 using System;
 using System.Collections;
@@ -204,6 +205,14 @@ namespace Server.SkillHandlers
                     }
                     else
                     {
+
+						
+
+
+
+
+
+
                         if (toSteal.Stackable && toSteal.Amount > 1)
                         {
                             int maxAmount = (int)((m_Thief.Skills[SkillName.Stealing].Value / 10.0) / toSteal.Weight);
@@ -290,15 +299,48 @@ namespace Server.SkillHandlers
                                 toSteal.Movable = true;
                                 si.Item = null;
                             }
-                        }
-                        else
+
+
+							if (root is CustomPlayerMobile cp && m_Thief is CustomPlayerMobile voleur)
+							{
+								string path = "Logs/VolLog/";
+								string fileName = path + "VolItem.csv";
+
+								if (!Directory.Exists(path))
+								{
+									Directory.CreateDirectory(path);
+
+									using (StreamWriter sw = new StreamWriter(fileName, true))
+										sw.WriteLine("Date;Voleur;VoleurAccount;Victime;Item;Qte;Location X;Location Y;Location Z");  // CSV fIle type..
+								}
+
+
+								using (StreamWriter sw = new StreamWriter(fileName, true))
+									sw.WriteLine(DateTime.Now.ToString() + ";" + voleur.GetBaseName() + ";" + voleur.Account.Username + ";" + cp.GetBaseName() + ";" + toSteal.ToString() + ";" + toSteal.Amount.ToString() + ";" + cp.Location.X + ";" + cp.Location.Y + ";" + cp.Location.Z);  // CSV fIle type..
+							}
+
+
+
+
+
+
+
+						}
+						else
                         {
                             m_Thief.SendLocalizedMessage(502723); // You fail to steal the item.
                         }
                     }
                 }
 
-                return stolen;
+
+
+
+				
+
+
+
+				return stolen;
             }
 
             private bool CheckHouse(Item stolen, object root)

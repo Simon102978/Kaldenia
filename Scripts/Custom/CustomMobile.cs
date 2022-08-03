@@ -870,15 +870,15 @@ namespace Server.Mobiles
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Civenien:
-					taxesGold += (int)Math.Round((GainGold * 0.25), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.4), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Equite:
-					taxesGold += (int)Math.Round((GainGold * 0.1), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.25), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Patre:
-					taxesGold += (int)Math.Round((GainGold * 0.05), 0, MidpointRounding.AwayFromZero);
+					taxesGold += (int)Math.Round((GainGold * 0.15), 0, MidpointRounding.AwayFromZero);
 					GainGold -= taxesGold;
 					break;
 				case StatutSocialEnum.Magistrat:

@@ -132,7 +132,10 @@ namespace Server.Items
                             case 8:
                                 info = OreInfo.Valorite;
                                 break;
-                            default:
+							case 9:
+								info = OreInfo.Mytheril;
+								break;
+							default:
                                 info = null;
                                 break;
                         }
@@ -490,4 +493,35 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
+	[FlipableAttribute(0x1BF2, 0x1BEF)]
+	public class MytherilIngot : BaseIngot
+	{
+		[Constructable]
+		public MytherilIngot() : this(1)
+		{
+		}
+
+		[Constructable]
+		public MytherilIngot(int amount) : base(CraftResource.Mytheril, amount)
+		{
+		}
+
+		public MytherilIngot(Serial serial) : base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 }

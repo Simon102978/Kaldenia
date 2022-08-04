@@ -18,6 +18,7 @@ namespace Server.Items
         Agapite,
         Verite,
         Valorite,
+		Mytheril,
 
 		[Description("Regulier")]
 		RegularLeather = 101,
@@ -201,7 +202,7 @@ namespace Server.Items
         public int RunicMaxIntensity { get { return m_RunicMaxIntensity; } set { m_RunicMaxIntensity = value; } }
 
         public static readonly CraftAttributeInfo Blank;
-        public static readonly CraftAttributeInfo DullCopper, ShadowIron, Copper, Bronze, Golden, Agapite, Verite, Valorite;
+        public static readonly CraftAttributeInfo DullCopper, ShadowIron, Copper, Bronze, Golden, Agapite, Verite, Valorite, Mytheril;
         public static readonly CraftAttributeInfo LupusLeather, ReptilienLeather, GeantLeather, OphidienLeather, ArachnideLeather, DragoniqueLeather, DemoniaqueLeather, AncienLeather;
         public static readonly CraftAttributeInfo RedScales, YellowScales, BlackScales, GreenScales, WhiteScales, BlueScales;
         public static readonly CraftAttributeInfo OakWood, AshWood, YewWood, Heartwood, Bloodwood, Frostwood;
@@ -313,7 +314,22 @@ namespace Server.Items
             verite.RunicMinIntensity = 70;
             verite.RunicMaxIntensity = 100;
 
-            CraftAttributeInfo valorite = Valorite = new CraftAttributeInfo();
+			CraftAttributeInfo mytheril = mytheril = new CraftAttributeInfo();
+
+			verite.ArmorPhysicalResist = 1;
+			verite.ArmorFireResist = 4;
+			verite.ArmorColdResist = 3;
+			verite.ArmorPoisonResist = 4;
+			verite.ArmorEnergyResist = 1;
+			verite.WeaponPoisonDamage = 40;
+			verite.WeaponEnergyDamage = 20;
+			verite.RunicMinAttributes = 4;
+			verite.RunicMaxAttributes = 5;
+
+			verite.RunicMinIntensity = 70;
+			verite.RunicMaxIntensity = 100;
+
+			CraftAttributeInfo valorite = Valorite = new CraftAttributeInfo();
 
             valorite.ArmorPhysicalResist = 1;
             valorite.ArmorColdResist = 4;
@@ -803,7 +819,8 @@ namespace Server.Items
             new CraftResourceInfo(0x979, 1053103, "Agapite", CraftAttributeInfo.Agapite, CraftResource.Agapite, typeof(AgapiteIngot), typeof(AgapiteOre), typeof(AgapiteGranite)),
             new CraftResourceInfo(0x89F, 1053102, "Verite", CraftAttributeInfo.Verite, CraftResource.Verite, typeof(VeriteIngot), typeof(VeriteOre), typeof(VeriteGranite)),
             new CraftResourceInfo(0x8AB, 1053101, "Valorite", CraftAttributeInfo.Valorite,  CraftResource.Valorite, typeof(ValoriteIngot),  typeof(ValoriteOre), typeof(ValoriteGranite)),
-        };
+			new CraftResourceInfo(1342, 0, "Mytheril", CraftAttributeInfo.Mytheril,  CraftResource.Mytheril, typeof(MytherilIngot),  typeof(MytherilOre), typeof(ValoriteGranite)),
+		};
 
         private static readonly CraftResourceInfo[] m_ScaleInfo = new[]
         {
@@ -935,7 +952,7 @@ namespace Server.Items
         /// </summary>
         public static CraftResourceType GetType(CraftResource resource)
         {
-            if (resource >= CraftResource.Iron && resource <= CraftResource.Valorite)
+            if (resource >= CraftResource.Iron && resource <= CraftResource.Mytheril)
                 return CraftResourceType.Metal;
 
             if (resource >= CraftResource.RegularLeather && resource <= CraftResource.AncienLeather)
@@ -1073,8 +1090,10 @@ namespace Server.Items
                 return CraftResource.Verite;
             else if (info.Level == 8)
                 return CraftResource.Valorite;
+			else if (info.Level == 9)
+				return CraftResource.Mytheril;
 
-            return CraftResource.None;
+			return CraftResource.None;
         }
 
         /// <summary>
@@ -1124,8 +1143,9 @@ namespace Server.Items
         public static readonly OreInfo Agapite = new OreInfo(6, 0x979, "Agapite");
         public static readonly OreInfo Verite = new OreInfo(7, 0x89F, "Verite");
         public static readonly OreInfo Valorite = new OreInfo(8, 0x8AB, "Valorite");
+		public static readonly OreInfo Mytheril = new OreInfo(9, 1342, "Mytheril");
 
-        private readonly int m_Level;
+		private readonly int m_Level;
         private readonly int m_Hue;
         private readonly string m_Name;
 

@@ -349,7 +349,10 @@ namespace Server.Items
                         case CraftResource.Valorite:
                             difficulty = 70.0;
                             break;
-                    }
+						case CraftResource.Mytheril:
+							difficulty = 90.0;
+							break;
+					}
 
                     double minSkill = difficulty - 25.0;
                     double maxSkill = difficulty + 25.0;
@@ -812,4 +815,39 @@ namespace Server.Items
             return new ValoriteIngot();
         }
     }
+	public class MytherilOre : BaseOre
+	{
+		[Constructable]
+		public MytherilOre() : this(1)
+		{
+		}
+
+		[Constructable]
+		public MytherilOre(int amount) : base(CraftResource.Mytheril, amount)
+		{
+		}
+
+		public MytherilOre(Serial serial) : base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+
+		public override BaseIngot GetIngot()
+		{
+			return new MytherilIngot();
+		}
+	}
 }

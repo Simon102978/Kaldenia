@@ -337,7 +337,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(PlastronPlaque), "Harnois", "Harnois", 60.0, 90.0, typeof(IronIngot), 1044036, 25, 1044037);
 			AddCraft(typeof(PlastronPlaqueDoree), "Harnois", "Plastron de plaque Dorée", 60.0, 90.0, typeof(IronIngot), 1044036, 25, 1044037);
 			AddCraft(typeof(DragonBardingDeed), "Harnois", "Dragon Barding Deed", 70.0, 122.5, typeof(IronIngot), 1044036, 750, 1044037);
-			
+
 			#endregion
 
 			#region "Casques"
@@ -472,7 +472,7 @@ namespace Server.Engines.Craft
 			#endregion
 
 			#region "Masses et marteaux"
-			AddCraft(typeof(HammerPick),"Masses et marteaux", "Marteau à pointes", 40.0, 80.0, typeof(IronIngot), 1044036, 16, 1044037);
+			AddCraft(typeof(HammerPick), "Masses et marteaux", "Marteau à pointes", 40.0, 80.0, typeof(IronIngot), 1044036, 16, 1044037);
 			AddCraft(typeof(Mace), "Masses et marteaux", "Masse", 40.0, 80.0, typeof(IronIngot), 1044036, 6, 1044037);
 			AddCraft(typeof(Maul), "Masses et marteaux", "Maul", 40.0, 80.0, typeof(IronIngot), 1044036, 10, 1044037);
 			AddCraft(typeof(Scepter), "Masses et marteaux", "Sceptre", 40.0, 80.0, typeof(IronIngot), 1044036, 10, 1044037);
@@ -506,13 +506,22 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(Lajatang), "Rapières et Estoc", "Croissants de lune", 80.0, 130.0, typeof(IronIngot), 1044036, 25, 1044037);
 			#endregion
 
-			#region "Canons"
-			AddCraft(typeof(Cannonball), "Canons", "Boulet de Canon", 10.0, 60.0, typeof(IronIngot), 1044036, 5, 1044037);
-			AddCraft(typeof(Grapeshot), "Canons", "Boulet Avancé", 15.0, 70.0, typeof(IronIngot), 1044036, 5, 1044037);
+			#region "Divers"
+			AddCraft(typeof(Cannonball), "Divers", "Boulet de Canon", 10.0, 60.0, typeof(IronIngot), 1044036, 5, 1044037);
+			AddCraft(typeof(Grapeshot), "Divers", "Boulet Avancé", 15.0, 70.0, typeof(IronIngot), 1044036, 5, 1044037);
 			AddRes(index, typeof(Cloth), 1044286, 2, 1044287);
-			AddCraft(typeof(LightShipCannonDeed), "Canons", "Canon Léger", 65.0, 120.0, typeof(IronIngot), 1044036, 500, 1044037);
-			AddCraft(typeof(HeavyShipCannonDeed), "Canons", "Canon Lourd", 70.0, 120.0, typeof(IronIngot), 1044036, 800, 1044037);
-			AddCraft(typeof(Ancre), "Canons", "Ancre", 90.0, 115.0, typeof(IronIngot), 1044036, 15, 1044037);
+			AddCraft(typeof(LightShipCannonDeed), "Divers", "Canon Léger", 75.0, 110.0, typeof(IronIngot), 1044036, 500, 1044037);
+			AddCraft(typeof(HeavyShipCannonDeed), "Divers", "Canon Lourd", 90.0, 110.0, typeof(IronIngot), 1044036, 800, 1044037);
+			AddCraft(typeof(Ancre), "Divers", "Ancre", 90.0, 110.0, typeof(IronIngot), 1044036, 15, 1044037);
+			AddCraft(typeof(CoffreFort), "Divers", "Coffre Fort", 80.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalVisqueux), "Divers", "Coffre ornemanté", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalRouille), "Divers", "Vieux coffre", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(CoffreMetalDore), "Divers", "Coffre doré", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(PirateChest), "Divers", "Coffre de Pirate", 90.0, 115.0, typeof(IronIngot), 1044036, 25, 1044037);
+			AddCraft(typeof(AnvilEastDeed), "Divers", 1044333, 80.0, 100.0, typeof(IronIngot), 1044036, 5, 1044037);
+			AddRes(index, typeof(IronIngot), 1044036, 150, 1044037);
+			AddCraft(typeof(AnvilSouthDeed), "Divers", 1044334, 80.0, 100.0, typeof(IronIngot), 1044036, 5, 1044037);
+			AddRes(index, typeof(IronIngot), 1044036, 150, 1044037);
 			#endregion
 
 			// Set the overridable material
@@ -529,6 +538,7 @@ namespace Server.Engines.Craft
 			AddSubRes(typeof(AgapiteIngot), 1044028, 75.0, 1044036, 1044269);
 			AddSubRes(typeof(VeriteIngot), 1044029, 80.0, 1044036, 1044269);
 			AddSubRes(typeof(ValoriteIngot), 1044030, 90.0, 1044036, 1044269);
+			AddSubRes(typeof(MytherilIngot), "Mytheril", 90.0, 1044269);
 
 			/*          SetSubRes2(typeof(RedScales), 1060875);
 

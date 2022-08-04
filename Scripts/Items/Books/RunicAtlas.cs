@@ -446,7 +446,7 @@ namespace Server.Items
         {
             RunebookEntry e = Atlas.Entries[Selected];
 
-            if (RunebookGump.HasSpell(User, 31))
+            if (RunebookGump.HasSpell(User, 786))
             {
                 SendLocationMessage(e, User);
 
@@ -487,7 +487,7 @@ namespace Server.Items
         {
             RunebookEntry e = Atlas.Entries[Selected];
 
-            if (RunebookGump.HasSpell(User, 51))
+            if (RunebookGump.HasSpell(User, 806))
             {
                 SendLocationMessage(e, User);
 

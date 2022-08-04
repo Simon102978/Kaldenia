@@ -6,6 +6,8 @@ using Server.Spells.Fourth;
 using Server.Spells.Seventh;
 using System.Collections.Generic;
 using System.Linq;
+using Server.Mobiles;
+using Server.Spells;
 
 namespace Server.Gumps
 {
@@ -253,11 +255,38 @@ namespace Server.Gumps
             }
         }
 
-        public static bool HasSpell(Mobile from, int spellID)
+        public static bool HasSpell(Mobile from, int id)
         {
-            Spellbook book = Spellbook.Find(from, spellID);
 
-            return (book != null && book.HasSpell(spellID));
+			if (from is CustomPlayerMobile pm)
+			{
+				if (pm.ChosenSpellbook != null && pm.ChosenSpellbook is NewSpellbook)
+				{
+					NewSpellbook m_Book = (NewSpellbook)pm.ChosenSpellbook;
+
+					if (id >= 750 && id <= 856)
+					{
+						if (!m_Book.HasSpell(id))
+						{
+							pm.SendMessage("Le grimoire que vous ciblez doit posséder le sort en question !");
+						}
+						else if (m_Book != null && (m_Book.Parent == from || (from.Backpack != null && m_Book.Parent == from.Backpack)))
+						{
+							return true;
+						}
+					}
+					else
+						pm.SendMessage("Le numéro du sort est invalide !");
+				}
+				else
+					pm.SendMessage("Vous devez choisir le grimoire à utiliser avec la commande .choisirgrimoire !");
+			}
+
+
+
+
+
+			return false;
         }
 
         private class InternalPrompt : Prompt
@@ -368,12 +397,16 @@ namespace Server.Gumps
                             case 0:
                             case 1: // Use charges
                                 {
-                                    if (Book.CurCharges <= 0)
+
+									goto case 2;
+
+                           /*         if (Book.CurCharges <= 0)
                                     {
                                         from.CloseGump(typeof(RunebookGump));
                                         from.SendGump(new RunebookGump(from, Book));
 
-                                        from.SendLocalizedMessage(502412); // There are no charges left on that item.
+										from.SendMessage("Option désactivé.");
+                                      //  from.SendLocalizedMessage(502412); // There are no charges left on that item.
                                     }
                                     else
                                     {
@@ -385,7 +418,7 @@ namespace Server.Gumps
                                         Book.Openers.Remove(from);
                                     }
 
-                                    break;
+                                    break;*/
                                 }
                             case 8: // Drop rune
                                 {
@@ -427,7 +460,7 @@ namespace Server.Gumps
                                 }
                             case 2: // Recall
                                 {
-                                    if (HasSpell(from, 31))
+                                    if (HasSpell(from, 786))
                                     {
                                         SendLocationMessage(e, from);
 
@@ -445,7 +478,7 @@ namespace Server.Gumps
                                 }
                             case 4: // Gate
                                 {
-                                    if (HasSpell(from, 51))
+                                    if (HasSpell(from, 806))
                                     {
                                         SendLocationMessage(e, from);
 

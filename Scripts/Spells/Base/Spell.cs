@@ -718,7 +718,28 @@ namespace Server.Spells
             {
                 return false;
             }
-            else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).Peaced)
+
+			else if (m_Caster is CustomPlayerMobile cp && !VerifyAffinity(cp, AffinityRequirements))
+			{			
+					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinités requises.");
+
+					if (m_Caster.AccessLevel > AccessLevel.Counselor)
+					{
+						foreach (MagicAptitudeRequirement item in AffinityRequirements)
+						{
+							m_Caster.SendMessage(item.RequiredAffinity + ":" + item.RequiredValue.ToString());
+						}
+					}
+			}
+
+
+
+
+
+
+
+
+			else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).Peaced)
             {
                 m_Caster.SendLocalizedMessage(1072060); // You cannot cast a spell while calmed.
             }

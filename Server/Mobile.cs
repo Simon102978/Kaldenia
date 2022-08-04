@@ -1107,15 +1107,15 @@ namespace Server
 			var prefix = ""; // still needs to be defined due to cliloc. Only defined in PlayerMobile. BaseCreature and BaseVendor require the suffix for the title and use the same cliloc.
 
 			var suffix = "";
-/*
-			if (PropertyTitle && !String.IsNullOrEmpty(Title))
-			{
-				suffix = Title;
-			}
+			/*
+						if (PropertyTitle && !String.IsNullOrEmpty(Title))
+						{
+							suffix = Title;
+						}
 
-			suffix = ApplyNameSuffix(suffix);
-*/
-			list.Add(1050045,name); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      
+						suffix = ApplyNameSuffix(suffix);
+			*/
+			list.Add(1050045, name); // ~1_PREFIX~~2_NAME~~3_SUFFIX~      
 		}
 
 		public virtual void GetProperties(ObjectPropertyList list)
@@ -1698,7 +1698,7 @@ namespace Server
 			}
 		}
 
-		
+
 
 
 		#region Timers
@@ -2376,13 +2376,13 @@ namespace Server
 			switch (type)
 			{
 				case TotalType.Gold:
-				return m_TotalGold;
+					return m_TotalGold;
 
 				case TotalType.Items:
-				return m_TotalItems;
+					return m_TotalItems;
 
 				case TotalType.Weight:
-				return m_TotalWeight;
+					return m_TotalWeight;
 			}
 
 			return 0;
@@ -2398,19 +2398,19 @@ namespace Server
 			switch (type)
 			{
 				case TotalType.Gold:
-				m_TotalGold += delta;
-				Delta(MobileDelta.Gold);
-				break;
+					m_TotalGold += delta;
+					Delta(MobileDelta.Gold);
+					break;
 
 				case TotalType.Items:
-				m_TotalItems += delta;
-				break;
+					m_TotalItems += delta;
+					break;
 
 				case TotalType.Weight:
-				m_TotalWeight += delta;
-				Delta(MobileDelta.Weight);
-				OnWeightChange(m_TotalWeight - delta);
-				break;
+					m_TotalWeight += delta;
+					Delta(MobileDelta.Weight);
+					OnWeightChange(m_TotalWeight - delta);
+					break;
 			}
 		}
 
@@ -2853,6 +2853,12 @@ namespace Server
 				return false;
 			}
 
+
+			if (d != Direction.Running)
+			{
+				CustomDirection = d;
+			}
+
 			var e = MovementEventArgs.Create(this, d);
 
 			EventSink.InvokeMovement(e);
@@ -2894,7 +2900,6 @@ namespace Server
 			{
 				bool cansee = m.CanSee(this);
 
-
 				if (m != this && m.AccessLevel == AccessLevel.Player && !cansee)
 				{
 					m.Detection(this, bonus);
@@ -2903,6 +2908,10 @@ namespace Server
 
 			}
 		}
+
+
+
+
 
 		public virtual void Detection(Mobile mobile)
 		{
@@ -2954,11 +2963,27 @@ namespace Server
 			}
 			else if (Range >= 3)
 			{
-				bonus += 20;
-			}
-			else
-			{
-				bonus += 60;
+			
+				Side side = GetSide(mobile);
+
+				switch (side)
+				{
+					case Side.Aucun:
+						bonus += 20;
+						break;
+					case Side.Derriere:
+						bonus += 5;
+						break;
+					case Side.Cote:
+						bonus += 25;
+						break;
+					case Side.Devant:
+						bonus += 60;
+						break;
+					default:
+						bonus += 20;
+						break;
+				}
 			}
 
 			ComputeLightLevels(out int global, out int personal);
@@ -2991,9 +3016,96 @@ namespace Server
 		}
 
 
+		public enum Side
+		{
+			Aucun,
+			Derriere,
+			Cote,
+			Devant
+		}
+
+		public Side GetSide(Mobile adetecter)
+		{
+
+			Side cote = Side.Aucun;
+
+			int froml = GetDirectionNumber(GetDirectionTo(adetecter));
+
+			int watch = GetDirectionNumber(CustomDirection);
+
+			int dif = Math.Abs(froml - watch);
+
+
+			if (dif <= 1)
+			{
+				cote = Side.Devant;
+			}
+			else if (dif <= 2)
+			{
+				cote = Side.Cote;
+			}
+			else if (dif <= 5)
+			{
+				cote = Side.Derriere;
+			}
+			else if (dif <= 6)
+			{
+				cote = Side.Cote;
+			}
+			else
+			{
+				cote = Side.Devant;
+			}
+
+
+			return cote;
 
 
 
+
+		}
+
+
+
+
+
+		public int GetDirectionNumber(Direction d)
+		{
+			int number = -1;
+
+			switch (d & Direction.Mask)
+			{
+				case Direction.North:
+					number = 1;
+					break;
+				case Direction.Right:
+					number = 2;
+					break;
+				case Direction.East:
+					number = 3;
+					break;
+				case Direction.Down:
+					number = 4;
+					break;
+				case Direction.South:
+					number = 5;
+					break;
+				case Direction.Left:
+					number = 6;
+					break;
+				case Direction.West:
+					number = 7;
+					break;
+				case Direction.Up:
+					number = 8;
+					break;
+				default:
+					break;
+			}
+
+
+			return number;
+		}
 
 
 
@@ -3065,6 +3177,9 @@ namespace Server
 
 		public virtual bool CheckMovement(Direction d, out int newZ)
 		{
+		
+
+
 			return Movement.Movement.CheckMovement(this, Map, Location, d, out newZ);
 		}
 
@@ -3138,6 +3253,8 @@ namespace Server
 					newLocation.m_X = x;
 					newLocation.m_Y = y;
 					newLocation.m_Z = newZ;
+
+
 
 					m_Pushing = false;
 
@@ -8469,7 +8586,17 @@ namespace Server
 		public void SetDirection(Direction dir)
 		{
 			m_Direction = dir;
+
+			if (dir != Direction.Running)
+			{
+				CustomDirection = dir;
+			}
 		}
+
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public Direction CustomDirection { get; set; }
+
 
 		[CommandProperty(AccessLevel.Decorator)]
 		public Direction Direction
@@ -8483,6 +8610,11 @@ namespace Server
 
 					Delta(MobileDelta.Direction);
 					//ProcessDelta();
+				}
+
+				if (value != Direction.Running)
+				{
+					CustomDirection = value;
 				}
 			}
 		}

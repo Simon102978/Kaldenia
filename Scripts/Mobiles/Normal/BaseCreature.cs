@@ -7634,6 +7634,16 @@ namespace Server.Mobiles
 		}
 
 
+		public override void Detection(Mobile mobile, int boni)
+		{
+			double Range = GetDistanceToSqrt(mobile.Location);
+
+			if (Range < 5)
+			{
+				base.Detection(mobile, boni);
+			}		
+		}
+
 
 		public virtual void TryFindPlayer()
         {

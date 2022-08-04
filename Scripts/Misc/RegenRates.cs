@@ -152,8 +152,8 @@ namespace Server.Misc
             if (from is BaseCreature)
                 points += ((BaseCreature)from).DefaultHitsRegen;
 
-            if (from is PlayerMobile && from.Race == Race.Human)	//Is this affected by the cap?
-                points += 2;
+     //       if (from is PlayerMobile && from.Race == Race.Human)	//Is this affected by the cap?
+       //         points += 2;
 
             if (points < 0)
                 points = 0;

@@ -1059,11 +1059,11 @@ namespace Server.Mobiles
 			{
 				int baseCarryWeight = Config.Get("CarryWeight.BasePlayerCarryWeight", 40);
 
-				if (Race == Race.Human)
+			/*	if (Race == Race.Human)
 				{
 					baseCarryWeight += Config.Get("CarryWeight.HumanBonusToCarryWeight", 60);
 
-				}
+				}*/
 
 				return baseCarryWeight + (int)(Config.Get("CarryWeight.CarryWeightPerStr", 3.5) * Str);
 			}
@@ -3405,10 +3405,10 @@ namespace Server.Mobiles
 		{
 			get
 			{
-				if (Race == Race.Human)
+		/*		if (Race == Race.Human)
 				{
 					return 20.0;
-				}
+				}*/
 
 				return 0;
 			}

@@ -158,7 +158,7 @@ namespace Server.Engines.Harvest
 					new HarvestResource(90.0, 50.0, 130.0, 1007078, typeof(AgapiteOre), typeof(AgapiteGranite), typeof(AgapiteElemental)),  // 6
 					new HarvestResource(95.0, 55.0, 135.0, 1007079, typeof(VeriteOre), typeof(VeriteGranite), typeof(VeriteElemental)),  // 7
 					new HarvestResource(99.0, 59.0, 139.0, 1007080, typeof(ValoriteOre), typeof(ValoriteGranite), typeof(ValoriteElemental)),  // 8
-					new HarvestResource(90.0, 59.0, 139.0, "mytheril", typeof(MytherilOre), typeof(MytherilOre), typeof(ValoriteElemental)),  // 16
+				
 
 
 					new HarvestResource(00.0, 00.0, 100.0, 1072540, typeof(Log)),  // 9
@@ -169,7 +169,7 @@ namespace Server.Engines.Harvest
 					new HarvestResource(100.0, 60.0, 140.0, 1072545, typeof(BloodwoodLog)),  // 14
 					new HarvestResource(100.0, 60.0, 140.0, 1072546, typeof(FrostwoodLog)),  // 15
 
- 
+ 					new HarvestResource(90.0, 59.0, 139.0, "mytheril", typeof(MytherilOre), typeof(MytherilOre), typeof(ValoriteElemental)),  // 16
 
         };
 

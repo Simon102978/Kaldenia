@@ -18,7 +18,7 @@ namespace Server.Mobiles
 			SpeechHue = Utility.RandomDyedHue();
 			Race = BaseRace.GetRace(Utility.Random(4));
 
-			Hue = Utility.RandomSkinHue();
+	//		Hue = Utility.RandomSkinHue();
 
 			if (Female = Utility.RandomBool())
 			{

@@ -29,7 +29,7 @@ namespace Server.Mobiles
 			}
 
 			BodyValue = 0x190;
-			Hue = 1281;
+//			Hue = 1281;
 
 			SetStr(171, 200);
 			SetDex(126, 145);

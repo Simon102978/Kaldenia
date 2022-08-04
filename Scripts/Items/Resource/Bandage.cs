@@ -711,7 +711,7 @@ namespace Server.Items
             {
                 healer.SendLocalizedMessage(501042); // Target cannot be resurrected at that location.
             }
-			else if (!patient.CanHeal() && patient.Alive && !patient.Poisoned)
+			else if (patient is CustomPlayerMobile cp && cp.Vulnerability)
 			{
 				healer.SendMessage("Vous ne pouvez pas soigner une cible qui vient d'être assomer avec des bandages.");
 			}

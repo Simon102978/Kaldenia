@@ -1090,7 +1090,7 @@ namespace Server.Items
                 return CraftResource.Verite;
             else if (info.Level == 8)
                 return CraftResource.Valorite;
-			else if (info.Level == 9)
+			else if (info.Level == 16)
 				return CraftResource.Mytheril;
 
 			return CraftResource.None;
@@ -1143,7 +1143,7 @@ namespace Server.Items
         public static readonly OreInfo Agapite = new OreInfo(6, 0x979, "Agapite");
         public static readonly OreInfo Verite = new OreInfo(7, 0x89F, "Verite");
         public static readonly OreInfo Valorite = new OreInfo(8, 0x8AB, "Valorite");
-		public static readonly OreInfo Mytheril = new OreInfo(9, 1342, "Mytheril");
+		public static readonly OreInfo Mytheril = new OreInfo(16, 1342, "Mytheril");
 
 		private readonly int m_Level;
         private readonly int m_Hue;

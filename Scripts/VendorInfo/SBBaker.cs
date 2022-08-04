@@ -27,8 +27,8 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(CheesePizza), 8, 10, 0x1040, 0)); // OSI just has Pizza
                 Add(new GenericBuyInfo(typeof(JarHoney), 3, 20, 0x9ec, 0));
                 Add(new GenericBuyInfo(typeof(BowlFlour), 7, 20, 0xA1E, 0));
-				Add(new GenericBuyInfo(typeof(RollingPinExp), 7, 20, 0x1043, 0));
-				Add(new GenericBuyInfo(typeof(SkilletExp), 7, 20, 0x97F, 0));
+				Add(new GenericBuyInfo(typeof(RollingPin), 7, 20, 0x1043, 0));
+				Add(new GenericBuyInfo(typeof(Skillet), 7, 20, 0x97F, 0));
 
 			}
         }

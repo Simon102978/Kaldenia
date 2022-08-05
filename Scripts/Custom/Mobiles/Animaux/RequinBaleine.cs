@@ -10,7 +10,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public RequinBaleine()
-            : base(AIType.AI_Melee, FightMode.Closest, 10, 3, 0.2, 0.4)
+            : base(AIType.AI_Mage, FightMode.Closest, 10, 3, 0.2, 0.4)
         {
             m_NextWaterBall = DateTime.UtcNow;
 
@@ -20,9 +20,9 @@ namespace Server.Mobiles
 
             SetStr(756, 780);
             SetDex(226, 245);
-            SetInt(26, 40);
+			SetInt(276, 305);
 
-            SetHits(454, 468);
+			SetHits(454, 468);
             SetMana(0);
 
             SetDamage(19, 33);
@@ -39,8 +39,12 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 15.1, 20.0);
             SetSkill(SkillName.Tactics, 45.1, 60.0);
             SetSkill(SkillName.Wrestling, 45.1, 60.0);
+			SetSkill(SkillName.EvalInt, 100.0);
+			SetSkill(SkillName.Magery, 70.1, 80.0);
 
-            Fame = 11000;
+
+
+			Fame = 11000;
             Karma = -11000;
 
             CanSwim = true;

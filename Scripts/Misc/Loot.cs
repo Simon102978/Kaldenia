@@ -178,8 +178,7 @@ namespace Server
 		
         private static readonly Type[] m_GemTypes = new[]
         {
-            typeof(Amber), typeof(Amethyst), typeof(Citrine), typeof(Diamond), typeof(Emerald), typeof(Ruby), typeof(Sapphire),
-            typeof(StarSapphire), typeof(Tourmaline)
+            typeof(Amber), typeof(Amethyst), typeof(Citrine),  typeof(Ruby), typeof(Tourmaline)
         };
 
         public static Type[] GemTypes => m_GemTypes;

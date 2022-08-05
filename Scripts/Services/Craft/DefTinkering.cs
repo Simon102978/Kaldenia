@@ -344,6 +344,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(MalletAndChisel), 1044046, "Maillet", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Pinceaux), 1044046, "Pinceaux", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BarberScissors), 1044046, "Ciseaux de Barbier", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(Ecraseur), 1044046, "Écraseur pour Coquillages", 10.0, 70.0, typeof(IronIngot), 1044036, 5, 1044037);
 			AddCraft(typeof(FoodPlate), 1044046, "Plat de Nourriture", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			//index = AddCraft(typeof(Bait), 1044046, "Appats", 10.0, 70.0, typeof(RawFishSteak), "Filet de Poisson Cru", 2, "Vous n'avez pas suffisament de poisson cru");
 			//	index = AddCraft(typeof(MetalContainerEngraver), 1044046, 1072154, 75.0, 100.0, typeof(IronIngot), 1044036, 4, 1044037);

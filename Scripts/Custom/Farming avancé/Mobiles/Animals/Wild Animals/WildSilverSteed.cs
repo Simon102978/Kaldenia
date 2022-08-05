@@ -22,6 +22,8 @@ namespace Server.Mobiles
 			MinTameSkill = 103.1;
 		}
 
+		public override bool CanBeParagon => false;
+
 		public WildSilverSteed( Serial serial ) : base( serial )
 		{
 		}

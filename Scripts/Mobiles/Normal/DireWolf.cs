@@ -43,7 +43,8 @@ namespace Server.Mobiles
             MinTameSkill = 83.1;
         }
 
-        public DireWolf(Serial serial)
+		public override bool CanBeParagon => false;
+		public DireWolf(Serial serial)
             : base(serial)
         {
         }

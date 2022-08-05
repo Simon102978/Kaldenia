@@ -53,7 +53,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
+		public override bool CanBeParagon => false;
+		public override int Meat => 1;
         public override FoodType FavoriteFood => FoodType.Fish;
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {

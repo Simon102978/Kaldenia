@@ -37,7 +37,8 @@ namespace Server.Mobiles
             MinTameSkill = -21.3;
         }
 
-        public Dog(Serial serial)
+		public override bool CanBeParagon => false;
+		public Dog(Serial serial)
             : base(serial)
         {
         }

@@ -46,7 +46,7 @@ namespace Server.Mobiles
 		{
 			return 1.0;
 		}
-
+		public override bool CanBeParagon => false;
 		public override int Meat{ get{ return 1; } }
 		public override int Hides{ get{ return 12; } }
 ///		public override HideType HideType{ get{ return HideType.Spined; } }

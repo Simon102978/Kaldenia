@@ -51,6 +51,8 @@ namespace Server.Mobiles
 		public override int Bones => 4;
 		public override BoneType BoneType => BoneType.Reptilien;
 
+		public override bool CanBeParagon => false;
+
 		public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish;
         public override void Serialize(GenericWriter writer)
         {

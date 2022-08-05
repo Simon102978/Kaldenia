@@ -41,7 +41,9 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
+		public override bool CanBeParagon => false;
+
+		public override int Meat => 1;
         public override MeatType MeatType => MeatType.Bird;
         public override FoodType FavoriteFood => FoodType.GrainsAndHay;
         public override bool CanFly => true;

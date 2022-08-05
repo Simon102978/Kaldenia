@@ -140,7 +140,9 @@ namespace Server.Mobiles
 			if (m_MotherBreed == m_FatherBreed) return true;
 			return false;
 		}
-		
+
+		public override bool CanBeParagon => false;
+
 		public override void BreedInformation(Mobile mate)
 		{
 			if (mate is FarmPig)

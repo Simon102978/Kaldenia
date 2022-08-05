@@ -41,7 +41,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
+		public override bool CanBeParagon => false;
+		public override int Meat => 1;
         public override int Hides => 1;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
         public override int GetAttackSound()

@@ -40,7 +40,8 @@ namespace Server.Mobiles
             MinTameSkill = 65.1;
         }
 
-        public WhiteWolf(Serial serial)
+		public override bool CanBeParagon => false;
+		public WhiteWolf(Serial serial)
             : base(serial)
         {
         }

@@ -47,8 +47,10 @@ namespace Server.Mobiles
         public override int Meat => 5;
         public override int Hides => 8;
         public override FoodType FavoriteFood =>  FoodType.FruitsAndVegies;
-        
-        public override void Serialize(GenericWriter writer)
+
+		public override bool CanBeParagon => false;
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

@@ -43,6 +43,8 @@ namespace Server.Mobiles
 		public override FoodType FavoriteFood{ get{ return FoodType.FruitsAndVegies | FoodType.GrainsAndHay; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Ostard; } }
 
+		public override bool CanBeParagon => false;
+
 		public WildDesertOstard( Serial serial ) : base( serial )
 		{
 		}

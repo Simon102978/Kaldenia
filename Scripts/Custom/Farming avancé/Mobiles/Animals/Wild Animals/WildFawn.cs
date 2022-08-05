@@ -74,7 +74,8 @@ namespace Server.Mobiles
                 return FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
             }
         }
-        public override int GetAttackSound() 
+		public override bool CanBeParagon => false;
+		public override int GetAttackSound() 
         { 
             return 0x82; 
         }

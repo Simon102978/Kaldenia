@@ -45,7 +45,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 8;
+		public override bool CanBeParagon => false;
+		public override int Meat => 8;
         public override int Hides => 10;
         public override FoodType FavoriteFood => FoodType.GrainsAndHay;
         public override PackInstinct PackInstinct => PackInstinct.Bull;

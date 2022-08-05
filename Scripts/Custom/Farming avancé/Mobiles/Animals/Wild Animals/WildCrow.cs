@@ -54,6 +54,8 @@ namespace Server.Mobiles
 
 		private DateTime m_NextEat;
 
+		public override bool CanBeParagon => false;
+
 		public override void OnThink()
 		{
 			base.OnThink();

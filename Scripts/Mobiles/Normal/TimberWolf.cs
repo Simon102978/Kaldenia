@@ -45,7 +45,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 3;
+		public override bool CanBeParagon => false;
+		public override int Meat => 3;
 
 		public override int Hides => 12;
 		public override HideType HideType => HideType.Lupus;

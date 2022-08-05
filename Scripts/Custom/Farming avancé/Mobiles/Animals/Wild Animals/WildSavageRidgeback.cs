@@ -42,6 +42,7 @@ namespace Server.Mobiles
 			MinTameSkill = 83.1;
 		}
 
+		public override bool CanBeParagon => false;
 		public override double GetControlChance( Mobile m, bool useBaseSkill )
 		{
 			return 1.0;

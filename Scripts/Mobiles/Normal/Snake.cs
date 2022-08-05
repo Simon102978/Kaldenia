@@ -39,7 +39,8 @@ namespace Server.Mobiles
             MinTameSkill = 59.1;
         }
 
-        public Snake(Serial serial)
+		public override bool CanBeParagon => false;
+		public Snake(Serial serial)
             : base(serial)
         {
         }

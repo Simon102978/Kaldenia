@@ -43,6 +43,8 @@ namespace Server.Mobiles
 			MinTameSkill = 77.1;
 		}
 
+		public override bool CanBeParagon => false;
+
 		public override int Meat{ get{ return 3; } }
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat | FoodType.Fish | FoodType.Eggs | FoodType.FruitsAndVegies; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Ostard; } }

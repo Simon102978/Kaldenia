@@ -42,7 +42,7 @@ namespace Server.Mobiles
 			ControlSlots = 2;
 			MinTameSkill = 106.0;
 		}
-
+		public override bool CanBeParagon => false;
 		public override void GenerateLoot()
 		{
 			PackItem( new SulfurousAsh( Utility.RandomMinMax( 151, 300 ) ) );

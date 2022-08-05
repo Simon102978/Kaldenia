@@ -126,7 +126,8 @@ namespace Server.Mobiles
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Canine; } }
 
-        public WildTimberWolf(Serial serial)
+		public override bool CanBeParagon => false;
+		public WildTimberWolf(Serial serial)
             : base(serial)
 		{
 		}

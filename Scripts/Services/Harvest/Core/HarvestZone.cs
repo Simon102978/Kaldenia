@@ -169,7 +169,7 @@ namespace Server.Engines.Harvest
 					new HarvestResource(100.0, 60.0, 140.0, 1072545, typeof(BloodwoodLog)),  // 14
 					new HarvestResource(100.0, 60.0, 140.0, 1072546, typeof(FrostwoodLog)),  // 15
 
- 					new HarvestResource(90.0, 59.0, 139.0, "mytheril", typeof(MytherilOre), typeof(MytherilOre), typeof(ValoriteElemental)),  // 16
+ 					new HarvestResource(90.0, 59.0, 139.0, "mytheril", typeof(MytherilOre), typeof(MytherilOre), typeof(MytherilElemental)),  // 16
 
         };
 

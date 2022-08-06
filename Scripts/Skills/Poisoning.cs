@@ -104,10 +104,11 @@ namespace Server.SkillHandlers
                     {
                         if (m_From.CheckTargetSkill(SkillName.Poisoning, m_Target, m_MinSkill, m_MaxSkill))
                         {
-                            if (m_Target is Food)
+                            if (m_Target is Food fd)
                             {
-                                ((Food)m_Target).Poison = m_Poison;
-                            }
+                                fd.Poison = m_Poison;
+								fd.Poisoner = m_From;
+							}
                             else if (m_Target is BaseWeapon)
                             {
                                 ((BaseWeapon)m_Target).Poison = m_Poison;

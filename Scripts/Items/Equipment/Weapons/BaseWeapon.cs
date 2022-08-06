@@ -3351,7 +3351,7 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-            writer.Write(21); // version
+            writer.Write(22); // version
 
             // Version 20 - Removes all era checks and old code
             // Version 19 - Removes m_SearingWeapon as its handled as a socket now
@@ -3736,6 +3736,7 @@ namespace Server.Items
 
             switch (version)
             {
+				case 22:
 				case 21:
                 case 20: // Removed Eras
                 case 19: // Removed SearingWeapon
@@ -4253,10 +4254,17 @@ namespace Server.Items
 
             if (m_Slayer2 == SlayerName.DaemonDismissal || m_Slayer2 == SlayerName.BalronDamnation)
                 m_Slayer2 = SlayerName.Exorcism;
-        }
-        #endregion
 
-        public BaseWeapon(int itemID)
+
+			if (version < 22)
+			{
+				Hue = CraftResources.GetHue(m_Resource);
+			}
+
+		}
+		#endregion
+
+		public BaseWeapon(int itemID)
             : base(itemID)
         {
             Layer = (Layer)ItemData.Quality;

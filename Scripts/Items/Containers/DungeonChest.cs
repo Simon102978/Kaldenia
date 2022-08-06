@@ -4,7 +4,9 @@ namespace Server.Items
     {
         public override int DefaultGumpID => 0x49;
 
-        [Constructable]
+		public virtual int Level => 1;
+
+		[Constructable]
         public TreasureLevel1() : base(Utility.RandomList(0xE3C, 0xE3E, 0x9a9)) // Large, Medium and Small Crate
         {
             RequiredSkill = 20;
@@ -46,7 +48,9 @@ namespace Server.Items
 
     public class TreasureLevel2 : BaseDungeonChest
     {
-        [Constructable]
+		public virtual int Level => 2;
+
+		[Constructable]
         public TreasureLevel2() : base(Utility.RandomList(0xe3c, 0xE3E, 0x9a9, 0xe42, 0x9ab, 0xe40, 0xe7f, 0xe77)) // various container IDs
         {
             RequiredSkill = 40;
@@ -101,7 +105,8 @@ namespace Server.Items
 
     public class TreasureLevel3 : BaseDungeonChest
     {
-        public override int DefaultGumpID => 0x4A;
+		public virtual int Level => 3;
+		public override int DefaultGumpID => 0x4A;
 
         [Constructable]
         public TreasureLevel3() : base(Utility.RandomList(0x9ab, 0xe40, 0xe42)) // Wooden, Metal and Metal Golden Chest
@@ -161,7 +166,9 @@ namespace Server.Items
 
     public class TreasureLevel4 : BaseDungeonChest
     {
-        [Constructable]
+		public virtual int Level => 4;
+
+		[Constructable]
         public TreasureLevel4() : base(Utility.RandomList(0xe40, 0xe42, 0x9ab)) // Wooden, Metal and Metal Golden Chest
         {
             RequiredSkill = 80;

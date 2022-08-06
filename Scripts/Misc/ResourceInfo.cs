@@ -314,20 +314,20 @@ namespace Server.Items
             verite.RunicMinIntensity = 70;
             verite.RunicMaxIntensity = 100;
 
-			CraftAttributeInfo mytheril = mytheril = new CraftAttributeInfo();
+			CraftAttributeInfo mytheril = Mytheril = new CraftAttributeInfo();
 
-			verite.ArmorPhysicalResist = 1;
-			verite.ArmorFireResist = 4;
-			verite.ArmorColdResist = 3;
-			verite.ArmorPoisonResist = 4;
-			verite.ArmorEnergyResist = 1;
-			verite.WeaponPoisonDamage = 40;
-			verite.WeaponEnergyDamage = 20;
-			verite.RunicMinAttributes = 4;
-			verite.RunicMaxAttributes = 5;
+			mytheril.ArmorPhysicalResist = 1;
+			mytheril.ArmorFireResist = 4;
+			mytheril.ArmorColdResist = 3;
+			mytheril.ArmorPoisonResist = 4;
+			mytheril.ArmorEnergyResist = 1;
+			mytheril.WeaponPoisonDamage = 40;
+			mytheril.WeaponEnergyDamage = 20;
+			mytheril.RunicMinAttributes = 4;
+			mytheril.RunicMaxAttributes = 5;
 
-			verite.RunicMinIntensity = 70;
-			verite.RunicMaxIntensity = 100;
+			mytheril.RunicMinIntensity = 70;
+			mytheril.RunicMaxIntensity = 100;
 
 			CraftAttributeInfo valorite = Valorite = new CraftAttributeInfo();
 
@@ -819,7 +819,7 @@ namespace Server.Items
             new CraftResourceInfo(1980, 1053103, "Agapite", CraftAttributeInfo.Agapite, CraftResource.Agapite, typeof(AgapiteIngot), typeof(AgapiteOre), typeof(AgapiteGranite)),
             new CraftResourceInfo(2841, 1053102, "Verite", CraftAttributeInfo.Verite, CraftResource.Verite, typeof(VeriteIngot), typeof(VeriteOre), typeof(VeriteGranite)),
             new CraftResourceInfo(2867, 1053101, "Valorite", CraftAttributeInfo.Valorite,  CraftResource.Valorite, typeof(ValoriteIngot),  typeof(ValoriteOre), typeof(ValoriteGranite)),
-			new CraftResourceInfo(1342, 0, "Mytheril", CraftAttributeInfo.Mytheril,  CraftResource.Mytheril, typeof(MytherilIngot),  typeof(MytherilOre), typeof(ValoriteGranite)),
+			new CraftResourceInfo(1342, 0, "Mytheril", CraftAttributeInfo.Mytheril,  CraftResource.Mytheril, typeof(MytherilIngot),  typeof(MytherilOre), typeof(VeriteGranite)),
 		};
 
         private static readonly CraftResourceInfo[] m_ScaleInfo = new[]

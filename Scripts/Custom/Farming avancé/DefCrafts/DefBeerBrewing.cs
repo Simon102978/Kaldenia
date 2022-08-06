@@ -108,9 +108,9 @@ namespace Server.Engines.Craft
 			SetSubRes( typeof( BitterHops ),	"Bitter Hops" );
 
 			AddSubRes( typeof( BitterHops ),	"Bitter Hops", 40.0, skillNotice);
-			AddSubRes( typeof( SnowHops ),	"Snow Hops", 100.0, skillNotice);
-			AddSubRes( typeof( ElvenHops ),	"Elven Hops", 110.0, skillNotice);
-			AddSubRes( typeof( SweetHops ),	"Sweet Hops", 120.0, skillNotice);
+			AddSubRes( typeof( SnowHops ),	"Snow Hops", 60.0, skillNotice);
+			AddSubRes( typeof( ElvenHops ),	"Elven Hops", 75.0, skillNotice);
+			AddSubRes( typeof( SweetHops ),	"Sweet Hops", 90.0, skillNotice);
 
 			MarkOption = true;
 			Repair = false;

@@ -10,7 +10,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public RequinBaleine()
-            : base(AIType.AI_Mage, FightMode.Closest, 10, 3, 0.2, 0.4)
+            : base(AIType.MaritimeMageAI, FightMode.Closest, 10, 3, 0.2, 0.4)
         {
             m_NextWaterBall = DateTime.UtcNow;
 
@@ -36,7 +36,9 @@ namespace Server.Mobiles
             SetResistance(ResistanceType.Poison, 20, 30);
             SetResistance(ResistanceType.Energy, 10, 20);
 
-            SetSkill(SkillName.MagicResist, 15.1, 20.0);
+
+			SetSkill(SkillName.Hiding, 80, 90);
+			SetSkill(SkillName.MagicResist, 15.1, 20.0);
             SetSkill(SkillName.Tactics, 45.1, 60.0);
             SetSkill(SkillName.Wrestling, 45.1, 60.0);
 			SetSkill(SkillName.EvalInt, 100.0);
@@ -96,7 +98,7 @@ namespace Server.Mobiles
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(0);
+            writer.Write(1);
         }
 
         public override void Deserialize(GenericReader reader)
@@ -104,7 +106,12 @@ namespace Server.Mobiles
             base.Deserialize(reader);
             int version = reader.ReadInt();
 
-            m_NextWaterBall = DateTime.UtcNow;
+			if (version == 0)
+			{
+				AI = AIType.MaritimeMageAI;
+			}
+
+			m_NextWaterBall = DateTime.UtcNow;
         }
     }
 }

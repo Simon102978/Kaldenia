@@ -3772,6 +3772,13 @@ namespace Server.Mobiles
                 case AIType.AI_Necro:
                     m_AI = new NecroAI(this);
                     break;
+				case AIType.MaritimeMeleeAI:
+					m_AI = new MaritimeMeleeAI(this);
+					break;
+				case AIType.MaritimeMageAI:
+					m_AI = new MaritimeMageAI(this);
+					break;
+					
             }
         }
 

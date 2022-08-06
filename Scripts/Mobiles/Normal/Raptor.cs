@@ -176,7 +176,7 @@ namespace Server.Mobiles
 
             if (!Controlled && Utility.RandomDouble() <= 0.005)
             {
-                c.DropItem(new RaptorClaw());
+                c.DropItem(new CloseHelm());
             }
         }
 

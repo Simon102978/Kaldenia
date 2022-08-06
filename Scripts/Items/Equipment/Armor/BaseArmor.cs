@@ -1372,7 +1372,7 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-            writer.Write(17); // version
+            writer.Write(18); // version
 
             // Version 16 - Removed Pre-AOS Armor Properties
             // Version 14 - removed VvV Item (handled in VvV System) and BlockRepair (Handled as negative attribute)
@@ -1589,6 +1589,7 @@ namespace Server.Items
 
             switch (version)
             {
+				case 18:
 				case 17:
                 case 16:
                 case 15:
@@ -1899,6 +1900,14 @@ namespace Server.Items
 
             if (Parent is Mobile)
                 ((Mobile)Parent).CheckStatTimers();
+
+
+			if (version < 18)
+			{
+				Hue = CraftResources.GetHue(m_Resource); 
+			}
+
+
         }
 
         public virtual CraftResource DefaultResource => CraftResource.Iron;

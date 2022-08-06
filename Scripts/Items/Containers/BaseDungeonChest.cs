@@ -1,4 +1,5 @@
 using System;
+using Server.Mobiles;
 
 namespace Server.Items
 {
@@ -10,7 +11,11 @@ namespace Server.Items
         public override Rectangle2D Bounds => new Rectangle2D(20, 105, 150, 180);
         public override bool IsDecoContainer => false;
 
-        public BaseDungeonChest(int itemID) : base(itemID)
+		public virtual int Level => 0;
+
+		public bool Mimic { get; set; }
+
+		public BaseDungeonChest(int itemID) : base(itemID)
         {
             Locked = true;
             Movable = false;
@@ -27,7 +32,61 @@ namespace Server.Items
         {
         }
 
-        public override void Serialize(GenericWriter writer)
+		public override void Open(Mobile from)
+		{
+			if (CheckLocked(from))
+				return;
+
+			if (!from.IsStaff() && !Mimic && Utility.Random(100) <= Level * 3)
+			{
+
+				TransformMimic(from);
+			}
+			else
+			{
+
+				if (!Mimic)
+				{
+					Mimic = true;
+				}
+
+				base.Open(from);
+			}
+		
+		}
+
+		public virtual void TransformMimic(Mobile Combatant)
+		{
+
+			Mimic helper = new Mimic();
+
+
+			helper.Home = this.Location;
+			helper.RangeHome = 4;
+			helper.Combatant = Combatant;
+			helper.Warmode = true;
+
+		
+			helper.MoveToWorld(this.Location, Map);
+
+			
+
+			this.Delete();
+
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
 
@@ -88,7 +147,14 @@ namespace Server.Items
             DropItem(item);
         }
 
-        private void StartDeleteTimer()
+
+
+
+
+
+
+
+		private void StartDeleteTimer()
         {
             TimerRegistry.Register(m_DeleteTimerID, this, TimeSpan.FromMinutes(Utility.RandomMinMax(10, 15)), chest => chest.Delete());
         }

@@ -1398,7 +1398,7 @@ namespace Server.Items
         public EarOfCorn(int amount)
             : base(amount, 0xC81)
         {
-            Weight = 1.0;
+            Weight = 0.5;
             FillFactor = 1;
         }
 

@@ -60,9 +60,9 @@ namespace Server.Items
 
 				else if ( IsFlourMill(targeted) )
 				{
-					if(m_Item.Amount >= 20)
+					if(m_Item.Amount >= 5)
 					{
-						m_Item.Consume( 20 );
+						m_Item.Consume( 5 );
 						from.SendMessage("You made a bag of ricemeal.");
 						from.AddToBackpack( new BagOfRicemeal() );
 					}

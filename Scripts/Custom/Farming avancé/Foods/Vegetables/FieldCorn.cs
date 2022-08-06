@@ -19,7 +19,7 @@ namespace Server.Items
 		{
 			Name = "Field Corn";
 			Amount = amount;
-			Weight = 3.0;
+			Weight = 0.5;
 			Hue = 0x1C5;
 			Stackable = true;
 		}

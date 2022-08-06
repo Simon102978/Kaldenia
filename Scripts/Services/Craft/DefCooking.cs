@@ -1042,7 +1042,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(GingerBreadCookie), "Pâtisserie et boulangerie", "Biscuit en pain d’épice", 80.0, 99.0, typeof(CookieMix), "Mélange à biscuit", 1, 1044253);
 			AddRes(index, typeof(FreshGinger), "Gingembre frais", 1, 1044253);
 			SetNeedOven(index, true);
-			index = AddCraft(typeof(Brownies), "Pâtisserie et boulangerie", "Brownies", 80.0, 99.0, typeof(ChocolateMix), "Chocolat", 1, 1044253);
+			index = AddCraft(typeof(Brownies), "Pâtisserie et boulangerie", "Brownies", 80.0, 99.0, typeof(ChocolateMix), "Mélange Chocolaté", 1, 1044253);
 			AddRes(index, typeof(Eggs), "Oeuf", 2, 1044253);
 			AddRes(index, typeof(CookingOil), "Huile de cuisson", 1, 1044253);
 			//AddRecipe(index, (int)CookRecipesExp.Brownies);

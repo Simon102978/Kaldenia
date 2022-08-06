@@ -38,6 +38,7 @@ namespace Server.Items
 		[Constructable]
 		public SackcornFlour() : base( 0x1039 )
 		{
+			Stackable = true;
 			Name = "A Sack of Cornflour";
 			m_Quantity = 20;
 		}

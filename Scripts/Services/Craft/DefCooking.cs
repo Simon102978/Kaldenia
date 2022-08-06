@@ -120,7 +120,9 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(FreshGinger), "Gingembre", 2, "You need more ginger");		
 			index = AddCraft(typeof(BasketOfHerbsFarm), "Ingrédients secs", "Panier d'herbes fraiches", 60.0, 100.0, typeof(DriedHerbs), "Dried Herbs", 1, 1044253);
 			AddRes(index, typeof(DriedOnions), "Dried Onions", 1, 1044253);
-			
+			index = AddCraft(typeof(BagOfSugar), 1044495, "Sac de sucre", 0.0, 100.0, typeof(Sugarcane), "Canne à  sucre", 10, "Vous n'avez pas suffisament de canne à sucre");
+			SetNeedMill(index, true);
+
 			#endregion
 			#region Ingrédients humides
 			index = AddCraft(typeof(CocoaButter), "Ingrédients humides", "Beurre de cacao", 0.0, 50.0, typeof(CocoaPulp), 1080530, 1, 1044253);

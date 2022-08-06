@@ -415,7 +415,6 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(ArcanistStatueEastDeed), "Statues et trophés", "L'Arcaniste (E)", 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
 			ForceNonExceptional(index);
 			index = AddCraft(typeof(WarriorStatueSouthDeed), "Statues et trophés", "Le Guerrier (S)", 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
-			AddRecipe(index, (int)CarpRecipes.WarriorStatueSouth);
 			ForceNonExceptional(index);
 			index = AddCraft(typeof(WarriorStatueEastDeed), "Statues et trophés", "Le Guerrier (E)", 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);
 			ForceNonExceptional(index);

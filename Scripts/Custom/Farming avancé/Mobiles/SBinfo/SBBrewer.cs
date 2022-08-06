@@ -29,8 +29,11 @@ namespace Server.Mobiles
                 this.Add(new GenericBuyInfo(typeof(BreweryLabelMaker), 500, 20, 0xFBF, 0));
                 this.Add(new GenericBuyInfo(typeof(Malt), 10, 20, 0x103D, 0));
                 this.Add(new GenericBuyInfo(typeof(Barley), 20, 20, 0x103F, 0));
-                this.Add(new GenericBuyInfo(typeof(BrewersYeast), 20, 20, 0x103F, 0));
-                this.Add(new GenericBuyInfo(typeof(EmptyAleBottle), 10, 20, 0x99B, 0));
+				this.Add(new GenericBuyInfo(typeof(Yeast), 5, 999, 0xF00, 0));
+				this.Add(new GenericBuyInfo(typeof(BrewersYeast), 20, 20, 0x103F, 0));
+				this.Add(new GenericBuyInfo(typeof(WinecrafterYeast), 20, 20, 0x103F, 0));
+				this.Add(new GenericBuyInfo(typeof(WinecrafterSugar), 20, 20, 0x103F, 0));
+				this.Add(new GenericBuyInfo(typeof(EmptyAleBottle), 10, 20, 0x99B, 0));
                 this.Add(new GenericBuyInfo(typeof(EmptyMeadBottle), 10, 20, 0x99B, 0));
                 this.Add(new GenericBuyInfo(typeof(EmptyJug), 10, 20, 0x9C8, 0));
 				this.Add(new GenericBuyInfo(typeof(BeerBreweringTools), 3000, 90, 0xE7F, 0));

@@ -58,10 +58,10 @@ namespace Server.Engines.Craft
 		{
 			int index = -1;
 
-            index = AddCraft(typeof(BagOfCoffee), "Grounds", "Bag of Coffee", 50.0, 55.0, typeof(CoffeeBean), "Coffee Bean", 50, "You need more Coffee Bean's.");
+            index = AddCraft(typeof(BagOfCoffee), "Grounds", "Bag of Coffee", 50.0, 55.0, typeof(CoffeeBean), "Coffee Bean", 10, "You need more Coffee Bean's.");
             AddRes(index, typeof(Bag), "Bag", 1, "You need a bag to put the coffee grounds in.");
 
-            index = AddCraft(typeof(BagOfCocoa), "Grounds", "Bag of Cocoa", 100.0, 105.6, typeof(CocoaBean), "Cocoa Bean", 50, "You need more Cocoa Bean's.");
+            index = AddCraft(typeof(BagOfCocoa), "Grounds", "Bag of Cocoa", 100.0, 105.6, typeof(CocoaBean), "Cocoa Bean", 10, "You need more Cocoa Bean's.");
             AddRes(index, typeof(Bag), "Bag", 1, "You need a bag to put the cocoa grounds in.");
 
 			MarkOption = true;

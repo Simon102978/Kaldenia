@@ -17,7 +17,7 @@ namespace Server.Items
 
 		private void DefineMods()
 		{
-			DateTime duration = DateTime.UtcNow + TimeSpan.FromSeconds( 60.0 );
+			DateTime duration = DateTime.UtcNow + TimeSpan.FromSeconds( 300.0 );
 
 			skillMod = new TimedSkillMod( SkillName.Fishing, true, 10.0, duration );
 

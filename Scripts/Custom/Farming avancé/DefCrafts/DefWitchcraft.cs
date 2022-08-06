@@ -171,9 +171,8 @@ namespace Server.Engines.Craft
 			AddSkill( index, SkillName.Alchemy, 40.0, 100.0 );
             SetNeedCauldron(index, true);
 */
-	//		index = AddCraft( typeof( BowyerBerry ), "Mets Magiques", "Baie de l'Archer ( Archery )", 0.0, 100.0, typeof( Orange ), "Orange", 1, "You don't have an orange." );
-		//	AddSkill( index, SkillName.Cooking, 30.0, 100.0 );
-        //    SetNeedCauldron(index, true);
+			index = AddCraft( typeof( BowyerBerry ), "Mets Magiques", "Baie de l'Archer ( Archery )", 0.0, 100.0, typeof( Orange ), "Orange", 1, "You don't have an orange." );
+            SetNeedCauldron(index, true);
 
 			index = AddCraft( typeof( HealerPear ), "Mets Magiques", "Poire du Soigneur ( Healing )", 80.0, 100.0, typeof( Pear ), "Pear", 1, "You don't have a pear." );
 			
@@ -223,9 +222,9 @@ namespace Server.Engines.Craft
 			
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'écrivain", 80.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
+		//	index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'écrivain", 80.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
 			
-			SetNeedCauldron(index, true);
+		//	SetNeedCauldron(index, true);
 
 			index = AddCraft( typeof( ShepherdLime ), "Mets Magiques", "Lime du Berger", 80.0, 100.0, typeof( Lime ), "Lime", 1, "You don't have a lime." );
 			

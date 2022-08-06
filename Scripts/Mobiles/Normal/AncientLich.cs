@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ancient liche's corpse")]
@@ -94,6 +96,7 @@ namespace Server.Mobiles
 			AddLoot(LootPack.BodyPartsAndBones, Utility.RandomMinMax(3, 5));
 			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
 			AddLoot(LootPack.LootItem<Items.Gold>(25, 100));
+			AddLoot(LootPack.LootItem<CerveauLiche>());
 		}
 
         public override void Serialize(GenericWriter writer)

@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a balron corpse")]
@@ -63,7 +65,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.MedScrolls, 2);
+			AddLoot(LootPack.LootItem<MucusDemon>());
+			AddLoot(LootPack.MedScrolls, 2);
         }
 
         public override void Serialize(GenericWriter writer)

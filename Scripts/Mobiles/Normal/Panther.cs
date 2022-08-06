@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a panther corpse")]
@@ -50,7 +52,13 @@ namespace Server.Mobiles
         public override int Hides => 6;
         public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish;
         public override PackInstinct PackInstinct => PackInstinct.Feline;
-        public override void Serialize(GenericWriter writer)
+
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<PattesPanthere>());
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

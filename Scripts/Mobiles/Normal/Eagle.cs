@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an eagle corpse")]
@@ -52,7 +54,14 @@ namespace Server.Mobiles
         public override int Feathers => 36;
         public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish;
         public override bool CanFly => true;
-        public override void Serialize(GenericWriter writer)
+
+		public override void GenerateLoot()
+		{
+		AddLoot(LootPack.LootItem<PlumesAigle>());
+		}
+
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

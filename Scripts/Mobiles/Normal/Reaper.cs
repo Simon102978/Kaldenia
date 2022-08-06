@@ -54,7 +54,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average);
             AddLoot(LootPack.LootItem<Log>(5));
             AddLoot(LootPack.LootItem<MandrakeRoot>(5));
-        }
+			AddLoot(LootPack.LootItem<EcorceArbreMaudit>());
+		}
 
         public override void Serialize(GenericWriter writer)
         {

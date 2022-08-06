@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an alligator corpse")]
@@ -54,7 +56,13 @@ namespace Server.Mobiles
 		public override bool CanBeParagon => false;
 
 		public override FoodType FavoriteFood => FoodType.Meat | FoodType.Fish;
-        public override void Serialize(GenericWriter writer)
+
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<DentAlligator>());
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

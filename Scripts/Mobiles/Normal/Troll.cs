@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("corp de Troll")]
@@ -52,7 +54,8 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
-        }
+			AddLoot(LootPack.LootItem<CheveuxTroll>());
+		}
 
         public override void Serialize(GenericWriter writer)
         {

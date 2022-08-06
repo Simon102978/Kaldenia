@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a titans corpse")]
@@ -59,7 +61,9 @@ namespace Server.Mobiles
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.PeculiarSeed1);
             AddLoot(LootPack.LootItem<Items.RoastPig>(10.0));
-        }
+			AddLoot(LootPack.LootItem<CheveuxGeant>());
+
+		}
 
         public override void Serialize(GenericWriter writer)
         {

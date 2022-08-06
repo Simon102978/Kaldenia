@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a shadow wyrm corpse")]
@@ -77,7 +79,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 3);
             AddLoot(LootPack.Gems, 5);
-        }
+			AddLoot(LootPack.LootItem<EcaillesWyrm>());
+		}
 
         public override int GetIdleSound()
         {

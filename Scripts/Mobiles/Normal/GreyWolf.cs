@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a grey wolf corpse")]
@@ -56,7 +58,13 @@ namespace Server.Mobiles
 
 		public override FoodType FavoriteFood => FoodType.Meat;
         public override PackInstinct PackInstinct => PackInstinct.Canine;
-        public override void Serialize(GenericWriter writer)
+
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<PoilsLoup>());
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

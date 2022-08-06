@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a white wyrm corpse")]
@@ -67,7 +69,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Gems, Utility.Random(1, 5));
-        }
+			AddLoot(LootPack.LootItem<EcaillesWyrm>());
+		}
 
         public override void Serialize(GenericWriter writer)
         {

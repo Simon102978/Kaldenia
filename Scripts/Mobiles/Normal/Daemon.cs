@@ -49,7 +49,8 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
         {
             AddLoot(LootPack.Rich);
-            AddLoot(LootPack.Average, 2);
+			AddLoot(LootPack.LootItem<MucusDemon>());
+			AddLoot(LootPack.Average, 2);
             AddLoot(LootPack.MedScrolls, 2);
             AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(LichFormScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll) }, 25.0, 1, false, true));
         }

@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a dire wolf corpse")]
@@ -67,8 +69,11 @@ namespace Server.Mobiles
 		public override BoneType BoneType => BoneType.Lupus;
 
 
-
-
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<PoilsLoup>());
+		}
+		
 
 
 

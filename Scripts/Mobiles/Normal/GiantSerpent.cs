@@ -66,9 +66,14 @@ namespace Server.Mobiles
         {
     //        AddLoot(LootPack.Average);
             AddLoot(LootPack.LootItem<Bone>());
-        }
+			AddLoot(LootPack.LootItem<OeufSerpent>());
+			AddLoot(LootPack.LootItem<EcaillesSerpentGeant>());
 
-        public override void Serialize(GenericWriter writer)
+
+
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(1);

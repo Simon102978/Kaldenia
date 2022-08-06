@@ -63,7 +63,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.Poor);
             AddLoot(LootPack.LootItem<SpidersSilk>(7));
-        }
+			AddLoot(LootPack.LootItem<VeninTarenlune>());
+		}
 
         public override void Serialize(GenericWriter writer)
         {

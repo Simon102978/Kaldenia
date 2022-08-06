@@ -1,4 +1,7 @@
+using Server.Items;
+
 namespace Server.Mobiles
+	
 {
     [CorpseName("a ghostly corpse")]
     public class Spectre : BaseCreature
@@ -51,6 +54,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.MageryRegs, 10);
+			AddLoot(LootPack.LootItem<CerveauSpectre>());
 		}
 
         public override void Serialize(GenericWriter writer)

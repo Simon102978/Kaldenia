@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ogre corpse")]
@@ -58,6 +60,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Potions);
 			AddLoot(LootPack.Others, Utility.RandomMinMax(3, 4));
+			AddLoot(LootPack.LootItem<CheveuxGeant>());
 		}
 
         public override void Serialize(GenericWriter writer)

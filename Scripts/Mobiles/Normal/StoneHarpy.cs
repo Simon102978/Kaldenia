@@ -51,7 +51,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average, 2);
 			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(SilverRing), typeof(Necklace), typeof(SilverNecklace), typeof(Collier), typeof(Collier2) }, 5.0, 1, false, true));
-
+			AddLoot(LootPack.LootItem<PlumesHarpie>());
+			AddLoot(LootPack.LootItem<OeufPierre>());
 			// AddLoot(LootPack.Gems, 2);
 		}
 

@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a snake corpse")]
@@ -58,7 +60,12 @@ namespace Server.Mobiles
 		public override BoneType BoneType => BoneType.Reptilien;
 		public override FoodType FavoriteFood => FoodType.Eggs;
 
-        public override void Serialize(GenericWriter writer)
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<OeufSerpent>());
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(1);

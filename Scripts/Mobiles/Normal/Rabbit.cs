@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a hare corpse")]
@@ -63,7 +65,12 @@ namespace Server.Mobiles
             return 0xCB;
         }
 
-        public override void Serialize(GenericWriter writer)
+		public override void GenerateLoot()
+		{
+			AddLoot(LootPack.LootItem<PattesLapin>());
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

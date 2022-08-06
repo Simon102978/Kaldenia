@@ -57,7 +57,8 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average);
             AddLoot(LootPack.LootItem<SpidersSilk>(5, true));
             AddLoot(LootPack.LootItem<LesserPoisonPotion>(2, true));
-        }
+			AddLoot(LootPack.LootItem<VeninAraigneeNoire>());
+		}
 
         public override void Serialize(GenericWriter writer)
         {

@@ -46,7 +46,8 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 3;
+		public override bool CanBeParagon => false;
+		public override int Meat => 3;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
         public override PackInstinct PackInstinct => PackInstinct.Ostard;
         public override void Serialize(GenericWriter writer)

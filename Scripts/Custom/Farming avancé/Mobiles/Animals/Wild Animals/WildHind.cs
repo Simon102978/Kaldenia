@@ -51,6 +51,7 @@ namespace Server.Mobiles
 			MinTameSkill = 23.1;
 		}
 
+		public override bool CanBeParagon => false;
 		public override void OnAfterSpawn()
 		{
 			base.OnAfterSpawn();

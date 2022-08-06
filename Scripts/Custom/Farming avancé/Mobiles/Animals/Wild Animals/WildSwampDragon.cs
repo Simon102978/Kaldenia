@@ -119,6 +119,7 @@ namespace Server.Mobiles
 			MinTameSkill = 93.9;
 		}
 
+		public override bool CanBeParagon => false;
 		public override bool OverrideBondingReqs()
 		{
 			return true;

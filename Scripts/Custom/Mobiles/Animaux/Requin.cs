@@ -10,7 +10,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public Requin()
-            : base(AIType.AI_Mage, FightMode.Closest, 10, 3, 0.2, 0.4)
+            : base(AIType.MaritimeMageAI, FightMode.Closest, 10, 3, 0.2, 0.4)
         {
             m_NextWaterBall = DateTime.UtcNow;
 
@@ -41,6 +41,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Wrestling, 45.1, 60.0);
 			SetSkill(SkillName.EvalInt, 100.0);
 			SetSkill(SkillName.Magery, 70.1, 80.0);
+			SetSkill(SkillName.Hiding, 80, 90);
 
 			Fame = 11000;
             Karma = -11000;
@@ -94,13 +95,18 @@ namespace Server.Mobiles
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(0);
+            writer.Write(1);
         }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+
+			if (version == 0)
+				{
+				AI = AIType.MaritimeMageAI;
+				}
 
             m_NextWaterBall = DateTime.UtcNow;
         }

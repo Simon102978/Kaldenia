@@ -60,8 +60,8 @@ namespace Server.Mobiles
         public override int Meat => 3;
         public override int Hides => 10;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
-
-        public override bool CanAutoStable => (Backpack == null || Backpack.Items.Count == 0) && base.CanAutoStable;
+		public override bool CanBeParagon => false;
+		public override bool CanAutoStable => (Backpack == null || Backpack.Items.Count == 0) && base.CanAutoStable;
 
         public PackHorse(Serial serial)
             : base(serial)

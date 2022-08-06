@@ -21,7 +21,7 @@ namespace Server.Mobiles
 
 		[Constructable]
         public Kraken()
-            : base(AIType.AI_Melee, FightMode.Closest, 30, 3, 0.2, 0.4)
+            : base(AIType.MaritimeMeleeAI, FightMode.Closest, 30, 3, 0.2, 0.4)
         {
             m_NextWaterBall = DateTime.UtcNow;
 
@@ -47,6 +47,7 @@ namespace Server.Mobiles
             SetResistance(ResistanceType.Poison, 20, 30);
             SetResistance(ResistanceType.Energy, 10, 20);
 
+			SetSkill(SkillName.Hiding, 80, 90);
             SetSkill(SkillName.MagicResist, 15.1, 20.0);
             SetSkill(SkillName.Tactics, 45.1, 60.0);
             SetSkill(SkillName.Wrestling, 45.1, 60.0);
@@ -337,7 +338,7 @@ namespace Server.Mobiles
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(0);
+            writer.Write(1);
         }
 
         public override void Deserialize(GenericReader reader)
@@ -345,7 +346,17 @@ namespace Server.Mobiles
             base.Deserialize(reader);
             int version = reader.ReadInt();
 
-            m_NextWaterBall = DateTime.UtcNow;
-        }
+			if (version == 0)
+			{
+				AI = AIType.MaritimeMageAI;
+			}
+
+			m_NextWaterBall = DateTime.UtcNow;
+			m_NextStuck = DateTime.UtcNow;
+			m_NextSpawn = DateTime.UtcNow;
+			m_NextJump = DateTime.UtcNow;
+			m_GlobalTimer = DateTime.UtcNow;
+
+		}
     }
 }

@@ -37,7 +37,9 @@ namespace Server.Mobiles
         AI_Mystic,
         AI_Paladin,
         AI_Necro,
-		
+		MaritimeMeleeAI,
+		MaritimeMageAI
+
 	}
 
     public enum ActionType

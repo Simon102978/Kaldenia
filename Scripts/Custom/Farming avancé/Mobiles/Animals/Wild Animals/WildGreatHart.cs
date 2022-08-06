@@ -52,7 +52,7 @@ namespace Server.Mobiles
 			ControlSlots = 1;
 			MinTameSkill = 59.1;
 		}
-		
+		public override bool CanBeParagon => false;
 		public override void OnAfterSpawn()
 		{
 			base.OnAfterSpawn();

@@ -43,6 +43,7 @@ namespace Server.Mobiles
 		public override int Hides => 4;
 		public override HideType HideType => HideType.Regular;
 
+		public override bool CanBeParagon => false;
 
 		public override int Bones => 4;
 		public override BoneType BoneType => BoneType.Regular;

@@ -40,7 +40,7 @@ namespace Server.Mobiles
 			ControlSlots = 1;
 			MinTameSkill = 5.0;
 		}
-
+		public override bool CanBeParagon => false;
 		public override FoodType FavoriteFood{ get{ return FoodType.GrainsAndHay; } }
 
 		public override int Feathers{ get{ return 25; } }

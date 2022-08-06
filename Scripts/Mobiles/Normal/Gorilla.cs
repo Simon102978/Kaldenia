@@ -38,7 +38,8 @@ namespace Server.Mobiles
             MinTameSkill = -18.9;
         }
 
-        public Gorilla(Serial serial)
+		public override bool CanBeParagon => false;
+		public Gorilla(Serial serial)
             : base(serial)
         {
         }

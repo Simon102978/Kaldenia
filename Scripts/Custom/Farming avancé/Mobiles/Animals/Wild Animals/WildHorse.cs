@@ -72,7 +72,9 @@ namespace Server.Mobiles
             }
         }
 
-        [CommandProperty(AccessLevel.GameMaster)]
+		public override bool CanBeParagon => false;
+
+		[CommandProperty(AccessLevel.GameMaster)]
         public CraftResource BardingResource
         {
             get { return m_BardingResource; }

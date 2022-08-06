@@ -44,7 +44,8 @@ namespace Server.Mobiles
                 FightMode = FightMode.Closest;
         }
 
-        public Cow(Serial serial)
+		public override bool CanBeParagon => false;
+		public Cow(Serial serial)
             : base(serial)
         {
         }

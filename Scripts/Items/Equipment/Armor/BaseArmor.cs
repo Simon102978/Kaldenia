@@ -286,7 +286,10 @@ namespace Server.Items
                     case CraftResource.Verite:
                         ar += 14;
                         break;
-                    case CraftResource.Valorite:
+					case CraftResource.Mytheril:
+						ar += 14;
+						break;
+					case CraftResource.Valorite:
                         ar += 16;
                         break;
 					case CraftResource.LupusLeather:
@@ -2632,6 +2635,9 @@ namespace Server.Items
 					Mod += 2;
 					break;
 				case CraftResource.Verite:
+					Mod += 2;
+					break;
+				case CraftResource.Mytheril:
 					Mod += 2;
 					break;
 				case CraftResource.Valorite:

@@ -458,6 +458,8 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(Cyclone), "Lancer", "Cyclone", 40.0, 80.0, typeof(IronIngot), 1044036, 9, 1044037);
 			AddCraft(typeof(SoulGlaive), "Lancer", "Étoile", 40.0, 80.0, typeof(IronIngot), 1044036, 9, 1044037);
 
+			#endregion
+
 			#region "Lances"
 			AddCraft(typeof(Lance), "Lances", "Lance", 40.0, 80.0, typeof(IronIngot), 1044036, 20, 1044037);
 			AddCraft(typeof(Pike), "Lances", "Pique", 40.0, 80.0, typeof(IronIngot), 1044036, 12, 1044037);
@@ -564,5 +566,3 @@ namespace Server.Engines.Craft
 	{ }
 }
 
-
-#endregion

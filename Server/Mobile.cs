@@ -5015,7 +5015,13 @@ namespace Server
 				return;
 			}
 
-			
+			if (text.StartsWith("[") || text.StartsWith(".")) //Pour éviter qu'une mauvaise commande se voit en jeu
+			{
+				SendMessage("Commande invalide");
+				return;
+			}
+
+
 
 			switch (type)
 			{

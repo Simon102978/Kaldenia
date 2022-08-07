@@ -2403,7 +2403,8 @@ namespace Server.Multis
 
             if (IsLockedDown(item))
             {
-                if (!CheckLockdownOwnership(m, item))
+				//     if (!CheckLockdownOwnership(m, item))
+				if (!IsCoOwner(m))
                 {
                     m.LocalOverheadMessage(MessageType.Regular, 0x3E9, 1010418); // You did not lock this down, and you are not able to release this.
                 }

@@ -54,6 +54,15 @@ namespace Server.Mobiles
 			base.AlterMeleeDamageTo(to, ref damage);
 		}
 
+		public override bool IsEnemy(Mobile m)
+		{
+			if (m is CustomPlayerMobile cp && cp.Race.RaceID == 5)
+			{
+				return false;
+			}
+
+			return base.IsEnemy(m);
+		}
 
 		public override void Attack(IDamageable e)
 		{

@@ -37,8 +37,13 @@ namespace Server.Gumps
 					color = "#ffcc00";
 				}
 
+				if (race.RaceID != 5)
+				{
+					AddButtonHtlml(x + 20, y + scale * line + 50, race.Name, 200, 40, race.RaceID + 100, color);
+				}
 
-				AddButtonHtlml(x + 20, y + scale * line + 50, race.Name, 200, 40, race.RaceID + 100, color);
+
+			
                 line++;
             }
 

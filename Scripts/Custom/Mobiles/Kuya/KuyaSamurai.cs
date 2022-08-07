@@ -25,7 +25,7 @@ namespace Server.Mobiles
             SetSkill(SkillName.Swords, 80.0, 100.0);
 
             SpeechHue = Utility.RandomDyedHue();
-			Race = BaseRace.GetRace(Utility.Random(4));
+			Race = BaseRace.GetRace(5);
 
 //			Hue = Utility.RandomSkinHue();
 

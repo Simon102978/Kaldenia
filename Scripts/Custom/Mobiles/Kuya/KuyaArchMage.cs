@@ -13,7 +13,7 @@ namespace Server.Mobiles
 		
 			SpeechHue = Utility.RandomDyedHue();
 			Title = "Kuya Archimage";
-			Race = Race.GetRace(Utility.Random(4));
+			Race = Race.GetRace(5);
 
 			if (Female = Utility.RandomBool())
 			{

@@ -9,7 +9,7 @@ namespace Server.Mobiles
 		   : base(AIType.AI_Archer, FightMode.Closest, 10, 1, 0.05, 0.2)
 		{
             SpeechHue = Utility.RandomDyedHue();
-			Race = Race.GetRace(Utility.Random(4));
+			Race = Race.GetRace(5);
 		
 			Title = "Kuya barde";
 

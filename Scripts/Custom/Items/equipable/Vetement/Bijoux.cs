@@ -43,7 +43,7 @@ namespace Server.Items
 		: base(41842)
 	{
 		Weight = 2.0;
-		Name ="Collier";
+		Name = "Collier massif doré";
 	}
 
 	public Collier(Serial serial)
@@ -76,7 +76,7 @@ public class Collier2 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier2";
+		Name = "Collier croix Ânkh";
 	}
 
 	public Collier2(Serial serial)
@@ -111,7 +111,7 @@ public class Couronne2 :  BaseCouronne
 
 		{
 		Weight = 2.0;
-		Name ="Couronne2";
+		Name = "Petite couronne";
 	}
 
 	public Couronne2(Serial serial)
@@ -145,7 +145,7 @@ public class Collier3 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier3";
+		Name = "Collier bolo doré";
 	}
 
 	public Collier3(Serial serial)
@@ -180,7 +180,7 @@ public class Couronne3 :  BaseCouronne
 
 		{
 		Weight = 2.0;
-		Name ="Couronne3";
+		Name = "Diadème";
 	}
 
 	public Couronne3(Serial serial)
@@ -214,7 +214,7 @@ public class Collier4 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier4";
+		Name = "Grande chaîne dorée";
 	}
 
 	public Collier4(Serial serial)
@@ -248,7 +248,7 @@ public class Collier5 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier5";
+		Name = "Collier croix Ânkh doré";
 	}
 
 	public Collier5(Serial serial)
@@ -282,7 +282,7 @@ public class Collier6 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier6";
+		Name = "Petit collier Usekh";
 	}
 
 	public Collier6(Serial serial)
@@ -316,7 +316,7 @@ public class Collier7 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier7";
+		Name = "Petit collier doré";
 	}
 
 	public Collier7(Serial serial)
@@ -350,7 +350,7 @@ public class Lunettes :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Lunettes";
+		Name = "Lunette dorée";
 	}
 
 	public Lunettes(Serial serial)
@@ -384,7 +384,7 @@ public class Couronne4 :  BaseCouronne
 
 		{
 		Weight = 2.0;
-		Name ="Couronne4";
+		Name = "Grande couronne";
 	}
 
 	public Couronne4(Serial serial)
@@ -418,7 +418,7 @@ public class Collier8 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier8";
+		Name = "Collier de feuilles dorées";
 	}
 
 	public Collier8(Serial serial)
@@ -452,7 +452,7 @@ public class Ceinture10 :  BaseWaist
 
 		{
 		Weight = 2.0;
-		Name ="Ceinture10";
+		Name = "Ceinture de feuilles dorées";
 			Layer = Layer.Waist;
 	}
 
@@ -521,7 +521,7 @@ public class Collier9 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier9";
+		Name = "Collier de perle";
 	}
 
 	public Collier9(Serial serial)
@@ -556,7 +556,7 @@ public class Collier10 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier10";
+		Name = "Collier simple";
 	}
 
 	public Collier10(Serial serial)
@@ -591,7 +591,7 @@ public class Collier11 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier11";
+		Name = "Collier simple avec pendentif";
 	}
 
 	public Collier11(Serial serial)
@@ -626,7 +626,7 @@ public class Collier12 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name ="Collier12";
+		Name = "Grand collier doré avec pendentif";
 	}
 
 	public Collier12(Serial serial)
@@ -661,7 +661,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 			Weight = 2.0;
-			Name = "Diademe Feuille Or";
+			Name = "Collier doré avec pendentif";
 		}
 
 		public DiademeFeuilleOr(Serial serial)
@@ -696,7 +696,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 			Weight = 2.0;
-			Name = "Epaulette Doree";
+			Name = "Grand collier Usekh";
 		}
 
 		public EpauletteDoree(Serial serial)

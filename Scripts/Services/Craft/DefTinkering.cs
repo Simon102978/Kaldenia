@@ -254,26 +254,26 @@ namespace Server.Engines.Craft
 			/*         index = index = AddCraft(typeof(KrampusMinionEarrings), "Bijoux", 1125645, 100.0, 500.0, typeof(IronIngot), 1044036, 3, 1044037);
 					 AddRecipe(index, (int)TinkerRecipes.KrampusMinionEarrings);
 			*/
-			index = AddCraft(typeof(Collier), "Bijoux", "Collier", 49.2, 69.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier2), "Bijoux", "Collier2", 49.8, 69.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier3), "Bijoux", "Collier3", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier4), "Bijoux", "Collier4", 60.1, 80.1, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier5), "Bijoux", "Collier5", 63.4, 83.4, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier6), "Bijoux", "Collier6", 81.2, 101.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier7), "Bijoux", "Collier7", 90.2, 110.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier8), "Bijoux", "Collier8", 68.8, 88.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier9), "Bijoux", "Collier9", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier10), "Bijoux", "Collier10", 96.8, 116.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier11), "Bijoux", "Collier11", 71.7, 91.7, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier12), "Bijoux", "Collier12", 65.6, 85.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Couronne2), "Bijoux", "Couronne2", 87.2, 107.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Couronne3), "Bijoux", "Couronne3", 74.5, 94.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Couronne4), "Bijoux", "Couronne4", 96.0, 116.0, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Lunettes), "Bijoux", "Lunettes", 86.9, 106.9, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier), "Bijoux", "Collier massif doré", 49.2, 69.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier2), "Bijoux", "Collier croix Ânkh", 49.8, 69.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier3), "Bijoux", "Collier bolo doré", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier4), "Bijoux", " Grande chaîne dorée", 60.1, 80.1, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier5), "Bijoux", "Collier croix Ânkh doré", 63.4, 83.4, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier6), "Bijoux", "Petit collier Usekh", 81.2, 101.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier7), "Bijoux", "Petit collier doré", 90.2, 110.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier8), "Bijoux", "Collier de feuilles dorées", 68.8, 88.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier9), "Bijoux", "Collier de perle", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier10), "Bijoux", "Collier simple", 96.8, 116.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier11), "Bijoux", "Collier simple avec pendentif", 71.7, 91.7, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier12), "Bijoux", "Grand collier doré avec pendentif", 65.6, 85.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Couronne2), "Bijoux", "Petite couronne", 87.2, 107.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Couronne3), "Bijoux", "Diadème", 74.5, 94.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Couronne4), "Bijoux", "Grande couronne", 96.0, 116.0, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Lunettes), "Bijoux", "Lunette dorée", 86.9, 106.9, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Tiare), "Bijoux", "Tiare", 50.9, 70.9, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Ceinture10), "Bijoux", "Ceinture10", 72.5, 92.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Ceinture10), "Bijoux", "DiademeFeuilleOr", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 3, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Ceinture10), "Bijoux", "EpauletteDoree", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Ceinture10), "Bijoux", "Ceinture de feuilles dorées", 72.5, 92.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(DiademeFeuilleOr), "Bijoux", "Collier doré avec pendentif", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 3, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(EpauletteDoree), "Bijoux", "Grand collier Usekh", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 5, "Vous n'avez pas assez de lingots.");
 			#endregion
 
 			#region Canons

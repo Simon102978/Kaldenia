@@ -317,11 +317,12 @@ namespace Server.Items
 			CraftAttributeInfo mytheril = Mytheril = new CraftAttributeInfo();
 
 			mytheril.ArmorPhysicalResist = 1;
-			mytheril.ArmorFireResist = 4;
-			mytheril.ArmorColdResist = 3;
-			mytheril.ArmorPoisonResist = 4;
-			mytheril.ArmorEnergyResist = 1;
-			mytheril.WeaponPoisonDamage = 40;
+			mytheril.ArmorFireResist = 5;
+			mytheril.ArmorColdResist = 2;
+			mytheril.ArmorPoisonResist = 2;
+			mytheril.ArmorEnergyResist = 3;
+			mytheril.WeaponFireDamage = 20;
+			mytheril.WeaponPoisonDamage = 20;
 			mytheril.WeaponEnergyDamage = 20;
 			mytheril.RunicMinAttributes = 4;
 			mytheril.RunicMaxAttributes = 5;

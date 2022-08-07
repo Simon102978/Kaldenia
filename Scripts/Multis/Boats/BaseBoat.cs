@@ -43,11 +43,11 @@ namespace Server.Multis
         private static readonly int SlowSpeed = 1;
         private static readonly int FastSpeed = 1;
 
-        private static readonly double WoodPer = 17;
-        private static readonly double ClothPer = 17;
+        private static readonly double WoodPer = 5;
+        private static readonly double ClothPer = 10;
 
-        public static readonly int EmergencyRepairClothCost = 55;
-        public static readonly int EmergencyRepairWoodCost = 25;
+        public static readonly int EmergencyRepairClothCost = 10;
+        public static readonly int EmergencyRepairWoodCost = 5;
         public static readonly TimeSpan EmergencyRepairSpan = TimeSpan.FromMinutes(6);
 
         public static List<BaseBoat> Boats { get; } = new List<BaseBoat>();

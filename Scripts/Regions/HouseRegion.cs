@@ -336,12 +336,22 @@ namespace Server.Regions
                 from.SendLocalizedMessage(502097); // Lock what down?
                 from.Target = new LockdownTarget(false, House);
             }
-            else if (e.HasKeyword(0x24)) // I wish to release this
+			else if (isCoOwner)
+			{
+				from.SendLocalizedMessage(502097); // Lock what down?
+				from.Target = new LockdownTarget(false, House);
+			}
+			else if (e.HasKeyword(0x24)) // I wish to release this
             {
                 from.SendLocalizedMessage(502100); // Choose the item you wish to release
                 from.Target = new LockdownTarget(true, House);
             }
-            else if (e.HasKeyword(0x25)) // I wish to secure this
+			else if (isCoOwner)
+			{
+				from.SendLocalizedMessage(502100); // Choose the item you wish to release
+				from.Target = new LockdownTarget(true, House);
+			}
+			else if (e.HasKeyword(0x25)) // I wish to secure this
             {
                 if (isCoOwner)
                 {
@@ -360,7 +370,12 @@ namespace Server.Regions
                     from.SendLocalizedMessage(502106); // Choose the item you wish to unsecure
                     from.Target = new SecureTarget(true, House);
                 }
-                else
+				else if (isCoOwner)
+				{
+					from.SendLocalizedMessage(502106); // Choose the item you wish to unsecure
+					from.Target = new SecureTarget(true, House);
+				}
+				else
                 {
                     from.SendLocalizedMessage(502094); // You must be in your house to do this. 
                 }

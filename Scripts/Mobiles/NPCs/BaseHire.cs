@@ -62,7 +62,7 @@ namespace Server.Mobiles
 			Grandeur = (GrandeurEnum)Utility.Random(1,8);
 			Beaute =  (AppearanceEnum)Utility.Random(1,18);
 
-			Race = BaseRace.GetRace(Utility.Random(4));
+			Race = BaseRace.GetRace(Utility.Random(5));
 
 
 

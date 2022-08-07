@@ -274,6 +274,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Ceinture10), "Bijoux", "Ceinture de feuilles dorées", 72.5, 92.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(DiademeFeuilleOr), "Bijoux", "Collier doré avec pendentif", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 3, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(EpauletteDoree), "Bijoux", "Grand collier Usekh", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 5, "Vous n'avez pas assez de lingots.");
+			//index = AddCraft(typeof(MenotteDoree), "Bijoux", "Menotte dorée", 85.0, 105.5, typeof(GoldIngot), "lingots d'or", 3, "Vous n'avez pas assez de lingots.");
 			#endregion
 
 			#region Canons
@@ -496,7 +497,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Tray), "Ustensiles", "Plateau", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
 			index = AddCraft(typeof(Silverware), "Ustensiles", "Coutellerie", 25.0, 75.0, typeof(IronIngot), 1044036, 4, 1044037);
 			index = AddCraft(typeof(FoodPlate), "Ustensiles", "Assiette de Nourriture", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
-			//index = AddCraft(typeof(Bock), "Ustensiles", "Bock de Bière", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			//	index = AddCraft(typeof(Bock), "Ustensiles", "Bock de Bière", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			//	index = AddCraft(typeof(CorneBoire), "Ustensiles", "Corne à boire", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(Eventail), "Ustensiles", "Eventail", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
 			index = AddCraft(typeof(HagCauldron), "Ustensiles", "Chaudron", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			#endregion
 			#region Luminaires et décorations
@@ -524,10 +527,13 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(MiniCherryTree1), "Luminaires et décorations", "Arbre en Pot", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");
 			index = AddCraft(typeof(Orchid1), "Luminaires et décorations", "Orchidée", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");
 			index = AddCraft(typeof(Orchid2), "Luminaires et décorations", "Orchidée", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");
-		//	index = AddCraft(typeof(BouquetFleurBlanche), "Luminaires et décorations", "Bouquet de Fleurs Blanches", 65.0, 115.0, typeof(FertileDirt), "Terre", 5, "Vous n'avez pas suffisament de terre");
-		//	AddRes(index, typeof(WhiteRose2), "Rose Blanche", 5, "Besoin de Rose Blanche");
-		//	index = AddCraft(typeof(BouquetFleurRouge), "Luminaires et décorations", "Bouquet de Fleurs Rouges", 65.0, 115.0, typeof(FertileDirt), "Terre", 5, "Vous n'avez pas suffisament de terre");
-		//	AddRes(index, typeof(RedRose), "Rose Rouge", 5, "Besoin de Rose Rouge");
+			//	index = AddCraft(typeof(BouquetFleurBlanche), "Luminaires et décorations", "Bouquet de Fleurs Blanches", 65.0, 115.0, typeof(FertileDirt), "Terre", 5, "Vous n'avez pas suffisament de terre");
+			//	AddRes(index, typeof(WhiteRose2), "Rose Blanche", 5, "Besoin de Rose Blanche");
+			//	index = AddCraft(typeof(BouquetFleurRouge), "Luminaires et décorations", "Bouquet de Fleurs Rouges", 65.0, 115.0, typeof(FertileDirt), "Terre", 5, "Vous n'avez pas suffisament de terre");
+			//	AddRes(index, typeof(RedRose), "Rose Rouge", 5, "Besoin de Rose Rouge");
+			//index = AddCraft(typeof(BouquetFleur), "Luminaires et décorations", "Bouquet de Fleurs Rouges", 65.0, 115.0, typeof(FertileDirt), "Terre", 5, "Vous n'avez pas suffisament de terre");
+			//	AddRes(index, typeof(RedRose), "Rose Rouge", 5, "Besoin de Rose Rouge");
+			//	AddRes(index, typeof(WhiteRose2), "Rose Blanche", 5, "Besoin de Rose Blanche");
 			#region Divers
 			index = AddCraft(typeof(KeyRing), "Divers", "Anneau à clés", 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Key), "Divers", "Clé", 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);

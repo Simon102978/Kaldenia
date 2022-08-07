@@ -201,6 +201,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Crochire), "Armes et bouclier", "Crochire", 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
 			index = AddCraft(typeof(BatonVagabond), "Armes et bouclier", "Bâton de vagabond", 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
 			index = AddCraft(typeof(WoodenShield), "Autres", "Bouclier en bois", 52.6, 77.6, typeof(Board), 1044041, 9, 1044351);
+			//index = AddCraft(typeof(Parchemin), "Autres", "Un parchemin", 52.6, 77.6, typeof(Board), 1044041, 2, 1044351);
 
 			// Instruments
 			index = AddCraft(typeof(LapHarp), "Instruments", "Petite harpe", 63.1, 88.1, typeof(Board), 1044041, 20, 1044351);
@@ -212,6 +213,8 @@ namespace Server.Engines.Craft
 			// AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
 			index = AddCraft(typeof(Drums), "Instruments", "Tambour", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
+		//	index = AddCraft(typeof(Guitare), "Instruments", "Guitare", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
+		//	index = AddCraft(typeof(HarpeLongue), "Instruments", "Une harpe Longue", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
 			// AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 			index = AddCraft(typeof(Lute), "Instruments", "Luth", 68.4, 93.4, typeof(Board), 1044041, 25, 1044351);

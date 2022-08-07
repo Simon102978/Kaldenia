@@ -441,4 +441,116 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
+
+	public class CorneBoire : BaseUtensil
+
+	{
+
+
+		[Constructable]
+		public CorneBoire()
+				: base(0xA3F0)
+
+		{
+			Weight = 2.0;
+			Name = "Corne à Boire";
+			Layer = Layer.OneHanded;
+		}
+
+		public CorneBoire(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Eventail : BaseUtensil
+
+	{
+
+
+		[Constructable]
+		public Eventail()
+				: base(0xA3F1)
+
+		{
+			Weight = 2.0;
+			Name = "Eventail";
+			Layer = Layer.OneHanded;
+		}
+
+		public Eventail(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Parchemin : BaseUtensil
+
+	{
+
+
+		[Constructable]
+		public Parchemin()
+				: base(0xA3F6)
+
+		{
+			Weight = 2.0;
+			Name = "Un Parchemin";
+			Layer = Layer.OneHanded;
+		}
+
+		public Parchemin(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
 }

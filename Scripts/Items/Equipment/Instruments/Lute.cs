@@ -34,6 +34,7 @@ namespace Server.Items
             : base(0xEB3, 0x4C, 0x4D)
         {
             Weight = 5.0;
+			Layer = Layer.TwoHanded; 
         }
 
         public Lute(Serial serial)

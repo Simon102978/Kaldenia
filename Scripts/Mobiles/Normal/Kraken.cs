@@ -15,6 +15,8 @@ namespace Server.Mobiles
 		private DateTime m_NextJump;
 		private DateTime m_GlobalTimer;
 
+		public bool BlockReflect { get; set; }
+
 		//	private DateTime m_tentaHit;
 		//	private Point3D m_Water ;
 		private bool m_OnBoat = false;
@@ -205,8 +207,25 @@ namespace Server.Mobiles
 
 		}
 
+		public override int Damage(int amount, Mobile from, bool informMount, bool checkDisrupt)
+		{
+			int dam = base.Damage(amount, from, informMount, checkDisrupt);
 
-	    public void RetourEau()
+			if (!BlockReflect && from != null && dam > 0)
+			{
+				BlockReflect = true;
+				AOS.Damage(from, this, dam, 0, 0, 0, 0, 0, 0, 50);
+				BlockReflect = false;
+
+				from.PlaySound(0x1F1);
+			}
+
+			return dam;
+		}
+
+
+
+		public void RetourEau()
 		{
 				int i = 0;
 

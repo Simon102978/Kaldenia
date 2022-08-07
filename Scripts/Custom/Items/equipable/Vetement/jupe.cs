@@ -759,7 +759,47 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
-public class Kilt3 :  BaseOuterLegs
+	public class JupeOndule2 : BaseOuterLegs
+
+	{
+		[Constructable]
+		public JupeOndule2()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public JupeOndule2(int hue)
+				: base(0xA406, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Jupe Ondulée";
+		}
+
+		public JupeOndule2(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class Kilt3 :  BaseOuterLegs
 
 	{
 	[Constructable]

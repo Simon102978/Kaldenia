@@ -1285,6 +1285,128 @@ public override void Deserialize(GenericReader reader)
 		}
 	}
 
+	public class RobeBal1 : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeBal1()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeBal1(int hue)
+				: base(0xA402, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe de Bal Style 1";
+		}
+
+		public RobeBal1(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class RobeBal2 : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeBal2()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeBal2(int hue)
+				: base(0xA404, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe de Bal style 2 ";
+		}
+
+		public RobeBal2(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class RobeBal3 : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeBal3()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeBal3(int hue)
+				: base(0xA405, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe de Bal style 3 ";
+		}
+
+		public RobeBal3(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 
 

@@ -1518,8 +1518,328 @@ public override void Deserialize(GenericReader reader)
 
 	int version = reader.ReadInt();
 }
-    } 
- public class Manteau :  BaseMiddleTorso
+    }
+	public class ChemiseRiche : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public ChemiseRiche()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ChemiseRiche(int hue)
+				: base(0xA408, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Chemise Riche";
+		}
+
+		public ChemiseRiche(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class VestonRiche : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public VestonRiche()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public VestonRiche(int hue)
+				: base(0xA409, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Veston Riche";
+		}
+
+		public VestonRiche(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class ChemiseCorset1 : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public ChemiseCorset1()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ChemiseCorset1(int hue)
+				: base(0xA403, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Chemise Corset";
+		}
+
+		public ChemiseCorset1(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class ChemiseCorset2 : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public ChemiseCorset2()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ChemiseCorset2(int hue)
+				: base(0xA407, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Chemise Corset";
+		}
+
+		public ChemiseCorset2(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CorsetCuir : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public CorsetCuir()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CorsetCuir(int hue)
+				: base(0xA40A, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Corset Cuir";
+		}
+
+		public CorsetCuir(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CorsetEpaule : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public CorsetEpaule()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CorsetEpaule(int hue)
+				: base(0xA40B, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Corset Epaule";
+		}
+
+		public CorsetEpaule(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CorsetSimple : BaseMiddleTorso
+
+	{
+		[Constructable]
+		public CorsetSimple()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CorsetSimple(int hue)
+				: base(0xA40C, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Corset Simple";
+		}
+
+		public CorsetSimple(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CorsetTissus: BaseMiddleTorso
+
+	{
+		[Constructable]
+		public CorsetTissus()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CorsetTissus(int hue)
+				: base(0xA40D, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Corset Tissus";
+		}
+
+		public CorsetTissus(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class Manteau :  BaseMiddleTorso
 
 	{
 	[Constructable]

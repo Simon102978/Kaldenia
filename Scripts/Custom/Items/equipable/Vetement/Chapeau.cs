@@ -319,7 +319,46 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
+	public class VoileDos : BaseHat
 
+	{
+		[Constructable]
+		public VoileDos()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public VoileDos(int hue)
+				: base(0xA3FB, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Voile de Dos";
+		}
+
+		public VoileDos(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 	public class ChapeauPirate : BaseHat
 

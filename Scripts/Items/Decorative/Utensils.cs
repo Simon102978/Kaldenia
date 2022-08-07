@@ -441,7 +441,79 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
+	public class CoupeMain : BaseUtensil
 
+	{
+
+
+		[Constructable]
+		public CoupeMain()
+				: base(0xA3FA)
+
+		{
+			Weight = 2.0;
+			Name = "Coupe";
+			Layer = Layer.OneHanded;
+		}
+
+		public CoupeMain(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class PoissonMain : BaseUtensil
+
+	{
+
+
+		[Constructable]
+		public PoissonMain()
+				: base(0xA3F9)
+
+		{
+			Weight = 2.0;
+			Name = "Un Poisson";
+			Layer = Layer.OneHanded;
+		}
+
+		public PoissonMain(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 	public class CorneBoire : BaseUtensil
 
 	{

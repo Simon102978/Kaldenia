@@ -373,6 +373,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Turban), "Chapeaux",  "Turban", 90.7,110.7, typeof(Cloth),"Tissus", 6, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(VoileTete), "Chapeaux", "Voile", 84.0,104.0, typeof(Cloth),"Tissus", 6, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(VoileTeteLong), "Chapeaux", "Long voile", 94.8,114.8, typeof(Cloth),"Tissus", 6, "Vous n'avez pas assez de tissus.");
+		//	index = AddCraft(typeof(VoileDos), "Chapeaux", "Voile De Dos", 94.8, 114.8, typeof(Cloth), "Tissus", 6, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(BourseCeinture), "Divers",  "Bourse de Ceinture", 53.4,73.4, typeof(Cloth),"Tissus", 10, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(CacheOeil1), "Divers", "Cache Oeil Droit", 53.4, 73.4, typeof(Cloth), "Tissus", 3, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(CacheOeil2), "Divers", "Cache Oeil Gauche", 53.4, 73.4, typeof(Cloth), "Tissus", 3, "Vous n'avez pas assez de tissus.");

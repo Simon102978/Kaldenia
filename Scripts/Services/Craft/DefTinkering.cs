@@ -497,7 +497,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Tray), "Ustensiles", "Plateau", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
 			index = AddCraft(typeof(Silverware), "Ustensiles", "Coutellerie", 25.0, 75.0, typeof(IronIngot), 1044036, 4, 1044037);
 			index = AddCraft(typeof(FoodPlate), "Ustensiles", "Assiette de Nourriture", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
-			//	index = AddCraft(typeof(Bock), "Ustensiles", "Bock de Bière", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			//index = AddCraft(typeof(Bock), "Ustensiles", "Bock de Bière", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			//index = AddCraft(typeof(CoupeMain), "Ustensiles", "Une Coupe", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
+			//index = AddCraft(typeof(PoissonMain), "Ustensiles", "Poisson", 25.0, 75.0, typeof(FishSteak), 1044036, 5, 1044037);
 			//	index = AddCraft(typeof(CorneBoire), "Ustensiles", "Corne à boire", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(Eventail), "Ustensiles", "Eventail", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
 			index = AddCraft(typeof(HagCauldron), "Ustensiles", "Chaudron", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);

@@ -404,4 +404,41 @@ namespace Server.Items
             int version = (InheritsItem ? 0 : reader.ReadInt()); // Required for BaseUtensil insertion
         }
     }
+
+	public class Bock : BaseUtensil
+
+	{
+
+
+		[Constructable]
+		public Bock()
+				: base(0xA3E4)
+
+		{
+			Weight = 2.0;
+			Name = "Bock de Bière";
+			Layer = Layer.OneHanded;
+		}
+
+		public Bock(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 }

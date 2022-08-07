@@ -151,7 +151,7 @@ namespace Server.Items
 
 		[Constructable]
 		public AnneauxCombat()
-			: base(41560)
+			: base(0xA3DF)
 		{
 
 			Name = "Anneaux de Combat";
@@ -194,7 +194,7 @@ namespace Server.Items
 
 		[Constructable]
 		public GriffesCombat()
-			: base(41560)
+			: base(0xA3E0)
 		{
 
 			Name = "Griffes de Combat";
@@ -237,7 +237,7 @@ namespace Server.Items
 
 		[Constructable]
 		public KamaKuya()
-			: base(41560)
+			: base(0xA3E1)
 		{
 
 			Name = "Kama Kuya";
@@ -280,7 +280,7 @@ namespace Server.Items
 
 		[Constructable]
 		public LameCirculaire()
-			: base(41560)
+			: base(0xA3E2)
 		{
 
 			Name = "Lame Circulaire";
@@ -323,7 +323,7 @@ namespace Server.Items
 
 		[Constructable]
 		public Kama1()
-			: base(41560)
+			: base(0xA3E3)
 		{
 
 			Name = "Kama";

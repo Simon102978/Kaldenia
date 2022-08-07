@@ -303,8 +303,8 @@ public class RackaVin : CraftableFurniture
 }
 [Furniture]
 [Flipable(0x9970, 0x9971)]
-public class RangementAlchimie : CraftableFurniture
-{
+public class RangementAlchimie : FurnitureContainer
+	{
 	[Constructable]
 	public RangementAlchimie()
 		: base(0x9970)
@@ -330,6 +330,7 @@ public class RangementAlchimie : CraftableFurniture
 		base.Deserialize(reader);
 
 		int version = reader.ReadInt();
+
 
 	}
 }

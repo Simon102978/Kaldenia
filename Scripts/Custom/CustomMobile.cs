@@ -2424,9 +2424,10 @@ namespace Server.Mobiles
 			}
 			
 		}
-	
 
-	public override void Deserialize(GenericReader reader)
+
+
+		public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
 

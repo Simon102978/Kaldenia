@@ -136,6 +136,220 @@ namespace Server.Items
 		}
 	}
 
+	public class 	AnneauxCombat : BaseKatar
+	{
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override int StrengthReq => 40;
+		public override int MinDamage => 14;
+		public override int MaxDamage => 15;
+		public override float Speed => 2.75f;
+		public override int DefHitSound => 0x23B;
+		public override int DefMissSound => 0x23A;
+		public override int InitMinHits => 45;
+		public override int InitMaxHits => 65;
+
+		[Constructable]
+		public AnneauxCombat()
+			: base(41560)
+		{
+
+			Name = "Anneaux de Combat";
+			Weight = 8.0;
+			Layer = Layer.TwoHanded;
+		}
+
+		public AnneauxCombat(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class GriffesCombat  : BaseKatar
+	{
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override int StrengthReq => 40;
+		public override int MinDamage => 13;
+		public override int MaxDamage => 16;
+		public override float Speed => 2.75f;
+		public override int DefHitSound => 0x23B;
+		public override int DefMissSound => 0x23A;
+		public override int InitMinHits => 45;
+		public override int InitMaxHits => 65;
+
+		[Constructable]
+		public GriffesCombat()
+			: base(41560)
+		{
+
+			Name = "Griffes de Combat";
+			Weight = 8.0;
+			Layer = Layer.TwoHanded;
+		}
+
+		public GriffesCombat(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class 	KamaKuya : BaseKatar
+	{
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override int StrengthReq => 40;
+		public override int MinDamage => 13;
+		public override int MaxDamage => 16;
+		public override float Speed => 2.75f;
+		public override int DefHitSound => 0x23B;
+		public override int DefMissSound => 0x23A;
+		public override int InitMinHits => 45;
+		public override int InitMaxHits => 65;
+
+		[Constructable]
+		public KamaKuya()
+			: base(41560)
+		{
+
+			Name = "Kama Kuya";
+			Weight = 8.0;
+			Layer = Layer.TwoHanded;
+		}
+
+		public KamaKuya(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class 	LameCirculaire  : BaseKatar
+	{
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override int StrengthReq => 40;
+		public override int MinDamage => 14;
+		public override int MaxDamage => 14;
+		public override float Speed => 2.75f;
+		public override int DefHitSound => 0x23B;
+		public override int DefMissSound => 0x23A;
+		public override int InitMinHits => 45;
+		public override int InitMaxHits => 65;
+
+		[Constructable]
+		public LameCirculaire()
+			: base(41560)
+		{
+
+			Name = "Lame Circulaire";
+			Weight = 8.0;
+			Layer = Layer.TwoHanded;
+		}
+
+		public LameCirculaire(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Kama1 : BaseKatar
+	{
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+		public override int StrengthReq => 40;
+		public override int MinDamage => 10;
+		public override int MaxDamage => 18;
+		public override float Speed => 2.75f;
+		public override int DefHitSound => 0x23B;
+		public override int DefMissSound => 0x23A;
+		public override int InitMinHits => 45;
+		public override int InitMaxHits => 65;
+
+		[Constructable]
+		public Kama1()
+			: base(41560)
+		{
+
+			Name = "Kama";
+			Weight = 8.0;
+			Layer = Layer.TwoHanded;
+		}
+
+		public Kama1(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 
 

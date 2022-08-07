@@ -478,6 +478,47 @@ public override void Deserialize(GenericReader reader)
 			int version = reader.ReadInt();
 		}
 	}
+
+	public class CapePaon : BaseCloak
+
+	{
+		[Constructable]
+		public CapePaon()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CapePaon(int hue)
+				: base(0xA3E9, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Cape Paon";
+		}
+
+		public CapePaon(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 	public class Drapee : BaseCloak
 
 	{

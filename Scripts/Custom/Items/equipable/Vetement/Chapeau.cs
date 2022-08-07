@@ -361,6 +361,46 @@ public override void Deserialize(GenericReader reader)
 			int version = reader.ReadInt();
 		}
 	}
+	public class ChapeauPiratePlume : BaseHat
+
+	{
+		[Constructable]
+		public ChapeauPiratePlume()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public ChapeauPiratePlume(int hue)
+				: base(0xA3EE, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Chapeau de Pirate à Plume";
+		}
+
+		public ChapeauPiratePlume(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 	public class CapucheToile : BaseHat
 

@@ -399,9 +399,87 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
+	public class BottesPoils : BaseShoes
 
-	
+	{
+		[Constructable]
+		public BottesPoils()
+				: this(0)
 
+		{
+		}
+
+		[Constructable]
+		public BottesPoils(int hue)
+				: base(0xA3E5, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Bottes de Poils";
+		}
+
+		public BottesPoils(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class SoulierTissus : BaseShoes
+
+	{
+		[Constructable]
+		public SoulierTissus()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public SoulierTissus(int hue)
+				: base(0xA3EF, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Soulier en Tissus";
+		}
+
+		public SoulierTissus(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 
 }

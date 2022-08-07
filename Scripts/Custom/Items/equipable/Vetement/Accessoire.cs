@@ -296,6 +296,45 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
     }
+	public class FourreauDore   : BaseMiddleTorso
+	{
+		[Constructable]
+		public FourreauDore()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public FourreauDore(int hue)
+				: base(0xA3EA, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Fourreau Dore";
+		}
+
+		public FourreauDore(Serial serial)
+				: base(serial)
+		{
+
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 
 	public abstract class BaseFoulards : BaseClothing
 	{
@@ -915,6 +954,82 @@ namespace Server.Items
 		}
 
 		public CeintureBaril(Serial serial)
+				: base(serial)
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CeintureMetal : BaseWaist
+	{
+
+		[Constructable]
+		public CeintureMetal()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public CeintureMetal(int hue)
+				: base(0xA3EB, hue)
+		{
+			Weight = 2.0;
+			Name = "Ceinture Metale";
+		}
+
+		public CeintureMetal(Serial serial)
+				: base(serial)
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class CentureDoreeLarge : BaseWaist
+	{
+
+		[Constructable]
+		public CentureDoreeLarge()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public CentureDoreeLarge(int hue)
+				: base(0xA3EC, hue)
+		{
+			Weight = 2.0;
+			Name = "Ceinture Doree Large";
+		}
+
+		public CentureDoreeLarge(Serial serial)
 				: base(serial)
 		{
 		}

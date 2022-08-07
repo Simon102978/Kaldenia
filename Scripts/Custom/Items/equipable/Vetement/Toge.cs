@@ -361,6 +361,46 @@ public override void Deserialize(GenericReader reader)
 			int version = reader.ReadInt();
 		}
 	}
+	public class Poncho : BaseOuterTorso
+
+	{
+		[Constructable]
+		public Poncho()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public Poncho(int hue)
+				: base(0xA3ED, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Poncho";
+		}
+
+		public Poncho(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 	public class TogeKoraine : BaseOuterTorso
 
 	{

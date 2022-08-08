@@ -128,7 +128,7 @@ namespace Server.Mobiles
 		}
 
 		[Constructable]
-		public WildHorse( ) : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+		public WildHorse( ) : base( AIType.AI_Animal, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Eats = EatType.Herbivore;
 			Grouping = GroupingType.Herd;

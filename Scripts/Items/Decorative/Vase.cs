@@ -29,7 +29,152 @@ namespace Server.Items
         }
     }
 
-    public class LargeVase : Item
+	public class Vase1 : Item
+	{
+		[Constructable]
+		public Vase1()
+			: base(0x999E)
+		{
+			Weight = 1.0;
+		}
+
+		public Vase1(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Vase2 : Item
+	{
+		[Constructable]
+		public Vase2()
+			: base(0x999F)
+		{
+			Weight = 1.0;
+		}
+
+		public Vase2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Vase3 : Item
+	{
+		[Constructable]
+		public Vase3()
+			: base(0x99A0)
+		{
+			Weight = 1.0;
+		}
+
+		public Vase3(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Vase4 : Item
+	{
+		[Constructable]
+		public Vase4()
+			: base(0x99A1)
+		{
+			Weight = 1.0;
+		}
+
+		public Vase4(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class Vase5 : Item
+	{
+		[Constructable]
+		public Vase5()
+			: base(0x99A2)
+		{
+			Weight = 1.0;
+		}
+
+		public Vase5(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class LargeVase : Item
     {
         [Constructable]
         public LargeVase()
@@ -86,6 +231,36 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
+	[Flipable(0x9992, 0x9993)]
+	public class TeteBuffle : Item
+	{
+		[Constructable]
+		public TeteBuffle()
+			: base(0x9992)
+		{
+			Weight = 1.0;
+			Name = "Tête de Buffle";
+		}
+
+		public TeteBuffle(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 	public class MiniCherryTree1 : Item
 	{
 		[Constructable]

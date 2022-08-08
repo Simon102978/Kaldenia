@@ -471,6 +471,66 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
+	[Flipable(0x9994, 0x9995)]
+	public class StatueEgypt : Item
+	{
+		[Constructable]
+		public StatueEgypt()
+			: base(0x9994)
+		{
+			Weight = 15.0;
+			Name = "Statue Egyptienne";
+		}
+
+		public StatueEgypt(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+	[Flipable(0x9996, 0x9997)]
+	public class Enclume : Item
+	{
+		[Constructable]
+		public Enclume()
+			: base(0x9996)
+		{
+			Weight = 15.0;
+			Name = "Enclume";
+		}
+
+		public Enclume(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
 
 	[Flipable(0x493B, 0x493C)]
     public class StatueGryphonSouth : Item

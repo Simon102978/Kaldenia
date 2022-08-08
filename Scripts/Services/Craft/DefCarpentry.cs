@@ -416,6 +416,9 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(IronIngot), "Lingot de fer", 3, "Vous n'avez pas suffisament de lingot de fer");
 			index = AddCraft(typeof(RackaVin), "Décorations", "Cellier", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
 			AddRes(index, typeof(BottleOfWine), "Bouteille de vin", 15, "Vous n'avez pas suffisament de bouteille de vin.");
+			index = AddCraft(typeof(PresentoireVide), "Décorations", "Presentoir Vide", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
+			index = AddCraft(typeof(PresentoirePlein1), "Décorations", "Presentoir Plein 1", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
+			index = AddCraft(typeof(PresentoirePlein2), "Décorations", "Presentoir Plein 2", 90.0, 115.0, typeof(Board), 1044041, 20, 1044351);
 
 			// Statues et trophés
 			index = AddCraft(typeof(ArcanistStatueSouthDeed), "Statues et trophés", "L'Arcaniste (S)", 0.0, 35.0, typeof(Board), 1044041, 250, 1044351);

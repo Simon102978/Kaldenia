@@ -113,8 +113,16 @@ namespace Server.Engines.Craft
 			int index;
 			// Décorations
 			AddCraft(typeof(Vase), "Décorations", "Vase", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+
+			AddCraft(typeof(Vase1), "Décorations", "Vase 1", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase2), "Décorations", "Vase 2", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase3), "Décorations", "Vase 3", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase4), "Décorations", "Vase 4", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase5), "Décorations", "Vase 5", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+
 			AddCraft(typeof(LargeVase), "Décorations", "Grand vase", 52.5, 102.5, typeof(Granite), 1044514, 3, 1044513);
 			AddCraft(typeof(SmallUrn), "Décorations", "Petite urne", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
+			AddCraft(typeof(TeteBuffle), "Décorations", "Tête de Buffle", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
 			AddCraft(typeof(SmallTowerSculpture), "Décorations", "Monolite", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
 			AddCraft(typeof(GargoylePainting), "Décorations", "Sculpture murale", 83.0, 125.0, typeof(Granite), 1044514, 5, 1044513);
 			AddCraft(typeof(GargoyleVase), "Décorations", "Vase sculpté", 80.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
@@ -148,6 +156,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(StatueGargoyleEast), "Statues", "Statue 5", 54.5, 104.5, typeof(Granite), 1044514, 20, 1044513);
 			AddCraft(typeof(StatueGryphonEast), "Statues", "Statue 6", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
 			AddCraft(typeof(StatueLion), "Statues", "Statue de Lion", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
+			AddCraft(typeof(StatueEgypt), "Statues", "Statue Egyptienne", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
 
 			// Paliers
 			index = AddCraft(typeof(CraftableHouseItem), "Paliers", "Palier 1", 60.0, 110.0, typeof(Granite), 1044514, 5, 1044513);

@@ -529,6 +529,8 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(IronIngot), 1044036, 150, 1044037);
 			AddCraft(typeof(AnvilSouthDeed), "Divers", 1044334, 80.0, 100.0, typeof(IronIngot), 1044036, 5, 1044037);
 			AddRes(index, typeof(IronIngot), 1044036, 150, 1044037);
+			AddCraft(typeof(Enclume), "Divers", 1044334, 80.0, 100.0, typeof(IronIngot), 1044036, 5, 1044037);
+			AddRes(index, typeof(IronIngot), 1044036, 150, 1044037);
 			#endregion
 
 			// Set the overridable material

@@ -302,6 +302,103 @@ public class RackaVin : CraftableFurniture
 	}
 }
 	[Furniture]
+	[Flipable(0x9998, 0x9999)]
+	public class PresentoireVide : CraftableFurniture
+	{
+		[Constructable]
+		public PresentoireVide()
+			: base(0x9998)
+		{
+			Weight = 25.0;
+			Name = "Presentoir Vide";
+		}
+
+		public PresentoireVide(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
+	[Flipable(0x999A, 0x999B)]
+	public class PresentoirePlein1 : CraftableFurniture
+	{
+		[Constructable]
+		public PresentoirePlein1()
+			: base(0x999A)
+		{
+			Weight = 25.0;
+			Name = "Presentoir Plein 1";
+		}
+
+		public PresentoirePlein1(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
+	[Flipable(0x999C, 0x999D)]
+	public class PresentoirePlein2 : CraftableFurniture
+	{
+		[Constructable]
+		public PresentoirePlein2()
+			: base(0x999D)
+		{
+			Weight = 25.0;
+			Name = "Presentoir Plein 2";
+		}
+
+		public PresentoirePlein2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+
+	[Furniture]
 	[Flipable(0x998E, 0x998F, 0x9990, 0x9991)]
 	public class TableApothicaire  : FurnitureContainer
 	{

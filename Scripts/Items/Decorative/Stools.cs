@@ -8,6 +8,7 @@ namespace Server.Items
             : base(0xA2A)
         {
             Weight = 10.0;
+			
         }
 
         public Stool(Serial serial)

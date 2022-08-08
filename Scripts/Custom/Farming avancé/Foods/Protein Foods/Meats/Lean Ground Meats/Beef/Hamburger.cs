@@ -1,19 +1,19 @@
 namespace Server.Items
 {
-    public class Hotdog : BaseFood
+    public class Hamburger1 : BaseFood
     {
         [Constructable]
-        public Hotdog() : this(1) { }
+        public Hamburger1() : this(1) { }
         [Constructable]
-        public Hotdog(int amount) : base(amount, 0xA40E)
+        public Hamburger1(int amount) : base(amount, 0xA40F)
         {
             Weight = 1.0;
             Stackable = true;
             Hue = 0x457;
             FillFactor = 3;
-            Name = "Hotdog";
+            Name = "Hamburger";
         }
-        public Hotdog(Serial serial) : base(serial) { }
+        public Hamburger1(Serial serial) : base(serial) { }
         public override void Serialize(GenericWriter writer) { base.Serialize(writer); writer.Write((int)0); }
         public override void Deserialize(GenericReader reader) { base.Deserialize(reader); int version = reader.ReadInt(); }
     }

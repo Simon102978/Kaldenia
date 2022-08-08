@@ -717,11 +717,11 @@ namespace Server.Engines.Craft
 			SetNeedHeat(index, true);
 			SetUseAllRes(index, true);
 			ForceNonExceptional(index);
-			index = AddCraft(typeof(Hamburger), "Plâts préparés", "Hamburger", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
-			AddRes(index, typeof(RawRibs), "Côtes crues", 1, 1044253);
+			//index = AddCraft(typeof(Hamburger1), "Plâts préparés", "Hamburger", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
+			AddRes(index, typeof(GroundBeef), "Viande Hachée", 1, 1044253);
 			AddRes(index, typeof(Lettuce), "Laitue", 1, 1044253);
 			SetNeedHeat(index, true);
-			index = AddCraft(typeof(HotDog), "Plâts préparés", "Hotdog", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
+			//index = AddCraft(typeof(HotDog), "Plâts préparés", "Hotdog", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
 			AddRes(index, typeof(Sausage), "Saucisse", 1, 1044253);
 			SetNeedHeat(index, true);
 			index = AddCraft(typeof(BroccoliCheese), "Plâts préparés", "Brocoli fromage", 50.0, 80.0, typeof(Broccoli), "Brocoli", 5, 1044253);

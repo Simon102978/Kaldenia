@@ -506,6 +506,7 @@ namespace Server.Engines.Craft
 			#endregion
 			#region Luminaires et décorations
 			index = AddCraft(typeof(Torch), "Luminaires et décorations", "Torche", 0.0, 50.0, typeof(Board), 1044041, 2, 1044253);
+			//index = AddCraft(typeof(AvisRecherche), "Luminaires et décorations", "Avis de Recherche", 0.0, 50.0, typeof(Board), 1044041, 3, 1044253);
 			index = AddCraft(typeof(CandleLarge), "Luminaires et décorations", "Chandelier Simple", 45.0, 105.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Candelabra), "Luminaires et décorations", "Chandelier", 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
 			index = AddCraft(typeof(CandelabraStand), "Luminaires et décorations", "Grand Chandelier", 65.0, 105.0, typeof(IronIngot), 1044036, 8, 1044037);
@@ -525,6 +526,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(RoundPaperLantern), "Luminaires et décorations", "Lanterne en papier ronde", 65.0, 115.0, typeof(IronIngot), 1044036, 10, 1044037);
 			AddRes(index, typeof(Board), 1044041, 5, 1044351);
 			index = AddCraft(typeof(WindChimes), "Luminaires et décorations", "Carillons éoliens", 80.0, 130.0, typeof(IronIngot), 1044036, 15, 1044037);
+			//index = AddCraft(typeof(AnkhKershe), "Luminaires et décorations", "Ankh Kershe", 80.0, 130.0, typeof(IronIngot), 1044036, 15, 1044037);
+			//index = AddCraft(typeof(PetiteAnkhKershe), "Luminaires et décorations", "PetiteAnkhKershe", 80.0, 130.0, typeof(IronIngot), 1044036, 10, 1044037);
+			index = AddCraft(typeof(BouteilleBateau), "Luminaires et décorations", "Bateau dans une Bouteille", 80.0, 130.0, typeof(IronIngot), 1044036, 10, 1044037);
 			index = AddCraft(typeof(FancyWindChimes), "Luminaires et décorations", "Carillons", 80.0, 130.0, typeof(IronIngot), 1044036, 15, 1044037);
 			index = AddCraft(typeof(MiniCherryTree1), "Luminaires et décorations", "Arbre en Pot", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");
 			index = AddCraft(typeof(Orchid1), "Luminaires et décorations", "Orchidée", 65.0, 115.0, typeof(FertileDirt), "Terre", 10, "Vous n'avez pas suffisament de terre");

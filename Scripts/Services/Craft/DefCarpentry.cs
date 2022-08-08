@@ -180,6 +180,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(PipeCourte), "Divers", "Pipe Courte ", 80.5, 100.5, typeof(Board), "Planches", 4, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(PipeLongue), "Divers", "Pipe Longue", 70.5, 90.5, typeof(Board), "Planches", 6, "Vous n'avez pas assez de planche.");
 			index = AddCraft(typeof(MatchLight), "Divers", "Allumettes", 0.0, 30.0, typeof(Kindling), "Petit Bois", 2, "Vous n'avez pas assez de petit bois.");
+			index = AddCraft(typeof(Lutrin), "Divers", "Un Lutrin", 70.5, 90.5, typeof(Board), "Planches", 15, "Vous n'avez pas assez de planche.");
 
 			// Armes et bouclier
 			index = AddCraft(typeof(ShepherdsCrook), "Armes et bouclier", "Bâton de berger", 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
@@ -311,12 +312,16 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
 			index = AddCraft(typeof(RepairTable), "Tables", "Table de Travail", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
+			//index = AddCraft(typeof(TableApothicaire), "Tables", "Table de l'Apothicaire", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			index = AddCraft(typeof(RangementAlchimie), "Tables", "Rangement alchimique", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			//index = AddCraft(typeof(ItemAlchimie), "Tables", "Nécessaire d'Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			index = AddCraft(typeof(TableBrasseur), 1044290, "Table Festive", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 
 			// Armoires
 			index = AddCraft(typeof(EmptyBookcase), "Armoires", "Bibliothèque vide", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
 			index = AddCraft(typeof(FullBookcase), "Armoires", "Bibliothèque", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
+			//index = AddCraft(typeof(BibliothequeLuxe), "Armoires", "Bibliothèque vitrée", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
+			//index = AddCraft(typeof(BibliothequeLuxe2), "Armoires", "Bibliothèque de luxe avec livres", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
 			index = AddCraft(typeof(FancyArmoire), "Armoires", "Armoire travaillée", 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
 			index = AddCraft(typeof(Armoire), "Armoires", "Armoire", 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
 			index = AddCraft(typeof(TallCabinet), "Armoires", "Grande commode", 90.0, 115.0, typeof(Board), 1044041, 35, 1044351);

@@ -381,7 +381,65 @@ namespace Server.Items
         }
     }
 
-    [Furniture]
+	[Furniture]
+	[Flipable(0x9982, 0x9983)]
+	public class BibliothequeLuxe : FurnitureContainer
+	{
+		[Constructable]
+		public BibliothequeLuxe()
+			: base(0x9982)
+		{
+		}
+
+		public BibliothequeLuxe(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = (InheritsItem ? 0 : reader.ReadInt()); // Required for FurnitureContainer insertion
+		}
+	}
+
+	[Furniture]
+	[Flipable(0x9984, 0x9986)]
+	public class BibliothequeLuxe2 : FurnitureContainer
+	{
+		[Constructable]
+		public BibliothequeLuxe2()
+			: base(0x9984)
+		{
+		}
+
+		public BibliothequeLuxe2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = (InheritsItem ? 0 : reader.ReadInt()); // Required for FurnitureContainer insertion
+		}
+	}
+
+	[Furniture]
     [Flipable(0xa2c, 0xa34)]
     public class Drawer : FurnitureContainer
     {

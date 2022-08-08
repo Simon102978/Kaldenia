@@ -147,6 +147,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(StatuePegasusSouth), "Statues", "Statue 4", 70.0, 110.0, typeof(Granite), 1044514, 10, 1044513);
 			AddCraft(typeof(StatueGargoyleEast), "Statues", "Statue 5", 54.5, 104.5, typeof(Granite), 1044514, 20, 1044513);
 			AddCraft(typeof(StatueGryphonEast), "Statues", "Statue 6", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
+			AddCraft(typeof(StatueLion), "Statues", "Statue de Lion", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
 
 			// Paliers
 			index = AddCraft(typeof(CraftableHouseItem), "Paliers", "Palier 1", 60.0, 110.0, typeof(Granite), 1044514, 5, 1044513);

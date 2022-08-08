@@ -441,8 +441,38 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
+	[Flipable(0x998C, 0x998D)]
+	public class StatueLion : Item
+	{
+		[Constructable]
+		public StatueLion()
+			: base(0x998C)
+		{
+			Weight = 1.0;
+			Name = "Statue de Lion";
+		}
 
-    [Flipable(0x493B, 0x493C)]
+		public StatueLion(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+
+	[Flipable(0x493B, 0x493C)]
     public class StatueGryphonSouth : Item
     {
         [Constructable]

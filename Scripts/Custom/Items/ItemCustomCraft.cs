@@ -301,7 +301,40 @@ public class RackaVin : CraftableFurniture
 
 	}
 }
-[Furniture]
+	[Furniture]
+	[Flipable(0x998E, 0x998F, 0x9990, 0x9991)]
+	public class TableApothicaire  : FurnitureContainer
+	{
+		[Constructable]
+		public TableApothicaire()
+			: base(0x998E)
+		{
+			Weight = 25.0;
+			Name = "Table Apothicaire";
+		}
+
+		public TableApothicaire(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+
+		}
+	}
+	[Furniture]
 [Flipable(0x9970, 0x9971)]
 public class RangementAlchimie : FurnitureContainer
 	{
@@ -379,6 +412,37 @@ public class RangementAlchimie : FurnitureContainer
 		}
 
 		public Paravent(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Flipable(0x997A, 0x997B)]
+	public class ItemAlchimie : CraftableFurniture
+	{
+		[Constructable]
+		public ItemAlchimie()
+			: base(0x997B)
+		{
+			Weight = 10.0;
+			Name = "Nécessaire d'alchimie";
+		}
+
+		public ItemAlchimie(Serial serial)
 			: base(serial)
 		{
 		}

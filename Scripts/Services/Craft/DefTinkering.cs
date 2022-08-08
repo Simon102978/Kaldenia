@@ -257,14 +257,14 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Collier), "Bijoux", "Collier massif doré", 49.2, 69.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier2), "Bijoux", "Collier croix Ânkh", 49.8, 69.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier3), "Bijoux", "Collier bolo doré", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier4), "Bijoux", " Grande chaîne dorée", 60.1, 80.1, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier4), "Bijoux", "Grande chaîne dorée", 60.1, 80.1, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier5), "Bijoux", "Collier croix Ânkh doré", 63.4, 83.4, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier6), "Bijoux", "Petit collier Usekh", 81.2, 101.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier7), "Bijoux", "Petit collier doré", 90.2, 110.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier8), "Bijoux", "Collier de feuilles dorées", 68.8, 88.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier9), "Bijoux", "Collier de perle", 74.6, 94.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier10), "Bijoux", "Collier simple", 96.8, 116.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
-			index = AddCraft(typeof(Collier11), "Bijoux", "Collier simple avec pendentif", 71.7, 91.7, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier10), "Bijoux", "Collier simple avec pendentif", 96.8, 116.8, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
+			index = AddCraft(typeof(Collier11), "Bijoux", "Collier simple", 71.7, 91.7, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Collier12), "Bijoux", "Grand collier doré avec pendentif", 65.6, 85.6, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Couronne2), "Bijoux", "Petite couronne", 87.2, 107.2, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");
 			index = AddCraft(typeof(Couronne3), "Bijoux", "Diadème", 74.5, 94.5, typeof(IronIngot), "lingots", 5, "Vous n'avez pas assez de lingots.");

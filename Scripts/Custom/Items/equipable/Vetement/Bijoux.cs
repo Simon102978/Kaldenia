@@ -556,7 +556,7 @@ public class Collier10 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Collier simple";
+		Name = "Collier simple avec pendentif";
 	}
 
 	public Collier10(Serial serial)
@@ -591,7 +591,7 @@ public class Collier11 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Collier simple avec pendentif";
+		Name = "Collier simple";
 	}
 
 	public Collier11(Serial serial)

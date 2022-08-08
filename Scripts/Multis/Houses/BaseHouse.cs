@@ -2617,7 +2617,8 @@ namespace Server.Multis
 
             if (info != null)
             {
-                if ((IsOwner(m) || info.Owner == m) /*&& HasSecureAccess(m, info.Level)*/)
+       //         if ((IsOwner(m) || info.Owner == m) /*&& HasSecureAccess(m, info.Level)*/)
+				if(IsCoOwner(m))
                 {
                     item.IsLockedDown = false;
                     item.IsSecure = false;

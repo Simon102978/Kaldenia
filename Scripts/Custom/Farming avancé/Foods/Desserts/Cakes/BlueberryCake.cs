@@ -1,22 +1,17 @@
 namespace Server.Items
 {
-	public class Blueberry : BaseFood
+	public class BlueberryCake : BaseFood
 	{
 		[Constructable]
-		public Blueberry() : this( 1 )
+		public BlueberryCake() : base( 0x9E9 )
 		{
-		}
-
-		[Constructable]
-		public Blueberry( int amount ) : base( amount, 0x9D1 )
-		{
-			FillFactor = 1;
+			Name = "a lemon cake";
+			Weight = 1.0;
+			FillFactor = 15;
 			Hue = 0x62;
-			Name = "Blueberry";
-			Weight = 0.1;
 		}
 
-		public Blueberry( Serial serial ) : base( serial )
+		public BlueberryCake( Serial serial ) : base( serial )
 		{
 		}
 

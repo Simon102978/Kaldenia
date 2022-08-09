@@ -949,6 +949,16 @@ namespace Server.Engines.Craft
 			//AddRecipe(index, (int)CookRecipesExp.CarrotCake);
 			SetNeedOven(index, true);
 
+			index = AddCraft(typeof(StrawberryCake), "Pâtisserie et boulangerie", "Gâteau aux Fraises", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(Strawberry), "Carrot", 6, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.CarrotCake);
+			SetNeedOven(index, true);
+
+			index = AddCraft(typeof(BlueberryCake), "Pâtisserie et boulangerie", "Gâteau aux Bleuets", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
+			AddRes(index, typeof(Blueberry), "Carrot", 6, 1044253);
+			//AddRecipe(index, (int)CookRecipesExp.CarrotCake);
+			SetNeedOven(index, true);
+
 			index = AddCraft(typeof(ChocolateCake), "Pâtisserie et boulangerie", "Gâteau au Chocolat", 70.0, 100.0, typeof(CakeMix), 1044471, 1, 1044253);
 			AddRes(index, typeof(BagOfCocoa), "Bag of Cocoa", 1, 1044253);
 			//AddRecipe(index, (int)CookRecipesExp.ChocolateCake);

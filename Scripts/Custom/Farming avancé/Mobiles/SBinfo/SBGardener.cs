@@ -25,11 +25,11 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				this.Add( new GenericBuyInfo( typeof( MilkBucket ), 800, 10, 0x0FFA, 0 ) );
-				this.Add( new GenericBuyInfo( typeof( CheeseForm ), 800, 10, 0x0E78, 0 ) );
+				this.Add( new GenericBuyInfo( typeof( MilkBucket ), 300, 10, 0x0FFA, 0 ) );
+				this.Add( new GenericBuyInfo( typeof( CheeseForm ), 300, 10, 0x0E78, 0 ) );
 
 				this.Add( new GenericBuyInfo( "Plant Bowl", typeof( Engines.Plants.PlantBowl ), 2, 20, 0x15FD, 0 ) );
-				this.Add( new GenericBuyInfo( "Fertile Dirt", typeof( FertileDirt ), 10, 20, 0xF81, 0 ) );
+				this.Add( new GenericBuyInfo( "Fertile Dirt", typeof( FertileDirt ), 5, 999, 0xF81, 0 ) );
 				this.Add( new GenericBuyInfo( "Random Plant Seed", typeof( Engines.Plants.Seed ), 2, 20, 0xDCF, 0 ) );
  			//	this.Add( new GenericBuyInfo( typeof( GreaterCurePotion ), 45, 20, 0xF07, 0 ) );
 			//	this.Add( new GenericBuyInfo( typeof( GreaterPoisonPotion ), 45, 20, 0xF0A, 0 ) );

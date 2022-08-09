@@ -330,7 +330,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(ChemiseCorset2), "Hauts", "Chemise à Corset 2", 65.7, 85.7, typeof(Cloth), "Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(CorsetCuir), "Hauts", "Corset de Cuir", 65.7, 85.7, typeof(Cloth), "Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(CorsetEpaule), "Hauts", "Corset Épaule", 65.7, 85.7, typeof(Cloth), "Tissus", 8, "Vous n'avez pas assez de tissus.");
-			index = AddCraft(typeof(CorsetSimple), "Hauts", "Corset Simple" 65.7, 85.7, typeof(Cloth), "Tissus", 8, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(CorsetSimple), "Hauts", "Corset Simple", 65.7, 85.7, typeof(Cloth), "Tissus", 8, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(CorsetTissus), "Hauts", "Corset de Tissus", 65.7, 85.7, typeof(Cloth), "Tissus", 8, "Vous n'avez pas assez de tissus.");
 
 

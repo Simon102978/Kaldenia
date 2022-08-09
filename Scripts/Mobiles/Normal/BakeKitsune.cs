@@ -57,8 +57,8 @@ namespace Server.Mobiles
         public override int Meat => 5;
         public override int Hides => 30;
         public override HideType HideType => HideType.Regular;
-        public override FoodType FavoriteFood => FoodType.Fish;
-        public override bool ShowFameTitle => false;
+		public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
+		public override bool ShowFameTitle => false;
         public override bool ClickTitle => false;
         public override bool PropertyTitle => false;
 

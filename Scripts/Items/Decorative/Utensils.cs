@@ -405,6 +405,35 @@ namespace Server.Items
         }
     }
 
+	public class AssietteMosaique : BaseUtensil
+	{
+		[Constructable]
+		public AssietteMosaique()
+			: base(0x99AA)
+		{
+			Weight = 1.0;
+		}
+
+		public AssietteMosaique(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = (InheritsItem ? 0 : reader.ReadInt()); // Required for BaseUtensil insertion
+		}
+	}
+
 	public class Bock : BaseUtensil
 
 	{

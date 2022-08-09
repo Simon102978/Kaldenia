@@ -77,4 +77,76 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
+
+	[Flipable]
+	public class LanterneMurale : BaseLight
+	{
+		[Constructable]
+		public LanterneMurale()
+			: base(0x99AB)
+		{
+			Movable = true;
+			Duration = TimeSpan.Zero; // Never burnt out
+			Burning = false;
+			Light = LightType.WestBig;
+			Weight = 3.0;
+		}
+
+		public LanterneMurale(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override int LitItemID
+		{
+			get
+			{
+				if (ItemID == 0x99AB)
+					return 0x99AC;
+				else
+					return 0x99AE;
+			}
+		}
+		public override int UnlitItemID
+		{
+			get
+			{
+				if (ItemID == 0x99AC)
+					return 0x99AB;
+				else
+					return 0x909AD;
+			}
+		}
+		public void Flip()
+		{
+			if (Light == LightType.WestBig)
+				Light = LightType.NorthBig;
+			else if (Light == LightType.NorthBig)
+				Light = LightType.WestBig;
+
+			switch (ItemID)
+			{
+				case 0x99AB:
+					ItemID = 0x99AC;
+					break;
+				case 0x909AD:
+					ItemID = 0x99AE;
+					break;
+				
+					
+			}
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
 }

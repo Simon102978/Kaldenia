@@ -148,10 +148,10 @@ namespace Server.Engines.Craft
 			#endregion
 			#region Sauces
 			index = AddCraft(typeof(SamuelsSecretSauce), "Sauces", "Sauce Secrete de Samuel", 20.0, 60.0, typeof(Tomato), "Tomate", 5, 1044253);
-			AddRes(index, typeof(BasketOfHerbsFarm), "Herbes", 1, 1044253);
+			AddRes(index, typeof(DriedHerbs), "Herbes sèches", 1, 1044253);
 			AddRes(index, typeof(JarHoney), "Miel", 1, 1044253);
 			AddRes(index, typeof(Vinegar), "Vinaigre", 1, 1044253);
-			AddRes(index, typeof(BarbecueSauce), "Vinaigre", 1, 1044253);
+		//	AddRes(index, typeof(BarbecueSauce), "Vinaigre", 1, 1044253);
 
 			index = AddCraft(typeof(TomatoSauce), "Sauces", "Sauce tomate", 20.0, 60.0, typeof(Tomato), "Tomate", 3, 1044253);
 			AddRes(index, typeof(BasketOfHerbsFarm), "Herbes", 1, 1044253);
@@ -717,11 +717,11 @@ namespace Server.Engines.Craft
 			SetNeedHeat(index, true);
 			SetUseAllRes(index, true);
 			ForceNonExceptional(index);
-			//index = AddCraft(typeof(Hamburger1), "Plâts préparés", "Hamburger", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
+			index = AddCraft(typeof(Hamburger1), "Plâts préparés", "Hamburger", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
 			AddRes(index, typeof(GroundBeef), "Viande Hachée", 1, 1044253);
 			AddRes(index, typeof(Lettuce), "Laitue", 1, 1044253);
 			SetNeedHeat(index, true);
-			//index = AddCraft(typeof(HotDog), "Plâts préparés", "Hotdog", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
+			index = AddCraft(typeof(HotDog), "Plâts préparés", "Hotdog", 50.0, 80.0, typeof(BreadLoaf), 1024155, 1, 1044253);
 			AddRes(index, typeof(Sausage), "Saucisse", 1, 1044253);
 			SetNeedHeat(index, true);
 			index = AddCraft(typeof(BroccoliCheese), "Plâts préparés", "Brocoli fromage", 50.0, 80.0, typeof(Broccoli), "Brocoli", 5, 1044253);

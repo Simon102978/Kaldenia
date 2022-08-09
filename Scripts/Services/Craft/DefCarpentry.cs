@@ -202,7 +202,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Crochire), "Armes et bouclier", "Crochire", 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
 			index = AddCraft(typeof(BatonVagabond), "Armes et bouclier", "Bâton de vagabond", 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
 			index = AddCraft(typeof(WoodenShield), "Autres", "Bouclier en bois", 52.6, 77.6, typeof(Board), 1044041, 9, 1044351);
-			//index = AddCraft(typeof(Parchemin), "Autres", "Un parchemin", 52.6, 77.6, typeof(Board), 1044041, 2, 1044351);
+			index = AddCraft(typeof(Parchemin), "Autres", "Un parchemin", 52.6, 77.6, typeof(Board), 1044041, 2, 1044351);
 
 			// Instruments
 			index = AddCraft(typeof(LapHarp), "Instruments", "Petite harpe", 63.1, 88.1, typeof(Board), 1044041, 20, 1044351);
@@ -214,8 +214,8 @@ namespace Server.Engines.Craft
 			// AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
 			index = AddCraft(typeof(Drums), "Instruments", "Tambour", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
-		//	index = AddCraft(typeof(Guitare), "Instruments", "Guitare", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
-		//	index = AddCraft(typeof(HarpeLongue), "Instruments", "Une harpe Longue", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
+			index = AddCraft(typeof(Guitare), "Instruments", "Guitare", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
+			index = AddCraft(typeof(HarpeLongue), "Instruments", "Une harpe Longue", 57.8, 82.8, typeof(Board), 1044041, 20, 1044351);
 			// AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 			index = AddCraft(typeof(Lute), "Instruments", "Luth", 68.4, 93.4, typeof(Board), 1044041, 25, 1044351);
@@ -257,12 +257,21 @@ namespace Server.Engines.Craft
 			// Chaises
 			index = AddCraft(typeof(FootStool), "Chaises", "Petit tabouret", 11.0, 36.0, typeof(Board), 1044041, 9, 1044351);
 			index = AddCraft(typeof(Stool), "Chaises", "Tabouret", 11.0, 36.0, typeof(Board), 1044041, 9, 1044351);
+			index = AddCraft(typeof(TabouretFeutre), "Chaises", "Tabouret Feutré", 11.0, 36.0, typeof(Board), 1044041, 9, 1044351);
+
 			index = AddCraft(typeof(BambooChair), "Chaises", "Chaise rustique", 21.0, 46.0, typeof(Board), 1044041, 13, 1044351);
 			index = AddCraft(typeof(WoodenChair), "Chaises", "Chaise simple", 21.0, 46.0, typeof(Board), 1044041, 13, 1044351);
 			index = AddCraft(typeof(FancyWoodenChairCushion), "Chaises", "Chaise travaillée", 42.1, 67.1, typeof(Board), 1044041, 15, 1044351);
 			index = AddCraft(typeof(WoodenChairCushion), "Chaises", "Chaise avec coussin", 42.1, 67.1, typeof(Board), 1044041, 13, 1044351);
 			index = AddCraft(typeof(WoodenBench), "Chaises", "Banc en bois", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
 			index = AddCraft(typeof(WoodenThrone), "Chaises", "Trône simple", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
+
+			index = AddCraft(typeof(ChaiseLuxe), "Chaises", "Chaise de Luxe", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
+			index = AddCraft(typeof(BancGris), "Chaises", "Banc Gris", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
+			index = AddCraft(typeof(BancFer), "Chaises", "Banc Fer", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
+			index = AddCraft(typeof(ChaiseRembourer), "Chaises", "Chaise Rembourée", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
+			index = AddCraft(typeof(ChaiseVerte), "Chaises", "Chaise Verte", 52.6, 77.6, typeof(Board), 1044041, 17, 1044351);
+
 			index = AddCraft(typeof(Throne), "Chaises", "Trône massif", 73.6, 98.6, typeof(Board), 1044041, 19, 1044351);
 			index = AddCraft(typeof(OrnateElvenChair), "Chaises", "Chaise sculptée", 80.0, 105.0, typeof(Board), 1044041, 30, 1044351);
 			index = AddCraft(typeof(BigElvenChair), "Chaises", "Chaise ornée", 85.0, 110.0, typeof(Board), 1044041, 40, 1044351);
@@ -312,16 +321,21 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
 			index = AddCraft(typeof(RepairTable), "Tables", "Table de Travail", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 			AddRes(index, typeof(IronIngot), 1044036, 15, 1044037);
-			//index = AddCraft(typeof(TableApothicaire), "Tables", "Table de l'Apothicaire", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			index = AddCraft(typeof(Tableronde1), "Tables", "Table ronde1", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			index = AddCraft(typeof(TableRonde2), "Tables", "Table ronde2", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			index = AddCraft(typeof(TableRonde3), "Tables", "Table ronde3", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			index = AddCraft(typeof(TableGrise), "Tables", "Table Grise", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+
+			index = AddCraft(typeof(TableApothicaire), "Tables", "Table de l'Apothicaire", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			index = AddCraft(typeof(RangementAlchimie), "Tables", "Rangement alchimique", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
-			//index = AddCraft(typeof(ItemAlchimie), "Tables", "Nécessaire d'Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			index = AddCraft(typeof(ItemAlchimie), "Tables", "Nécessaire d'Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			index = AddCraft(typeof(TableBrasseur), 1044290, "Table Festive", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 
 			// Armoires
 			index = AddCraft(typeof(EmptyBookcase), "Armoires", "Bibliothèque vide", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
 			index = AddCraft(typeof(FullBookcase), "Armoires", "Bibliothèque", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
-			//index = AddCraft(typeof(BibliothequeLuxe), "Armoires", "Bibliothèque vitrée", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
-			//index = AddCraft(typeof(BibliothequeLuxe2), "Armoires", "Bibliothèque de luxe avec livres", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
+			index = AddCraft(typeof(BibliothequeLuxe), "Armoires", "Bibliothèque vitrée", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
+			index = AddCraft(typeof(BibliothequeLuxe2), "Armoires", "Bibliothèque de luxe avec livres", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);
 			index = AddCraft(typeof(FancyArmoire), "Armoires", "Armoire travaillée", 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
 			index = AddCraft(typeof(Armoire), "Armoires", "Armoire", 84.2, 109.2, typeof(Board), 1044041, 35, 1044351);
 			index = AddCraft(typeof(TallCabinet), "Armoires", "Grande commode", 90.0, 115.0, typeof(Board), 1044041, 35, 1044351);
@@ -354,6 +368,10 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(TerMurDresserEastDeed), "Armoires", "Armoire élégante (E)", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 			index = AddCraft(typeof(TerMurDresserSouthDeed), "Armoires", "Armoire élégante (S)", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 			index = AddCraft(typeof(NormDresser), "Armoires", "Coiffeuse", 70.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			index = AddCraft(typeof(CommodeFoncee), "Armoires", "Commode Foncée", 70.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			index = AddCraft(typeof(CommodeHaute), "Armoires", "Commode Haute", 70.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			index = AddCraft(typeof(GardeRobeFermer), "Armoires", "Garde Robe Fermée", 70.0, 115.0, typeof(Board), 1044041, 40, 1044351);
+			index = AddCraft(typeof(GardeRobeOuvert), "Armoires", "Garde Robe Ouverte", 70.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 
 			// Lits
 			index = AddCraft(typeof(SmallBedSouthDeed), "Lits", "Petit lit (S)", 94.7, 119.8, typeof(Board), 1044041, 100, 1044351);

@@ -501,6 +501,126 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
+	[Flipable(0x99AF, 0x99B0)]
+	public class StatueAnge : Item
+	{
+		[Constructable]
+		public StatueAnge()
+			: base(0x99AF)
+		{
+			Weight = 15.0;
+			Name = "Statue Ange";
+		}
+
+		public StatueAnge(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+	[Flipable(0x99B1, 0x99B2)]
+	public class StatueSirene : Item
+	{
+		[Constructable]
+		public StatueSirene()
+			: base(0x99B1)
+		{
+			Weight = 15.0;
+			Name = "Statue Sirene";
+		}
+
+		public StatueSirene(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+	[Flipable(0x9A05, 0x9A06)]
+	public class 	StatueEgypOr : Item
+	{
+		[Constructable]
+		public StatueEgypOr()
+			: base(0x9A05)
+		{
+			Weight = 15.0;
+			Name = "Statue Egyptienne";
+		}
+
+		public StatueEgypOr(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class ColoneMarbre : Item
+	{
+		[Constructable]
+		public ColoneMarbre()
+			: base(0x99C5)
+		{
+			Weight = 15.0;
+			Name = "Colone Marbre";
+		}
+
+		public ColoneMarbre(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override bool ForceShowProperties => true;
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
 	[Flipable(0x9996, 0x9997)]
 	public class Enclume : Item
 	{

@@ -3890,4 +3890,74 @@ namespace Server.Items
 
 		}
 	}
+	[Flipable(0x99A6, 0x99A7)]
+	public class ToileKershe : Peintures
+	{
+		[Constructable]
+		public ToileKershe() : this(0)
+		{
+		}
+
+		[Constructable]
+		public ToileKershe(int hue) : base(0x99A6, hue)
+		{
+			Weight = 1.0;
+
+			Name = "Peinture";
+		}
+
+		public ToileKershe(Serial serial) : base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Flipable(0x99A8, 0x99A9)]
+	public class ToileChameau : Peintures
+	{
+		[Constructable]
+		public ToileChameau() : this(0)
+		{
+		}
+
+		[Constructable]
+		public ToileChameau(int hue) : base(0x99A8, hue)
+		{
+			Weight = 1.0;
+
+			Name = "Peinture";
+		}
+
+		public ToileChameau(Serial serial) : base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write((int)0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
 }

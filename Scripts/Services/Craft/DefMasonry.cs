@@ -120,6 +120,11 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(Vase4), "Décorations", "Vase 4", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
 			AddCraft(typeof(Vase5), "Décorations", "Vase 5", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
 
+			AddCraft(typeof(VaseTresor), "Décorations", "Vase Trésor", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Urne), "Décorations", "Urne", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Urne2), "Décorations", "Urne 2", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+
+
 			AddCraft(typeof(LargeVase), "Décorations", "Grand vase", 52.5, 102.5, typeof(Granite), 1044514, 3, 1044513);
 			AddCraft(typeof(SmallUrn), "Décorations", "Petite urne", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
 			AddCraft(typeof(TeteBuffle), "Décorations", "Tête de Buffle", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
@@ -157,6 +162,12 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(StatueGryphonEast), "Statues", "Statue 6", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
 			AddCraft(typeof(StatueLion), "Statues", "Statue de Lion", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
 			AddCraft(typeof(StatueEgypt), "Statues", "Statue Egyptienne", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
+
+			AddCraft(typeof(StatueAnge), "Statues", "Statue Ange", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
+			AddCraft(typeof(StatueSirene), "Statues", "Statue Sirene", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
+			AddCraft(typeof(StatueEgypOr), "Statues", "Statue Egypt Or", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
+
+			AddCraft(typeof(ColoneMarbre), "Statues", "Colonne de Marbre", 54.5, 104.5, typeof(Granite), 1044514, 15, 1044513);
 
 			// Paliers
 			index = AddCraft(typeof(CraftableHouseItem), "Paliers", "Palier 1", 60.0, 110.0, typeof(Granite), 1044514, 5, 1044513);

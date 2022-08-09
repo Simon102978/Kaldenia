@@ -138,13 +138,18 @@ namespace Server.Engines.Craft
 		
 
 	    index = AddCraft(typeof(PortraitSud16), "Portrait Sud", "Portrait16", 50, 80, typeof(ToileVierge), "Toile Vierge", 1, "Vous n'avez pas de toile");
-		
 
-		#endregion
+		index = AddCraft(typeof(ToileChameau), "Portrait Sud", "Toile Chameau", 50, 80, typeof(ToileVierge), "Toile Vierge", 1, "Vous n'avez pas de toile");
 
-	    #region PortraitEst
 
-	    index = AddCraft(typeof(PortraitEst01), "Portrait Est", "Portrait01", 10, 30, typeof(ToileVierge), "Toile Vierge", 1, "Vous n'avez pas de toile");
+		index = AddCraft(typeof(ToileKershe), "Portrait Sud", "Toile Kershe", 50, 80, typeof(ToileVierge), "Toile Vierge", 1, "Vous n'avez pas de toile");
+
+
+			#endregion
+
+			#region PortraitEst
+
+			index = AddCraft(typeof(PortraitEst01), "Portrait Est", "Portrait01", 10, 30, typeof(ToileVierge), "Toile Vierge", 1, "Vous n'avez pas de toile");
 
 	    index = AddCraft(typeof(PortraitEst02), "Portrait Est", "Portrait02", 10, 30, typeof(ToileVierge), "Toile Vierge", 1, "Vous n'avez pas de toile");
 

@@ -34,7 +34,7 @@ namespace Server.Items
 		{
 			Weight = 4.0;
 			Name = "Une Guitare";
-			Layer = Layer.TwoHanded;
+			Layer = Layer.OneHanded;
 		}
 
 		public Guitare(Serial serial)

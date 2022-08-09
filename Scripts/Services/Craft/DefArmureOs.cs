@@ -125,7 +125,7 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(JambiereOs), "Armure d'os", "Jambiere d'Os", 95.0, 120.0, typeof(Bone), "Os", 10, 1044463);
 
-		//	index = AddCraft(typeof(BouclierOs), "Armure d'os", "Bouclier d'Os", 96.0, 121.0, typeof(Bone), "Os", 10, 1044463) ;
+			index = AddCraft(typeof(BouclierOs), "Armure d'os", "Bouclier d'Os", 96.0, 121.0, typeof(Bone), "Os", 10, 1044463) ;
 
 			index = AddCraft(typeof(PlastronOs), "Armure d'os", "Plastron d'Os", 96.0, 121.0, typeof(Bone), "Os", 12, 1044463);
 

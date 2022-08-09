@@ -100,8 +100,130 @@ public class TinkerTable : CraftableFurniture
 
 	}
 }
+	public class Tableronde1 : CraftableFurniture
+	{
+		[Constructable]
+		public Tableronde1()
+			: base(0x99C8)
+		{
+			Weight = 5.0;
+			Name = "Table Ronde";
+		}
 
-[Furniture]
+		public Tableronde1(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+
+	public class TableRonde2 : CraftableFurniture
+	{
+		[Constructable]
+		public TableRonde2()
+			: base(0x99C9)
+		{
+			Weight = 5.0;
+			Name = "Table Ronde";
+		}
+
+		public TableRonde2(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+
+	public class TableRonde3 : CraftableFurniture
+	{
+		[Constructable]
+		public TableRonde3()
+			: base(0x99CA)
+		{
+			Weight = 5.0;
+			Name = "Table Ronde";
+		}
+
+		public TableRonde3(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Flipable(0x99CC, 0x99CD)]
+	public class TableGrise : CraftableFurniture
+	{
+		[Constructable]
+		public TableGrise()
+			: base(0x99CC)
+		{
+			Weight = 5.0;
+			Name = "Table Grise";
+		}
+
+		public TableGrise(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
 [Flipable(0x9961, 0x9962)]
 public class RepairTable : CraftableFurniture
 {
@@ -237,6 +359,132 @@ public class Puit : CraftableFurniture, IWaterSource
 
 		}
 	}
+
+	[Flipable(0x99C6, 0x99C7)]
+	public class CommodeFoncee : CraftableFurniture
+	{
+		[Constructable]
+		public CommodeFoncee()
+			: base(0x99C6)
+		{
+			Weight = 15.0;
+			Name = "Commode Foncee";
+		}
+
+		public CommodeFoncee(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+
+	[Flipable(0x99CE, 0x99CF)]
+	public class CommodeHaute : CraftableFurniture
+	{
+		[Constructable]
+		public CommodeHaute()
+			: base(0x99CE)
+		{
+			Weight = 15.0;
+			Name = "Commode Haute";
+		}
+
+		public CommodeHaute(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Flipable(0x99D0, 0x99D2)]
+	public class GardeRobeFermer  : CraftableFurniture
+	{
+		[Constructable]
+		public GardeRobeFermer()
+			: base(0x99D0)
+		{
+			Weight = 15.0;
+			Name = "Garde Robe Fermé";
+		}
+
+		public GardeRobeFermer(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Flipable(0x99D1, 0x99D3)]
+	public class GardeRobeOuvert : CraftableFurniture
+	{
+		[Constructable]
+		public GardeRobeOuvert()
+			: base(0x99D1)
+		{
+			Weight = 15.0;
+			Name = "Garde Robe Ouvert";
+		}
+
+		public GardeRobeOuvert(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
 	[Furniture]
 [Flipable(0x996D, 0x996D)]
 public class Ancre : CraftableFurniture
@@ -269,7 +517,167 @@ public class Ancre : CraftableFurniture
 
 	}
 }
-[Furniture]
+	[Furniture]
+	[Flipable(0x99B5, 0x99B6, 0x99B7, 0x99B8)]
+	public class ChaiseLuxe : CraftableFurniture
+	{
+		[Constructable]
+		public ChaiseLuxe()
+			: base(0x99B5)
+		{
+			Weight = 25.0;
+			Name = "Chaise de Luxe";
+		}
+
+		public ChaiseLuxe(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
+	[Flipable(0x99B9, 0x99BA)]
+	public class BancGris : CraftableFurniture
+	{
+		[Constructable]
+		public BancGris()
+			: base(0x99B9)
+		{
+			Weight = 25.0;
+			Name = "Banc Gris";
+		}
+
+		public BancGris(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
+	[Flipable(0x99BB, 0x99BC)]
+	public class BancFer : CraftableFurniture
+	{
+		[Constructable]
+		public BancFer()
+			: base(0x99BB)
+		{
+			Weight = 25.0;
+			Name = "Banc Fer";
+		}
+
+		public BancFer(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
+	[Flipable(0x99BD, 0x99BE, 0x99BF, 0x99C0)]
+	public class ChaiseRembourer : CraftableFurniture
+	{
+		[Constructable]
+		public ChaiseRembourer()
+			: base(0x99BD)
+		{
+			Weight = 25.0;
+			Name = "Chaise Rembourée";
+		}
+
+		public ChaiseRembourer(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
+	[Flipable(0x99C1, 0x99C2, 0x99C3, 0x99C4)]
+	public class ChaiseVerte : CraftableFurniture
+	{
+		[Constructable]
+		public ChaiseVerte()
+			: base(0x99C1)
+		{
+			Weight = 25.0;
+			Name = "Chaise Verte";
+		}
+
+		public ChaiseVerte(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0);
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+
+		}
+	}
+	[Furniture]
 [Flipable(0x996E, 0x996F)]
 public class RackaVin : CraftableFurniture
 {

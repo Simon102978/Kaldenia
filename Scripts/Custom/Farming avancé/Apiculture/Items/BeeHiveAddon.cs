@@ -841,7 +841,7 @@ namespace Server.Engines.Apiculture
 			if( m_Hive.HiveStage != HiveStatus.Empty )
 				list.Add( 1060663,"{0}\t{1}" ,"Age", m_Hive.HiveAge + (m_Hive.HiveAge==1 ? " jour" : " jours") );
 			if( m_Hive.HiveStage >= HiveStatus.Producing )
-				list.Add( 1060662,"{0}\t{1}" ,"Colonie", m_Hive.Population + "0000 abbaies" );
+				list.Add( 1060662,"{0}\t{1}" ,"Colonie", m_Hive.Population + "0000 Abeilles" );
 		}
 
 		public apiBeeHiveComponent( Serial serial ) : base( serial )

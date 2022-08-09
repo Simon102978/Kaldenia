@@ -7635,9 +7635,58 @@ namespace Server.Mobiles
 
 		public override int GetDetectionBonus(Mobile mobile)
 		{
-			
+			int bonus = 0;
 
-			return base.GetDetectionBonus(mobile) + (int)Skills[SkillName.Tactics].Value - 25;
+			int tracking = base.GetDetectionBonus(mobile);
+			int Tactic = (int)Skills[SkillName.Tactics].Value;
+
+			if (tracking > Tactic)
+			{
+				bonus = tracking;
+			}
+			else
+			{
+				bonus = Tactic;
+			}
+
+			double Range = GetDistanceToSqrt(mobile.Location);
+
+			if (Range >= 8)
+			{
+				bonus -= 20;
+			}
+			else if (Range >= 6)
+			{
+				bonus -= 10;
+			}
+			else if (Range >= 4)
+			{
+				bonus += 5;
+			}
+			else if (Range >= 3)
+			{
+				bonus += 25;
+				
+			}
+
+			ComputeLightLevels(out int global, out int personal);
+
+			int lightLevel = global + personal;
+
+			if (lightLevel >= 20)
+			{
+				bonus -= 20;
+			}
+			else if (lightLevel >= 10)
+			{
+				//   bonus -= 0;
+			}
+			else
+			{
+				bonus += 20;
+			}
+
+			return bonus;
 		}
 
 

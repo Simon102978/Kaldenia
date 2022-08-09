@@ -2929,7 +2929,12 @@ namespace Server
 
 			int chance = Utility.Random(100);
 
-			if (chance <= bonus)
+			if (bonus < 1)
+			{
+				bonus = 1;
+			}
+
+			if (chance < bonus)
 			{
 				mobile.Reveal(this);
 			}
@@ -2978,7 +2983,7 @@ namespace Server
 						bonus += 25;
 						break;
 					case Side.Devant:
-						bonus += 60;
+						bonus += 75;
 						break;
 					default:
 						bonus += 20;

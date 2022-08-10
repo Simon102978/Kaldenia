@@ -504,7 +504,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(PoissonMain), "Ustensiles", "Poisson", 25.0, 75.0, typeof(FishSteak), 1044036, 5, 1044037);
 			index = AddCraft(typeof(CorneBoire), "Ustensiles", "Corne à boire", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(Eventail), "Ustensiles", "Eventail", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
-			index = AddCraft(typeof(HagCauldron), "Ustensiles", "Chaudron", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
+			index = AddCraft(typeof(HagCauldronDeed), "Ustensiles", "Chaudron", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			index = AddCraft(typeof(AssietteMosaique), "Ustensiles", "Une assiette Mosaique", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			#endregion
 			#region Luminaires et décorations

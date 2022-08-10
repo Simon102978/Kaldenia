@@ -580,7 +580,7 @@ namespace Server.Items
 		}
 	}
 
-	public class Eventail : BaseUtensil
+	public class Eventail : Item
 
 	{
 

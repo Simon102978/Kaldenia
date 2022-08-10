@@ -272,8 +272,8 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(RobeDoree), "Robes", "Robe Dorée", 78.8, 98.8, typeof(Cloth), "Tissus", 16, "Vous n'avez pas assez de tissus.");
 
 			index = AddCraft(typeof(RobeBal1), "Robes", "Robe de Bal Style 1", 78.8, 98.8, typeof(Cloth), "Tissus", 16, "Vous n'avez pas assez de tissus.");
-			index = AddCraft(typeof(RobeBal2), "Robes", "Robe de Bal Style 1", 78.8, 98.8, typeof(Cloth), "Tissus", 16, "Vous n'avez pas assez de tissus.");
-			index = AddCraft(typeof(RobeBal3), "Robes", "Robe de Bal Style 1", 78.8, 98.8, typeof(Cloth), "Tissus", 16, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(RobeBal2), "Robes", "Robe de Bal Style 2", 78.8, 98.8, typeof(Cloth), "Tissus", 16, "Vous n'avez pas assez de tissus.");
+			index = AddCraft(typeof(RobeBal3), "Robes", "Robe de Bal Style 3", 78.8, 98.8, typeof(Cloth), "Tissus", 16, "Vous n'avez pas assez de tissus.");
 
 			index = AddCraft(typeof(Toge), "Toges", "Toge Souple", 46.4,66.4, typeof(Cloth),"Tissus", 18, "Vous n'avez pas assez de tissus.");
 			index = AddCraft(typeof(Toge2), "Toges", "Toge Propre", 71.7,91.7, typeof(Cloth),"Tissus", 18, "Vous n'avez pas assez de tissus.");

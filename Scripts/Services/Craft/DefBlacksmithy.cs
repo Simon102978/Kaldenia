@@ -498,7 +498,7 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(DiamondMace), "Masses et marteaux", "Masse diamant", 40.0, 80.0, typeof(IronIngot), 1044036, 20, 1044037);
 			AddCraft(typeof(WarHammer), "Masses et marteaux", "Dispenseur", 40.0, 80.0, typeof(IronIngot), 1044036, 16, 1044037);
 			AddCraft(typeof(Maul), "Masses et marteaux", "Ogrillonne", 40.0, 80.0, typeof(IronIngot), 1044036, 10, 1044037);
-			AddCraft(typeof(Tessen), "Masses et marteaux", "Caduçé", 40.0, 80.0, typeof(IronIngot), 1044036, 16, 1044037);
+		
 			AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
 			AddCraft(typeof(DiscMace), "Masses et marteaux", "Massu cranelée", 40.0, 80.0, typeof(IronIngot), 1044036, 20, 1044037);
 			#endregion

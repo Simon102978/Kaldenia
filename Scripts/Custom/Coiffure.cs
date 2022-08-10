@@ -118,7 +118,8 @@ namespace Server.Misc
 			Coiffure.Register(new Coiffure(0x2048, 30, false, true, 50));
 			Coiffure.Register(new Coiffure(0x2049, 30, false, true, 50));
 			Coiffure.Register(new Coiffure(0x204A, 30, false, true, 50));
-
+			Coiffure.Register(new Coiffure(0xA417, 30, false, true, 50));
+			Coiffure.Register(new Coiffure(0xA418, 30, false, true, 50));
 
 
 
@@ -129,6 +130,7 @@ namespace Server.Misc
 			Coiffure.Register(new Coiffure(0x204B, 30, true, true, 50));
 			Coiffure.Register(new Coiffure(0x204C, 30, true, true, 50));
 			Coiffure.Register(new Coiffure(0x204D, 30, true,true,50));
+			
 
 
 

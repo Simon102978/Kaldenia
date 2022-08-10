@@ -248,7 +248,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(BeefTenderloin), "Viandes", "Filet de boeuf", 25.0, 70.0, typeof(RawBeefTenderloin), "Filet de boeuf cru", 1, "You need more Raw Raw Beef Tenderloin");
 			////AddRecipe(index, (int)CookRecipesExp.BeefTenderloin);
 			SetNeedHeat(index, true);
-			index = AddCraft(typeof(GroundBeef), "Viandes", "Boeuf haché", 25.0, 60.0, typeof(BeefHock), "Jarret de boeuf", 1, 1044253);
+			index = AddCraft(typeof(GroundBeef), "Viandes", "Boeuf haché", 25.0, 60.0, typeof(RawRibs), "Jarret de boeuf", 1, 1044253);
 			////AddRecipe(index, (int)CookRecipesExp.GroundBeef);
 			#endregion
 

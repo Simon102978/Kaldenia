@@ -419,6 +419,7 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(Bottle), 1044250, 10, 1044253);
 			AddRes(index, typeof(BarrelLid), "Couvercle de baril", 1, 1044253);
 			AddRes(index, typeof(BarrelTap), "Robinet de baril", 1, 1044253);
+			index = AddCraft(typeof(Rope), "Assemblages", "Corde", 60.0, 120.0, typeof(Cloth), "Tissus", 10, "Vous avez besoin de plus de tissus");
 			index = AddCraft(typeof(HitchingRope), "Assemblages", "Corde d'attelage", 60.0, 120.0, typeof(Rope), "Corde", 1, 1044253);
 			index = AddCraft(typeof(HitchingPost), "Assemblages", "Poteau d'attelage", 90.0, 160.0, typeof(IronIngot), 1044036, 50, 1044253);
 			AddRes(index, typeof(HitchingRope), "Corde d'attelage", 2, 1044253);

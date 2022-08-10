@@ -518,9 +518,48 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
+	public class CulotteLeopard : BasePants
+
+	{
+		[Constructable]
+		public CulotteLeopard()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public CulotteLeopard(int hue)
+				: base(0xA415, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Culotte Leopard";
+		}
+
+		public CulotteLeopard(Serial serial)
+				: base(serial)
+
+		{
+		}
 
 
-	
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+
 
 
 

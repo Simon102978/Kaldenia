@@ -642,7 +642,77 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
-public class CheveuxLong6 : Hair
+
+	public class TresseLargeLongue : Hair
+
+	{
+		public TresseLargeLongue(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+		private TresseLargeLongue()
+				: this(0)
+
+		{
+		}
+
+		private TresseLargeLongue(int hue)
+				: base(0xA418, hue)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class TresseLargeCourte  : Hair
+
+	{
+		public TresseLargeCourte(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+		private TresseLargeCourte()
+				: this(0)
+
+		{
+		}
+
+		private TresseLargeCourte(int hue)
+				: base(0xA417, hue)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
+	public class CheveuxLong6 : Hair
 
 	{
 	public CheveuxLong6(Serial serial)

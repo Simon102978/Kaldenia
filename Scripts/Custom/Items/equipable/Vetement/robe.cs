@@ -199,7 +199,48 @@ public override void Deserialize(GenericReader reader)
 	int version = reader.ReadInt();
 }
     }
-public class RobeProvocante :  BaseOuterTorso
+
+	public class RobeMoulante : BaseOuterTorso
+
+	{
+		[Constructable]
+		public RobeMoulante()
+				: this(0)
+
+		{
+		}
+
+		[Constructable]
+		public RobeMoulante(int hue)
+				: base(41700, hue)
+
+		{
+			Weight = 2.0;
+			Name = "Robe Moulante";
+		}
+
+		public RobeMoulante(Serial serial)
+				: base(serial)
+
+		{
+		}
+
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+	public class RobeProvocante :  BaseOuterTorso
 
 	{
 	[Constructable]

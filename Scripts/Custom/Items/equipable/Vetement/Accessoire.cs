@@ -563,6 +563,117 @@ namespace Server.Items
 				int version = reader.ReadInt();
 			}
 		}
+
+	public class BandagesPieds : BaseWaist
+	{
+		[Constructable]
+		public BandagesPieds()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public BandagesPieds(int hue)
+				: base(0xA412, hue)
+		{
+			Weight = 2.0;
+			Name = "Bandages Pieds";
+		}
+
+		public BandagesPieds(Serial serial)
+				: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class BandagesBras : BaseWaist
+	{
+		[Constructable]
+		public BandagesBras()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public BandagesBras(int hue)
+				: base(0xA413, hue)
+		{
+			Weight = 2.0;
+			Name = "Bandages Bras";
+		}
+
+		public BandagesBras(Serial serial)
+				: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
+
+	public class BandagesTaille : BaseWaist
+	{
+		[Constructable]
+		public BandagesTaille()
+				: this(0)
+		{
+
+		}
+
+		[Constructable]
+		public BandagesTaille(int hue)
+				: base(0xA414, hue)
+		{
+			Weight = 2.0;
+			Name = "Bandages Taille";
+		}
+
+		public BandagesTaille(Serial serial)
+				: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+
+			writer.Write(0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+
+			int version = reader.ReadInt();
+		}
+	}
 	public class BourseCeinture :  BaseWaist
 		{
 

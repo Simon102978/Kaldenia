@@ -31,7 +31,7 @@ namespace Server.Mobiles
 	*/
 
 		};
-        public static int Hue = 0x501;// Paragon hue
+        public static int Hue = 0xB1B;// Paragon hue
 
         // Buffs
         public static double HitsBuff = 5.0;
@@ -62,8 +62,9 @@ namespace Server.Mobiles
             bc.Hits = bc.HitsMax;
             bc.Mana = bc.ManaMax;
             bc.Stam = bc.StamMax;
+			bc.Title = "Envoutée";
 
-            for (int i = 0; i < bc.Skills.Length; i++)
+			for (int i = 0; i < bc.Skills.Length; i++)
             {
                 Skill skill = bc.Skills[i];
 
@@ -112,7 +113,7 @@ namespace Server.Mobiles
             bc.Hits = bc.HitsMax;
             bc.Mana = bc.ManaMax;
             bc.Stam = bc.StamMax;
-			bc.Title = "Envoutée";
+			
 
             for (int i = 0; i < bc.Skills.Length; i++)
             {

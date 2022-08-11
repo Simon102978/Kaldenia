@@ -2110,7 +2110,7 @@ namespace Server.Multis
                     location = "unknown";
 
                 list.Add(1061112, Utility.FixHtml(houseName)); // House Name: ~1_val~
-                list.Add(1061113, owner); // Owner: ~1_val~
+               // list.Add(1061113, owner); // Owner: ~1_val~
                 list.Add(1061114, location); // Location: ~1_val~
             }
 

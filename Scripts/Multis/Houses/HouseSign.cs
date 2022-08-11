@@ -74,11 +74,11 @@ namespace Server.Multis
             base.GetProperties(list);
 
             list.Add(1061639, Utility.FixHtml(GetName())); // Name: ~1_NAME~
-            list.Add(1061640, (m_Owner == null || m_Owner.Owner == null) ? "nobody" : m_Owner.Owner.Name); // Owner: ~1_OWNER~
+            list.Add(1061640, (m_Owner == null || m_Owner.Owner == null) ? "Inhabitée" : "Habitée"); // Owner: ~1_OWNER~   m_Owner.Owner.Name)
 
-            if (m_Owner != null)
+			if (m_Owner != null)
             {
-                list.Add(m_Owner.Public ? 1061641 : 1061642); // This House is Open to the Public : This is a Private Home
+                list.Add(m_Owner.Public ? "Maison Publique" : "Maison Privée"); // This House is Open to the Public : This is a Private Home
 
                 m_GettingProperties = true;
                 DecayLevel level = m_Owner.DecayLevel;

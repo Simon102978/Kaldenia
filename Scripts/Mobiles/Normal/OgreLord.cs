@@ -6,7 +6,7 @@ namespace Server.Mobiles
 	{
         [Constructable]
         public OgreLord()
-            : base(AIType.AI_Melee, FightMode.Closest, 10, 2, 0.2, 0.4)
+            : base(AIType.AI_Melee, FightMode.Closest, 10,1, 0.2, 0.4)
         {
             Name = "Seigneur Ogre";
             Body = 83;

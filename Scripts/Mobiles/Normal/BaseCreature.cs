@@ -6108,7 +6108,18 @@ namespace Server.Mobiles
                 list.Add(1155480); // Ambusher
         }
 
-        public virtual double TreasureMapChance => TreasureMap.LootChance;
+		public override void GetProperties(ObjectPropertyList list)
+		{
+			base.GetProperties(list);
+
+			if (Title != "")
+			{
+				list.Add(1050045, Title); // ~1_PREFIX~~2_NAME~~3_SUFFIX~
+			}
+			
+		}
+
+		public virtual double TreasureMapChance => TreasureMap.LootChance;
         public virtual int TreasureMapLevel => -1;
 
         public virtual bool IgnoreYoungProtection => false;

@@ -51,8 +51,8 @@ public class BancMachineCoudre : CraftableFurniture
 		: base(serial)
 	{
 	}
-
-	public override void Serialize(GenericWriter writer)
+		public override int LabelNumber => 1015082;  // Wooden Throne
+		public override void Serialize(GenericWriter writer)
 	{
 		base.Serialize(writer);
 

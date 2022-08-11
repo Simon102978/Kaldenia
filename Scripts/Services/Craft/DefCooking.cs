@@ -122,6 +122,10 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(DriedOnions), "Dried Onions", 1, 1044253);
 			index = AddCraft(typeof(BagOfSugar), 1044495, "Sac de sucre", 0.0, 100.0, typeof(Sugarcane), "Canne à  sucre", 10, "Vous n'avez pas suffisament de canne à sucre");
 			SetNeedMill(index, true);
+			index = AddCraft(typeof(WheatWort), 1044495, "Levure", 0.0, 100.0, typeof(SackFlour), "Sac de Farine", 1, "Vous n'avez pas suffisament de sac de farine");
+			AddRes(index, typeof(Bottle), "Bouteille Vide", 1, 1044253);
+			AddRes(index, typeof(Pitcher), "Eau", 10, "Vous n'avez pas suffisament d'eau");
+
 
 			#endregion
 			#region Ingrédients humides

@@ -112,6 +112,7 @@ namespace Server.Mobiles
             bc.Hits = bc.HitsMax;
             bc.Mana = bc.ManaMax;
             bc.Stam = bc.StamMax;
+			bc.Title = "Envoutée";
 
             for (int i = 0; i < bc.Skills.Length; i++)
             {

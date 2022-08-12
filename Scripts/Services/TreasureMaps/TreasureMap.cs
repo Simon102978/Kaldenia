@@ -352,7 +352,7 @@ namespace Server.Items
         }
 
         [Constructable]
-        public TreasureMap(int level, Map map, bool eodon)
+        public TreasureMap(int level, Map map1, bool eodon)
         {
             Level = level;
             bool newSystem = TreasureMapInfo.NewSystem;
@@ -362,10 +362,15 @@ namespace Server.Items
                 AssignRandomPackage();
             }
 
-            if ((!newSystem && level == 7) || map == Map.Internal)
+
+			Map map = Map.Felucca;
+
+			if ((!newSystem && level == 7) || map == Map.Internal)
                 map = GetRandomMap();
 
-            Facet = map;
+			 map = Map.Felucca;
+
+			Facet = map;
             ChestLocation = GetRandomLocation(map, eodon);
 
             Width = 300;
@@ -1021,7 +1026,7 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-            writer.Write(3);
+            writer.Write(4);
 
             writer.Write((int)Package);
 
@@ -1047,6 +1052,7 @@ namespace Server.Items
 
             switch (version)
             {
+				case 4:
                 case 3:
                     {
                         Package = (TreasurePackage)reader.ReadInt();
@@ -1098,6 +1104,13 @@ namespace Server.Items
             {
                 NextReset = DateTime.UtcNow + ResetTime;
             }
+
+			if (version < 4 && Facet != Map.Felucca && !m_Completed)
+			{
+				Facet = Map.Felucca;
+				ChestLocation = GetRandomLocation(Facet, false);
+			}
+
         }
 
         private bool CheckYoung(Mobile from)

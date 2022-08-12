@@ -11650,9 +11650,12 @@ namespace Server
 		public virtual bool Criminal
 		{
 			get => m_Criminal;
-			set
+			set			
 			{
-				if (m_Criminal != value)
+				m_Criminal = false;
+
+
+			/*	if (m_Criminal != value)
 				{
 					m_Criminal = value;
 					Delta(MobileDelta.Noto);
@@ -11666,7 +11669,7 @@ namespace Server
 				else
 				{
 					StopCrimDelayTimer();
-				}
+				}*/
 			}
 		}
 

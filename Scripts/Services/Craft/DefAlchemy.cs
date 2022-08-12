@@ -242,62 +242,191 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(BlackPowder), 1095826, 1, 1044253);
             SetNeedWater(index, true);
 
-            // Strange Brew         
-            index = AddCraft(typeof(SmokeBomb), 1116353, 1030248, 90.0, 120.0, typeof(Eggs), 1044477, 1, 1044253);
+               
+            index = AddCraft(typeof(SmokeBomb), 1116351, 1030248, 90.0, 120.0, typeof(Eggs), 1044477, 1, 1044253);
             AddRes(index, typeof(Ginseng), 1044356, 3, 1044364);
 
-            AddCraft(typeof(HoveringWisp), 1116353, 1072881, 75.0, 125.0, typeof(SulfurousAsh), 1032686, 50, 1044253);
-
-            index = AddCraft(typeof(NaturalDye), 1116353, 1112136, 75.0, 100.0, typeof(GraveDust), 1112132, 10, 1044253);
-            SetItemHue(index, 2101);
-            SetRequireResTarget(index);
-
-			index = AddCraft(typeof(HairDye), 1116353, "Teinture à Cheveux", 75.0, 100.0, typeof(DyeTub), "Bac à teinture", 1, "Il vous faut un bac à teinture");
+      
+			index = AddCraft(typeof(HairDye), 1116351, "Teinture à Cheveux", 75.0, 100.0, typeof(DyeTub), "Bac à teinture", 1, "Il vous faut un bac à teinture");
 			AddRes(index, typeof(Charcoal), "Charbon", 5, "Vous n'avez pas suffisament de Charbon");
 
-			/*
-						index = AddCraft(typeof(NexusCore), 1116353, 1153501, 90.0, 120.0, typeof(MandrakeRoot), 1015013, 10, 1044253);
-						AddRes(index, typeof(SpidersSilk), 1015007, 10, 1044253);
-						AddRes(index, typeof(DarkSapphire), 1032690, 5, 1044253);
-						AddRes(index, typeof(CrushedGlass), 1113351, 5, 1044253);
-						ForceNonExceptional(index);
-			*/
-			// Ingrediants
-			/*          index = AddCraft(typeof(PlantPigment), 1044495, 1112132, 33.0, 83.0, typeof(PlantClippings), 1112131, 1, 1044253);
-					  AddRes(index, typeof(Bottle), 1023854, 1, 1044253);
-					  SetItemHue(index, 2101);
-					  SetRequireResTarget(index);
+			#region Teintures
 
-					  index = AddCraft(typeof(ColorFixative), 1044495, 1112135, 75.0, 100.0, typeof(SilverSerpentVenom), 1112173, 1, 1044253);
-					  AddRes(index, typeof(BaseBeverage), 1022503, 1, 1044253);
-					  SetBeverageType(index, BeverageType.Wine);
+			#region Teintures OR
+			index = AddCraft(typeof(OrSombreDyeTub), "Teintures", "Or Sombre", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(GoldIngot), "Lingot d'or", 2, "Vous n'avez pas suffisament de Lingot d'or");
 
-					  index = AddCraft(typeof(CrystalGranules), 1044495, 1112329, 75.0, 100.0, typeof(ShimmeringCrystals), 1075095, 1, 1044253);
-					  SetItemHue(index, 2625);
+			index = AddCraft(typeof(CitronAbrasifDyeTub), "Teintures", "Citron Abrasif", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(GoldIngot), "Lingot d'or", 2, "Vous n'avez pas suffisament de Lingot d'or");
 
-					  index = AddCraft(typeof(CrystalDust), 1044495, 1112328, 75.0, 100.0, typeof(CrystallineFragments), 1153988, 4, 1044253);
-					  SetItemHue(index, 2103);
+			index = AddCraft(typeof(OrDouxDyeTub), "Teintures", "Or Doux", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(GoldIngot), "Lingot d'or", 2, "Vous n'avez pas suffisament de Lingot d'or");
 
-					  index = AddCraft(typeof(SoftenedReeds), 1044495, 1112249, 75.0, 100.0, typeof(DryReeds), 1112248, 1, 1112250);
-					  AddRes(index, typeof(ScouringToxin), 1112292, 2, 1112326);
-					  SetRequireResTarget(index);
-					  SetRequiresBasketWeaving(index);
+			index = AddCraft(typeof(BeurreDouxDyeTub), "Teintures", "Beurre Doux", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(GoldIngot), "Lingot d'or", 2, "Vous n'avez pas suffisament de Lingot d'or");
+			#endregion
 
-					  index = AddCraft(typeof(VialOfVitriol), 1044495, 1113331, 90.0, 100.0, typeof(ParasiticPotion), 1072848, 1, 1113754);
-					  AddRes(index, typeof(Nightshade), 1044358, 30, 1044366);
-					  AddSkill(index, SkillName.Magery, 75.0, 100.0);
+			#region Teintures BRUNE
+			index = AddCraft(typeof(CafeBruleDyeTub), "Teintures", "Cafe Brûlé", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(CoffeeBean), "Grain de Café", 10, "Vous n'avez pas suffisament de Grains de Café");
 
-					  index = AddCraft(typeof(BottleIchor), 1044495, 1113361, 90.0, 100.0, typeof(DarkglowPotion), 1072849, 1, 1113755);
-					  AddRes(index, typeof(SpidersSilk), 1044360, 1, 1044368);
-					  AddSkill(index, SkillName.Magery, 75.0, 100.0);
+			index = AddCraft(typeof(RouilleDyeTub), "Teintures", "Rouille", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(CheveuxTroll), "Cheveux de Troll", 5, "Vous n'avez pas suffisament de Cheveux de Troll");
 
-					  index = AddCraft(typeof(Potash), 1044495, 1116319, 0.0, 50.0, typeof(Board), 1044041, 1, 1044253);
-					  SetNeedWater(index, true);
-					  SetUseAllRes(index, true);
+			index = AddCraft(typeof(BronzeDyeTub), "Teintures", "Bronze", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(BronzeIngot), "Lingot de Bronze", 2, "Vous n'avez pas suffisament de Lingot de Bronze");
 
-					  index = AddCraft(typeof(GoldDust), 1044495, "Poudre d'or", 90.0, 120.0, typeof(Gold), 3000083, 1000, 1150747);
-					  ForceNonExceptional(index);
-			*/
+			index = AddCraft(typeof(CuivreDyeTub), "Teintures", "Cuivre", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(CopperIngot), "Lingot de Cuivre", 2, "Vous n'avez pas suffisament de Lingot de Cuivre");
+			#endregion
+
+			#region Teintures Rouge
+			index = AddCraft(typeof(RougeSanguinDyeTub), "Teintures", "Rouge Sanguin", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(PattesLapin), "Patte de Lapins", 5, "Vous n'avez pas suffisament de Pattes de Lapin");
+
+			index = AddCraft(typeof(BordeauDyeTub), "Teintures", "Bordeau", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(BaseBeverage), 1022503, 1, 1044253);
+		    SetBeverageType(index, BeverageType.Wine);
+
+			index = AddCraft(typeof(CorailDyeTub), "Teintures", "Corail", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(DentRequin), "Dent de Requin", 2, "Vous n'avez pas suffisament de Dent de Requin");
+
+			index = AddCraft(typeof(RougeObscureDyeTub), "Teintures", "Rouge Obscure", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(CerveauSpectre), "Cerveau de Spectre", 2, "Vous n'avez pas suffisament de Cerveau de Spectre");
+			#endregion
+
+			#region Teintures Bleu
+			index = AddCraft(typeof(BleuGlacierDyeTub), "Teintures", "Bleu Glacier", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(CheveuxGeant), "Cheveux de Géant", 5, "Vous n'avez pas suffisament de Cheveux de Géant");
+
+			index = AddCraft(typeof(BleuProfondDyeTub), "Teintures", "Bleu Profond", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(Blueberry), "Bleuets", 10, "Vous n'avez pas suffisament de Bleuets");
+			
+
+			index = AddCraft(typeof(BleuCielDyeTub), "Teintures", "Bleu Ciel", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(CerveauLiche), "Cerveau de Liche", 2, "Vous n'avez pas suffisament de Cerveaux de Liche");
+
+			index = AddCraft(typeof(BleuSombreDyeTub), "Teintures", "Bleu Sombre", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(MytherilIngot), "Lingot de Mytheril", 2, "Vous n'avez pas suffisament de Lingot de Mytheril");
+			#endregion
+
+			#region Teintures Verte
+			index = AddCraft(typeof(VertSombreDyeTub), "Teintures", "Vert Sombre", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(EcorceArbreGeant), "Ecorce d'arbre maudit", 5, "Vous n'avez pas suffisament d'écorce d'arbre maudit");
+
+			index = AddCraft(typeof(VertOliveDyeTub), "Teintures", "Vert Olive", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(Peas), "Pois", 10, "Vous n'avez pas suffisament de Pois");
+
+
+			index = AddCraft(typeof(VertPrintanierDyeTub), "Teintures", "Vert Printanier", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(VeriteIngot), "Lingot de Vérite", 2, "Vous n'avez pas suffisament de Lingot de Vérite");
+
+			index = AddCraft(typeof(VertIridescentDyeTub), "Teintures", "Vert Iridescent", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(VeninTarenlune), "Venin de Tarenlune", 2, "Vous n'avez pas suffisament de Venin de Tarenlune");
+			#endregion
+
+			#region Teintures TURQUOISE 
+			index = AddCraft(typeof(TurquoisePlumePaon), "Teintures", "Plume de Paon", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(EcorceArbreGeant), "Ecorce d'arbre Géant", 5, "Vous n'avez pas suffisament d'écorce d'arbre Géant");
+
+			index = AddCraft(typeof(TurquoiseDyeTub), "Teintures", "Turquoise", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(VeninAraigneeGeante), "Venin d'araignée Géante", 5, "Vous n'avez pas suffisament de Venin d'araignée géante");
+
+
+			index = AddCraft(typeof(EcaillePoissonDyeTub), "Teintures", "Ecaille de Poisson", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(RawFishSteak), "Morceaux de Poisson cru", 2, "Vous n'avez pas suffisament de Poisson cru");
+
+			index = AddCraft(typeof(AquaMarineDyeTub), "Teintures", "Aqua Marine", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(Sapphire), "Un Saphir", 2, "Vous n'avez pas suffisament de Saphir");
+			#endregion
+
+			#region Teintures Mauve 
+			index = AddCraft(typeof(MauveIndigoDyeTub), "Teintures", "Mauve Indigo", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(PoilsLoup), "Poils de Loup", 5, "Vous n'avez pas suffisament de poils de Loup");
+
+			index = AddCraft(typeof(RosePerleDyeTub), "Teintures", "Rose Perle", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(RedRose), "Rose Rouge", 5, "Vous n'avez pas suffisament de Venin de Rose Rouge");
+
+
+			index = AddCraft(typeof(PruneDyeTub), "Teintures", "Prune", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(PattesPanthere), "Pattes de Panthère", 2, "Vous n'avez pas suffisament de Patte de Panthère");
+
+			index = AddCraft(typeof(MauveVelourDyeTub), "Teintures", "Mauve Velour", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(Amethyst), "Une Améthyste", 2, "Vous n'avez pas suffisament d'améthyste");
+			#endregion
+
+			#region Teintures NEUTRE
+			index = AddCraft(typeof(GrisAntraciteDyeTub), "Teintures", "Gris Antracite", 25.0, 50.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(PlumesHarpie), "Plumes de Harpie", 5, "Vous n'avez pas suffisament de Plumes de Harpie");
+
+			index = AddCraft(typeof(GrisArgenteDyeTub), "Teintures", "Gris Argenté", 50.0, 75.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(OeufPierre), "Oeuf de Pierre", 2, "Vous n'avez pas suffisament d'oeuf de Pierre");
+
+
+			index = AddCraft(typeof(NoirDyeTub), "Teintures", "Noir", 65.0, 85.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(Charcoal), "Charbon", 5, "Vous n'avez pas suffisament de Charbon");
+
+			index = AddCraft(typeof(BlancDyeTub), "Teintures", "Blanc", 80, 100.0, typeof(DyeTub), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
+			AddRes(index, typeof(PlumesAigle), "Plumes d'aigles", 10, "Vous n'avez pas suffisament de plumes d'aigle");
+			#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			#endregion
 		}
 	}
 }

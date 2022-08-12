@@ -143,6 +143,7 @@ namespace Server.Engines.Craft
 			int index = -1;
 
 			// Divers
+			index = AddCraft(typeof(BacVide), "Divers", "Bac Vide", 00.0, 25.0, typeof(Board), 1044041, 3, 1044351);
 			index = AddCraft(typeof(BarrelStaves), "Divers", "Douves de baril", 00.0, 25.0, typeof(Board), 1044041, 5, 1044351);
 			index = AddCraft(typeof(BarrelLid), "Divers", "Couvercle de baril", 11.0, 36.0, typeof(Board), 1044041, 4, 1044351);
 			index = AddCraft(typeof(Keg), "Divers", "Tonnelet", 57.8, 82.8, typeof(BarrelStaves), "Douves de baril", 3, 1044253);

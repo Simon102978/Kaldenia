@@ -462,7 +462,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(SpinningwheelEastDeed), "Grands outils", "Rouet (E)", 73.6, 98.6, typeof(Board), 1044041, 75, 1044351);
 			AddSkill(index, SkillName.Tailoring, 65.0, 70.0);
 			AddRes(index, typeof(Cloth), 1044286, 25, 1044287);
-			index = AddCraft(typeof(SpinningwheelSouthDeed), "Grands outils", "Rouet (E)", 73.6, 98.6, typeof(Board), 1044041, 75, 1044351);
+			index = AddCraft(typeof(SpinningwheelSouthDeed), "Grands outils", "Rouet (S)", 73.6, 98.6, typeof(Board), 1044041, 75, 1044351);
 			AddSkill(index, SkillName.Tailoring, 65.0, 70.0);
 			AddRes(index, typeof(Cloth), 1044286, 25, 1044287);
 			index = AddCraft(typeof(ElvenSpinningwheelEastDeed), "Grands outils", "Rouet élégant (E)", 75.0, 100.0, typeof(Board), 1044041, 60, 1044351);

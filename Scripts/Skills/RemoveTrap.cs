@@ -65,21 +65,24 @@ namespace Server.SkillHandlers
                     {
                         TreasureMapChest tChest = (TreasureMapChest)targ;
 
-                        if (tChest.Owner != from)
+                     /*   if (tChest.Owner != from)
                         {
                             from.SendLocalizedMessage(1159010); // That is not your chest!
                         }
-                        else if (IsDisarming(from, tChest))
+                        else*/ if (IsDisarming(from, tChest))
                         {
+							from.SendMessage("Vous etes entrain de désarmorcer le piège.");
                             from.SendLocalizedMessage(1159059); // You are already manipulating the trigger mechanism...
                         }
                         else if (IsBeingDisarmed(tChest))
                         {
-                            from.SendLocalizedMessage(1159063); // That trap is already being disarmed.
+							from.SendMessage("Le piège est déjà désarmorcé.");
+                       //     from.SendLocalizedMessage(1159063); // That trap is already being disarmed.
                         }
                         else if (tChest.AncientGuardians.Any(g => !g.Deleted))
                         {
-                            from.PrivateOverheadMessage(MessageType.Regular, 1150, 1159060, from.NetState); // *Your attempt fails as the the mechanism jams and you are attacked by an Ancient Chest Guardian!*
+							from.SendMessage("Veuillez tuer les gardiens du coffre.");
+                  //          from.PrivateOverheadMessage(MessageType.Regular, 1150, 1159060, from.NetState); // *Your attempt fails as the the mechanism jams and you are attacked by an Ancient Chest Guardian!*
                         }
                         else
                         {
@@ -287,12 +290,14 @@ namespace Server.SkillHandlers
             }
             if (!From.Alive)
             {
-                From.SendLocalizedMessage(1159061); // Your ghostly fingers cannot manipulate the mechanism...
+				From.SendMessage("Vous devez être vivant pour désarmocer un piège.");
+           //     From.SendLocalizedMessage(1159061); // Your ghostly fingers cannot manipulate the mechanism...
                 RemoveTrap.EndChestDisarmTimer(From);
             }
             else if (!From.InRange(Chest.GetWorldLocation(), 16) || Chest.Deleted)
             {
-                From.SendLocalizedMessage(1159058); // You are too far away from the chest to manipulate the trigger mechanism.
+				From.SendMessage("Vous êtes trop loins pour désarmocer le piège.");
+             //   From.SendLocalizedMessage(1159058); // You are too far away from the chest to manipulate the trigger mechanism.
                 RemoveTrap.EndChestDisarmTimer(From);
             }
             else if (GMRemover)

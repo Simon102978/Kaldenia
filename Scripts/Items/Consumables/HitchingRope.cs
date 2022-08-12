@@ -73,7 +73,7 @@ namespace Server.Items
                     {
                         from.SendMessage("Hitching Rope cannot be applied at this time.", 0x59);
                     }
-                    else if (postItem.Replica && postItem.Charges <= 0 && postItem.UsesRemaining == 0)
+                    else if (/*postItem.Replica */ postItem.Charges <= 0 && postItem.UsesRemaining == 0)
                     {
                         from.SendLocalizedMessage(1071157); // This hitching post is damaged. You can't use it any longer.
                     }

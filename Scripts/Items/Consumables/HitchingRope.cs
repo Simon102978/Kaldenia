@@ -65,7 +65,7 @@ namespace Server.Items
                 {
                     from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
                 }
-                else if (targeted is HitchingPost)
+                else if (targeted is HitchingPost )
                 {
                     HitchingPost postItem = (HitchingPost)targeted;
 

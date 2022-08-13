@@ -97,6 +97,9 @@ namespace Server.Engines.Craft
 
 			index = AddCraft( typeof( BlankCandle ), "Resources", "Blank Candle", 50.0, 80.0, typeof( Beeswax ), "Wax", 2, "You dont have enough wax" );
 			SetNeedHeat( index, true );
+
+			index = AddCraft(typeof(CandleFitSkull), "Resources", "Chandelle en forme de Crâne", 50.0, 80.0, typeof(Beeswax), "Wax", 4, "You dont have enough wax");
+			SetNeedHeat(index, true);
 			/* End Ressources */
 
 			/* Begin Candles */
@@ -125,7 +128,7 @@ namespace Server.Engines.Craft
 
 			index = AddCraft( typeof( CandleOfLove ), "Candles", "candle of love", 100.0, 100.0, typeof( BlankCandle ), "Blank Candle", 1, "You need a blank candle" );
 			AddRes( index, typeof( CandleWick ), "Candle Wick", 1, "You need a candle wick" );
-			AddRes( index, typeof( EssenceOfLove ), "Essence Of Love", 1, "You need essence of love" );
+			
 			SetNeedHeat( index, true );
 			/* End Candles */
 

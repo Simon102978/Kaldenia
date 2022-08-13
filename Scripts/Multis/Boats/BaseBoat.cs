@@ -1011,9 +1011,14 @@ namespace Server.Multis
 			{
 
 
-				if (m_Stuck)
+				if (Stuck)
 				{
 					cm.SendMessage("Le bateau est pris, vous ne pouvez pas le déplacer.");
+					return false;
+				}
+				else if (cm.Hidden)
+				{
+					cm.SendMessage("Vous ne pouvez pas commander le bateau en étant caché.");
 					return false;
 				}
 

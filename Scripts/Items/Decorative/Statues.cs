@@ -1,7 +1,7 @@
 namespace Server.Items
 {
-    public class StatueSouth : Item
-    {
+    public class StatueSouth : Statue
+	{
         [Constructable]
         public StatueSouth()
             : base(0x139A)
@@ -58,8 +58,8 @@ namespace Server.Items
         }
     }
 
-    public class StatueNorth : Item
-    {
+    public class StatueNorth : Statue
+	{
         [Constructable]
         public StatueNorth()
             : base(0x139B)
@@ -116,8 +116,8 @@ namespace Server.Items
         }
     }
 
-    public class StatueEast : Item
-    {
+    public class StatueEast : Statue
+	{
         [Constructable]
         public StatueEast()
             : base(0x139C)
@@ -262,8 +262,8 @@ namespace Server.Items
     }
 
     [TypeAlias("Server.Items.StatuePegasus")]
-    public class StatuePegasusSouth : Item
-    {
+    public class StatuePegasusSouth : Statue
+	{
         public override int LabelNumber => 1044510;  // pegasus statuette
 
         [Constructable]
@@ -353,8 +353,8 @@ namespace Server.Items
     }
 
     [Flipable(0x494E, 0x494D)]
-    public class StatueGargoyleEast : Item
-    {
+    public class StatueGargoyleEast : Statue
+	{
         [Constructable]
         public StatueGargoyleEast()
             : base(0x494E)
@@ -413,8 +413,8 @@ namespace Server.Items
     }
 
     [Flipable(0x493C, 0x493B)]
-    public class StatueGryphonEast : Item
-    {
+    public class StatueGryphonEast : Statue
+	{
         [Constructable]
         public StatueGryphonEast()
             : base(0x493C)
@@ -442,7 +442,7 @@ namespace Server.Items
         }
     }
 	[Flipable(0x998C, 0x998D)]
-	public class StatueLion : Item
+	public class StatueLion : Statue
 	{
 		[Constructable]
 		public StatueLion()
@@ -472,7 +472,7 @@ namespace Server.Items
 		}
 	}
 	[Flipable(0x9994, 0x9995)]
-	public class StatueEgypt : Item
+	public class StatueEgypt : Statue
 	{
 		[Constructable]
 		public StatueEgypt()
@@ -502,7 +502,7 @@ namespace Server.Items
 		}
 	}
 	[Flipable(0x99AF, 0x99B0)]
-	public class StatueAnge : Item
+	public class StatueAnge : Statue
 	{
 		[Constructable]
 		public StatueAnge()
@@ -532,7 +532,7 @@ namespace Server.Items
 		}
 	}
 	[Flipable(0x99B1, 0x99B2)]
-	public class StatueSirene : Item
+	public class StatueSirene : Statue
 	{
 		[Constructable]
 		public StatueSirene()
@@ -562,7 +562,7 @@ namespace Server.Items
 		}
 	}
 	[Flipable(0x9A05, 0x9A06)]
-	public class 	StatueEgypOr : Item
+	public class 	StatueEgypOr : Statue
 	{
 		[Constructable]
 		public StatueEgypOr()
@@ -592,7 +592,7 @@ namespace Server.Items
 		}
 	}
 
-	public class ColoneMarbre : Item
+	public class ColoneMarbre : Statue
 	{
 		[Constructable]
 		public ColoneMarbre()

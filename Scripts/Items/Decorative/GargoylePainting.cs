@@ -1,8 +1,8 @@
 namespace Server.Items
 {
     [Flipable(0x403D, 0x403E)]
-    public class GargoylePainting : Item
-    {
+    public class GargoylePainting : Statue
+	{
         [Constructable]
         public GargoylePainting()
             : base(0x403D)

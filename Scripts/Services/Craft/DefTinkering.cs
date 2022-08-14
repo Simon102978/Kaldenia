@@ -102,12 +102,12 @@ namespace Server.Engines.Craft
 			typeof(Goblet), typeof(PewterMug),
 			typeof(KeyRing),
 			typeof(Candelabra), typeof(Scales),
-			typeof(Key), typeof(Globe),
+			typeof(Key), typeof(Globe), typeof(Eventail),
 			typeof(Spyglass), typeof(Lantern),
 			typeof(HeatingStand), typeof(BroadcastCrystal), typeof(TerMurStyleCandelabra),
 			typeof(GorgonLense), typeof(MedusaLightScales), typeof(MedusaDarkScales), typeof(RedScales),
 			typeof(BlueScales), typeof(BlackScales), typeof(GreenScales), typeof(YellowScales), typeof(WhiteScales),
-			typeof(PlantPigment), typeof(Kindling), typeof(DryReeds), typeof(PlantClippings),
+			typeof(PlantPigment), typeof(Kindling), typeof(DryReeds), typeof(PlantClippings), 
 
 			typeof(KotlAutomatonHead)
 		};

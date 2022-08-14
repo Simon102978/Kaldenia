@@ -67,7 +67,7 @@ namespace Server.Items
         public OrigamiButterfly()
             : base(0x2838)
         {
-            LootType = LootType.Blessed;
+			Name = "Papillon de cire";
         }
 
         public OrigamiButterfly(Serial serial)
@@ -97,7 +97,7 @@ namespace Server.Items
         public OrigamiSwan()
             : base(0x2839)
         {
-            LootType = LootType.Blessed;
+			Name = "Un Cygne de Cire";
         }
 
         public OrigamiSwan(Serial serial)
@@ -127,7 +127,7 @@ namespace Server.Items
         public OrigamiFrog()
             : base(0x283A)
         {
-            LootType = LootType.Blessed;
+			Name = "Une Grenouille de Cire";
         }
 
         public OrigamiFrog(Serial serial)
@@ -157,7 +157,7 @@ namespace Server.Items
         public OrigamiShape()
             : base(0x283B)
         {
-            LootType = LootType.Blessed;
+			Name = "Une forme de Cire";
         }
 
         public OrigamiShape(Serial serial)
@@ -187,7 +187,7 @@ namespace Server.Items
         public OrigamiSongbird()
             : base(0x283C)
         {
-            LootType = LootType.Blessed;
+			Name = "Un Oiseau de Cire";
         }
 
         public OrigamiSongbird(Serial serial)
@@ -217,7 +217,7 @@ namespace Server.Items
         public OrigamiFish()
             : base(0x283D)
         {
-            LootType = LootType.Blessed;
+			Name = "Un poisson de Cire";
         }
 
         public OrigamiFish(Serial serial)
@@ -250,9 +250,9 @@ namespace Server.Items
             : base(0x4B1C)
         {
 
-            Name = "a delicate origami dragon";
+			Name = "Un Dragon de Cire";
             Weight = 1.0;
-            LootType = LootType.Blessed;
+          
         }
 
         public OrigamiDragon(Serial serial)
@@ -284,9 +284,9 @@ namespace Server.Items
         public OrigamiBunny()
             : base(0x4B1F)
         {
-            Name = "a delicate origami bunny";
+			Name = "Un Lapin de Cire";
             Weight = 1.0;
-            LootType = LootType.Blessed;
+            
         }
 
         public OrigamiBunny(Serial serial)

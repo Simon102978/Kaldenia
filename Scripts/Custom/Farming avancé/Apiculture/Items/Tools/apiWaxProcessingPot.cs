@@ -221,7 +221,7 @@ namespace Server.Items
 
 			//labels
 			AddLabel(76 , 71 , 1153, "Fabrication de cire");
-			AddLabel(76 , 40 , 1153, "Ajouter de la cire brute");
+			AddLabel(76 , 40 , 1153, "Ajouter cire brute");
 			AddLabel(76 , 101, 1153, "Pot Vide");
 			AddLabel(331, 110, 1153, "?");
 

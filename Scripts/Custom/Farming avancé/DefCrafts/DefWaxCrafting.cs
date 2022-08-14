@@ -145,31 +145,31 @@ namespace Server.Engines.Craft
 			index = AddCraft( typeof( RawWaxBust ), "Decorative", "Raw Wax Bust", 50.0, 80.0, typeof( Beeswax ), "Wax", 4, "You dont have enough wax" );
 			SetNeedHeat( index, true );
 
-            index = AddCraft(typeof(JesterMaskEast), "Decorative", "Jester's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+			index = AddCraft(typeof(OrigamiButterfly), "Decorative", "Un Papillon de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(JesterMaskSouth), "Decorative", "Jester's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            index = AddCraft(typeof(OrigamiSwan), "Decorative", "Un Cygne de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(ClownMaskEast), "Decorative", "Clown's Mask ", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            index = AddCraft(typeof(OrigamiFrog), "Decorative", "Une Grenouille de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(ClownMaskSouth), "Decorative", "Clown's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            index = AddCraft(typeof(OrigamiShape), "Decorative", "Une forme de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(DaemonMaskEast), "Decorative", "Daemon's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            index = AddCraft(typeof(OrigamiSongbird), "Decorative", "Un Oiseau de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(DaemonMaskSouth), "Decorative", "Daemon's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            index = AddCraft(typeof(OrigamiFish), "Decorative", "Un Poisson de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(PlagueMaskEast), "Decorative", "Plague's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            index = AddCraft(typeof(OrigamiDragon), "Decorative", "Un Dragon de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
             SetNeedHeat(index, true);
 
-            index = AddCraft(typeof(PlagueMaskSouth), "Decorative", "Plague's Mask", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
-            SetNeedHeat(index, true);
+            index = AddCraft(typeof(OrigamiBunny), "Decorative", "Un Lapin de Cire", 75.0, 115.0, typeof(Beeswax), "Wax", 15, "You dont have enough wax");
+            SetNeedHeat(index, true); 
 
-            index = AddCraft(typeof(WaxUOVase), "Decorative", "UO Vase", 75.0, 115.0, typeof(Beeswax), "Wax", 20, "You dont have enough wax");
+			index = AddCraft(typeof(WaxUOVase), "Decorative", "UO Vase", 75.0, 115.0, typeof(Beeswax), "Wax", 20, "You dont have enough wax");
             SetNeedHeat(index, true);
 
             index = AddCraft(typeof(PotOfMoltenGold), "Decorative", "Pot Of Molten Gold", 75.0, 115.0, typeof(Beeswax), "Wax", 30, "You dont have enough wax");

@@ -36,6 +36,12 @@ namespace Server.Items
 			{
 				Item package = (Item)cp.Backpack.FindItemByType(typeof(Server.Items.Corde));
 
+				if (package == null)
+				{
+					package = (Item)cp.Backpack.FindItemByType(typeof(Server.Items.Rope));
+				}
+
+
 				if (package != null)
 				{
 					CustomGate firstGate = new CustomGate(ToLocation, ToMap);

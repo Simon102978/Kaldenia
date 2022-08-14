@@ -31,7 +31,7 @@ namespace Server.Spells.SkillMasteries
             if (from.Player && from.Skills.CurrentMastery != MoveSkill)
             {
                 from.SendLocalizedMessage(1115664); // You are not on the correct path for using this mastery ability.
-                return true;
+                return false;
             }
 
             return base.Validate(from);

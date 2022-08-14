@@ -138,12 +138,13 @@ namespace Server.Items
 
 	public class 	AnneauxCombat : BaseKatar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
-		public override int StrengthReq => 40;
-		public override int MinDamage => 14;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.PsychicAttack;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.BleedAttack;
+		public override int StrengthReq => 35;
+		public override int MinDamage => 12;
 		public override int MaxDamage => 15;
-		public override float Speed => 2.75f;
+		public override float Speed => 2.50f;
+
 		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 45;
@@ -181,12 +182,14 @@ namespace Server.Items
 
 	public class GriffesCombat  : BaseKatar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
+
+
+		public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
 		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
-		public override int StrengthReq => 40;
-		public override int MinDamage => 13;
-		public override int MaxDamage => 16;
-		public override float Speed => 2.75f;
+		public override int StrengthReq => 10;
+		public override int MinDamage => 10;
+		public override int MaxDamage => 14;
+		public override float Speed => 2.50f;
 		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 45;
@@ -224,12 +227,12 @@ namespace Server.Items
 
 	public class 	KamaKuya : BaseKatar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
-		public override int StrengthReq => 40;
-		public override int MinDamage => 13;
-		public override int MaxDamage => 16;
-		public override float Speed => 2.75f;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorPierce;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
+		public override int StrengthReq => 10;
+		public override int MinDamage => 10;
+		public override int MaxDamage => 14;
+		public override float Speed => 2.50f;
 		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 45;
@@ -267,12 +270,13 @@ namespace Server.Items
 
 	public class 	LameCirculaire  : BaseKatar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
+
+		public override WeaponAbility PrimaryAbility => WeaponAbility.CrushingBlow;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DualWield;
 		public override int StrengthReq => 40;
-		public override int MinDamage => 14;
-		public override int MaxDamage => 14;
-		public override float Speed => 2.75f;
+		public override int MinDamage => 16;
+		public override int MaxDamage => 19;
+		public override float Speed => 3.50f;
 		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 45;
@@ -310,12 +314,12 @@ namespace Server.Items
 
 	public class Kama1 : BaseKatar
 	{
-		public override WeaponAbility PrimaryAbility => WeaponAbility.Feint;
-		public override WeaponAbility SecondaryAbility => WeaponAbility.DoubleStrike;
-		public override int StrengthReq => 40;
+		public override WeaponAbility PrimaryAbility => WeaponAbility.Bladeweave;
+		public override WeaponAbility SecondaryAbility => WeaponAbility.DefenseMastery;
+		public override int StrengthReq => 10;
 		public override int MinDamage => 10;
-		public override int MaxDamage => 18;
-		public override float Speed => 2.75f;
+		public override int MaxDamage => 12;
+		public override float Speed => 2.00f;
 		public override int DefHitSound => 0x23B;
 		public override int DefMissSound => 0x23A;
 		public override int InitMinHits => 45;

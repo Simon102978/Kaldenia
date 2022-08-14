@@ -411,7 +411,7 @@ namespace Server.Items
 	}
 
 	[Furniture]
-	[Flipable(0x9984, 0x9986)]
+	[Flipable(0x9984, 0x9985)]
 	public class BibliothequeLuxe2 : FurnitureContainer
 	{
 		[Constructable]

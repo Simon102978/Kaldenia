@@ -11,7 +11,7 @@ namespace Server.Items
 		public Cherry( int amount ) : base( amount, 0x9D1 )
 		{
 			FillFactor = 2;
-			Hue = 0x85;
+			Hue = 2802;
 			Name = "Cherry";
 			Weight = 0.1;
 		}

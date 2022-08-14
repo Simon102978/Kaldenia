@@ -44,8 +44,13 @@ namespace Server.Gumps
             new DoorInfo(typeof(SecretStoneDoor2), 0x324),
             new DoorInfo(typeof(SecretWoodenDoor), 0x334),
             new DoorInfo(typeof(SecretLightWoodDoor), 0x344),
-            new DoorInfo(typeof(SecretStoneDoor3), 0x354)
-        };
+            new DoorInfo(typeof(SecretStoneDoor3), 0x354),
+		    new DoorInfo(typeof(CustomMetalDoor), 0x675),
+			new DoorInfo(typeof(CustomDarkWoodDoor), 0x6A5),
+			new DoorInfo(typeof(CustomLightWoodDoor), 0x6D5),
+			new DoorInfo(typeof(CustomStrongWoodDoor), 0x6E5),
+			new DoorInfo(typeof(CustomBarredMetalDoor2), 0x1FED),
+		};
         private readonly int m_Type;
         public AddDoorGump()
             : this(-1)
@@ -84,6 +89,7 @@ namespace Server.Gumps
                 AddBlueBack(570, 165);
 
                 int pages = m_Types.Length / 10 + 1;
+
                 for (int i = 0; i < m_Types.Length; ++i)
                 {
                     int page = i / 10 + 1;

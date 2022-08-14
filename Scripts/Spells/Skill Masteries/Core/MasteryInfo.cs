@@ -45,7 +45,7 @@ namespace Server.Spells.SkillMasteries
             Infos.Add(new MasteryInfo(typeof(TribulationSpell), 704, SkillName.Discordance));
             Infos.Add(new MasteryInfo(typeof(DespairSpell), 705, SkillName.Discordance));
 
-            Infos.Add(new MasteryInfo(typeof(DeathRaySpell), 706, SkillName.Magery));
+       /*     Infos.Add(new MasteryInfo(typeof(DeathRaySpell), 706, SkillName.Magery));
             Infos.Add(new MasteryInfo(typeof(EtherealBurstSpell), 707, SkillName.Magery));
 
             Infos.Add(new MasteryInfo(typeof(NetherBlastSpell), 708, SkillName.Mysticism));
@@ -114,6 +114,8 @@ namespace Server.Spells.SkillMasteries
             Infos.Add(new MasteryInfo(null, 738, SkillName.Poisoning, PassiveSpell.Potency));         // Potency
             Infos.Add(new MasteryInfo(null, 741, SkillName.Wrestling, PassiveSpell.Knockout));         // Knockout
             Infos.Add(new MasteryInfo(null, 744, SkillName.AnimalTaming, PassiveSpell.Boarding));      // Boarding
+
+		*/
         }
 
         public static List<MasteryInfo> Infos { get; set; }
@@ -424,7 +426,7 @@ namespace Server.Spells.SkillMasteries
                 case SkillName.Discordance: return 1151945;
                 case SkillName.Provocation: return 1151946;
                 case SkillName.Peacemaking: return 1151947;
-                case SkillName.Magery: return 1155771;
+            /*    case SkillName.Magery: return 1155771;
                 case SkillName.Mysticism: return 1155772;
                 case SkillName.Necromancy: return 1155773;
                 case SkillName.Spellweaving: return 1155774;
@@ -440,6 +442,8 @@ namespace Server.Spells.SkillMasteries
                 case SkillName.Poisoning: return 1155783;
                 case SkillName.Wrestling: return 1155784;
                 case SkillName.AnimalTaming: return 1155785;
+
+					*/
             }
         }
 
@@ -555,7 +559,7 @@ namespace Server.Spells.SkillMasteries
             SkillName.Peacemaking,
             SkillName.Provocation,
             SkillName.Discordance,
-            SkillName.Magery,
+        /*    SkillName.Magery,
             SkillName.Mysticism,
             SkillName.Necromancy,
             SkillName.Spellweaving,
@@ -571,6 +575,8 @@ namespace Server.Spells.SkillMasteries
             SkillName.Wrestling,
             SkillName.AnimalTaming,
             SkillName.Archery
+
+		*/
         };
 
         private static readonly int[] _Descriptions =

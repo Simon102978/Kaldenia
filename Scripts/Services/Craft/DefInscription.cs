@@ -888,6 +888,8 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(NewSpellbook), "Autres", "Livre de sort", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
 
+			index = AddCraft(typeof(BookOfMasteries), "Autres", "Livre de Barde", 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
+
 			index = AddCraft(typeof(LivreArcher), "Livre de Classe", "livre d'archer", 90.0, 120, typeof(BlankScroll), 1044377, 10, 1044378);
 			AddRes(index, typeof(DragonBlood), "DragonBlood", 10, "Vous n'avez pas assez de DragonBlood.");
 

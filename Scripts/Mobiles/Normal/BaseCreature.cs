@@ -1127,7 +1127,7 @@ namespace Server.Mobiles
 		}
 
 		public virtual uint TraitsGiven(uint atLevel) { return (atLevel == 10) ? (uint)3 : (uint)1; }
-		public string SexString { get { return (Female ? "Femelle" : "M�le"); } }
+		public string SexString { get { return (Female ? "Femelle" : "Male"); } }
 		public JakoAttributes m_jakoAttributes = new JakoAttributes();
 
 

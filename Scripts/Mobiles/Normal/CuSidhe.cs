@@ -56,7 +56,7 @@ namespace Server.Mobiles
 
             Tamable = true;
             ControlSlots = 3;
-            MinTameSkill = 90.0;
+            MinTameSkill = 85.0;
 
             SetWeaponAbility(WeaponAbility.BleedAttack);
         }

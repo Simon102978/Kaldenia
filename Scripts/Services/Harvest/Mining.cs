@@ -176,18 +176,24 @@ namespace Server.Engines.Harvest
 
             res = new HarvestResource[]
             {
-                new HarvestResource(50.0, 50.0, 100.0, 1044631, typeof(Sand))
-            };
+                new HarvestResource(50.0, 50.0, 100.0, 1044631, typeof(Sand)),
+   			 new HarvestResource(50.0, 50.0, 100.0, 1044631, typeof(CoquilleDoree)),
+				
+			};
 
             veins = new HarvestVein[]
             {
-                new HarvestVein(100.0, 0.0, res[0], null)
-            };
+                new HarvestVein(100.0, 0.0, res[0], null),
+				
+
+			};
 
             sand.Resources = res;
+
             sand.Veins = veins;
 
             Definitions.Add(sand);
+			
             #endregion
 
             

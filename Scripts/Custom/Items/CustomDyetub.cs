@@ -395,7 +395,7 @@ namespace Server.Items
 		[Constructable]
 		public BleuProfondDyeTub()
 		{
-			Hue = DyedHue = 0x0001;
+			Hue = DyedHue = 1199;
 			Redyable = false;
 			Charges = 5;
 			Name = "Teinture Bleu Profond";

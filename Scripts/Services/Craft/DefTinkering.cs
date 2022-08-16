@@ -98,7 +98,7 @@ namespace Server.Engines.Craft
 			typeof(ForkLeft), typeof(ForkRight),
 			typeof(SpoonLeft), typeof(SpoonRight),
 			typeof(KnifeLeft), typeof(KnifeRight),
-			typeof(Plate),
+			typeof(Plate), typeof(Eventail),
 			typeof(Goblet), typeof(PewterMug),
 			typeof(KeyRing),
 			typeof(Candelabra), typeof(Scales),
@@ -125,6 +125,9 @@ namespace Server.Engines.Craft
 
 			if (!contains && !type.IsSubclassOf(typeof(BaseIngot)))
 				return false;
+
+			if (type.IsSubclassOf(typeof(BaseBoard)))
+				return true;
 
 			return contains;
 		}

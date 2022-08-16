@@ -42,13 +42,26 @@ namespace Server.Items
 					CustomGate firstGate = new CustomGate(ToLocation, ToMap);
 					firstGate.MoveToWorld(this.Location, this.Map);
 
-					citrine.Delete();
-					amethyst.Delete();
-					from.SendMessage("Vous déposer vos pierres précieuses dans le panier");
+				if ((citrine.Amount > 1) && (amethyst.Amount > 1))
+					{
 
-				}
+						citrine.Amount -= 1
+						amethyst.Amount -= 1
+
+					}
+					else
+					{
+					
+
+					amethyst.Delete();
+					citrine.Delete();
+					from.SendMessage("Vous déposer vos pierres précieuses dans le panier");
+						
+
+
+
 				else
-				{
+						{
 					from.SendMessage("Rien ne se produit.");
 				}
 				

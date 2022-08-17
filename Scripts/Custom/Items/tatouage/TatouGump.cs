@@ -503,7 +503,7 @@ namespace Server.Gumps
 		
         public override void OnResponse(NetState sender, RelayInfo info)
         {
-			bool Tatouage = (int)m_From.FETotal > 200;
+			bool Tatouage = (int)m_From.Skills[SkillName.Snooping].Base >= 50.0;
 			int buttonID = info.ButtonID;
 
 			int draked = 0;

@@ -846,7 +846,7 @@ namespace Server.Engines.Craft
 			AddSubRes(typeof(VeriteIngot), 1044029, 95.0, 1044036, 1044269);
 			AddSubRes(typeof(ValoriteIngot), 1044030, 99.0, 1044036, 1044269);
 
-			SetSubRes2(typeof(Board), 1072643);
+			//SetSubRes2(typeof(Board), 1072643);
 
 			// Add every material you want the player to be able to choose from
 			// This will override the overridable material

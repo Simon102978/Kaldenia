@@ -385,7 +385,11 @@ namespace Server.Engines.Craft
 
 			#region Pièces d'assemblages
 			index = AddCraft(typeof(Gears), "Pièces d'assemblages", "Engrenages", 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
+
+
 			index = AddCraft(typeof(ClockFrame), "Pièces d'assemblages", "Cadre d'horloge", 0.0, 50.0, typeof(Board), 1044041, 6, 1044351);
+			SetUseSubRes2(index, true);
+
 			index = AddCraft(typeof(ClockParts), "Pièces d'assemblages", "Pièces d'horloge", 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);
 			index = AddCraft(typeof(BarrelTap), "Pièces d'assemblages", "Robinet de baril", 35.0, 85.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Springs), "Pièces d'assemblages", "Ressorts", 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
@@ -413,6 +417,12 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(SmallGrandfatherClock), "Assemblages", "Petite Horloge Grand Père", 50.0, 90.0, typeof(ClockFrame), "Cadre d'horloge", 1, 1044253);
 			AddRes(index, typeof(ClockParts), "Pièces d'horloge", 2, 1044253);
 			AddRes(index, typeof(Board), 1044041, 8, 1044351);
+			SetUseSubRes2(index, true);
+
+
+
+
+
 			index = AddCraft(typeof(LargeGrandfatherClock), "Assemblages", "Horloge Grand Père", 50.0, 90.0, typeof(ClockFrame), "Cadre d'horloge", 1, 1044253);
 			AddRes(index, typeof(ClockParts), "Pièces d'horloge", 2, 1044253);
 			AddRes(index, typeof(Board), 1044041, 8, 1044351);
@@ -516,6 +526,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(HagCauldronDeed), "Ustensiles", "Chaudron", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			index = AddCraft(typeof(AssietteMosaique), "Ustensiles", "Une assiette Mosaique", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			#endregion
+
 			#region Luminaires et décorations
 			index = AddCraft(typeof(Torch), "Luminaires et décorations", "Torche", 0.0, 50.0, typeof(Board), 1044041, 2, 1044253);
 			index = AddCraft(typeof(AvisRecherche), "Luminaires et décorations", "Avis de Recherche", 0.0, 50.0, typeof(Board), 1044041, 3, 1044253);
@@ -607,6 +618,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(BouquetFleur), "Luminaires et décorations", "Bouquet de Fleurs Rouges", 65.0, 115.0, typeof(FertileDirt), "Terre", 5, "Vous n'avez pas suffisament de terre");
 				AddRes(index, typeof(RedRose), "Rose Rouge", 5, "Besoin de Rose Rouge");
 				AddRes(index, typeof(WhiteRose2), "Rose Blanche", 5, "Besoin de Rose Blanche");
+
+			#endregion
+
 			#region Divers
 			index = AddCraft(typeof(KeyRing), "Divers", "Anneau à clés", 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Key), "Divers", "Clé", 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
@@ -1018,4 +1032,3 @@ namespace Server.Engines.Craft
 		}
 	}
 }
-#endregion

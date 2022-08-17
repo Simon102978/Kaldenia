@@ -5032,9 +5032,12 @@ namespace Server.Mobiles
 					if (Range >= 10)
 					{
 						//    VisibilityList.Remove(targ);
+						if (targ != null && targ.NetState != null)
+						{
 
-						targ.NetState.Send(RemovePacket);
-						targ.SendMessage("Vous perdez la trace de " + Name + ".");
+							targ.NetState.Send(RemovePacket);
+							targ.SendMessage("Vous perdez la trace de " + Name + ".");
+						}
 					}
 					else
 					{

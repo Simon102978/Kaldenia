@@ -63,6 +63,24 @@ namespace Server.Items
 			
 			}
 		}
+		public override void OnDoubleClickNotAccessible(Mobile from)
+		{
+			if (from is CustomPlayerMobile)
+			{
+				CustomPlayerMobile cp = (CustomPlayerMobile)from;
+
+				if (Finish || from == m_Crafter || from.AccessLevel > AccessLevel.Player)
+				{
+					from.SendGump(new StatueGump(cp, this));
+				}
+				else
+				{
+					from.SendMessage("Seul le créateur de la statue peut la terminer.");
+				}
+
+			}
+		}
+
 
 		public string GetContenu(int Entry)
 		{

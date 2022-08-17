@@ -94,14 +94,22 @@ namespace Server.Items
                     }
                 }
 
-                attacker.RevealingAction();
+				if (!(WeaponAbility.GetCurrentAbility(attacker) is ShadowStrike))
+				{
+					attacker.RevealingAction();
+				}
+
+              
 
                 return GetDelay(attacker);
             }
 
-            attacker.RevealingAction();
+			if (!(WeaponAbility.GetCurrentAbility(attacker) is ShadowStrike))
+			{
+				attacker.RevealingAction();
+			}
 
-            return TimeSpan.FromSeconds(0.25);
+			return TimeSpan.FromSeconds(0.25);
         }
 
 		public virtual double GetDefendSkillValue(Mobile attacker, Mobile defender)

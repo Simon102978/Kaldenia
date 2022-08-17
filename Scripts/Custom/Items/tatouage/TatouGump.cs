@@ -503,7 +503,7 @@ namespace Server.Gumps
 		
         public override void OnResponse(NetState sender, RelayInfo info)
         {
-			bool Tatouage = (int)m_From.FETotal > 30;
+			bool Tatouage = (int)m_From.FETotal > 100;
 			int buttonID = info.ButtonID;
 
 			int draked = 0;
@@ -550,9 +550,10 @@ namespace Server.Gumps
 				try 
 				{
 					Item item22;
-					item22 = m_M.FindItemOnLayer(Layer.Reserved_1);
+					item22 = m_M.FindItemOnLayer(Layer.InnerTorso);
 					hue = item22.Hue;
 					item22.Delete();
+					
 				}
 				catch
 				{

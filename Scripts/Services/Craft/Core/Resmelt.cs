@@ -160,7 +160,7 @@ namespace Server.Engines.Craft
                     Item ingot = (Item)Activator.CreateInstance(resourceType);
 
                     if (item is DragonBardingDeed || (item is BaseArmor && ((BaseArmor)item).PlayerConstructed) || (item is BaseWeapon && ((BaseWeapon)item).PlayerConstructed) || (item is BaseClothing && ((BaseClothing)item).PlayerConstructed))
-                        ingot.Amount = (int)(craftResource.Amount * .66);
+                        ingot.Amount = (int)(craftResource.Amount * .50);
                     else
                         ingot.Amount = 1;
 

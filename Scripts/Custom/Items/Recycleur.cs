@@ -272,10 +272,13 @@ namespace Server.Items
                     }
                 }
 
-                int newAmount = (int)(craftResource.Amount / 0.5);
+                int newAmount = (int)(craftResource.Amount * 0.5);
                 
                 if (newAmount < 1)
-                    newAmount = 3;
+                    newAmount = 1;
+
+				resItem.Amount = newAmount;
+
 
                 from.AddToBackpack(resItem);
 

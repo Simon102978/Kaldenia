@@ -188,6 +188,7 @@ namespace Server.Engines.Craft
 			int index = -1;
 
 			#region Outils
+			index = AddCraft(typeof(Recycleur), "Outils", "Le Recycleur", 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Scissors), "Outils", "Ciseaux", 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(KitTatou), "Outils", "Kit à Tatou", 5.0, 55.0, typeof(KitTatou), 1044036, 2, 1044037);
 			index = AddCraft(typeof(TatouDye), "Outils", "Teinture à Tatou", 5.0, 55.0, typeof(KitTatou), 1044036, 2, 1044037);
@@ -846,7 +847,8 @@ namespace Server.Engines.Craft
 			AddSubRes(typeof(VeriteIngot), 1044029, 95.0, 1044036, 1044269);
 			AddSubRes(typeof(ValoriteIngot), 1044030, 99.0, 1044036, 1044269);
 
-			//SetSubRes2(typeof(Board), 1072643);
+			
+			SetSubRes2(typeof(Board), 1072643);
 
 			// Add every material you want the player to be able to choose from
 			// This will override the overridable material

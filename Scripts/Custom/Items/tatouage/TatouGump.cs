@@ -550,7 +550,7 @@ namespace Server.Gumps
 				try 
 				{
 					Item item22;
-					item22 = m_M.FindItemOnLayer(Layer.InnerTorso);
+					item22 = m_M.FindItemOnLayer(Layer.Bracelet);
 					hue = item22.Hue;
 					item22.Delete();
 					

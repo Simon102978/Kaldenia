@@ -159,6 +159,7 @@ namespace Server.Items
                 if (targeted is Item)
                 {
                     Item item = (Item)targeted;
+					BacVide bacvide = new BacVide();
 
 					if (item is IDyable && m_Tub.AllowDyables)
 					{
@@ -177,6 +178,7 @@ namespace Server.Items
 						else
 						{
 							m_Tub.Delete();
+							from.AddToBackpack(bacvide);
 							from.SendMessage("Votre bac de teinture n'a plus de charge.");
 
 						}

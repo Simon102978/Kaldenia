@@ -1,26 +1,31 @@
 ﻿using Server.Mobiles;
 
+
 namespace Server.Items
 {
-    public class CustomGemTeleport : Item
+    public class CustomMarchTeleport : Item
     {
 
-        [CommandProperty(AccessLevel.Administrator)]
+		
+
+		[CommandProperty(AccessLevel.Seer)]
         public Point3D ToLocation { get; set; }
 
-        [CommandProperty(AccessLevel.Administrator)]
+        [CommandProperty(AccessLevel.Seer)]
         public Map ToMap { get; set; }
 
-        [Constructable]
-        public CustomGemTeleport()
-            : base(0x990)
+		
+
+		[Constructable]
+        public CustomMarchTeleport()
+            : base(0x14F9)
         {
             ToLocation = Point3D.Zero;
             ToMap = Map.Internal;
 			Movable = false;
         }
 
-        public CustomGemTeleport(Serial serial)
+        public CustomMarchTeleport(Serial serial)
             : base(serial)
         { }
 
@@ -34,46 +39,41 @@ namespace Server.Items
 
 			if (from is CustomPlayerMobile cp)
 			{
-				Item citrine = (Item)cp.Backpack.FindItemByType(typeof(Server.Items.Citrine));
-				Item amethyst = (Item)cp.Backpack.FindItemByType(typeof(Server.Items.Amethyst));
+				Item marchandise = (Item)cp.Backpack.FindItemByType(typeof(Server.Custom.Packaging.Packages.Marchandise));
+				
 
-				if ((citrine != null) && (amethyst != null))
+				if (marchandise != null )
 				{
 					CustomGate firstGate = new CustomGate(ToLocation, ToMap);
 					firstGate.MoveToWorld(this.Location, this.Map);
 
-					if (citrine.Amount > 1)
+				if (marchandise.Amount > 50)
 					{
 
-						citrine.Amount -= 1;
-
-
-					}
-					if (amethyst.Amount > 1)
-					{
-
-						amethyst.Amount -= 1;
-
+						marchandise.Amount -= 50;
+						
 
 					}
 					else
+					
+
+
+						marchandise.Delete();
+					
+					from.SendMessage("Vous déposer vos marchandises près de l'ancre.");
 
 
 
-						citrine.Delete();
-						amethyst.Delete();
-
-					from.SendMessage("Vous déposer vos pierres précieuses dans le panier.");
-
-
-
-				}
+					}
 				else
-
+						
 					from.SendMessage("Rien ne se produit.");
+				}
+				
 			}
+			
 
-		}
+
 
 
 

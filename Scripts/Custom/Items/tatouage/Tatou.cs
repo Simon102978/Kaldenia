@@ -123,7 +123,8 @@ namespace Server.Items
 		public TatouBras(int hue)
 			: base(0xA3FC, hue)
 		{
-			Name = "TatouBras";
+			Name = "";
+			Movable = false;
 		}
 
 		public TatouBras(Serial serial)
@@ -159,7 +160,8 @@ namespace Server.Items
 		public TatouCuisse(int hue)
 			: base(0xA3FD, hue)
 		{
-			Name = "TatouCuisse";
+			Name = "";
+			Movable = false;
 		}
 
 		public TatouCuisse(Serial serial)
@@ -195,7 +197,8 @@ namespace Server.Items
 		public TatouVisage(int hue)
 			: base(0xA3FE, hue)
 		{
-			Name = "TatouVisage";
+			Name = "";
+			Movable = false;
 		}
 
 		public TatouVisage(Serial serial)
@@ -231,7 +234,8 @@ namespace Server.Items
 		public TatouFront(int hue)
 			: base(0xA3FF, hue)
 		{
-			Name = "TatouFront";
+			Name = "";
+			Movable = false;
 		}
 
 		public TatouFront(Serial serial)
@@ -268,7 +272,8 @@ namespace Server.Items
 		public TatouCorps(int hue)
 			: base(0xA400, hue)
 		{
-			Name = "TatouCorps";
+			Name = "";
+			Movable = false;
 		}
 
 		public TatouCorps(Serial serial)
@@ -304,7 +309,8 @@ namespace Server.Items
 		public TatouMasque(int hue)
 			: base(0xA401, hue)
 		{
-			Name = "TatouMasque";
+			Name = "";
+			Movable = false;
 		}
 
 		public TatouMasque(Serial serial)

@@ -189,6 +189,7 @@ namespace Server.Engines.Craft
 
 			#region Outils
 			index = AddCraft(typeof(Scissors), "Outils", "Ciseaux", 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
+			index = AddCraft(typeof(Scissors), "Outils", "Kit à Tatou", 5.0, 55.0, typeof(KitTatou), 1044036, 2, 1044037);
 			index = AddCraft(typeof(EmptyAleBottle), "Outils", "Bouteille de Bière Vide", 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(SewingKit), "Outils", "Kit de couture", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(BoneSewingKit), "Outils", "Kit de couture (Os)", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);

@@ -63,7 +63,8 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average); //Unknown
             AddLoot(LootPack.LootItem<Log>(Utility.RandomMinMax(5, 10)));
-        }
+			AddLoot(LootPack.LootItem<EcorceArbreGeant>());
+		}
 
         public override void Serialize(GenericWriter writer)
         {

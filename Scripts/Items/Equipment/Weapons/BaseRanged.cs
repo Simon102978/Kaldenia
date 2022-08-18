@@ -93,22 +93,21 @@ namespace Server.Items
                         }
                     }
                 }
-
-				if (!(WeaponAbility.GetCurrentAbility(attacker) is ShadowStrike))
+/*				if (!(WeaponAbility.GetCurrentAbility(attacker) is ShadowStrike))
 				{
 					attacker.RevealingAction();
-				}
+				}*/
 
               
 
                 return GetDelay(attacker);
             }
 
-			if (!(WeaponAbility.GetCurrentAbility(attacker) is ShadowStrike))
+/*			if (!(WeaponAbility.GetCurrentAbility(attacker) is ShadowStrike))
 			{
 				attacker.RevealingAction();
 			}
-
+*/
 			return TimeSpan.FromSeconds(0.25);
         }
 

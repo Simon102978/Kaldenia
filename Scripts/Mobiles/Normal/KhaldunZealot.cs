@@ -9,11 +9,24 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Body = 0x190;
-            Name = "Zealot of Khaldun";
-            Title = "the Knight";
-            Hue = 0;
 
-            SetStr(351, 400);
+			Female = Utility.RandomBool();
+			Race = Race.DefaultRace;
+
+			if (Female)
+			{
+				Name = NameList.RandomName("female");
+				Title = "Chevaliere de Josephine";
+			}
+			else
+			{
+				Name = NameList.RandomName("male");
+				Title = "Chevalier de Josephine";
+			}
+
+			Hue = 0;
+
+			SetStr(351, 400);
             SetDex(151, 165);
             SetInt(76, 100);
 
@@ -140,7 +153,12 @@ namespace Server.Mobiles
                 LootPack.FilthyRich.Generate(this, rm.Backpack, false, LootPack.GetLuckChanceForKiller(this));
             }
 
-            Effects.PlaySound(this, Map, GetDeathSound());
+			Gold gold = new Gold(Utility.Random(50, 50));
+
+			rm.AddToBackpack(gold);
+
+
+			Effects.PlaySound(this, Map, GetDeathSound());
             Effects.SendLocationEffect(Location, Map, 0x3709, 30, 10, 0x835, 0);
             rm.MoveToWorld(Location, Map);
 

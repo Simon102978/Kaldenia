@@ -8,7 +8,7 @@ namespace Server.Mobiles
         public CursedMetallicMage()
             : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Name = "cursed metallic mage";
+            Name = "Mage Metallique Maudit";
             Body = 148;
             BaseSoundID = 451;
 
@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.LootGold(75, 200));
+//            AddLoot(LootPack.LootGold(75, 200));
         }
 
         public override bool OnBeforeDeath()

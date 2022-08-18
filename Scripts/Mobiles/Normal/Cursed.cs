@@ -9,14 +9,34 @@ namespace Server.Mobiles
         public Cursed()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Title = "the Cursed";
+          
 
-            Hue = Utility.RandomMinMax(0x8596, 0x8599);
+        
             Body = 0x190;
-            Name = NameList.RandomName("male");
-            BaseSoundID = 471;
+			Female = Utility.RandomBool();
+			Race = Race.DefaultRace;
 
-            AddItem(new ShortPants(Utility.RandomNeutralHue()));
+			if (Female)
+			{
+				Name = NameList.RandomName("female");
+				Title = "La Maudite";
+			}
+			else
+			{
+				Name = NameList.RandomName("male");
+				Title = "Le Maudit";
+			}
+          
+            BaseSoundID = 471;		
+
+			Hue = Utility.RandomMinMax(0x8596, 0x8599);
+
+			if (FindItemOnLayer(Layer.Shirt) != null && FindItemOnLayer(Layer.Shirt)  is BaseRaceGumps bg)
+			{
+				bg.Hue = Hue;
+			}
+
+			AddItem(new ShortPants(Utility.RandomNeutralHue()));
             AddItem(new Shirt(Utility.RandomNeutralHue()));
 
             SetStr(91, 100);

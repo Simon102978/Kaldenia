@@ -8,7 +8,7 @@ namespace Server.Mobiles
         public CursedMetallicKnight()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Name = "cursed metallic knight";
+            Name = "Chevalier Metallique maudit";
             Body = 147;
             BaseSoundID = 451;
 
@@ -39,7 +39,7 @@ namespace Server.Mobiles
 
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.LootGold(75, 200));
+      //      AddLoot(LootPack.LootGold(75, 200));
         }
 
         public override bool OnBeforeDeath()

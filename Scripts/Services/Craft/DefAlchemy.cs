@@ -202,16 +202,16 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
             index = AddCraft(typeof(ParasiticPotion), 1116350, 1072942, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
-            AddRes(index, typeof(NoxCrystal), 1073474, 1, 1044253);
-			AddRes(index, typeof(DaemonBlood), 1073475, 1, 1044253);
+            AddRes(index, typeof(NoxCrystal), "Nox Crystal", 5, "Pas assez de Nox Crystal");
+			AddRes(index, typeof(VeninAraigneeGeante), "Venin d'araignée géante", 1, "Vous n'avez pas suffisament de venin d'Araignée Géante");
 
 			index = AddCraft(typeof(DarkglowPotion), 1116350, 1072943, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
-            AddRes(index, typeof(NoxCrystal), 1073475, 3, 1044253);
-			AddRes(index, typeof(DaemonBlood), 1073475, 3, 1044253);
+            AddRes(index, typeof(NoxCrystal), "Nox Crystal", 5, "Pas assez de Nox Crystal");
+			AddRes(index, typeof(VeninAraigneeNoire), "Venin d'araignée noire", 1, "Vous n'avez pas suffisament de venin d'Araignée Noire");
 
-			index = AddCraft(typeof(ScouringToxin), 1116350, 1112292, 75.0, 100.0, typeof(NoxCrystal), 1112291, 1, 1044253);
+			index = AddCraft(typeof(ScouringToxin), 1116350, 1112292, 75.0, 100.0, typeof(NoxCrystal), "Nox Crystal", 1, "Pas assez de Nox Crystal");
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
-			AddRes(index, typeof(DaemonBlood), 1073475, 5, 1044253);
+			AddRes(index, typeof(VeninTarenlune), "Venin de Tarenlune", 5, "Vous n'avez pas suffisament de venin de Tarenlune");
 
 			// Explosive
 			index = AddCraft(typeof(LesserExplosionPotion), 1116351, 1044555, 5.0, 55.0, typeof(SulfurousAsh), 1044359, 3, 1044367);

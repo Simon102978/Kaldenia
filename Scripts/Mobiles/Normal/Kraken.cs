@@ -214,7 +214,7 @@ namespace Server.Mobiles
 			if (!BlockReflect && from != null && dam > 0)
 			{
 				BlockReflect = true;
-				AOS.Damage(from, this, dam, 0, 0, 0, 0, 0, 0, 50);
+				AOS.Damage(from, this, dam, 0, 0, 0, 0, 0, 0, 25);
 				BlockReflect = false;
 
 				from.PlaySound(0x1F1);

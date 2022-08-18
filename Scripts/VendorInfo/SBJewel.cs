@@ -15,13 +15,13 @@ namespace Server.Mobiles
         {
             public InternalBuyInfo()
             {
-                Add(new GenericBuyInfo(typeof(GoldRing), 27, 20, 0x108A, 0));
+         /*       Add(new GenericBuyInfo(typeof(GoldRing), 27, 20, 0x108A, 0));
                 Add(new GenericBuyInfo(typeof(Necklace), 26, 20, 0x1085, 0));
                 Add(new GenericBuyInfo(typeof(GoldNecklace), 27, 20, 0x1088, 0));
                 Add(new GenericBuyInfo(typeof(GoldBeadNecklace), 27, 20, 0x1089, 0));
                 Add(new GenericBuyInfo(typeof(Beads), 27, 20, 0x108B, 0, true));
                 Add(new GenericBuyInfo(typeof(GoldBracelet), 27, 20, 0x1086, 0));
-                Add(new GenericBuyInfo(typeof(GoldEarrings), 27, 20, 0x1087, 0));             
+                Add(new GenericBuyInfo(typeof(GoldEarrings), 27, 20, 0x1087, 0));             */
             }
         }
 

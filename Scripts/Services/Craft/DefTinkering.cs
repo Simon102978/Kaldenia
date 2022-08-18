@@ -425,9 +425,11 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(LargeGrandfatherClock), "Assemblages", "Horloge Grand Père", 50.0, 90.0, typeof(ClockFrame), "Cadre d'horloge", 1, 1044253);
 			AddRes(index, typeof(ClockParts), "Pièces d'horloge", 2, 1044253);
 			AddRes(index, typeof(Board), 1044041, 8, 1044351);
+			SetUseSubRes2(index, true);
 			index = AddCraft(typeof(WhiteGrandfatherClock), "Assemblages", "Horloge Grand Père Blanche", 50.0, 90.0, typeof(ClockFrame), "Cadre d'horloge", 1, 1044253);
 			AddRes(index, typeof(ClockParts), "Pièces d'horloge", 2, 1044253);
 			AddRes(index, typeof(Board), 1044041, 8, 1044351);
+			SetUseSubRes2(index, true);
 			index = AddCraft(typeof(Sextant), "Assemblages", "Sextant", 0.0, 0.0, typeof(SextantParts), "Pièces de sextant", 1, 1044253);
 			index = AddCraft(typeof(Bola), "Assemblages", "Bola", 60.0, 80.0, typeof(BolaBall), "Balle de bola", 4, 1042613);
 			AddRes(index, typeof(Leather), 1044462, 3, 1044463);

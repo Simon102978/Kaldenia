@@ -175,9 +175,9 @@ namespace Server.SkillHandlers
                             double diff = m_Instrument.GetDifficultyFor(targ) - 10.0;
                             double music = from.Skills[SkillName.Musicianship].Value;
 
-                            if (music > 100.0)
+                            if (music > 80.0)
                             {
-                                diff -= (music - 100.0) * 0.5;
+                                diff -= (music - 80.0) * 0.5;
                             }
 
                             if (masteryBonus > 0)

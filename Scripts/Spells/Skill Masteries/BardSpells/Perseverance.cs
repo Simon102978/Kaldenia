@@ -14,7 +14,9 @@ namespace Server.Spells.SkillMasteries
         public override double RequiredSkill => 90;
         public override double UpKeep => 5;
         public override int RequiredMana => 18;
-        public override bool PartyEffects => true;
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 0) }; } }
+		public override bool PartyEffects => true;
         public override SkillName CastSkill => SkillName.Peacemaking;
 
         private int m_PropertyBonus;

@@ -175,9 +175,9 @@ namespace Server.SkillHandlers
 
                         int masteryBonus = 0;
 
-                        if (music > 100.0)
+                        if (music > 80.0)
                         {
-                            diff -= (music - 100.0) * 0.5;
+                            diff -= (music - 80.0) * 0.5;
                         }
 
                         if (from is PlayerMobile)

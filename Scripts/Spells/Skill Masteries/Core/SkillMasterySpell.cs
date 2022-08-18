@@ -79,8 +79,8 @@ namespace Server.Spells.SkillMasteries
                 Caster.SendLocalizedMessage(1115709); // Your skills are not high enough to invoke this mastery ability.
             else if (Caster is PlayerMobile && Caster.Skills.CurrentMastery != CastSkill)
                 Caster.SendLocalizedMessage(1115664); // You are not on the correct path for using this mastery ability.
-            else if (Caster is PlayerMobile && !MasteryInfo.HasLearned(Caster, CastSkill))
-                Caster.SendLocalizedMessage(1115664); // You are not on the correct path for using this mastery ability.
+            //else if (Caster is PlayerMobile && !MasteryInfo.HasLearned(Caster, CastSkill))
+             //   Caster.SendLocalizedMessage(1115664); // You are not on the correct path for using this mastery ability.
             else if (CheckManaBeforeCast && Caster.Mana < mana)
                 Caster.SendLocalizedMessage(1060174, mana.ToString()); // You must have at least ~1_MANA_REQUIREMENT~ Mana to use this ability.
             else

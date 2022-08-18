@@ -21,7 +21,9 @@ namespace Server.Spells.SkillMasteries
         public override int RequiredMana => 26;
         public override bool PartyEffects => false;
         public override SkillName CastSkill => SkillName.Discordance;
-        public override double SlayerBonus => 3.0;
+
+		public override MagicAptitudeRequirement[] AffinityRequirements { get { return new MagicAptitudeRequirement[] { new MagicAptitudeRequirement(MagieType.Arcane, 0) }; } }
+		public override double SlayerBonus => 3.0;
 
         private int m_StatMod;
         private int m_Damage;

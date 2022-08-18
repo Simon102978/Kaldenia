@@ -44,6 +44,7 @@ namespace Server.Items
         public BookOfMasteries(ulong content) : base(content, 0x225A)
         {
             _Content = content;
+			Name = "Grand Livre du Barde";
         }
 
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)

@@ -132,9 +132,9 @@ namespace Server.SkillHandlers
                         if (masteryBonus > 0)
                             diff -= (diff * ((double)masteryBonus / 100));
 
-                        if (music > 100.0)
+                        if (music > 80.0)
                         {
-                            diff -= (music - 100.0) * 0.5;
+                            diff -= (music - 80.0) * 0.5;
                         }
 
                         if (questTargets || (from.CanBeHarmful(m_Creature, true, false, true) && from.CanBeHarmful(target, true, false, true)))

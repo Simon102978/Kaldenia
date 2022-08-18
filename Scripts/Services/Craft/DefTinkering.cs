@@ -217,10 +217,9 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(Froe), "Outils", "Froe", 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(MortarPestle), "Outils", "Mortier et pilon", 20.0, 70.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(WaxCraftingPot), "Outils", "Fabrication Cire", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
-			index = AddCraft(typeof(FletcherTools), "Outils", "Outil facteur d'arc", 35.0, 85.0, typeof(IronIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(FletcherTools), "Outils", "Outil fabrication d'arc", 35.0, 85.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(MapmakersPen), "Outils", "Plume cartographe", 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);
 			index = AddCraft(typeof(ScribesPen), "Outils", "Plume scribe", 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);
-			index = AddCraft(typeof(Inshave), "Outils", "Outil facteur d'arc", 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(Lockpick), "Outils", "Crochets", 45.0, 95.0, typeof(IronIngot), 1044036, 1, 1044037);
 			index = AddCraft(typeof(Blowpipe), "Outils", "Pipe à Verre", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(MalletAndChisel), "Outils", "Maillet", 10.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
@@ -242,12 +241,12 @@ namespace Server.Engines.Craft
 			#endregion
 
 			#region Jewelry
-			//   index = AddCraft(typeof(GoldRing), "Bijoux", "Anneau", 65.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
-			//   index = AddCraft(typeof(GoldBracelet), "Bijoux", "Bracelet", 55.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
-			//  index = AddCraft(typeof(Necklace), "Bijoux", "Collier à perles", 60.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
-			//            index = AddCraft(typeof(Bracelet), "Bijoux", "Bracelet simple", 55.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
-			//          index = AddCraft(typeof(Ring), "Bijoux", "Anneau simple", 65.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
-			//        index = AddCraft(typeof(Earrings), "Bijoux", "Boucles d'oreille", 55.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
+			  index = AddCraft(typeof(GoldRing), "Bijoux", "Anneau", 65.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
+			   index = AddCraft(typeof(GoldBracelet), "Bijoux", "Bracelet", 55.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
+			  index = AddCraft(typeof(Necklace), "Bijoux", "Collier à perles", 60.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
+			  index = AddCraft(typeof(BaseBracelet), "Bijoux", "Bracelet simple", 55.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
+			         index = AddCraft(typeof(BaseRing), "Bijoux", "Anneau simple", 65.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
+			       index = AddCraft(typeof(Earrings), "Bijoux", "Boucles d'oreille", 55.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
 
 			AddJewelrySet(GemType.StarSapphire, typeof(StarSapphire));
 			AddJewelrySet(GemType.Emerald, typeof(Emerald));
@@ -523,6 +522,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(PoissonMain), "Ustensiles", "Poisson", 25.0, 75.0, typeof(FishSteak), 1044036, 5, 1044037);
 			index = AddCraft(typeof(CorneBoire), "Ustensiles", "Corne à boire", 25.0, 75.0, typeof(IronIngot), 1044036, 3, 1044037);
 			index = AddCraft(typeof(Eventail), "Ustensiles", "Eventail", 25.0, 75.0, typeof(Board), 1044041, 2, 1044351);
+			SetUseSubRes2(index, true);
 			index = AddCraft(typeof(HagCauldronDeed), "Ustensiles", "Chaudron", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			index = AddCraft(typeof(AssietteMosaique), "Ustensiles", "Une assiette Mosaique", 50.0, 100.0, typeof(IronIngot), 1044036, 10, 1044253);
 			#endregion

@@ -16,6 +16,7 @@ namespace Server.Items
         {
             Hue = 1648;
             Name = "cerveau de liche";
+			Stackable = false;
         }
 
         public CerveauLiche(Serial serial) : base(serial)

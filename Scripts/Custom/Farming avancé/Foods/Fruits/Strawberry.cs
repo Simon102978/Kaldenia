@@ -13,6 +13,7 @@ namespace Server.Items
 			FillFactor = 1;
 			Hue = 0x85;
 			Name = "Strawberry";
+			Weight = 0.1;
 		}
 
 		public Strawberry( Serial serial ) : base( serial )

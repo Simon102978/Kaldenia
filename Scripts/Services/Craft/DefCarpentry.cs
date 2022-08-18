@@ -330,7 +330,7 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(TableApothicaire), "Tables", "Table de l'Apothicaire", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			index = AddCraft(typeof(RangementAlchimie), "Tables", "Rangement alchimique", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
 			index = AddCraft(typeof(ItemAlchimie), "Tables", "Nécessaire d'Alchimie", 90.0, 115.0, typeof(Board), 1044041, 40, 1044351);
-			index = AddCraft(typeof(TableBrasseur), 1044290, "Table Festive", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
+			index = AddCraft(typeof(TableBrasseur), "Tables", "Table Festive", 90.0, 115.0, typeof(Board), 1044041, 60, 1044351);
 
 			// Armoires
 			index = AddCraft(typeof(EmptyBookcase), "Armoires", "Bibliothèque vide", 31.5, 56.5, typeof(Board), 1044041, 25, 1044351);

@@ -21,7 +21,8 @@ namespace Server.Items
         public PattesLapin(int amount) : base(0x1E8C, amount)
         {
             Name = "pattes de lapin";
-        }
+			Stackable = false;
+		}
 
         public PattesLapin(Serial serial) : base(serial)
         {

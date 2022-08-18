@@ -16,7 +16,8 @@ namespace Server.Items
         {
             Hue = 1107;
             Name = "pattes de panthère";
-        }
+			Stackable = false;
+		}
 
         public PattesPanthere(Serial serial) : base(serial)
         {

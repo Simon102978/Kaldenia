@@ -123,6 +123,7 @@ namespace Server.Items
         {
             Weight = 4.0;
 			Name = "Pagne";
+			
         }
 
         public WoodlandBelt(Serial serial)

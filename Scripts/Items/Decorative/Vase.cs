@@ -1746,7 +1746,7 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
-	[Flipable(0x997C, 0x998C)]
+	[Flipable(0x997C, 0x997D)]
 	public class 	AnkhKershe : Item
 	{
 		[Constructable]

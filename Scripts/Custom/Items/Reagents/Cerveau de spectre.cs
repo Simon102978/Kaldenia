@@ -20,7 +20,8 @@ namespace Server.Items
         public CerveauSpectre(int amount) : base(0x1CF0, amount)
         {
             Name = "cerveau de spectre";
-        }
+			Stackable = false;
+		}
 
         public CerveauSpectre(Serial serial) : base(serial)
         {

@@ -26,7 +26,7 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
-	public class Guitare : BaseInstrument
+	public class Guitare : Item
 	{
 		[Constructable]
 		public Guitare()
@@ -55,7 +55,7 @@ namespace Server.Items
 		}
 	}
 
-	public class HarpeLongue : BaseInstrument
+	public class HarpeLongue : Item
 	{
 		[Constructable]
 		public HarpeLongue()

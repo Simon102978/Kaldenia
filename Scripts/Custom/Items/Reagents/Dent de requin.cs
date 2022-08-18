@@ -16,7 +16,8 @@ namespace Server.Items
         {
             Hue = 2061;
             Name = "dent de requin";
-        }
+			
+		}
 
         public DentRequin(Serial serial) : base(serial)
         {

@@ -24,7 +24,7 @@ namespace Server.Mobiles
 			SetInt(76, 85);
 
 
-			SetHits(10000);
+			SetHits(6000);
 			SetStam(507, 669);
 			SetMana(1200, 1300);
 
@@ -43,7 +43,7 @@ namespace Server.Mobiles
 			SetSkill(SkillName.Tactics, 120.0);
 			SetSkill(SkillName.MagicResist, 120.0);
 			SetSkill(SkillName.Anatomy, 120.0);
-			SetSkill(SkillName.Poisoning, 120.0);
+			SetSkill(SkillName.Poisoning, 50);
 
 			Fame = 25000;
 			Karma = -25000;
@@ -208,7 +208,7 @@ namespace Server.Mobiles
 
 
 		public override int Meat => 4;
-        public override Poison PoisonImmune => Poison.Lethal;
+        public override Poison PoisonImmune => Poison.Greater;
 
 		public override bool Unprovokable => true;
 		public override int TreasureMapLevel => 5;

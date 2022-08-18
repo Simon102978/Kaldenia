@@ -9,10 +9,23 @@ namespace Server.Mobiles
             : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Body = 0x190;
-            Name = "Zealot of Khaldun";
-            Title = "the Summoner";
 
-            SetStr(351, 400);
+			Female = Utility.RandomBool();
+			Race = Race.DefaultRace;
+
+			if (Female)
+			{
+				Name = NameList.RandomName("female");
+				Title = "Invocatrice de Josephine";
+			}
+			else
+			{
+				Name = NameList.RandomName("male");
+				Title = "Invocateur de Josephine";
+			}
+
+
+			SetStr(351, 400);
             SetDex(101, 150);
             SetInt(502, 700);
 
@@ -73,6 +86,19 @@ namespace Server.Mobiles
             {
                 Hue = 0x66D
             };
+
+
+			if (Female)
+			{
+				Bustier3 bustier = new Bustier3();
+
+				bustier.Hue = 0x66D;
+
+				AddItem(bustier);
+
+			}
+
+
             AddItem(sandals);
         }
 
@@ -129,7 +155,13 @@ namespace Server.Mobiles
                 LootPack.FilthyRich.Generate(this, rm.Backpack, false, LootPack.GetLuckChanceForKiller(this));
             }
 
-            Effects.PlaySound(this, Map, GetDeathSound());
+			Gold gold = new Gold(Utility.Random(50, 50));
+
+			rm.AddToBackpack(gold);
+
+
+
+			Effects.PlaySound(this, Map, GetDeathSound());
             Effects.SendLocationEffect(Location, Map, 0x3709, 30, 10, 0x835, 0);
             rm.MoveToWorld(Location, Map);
 

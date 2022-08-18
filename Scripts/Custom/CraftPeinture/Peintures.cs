@@ -82,6 +82,10 @@ namespace Server.Items
 			}
 		}
 
+		public override bool IsAccessibleTo(Mobile check)
+		{
+			return true;
+		}
 
 		public string GetContenu(int Entry)
 		{

@@ -107,6 +107,8 @@ namespace Server.Regions
 		{
 			if (item is Container)
 				item.SendLocalizedMessageTo(from, 501647); // That is secure.
+			else if (item is Peintures || item is Statue)
+				return true;
 			else
 				item.SendLocalizedMessageTo(from, 1061637); // You are not allowed to access 
 

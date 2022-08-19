@@ -42,7 +42,7 @@ namespace Server.Engines.Distillation
             m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.Whiskey, new Type[] { typeof(Yeast), typeof(WheatWort) }, new int[] { 3, 1 }, MaturationPeriod));
             m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.Bourbon, new Type[] { typeof(Yeast), typeof(WheatWort), typeof(PewterBowlOfCorn) }, new int[] { 3, 3, 1 }, MaturationPeriod));
             m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.Spirytus, new Type[] { typeof(Yeast), typeof(WheatWort), typeof(PewterBowlOfPotatos) }, new int[] { 3, 1, 1 }, TimeSpan.MinValue));
-            m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.Cassis, new Type[] { typeof(Yeast), typeof(WheatWort), typeof(PewterBowlOfPotatos), typeof(TribalBerry) }, new int[] { 3, 3, 3, 1 }, MaturationPeriod));
+            m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.Cassis, new Type[] { typeof(Yeast), typeof(WheatWort), typeof(PewterBowlOfPotatos), typeof(Strawberry) }, new int[] { 3, 3, 3, 1 }, MaturationPeriod));
             m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.MelonLiquor, new Type[] { typeof(Yeast), typeof(WheatWort), typeof(PewterBowlOfPotatos), typeof(HoneydewMelon) }, new int[] { 3, 3, 3, 1 }, MaturationPeriod));
             m_CraftDefs.Add(new CraftDefinition(Group.WheatBased, Liquor.Mist, new Type[] { typeof(Yeast), typeof(WheatWort), typeof(JarHoney) }, new int[] { 3, 3, 1 }, MaturationPeriod));
 

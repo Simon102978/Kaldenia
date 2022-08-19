@@ -95,7 +95,7 @@ namespace Server.Mobiles
 								break;
 						}
 					}
-					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
+					
 
 				}
 
@@ -163,6 +163,7 @@ namespace Server.Mobiles
 					Timer.DelayCall(TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30), RetourEau);
 
 					m_NextJump = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(75, 90));
+					m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
 				}
 			}
 		}
@@ -198,6 +199,7 @@ namespace Server.Mobiles
 				}
 
 				m_NextStuck = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(45, 60));
+				m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
 
 				eable.Free();
 
@@ -214,7 +216,7 @@ namespace Server.Mobiles
 			if (!BlockReflect && from != null && dam > 0)
 			{
 				BlockReflect = true;
-				AOS.Damage(from, this, dam, 0, 0, 0, 0, 0, 0, 25);
+				AOS.Damage(from, this, dam, 0, 0, 0, 0, 0, 0, 33);
 				BlockReflect = false;
 
 				from.PlaySound(0x1F1);
@@ -311,6 +313,8 @@ namespace Server.Mobiles
 
 
 				m_NextSpawn = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 120));
+
+				m_GlobalTimer = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(10, 20));
 
 			}
 

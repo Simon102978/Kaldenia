@@ -234,6 +234,7 @@ namespace Server.Gumps
 						if (item.CanBeLock)
 						{
                             item.Movable = false;
+							item.LockByPlayer = true;
                         }
 						else
 						{
@@ -269,8 +270,21 @@ namespace Server.Gumps
                     {
                        if (item.CanBeLock)
                         {
-                            item.SetLastMoved();
-                            item.Movable = true;
+
+							if (item.LockByPlayer || item.Createur != null)
+							{
+								item.SetLastMoved();
+								item.Movable = true;
+								item.LockByPlayer = false;
+							}
+							else
+							{
+								from.SendMessage("Vous ne pouvez débarrer que les objets verouillé ou créer par un joueur.");
+							}
+
+
+
+                          
                         }
 						else
 						{

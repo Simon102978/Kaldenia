@@ -711,7 +711,7 @@ namespace Server
 		private ImplFlag m_Flags;
 		private Mobile m_Createur;
 		private string m_Description;
-
+		private bool m_LockByPlayer;
 
 		#region Packet caches
 		private Packet m_WorldPacket;
@@ -2478,10 +2478,12 @@ namespace Server
 
 		public virtual void Serialize(GenericWriter writer)
 		{
-			writer.Write(15); // version
+			writer.Write(16); // version
 
 
+			//16
 
+			writer.Write(m_LockByPlayer);
 
 			// 15
 
@@ -3001,6 +3003,11 @@ namespace Server
 
 			switch (version)
 			{
+				case 16:
+					{
+						m_LockByPlayer = reader.ReadBool();
+						goto case 15;
+					}
 				case 15:
 					{
 						m_Createur = reader.ReadMobile();
@@ -4811,6 +4818,17 @@ namespace Server
 				m_Createur = value;
 			}
 		}
+
+		[CommandProperty(AccessLevel.Decorator)]
+		public bool LockByPlayer
+		{
+			get => m_LockByPlayer;
+			set
+			{
+				m_LockByPlayer = value;
+			}
+		}
+		
 
 		[CommandProperty(AccessLevel.Decorator)]
 		public string Description

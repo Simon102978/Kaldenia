@@ -125,10 +125,10 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(Feather), 1044562, 1, 1044563);
 			SetUseAllRes(index, true);
 
-			/*
-						index = index = AddCraft(typeof(FukiyaDarts), 1044565, 1030246, 50.0, 73.8, typeof(Board), 1044041, 1, 1044351);
+			
+						index = index = AddCraft(typeof(FukiyaDarts), "Munitions", 1030246, 50.0, 73.8, typeof(Board), 1044041, 1, 1044351);
 						SetUseAllRes(index, true);
-			*/
+			
 			// Arcs
 			index = AddCraft(typeof(Bow), "Arcs", "Arc simple", 30.0, 70.0, typeof(Board), 1044041, 7, 1044351);
 			index = AddCraft(typeof(Legarc), "Arcs", "Legarc", 60.0, 90.0, typeof(Board), 1044041, 7, 1044351);

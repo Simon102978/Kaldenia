@@ -12,8 +12,10 @@ namespace Server.Items
         };
         [Constructable]
         public UltimeCurePotion()
-            : base(PotionEffect.CureGreater)
+            : base(PotionEffect.UltimeCure)
         {
+			Name = "Antidote Ultime";
+			Hue = 1917;
         }
 
         public UltimeCurePotion(Serial serial)

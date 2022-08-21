@@ -44,7 +44,8 @@ namespace Server.Items
         Sakkhra,
         Shatter,
         FearEssence,
-		Experience
+		Experience,
+		UltimeCure
     }
 
     public abstract class BasePotion : Item, ICraftable, ICommodity

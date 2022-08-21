@@ -161,7 +161,7 @@ namespace Server.Items
                     Item item = (Item)targeted;
 					BacVide bacvide = new BacVide();
 
-					if (item is IDyable && m_Tub.AllowDyables)
+					if (item is IDyable && m_Tub.AllowDyables && item is FurnitureDyeTub)
 					{
 						if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
 							from.SendLocalizedMessage(500446); // That is too far away.

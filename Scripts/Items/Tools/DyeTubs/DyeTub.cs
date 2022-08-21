@@ -160,6 +160,7 @@ namespace Server.Items
                 {
                     Item item = (Item)targeted;
 					BacVide bacvide = new BacVide();
+					
 
 					if (item is IDyable && m_Tub.AllowDyables)
 					{
@@ -171,7 +172,7 @@ namespace Server.Items
 							from.SendLocalizedMessage(500861); // Can't Dye clothing that is being worn.
 						else if (((IDyable)item).Dye(from, m_Tub))
 							from.PlaySound(0x23E);
-						else if (item is FurnitureDyeTub)
+						
 
 						
 
@@ -223,10 +224,58 @@ namespace Server.Items
 							{
 								item.Hue = m_Tub.DyedHue;
 								from.PlaySound(0x23E);
+
+
+								if (m_Tub.Charges > 1)
+								{
+									m_Tub.Charges -= 1;
+								}
+
+								else
+								{
+									m_Tub.Delete();
+									from.AddToBackpack(bacvide);
+									from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+								}
 							}
 
 						}
 					}
+
+					else if	(item is FurnitureDyeTub fdye)
+					{
+						if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
+						{
+							from.SendLocalizedMessage(500446); // That is too far away.
+						}
+						else if (!item.Movable)
+						{
+							from.SendMessage("Vous ne pouvez teindre les objets qui ne sont pas verouillées.");
+						}
+						else
+						{
+
+							fdye.DyedHue = m_Tub.DyedHue;
+							from.PlaySound(0x23E);
+
+
+							if (m_Tub.Charges > 1)
+							{
+								m_Tub.Charges -= 1;
+							}
+
+							else
+							{
+								m_Tub.Delete();
+								from.AddToBackpack(bacvide);
+								from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+							}
+						}
+
+					}
+
 					else if (m_Tub.AllowRunebooks && (item is Runebook || item is RecallRune || item is Spellbook || m_Tub.CanForceDye(item)))
 					{
 						if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
@@ -241,6 +290,20 @@ namespace Server.Items
 						{
 							item.Hue = m_Tub.DyedHue;
 							from.PlaySound(0x23E);
+
+
+							if (m_Tub.Charges > 1)
+							{
+								m_Tub.Charges -= 1;
+							}
+
+							else
+							{
+								m_Tub.Delete();
+								from.AddToBackpack(bacvide);
+								from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+							}
 						}
 					}
 					else if (m_Tub.AllowStatuettes && (item is MonsterStatuette || m_Tub.CanForceDye(item)))
@@ -257,6 +320,20 @@ namespace Server.Items
 						{
 							item.Hue = m_Tub.DyedHue;
 							from.PlaySound(0x23E);
+
+
+							if (m_Tub.Charges > 1)
+							{
+								m_Tub.Charges -= 1;
+							}
+
+							else
+							{
+								m_Tub.Delete();
+								from.AddToBackpack(bacvide);
+								from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+							}
 						}
 					}
 					else if (m_Tub.AllowLeather)
@@ -285,6 +362,19 @@ namespace Server.Items
 							{
 								item.Hue = m_Tub.DyedHue;
 								from.PlaySound(0x23E);
+
+
+								if (m_Tub.Charges > 1)
+								{
+									m_Tub.Charges -= 1;
+								}
+
+								else
+								{
+									m_Tub.Delete();
+									from.AddToBackpack(bacvide);
+									from.SendMessage("Votre bac de teinture n'a plus de charge.");
+								}
 							}
 						}
 						else
@@ -315,6 +405,22 @@ namespace Server.Items
                             {
                                 item.Hue = m_Tub.DyedHue;
                                 from.PlaySound(0x23E);
+
+
+								if (m_Tub.Charges > 1)
+								{
+									m_Tub.Charges -= 1;
+								}
+
+								else
+								{
+									m_Tub.Delete();
+									from.AddToBackpack(bacvide);
+									from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+								}
+
+
                             }
                         }
 						else if (m_Tub.AllowWeapons && (item is BaseWeapon || m_Tub.CanForceDye(item)))
@@ -325,12 +431,28 @@ namespace Server.Items
 							}
 							else if (!item.Movable)
 							{
-								from.SendMessage("Vous devez s�lectionner une arme"); // You cannot dye runes or runebooks that are locked down.
+								from.SendMessage("Vous devez sélectionner une arme"); // You cannot dye runes or runebooks that are locked down.
 							}
 							else
 							{
 								item.Hue = m_Tub.DyedHue;
 								from.PlaySound(0x23E);
+
+
+
+								if (m_Tub.Charges > 1)
+								{
+									m_Tub.Charges -= 1;
+								}
+
+								else
+								{
+									m_Tub.Delete();
+									from.AddToBackpack(bacvide);
+									from.SendMessage("Votre bac de teinture n'a plus de charge.");
+
+								}
+
 							}
 						}
 						else

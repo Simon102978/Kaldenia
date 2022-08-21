@@ -161,7 +161,7 @@ namespace Server.Items
                     Item item = (Item)targeted;
 					BacVide bacvide = new BacVide();
 
-					if (item is IDyable && m_Tub.AllowDyables && item is FurnitureDyeTub)
+					if (item is IDyable && m_Tub.AllowDyables)
 					{
 						if (!from.InRange(m_Tub.GetWorldLocation(), 1) || !from.InRange(item.GetWorldLocation(), 1))
 							from.SendLocalizedMessage(500446); // That is too far away.
@@ -171,10 +171,17 @@ namespace Server.Items
 							from.SendLocalizedMessage(500861); // Can't Dye clothing that is being worn.
 						else if (((IDyable)item).Dye(from, m_Tub))
 							from.PlaySound(0x23E);
+						else if (item is FurnitureDyeTub)
+
+						
+
+						
+
 						if (m_Tub.Charges > 1)
 						{
 							m_Tub.Charges -= 1;
 						}
+
 						else
 						{
 							m_Tub.Delete();
@@ -330,6 +337,7 @@ namespace Server.Items
                         {
                             from.SendLocalizedMessage(m_Tub.FailMessage);
                         }
+
                     }
                     else
                     {

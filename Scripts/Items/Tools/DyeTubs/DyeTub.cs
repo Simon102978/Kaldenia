@@ -160,6 +160,7 @@ namespace Server.Items
                 {
                     Item item = (Item)targeted;
 					BacVide bacvide = new BacVide();
+					
 
 					if (item is IDyable && m_Tub.AllowDyables)
 					{
@@ -171,7 +172,7 @@ namespace Server.Items
 							from.SendLocalizedMessage(500861); // Can't Dye clothing that is being worn.
 						else if (((IDyable)item).Dye(from, m_Tub))
 							from.PlaySound(0x23E);
-						else if (item is FurnitureDyeTub)
+						
 
 						
 

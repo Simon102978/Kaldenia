@@ -373,6 +373,43 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
+	public class Draps : Item, IDyable
+	{
+		[Constructable]
+		public Draps()
+			: base(0x1914)
+		{
+			Name = "Draps";
+			Weight = 5.0;
+		}
+		public bool Dye(Mobile from, DyeTub sender)
+		{
+			if (Deleted)
+				return false;
+
+			Hue = sender.DyedHue;
+
+
+			return true;
+		}
+
+		public Draps(Serial serial)
+			: base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write(0); // ver
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+	}
 
 	public class SmallDiamondPillow : Item, IDyable
 	{

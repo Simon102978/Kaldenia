@@ -478,7 +478,8 @@ namespace Server.Items
             : base(0x1042)
         {
             Weight = 1.0;
-        }
+			Stackable = false;			
+		}
 
         public UnbakedQuiche(Serial serial)
             : base(serial)

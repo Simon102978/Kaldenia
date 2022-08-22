@@ -376,28 +376,40 @@ namespace Server.Engines.Craft
 
 			// Lits
 			index = AddCraft(typeof(SmallBedSouthDeed), "Lits", "Petit lit (S)", 94.7, 119.8, typeof(Board), 1044041, 100, 1044351);
-			AddSkill(index, SkillName.Tailoring, 75.0, 80.0);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
 			index = AddCraft(typeof(SmallBedEastDeed), "Lits", "Petit lit (E)", 94.7, 119.8, typeof(Board), 1044041, 100, 1044351);
-			AddSkill(index, SkillName.Tailoring, 75.0, 80.0);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			index = AddCraft(typeof(LargeBedSouthDeed), "Lits", "Grand lit (S)", 94.7, 119.8, typeof(Board), 1044041, 150, 1044351);
-			AddSkill(index, SkillName.Tailoring, 75.0, 80.0);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 150, 1044287);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			index = AddCraft(typeof(LargeBedEastDeed), "Lits", "Grand lit (E)", 94.7, 119.8, typeof(Board), 1044041, 150, 1044351);
-			AddSkill(index, SkillName.Tailoring, 75.0, 80.0);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
 			AddRes(index, typeof(Cloth), 1044286, 150, 1044287);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			index = AddCraft(typeof(TallElvenBedSouthDeed), "Lits", "Grand lit orné (S)", 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			ForceNonExceptional(index);
 			index = AddCraft(typeof(TallElvenBedEastDeed), "Lits", "Grand lit orné (E)", 94.7, 119.7, typeof(Board), 1044041, 200, 1044351);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			ForceNonExceptional(index);
 			index = AddCraft(typeof(ElvenBedSouthDeed), "Lits", "Lit orné (S)", 94.7, 119.7, typeof(Board), 1044041, 100, 1044351);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			ForceNonExceptional(index);
 			index = AddCraft(typeof(ElvenBedEastDeed), "Lits", "Lit orné (E)", 94.7, 119.7, typeof(Board), 1044041, 100, 1044351);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
+			AddSkill(index, SkillName.Tailoring, 40.0, 50.0);
+			AddRes(index, typeof(Draps), "Draps", 1, "Vous avez besoin d'un ensemble de draps");
 			ForceNonExceptional(index);
 
 			// Décoration

@@ -39,7 +39,7 @@ namespace Server.Items
 
 		[Constructable]
         public RawPorkChop(int amount)
-            : base(amount, 0x9F1)
+            : base(amount, 0x09F1)
 		{
 			Weight = 1.0;
 			Stackable = true;

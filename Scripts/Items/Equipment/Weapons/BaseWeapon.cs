@@ -3268,7 +3268,9 @@ namespace Server.Items
 
 			if (attacker is BaseCreature)
 			{
-				totalBonus = totalBonus * 70 / 100;
+				//	totalBonus = totalBonus * 70 / 100;
+
+				totalBonus = totalBonus * 60 / 100;
 			}
 
 

@@ -235,13 +235,33 @@ namespace Server.Custom.System
             if (m != null && m.Account != null)
             {
                 string path = "Logs/PayLogs/";
-                string fileName = path + m.Account.Username + ".csv";
+
+
+				string accountUsername = m.Account.Username;
+
+
+
+				if (accountUsername == "CON")
+				{
+					accountUsername = "CON1";
+				}
+
+
+
+
+
+
+				string fileName = path + accountUsername + ".csv";
 
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
 
+
+
+
+
                 using (StreamWriter sw = new StreamWriter(fileName, true))
-                    sw.WriteLine(DateTime.Now.ToString() + ","  + cgm.GetName() + "," + amount.ToString() + "\n");  // CSV fIle type..
+                    sw.WriteLine(DateTime.Now.ToString() + ","  + cgm.Mobile.GetBaseName() + "," + amount.ToString() + "\n");  // CSV fIle type..
             }
         }
 

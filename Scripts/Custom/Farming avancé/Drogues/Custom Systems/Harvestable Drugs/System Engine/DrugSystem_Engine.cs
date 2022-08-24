@@ -454,16 +454,18 @@ namespace Server.Items.Crops
 
             if (Highness % 10 == 0)
             {
-                m_Drunk.SendMessage("You Are Stoned!");
+                m_Drunk.SendMessage("Vous entrez dans un état second");
                 m_Drunk.PlaySound(0x420);   // coughing
+				m_Drunk.Body = m_Drunk.Female ? 0x193 : 0x192;
+				DeathStatus.Instantiate(false);
 
-                int enlight = Utility.Random(5);
+				int enlight = Utility.Random(5);
                 switch (enlight) //Randomly generated enlightning things to say
                 {
                     case 0:
                         {
                            m_Drunk.PlaySound(m_Drunk.Female ? 813 : 1087);
-                           m_Drunk.Say("*pukes*");
+							m_Drunk.Say("Vomit");
                            if (!m_Drunk.Mounted)
                                m_Drunk.Animate(32, 5, 1, true, false, 0);
                            Point3D p = new Point3D(m_Drunk.Location);
@@ -505,16 +507,16 @@ namespace Server.Items.Crops
                            }
                     case 1:
                         {
-                            m_Drunk.Say("So I Was Like Dude, And He Was Like Sweet, And Then... Ahhh Geez, I Forgot");
+                            m_Drunk.Say("");
                             m_Drunk.PlaySound(m_Drunk.Female ? 794 : 1066);
-                            m_Drunk.Say("*Laughs*");
+                            m_Drunk.Say("*Rigole*");
                             break;
                         }
 
                     case 2:
                         {
-                            m_Drunk.Say("What If You Were Like A Polar Bear?! Then You Like Start Dancin Like A Pixie!...");
-                            m_Drunk.Say("*Breaks down laughing*");
+                            m_Drunk.Say("");
+                            m_Drunk.Say("*Rigole aux larmes*");
                             m_Drunk.PlaySound(m_Drunk.Female ? 794 : 1066);
                             Thread.Sleep(3000);
                             m_Drunk.PlaySound(m_Drunk.Female ? 794 : 1066);
@@ -525,18 +527,18 @@ namespace Server.Items.Crops
 
                     case 3:
                         {
-                            m_Drunk.Say("Dude The Universe Is Like In My Dreams... And Everything Around Me Is Not Real.. It's All An Illusion, Cause Reality Is Just A Perspective, Dude...");
+                            m_Drunk.Say("");
                             break;
                         }
 
                     case 4:
                         {
-                            m_Drunk.Say("The Room Is Spinning Dude, Like I See... No Wait There Are Two Of You...Whoa!?");
+                            m_Drunk.Say("");
                             m_Drunk.PlaySound(m_Drunk.Female ? 792 : 1064);
-                            m_Drunk.Emote("*Farts*");
-                            m_Drunk.Say("Dude That Was Awesome! I Gotta Cut Back On Those Bean Burittos Man");
+                            m_Drunk.Emote("**");
+                            m_Drunk.Say("");
                             m_Drunk.PlaySound(m_Drunk.Female ? 791 : 1063);
-                            m_Drunk.Emote("*Faints*");
+                            m_Drunk.Emote("**");
 
                             if (!m_Drunk.Mounted)
                                 m_Drunk.Animate(22, 5, 1, true, false, 0);
@@ -547,11 +549,12 @@ namespace Server.Items.Crops
             Highness--;
             if (Highness <= 0)
             {
-                m_Drunk.SendMessage("Your Buzz Has Been Killed, You Are No Longer Stoned!");
-                m_Drunk.Int -= 11;//set int back to normal and delete one point
+				m_Drunk.Body = m_Drunk.Female ? 0x191 : 0x190;
+				m_Drunk.SendMessage("Votre état revient à la normale");
+                m_Drunk.Int -= 10;//set int back to normal and delete one point
                 m_Drunk.Dex += 10;
                 m_Drunk.Stam = 1;
-                m_Drunk.SendMessage("*You Feel As If You Just Lost A Brain Cell*");
+                m_Drunk.SendMessage("*Vous vous sentez désorienté*");
                 Stop();
             }
         }

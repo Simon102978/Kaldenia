@@ -66,6 +66,8 @@ namespace Server.Mobiles
 		private bool m_BaseFemale;
 		private int m_BaseHue;
 
+		public bool Hallucinating;
+
 		public bool m_Vulnerability;
 
 		private List<MissiveContent> m_MissiveEnAttente = new List<MissiveContent>();
@@ -158,7 +160,12 @@ namespace Server.Mobiles
 		}
 
 
-
+		[CommandProperty(AccessLevel.Administrator)]
+		public bool IsHallucinating
+		{
+			get { return Hallucinating; }
+			set { Hallucinating = value; InvalidateProperties(); }
+		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Classe ClasseSecondaire {

@@ -5707,8 +5707,12 @@ namespace Server.Mobiles
 
             GenerateLoot();
 
-          /*  if (m_Paragon)
+            if (m_Paragon)
             {
+				GenerateLootParagon();
+
+
+				/*
                 if (Fame < 1250)
                 {
                     AddLoot(LootPack.Meager);
@@ -5728,13 +5732,16 @@ namespace Server.Mobiles
                 else
                 {
                     AddLoot(LootPack.UltraRich);
-                }
-            }*/
+                }*/
+			}
 
             KillersLuck = 0;
         }
 
-        public virtual void GenerateLoot()
+		public virtual void GenerateLootParagon()
+		{ }
+
+		public virtual void GenerateLoot()
         { }
 
         public virtual void AddLoot(LootPack pack, int min, int max)
@@ -5789,6 +5796,8 @@ namespace Server.Mobiles
 
             pack.Generate(this);
         }
+
+
 
         public static void GetRandomAOSStats(int minLevel, int maxLevel, out int attributeCount, out int min, out int max)
         {

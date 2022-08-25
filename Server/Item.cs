@@ -712,6 +712,7 @@ namespace Server
 		private Mobile m_Createur;
 		private string m_Description;
 		private bool m_LockByPlayer;
+		private int m_Enchantement;
 
 		#region Packet caches
 		private Packet m_WorldPacket;
@@ -2478,8 +2479,12 @@ namespace Server
 
 		public virtual void Serialize(GenericWriter writer)
 		{
-			writer.Write(16); // version
+			writer.Write(17); // version
 
+
+			//			17
+
+			writer.Write(m_Enchantement);
 
 			//16
 
@@ -3003,6 +3008,12 @@ namespace Server
 
 			switch (version)
 			{
+				case 17:
+					{
+						m_Enchantement = reader.ReadInt();
+
+						goto case 16;
+					}
 				case 16:
 					{
 						m_LockByPlayer = reader.ReadBool();
@@ -4805,6 +4816,16 @@ namespace Server
 
 					Delta(ItemDelta.Update);
 				}
+			}
+		}
+
+		[CommandProperty(AccessLevel.Decorator)]
+		public int Enchantement
+		{
+			get => m_Enchantement;
+			set
+			{
+				m_Enchantement = value;
 			}
 		}
 

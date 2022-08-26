@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a charred corpse")]
@@ -47,7 +49,11 @@ namespace Server.Mobiles
         {
         }
 
-        public override int TreasureMapLevel => 1;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFeu>(), Utility.RandomMinMax(2, 4));
+		}
+		public override int TreasureMapLevel => 1;
         public override int Meat => 1;
         public override bool CanFly => true;
 

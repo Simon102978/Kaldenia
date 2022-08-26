@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ice snake corpse")]
@@ -42,7 +44,13 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool DeathAdderCharmable => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFroid>(), Utility.RandomMinMax(2, 4));
+		}
+
+
+		public override bool DeathAdderCharmable => true;
         public override int Meat => 1;
 
 		public override int Hides => 1;

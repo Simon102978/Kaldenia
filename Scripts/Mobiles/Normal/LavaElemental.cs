@@ -55,7 +55,12 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<LesserPoisonPotion>(true));
         }
 
-        public override int GetAttackSound() { return 0x60A; }
+		public override void GenerateLootParagon()
+		{
+				AddLoot(LootPack.LootItem<SangEnvouteFeu>(), Utility.RandomMinMax(2, 4));		
+		}
+
+		public override int GetAttackSound() { return 0x60A; }
         public override int GetDeathSound() { return 0x60B; }
         public override int GetHurtSound() { return 0x60C; }
         public override int GetIdleSound() { return 0x60D; }

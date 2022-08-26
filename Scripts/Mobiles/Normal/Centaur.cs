@@ -46,7 +46,16 @@ namespace Server.Mobiles
         {
         }
 
-        public override TribeType Tribe => TribeType.Fey;
+
+
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteWyvern>(), Utility.RandomMinMax(2, 4));
+		}
+
+
+
+		public override TribeType Tribe => TribeType.Fey;
 
         public override int Meat => 1;
         public override int Hides => 8;

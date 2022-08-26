@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ophidian corpse")]
@@ -43,7 +45,13 @@ namespace Server.Mobiles
         {
         }
 
-        public override Poison PoisonImmune => Poison.Greater;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePoison>(), Utility.RandomMinMax(2, 4));
+		}
+
+
+		public override Poison PoisonImmune => Poison.Greater;
         public override int TreasureMapLevel => 4;
 
         public override TribeType Tribe => TribeType.Ophidian;

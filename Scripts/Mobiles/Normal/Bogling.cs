@@ -52,7 +52,11 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItemCallback(RandomSeed));
         }
 
-        private Item RandomSeed(IEntity e)
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteVegetal>(), Utility.RandomMinMax(2, 4));
+		}
+		private Item RandomSeed(IEntity e)
         {
             return new Engines.Plants.Seed();
         }

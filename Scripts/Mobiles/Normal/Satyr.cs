@@ -1,3 +1,5 @@
+using Server.Items;	
+
 namespace Server.Mobiles
 {
     [CorpseName("a satyr's corpse")]
@@ -53,7 +55,12 @@ namespace Server.Mobiles
             AddLoot(LootPack.MedScrolls);
         }
 
-        public override bool CanDiscord => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteSatyr>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override bool CanDiscord => true;
         public override bool CanPeace => true;
         public override bool CanProvoke => true;
 

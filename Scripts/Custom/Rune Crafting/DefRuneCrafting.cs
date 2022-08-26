@@ -92,7 +92,7 @@ namespace Server.Engines.Craft
 
 		public override void InitCraftList()
 		{
-			int index = AddCraft( typeof( BlankRune ), 1044050, "blank rune", 45.0, 80.0, typeof( RoughStone ), "Rough Stone", 1, "A rough stone is needed to make that." );
+			int index = AddCraft( typeof( BlankRune ), "Misc", "Parchemin vierge", 45.0, 80.0, typeof(BlankScroll), 1044377, 10, 1044378);
 /*
 			int index = AddCraft( typeof( LowerManaCostRune ), "Casting", "Lower Mana Cost", 75.5, 115.0, typeof( DaemonBlood ), "Daemon Blood", 5, "You do not have enough daemon blood to make that." );
 				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
@@ -102,65 +102,73 @@ namespace Server.Engines.Craft
 				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
 			index = AddCraft( typeof( CastRecoverRune ), "Casting", "Faster Cast Recovery", 70.5, 105.0, typeof( BlackPearl ), "Black Pearl", 5, 1044361 );
 				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );*/
-			index = AddCraft( typeof( SpellChannelRune ), "Casting", "Canalisation Magique", 75.0, 120.0, typeof( SpidersSilk ), "Spiders Silk", 5, 1044368 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-	//		index = AddCraft( typeof( SpellDamageRune ), "Casting", "Spell Dmg Inc", 85.5, 120.0, typeof( GraveDust ), "Grave Dust", 7, "You do not have enough grave dust to make that." );
-	//			AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+			index = AddCraft( typeof( SpellChannelRune ), "Misc", "Canalisation Magique", 75.0, 120.0,  typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteDragon), "Sang Envouté Dragon", 5, "Il vous manquent de sang envouté Dragon.");
+			//		index = AddCraft( typeof( SpellDamageRune ), "Casting", "Spell Dmg Inc", 85.5, 120.0, typeof( GraveDust ), "Grave Dust", 7, "You do not have enough grave dust to make that." );
+			//			AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
 
 
-			index = AddCraft( typeof( AttackChanceRune ), "Misc", "Chance de touche", 75.5, 115.0, typeof( Bloodmoss ), "Bloodmoss", 5, 1044362 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( DefenceChanceRune ), "Misc", "Defense", 70.5, 100.0, typeof( SulfurousAsh ), "Sulfurous Ash", 5, 1044367 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-/*			index = AddCraft( typeof( EnhancePotsRune ), "Misc", "Enhance Potions", 50.0, 80.5, typeof( BlackPearl ), "Black Pearl", 3, 1044361 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( LuckRune ), "Misc", "Luck", 50.5, 90.0, typeof( Garlic), "Garlic", 3, "You do not have enough Garlic to make that" );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( NightSightRune ), "Misc", "Night Sight", 50.5, 90.0, typeof( SpidersSilk ), "Spiders Silk", 3, 1044368 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( MageArmorRune ), "Misc", "Mage Armor/wep", 60.0, 95.0, typeof( Garlic ), "Garlic", 3, "You do not have enough Garlic to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );*/
-			index = AddCraft( typeof( SelfRepairRune ), "Misc", "Auto-Réparation", 65.5, 95.0, typeof( SpidersSilk ), "Spiders Silk", 3, 1044368 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-/*			index = AddCraft( typeof( DurabilityBonusRune ), "Misc", "Fortifying rune / Durability Inc", 97.5, 100.0, typeof( ValoriteIngot ), "Valorite Ingots", 100, "You do not have enough Valorite Ingots to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 5, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( RepairItem ), "Misc", "Item Repair Rune Wont Break Item", 97.5, 100.0, typeof( ValoriteIngot ), "Valorite Ingots", 50, "You do not have enough Valorite Ingots to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 10, "You do not have any Rough Stones to make that."  );
-				AddRes( index, typeof ( Lockpick ), "lockpick", 40, "You do not have enough Lock Picks to make that."  );
+			index = AddCraft( typeof( AttackChanceRune ), "Misc", "Chance de touche", 75.5, 115.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteDragon), "Sang Envouté Dragon", 5, "Il vous manquent de sang envouté Dragon.");
+			index = AddCraft( typeof( DefenceChanceRune ), "Misc", "Defense", 70.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteDragon), "Sang Envouté Dragon", 5, "Il vous manquent de sang envouté Dragon.");
+			/*			index = AddCraft( typeof( EnhancePotsRune ), "Misc", "Enhance Potions", 50.0, 80.5, typeof( BlackPearl ), "Black Pearl", 3, 1044361 );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+						index = AddCraft( typeof( LuckRune ), "Misc", "Luck", 50.5, 90.0, typeof( Garlic), "Garlic", 3, "You do not have enough Garlic to make that" );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+						index = AddCraft( typeof( NightSightRune ), "Misc", "Night Sight", 50.5, 90.0, typeof( SpidersSilk ), "Spiders Silk", 3, 1044368 );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+						index = AddCraft( typeof( MageArmorRune ), "Misc", "Mage Armor/wep", 60.0, 95.0, typeof( Garlic ), "Garlic", 3, "You do not have enough Garlic to make that." );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );*/
+			index = AddCraft( typeof( SelfRepairRune ), "Misc", "Auto-Réparation", 65.5, 95.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteLezard), "Sang Envouté Lezard", 5, "Il vous manquent de sang envouté de Lezard.");
+			/*			index = AddCraft( typeof( DurabilityBonusRune ), "Misc", "Fortifying rune / Durability Inc", 97.5, 100.0, typeof( ValoriteIngot ), "Valorite Ingots", 100, "You do not have enough Valorite Ingots to make that." );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 5, "You do not have any Rough Stones to make that."  );
+						index = AddCraft( typeof( RepairItem ), "Misc", "Item Repair Rune Wont Break Item", 97.5, 100.0, typeof( ValoriteIngot ), "Valorite Ingots", 50, "You do not have enough Valorite Ingots to make that." );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 10, "You do not have any Rough Stones to make that."  );
+							AddRes( index, typeof ( Lockpick ), "lockpick", 40, "You do not have enough Lock Picks to make that."  );
 
 
-			index = AddCraft( typeof( ReflectPhysRune ), "Resistances / Reflect", "Reflect Physical Damage", 70.5, 105.0, typeof( PigIron ), "Pig Iron", 5, "You do not have enough pig iron to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );*/
-			index = AddCraft( typeof( ResistColdRune ), "Resistances / Reflect", "Resistance au froid", 70.5, 100.0, typeof( BlackPearl ), "Black Pearl", 5, 1044361 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( ResistEnergyRune ), "Resistances / Reflect", "Resistance à l'énergie", 70.5, 100.0, typeof( BlackPearl ), "Black Pearl", 5, 1044361 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( ResistFireRune ), "Resistances / Reflect", "Resistance au feu", 70.5, 100.0, typeof( SulfurousAsh ), "Sulfurous Ash", 5, 1044367 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( ResistPhysRune ), "Resistances / Reflect", "Resistance physique", 70.5, 100.0, typeof( Garlic ), "Garlic", 5, "A blank rune is needed to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( ResistPoisRune ), "Resistances / Reflect", "Resistance au poison", 70.5, 100.0, typeof( NoxCrystal ), "Nox Crystal", 5, "You do not have enough nox crystal to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+						index = AddCraft( typeof( ReflectPhysRune ), "Resistances / Reflect", "Reflect Physical Damage", 70.5, 105.0, typeof( PigIron ), "Pig Iron", 5, "You do not have enough pig iron to make that." );
+							AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );*/
+			index = AddCraft( typeof( ResistColdRune ), "Resistances", "Resistance au froid", 70.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteFroid), "Sang Envouté Froid", 5, "Il vous manquent de sang envouté Froid.");
+			index = AddCraft( typeof( ResistEnergyRune ), "Resistances", "Resistance à l'énergie", 70.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteEnergie), "Sang Envouté Energie", 5, "Il vous manquent de sang envouté Energie.");
+			index = AddCraft( typeof( ResistFireRune ), "Resistances", "Resistance au feu", 70.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteFeu), "Sang Envouté Feu", 5, "Il vous manquent de sang envouté feu.");
+			index = AddCraft( typeof( ResistPhysRune ), "Resistances", "Resistance physique", 70.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvoutePhysique), "Sang Envouté Physique", 5, "Il vous manquent de sang envouté physique.");
+			index = AddCraft( typeof( ResistPoisRune ), "Resistances", "Resistance au poison", 70.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvoutePoison), "Sang Envouté Poison", 5, "Il vous manquent de sang envouté Force.");
 
 
-			index = AddCraft( typeof( BonusDexRune ), "Stats/Regens", "Dexterité", 85.5, 120.0, typeof( BatWing ), "Bat Wing", 7, "You do not have enough bat wing to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( BonusIntRune ), "Stats/Regens", "Intelligence", 80.5, 120.0, typeof( Ginseng ), "Ginseng", 7, 1044364 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( BonusStrRune ), "Stats/Regens", "Force", 80.5, 120.0, typeof( MandrakeRoot ), "Mandrake Root", 7, 1044365 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( BonusHitRune ), "Stats/Regens", "Vie", 85.5, 120.0, typeof( Ginseng ), "Ginseng", 7, 1044364 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( BonusManaRune ), "Stats/Regens", "Mana", 80.5, 120.0, typeof( DaemonBlood ), "Daemon Blood", 7, "You do not have enough daemon blood to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( BonusStamRune ), "Stats/Regens", "Stamina", 80.5, 110.0, typeof( MandrakeRoot ), "Mandrake Root", 7, 1044365 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( RegenHitsRune ), "Stats/Regens", "Regeneration de vie", 80.5, 115.0, typeof( Ginseng ), "Ginseng", 7, 1044364 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( RegenManaRune ), "Stats/Regens", "Regeneration de mana", 75.5, 115.0, typeof( GraveDust ), "Grave Dust", 5, "You do not have enough grave dust to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( RegenStamRune ), "Stats/Regens", "Regeneration de stamina", 70.5, 99.5, typeof( Bloodmoss ), "Bloodmoss", 5, 1044362 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+			index = AddCraft( typeof( BonusDexRune ), "Stats/Regens", "Dexterité", 85.5, 120.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteDex), "Sang Envouté Dexterité", 5, "Il vous manquent de sang envouté dexterité.");
+			index = AddCraft( typeof( BonusIntRune ), "Stats/Regens", "Intelligence", 80.5, 120.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteInt), "Sang Envouté Intelligence", 5, "Il vous manquent de sang envouté intelligence.");
+			index = AddCraft( typeof( BonusStrRune ), "Stats/Regens", "Force", 80.5, 120.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteForce), "Sang Envouté Force", 5, "Il vous manquent de sang envouté Force.");
+
+
+			index = AddCraft( typeof( BonusHitRune ), "Stats/Regens", "Vie", 85.5, 120.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteWyvern), "Sang Envouté de Wvyern", 5, "Il vous manquent de sang envouté de Wvyern.");
+
+			index = AddCraft( typeof( BonusManaRune ), "Stats/Regens", "Mana", 80.5, 120.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteCentaur), "Sang Envouté de Centaur", 5, "Il vous manquent de sang envouté de Centaur.");
+
+			index = AddCraft( typeof( BonusStamRune ), "Stats/Regens", "Stamina", 80.5, 110.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes( index, typeof (SangEnvouteVegetal), "Sang Envouté Végétal", 5, "Il vous manquent de sang envouté Végétal.");
+
+			index = AddCraft( typeof( RegenHitsRune ), "Stats/Regens", "Regeneration de vie", 80.5, 110.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteDrake), "Sang Envouté de Drake", 5, "Il vous manquent de sang envouté de Drake.");
+
+			index = AddCraft( typeof( RegenManaRune ), "Stats/Regens", "Regeneration de mana", 75.5, 115.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteDragon), "Sang Envouté Dragon", 5, "Il vous manquent de sang envouté Dragon.");
+
+			index = AddCraft( typeof( RegenStamRune ), "Stats/Regens", "Regeneration de stamina", 70.5, 99.5, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteSatyr), "Sang Envouté de Satyr", 5, "Il vous manquent de sang envouté de Satyr.");
+
 
 
 	/*		index = AddCraft( typeof( ArachnidSlayer ), "Slayers", "Arachnid Slayer", 120, 120.5, typeof( ChampionSkull ), "Champion Skull's", 25, "You do not have enough Champion Skull's to Craft this." );
@@ -229,12 +237,12 @@ namespace Server.Engines.Craft
 			index = AddCraft( typeof( HitLeechStamRune ), "Weapons Hit", "Hit Stam Leech", 75.5, 105.0, typeof( Nightshade ), "Nightshade", 5, 1044366 );
 				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
 */
-			index = AddCraft( typeof( UseBestWepRune ), "Weapons Misc", "Meilleur arme", 65.5, 100.0, typeof( PigIron ), "Pig Iron", 3, "You do not have enough pig iron to make that." );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( DamageIncRune ), "Weapons Misc", "Degat", 75.5, 120.0, typeof( Bloodmoss ), "Bloodmoss", 5, 1044362 );
-				AddRes( index, typeof ( RoughStone ), "RoughStone", 1, "You do not have any Rough Stones to make that."  );
-			index = AddCraft( typeof( SwingSpeedRune ), "Weapons Misc", "Vitesse de frappe", 75.5, 115.0, typeof( Bloodmoss ), "Bloodmoss", 5, 1044362 );
-				AddRes( index, typeof ( RoughStone ), "Rough Stone", 1, "You do not have any Rough Stones to make that."  );
+			index = AddCraft( typeof( UseBestWepRune ), "Weapons Misc", "Meilleur arme", 65.5, 100.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteLezard), "Sang Envouté Lezard", 5, "Il vous manquent de sang envouté de Lezard.");
+			index = AddCraft( typeof( DamageIncRune ), "Weapons Misc", "Degat", 75.5, 120.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteLezard), "Sang Envouté Lezard", 5, "Il vous manquent de sang envouté de Lezard.");
+			index = AddCraft( typeof( SwingSpeedRune ), "Weapons Misc", "Vitesse de frappe", 75.5, 115.0, typeof(BlankRune), "Rune vierge", 1, "Il vous faut une runes vierge.");
+			AddRes(index, typeof(SangEnvouteLezard), "Sang Envouté Lezard", 5, "Il vous manquent de sang envouté de Lezard.");
 
 		}
 

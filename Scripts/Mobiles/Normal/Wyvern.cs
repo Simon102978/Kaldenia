@@ -65,7 +65,12 @@ namespace Server.Mobiles
 			AddLoot(LootPack.LootItem<Items.GemmePoison>(), (double)5);
 		}
 
-        public override int GetAttackSound()
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteWyvern>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override int GetAttackSound()
         {
             return 713;
         }

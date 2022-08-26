@@ -5739,7 +5739,20 @@ namespace Server.Mobiles
         }
 
 		public virtual void GenerateLootParagon()
-		{ }
+		{
+			if (RawStr >= RawDex && RawStr >= RawInt)
+			{
+				AddLoot(LootPack.LootItem<SangEnvouteForce>(), Utility.RandomMinMax(2, 4));
+			}
+			else if (RawDex >= RawStr && RawDex >= RawInt)
+			{
+				AddLoot(LootPack.LootItem<SangEnvouteDex>(), Utility.RandomMinMax(2, 4));
+			}
+			else if (RawInt >= RawStr && RawInt >= RawDex)
+			{
+				AddLoot(LootPack.LootItem<SangEnvouteInt>(), Utility.RandomMinMax(2, 4));
+			}
+		}
 
 		public virtual void GenerateLoot()
         { }

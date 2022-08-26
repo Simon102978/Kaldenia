@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a fire daemon corpse")]
@@ -60,7 +62,13 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 4;
         public override int Meat => 1;
 
-        public void AuraEffect(Mobile m)
+
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFeu>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public void AuraEffect(Mobile m)
         {
             m.SendLocalizedMessage(1008112); // The intense heat is damaging you!
         }

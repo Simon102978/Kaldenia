@@ -42,7 +42,11 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool CanRummageCorpses => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePhysique>(), Utility.RandomMinMax(2, 4));
+		}
+		public override bool CanRummageCorpses => true;
         public override int TreasureMapLevel => 1;
         public override int Meat => 2;
 		public override int Hides => 5;

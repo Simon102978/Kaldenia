@@ -54,7 +54,12 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool AlwaysMurderer => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteDragon>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override bool AlwaysMurderer => true;
         public override bool Unprovokable => true;
         public override bool BardImmune => true;
 

@@ -63,7 +63,12 @@ namespace Server.Mobiles
             base.OnAfterTame(tamer);
         }
 
-        public override bool CanAngerOnTame => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteDragon>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override bool CanAngerOnTame => true;
         public override bool StatLossAfterTame => true;
         public override bool ReacquireOnMovement => !Controlled;
         public override bool AutoDispel => !Controlled;

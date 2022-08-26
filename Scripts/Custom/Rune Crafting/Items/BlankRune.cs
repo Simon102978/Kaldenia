@@ -14,7 +14,7 @@ namespace Server.Items
 		{
 			Weight = 0.0;
 			Stackable = false;
-			Name = "Blank Rune";
+			Name = "Rune vierge";
 			//Amount = amount;
 			Hue = 998;
 		}

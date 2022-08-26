@@ -65,7 +65,12 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<BlackPearl>());
         }
 
-        public override void Serialize(GenericWriter writer)
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFroid>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write(0);

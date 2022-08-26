@@ -53,7 +53,12 @@ namespace Server.Mobiles
                 c.DropItem(new AnimalPheromone());
         }
 
-        public override void GenerateLoot()
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFeu>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override void GenerateLoot()
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Rich, 3);

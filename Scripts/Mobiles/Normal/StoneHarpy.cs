@@ -44,7 +44,13 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat => 1;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteEnergie>(), Utility.RandomMinMax(2, 4));
+		}
+
+
+		public override int Meat => 1;
         public override int Feathers => 50;
         public override bool CanFly => true;
         public override void GenerateLoot()

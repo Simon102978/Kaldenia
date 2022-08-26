@@ -238,10 +238,16 @@ namespace Server.Engines.Craft
 			index = AddCraft(typeof(WinecraftersTools), "Outils", "Outil fabrication de vin", 30.0, 70.0, typeof(IronIngot), 1044036, 2, 1044037);
 			index = AddCraft(typeof(WitchsBookofFoodCrafts), "Outils", "Livre de recette enchantées", 30.0, 70.0, typeof(Board), 1044041, 5, 1044351);
 			index = AddCraft(typeof(TaxidermyKit), "Outils", "Outil de Taxidermie", 80.0, 110.0, typeof(IronIngot), 1044036, 5, 1044037);
+
+			index = AddCraft(typeof(RuneChisel), "Outils", "Ciseau runique", 85.0, 110.0, typeof(IronIngot), 1044036, 5, 1044037);
+
+
+
+
 			#endregion
 
 			#region Jewelry
-			  index = AddCraft(typeof(GoldRing), "Bijoux", "Anneau", 65.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
+			index = AddCraft(typeof(GoldRing), "Bijoux", "Anneau", 65.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
 			   index = AddCraft(typeof(GoldBracelet), "Bijoux", "Bracelet", 55.0, 100.0, typeof(GoldIngot), 1044036, 3, 1044037);
 			  index = AddCraft(typeof(Necklace), "Bijoux", "Collier à perles", 60.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
 			  index = AddCraft(typeof(BaseBracelet), "Bijoux", "Bracelet simple", 55.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);

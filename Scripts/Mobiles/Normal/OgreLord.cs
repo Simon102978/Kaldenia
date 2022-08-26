@@ -41,6 +41,10 @@ namespace Server.Mobiles
         {
         }
 
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePhysique>(), Utility.RandomMinMax(2, 4));
+		}
 		public override int Hides => 6;
 		public override HideType HideType => HideType.Geant;
 

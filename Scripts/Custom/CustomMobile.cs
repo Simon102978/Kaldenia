@@ -409,8 +409,8 @@ namespace Server.Mobiles
 
 		public List<Mobile> Esclaves { get { return m_Esclaves; } set { m_Esclaves = value; } }
 
+		[CommandProperty(AccessLevel.Owner)]
 		public CustomPlayerMobile Maitre { get { return m_Maitre; } set { m_Maitre = value; } }
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime JailTime { get; set; }
@@ -418,12 +418,10 @@ namespace Server.Mobiles
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Point3D JailLocation { get; set; }
 
-
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Map JailMap { get; set; }
 
 		private bool m_Jail = false;
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Jail
@@ -455,9 +453,21 @@ namespace Server.Mobiles
 			}
 		}
 
-
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Mobile JailBy { get; set; }
+
+
+
+
+	
+
+
+
+
+
+
+
+
 
 
 		public DateTime NextFaimMessage { get; set; }
@@ -485,7 +495,6 @@ namespace Server.Mobiles
 				list.Add(1050045, "{0}, \t{1}\t", Race.Name, Apparence()); // ~1_PREFIX~~2_NAME~~3_SUFFIX~
 				list.Add(1050045, "{0}, \t{1}\t", GrandeurString(), GrosseurString());
 			}
-
 		}
 
 		#region Missive
@@ -510,13 +519,9 @@ namespace Server.Mobiles
 				if (entry != null)
 				{
 					AddToBackpack(new Missive(entry));
-
 				}
 			}
-
 			MissiveEnAttente = new List<MissiveContent>();
-
-
 		}
 
 		#endregion
@@ -555,10 +560,8 @@ namespace Server.Mobiles
 
 		public void RemoveEsclave(Mobile m, bool affranchir = false)
 		{
-
 			if (m is CustomPlayerMobile cp)
 			{
-
 				if (affranchir)
 				{
 					cp.Maitre = null;
@@ -592,11 +595,7 @@ namespace Server.Mobiles
 			{
 				return true;
 			}
-
-
 			return MaxEsclave() >= m_Esclaves.Count + 1;
-
-
 		}
 
 		public int MaxEsclave()
@@ -1282,7 +1281,7 @@ namespace Server.Mobiles
 		{
 			SendGump(new TipGump(this, m, tip, true));
 
-			SendMessage("Un maître de jeu vous a envoyé un message, double cliquez le parchemin pour le lire.");
+			SendMessage("Un maître de jeu vous a envoyé un message, double cliquez le b pour le lire.");
 		}
 
 		public override bool OnEquip(Item item)

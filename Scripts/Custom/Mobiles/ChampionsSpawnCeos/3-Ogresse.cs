@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
 	[CorpseName("Corp d'Ogresse")]
@@ -45,6 +47,11 @@ namespace Server.Mobiles
 		{
 		}
 
+
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePhysique>(), Utility.RandomMinMax(2, 4));
+		}
 
 		public override void GenerateLoot()
 		{

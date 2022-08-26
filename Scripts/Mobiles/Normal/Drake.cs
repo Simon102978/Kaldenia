@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("a drake corpse")]
@@ -61,7 +63,10 @@ namespace Server.Mobiles
 
 
 
-
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteDrake>(), Utility.RandomMinMax(2, 4));
+		}
 
 
 

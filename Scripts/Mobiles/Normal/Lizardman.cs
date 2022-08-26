@@ -1,4 +1,5 @@
 using Server.Misc;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -41,7 +42,12 @@ namespace Server.Mobiles
         {
         }
 
-        public override int TreasureMapLevel => 1;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteLezard>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override int TreasureMapLevel => 1;
         public override InhumanSpeech SpeechType => InhumanSpeech.Lizardman;
         public override bool CanRummageCorpses => true;
         public override int Meat => 1;

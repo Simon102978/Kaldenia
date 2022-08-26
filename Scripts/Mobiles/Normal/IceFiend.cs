@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ice fiend corpse")]
@@ -46,7 +48,12 @@ namespace Server.Mobiles
         public override int Meat => 1;
         public override bool CanFly => true;
 
-        public void AuraEffect(Mobile m)
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFroid>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public void AuraEffect(Mobile m)
         {
             m.FixedParticles(0x374A, 10, 30, 5052, Hue, 0, EffectLayer.Waist);
             m.PlaySound(0x5C6);

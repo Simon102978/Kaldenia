@@ -50,7 +50,10 @@ namespace Server.Mobiles
 		public override int Hides => 3;
 		public override HideType HideType => HideType.Lupus;
 
-
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFroid>(), Utility.RandomMinMax(2, 4));
+		}
 		public override int Bones => 3;
 		public override BoneType BoneType => BoneType.Lupus;
 

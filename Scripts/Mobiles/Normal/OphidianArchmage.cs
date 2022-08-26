@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ophidian corpse")]
@@ -56,6 +58,10 @@ namespace Server.Mobiles
 		public override int Hides => 6;
 		public override HideType HideType => HideType.Ophidien;
 
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePoison>(), Utility.RandomMinMax(2, 4));
+		}
 
 		public override int Bones => 6;
 		public override BoneType BoneType => BoneType.Ophidien;

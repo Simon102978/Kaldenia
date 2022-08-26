@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("Corp de Matriache")]
@@ -44,7 +46,10 @@ namespace Server.Mobiles
 		public override int Hides => 6;
 		public override HideType HideType => HideType.Geant;
 
-
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePhysique>(), Utility.RandomMinMax(2, 4));
+		}
 		public override int Bones => 6;
 		public override BoneType BoneType => BoneType.Geant;
 

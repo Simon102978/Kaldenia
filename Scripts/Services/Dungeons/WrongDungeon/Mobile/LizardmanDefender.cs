@@ -1,4 +1,6 @@
 using Server.Misc;
+using Server.Items;
+
 
 namespace Server.Mobiles
 {
@@ -43,7 +45,12 @@ namespace Server.Mobiles
         {
         }
 
-        public override InhumanSpeech SpeechType => InhumanSpeech.Lizardman;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteLezard>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override InhumanSpeech SpeechType => InhumanSpeech.Lizardman;
 
         public override bool CanRummageCorpses => true;
 

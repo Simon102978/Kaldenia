@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
+using Server.Items;
 
 
 namespace Server.Mobiles
@@ -56,6 +57,11 @@ namespace Server.Mobiles
 		public override int Bones => 6;
 		public override BoneType BoneType => BoneType.Geant;
 
+
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePhysique>(), Utility.RandomMinMax(2, 4));
+		}
 
 		public override void GenerateLoot()
         {

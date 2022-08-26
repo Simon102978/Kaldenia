@@ -47,7 +47,12 @@ namespace Server.Mobiles
             AddLoot(LootPack.LootItem<Vines>());
         }
 
-        public WhippingVine(Serial serial)
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteVegetal>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public WhippingVine(Serial serial)
             : base(serial)
         {
         }

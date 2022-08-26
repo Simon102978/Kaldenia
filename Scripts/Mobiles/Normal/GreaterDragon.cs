@@ -54,7 +54,12 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool StatLossAfterTame => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteDragon>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public override bool StatLossAfterTame => true;
         public override bool ReacquireOnMovement => !Controlled;
         public override bool AutoDispel => !Controlled;
         public override int TreasureMapLevel => 5;

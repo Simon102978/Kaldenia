@@ -12,7 +12,7 @@ namespace Server.Items
 		[Constructable]
 		public RuneChisel() : base( 0x10E7 )
 		{
-			Name = "Rune Chisel";
+			Name = "Ciseau runique";
 			Hue = 2962;
 			Weight = 4.0;
 		}
@@ -20,7 +20,7 @@ namespace Server.Items
 		[Constructable]
 		public RuneChisel( int uses ) : base( uses, 0x10E7 )
 		{
-			Name = "Rune Chisel";
+			Name = "Ciseau runique";
 			Hue = 2962;
 			Weight = 4.0;
 			Layer = Layer.OneHanded;

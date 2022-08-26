@@ -66,7 +66,12 @@ namespace Server.Mobiles
             AddLoot(LootPack.BodyParts);
         }
 
-        public void AuraEffect(Mobile m)
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFeu>(), Utility.RandomMinMax(2, 4));
+		}
+
+		public void AuraEffect(Mobile m)
         {
             m.SendMessage("The radiating heat scorches your skin!");
         }

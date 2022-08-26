@@ -52,7 +52,13 @@ namespace Server.Mobiles
         public override int Meat => 1;
         public override int TreasureMapLevel => 2;
 
-        public override TribeType Tribe => TribeType.Ophidian;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePoison>(), Utility.RandomMinMax(2, 4));
+		}
+
+
+		public override TribeType Tribe => TribeType.Ophidian;
 
 		public override int Hides => 6;
 		public override HideType HideType => HideType.Ophidien;

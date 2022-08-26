@@ -1,3 +1,5 @@
+using Server.Items;
+
 namespace Server.Mobiles
 {
     [CorpseName("an ettins corpse")]
@@ -42,7 +44,10 @@ namespace Server.Mobiles
 		public override int Hides => 4;
 		public override HideType HideType => HideType.Geant;
 
-
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePhysique>(), Utility.RandomMinMax(2, 4));
+		}
 		public override int Bones => 4;
 		public override BoneType BoneType => BoneType.Geant;
 		public override bool CanRummageCorpses => true;

@@ -44,7 +44,11 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool DeathAdderCharmable => true;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvouteFroid>(), Utility.RandomMinMax(2, 4));
+		}
+		public override bool DeathAdderCharmable => true;
         public override int Meat => 4;
 		/*       public override int Hides => 15;
 			   public override HideType HideType => HideType.Spined;*/

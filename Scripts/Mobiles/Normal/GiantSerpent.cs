@@ -46,7 +46,13 @@ namespace Server.Mobiles
         {
         }
 
-        public override Poison PoisonImmune => Poison.Greater;
+		public override void GenerateLootParagon()
+		{
+			AddLoot(LootPack.LootItem<SangEnvoutePoison>(), Utility.RandomMinMax(2, 4));
+		}
+
+
+		public override Poison PoisonImmune => Poison.Greater;
         public override Poison HitPoison => (0.8 >= Utility.RandomDouble() ? Poison.Greater : Poison.Deadly);
         public override bool DeathAdderCharmable => true;
         public override int Meat => 4;

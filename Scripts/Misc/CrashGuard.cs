@@ -10,7 +10,7 @@ namespace Server.Misc
 {
     public class CrashGuard
     {
-        private static readonly bool Enabled = true;
+        private static readonly bool Enabled = false;
         private static readonly bool SaveBackup = true;
         private static readonly bool RestartServer = true;
         private static readonly bool GenerateReport = true;

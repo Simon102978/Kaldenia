@@ -265,7 +265,7 @@ namespace Server
 					}
 
 					Console.WriteLine("This exception is fatal, press return to exit");
-					Console.ReadLine();
+				//	Console.ReadLine();
 				}
 
 				Kill();

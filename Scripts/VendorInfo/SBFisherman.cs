@@ -61,7 +61,7 @@ namespace Server.Mobiles
 				Add(typeof(SpiderCrabMeat), 5);
 				Add(typeof(BlueLobsterMeat), 5);
 
-				/// Ajouts poissons sp�ciaux ///
+				/// Ajouts poissons spéciaux ///
 				
 				Add(typeof(AutumnDragonfish), 5);
 				Add(typeof(BullFish), 3);

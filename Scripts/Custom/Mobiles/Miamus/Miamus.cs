@@ -315,11 +315,11 @@ namespace Server.Mobiles
 
 				if (Distance < 0)
 				{
-					Distance2 = -Distance;   // Sert a faire en sorte, que si c'est n�gative, ca va avancer.
+					Distance2 = -Distance;   // Sert a faire en sorte, que si c'est négative, ca va avancer.
 					Neg = -1;
 				}
 
-				for (int i = 0; i < Distance2; i++)  // Le script valide toute les tiles jusqu'a la distance maximum. Si une d'entre elle est bloquer, il revient a la pr�c�dente (ou player location du d�part) et stun la target.
+				for (int i = 0; i < Distance2; i++)  // Le script valide toute les tiles jusqu'a la distance maximum. Si une d'entre elle est bloquer, il revient a la précédente (ou player location du départ) et stun la target.
 				{
 					Point3D point = KnockBackCalculation(destination, target, i * Neg);
 

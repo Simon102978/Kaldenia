@@ -98,7 +98,7 @@ namespace Server.Scripts.Commands
 
             if ( target == null || !(target is CustomPlayerMobile))
             {
-                from.SendMessage("Cette cible est inad�quate.");
+                from.SendMessage("Cette cible est inadéquate.");
                 return;
             }
 

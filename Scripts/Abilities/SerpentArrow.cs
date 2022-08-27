@@ -24,9 +24,9 @@ namespace Server.Items
 
             int level;
 
-            if (attacker.InRange(defender, 2))
+            if (attacker.InRange(defender, 6))
             {
-                int total = (attacker.Skills.Poisoning.Fixed) / 2;
+                int total = (attacker.Skills.Poisoning.Fixed);
 
                 if (total >= 1000)
                     level = 3;

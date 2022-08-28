@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     public class SerpentArrow : WeaponAbility
     {
@@ -24,7 +24,7 @@ namespace Server.Items
 
             int level;
 
-            if (attacker.InRange(defender, 6))
+  //          if (attacker.InRange(defender, 6))
             {
                 int total = (attacker.Skills.Poisoning.Fixed);
 
@@ -37,10 +37,10 @@ namespace Server.Items
                 else
                     level = 0;
             }
-            else
+    /*        else
             {
                 level = 0;
-            }
+            }*/
 
             defender.ApplyPoison(attacker, Poison.GetPoison(level));
 

@@ -14,7 +14,7 @@ namespace Server.Items
         [Constructable]
         public EcaillesWyrm(int amount) : base(0x26B3, amount)
         {
-            Name = "écailles de wyrm";
+            Name = "Ã‰cailles de wyrm";
         }
 
         public EcaillesWyrm(Serial serial) : base(serial)

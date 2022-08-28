@@ -214,7 +214,7 @@ namespace Server.Items
 
                     if (pen == null || pen.Deleted)
                     {
-                        from.SendMessage("Vous devez avoir un scribe's pen dans votre sac pour écrire une missive.");
+                        from.SendMessage("Vous devez avoir un scribe's pen dans votre sac pour Ã©crire une missive.");
                     }
                     else
                     {
@@ -223,12 +223,12 @@ namespace Server.Items
                 }
                 else
                 {
-                    from.SendMessage("Vous devez avoir un scribe's pen dans votre sac pour écrire une missive.");
+                    from.SendMessage("Vous devez avoir un scribe's pen dans votre sac pour Ã©crire une missive.");
                 }
             }
             else
             {
-                from.SendMessage("La missive doit être dans votre sac.");
+                from.SendMessage("La missive doit Ãªtre dans votre sac.");
             }
         }
 

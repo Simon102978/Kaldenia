@@ -94,7 +94,7 @@ public class Toge3 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Toge à épaulettes";
+		Name = "Toge Ã  Ã©paulettes";
 	}
 
 	public Toge3(Serial serial)
@@ -174,7 +174,7 @@ public class Toge5 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Toge à ceinture large";
+		Name = "Toge Ã  ceinture large";
 	}
 
 	public Toge5(Serial serial)
@@ -214,7 +214,7 @@ public class Toge6 :  BaseOuterTorso
 
 		{
 		Weight = 2.0;
-		Name = "Toge à ceinture dorée";
+		Name = "Toge Ã  ceinture dorÃ©e";
 	}
 
 	public Toge6(Serial serial)

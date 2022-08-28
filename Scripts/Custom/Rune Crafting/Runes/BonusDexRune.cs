@@ -18,7 +18,7 @@ namespace Server.Items
 		public BonusDexRune() : base()
 		{
 			Weight = 0.2;  // ?
-			Name = "Dexterité";
+			Name = "DexteritÃ©";
 			Hue = 2101;
 		}
 

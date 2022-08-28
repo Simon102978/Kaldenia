@@ -14,7 +14,7 @@ namespace Server.Items
         [Constructable]
         public EcaillesSerpentGeant(int amount) : base(0x26B4, amount)
         {
-            Name = "écailles de serpent géant";
+            Name = "Ã‰cailles de serpent gÃ©ant";
         }
 
         public EcaillesSerpentGeant(Serial serial) : base(serial)

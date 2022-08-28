@@ -27,7 +27,7 @@ namespace Server.ContextMenus
             if (m_Carnet.Deleted || !m_From.CheckAlive())
                 return;
 
-            m_From.SendMessage("Sélectionner la personne ou la missive à ajouter dans le carnet d'adresse.");
+            m_From.SendMessage("SÃ©lectionner la personne ou la missive Ã  ajouter dans le carnet d'adresse.");
             m_From.Target = new ChooseTarget(m_From, m_Carnet);
         }
 
@@ -50,7 +50,7 @@ namespace Server.ContextMenus
 
                     if (m_Carnet.Contains(target.Name))
                     {
-                        m_From.SendMessage("Vous avez déjà cette personne dans votre carnet.");
+                        m_From.SendMessage("Vous avez dÃ©jÃ  cette personne dans votre carnet.");
                     }
                     else
                     {
@@ -65,11 +65,11 @@ namespace Server.ContextMenus
 
                     if (missive.Destinateur == null || missive.Destinateur.Deleted)
                     {
-                        m_From.SendMessage("La personne que vous désirez entrer dans votre carnet d'adresse est décédée.");
+                        m_From.SendMessage("La personne que vous dÃ©sirez entrer dans votre carnet d'adresse est dÃ©cÃ©dÃ©e.");
                     }
                     else if (m_Carnet.Contains(missive.DestinateurName))
                     {
-                        m_From.SendMessage("Vous avez déjà cette personne dans votre carnet.");
+                        m_From.SendMessage("Vous avez dÃ©jÃ  cette personne dans votre carnet.");
                     }
                     else if (!(missive.Destinateur is CustomPlayerMobile))
                     {
@@ -256,7 +256,7 @@ namespace Server.Items
             }
             else
             {
-                from.SendMessage("Le carnet d'adresse doit être dans votre sac.");
+                from.SendMessage("Le carnet d'adresse doit Ãªtre dans votre sac.");
             }
         }
     }

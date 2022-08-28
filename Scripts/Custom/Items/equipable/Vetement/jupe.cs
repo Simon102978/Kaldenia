@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41666, hue)
 	{
 		Weight = 2.0;
-		Name = "Jupe à Bande";
+		Name = "Jupe Ã  Bande";
 	}
 
 	public Jupe(Serial serial)
@@ -55,7 +55,7 @@ public class Jupe2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Délicate";
+		Name = "Jupe DÃ©licate";
 	}
 
 	public Jupe2(Serial serial)
@@ -175,7 +175,7 @@ public class Jupe5 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Motifs";
+		Name = "Jupe Ã  Motifs";
 	}
 
 	public Jupe5(Serial serial)
@@ -215,7 +215,7 @@ public class Jupe6 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Plis";
+		Name = "Jupe Ã  Plis";
 	}
 
 	public Jupe6(Serial serial)
@@ -255,7 +255,7 @@ public class JupeVoiles :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Banquet";
+		Name = "Jupe Ã  Banquet";
 	}
 
 	public JupeVoiles(Serial serial)
@@ -295,7 +295,7 @@ public class JupeVoiles2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Volant";
+		Name = "Jupe Ã  Volant";
 	}
 
 	public JupeVoiles2(Serial serial)
@@ -335,7 +335,7 @@ public class JupeCourte :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Courte Lacée";
+		Name = "Jupe Courte LacÃ©e";
 	}
 
 	public JupeCourte(Serial serial)
@@ -375,7 +375,7 @@ public class JupeCourte2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Quadrillée";
+		Name = "Jupe QuadrillÃ©e";
 	}
 
 	public JupeCourte2(Serial serial)
@@ -455,7 +455,7 @@ public class JupeCourte3 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Mini jupe à Ceinture";
+		Name = "Mini jupe Ã  Ceinture";
 	}
 
 	public JupeCourte3(Serial serial)
@@ -535,7 +535,7 @@ public class JupeCourte5 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe courte à Vollant";
+		Name = "Jupe courte Ã  Vollant";
 	}
 
 	public JupeCourte5(Serial serial)
@@ -575,7 +575,7 @@ public class JupeCourte6 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe courte à Vollant Unie";
+		Name = "Jupe courte Ã  Vollant Unie";
 	}
 
 	public JupeCourte6(Serial serial)
@@ -655,7 +655,7 @@ public class JupeLacee :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name ="Jupe Lacée";
+		Name ="Jupe LacÃ©e";
 	}
 
 	public JupeLacee(Serial serial)
@@ -695,7 +695,7 @@ public class JupeLacee2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Lacée Sombre";
+		Name = "Jupe LacÃ©e Sombre";
 	}
 
 	public JupeLacee2(Serial serial)
@@ -735,7 +735,7 @@ public class JupeLacee3 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Lacée Droite";
+		Name = "Jupe LacÃ©e Droite";
 	}
 
 	public JupeLacee3(Serial serial)
@@ -775,7 +775,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 			Weight = 2.0;
-			Name = "Jupe Ondulée";
+			Name = "Jupe OndulÃ©e";
 		}
 
 		public JupeOndule2(Serial serial)
@@ -855,7 +855,7 @@ public class Kilt2 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Kilt à Bandouillère";
+		Name = "Kilt Ã  BandouillÃ¨re";
 	}
 
 	public Kilt2(Serial serial)
@@ -935,7 +935,7 @@ public class PareoCourt :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name ="Paréo";
+		Name ="ParÃ©o";
 	}
 
 	public PareoCourt(Serial serial)
@@ -1015,7 +1015,7 @@ public class Jupe8 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe Provocante à Volants";
+		Name = "Jupe Provocante Ã  Volants";
 	}
 
 	public Jupe8(Serial serial)
@@ -1055,7 +1055,7 @@ public class Jupe9 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Saccoche";
+		Name = "Jupe Ã  Saccoche";
 	}
 
 	public Jupe9(Serial serial)
@@ -1095,7 +1095,7 @@ public class Jupe10 :  BaseOuterLegs
 
 		{
 		Weight = 2.0;
-		Name = "Jupe à Jartelles";
+		Name = "Jupe Ã  Jartelles";
 	}
 
 	public Jupe10(Serial serial)

@@ -4,7 +4,7 @@ namespace Server.Items
     public class BarreraaksRing : GoldRing
     {
         public override bool IsArtifact => true;
-        public override int LabelNumber => 1095049;  // Barreraak’s Old Beat Up Ring
+        public override int LabelNumber => 1095049;  // Barreraak's Old Beat Up Ring
 
         [Constructable]
         public BarreraaksRing()

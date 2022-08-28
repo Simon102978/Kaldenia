@@ -55,7 +55,7 @@ public class Tabar1 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar orné";
+		Name = "Tabar ornÃ©";
 	}
 
 	public Tabar1(Serial serial)
@@ -135,7 +135,7 @@ public class Tabar3 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar à cape";
+		Name = "Tabar Ã  cape";
 	}
 
 	public Tabar3(Serial serial)
@@ -215,7 +215,7 @@ public class Tabar5 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar sombre à griffon";
+		Name = "Tabar sombre Ã  griffon";
 	}
 
 	public Tabar5(Serial serial)
@@ -255,7 +255,7 @@ public class Tabar6 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar à arbre";
+		Name = "Tabar Ã  arbre";
 	}
 
 	public Tabar6(Serial serial)
@@ -295,7 +295,7 @@ public class Tabar7 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar doré";
+		Name = "Tabar dorÃ©";
 	}
 
 	public Tabar7(Serial serial)
@@ -335,7 +335,7 @@ public class Tabar8 :  BaseMiddleTorso
 
 		{
 		Weight = 2.0;
-		Name = "Tabar doré capitoné";
+		Name = "Tabar dorÃ© capitonÃ©";
 	}
 
 	public Tabar8(Serial serial)

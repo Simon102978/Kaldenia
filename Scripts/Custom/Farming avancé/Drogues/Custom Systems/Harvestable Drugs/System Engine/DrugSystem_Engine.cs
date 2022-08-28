@@ -454,7 +454,7 @@ namespace Server.Items.Crops
 
             if (Highness % 10 == 0)
             {
-                m_Drunk.SendMessage("Vous entrez dans un état second");
+                m_Drunk.SendMessage("Vous entrez dans un Ã©tat second");
                 m_Drunk.PlaySound(0x420);   // coughing
 				m_Drunk.Body = m_Drunk.Female ? 0x193 : 0x192;
 				DeathStatus.Instantiate(false);
@@ -550,11 +550,11 @@ namespace Server.Items.Crops
             if (Highness <= 0)
             {
 				m_Drunk.Body = m_Drunk.Female ? 0x191 : 0x190;
-				m_Drunk.SendMessage("Votre état revient à la normale");
+				m_Drunk.SendMessage("Votre Ã©tat revient Ã  la normale");
                 m_Drunk.Int -= 10;//set int back to normal and delete one point
                 m_Drunk.Dex += 10;
                 m_Drunk.Stam = 1;
-                m_Drunk.SendMessage("*Vous vous sentez désorienté*");
+                m_Drunk.SendMessage("*Vous vous sentez dÃ©sorientÃ©*");
                 Stop();
             }
         }

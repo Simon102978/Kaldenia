@@ -16,7 +16,7 @@ namespace Server.Items
 		: base(41689, hue)
 	{
 		Weight = 2.0;
-		Name = "Chandail distingué";
+		Name = "Chandail distinguÃ©";
 	}
 
 	public Chandail(Serial serial)
@@ -95,7 +95,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Tunique ornée";
+		Name = "Tunique ornÃ©e";
 	}
 
 	public Chandail2(Serial serial)
@@ -377,7 +377,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Bustier ailé";
+		Name = "Bustier ailÃ©";
 	}
 
 	public Bustier(Serial serial)
@@ -857,7 +857,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Chemise longue lacée";
+		Name = "Chemise longue lacÃ©e";
 	}
 
 	public Chemise3(Serial serial)
@@ -937,7 +937,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Chemise ajustée";
+		Name = "Chemise ajustÃ©e";
 	}
 
 	public Chemise5(Serial serial)
@@ -977,7 +977,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Chemise lacée";
+		Name = "Chemise lacÃ©e";
 	}
 
 	public Chemise6(Serial serial)
@@ -1017,7 +1017,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Manteau élégant";
+		Name = "Manteau Ã©lÃ©gant";
 	}
 
 	public Chemise7(Serial serial)
@@ -1097,7 +1097,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Doublet à épaulette";
+		Name = "Doublet Ã  Ã©paulette";
 	}
 
 	public Doublet2(Serial serial)
@@ -1137,7 +1137,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Doublet lacé";
+		Name = "Doublet lacÃ©";
 	}
 
 	public Doublet3(Serial serial)
@@ -1177,7 +1177,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Doublet lacé croisé";
+		Name = "Doublet lacÃ© croisÃ©";
 	}
 
 	public Doublet4(Serial serial)
@@ -1217,7 +1217,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Doublet ajusté";
+		Name = "Doublet ajustÃ©";
 	}
 
 	public Doublet5(Serial serial)
@@ -1257,7 +1257,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Doublet à bouton";
+		Name = "Doublet Ã  bouton";
 	}
 
 	public Doublet6(Serial serial)
@@ -1297,7 +1297,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Tunique à plis";
+		Name = "Tunique Ã  plis";
 	}
 
 	public Tunique3(Serial serial)
@@ -1337,7 +1337,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Tunique à cordon";
+		Name = "Tunique Ã  cordon";
 	}
 
 	public Tunique4(Serial serial)
@@ -1417,7 +1417,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Tunique à voilant";
+		Name = "Tunique Ã  voilant";
 	}
 
 	public Tunique6(Serial serial)
@@ -1497,7 +1497,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Tunique élégante";
+		Name = "Tunique Ã©lÃ©gante";
 	}
 
 	public Tunique8(Serial serial)
@@ -1577,7 +1577,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Tunique à ceinture";
+		Name = "Tunique Ã  ceinture";
 	}
 
 	public Tunique10(Serial serial)
@@ -1937,7 +1937,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 		Weight = 2.0;
-		Name = "Manteau orné";
+		Name = "Manteau ornÃ©";
 	}
 
 	public Manteau(Serial serial)

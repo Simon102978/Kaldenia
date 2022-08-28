@@ -25,7 +25,7 @@ namespace Server.Engines.Quests
         this basin of clear water. I cannot leave my mother, for I fear what she might do to herself. Could you take this to the 
         graveyard, and give it to what is left of my father? */
         public override object Description => 1075322;
-        /* Oh! Alright then. I hope someone comes along soon who can help me, or I don’t know what will become of us. */
+        /* Oh! Alright then. I hope someone comes along soon who can help me, or I don't know what will become of us. */
         public override object Refuse => 1075324;
         /* My father - or what remains of him - can be found in the graveyard northwest of the city. */
         public override object Uncomplete => 1075325;
@@ -65,7 +65,7 @@ namespace Server.Engines.Quests
         Thank you for having the courage to show me the truth. For the love I bear my wife and daughter, I know now that I must pass 
         beyond the veil. Will you return this basin to Aurelia? She will know by this that I am at rest. */
         public override object Description => 1075328;
-        /* You won’t take this back to my daughter? Please, I cannot leave until she knows I am at peace. */
+        /* You won't take this back to my daughter? Please, I cannot leave until she knows I am at peace. */
         public override object Refuse => 1075330;
         /* My daughter will be at my home, on the east side of the city. */
         public override object Uncomplete => 1075331;

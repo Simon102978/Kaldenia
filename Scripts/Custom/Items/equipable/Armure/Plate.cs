@@ -45,7 +45,7 @@ namespace Server.Items
 		public override bool Disguise { get { return true; } }
 
 		[Constructable]
-		public CasqueChaos()
+		public CasqueChaos()@uqac.ca
 			: base(41647)
 		{
 			Weight = 5.0;
@@ -123,7 +123,7 @@ namespace Server.Items
 			: base(41649)
 		{
 			Weight = 5.0;
-			Name = "Brassard Décoratif";
+			Name = "Brassard DÃ©coratif";
 		}
 
 		public BrassardDecoratif(Serial serial)
@@ -162,7 +162,7 @@ namespace Server.Items
 			: base(41650)
 		{
 			Weight = 5.0;
-			Name = "Casque Décoratif";
+			Name = "Casque DÃ©coratif";
 		}
 
 		public CasqueDecoratif(Serial serial)
@@ -199,7 +199,7 @@ namespace Server.Items
 			: base(41651)
 		{
 			Weight = 7.0;
-			Name = "Jambière Décoratif";
+			Name = "JambiÃ¨re DÃ©coratif";
 		}
 
 		public JambiereDecoratif(Serial serial)
@@ -236,7 +236,7 @@ namespace Server.Items
 			: base(41652)
 		{
 			Weight = 10.0;
-			Name = "Plastron Décoratif";
+			Name = "Plastron DÃ©coratif";
 		}
 
 		public PlastronDecoratif(Serial serial)
@@ -496,7 +496,7 @@ namespace Server.Items
 			: base(41659)
 		{
 			Weight = 10.0;
-			Name = "Plastron de plaque Dorée";
+			Name = "Plastron de plaque DorÃ©e";
 		}
 
 		public PlastronPlaqueDoree(Serial serial)

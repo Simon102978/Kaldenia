@@ -895,7 +895,7 @@ namespace Server.Mobiles
 
 				if (cm.StatutSocial < MinBuyClasse && !m_Contrebandier)
 				{
-					Say("Seul les " + MinBuyClasse + "s et les classes supérieurs peuvent acheter ici");
+					Say("Seul les " + MinBuyClasse + "s et les classes supÃ©rieurs peuvent acheter ici");
 					return;
 				}
 			}
@@ -2259,7 +2259,7 @@ namespace Server.Mobiles
 					{
 						case 0:
 							{
-								Say("Merci de votre contribution de " + taxespaye.ToString() + " à l'empire.");
+								Say("Merci de votre contribution de " + taxespaye.ToString() + " Ã  l'empire.");
 								break;
 							}
 						case 1:
@@ -2269,12 +2269,12 @@ namespace Server.Mobiles
 							}
 						case 2:
 							{
-								Say("Vous avez payé " + taxespaye.ToString() + " pour aider à défendre notre glorieur et puissant empire.");
+								Say("Vous avez payÃ© " + taxespaye.ToString() + " pour aider Ã  dÃ©fendre notre glorieur et puissant empire.");
 								break;
 							}
 						default:
 							{
-								Say("Vous avez payé " + taxespaye.ToString() + " en taxe à l'empire.");
+								Say("Vous avez payÃ© " + taxespaye.ToString() + " en taxe Ã  l'empire.");
 								break;
 							}
 					}

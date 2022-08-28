@@ -117,7 +117,7 @@ namespace Server.Items
             }
 
             base.OnTelekinesis(from);
-            Name = "coffre au trésor";
+            Name = "coffre au trÃ©sor";
 			StartDeleteTimer();
         }
 
@@ -127,7 +127,7 @@ namespace Server.Items
                 return;
 
             base.OnDoubleClick(from);
-            Name = "coffre au trésor";
+            Name = "coffre au trÃ©sor";
             StartDeleteTimer();
         }
 

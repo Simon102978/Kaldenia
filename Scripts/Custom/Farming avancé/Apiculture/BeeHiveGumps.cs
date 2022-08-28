@@ -117,7 +117,7 @@ namespace Server.Engines.Apiculture
 			if( hive.HiveStage >= HiveStatus.Producing )
 				AddLabel(100, 42, 92, "Colonie : "+hive.Population.ToString()+"0k" );
 			else if( hive.HiveStage >= HiveStatus.Brooding )
-                AddLabel(100, 42, 92, "Couvée");
+                AddLabel(100, 42, 92, "CouvÃ©e");
 			else
 				AddLabel(100, 42, 92, "Colonisation");
 			switch( hive.OverallHealth ) //overall health
@@ -125,7 +125,7 @@ namespace Server.Engines.Apiculture
 				case HiveHealth.Dying: AddLabel(116, 146, 37, "Mourrant"); break;
 				case HiveHealth.Sickly: AddLabel(116, 146, 52, "Malade"); break;
 				case HiveHealth.Healthy: AddLabel(116, 146, 67, "Sain"); break;
-                case HiveHealth.Thriving: AddLabel(116, 146, 92, "Prospération"); break;
+                case HiveHealth.Thriving: AddLabel(116, 146, 92, "Prospï¿½ration"); break;
 			}  
 
 			//resource
@@ -405,7 +405,7 @@ namespace Server.Engines.Apiculture
 							((HiveTool)hivetool).UsesRemaining--;
 							if( ((HiveTool)hivetool).UsesRemaining < 1 )
 							{
-								from.SendMessage("La fourchette s'est usée.");
+								from.SendMessage("La fourchette s'est usÃ©e.");
 								hivetool.Delete();
 							}
 						}
@@ -469,7 +469,7 @@ namespace Server.Engines.Apiculture
 						((HiveTool)hivetool).UsesRemaining--;
 						if( ((HiveTool)hivetool).UsesRemaining < 1 )
 						{
-							from.SendMessage("La fourchette s'est usée.");
+							from.SendMessage("La fourchette s'est usÃ©e.");
 							hivetool.Delete();
 						}
 					}

@@ -1218,11 +1218,11 @@ namespace Server.Items
                     int iThirst = from.Thirst;
                     if (iThirst < 5)
                     {
-                        from.SendMessage("Vous êtes complètement déshydraté!");
+                        from.SendMessage("Vous Ãªtes complÃ¨tement dÃ©shydratÃ©!");
                     }
                     else if (iThirst < 10)
                     {
-                        from.SendMessage("Vous avez très soif.");
+                        from.SendMessage("Vous avez trÃ¨s soif.");
                     }
                     else if (iThirst < 14)
                     {

@@ -14,7 +14,7 @@ namespace Server.Items
         [Constructable]
         public CheveuxGeant(int amount) : base(0xF81, amount)
         {
-            Name = "cheveux de géant";
+            Name = "cheveux de gÃ©ant";
         }
 
         public CheveuxGeant(Serial serial) : base(serial)

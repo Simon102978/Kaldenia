@@ -37,7 +37,7 @@ namespace Server.Items
 			}
 			else
 			{
-				from.SendMessage("Le grimoire doit être dans votre sac principal pour l'ouvrir.");
+				from.SendMessage("Le grimoire doit Ãªtre dans votre sac principal pour l'ouvrir.");
 			}
 		}
 

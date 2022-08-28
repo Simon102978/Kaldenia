@@ -43,7 +43,7 @@ namespace Server.Items
 		: base(41842)
 	{
 		Weight = 2.0;
-		Name = "Collier massif doré";
+		Name = "Collier massif dorÃ©";
 	}
 
 	public Collier(Serial serial)
@@ -76,7 +76,7 @@ public class Collier2 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Collier croix Ânkh";
+		Name = "Collier croix Ankh";
 	}
 
 	public Collier2(Serial serial)
@@ -145,7 +145,7 @@ public class Collier3 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Collier bolo doré";
+		Name = "Collier bolo dorÃ©";
 	}
 
 	public Collier3(Serial serial)
@@ -180,7 +180,7 @@ public class Couronne3 :  BaseCouronne
 
 		{
 		Weight = 2.0;
-		Name = "Diadème";
+		Name = "DiadÃ¨me";
 	}
 
 	public Couronne3(Serial serial)
@@ -214,7 +214,7 @@ public class Collier4 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Grande chaîne dorée";
+		Name = "Grande chaine dorÃ©e";
 	}
 
 	public Collier4(Serial serial)
@@ -248,7 +248,7 @@ public class Collier5 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Collier croix Ânkh doré";
+		Name = "Collier croix Ankh dorÃ©";
 	}
 
 	public Collier5(Serial serial)
@@ -316,7 +316,7 @@ public class Collier7 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Petit collier doré";
+		Name = "Petit collier dorÃ©";
 	}
 
 	public Collier7(Serial serial)
@@ -350,7 +350,7 @@ public class Lunettes :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Lunette dorée";
+		Name = "Lunette dorÃ©e";
 	}
 
 	public Lunettes(Serial serial)
@@ -418,7 +418,7 @@ public class Collier8 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Collier de feuilles dorées";
+		Name = "Collier de feuilles dorÃ©es";
 	}
 
 	public Collier8(Serial serial)
@@ -452,7 +452,7 @@ public class Ceinture10 :  BaseWaist
 
 		{
 		Weight = 2.0;
-		Name = "Ceinture de feuilles dorées";
+		Name = "Ceinture de feuilles dorÃ©es";
 			Layer = Layer.Waist;
 	}
 
@@ -626,7 +626,7 @@ public class Collier12 :  BaseNecklace
 
 		{
 		Weight = 2.0;
-		Name = "Grand collier doré avec pendentif";
+		Name = "Grand collier dorÃ© avec pendentif";
 	}
 
 	public Collier12(Serial serial)
@@ -661,7 +661,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 			Weight = 2.0;
-			Name = "Collier doré avec pendentif";
+			Name = "Collier dorÃ© avec pendentif";
 		}
 
 		public DiademeFeuilleOr(Serial serial)
@@ -731,7 +731,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 			Weight = 2.0;
-			Name = "Menottes Dorées";
+			Name = "Menottes DorÃ©es";
 		}
 
 		public MenotteDoree(Serial serial)

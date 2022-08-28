@@ -72,7 +72,7 @@ namespace Server.ContextMenus
             if (m_Bait.Deleted || !m_Bait.Movable || !m_From.CheckAlive())
                 return;
 
-            m_From.SendMessage("Appliquer sur quelle canne ‡ pÍche?");
+            m_From.SendMessage("Appliquer sur quelle canne √† p√™che?");
             m_From.BeginTarget(1, false, Server.Targeting.TargetFlags.None, new TargetStateCallback(Bait_OnApply), m_Bait);
         }
 
@@ -87,18 +87,18 @@ namespace Server.ContextMenus
 				{
 					pole.Bait = bait.Bait;
 					pole.Charge = bait.Charge;
-					from.SendMessage("Vous accrochez l'app‚t aprËs la canne ‡ pÍche.");
+					from.SendMessage("Vous accrochez l'app√¢t apr√®s la canne √† p√™che.");
 
 					bait.Delete();
 				}
                 else
                 {
-                    from.SendMessage("Cette canne ‡ pÍche possËde dÈj‡ un app‚t.");
+                    from.SendMessage("Cette canne √† p√™che poss√®de d√©j√† un app√¢t.");
                 }
             }
             else
             {
-                from.SendMessage("Vous devez choisir une canne ‡ pÍche.");
+                from.SendMessage("Vous devez choisir une canne √† p√™che.");
             }
         }
     }
@@ -136,7 +136,7 @@ namespace Server.Items
         [Constructable]
         public BaseBait(Bait Bait, int charge) : base(0xDCE)
         {
-            Name = "app‚t";
+            Name = "app√¢t";
             Weight = 0.5;
 
             m_Bait = Bait;
@@ -212,7 +212,7 @@ namespace Server.Items
 
         public void SetNewName()
         {
-            Name = "App‚t : " + m_Material;
+            Name = "App√¢t : " + m_Material;
         }
 
         public static BaseBait CreateBait(Bait Bait, int charge)
@@ -262,9 +262,9 @@ namespace Server.Items
         public override void AddNameProperty(ObjectPropertyList list)
         {
             if (Amount > 1)
-                list.Add(1060532, String.Format("{3} {0}{1}{2}", "App‚ts [", GetMaterial(), "]", Amount)); // ~1_NUMBER~ ~2_ITEMNAME~
+                list.Add(1060532, String.Format("{3} {0}{1}{2}", "App√¢ts [", GetMaterial(), "]", Amount)); // ~1_NUMBER~ ~2_ITEMNAME~
             else
-                list.Add(String.Format("{0}{1}{2}", "App‚t [", GetMaterial(), "]")); // ingots
+                list.Add(String.Format("{0}{1}{2}", "App√¢t [", GetMaterial(), "]")); // ingots
         }
 
         public BaseBait(Serial serial) : base(serial)

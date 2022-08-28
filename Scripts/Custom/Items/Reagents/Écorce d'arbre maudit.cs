@@ -14,7 +14,7 @@ namespace Server.Items
         [Constructable]
         public EcorceArbreMaudit(int amount) : base(0xF7C, amount)
         {
-            Name = "écorce d'arbre maudit";
+            Name = "Ã‰corce d'arbre maudit";
         }
 
         public EcorceArbreMaudit(Serial serial) : base(serial)

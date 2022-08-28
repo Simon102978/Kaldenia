@@ -3229,7 +3229,7 @@ namespace Server.Items
 
 			if (attacker is CustomPlayerMobile)
 			{
-				// Solution non elegante pour booster les dégats des joueurs du double.
+				// Solution non elegante pour booster les dÃ©gats des joueurs du double.
 
 
 				anatomyBonus *= 2;

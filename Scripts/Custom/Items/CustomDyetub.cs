@@ -878,7 +878,7 @@ namespace Server.Items
 			Hue = DyedHue = 2459;
 			Redyable = false;
 			Charges = 5;
-			Name = "Teinture Argenté";
+			Name = "Teinture ArgentÃ©";
 		}
 
 		public GrisArgenteDyeTub(Serial serial)

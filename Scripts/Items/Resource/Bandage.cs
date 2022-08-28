@@ -713,7 +713,7 @@ namespace Server.Items
             }
 			else if (patient is CustomPlayerMobile cp && cp.Vulnerability && cp.Alive)
 			{
-				healer.SendMessage("Vous ne pouvez pas soigner une cible qui vient d'être assomer avec des bandages.");
+				healer.SendMessage("Vous ne pouvez pas soigner une cible qui vient d'Ãªtre assomer avec des bandages.");
 			}
             else if (healer.CanBeBeneficial(patient, true, true))
             {

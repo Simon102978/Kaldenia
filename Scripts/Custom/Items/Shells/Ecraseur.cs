@@ -9,7 +9,7 @@ namespace Server.Items
 		[Constructable]
 		public Ecraseur() : base( 4787 )
 		{
-			Name = "écraseur";
+			Name = "Ã‰craseur";
 			Weight = 1.0;
 		}
 
@@ -22,12 +22,12 @@ namespace Server.Items
         {
             if (IsChildOf(from.Backpack))
             {
-                from.SendMessage("Que voulez-vous écraser?");
+                from.SendMessage("Que voulez-vous Ã©craser?");
                 from.BeginTarget(1, false, TargetFlags.None, new TargetCallback(OnTarget));
             }
             else
             {
-                from.SendMessage("L'objet doit être dans votre sac pour être utilisé.");
+                from.SendMessage("L'objet doit Ãªtre dans votre sac pour Ãªtre utilisÃ©.");
             }
         }
 
@@ -41,7 +41,7 @@ namespace Server.Items
             }
             else
             {
-                from.SendMessage("Vous ne pouvez écraser cela.");
+                from.SendMessage("Vous ne pouvez Ã©craser cela.");
             }
         }
 

@@ -421,7 +421,7 @@ namespace Server.Mobiles
 
 									if (cm.StatutSocial < MinBankClasse)
 									{						
-										vendor.Say("Seul les " + MinBankClasse + "s et les classes supérieurs peuvent avoir une banque ici");
+										vendor.Say("Seul les " + MinBankClasse + "s et les classes supÃ©rieurs peuvent avoir une banque ici");
 										break;
 									}								
 								}

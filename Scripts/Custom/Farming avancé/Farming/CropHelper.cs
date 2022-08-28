@@ -286,7 +286,7 @@ namespace Server.Items.Crops
 			{
 				if ( from.Mounted && !CropHelper.CanWorkMounted )
 				{
-					from.SendMessage( "Vous ne pouvez pas arracher un plant lorsque vous êtes sur votre monture." );
+					from.SendMessage( "Vous ne pouvez pas arracher un plant lorsque vous Ãªtes sur votre monture." );
 					return;
 				}
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
@@ -300,11 +300,11 @@ namespace Server.Items.Crops
 						from.AddToBackpack( fruit );
 						this.Delete();
 					}
-					else from.SendMessage("L'herbe est encore trop dure à arracher.");
+					else from.SendMessage("L'herbe est encore trop dure Ã  arracher.");
 				}
 				else
 				{
-					from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." );
+					from.SendMessage( "Vous Ãªtes trop loin pour rÃ©colter quelque chose." );
 				}
 			}
 

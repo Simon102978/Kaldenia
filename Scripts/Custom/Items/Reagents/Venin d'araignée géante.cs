@@ -15,7 +15,7 @@ namespace Server.Items
         public VeninAraigneeGeante(int amount) : base(0xF82, amount)
         {
             Hue = 1412;
-            Name = "venin d'araignée géante";
+            Name = "venin d'araignÃ©e gÃ©ante";
         }
 
         public VeninAraigneeGeante(Serial serial) : base(serial)

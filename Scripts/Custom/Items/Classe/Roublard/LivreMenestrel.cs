@@ -13,7 +13,7 @@ namespace Server.Items
         [Constructable]
         public LivreMenestrel(Classe classe) : base(classe)
         {
-            Name = "livre de ménéstrel";
+            Name = "livre de MÃ©nÃ©strel";
         }
 
         public LivreMenestrel(Serial serial) : base(serial)

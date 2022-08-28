@@ -33,12 +33,12 @@ namespace Server.Items.Crops
         {
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {
-                from.SendMessage("Le plant est trop petit pour pouvoir être récolté sur votre monture.");
+                from.SendMessage("Le plant est trop petit pour pouvoir Ãªtre rÃ©coltÃ© sur votre monture.");
                 return;
             }
             else
             {
-                from.SendMessage("Votre pousse est trop jeune pour être récoltée.");
+                from.SendMessage("Votre pousse est trop jeune pour Ãªtre rÃ©coltÃ©e.");
             }
         }
         public CottonSeedling(Serial serial) : base(serial)

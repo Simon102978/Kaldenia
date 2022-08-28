@@ -33,7 +33,7 @@ namespace Server.Engines.Quests
                 return "Bart takes a good look at you. Hey, you there! You look like someone who's willing and able to help me! I am a candle crafter. Well, I used to be. I'm too old to roam the woods and collect honeycombs out of beehives. Get some for me! You find honeycombs in beehives, of course, but the bears that live in the close area around the hives tend to steal them and have honeycombs, too! You wont regret helping me! Get me 50 honeycombs and Kill 10 Honey Bears, I'll give you one of these kettles. You can use them to sepparate honey and wax out of a honeycomb, so you can process it further!";
             }
         }
-        /* I understand.  I certainly don’t want you to do something you don’t want to do. */
+        /* I understand.  I certainly don't want you to do something you don't want to do. */
         public override object Refuse
         {
             get

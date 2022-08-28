@@ -15,7 +15,7 @@ namespace Server.Items
         public EcorceArbreGeant(int amount) : base(0xF7C, amount)
         {
             Hue = 1802;
-            Name = "écorce d'arbre géant";
+            Name = "Ã‰corce d'arbre gÃ©ant";
         }
 
         public EcorceArbreGeant(Serial serial) : base(serial)

@@ -70,7 +70,7 @@ namespace Server.Items
 
 			if (item != null && item is BaseShield)
 			{
-				from.SendMessage("Vous ne pouvez pas équipper un fouet en ayant un bouclier à la main.");
+				from.SendMessage("Vous ne pouvez pas Ã©quipper un fouet en ayant un bouclier Ã  la main.");
 				return false;
 			}
 
@@ -119,7 +119,7 @@ namespace Server.Items
 					if (chance > Utility.Random(100))
 					{
 						receveur.Spell.OnCasterHurt();
-						from.SendMessage("Vous dérangez votre cible !");
+						from.SendMessage("Vous dÃ©rangez votre cible !");
 						Animation(from, receveur);
 					}
 
@@ -151,7 +151,7 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 					else
-						from.SendMessage("Vous échouez à voler ou à faire tomber l'arme de votre cible !");
+						from.SendMessage("Vous Ã©chouez Ã  voler ou Ã  faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
 						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
@@ -167,7 +167,7 @@ namespace Server.Items
 						Animation(from, receveur);
 					}
 					else
-						from.SendMessage("Vous échouez à faire tomber l'arme de votre cible !");
+						from.SendMessage("Vous Ã©chouez Ã  faire tomber l'arme de votre cible !");
 
 					if (from is PlayerMobile)
 						AOS.Damage(receveur, from, 10, 100, 0, 0, 0, 0);
@@ -175,7 +175,7 @@ namespace Server.Items
 				}
 				else
 				{
-					from.SendMessage("Vous ne parvenez pas à fouetter cette cible!");
+					from.SendMessage("Vous ne parvenez pas Ã  fouetter cette cible!");
 					receveur.PlaySound(0x238);
 
 					if (from is PlayerMobile)
@@ -205,14 +205,14 @@ namespace Server.Items
 		public override void OnAosSingleClick(Mobile from)
 		{
 			LabelTo(from, Name);
-			LabelTo(from, String.Format("[{0} mêtres]", m_MaxRange));
+			LabelTo(from, String.Format("[{0} mÃ¨tres]", m_MaxRange));
 		}
 
 		public override void OnDoubleClick(Mobile from)
 		{
 			if (!from.CanBeginAction(typeof(Fouet)))
 			{
-				from.SendMessage("Vous devez attendre avant d'utiliser le fouet à nouveau.");
+				from.SendMessage("Vous devez attendre avant d'utiliser le fouet Ã  nouveau.");
 			}
 			else if (from.Items.Contains(this))
 			{
@@ -246,7 +246,7 @@ namespace Server.Items
 			{
 				if (!from.CanBeginAction(typeof(Fouet)))
 				{
-					from.SendMessage("Vous devez attendre avant d'utiliser le fouet à nouveau.");
+					from.SendMessage("Vous devez attendre avant d'utiliser le fouet Ã  nouveau.");
 				}
 				else if (!from.Items.Contains(m_Fouet))
 				{

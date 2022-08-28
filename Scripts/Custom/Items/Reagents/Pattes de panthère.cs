@@ -15,7 +15,7 @@ namespace Server.Items
         public PattesPanthere(int amount) : base(0x1E8C, amount)
         {
             Hue = 1107;
-            Name = "pattes de panthère";
+            Name = "pattes de panthÃ¨re";
 			Stackable = false;
 		}
 

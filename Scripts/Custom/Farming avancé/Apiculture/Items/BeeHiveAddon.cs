@@ -832,7 +832,7 @@ namespace Server.Engines.Apiculture
 			if( m_Hive.HiveStage >= HiveStatus.Producing )
 				list.Add( 1049644 , "Fabrication" );
 			else if( m_Hive.HiveStage >= HiveStatus.Brooding )
-				list.Add( 1049644 , "Couvée" );
+				list.Add( 1049644 , "CouvÃ©e" );
 			else if( m_Hive.HiveStage >= HiveStatus.Colonizing )
 				list.Add( 1049644 , "Colonisation" );
 			else

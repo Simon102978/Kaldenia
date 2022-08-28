@@ -80,7 +80,7 @@ namespace Server.Items
 
 			else if ( pm == null || from.Skills[SkillName.Inscribe].Base < SkillRequis)
 			{
-				from.SendMessage( "Vous n'etes pas assez doué pour réussir." );
+				from.SendMessage( "Vous n'etes pas assez douÃ© pour rÃ©ussir." );
 			}												
 		    else 
 		    {
@@ -112,17 +112,17 @@ namespace Server.Items
 					}
 					else if (item.Enchantement >= 3)
 					{
-						from.SendMessage("Cette objet a déjà trois enchantements.");
+						from.SendMessage("Cette objet a dÃ©jÃ  trois enchantements.");
 						return;
 					}				
 					else if (!from.InRange(item.GetWorldLocation(), 1))
 					{
-						from.SendMessage("Vous êtes trop loin de la l'objet."); // That is too far away. 
+						from.SendMessage("Vous Ãªtes trop loin de la l'objet."); // That is too far away. 
 						return;
 					}
 					else if ((((Item)targeted).Parent != null) && (((Item)targeted).Parent is Mobile))
 					{
-						from.SendMessage("Vous ne pouvez pas enchanter cette objets à cette endroit.");
+						from.SendMessage("Vous ne pouvez pas enchanter cette objets Ã  cette endroit.");
 					}
 					else if (!m_Rune.CheckSuccess(from))
 					{

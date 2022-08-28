@@ -15,7 +15,7 @@ namespace Server.Items
         public MucusDemon(int amount) : base(0xF82, amount)
         {
             Hue = 1631;
-            Name = "mucus de démon";
+            Name = "mucus de dÃ©mon";
         }
 
         public MucusDemon(Serial serial) : base(serial)

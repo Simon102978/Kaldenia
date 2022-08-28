@@ -90,7 +90,7 @@ namespace Server.Items
             : base(41563)
         {
             Weight = 6.0;
-			Name = "Bâton de la Nature";
+			Name = "BÃ¢ton de la Nature";
 		}
 
         public BatonNature(Serial serial)
@@ -129,7 +129,7 @@ namespace Server.Items
 			: base(41564)
 		{
 			Weight = 4.0;
-			Name = "Bâton de l'Ermite";
+			Name = "BÃ¢ton de l'Ermite";
 		}
 
 		public BatonErmite(Serial serial)
@@ -170,7 +170,7 @@ namespace Server.Items
 			: base(41565)
 		{
 			Weight = 3.0;
-			Name = "Bâton de vagabond";
+			Name = "BÃ¢ton de vagabond";
 		}
 
 		public BatonVagabond(Serial serial)
@@ -209,7 +209,7 @@ namespace Server.Items
 			: base(41566)
 		{
 			Weight = 6.0;
-			Name = "Bâton Dragonique";
+			Name = "BÃ¢ton Dragonique";
 		}
 
 		public BatonDragonique(Serial serial)

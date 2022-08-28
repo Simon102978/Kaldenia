@@ -416,7 +416,7 @@ public override void Deserialize(GenericReader reader)
 
 		{
 			Weight = 2.0;
-			Name = "Chapeau de Pirate à Plume";
+			Name = "Chapeau de Pirate Ã  Plume";
 		}
 
 		public ChapeauPiratePlume(Serial serial)

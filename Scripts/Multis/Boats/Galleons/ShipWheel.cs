@@ -1,4 +1,4 @@
-using Server.Multis;
+ï»¿using Server.Multis;
 
 namespace Server.Items
 {
@@ -49,7 +49,7 @@ namespace Server.Items
             }
 			else if (from.Skills[SkillName.Cartography].Base < CartographyRequirement)
 			{
-				from.SendMessage("Vous n'êtes pas assez doué en cartographie pour pouvoir naviguer!"); // Cartographie < 50 
+				from.SendMessage("Vous n'Ãªtes pas assez douÃ© en cartographie pour pouvoir naviguer!"); // Cartographie < 50 
 			}
 			else if (from.Mounted && !(mount is BoatMountItem))
             {

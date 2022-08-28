@@ -1,4 +1,4 @@
-using Server.ContextMenus;
+﻿using Server.ContextMenus;
 using Server.Engines.VeteranRewards;
 using Server.Gumps;
 using Server.Multis;
@@ -35,7 +35,7 @@ namespace Server.Items.MusicBox
         {
         }
 
-        public override int LabelNumber => 1075198;// Dawn�s Music Box
+        public override int LabelNumber => 1075198;// Dawn’s Music Box
         [CommandProperty(AccessLevel.GameMaster, AccessLevel.Developer)]
         public bool IsPlaying => m_PlayingTimer != null;
         public List<MusicName> Tracks => m_Tracks;

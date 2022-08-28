@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using Server;
 using Server.Prompts;
@@ -102,7 +102,7 @@ namespace Server.Items
 			if (IsChildOf(from.Backpack))
                 from.SendGump(new FarmersSeedBoxGump((PlayerMobile)from, this));
 			else
-				from.SendMessage("L'item doit �tre dans votre sac.");
+				from.SendMessage("L'item doit être dans votre sac.");
         }
         public void BeginCombine(Mobile from)
         {

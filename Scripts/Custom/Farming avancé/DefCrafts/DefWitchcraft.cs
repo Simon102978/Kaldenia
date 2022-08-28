@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server.Items;
 
 namespace Server.Engines.Craft
@@ -27,7 +27,7 @@ namespace Server.Engines.Craft
 */
 		public override string GumpTitleString
 		{
-			get { return "Recettes Enchantées"; } 
+			get { return "Recettes EnchantÃ©es"; } 
 		}
 
 		private static CraftSystem m_CraftSystem;
@@ -210,7 +210,7 @@ namespace Server.Engines.Craft
 			
             SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( RangerGrapes ), "Mets Magiques", "Raisin Du Rôdeur", 80.0, 100.0, typeof( Grapes ), "Grapes", 1, "You don't have any grapes." );
+			index = AddCraft( typeof( RangerGrapes ), "Mets Magiques", "Raisin Du RÃ´deur", 80.0, 100.0, typeof( Grapes ), "Grapes", 1, "You don't have any grapes." );
 			
 			SetNeedCauldron(index, true);
 
@@ -222,7 +222,7 @@ namespace Server.Engines.Craft
 			
 			SetNeedCauldron(index, true);
 
-		//	index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'écrivain", 80.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
+		//	index = AddCraft( typeof( ScribeLemon ), "Mets Magiques", "Citron de l'Ã©crivain", 80.0, 100.0, typeof( Lemon ), "Lemon", 1, "You don't have a lemon." );
 			
 		//	SetNeedCauldron(index, true);
 
@@ -238,7 +238,7 @@ namespace Server.Engines.Craft
 			
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( TailorPeach ), "Mets Magiques", "Pêche du Couturier", 80.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
+			index = AddCraft( typeof( TailorPeach ), "Mets Magiques", "PÃªche du Couturier", 80.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
 			
 			SetNeedCauldron(index, true);
 
@@ -250,7 +250,7 @@ namespace Server.Engines.Craft
 			
 			SetNeedCauldron(index, true);
 
-			index = AddCraft( typeof( WarriorPeach ), "Mets Magiques", "Pêche du Guerrier", 80.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
+			index = AddCraft( typeof( WarriorPeach ), "Mets Magiques", "PÃªche du Guerrier", 80.0, 100.0, typeof( Peach ), "Peach", 1, "You don't have a peach." );
 			
 			SetNeedCauldron(index, true);
 

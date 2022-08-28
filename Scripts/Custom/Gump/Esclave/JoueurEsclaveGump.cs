@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -43,14 +43,14 @@ namespace Server.Gumps
 
 	/*		if (m_From.IsStaff())
 			{
-				AddButtonHtlml(x + 5, y + 40 + line++ * 25, 3, "Accèder à la banque", "#FFFFFF");
+				AddButtonHtlml(x + 5, y + 40 + line++ * 25, 3, "AccÃ¨der Ã  la banque", "#FFFFFF");
 			}
 	*/
 			
 
 
-			AddButtonHtlml(x + 5, y + 40 + line++ * 25, 2, "Affranchir (Pérégrin)", "#FFFFFF");
-			AddButtonHtlml(x + 5, y + 40 + line++ * 25, 1, "Désavouer (Déchet)", "#FFFFFF");
+			AddButtonHtlml(x + 5, y + 40 + line++ * 25, 2, "Affranchir (PÃ©rÃ©grin)", "#FFFFFF");
+			AddButtonHtlml(x + 5, y + 40 + line++ * 25, 1, "DÃ©savouer (DÃ©chet)", "#FFFFFF");
 
 
 			AddSection(x + 311, y, 289, 452, "Talents");
@@ -98,7 +98,7 @@ namespace Server.Gumps
 			else if (info.ButtonID == 7)
 			{
 				m_From.Prompt = new AddTitlePrompt(m_From, m_Esclave);
-				m_From.SendMessage("Veuillez écrire le nouveau titre.");
+				m_From.SendMessage("Veuillez Ã©crire le nouveau titre.");
 			}
 
 
@@ -150,7 +150,7 @@ namespace Server.Gumps
 					}
 					else
 					{
-						m_Maitre.SendMessage("Vous devez être plus proche");
+						m_Maitre.SendMessage("Vous devez Ãªtre plus proche");
 						m_Maitre.SendGump(new JoueurEsclaveGump(m_Maitre, m_Esclave));
 					}
 					

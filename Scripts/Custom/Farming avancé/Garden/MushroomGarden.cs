@@ -1,4 +1,4 @@
-// by Alari
+ï»¿// by Alari
 // modified watertrough script
 using System;
 using Server;
@@ -94,7 +94,7 @@ namespace Server.Items
 			{ 
 				if ( m_yield < 1 )
 				{
-					from.SendMessage( "Il n'y a rien à récolter ici." ); 
+					from.SendMessage( "Il n'y a rien Ã  rÃ©colter ici." ); 
 					
 				}
 				

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Engines.Craft;
 
@@ -15,7 +15,7 @@ namespace Server.Items
 			Weight = 3.0;
 			Layer = Layer.OneHanded;
 			Hue = 0x3CC;
-            Name = "Livre de Recettes Enchantées";
+            Name = "Livre de Recettes EnchantÃ©es";
 		}
 
 		[Constructable]
@@ -24,7 +24,7 @@ namespace Server.Items
 			Weight = 3.0;
 			Layer = Layer.OneHanded;
 			Hue = 0x3CC;
-            Name = "Livre de Recettes Enchantées";
+            Name = "Livre de Recettes EnchantÃ©es";
 		}
 
         public WitchsBookofFoodCrafts(Serial serial)

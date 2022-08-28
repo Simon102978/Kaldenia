@@ -1,4 +1,4 @@
-namespace Server.Items
+ï»¿namespace Server.Items
 {
     public class Vase : Item
     {
@@ -181,7 +181,7 @@ namespace Server.Items
 			: base(0x99FE)
 		{
 			Weight = 1.0;
-			Name = "Vase Trésor";
+			Name = "Vase TrÃ©sor";
 		}
 
 		public VaseTresor(Serial serial)
@@ -331,7 +331,7 @@ namespace Server.Items
 			: base(0x9992)
 		{
 			Weight = 1.0;
-			Name = "Tête de Buffle";
+			Name = "TÃªte de Buffle";
 		}
 
 		public TeteBuffle(Serial serial)
@@ -389,7 +389,7 @@ namespace Server.Items
 			: base(0x9953)
 		{
 			Weight = 1.0;
-			Name = "Orchidée";
+			Name = "OrchidÃ©e";
 		}
 
 		public Orchid1(Serial serial)
@@ -418,7 +418,7 @@ namespace Server.Items
 			: base(0x9954)
 		{
 			Weight = 1.0;
-			Name = "Orchidée";
+			Name = "OrchidÃ©e";
 		}
 
 		public Orchid2(Serial serial)
@@ -1876,7 +1876,7 @@ namespace Server.Items
 			: base(0x9A01)
 		{
 			Weight = 2.0;
-			Name = "Rack à Pelles";
+			Name = "Rack Ã  Pelles";
 		}
 
 		public RackPelle(Serial serial)
@@ -1906,7 +1906,7 @@ namespace Server.Items
 			: base(0x9A03)
 		{
 			Weight = 2.0;
-			Name = "Faucon Doré";
+			Name = "Faucon DorÃ©";
 		}
 
 		public FauconDore(Serial serial)
@@ -1936,7 +1936,7 @@ namespace Server.Items
 			: base(0x9A07)
 		{
 			Weight = 2.0;
-			Name = "Jackal Doré";
+			Name = "Jackal DorÃ©";
 		}
 
 		public JackalDore(Serial serial)

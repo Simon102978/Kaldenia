@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using System;
 
 namespace Server.Engines.Quests
@@ -10,7 +10,7 @@ namespace Server.Engines.Quests
         {
             AddObjective(new DeliverObjective(typeof(ReginasRing), "regina's ring", 1, typeof(Regina), "Regina"));
 
-            AddReward(new BaseReward(1075394)); // Find the ring’s owner.
+            AddReward(new BaseReward(1075394)); // Find the ringâ€™s owner.
         }
 
         public override QuestChain ChainID => QuestChain.HonestBeggar;
@@ -26,7 +26,7 @@ namespace Server.Engines.Quests
         /* I see. Too good to help an honest beggar like me, eh? */
         public override object Refuse => 1075395;
         /* A jewel like this must be worth a lot, so it must belong to some noble or another. I would show it around the castle. 
-        Someone’s bound to recognize it. */
+        Someoneâ€™s bound to recognize it. */
         public override object Uncomplete => 1075396;
         /* Didst thou find my ring? I thank thee very much! It is an old ring, and a gift from my husband. I was most distraught 
         when I realized it was missing. */
@@ -58,9 +58,9 @@ namespace Server.Engines.Quests
 
         public override QuestChain ChainID => QuestChain.HonestBeggar;
         public override bool DoneOnce => true;
-        /* Regina’s Thanks */
+        /* Reginaâ€™s Thanks */
         public override object Title => 1075398;
-        /* What’s that you say? It was a humble beggar that found my ring? Such honesty must be rewarded. Here, take this packet 
+        /* Whatâ€™s that you say? It was a humble beggar that found my ring? Such honesty must be rewarded. Here, take this packet 
         and return it to him, and I will be in your debt. */
         public override object Description => 1075399;
         /* Hmph. Very well. What did you say his name was? */

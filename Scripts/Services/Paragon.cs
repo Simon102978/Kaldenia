@@ -1,4 +1,4 @@
-using Server.Items;
+﻿using Server.Items;
 using System;
 
 namespace Server.Mobiles
@@ -62,7 +62,7 @@ namespace Server.Mobiles
             bc.Hits = bc.HitsMax;
             bc.Mana = bc.ManaMax;
             bc.Stam = bc.StamMax;
-			bc.Title = "Envout�e";
+			bc.Title = "Envoutée";
 
 			for (int i = 0; i < bc.Skills.Length; i++)
             {

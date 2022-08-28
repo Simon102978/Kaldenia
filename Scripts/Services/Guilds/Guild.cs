@@ -1,4 +1,4 @@
-#region References
+ï»¿#region References
 using Server.Commands;
 using Server.Commands.Generic;
 using Server.Gumps;
@@ -681,7 +681,7 @@ namespace Server.Guilds
             }
 			else
 			{
-				pm.SendMessage("Menu désactivé.");
+				pm.SendMessage("Menu dÃ©sactivÃ©.");
 			}
 
         /*    if (pm.Guild == null)

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Created by SharpDevelop.
  * User: gideon
  * Date: 2005/06/06
@@ -61,7 +61,7 @@ namespace Server.Items
                     //}
                     //else
                     //{
-                    //    pm.SendMessage("Vous devez �tre un barde pour utiliser ceci !");
+                    //    pm.SendMessage("Vous devez être un barde pour utiliser ceci !");
                     //}
                 //}
 			}

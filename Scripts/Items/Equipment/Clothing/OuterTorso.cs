@@ -1,4 +1,4 @@
-using Server.Engines.VeteranRewards;
+ï»¿using Server.Engines.VeteranRewards;
 using System;
 
 namespace Server.Items
@@ -463,7 +463,7 @@ namespace Server.Items
             : base(0x1F00, hue)
         {
             Weight = 3.0;
-			Name = "Robe élégante";
+			Name = "Robe Ã©lÃ©gante";
 
 		}
 
@@ -1355,7 +1355,7 @@ namespace Server.Items
             : base(0x2FB9, hue)
         {
             Weight = 2.0;
-			Name = "Robe à Capuchon";
+			Name = "Robe Ã  Capuchon";
 
 		}
 

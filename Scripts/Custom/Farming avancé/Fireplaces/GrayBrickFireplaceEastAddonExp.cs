@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 
 namespace Server.Items
 {
@@ -36,14 +36,14 @@ namespace Server.Items
         public override void OnComponentUsed(AddonComponent ac, Mobile from)
         {
             if (!from.InRange(GetWorldLocation(), 2))
-                from.SendMessage("Vous êtes trop loin pour l'utiliser !");
+                from.SendMessage("Vous Ãªtes trop loin pour l'utiliser !");
             else
             {
                 if (ac.ItemID == 0x937)
                 {
                     ac.ItemID = 0x8CF;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("Vous éteignez la cheminée !");
+                    from.SendMessage("Vous Ã©teignez la cheminÃ©e !");
                 }
                 else if (ac.ItemID == 0x8CF)
                 {
@@ -64,7 +64,7 @@ namespace Server.Items
                         default:
                             {
                                 Effects.PlaySound(from.Location, from.Map, 0x137);
-                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans le foyer");
+                                from.SendMessage("Vous devez avoir 3 bÃ»ches Ã  mettre dans le foyer");
                                 ac.ItemID = 0x935;
                                 break;
                             }
@@ -80,13 +80,13 @@ namespace Server.Items
                         ac.ItemID = 0x937;
                         ac.Light = LightType.Circle225;
                         Effects.PlaySound(from.Location, from.Map, 0x4BA);
-                        from.SendMessage("Vous allumez la cheminée !");
+                        from.SendMessage("Vous allumez la cheminÃ©e !");
                     }
                     else
                     {
                         if (matchlight == null)
                         {
-                            from.SendMessage("Vous devez avoir une allumette pour allumer la cheminée");
+                            from.SendMessage("Vous devez avoir une allumette pour allumer la cheminÃ©e");
                         }
                     }
                 }

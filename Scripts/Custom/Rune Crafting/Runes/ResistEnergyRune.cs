@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Multis;
@@ -18,7 +18,7 @@ namespace Server.Items
 		public ResistEnergyRune() : base()
 		{
 			Weight = 0.2;  // ?
-			Name = "Resistance à l'énergie";
+			Name = "Resistance Ã  l'Ã©nergie";
 			Hue = 1416;
 		}
 

@@ -1,4 +1,4 @@
-#region References
+ï»¿#region References
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -5020,7 +5020,7 @@ namespace Server
 				return;
 			}
 
-			if (text.StartsWith("[") || text.StartsWith(".")) //Pour éviter qu'une mauvaise commande se voit en jeu
+			if (text.StartsWith("[") || text.StartsWith(".")) //Pour Ã©viter qu'une mauvaise commande se voit en jeu
 			{
 				SendMessage("Commande invalide");
 				return;
@@ -7042,7 +7042,7 @@ namespace Server
 			if (m_Hidden && IsPlayer())
 			{
 				Hidden = false;
-				SendMessage(this.Female ? "Vous avez été découverte." : "Vous avez été découvert.");
+				SendMessage(this.Female ? "Vous avez Ã©tÃ© dÃ©couverte." : "Vous avez Ã©tÃ© dÃ©couvert.");
 			}
 
 			m_IsStealthing = false;

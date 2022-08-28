@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Engines.Craft;
 using Server.Targeting;
@@ -44,11 +44,11 @@ namespace Server.Items
         {
             if (from.Backpack == null || this.Parent != from.Backpack)
             {
-                from.SendMessage("Ce doit être dans votre sac.");
+                from.SendMessage("Ce doit Ãªtre dans votre sac.");
             }
             else
             {
-                from.SendMessage("Sélectionner un objet à recycler.");
+                from.SendMessage("SÃ©lectionner un objet Ã  recycler.");
                 from.Target = new InternalTarget(this);
             }
         }
@@ -84,7 +84,7 @@ namespace Server.Items
                 }
                 else
                 {
-                    from.SendMessage( "Cet article ne peut pas être recyclé.");
+                    from.SendMessage( "Cet article ne peut pas Ãªtre recyclÃ©.");
                 }
 
                 if (resource == CraftResource.None)
@@ -203,7 +203,7 @@ namespace Server.Items
 
                 if (craftResource.Amount < 2)
                 {
-                    from.SendMessage( "Cet objet ne contient pas suffisamment de ressources pour être recyclé.");
+                    from.SendMessage( "Cet objet ne contient pas suffisamment de ressources pour Ãªtre recyclÃ©.");
                     return;
                 }
 

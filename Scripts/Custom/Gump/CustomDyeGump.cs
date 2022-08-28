@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -22,7 +22,7 @@ namespace Server.Gumps
 			 { 4, new CouleurSet("Rouge", 1601,   new List<int>(){1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1615, 1616, 1617, 1618, 1619, 1620, 1621, 1622, 1623, 1624, 1625, 1626, 1627, 1628, 1629, 1630, 1631, 1632, 1633, 1634, 1635, 1636, 1637, 1638, 1639, 1640, 1641, 1642, 1643, 1644, 1645, 1646, 1647, 1648, 1649, 1650, 1651, 1652, 1653, 1654} )},
 			 { 5, new CouleurSet("Jaune", 1701,   new List<int>(){1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716, 1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732, 1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748, 1749, 1750, 1751, 1752, 1753, 1754} )},
 			 { 6, new CouleurSet("Gris/noir", 1882,   new List<int>(){1882, 1883, 1884, 1885, 1886, 1887, 1888, 1889, 1890, 1891, 1892, 1893, 1894, 1895, 1896, 1897, 1898, 1899, 1900, 1901, 1902, 1903, 1904} )}, 
-			 { 7, new CouleurSet("Hue coloré", 2101,   new List<int>(){2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118} )}
+			 { 7, new CouleurSet("Hue colorÃ©", 2101,   new List<int>(){2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118} )}
 
 		};
 
@@ -49,7 +49,7 @@ namespace Server.Gumps
 			int colonne = 0;
 
 
-			AddSection(x - 10, y, 300, 349, "Catégories");
+			AddSection(x - 10, y, 300, 349, "CatÃ©gories");
 
 			foreach (KeyValuePair<int, CouleurSet> item in ColorIndex)
 			{
@@ -106,7 +106,7 @@ namespace Server.Gumps
 			if (info.ButtonID == 1)
 			{
 				m_dyeTub.DyedHue = m_hue;
-				m_From.SendMessage("Vous mélangez les couleurs.");
+				m_From.SendMessage("Vous mÃ©langez les couleurs.");
 
 			}
 			else if (info.ButtonID >= 100 && info.ButtonID < 200)

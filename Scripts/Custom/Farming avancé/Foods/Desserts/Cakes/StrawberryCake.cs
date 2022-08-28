@@ -1,11 +1,11 @@
-namespace Server.Items
+ï»¿namespace Server.Items
 {
 	public class StrawberryCake : BaseFood
 	{
 		[Constructable]
 		public StrawberryCake() : base( 0x9E9 )
 		{
-			Name = "Un Gâteau à la Fraise";
+			Name = "Un GÃ¢teau Ã  la Fraise";
 			Weight = 1.0;
 			FillFactor = 15;
 			Hue = 0x85;

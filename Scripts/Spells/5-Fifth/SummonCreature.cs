@@ -1,4 +1,4 @@
-using Server.Mobiles;
+ï»¿using Server.Mobiles;
 using System;
 using Server.Network;
 using Server.Gumps;
@@ -156,7 +156,7 @@ namespace Server.Spells.Fifth
 				AddBackground(76, 61, 474, 413, 3500);
 				AddBackground(76, 28, 474, 25, 9300);
 
-				AddLabel(203, 30, 0, "Sélectionnez la créature à invoquer");
+				AddLabel(203, 30, 0, "SÃ©lectionnez la crÃ©ature Ã  invoquer");
 
 				AddImage(19, 21, 10440);
 				AddImage(526, 21, 10441);

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Gumps;
 using Server.Mobiles;
@@ -27,7 +27,7 @@ namespace Server.Gumps
             int space = 115;
 
 
-            string info = "<h3><basefont color=#FFFFFFF>Nom: " + m_Creation.Name + "\n\nRace: " + m_Creation.Race + "\nDivinité: " + m_Creation.God.Name + "\nSexe: " + (m_Creation.Female ? "Femme" : "Homme") + "\nApparence: " + m_Creation.GetApparence() + "\nGrandeur: " + m_Creation.GetGrandeur() + "\nGrosseur: " + m_Creation.GetGrosseur() + "\n\n<basefont></h3>";
+            string info = "<h3><basefont color=#FFFFFFF>Nom: " + m_Creation.Name + "\n\nRace: " + m_Creation.Race + "\nDivinitÃ©: " + m_Creation.God.Name + "\nSexe: " + (m_Creation.Female ? "Femme" : "Homme") + "\nApparence: " + m_Creation.GetApparence() + "\nGrandeur: " + m_Creation.GetGrandeur() + "\nGrosseur: " + m_Creation.GetGrosseur() + "\n\n<basefont></h3>";
 
 			Dictionary<SkillName, int> Skill = new Dictionary<SkillName, int>();
 
@@ -78,17 +78,17 @@ namespace Server.Gumps
 			info = info + "\nArmure: " + armor;
 
 			info = info + "\n\nForce: " + creationPerso.Str;
-			info = info + "\nDextérité: " + creationPerso.Dex;
+			info = info + "\nDextÃ©ritÃ©: " + creationPerso.Dex;
 			info = info + "\nIntelligence: " + creationPerso.Int;
 
 			   if (m_Creation.Reroll != null)
 			  {
-				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpériences: " + Math.Round(creationPerso.Reroll.ExperienceNormal  + creationPerso.Reroll.ExperienceRP * 0.5 );
+				  info = info + "\n\nTransfert: " + m_Creation.Reroll.Name + "\nExpÃ©riences: " + Math.Round(creationPerso.Reroll.ExperienceNormal  + creationPerso.Reroll.ExperienceRP * 0.5 );
 			  }
 
 			AddSection(x - 10, y, 303, 508, "Information", info);
 
-			string context = "Vous allez maintenant être envoyé dans la cité de Boscula, pour une escale avant votre destination finale.\n\nDurant cette escale, profitez bien des marchands présents dans la cité pour regarnir votre garde-robe. \n\nMais prenez garde, le bateau est rempli, vous ne pourrez que transporter ce que vous portez.";
+			string context = "Vous allez maintenant Ãªtre envoyÃ© dans la citÃ© de Boscula, pour une escale avant votre destination finale.\n\nDurant cette escale, profitez bien des marchands prÃ©sents dans la citÃ© pour regarnir votre garde-robe. \n\nMais prenez garde, le bateau est rempli, vous ne pourrez que transporter ce que vous portez.";
 
 			AddSection(x + 294, y, 304, 508, "Contexte", context);
 			AddSection(x - 10, y + 509, 610, 99, "Validation");

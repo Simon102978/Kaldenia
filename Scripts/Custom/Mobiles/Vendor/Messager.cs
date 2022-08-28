@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server.Items;
 using Server.Gumps;
@@ -50,7 +50,7 @@ namespace Server.Mobiles
 				else
 				{				
 					missive.Destinataire.AddMissive(missive);
-					PublicOverheadMessage(MessageType.Regular, SpeechHue, false, "La missive a été envoyée.", false);
+					PublicOverheadMessage(MessageType.Regular, SpeechHue, false, "La missive a Ã©tÃ© envoyÃ©e.", false);
 					return true;
 					
 				}
@@ -118,7 +118,7 @@ namespace Server.Mobiles
 			{
 
 				m_Spm = spm;
-				m_Spm.SendMessage("Veuillez sélectionner la missive ?");
+				m_Spm.SendMessage("Veuillez sÃ©lectionner la missive ?");
 
 			}
 
@@ -130,7 +130,7 @@ namespace Server.Mobiles
 
 					if (from.Backpack == null || !missive.IsChildOf(from.Backpack))
 					{
-						from.SendMessage("La missive doit être dans votre sac.");
+						from.SendMessage("La missive doit Ãªtre dans votre sac.");
 					}
 					else if (missive.Destinataire == null)
 					{
@@ -140,7 +140,7 @@ namespace Server.Mobiles
 					{
 						if (from.Backpack == null || !missive.IsChildOf(from.Backpack))
 						{
-							from.SendMessage("La missive doit être dans votre sac.");
+							from.SendMessage("La missive doit Ãªtre dans votre sac.");
 						}
 						else if (missive.Destinataire == null)
 						{
@@ -149,7 +149,7 @@ namespace Server.Mobiles
 						else
 						{
 							missive.Destinataire.AddMissive(missive);
-							from.SendMessage("La missive a été envoyée.");
+							from.SendMessage("La missive a Ã©tÃ© envoyÃ©e.");
 						}
 					}
 				}

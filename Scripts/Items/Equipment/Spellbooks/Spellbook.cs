@@ -1,4 +1,4 @@
-#region References
+ï»¿#region References
 using Server.Commands;
 using Server.Engines.Craft;
 using Server.Multis;
@@ -1200,7 +1200,7 @@ namespace Server.Items
 					
 				}
 
-				from.SendMessage("Le livre a été remplis.");
+				from.SendMessage("Le livre a Ã©tÃ© remplis.");
 			}
             else if (obj is Spellbook)
             {

@@ -1,4 +1,4 @@
-#region References
+ï»¿#region References
 using System;
 using System.Collections.Generic;
 #endregion
@@ -195,9 +195,9 @@ namespace Server.Items
             0, 1077396, // Noooo!
 			1077397, // Please don't eat me... *whimper*
 			1077405, // Not the face!
-			1077406, // Ahhhhhh! My foot’s gone!
+			1077406, // Ahhhhhh! My footâ€™s gone!
 			1077407, // Please. No! I have gingerkids!
-			1077408, // No, no! I’m really made of poison. Really.
+			1077408, // No, no! Iâ€™m really made of poison. Really.
 			1077409 // Run, run as fast as you can! You can't catch me! I'm the gingerbread man!
 		};
 

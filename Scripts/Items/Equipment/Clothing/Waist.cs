@@ -1,4 +1,4 @@
-using Server.Engines.Craft;
+ï»¿using Server.Engines.Craft;
 
 namespace Server.Items
 {
@@ -172,7 +172,7 @@ namespace Server.Items
             : base(0x50D8, hue)
         {
             Weight = 2.0;
-			Name = "Demi trablié élégant";
+			Name = "Demi trabliÃ© Ã©lÃ©gant";
 
 		}
 

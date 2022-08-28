@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server;
 using Server.Network;
 
@@ -9,7 +9,7 @@ namespace Server.Items
 		[Constructable]
 		public Dices() : base( 0xFA7 )
 		{
-            Name = "2 des � jouer 6 faces";
+            Name = "2 des à jouer 6 faces";
 			Weight = 1.0;
 		}
 

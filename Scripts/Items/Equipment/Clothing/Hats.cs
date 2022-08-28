@@ -1,4 +1,4 @@
-using Server.Engines.Craft;
+ï»¿using Server.Engines.Craft;
 using Server.Network;
 using System;
 using System.Collections.Generic;
@@ -822,7 +822,7 @@ namespace Server.Items
         public HornedTribalMask(int hue)
             : base(0x1549, hue)
         {
-			Name = "Masque tribal Ornée";
+			Name = "Masque tribal OrnÃ©e";
 
 		}
 
@@ -1315,7 +1315,7 @@ namespace Server.Items
         public FeatheredHat(int hue)
             : base(0x171A, hue)
         {
-			Name = "Chapeau à plume";
+			Name = "Chapeau Ã  plume";
 
 		}
 

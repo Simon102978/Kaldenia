@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     public class SangEnvoutePhysique : Item, ICommodity
     {
@@ -14,7 +14,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-			Name = "Sang Envout� Physique";
+			Name = "Sang Envouté Physique";
         }
 
         public SangEnvoutePhysique(Serial serial)

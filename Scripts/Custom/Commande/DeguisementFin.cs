@@ -1,4 +1,4 @@
-using Server.Mobiles;
+ï»¿using Server.Mobiles;
 using Server.Commands;
 
 namespace Server.Scripts.Commands
@@ -20,11 +20,11 @@ namespace Server.Scripts.Commands
                 {
 					Server.Deguisement.RemoveDeguisement(from);
 
-                    from.SendMessage("Vous retirez votre déguisement.");
+                    from.SendMessage("Vous retirez votre dÃ©guisement.");
                 }
                 else
                 {
-                    from.SendMessage("Vous n'êtes pas déguisé.");
+                    from.SendMessage("Vous n'Ãªtes pas dÃ©guisÃ©.");
                 }
             }
         }

@@ -1,4 +1,4 @@
-using Server.ContextMenus;
+ï»¿using Server.ContextMenus;
 using Server.Multis;
 using Server.Network;
 using System;
@@ -94,11 +94,11 @@ namespace Server.Items
             }
 		    else if (from.Skills[SkillName.Cartography].Base < CartographyRequirement)
 				{
-				from.SendMessage("Vous n'êtes pas assez doué en cartographie pour pouvoir naviguer!"); // Cartographie < 50 
+				from.SendMessage("Vous n'Ãªtes pas assez douÃ© en cartographie pour pouvoir naviguer!"); // Cartographie < 50 
 			}
 			else if (boat.Stuck)
 			{
-				from.SendMessage("Le bateau est pris, vous ne pouvez pas le déplacer.");
+				from.SendMessage("Le bateau est pris, vous ne pouvez pas le dÃ©placer.");
 			}
 			else if (from.Mounted && !(mount is BoatMountItem))
             {

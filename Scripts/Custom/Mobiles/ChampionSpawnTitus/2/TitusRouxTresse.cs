@@ -1,4 +1,4 @@
-using Server.Items;
+﻿using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Mobiles
@@ -11,7 +11,7 @@ namespace Server.Mobiles
 			: base(AIType.AI_Mage, FightMode.Evil, 10, 1, 0.05, 0.2)
 		{
 			SpeechHue = Utility.RandomDyedHue();
-			Title = Utility.RandomBool() ? "Roux-Tresse" : "Pr�tresse de Titus";
+			Title = Utility.RandomBool() ? "Roux-Tresse" : "Prêtresse de Titus";
 			Race = Race.GetRace(Utility.Random(4));
 
 			Female = true;

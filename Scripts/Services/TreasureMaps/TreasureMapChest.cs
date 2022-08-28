@@ -1,4 +1,4 @@
-using Server.ContextMenus;
+ï»¿using Server.ContextMenus;
 using Server.Engines.PartySystem;
 using Server.Gumps;
 using Server.Mobiles;
@@ -549,7 +549,7 @@ namespace Server.Items
             {
                 if ((!Locked && TrapType != TrapType.None) && Level != 0)
                 {
-					from.SendMessage("Le coffre est piègé, veuillez la retirer avant de tenter de l'ouvrir.");
+					from.SendMessage("Le coffre est piÃ¨gÃ©, veuillez la retirer avant de tenter de l'ouvrir.");
                    // from.SendLocalizedMessage(1159008); // That appears to be trapped, using the remove trap skill would yield better results...
                     return false;
                 }

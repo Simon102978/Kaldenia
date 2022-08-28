@@ -1,4 +1,4 @@
-using Server.Items;
+﻿using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Engines.Quests
@@ -21,7 +21,7 @@ namespace Server.Engines.Quests
            loitering around on the surface too.  Either way, they're not hard to find. */
         public override object Uncomplete => 1072685;
 
-        /* Excellent! That�s the old fighting spirit. */
+        /* Excellent! That’s the old fighting spirit. */
         public override object Complete => 1075384;
 
         public SpringCleaningQuest()

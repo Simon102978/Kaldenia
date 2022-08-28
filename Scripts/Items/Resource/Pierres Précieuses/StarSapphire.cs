@@ -1,4 +1,4 @@
-namespace Server.Items
+ï»¿namespace Server.Items
 {
     public class StarSapphire : Item, IGem
     {
@@ -14,7 +14,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-			Name = "Sapphire étoilé";
+			Name = "Sapphire Ã©toilÃ©";
 		}
 
         public StarSapphire(Serial serial)

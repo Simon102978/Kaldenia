@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Gumps;
@@ -72,7 +72,7 @@ namespace Server.Mobiles
 
 					if (cm.StatutSocial < MinBuyClasse && !ContreBandier)
 					{
-						Say("Seul les " + MinBuyClasse + "s et les classes sup�rieurs peuvent acheter ici");
+						Say("Seul les " + MinBuyClasse + "s et les classes supérieurs peuvent acheter ici");
 						return;
 					}
 					else

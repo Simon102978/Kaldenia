@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server.Network;
 using Server.Items;
 using Server.Mobiles;
@@ -29,7 +29,7 @@ namespace Server.Gumps
 		AddBackground(36+movex, 25+movey, 369, 170, 9270);
 		AddBackground(54+movex, 43+movey, 334, 28, 3000);
 			 
-			AddLabel(77+movex, 47+movey, 0, "Cela vous coutera " + coiffure.Price + " pièces d'or.");
+			AddLabel(77+movex, 47+movey, 0, "Cela vous coutera " + coiffure.Price + " piÃ¨ces d'or.");
 			AddItem(195+movex,80+movey, coiffure.ItemId);
 			//AddLabel(250+movex, 90+movey, 2101, coifrelate[i]);
 			AddLabel(135+movex, 137+movey, 2101, "Non");
@@ -51,7 +51,7 @@ namespace Server.Gumps
 
 				if (!BaseVendor.ConsumeGold(m_from.Backpack,m_coif.Price))
 				{
-					m_from.SendMessage("Vous n'avez pas l'or nécessaire pour acheter cette coupe");
+					m_from.SendMessage("Vous n'avez pas l'or nÃ©cessaire pour acheter cette coupe");
 				}
 				else
 				{

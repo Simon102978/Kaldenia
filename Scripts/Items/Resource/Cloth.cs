@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     [Flipable(0x1766, 0x1768)]
     public class Cloth : Item, IScissorable, IDyable, ICommodity
@@ -112,7 +112,7 @@ namespace Server.Items
         public CombineCloth()
             : base(0x1767)
         {
-			Name = "Tissus Combin�";
+			Name = "Tissus Combiné";
         }
 
         public CombineCloth(Serial serial)

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Server.Items;
 using Server.Items.Crops;
@@ -102,7 +102,7 @@ namespace Server.Mobiles
 
 
 			//	this.Add(new GenericBuyInfo("Pommier", typeof(AppleSapling), 1, 20, 0xF27, 0));
-			//	this.Add(new GenericBuyInfo("P�cher", typeof(PeachSapling), 1, 20, 0xF27, 0));
+			//	this.Add(new GenericBuyInfo("Pêcher", typeof(PeachSapling), 1, 20, 0xF27, 0));
 			//	this.Add(new GenericBuyInfo("Poirier", typeof(PearSapling), 1, 20, 0xF27, 0));
 
 				this.Add(new GenericBuyInfo("Chili Pepper Seed", typeof(ChiliPepperSeed), 1, 20, 0xF27, 0));

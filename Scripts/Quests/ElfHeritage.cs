@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Engines.Quests
@@ -104,8 +104,8 @@ namespace Server.Engines.Quests
         /* Caretaker of the Land */
         public override object Title => 1072783;
         /* Hrrrrr.  Hurrrr.  Huuuman.  *creaking branches*  Suuun on baaark, roooooots diiig deeeeeep, wiiind caaaresses 
-        leeeaves … Hrrrrr.  Saaap of Sooosaria feeeeeeds us.  Hrrrrr.  Huuuman leeearn.  Caaaretaker of plaaants … teeend 
-        … prooove.<br> */
+        leeeaves â€¦ Hrrrrr.  Saaap of Sooosaria feeeeeeds us.  Hrrrrr.  Huuuman leeearn.  Caaaretaker of plaaants â€¦ teeend 
+        â€¦ prooove.<br> */
         public override object Description => 1072812;
         /* Hrrrrr.  Hrrrrr.  Huuuman. */
         public override object Refuse => 1072813;

@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using Server.Mobiles;
 using System;
 
@@ -111,26 +111,26 @@ namespace Server.Engines.Craft
 		public override void InitCraftList()
 		{
 			int index;
-			// Décorations
-			AddCraft(typeof(Vase), "Décorations", "Vase", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			// DÃ©corations
+			AddCraft(typeof(Vase), "DÃ©corations", "Vase", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
 
-			AddCraft(typeof(Vase1), "Décorations", "Vase 1", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
-			AddCraft(typeof(Vase2), "Décorations", "Vase 2", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
-			AddCraft(typeof(Vase3), "Décorations", "Vase 3", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
-			AddCraft(typeof(Vase4), "Décorations", "Vase 4", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
-			AddCraft(typeof(Vase5), "Décorations", "Vase 5", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase1), "DÃ©corations", "Vase 1", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase2), "DÃ©corations", "Vase 2", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase3), "DÃ©corations", "Vase 3", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase4), "DÃ©corations", "Vase 4", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Vase5), "DÃ©corations", "Vase 5", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
 
-			AddCraft(typeof(VaseTresor), "Décorations", "Vase Trésor", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
-			AddCraft(typeof(Urne), "Décorations", "Urne", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
-			AddCraft(typeof(Urne2), "Décorations", "Urne 2", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(VaseTresor), "DÃ©corations", "Vase TrÃ©sor", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Urne), "DÃ©corations", "Urne", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
+			AddCraft(typeof(Urne2), "DÃ©corations", "Urne 2", 52.5, 102.5, typeof(Granite), 1044514, 1, 1044513);
 
 
-			AddCraft(typeof(LargeVase), "Décorations", "Grand vase", 52.5, 102.5, typeof(Granite), 1044514, 3, 1044513);
-			AddCraft(typeof(SmallUrn), "Décorations", "Petite urne", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
-			AddCraft(typeof(TeteBuffle), "Décorations", "Tête de Buffle", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
-			AddCraft(typeof(SmallTowerSculpture), "Décorations", "Monolite", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
-			AddCraft(typeof(GargoylePainting), "Décorations", "Sculpture murale", 83.0, 125.0, typeof(Granite), 1044514, 5, 1044513);
-			AddCraft(typeof(GargoyleVase), "Décorations", "Vase sculpté", 80.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
+			AddCraft(typeof(LargeVase), "DÃ©corations", "Grand vase", 52.5, 102.5, typeof(Granite), 1044514, 3, 1044513);
+			AddCraft(typeof(SmallUrn), "DÃ©corations", "Petite urne", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
+			AddCraft(typeof(TeteBuffle), "DÃ©corations", "TÃªte de Buffle", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
+			AddCraft(typeof(SmallTowerSculpture), "DÃ©corations", "Monolite", 82.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
+			AddCraft(typeof(GargoylePainting), "DÃ©corations", "Sculpture murale", 83.0, 125.0, typeof(Granite), 1044514, 5, 1044513);
+			AddCraft(typeof(GargoyleVase), "DÃ©corations", "Vase sculptÃ©", 80.0, 125.0, typeof(Granite), 1044514, 3, 1044513);
 			/*
 						index = AddCraft(typeof(AnniversaryVaseTall), 1044501, 1156147, 60.0, 110.0, typeof(Granite), 1044514, 6, 1044513);
 						AddRecipe(index, (int)MasonryRecipes.AnniversaryVaseTall);
@@ -146,10 +146,10 @@ namespace Server.Engines.Craft
 			AddCraft(typeof(LargeStoneTableEastDeed), "Mobilier", "Grande table en granite (E)", 75.0, 125.0, typeof(Granite), 1044514, 9, 1044513);
 			AddCraft(typeof(LargeStoneTableSouthDeed), "Mobilier", "Grande table en granite (S)", 75.0, 125.0, typeof(Granite), 1044514, 9, 1044513);
 			AddCraft(typeof(RitualTableDeed), "Mobilier", "Table rituel", 94.7, 103.5, typeof(Granite), 1044514, 8, 1044513);
-			index = AddCraft(typeof(LargeGargoyleBedSouthDeed), "Mobilier", "Grand lit sculpté (S)", 76.0, 115.0, typeof(Granite), 1044514, 5, 1044513);
+			index = AddCraft(typeof(LargeGargoyleBedSouthDeed), "Mobilier", "Grand lit sculptÃ© (S)", 76.0, 115.0, typeof(Granite), 1044514, 5, 1044513);
 			AddSkill(index, SkillName.Tailoring, 70.0, 75.0);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
-			index = AddCraft(typeof(LargeGargoyleBedEastDeed), "Mobilier", "Grand lit sculpté (E)", 76.0, 115.0, typeof(Granite), 1044514, 5, 1044513);
+			index = AddCraft(typeof(LargeGargoyleBedEastDeed), "Mobilier", "Grand lit sculptÃ© (E)", 76.0, 115.0, typeof(Granite), 1044514, 5, 1044513);
 			AddSkill(index, SkillName.Tailoring, 70.0, 75.0);
 			AddRes(index, typeof(Cloth), 1044286, 100, 1044287);
 
@@ -202,13 +202,13 @@ namespace Server.Engines.Craft
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
 			AddCraft(typeof(GrayBrickFireplaceSouthDeedExp), "Cuisine", "Foyer en brique (S)", 68.4, 93.4, typeof(Granite), 1044041, 40, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
-			AddCraft(typeof(SandstoneFireplaceEastDeedExp), "Cuisine", "Foyer en grès (E)", 68.4, 93.4, typeof(Granite), 1044041, 40, 1044351);
+			AddCraft(typeof(SandstoneFireplaceEastDeedExp), "Cuisine", "Foyer en grÃ¨s (E)", 68.4, 93.4, typeof(Granite), 1044041, 40, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
-			AddCraft(typeof(SandstoneFireplaceSouthDeedExp), "Cuisine", "Foyer en grès (S)", 68.4, 93.4, typeof(Granite), 1044041, 40, 1044351);
+			AddCraft(typeof(SandstoneFireplaceSouthDeedExp), "Cuisine", "Foyer en grÃ¨s (S)", 68.4, 93.4, typeof(Granite), 1044041, 40, 1044351);
 			AddSkill(index, SkillName.Tinkering, 50.0, 55.0);
-			AddCraft(typeof(ElvenStoveSouthDeed), "Cuisine", "Four élégant (S)", 85.0, 110.0, typeof(Granite), 1044041, 40, 1044351);
+			AddCraft(typeof(ElvenStoveSouthDeed), "Cuisine", "Four Ã©lÃ©gant (S)", 85.0, 110.0, typeof(Granite), 1044041, 40, 1044351);
 			ForceNonExceptional(index);
-			AddCraft(typeof(ElvenStoveEastDeed), "Cuisine", "Four élégant (E)", 85.0, 110.0, typeof(Granite), 1044041, 40, 1044351);
+			AddCraft(typeof(ElvenStoveEastDeed), "Cuisine", "Four Ã©lÃ©gant (E)", 85.0, 110.0, typeof(Granite), 1044041, 40, 1044351);
 			ForceNonExceptional(index);
 
 			// Forge

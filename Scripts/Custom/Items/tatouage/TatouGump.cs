@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -150,7 +150,7 @@ namespace Server.Gumps
 			
 			
 			i = 29; //buttonid
-			tatourelate[i] = "Précédent";
+			tatourelate[i] = "PrÃ©cÃ©dent";
 			tatou[i,1] = 0;
 			tatou[i,3] = 0;
 			tatou[i,4] = 1;
@@ -206,7 +206,7 @@ namespace Server.Gumps
 			
 			
 			i = 44; //buttonid
-			tatourelate[i] = "Précédent";
+			tatourelate[i] = "PrÃ©cÃ©dent";
 			tatou[i,1] = 0;
 			tatou[i,3] = 0;
 			tatou[i,4] = 1;
@@ -379,7 +379,7 @@ namespace Server.Gumps
 					marge = marge + 50;
 					
 					i = 29;
-                    AddLabel(loccoifx + 5,loccoify+10+marge, 2101, tatourelate[i]); // Page Précédente
+                    AddLabel(loccoifx + 5,loccoify+10+marge, 2101, tatourelate[i]); // Page PrÃ©cÃ©dente
                     AddLabel(loccoifx + 70,loccoify+10+marge, 2101, ":");
                     AddButton(loccoifx + 85,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
@@ -471,7 +471,7 @@ namespace Server.Gumps
 					marge = marge + 50;
 
 					i = 44;
-                    AddLabel(loccoifx + 5,loccoify+10+marge, 2101, tatourelate[i]); // Page Précédente
+                    AddLabel(loccoifx + 5,loccoify+10+marge, 2101, tatourelate[i]); // Page PrÃ©cÃ©dente
                     AddLabel(loccoifx + 70,loccoify+10+marge, 2101, ":");
                     AddButton(loccoifx + 85,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 					
@@ -573,7 +573,7 @@ namespace Server.Gumps
 				m_Item.UsesRemaining = m_Item.UsesRemaining - 1;
 				if (m_Item.UsesRemaining < 1)
 				{
-					m_From.SendMessage("Vous avez brisé votre outil");
+					m_From.SendMessage("Vous avez brisÃ© votre outil");
 					m_Item.Delete();
 				}
 			}
@@ -581,7 +581,7 @@ namespace Server.Gumps
 			{					
 				if (enough == 1)
 				{
-					m_From.SendMessage(String.Format("Vous avez {0} en tatouage , il vous faut au moins {1} pour réaliser ce tatouage", Tatouage, tatou[buttonID,3]));
+					m_From.SendMessage(String.Format("Vous avez {0} en tatouage , il vous faut au moins {1} pour rÃ©aliser ce tatouage", Tatouage, tatou[buttonID,3]));
 				}
 				if (draked == 1)
 				{

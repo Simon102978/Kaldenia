@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Multis;
@@ -28,7 +28,7 @@ namespace Server.Items
 			{
 				if (Weapon.WeaponAttributes.UseBestSkill != 0)
 				{
-					from.SendMessage("Cette arme possËde dÈj‡ cette enchantement.");
+					from.SendMessage("Cette arme poss√®de d√©j√† cette enchantement.");
 					return false;
 				}
 

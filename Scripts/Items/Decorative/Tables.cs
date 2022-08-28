@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     [Furniture]
     public class ElegantLowTable : CraftableFurniture
@@ -268,7 +268,7 @@ namespace Server.Items
 			: base(0x1667)
 		{
 			Weight = 15;
-			Name = "Table avec Nappe �rable";
+			Name = "Table avec Nappe érable";
 		}
 
 

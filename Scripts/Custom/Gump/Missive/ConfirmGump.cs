@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Items;
 using Server.Mobiles;
@@ -27,7 +27,7 @@ namespace Server.Gumps
 
             AddBackground(12, 18, 360, 104, 9270);
 
-            AddLabel(28, 31, 2101, String.Format("Désirez-vous que {0} vous ajoute à", m_From.Name));
+            AddLabel(28, 31, 2101, String.Format("DÃ©sirez-vous que {0} vous ajoute Ã ", m_From.Name));
             AddLabel(28, 55, 2101, "son carnet d'adresse?");
 
             AddButton(239, 86, 4005, 4007, 1, GumpButtonType.Reply, 0);
@@ -44,17 +44,17 @@ namespace Server.Gumps
 
             if (info.ButtonID == 0)
             {
-                m_From.SendMessage(String.Format("{0} a refusé d'être ajouté à votre carnet d'adresse.", m_Mobile.Name));
+                m_From.SendMessage(String.Format("{0} a refusÃ© d'Ãªtre ajoutÃ© Ã  votre carnet d'adresse.", m_Mobile.Name));
             }
             else
             {
                 if (m_Carnet.Contains(m_Mobile.Name))
                 {
-                    m_From.SendMessage("Vous avez déjà cette personne dans votre carnet.");
+                    m_From.SendMessage("Vous avez dÃ©jÃ  cette personne dans votre carnet.");
                 }
                 else
                 {
-                    m_From.SendMessage(String.Format("{0} a accepté d'être ajouté à votre carnet d'adresse.", m_Mobile.Name));
+                    m_From.SendMessage(String.Format("{0} a acceptÃ© d'Ãªtre ajoutÃ© Ã  votre carnet d'adresse.", m_Mobile.Name));
                     m_Carnet.Adresses.Add(new Adresse(m_Mobile, m_Mobile.Name));
                 }
             }

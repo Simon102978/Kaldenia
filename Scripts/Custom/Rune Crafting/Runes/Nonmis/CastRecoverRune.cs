@@ -1,4 +1,4 @@
-/*using System;
+﻿/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Multis;
@@ -18,7 +18,7 @@ namespace Server.Items
 		public BonusDexRune() : base()
 		{
 			Weight = 0.2;  // ?
-			Name = "Dexterit�";
+			Name = "Dexterité";
 			Hue = 2584;
 		}
 

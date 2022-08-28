@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using Server.Spells;
 using System.Collections.Generic;
 using System;
@@ -11,22 +11,22 @@ namespace Server.Mobiles
 		public static List<string> RouxParole = new List<string>()
 		{
 			"Rejoins nous dans la ROUX-Volution !",
-			"Traitre ! Cesse de vivre parmis les roux-étiques !",
+			"Traitre ! Cesse de vivre parmis les roux-Ã©tiques !",
 			"La rousseur est la vie !",
 			"Titus te sauveras !",
-			"Tu pourriras avec les roux-étiques !",
-			"Gloire à Titus et à la Roux-volution !"
+			"Tu pourriras avec les roux-Ã©tiques !",
+			"Gloire Ã  Titus et Ã  la Roux-volution !"
 
 
 		};
 
 		public static List<string> NonRouxParole = new List<string>()
 		{
-			"La ROUX-Volution ne peux plus être arrêter !",
-			"Meurt roux-étique !",
-			"Tu as penser à te teindre les cheveux?! Le roux t'irait mieux ?",
+			"La ROUX-Volution ne peux plus Ãªtre arrÃªter !",
+			"Meurt roux-Ã©tique !",
+			"Tu as penser Ã  te teindre les cheveux?! Le roux t'irait mieux ?",
 			"Titus vous tueras tous !",
-			"Gloire à Titus et à la Roux-volution !",
+			"Gloire Ã  Titus et Ã  la Roux-volution !",
 			"ROUCISTE !"
 		};
 

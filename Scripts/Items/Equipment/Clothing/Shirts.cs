@@ -1,4 +1,4 @@
-namespace Server.Items
+ï»¿namespace Server.Items
 {
     public abstract class BaseShirt : BaseClothing
     {
@@ -158,7 +158,7 @@ namespace Server.Items
             : base(0x3175, hue)
         {
             Weight = 2.0;
-			Name = "Chemise ornée";
+			Name = "Chemise ornÃ©e";
 
 		}
 
@@ -195,7 +195,7 @@ namespace Server.Items
             : base(0x3176, hue)
         {
             Weight = 2.0;
-			Name = "Chemise ornée sombre";
+			Name = "Chemise ornÃ©e sombre";
         }
 
         public ElvenDarkShirt(Serial serial)

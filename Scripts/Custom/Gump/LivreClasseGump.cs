@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -36,7 +36,7 @@ namespace Server.Gumps
 			int space = 80;
 
 
-			AddHtml(x, y, 250, 50, String.Concat($"<h3><basefont color=\"#FFFFFF\">Veuillez choisir ou vous désirez placer la classe {classe.Name }.</basefont></h3>"), false, false);
+			AddHtml(x, y, 250, 50, String.Concat($"<h3><basefont color=\"#FFFFFF\">Veuillez choisir ou vous dÃ©sirez placer la classe {classe.Name }.</basefont></h3>"), false, false);
 			line++;
 			line++;
 
@@ -55,7 +55,7 @@ namespace Server.Gumps
 
 			if (classe.IsMetier() && from.Metier != classe)
 			{
-				AddButtonHtlml(x, y + line * scale, 3, "Métier", "#FFFFFF");
+				AddButtonHtlml(x, y + line * scale, 3, "MÃ©tier", "#FFFFFF");
 			}
 			
 

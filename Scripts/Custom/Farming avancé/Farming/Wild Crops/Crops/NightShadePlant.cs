@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server.Network;
 using Server.Targeting;
 
@@ -43,7 +43,7 @@ namespace Server.Items.Crops
                 }
                 else
                 {
-                    from.SendMessage("Vous êtes trop loin pour récolter quelque chose.");
+                    from.SendMessage("Vous Ãªtes trop loin pour rÃ©colter quelque chose.");
                 }
             }
         }

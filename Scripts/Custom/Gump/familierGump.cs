@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Targeting;
@@ -42,10 +42,10 @@ namespace Server.Gumps
 
 
             this.AddButton(246, 145, 0xFA5, 0xFA7, 1, GumpButtonType.Reply, 0);
-            AddHtml(280, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Déplacement"), false, false);
+            AddHtml(280, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "DÃ©placement"), false, false);
 
             this.AddButton(396, 145, 0xFA5, 0xFA7, 7, GumpButtonType.Reply, 0);
-            AddHtml(430, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Arrêter"), false, false);
+            AddHtml(430, 146, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "ArrÃªter"), false, false);
 
             this.AddButton(246, 171, 0xFA5, 0xFA7, 2, GumpButtonType.Reply, 0);
             AddHtml(280, 172, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Revenir"), false, false);
@@ -63,7 +63,7 @@ namespace Server.Gumps
             AddHtml(280, 222, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Suivre"), false, false);
 
             this.AddButton(396, 221, 0xFA5, 0xFA7, 8, GumpButtonType.Reply, 0);
-            AddHtml(430, 222, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Relâcher"), false, false);
+            AddHtml(430, 222, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "RelÃ¢cher"), false, false);
 
             AddHtml(246, 247, 90, 50, String.Format("<basefont color=#{0}>{1}", TextHue, "Texte :"), false, false);
             this.AddBackground(240, 272, 290, 100, 9350);
@@ -110,7 +110,7 @@ namespace Server.Gumps
             if (c.Deleted)   // Mettre ici si la cible est morte.. dissiper ou autre
             {
 
-                from.SendMessage("Votre créature n'existe plus.");
+                from.SendMessage("Votre crÃ©ature n'existe plus.");
                 return;
             }
                 

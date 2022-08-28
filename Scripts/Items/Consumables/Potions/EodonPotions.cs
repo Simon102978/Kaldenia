@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -306,7 +306,7 @@ namespace Server.Items
             Hue = 1272;
             Stackable = true;
             Amount = amount;
-			Name = "Potion d'éodon";
+			Name = "Potion d'Ã©odon";
         }
 
         public override bool CanDoEffects(Mobile m)
@@ -381,7 +381,7 @@ namespace Server.Items
             Hue = 2727;
             Stackable = true;
             Amount = amount;
-			Name = "Potion de résistances";
+			Name = "Potion de rÃ©sistances";
 
 		}
 

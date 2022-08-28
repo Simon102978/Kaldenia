@@ -1,4 +1,4 @@
-using Server.Mobiles;
+ï»¿using Server.Mobiles;
 using System;
 using System.Collections.Generic;
 
@@ -276,17 +276,17 @@ namespace Server.Engines.CannedEvil
 				new Dictionary<int, string>()
 				{
 					   {1 , "Ceos: On ne peut pas confier au troll un travail d'ogre !" },
-					   {2 , "Ceos: C'était juste de la chair à canon, maintenant le véritable combat commence." },
+					   {2 , "Ceos: C'Ã©tait juste de la chair Ã  canon, maintenant le vÃ©ritable combat commence." },
 					   {3 , "Ceos: Quoi ?! Impossible ! Vous allez payer pour cette affront !" },
 					   {4 , "Ceos: GNAAAH ! MOURREZ !" },
 				},
 				new List<string>()
 			    {
-					 {"Ceos: Qui est-ce qui va se cacher sous les jupons de leurs mère ?" },
-					 {"Ceos: Revenez, on commençait juste à s'amuser !" },
-					 {"Ceos: Quoi ? Vous osez me déranger juste pour ca ?" },
+					 {"Ceos: Qui est-ce qui va se cacher sous les jupons de leurs mÃ¨re ?" },
+					 {"Ceos: Revenez, on commenÃ§ait juste Ã  s'amuser !" },
+					 {"Ceos: Quoi ? Vous osez me dÃ©ranger juste pour ca ?" },
 					 {"Ceos: *Soupire* Moi qui croyais que vous aviez du potentiel..." },
-					 {"Ceos: Si c'est comme ca, vous êtes plus mes amis !" },
+					 {"Ceos: Si c'est comme ca, vous Ãªtes plus mes amis !" },
 				}
 			),
 		   new ChampionSpawnInfo( "Titus", typeof( Titus ), new[]{ "Explorer", "Huntsman", "Msafiri" } , new[] // Titus (Serado doit etre remplacer un de ses quatres);
@@ -306,7 +306,7 @@ namespace Server.Engines.CannedEvil
 				},
 				new List<string>()
 				{
-					 {"Titus: La ROUX-Volution a triompé !" },
+					 {"Titus: La ROUX-Volution a triompÃ© !" },
 					 {"Titus: Allez vous teindre les cheveux en roux !" },
 					 {"Titus: Mou-ha-ha ! La roux-volution vaincra !" },
 					 {"Titus: Gloire a la ROUX-Volution !" },

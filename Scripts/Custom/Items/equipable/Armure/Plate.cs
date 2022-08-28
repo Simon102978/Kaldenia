@@ -45,7 +45,7 @@ namespace Server.Items
 		public override bool Disguise { get { return true; } }
 
 		[Constructable]
-		public CasqueChaos()@uqac.ca
+		public CasqueChaos()
 			: base(41647)
 		{
 			Weight = 5.0;

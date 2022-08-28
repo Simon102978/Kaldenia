@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using Server.Mobiles;
 using System;
 
@@ -40,8 +40,8 @@ namespace Server.Engines.Quests
         {
             AddObjective(new ApprenticeObjective(SkillName.Blacksmith, 50, "Gorge's Shop", 1077733, 1077734));
 
-            // 1077733 By using George’s forge and anvil, he is able to give you advice as you create blacksmithing items. This helps you hone your Blacksmithing skill a bit faster than normal.
-            // 1077734 You’re not using George’s forge and anvil any longer, and he cannot give you advice. Your Blacksmithing learning potential is no longer enhanced. 
+            // 1077733 By using Georgeâ€™s forge and anvil, he is able to give you advice as you create blacksmithing items. This helps you hone your Blacksmithing skill a bit faster than normal.
+            // 1077734 Youâ€™re not using Georgeâ€™s forge and anvil any longer, and he cannot give you advice. Your Blacksmithing learning potential is no longer enhanced. 
 
             AddReward(new BaseReward(typeof(HammerOfHephaestus), 1077740));
         }

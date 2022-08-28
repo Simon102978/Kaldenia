@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Items;
 using Server.Network;
@@ -49,7 +49,7 @@ namespace Server.Items
 
             if (item != null && item is BaseShield)
             {
-                from.SendMessage("Vous ne pouvez pas équipper un fouet en ayant un bouclier à la main.");
+                from.SendMessage("Vous ne pouvez pas Ã©quipper un fouet en ayant un bouclier Ã  la main.");
                 return false;
             }
 
@@ -111,7 +111,7 @@ namespace Server.Items
      //               if (chanceDeFizzle > Utility.Random(100))
      //               {
      //                   receveur.Spell.OnCasterHurt();
-     //                   from.SendMessage("Vous dérangez votre cible !");
+     //                   from.SendMessage("Vous dÃ©rangez votre cible !");
      //                   Animation(from, receveur);
      //               }
      //           }
@@ -153,7 +153,7 @@ namespace Server.Items
      //               }
 					//else
      //               {
-     //                   from.SendMessage("Vous échouez à voler ou à faire tomber l'arme de votre cible !");
+     //                   from.SendMessage("Vous Ã©chouez Ã  voler ou Ã  faire tomber l'arme de votre cible !");
      //               }
      //           }
      //       }
@@ -182,7 +182,7 @@ namespace Server.Items
         //public override void OnAosSingleClick(Mobile from)
         //{
         //    LabelTo(from, Name);
-        //    LabelTo(from, String.Format("[{0} mêtres]", MaxRange));
+        //    LabelTo(from, String.Format("[{0} mÃªtres]", MaxRange));
         //}
 
   //      private void Fouet_OnTick(object state)
@@ -208,7 +208,7 @@ namespace Server.Items
   //          {
   //              if (!from.CanBeginAction(typeof(BaseFouet)))
   //              {
-  //                  from.SendMessage("Vous devez attendre avant d'utiliser le fouet à nouveau.");
+  //                  from.SendMessage("Vous devez attendre avant d'utiliser le fouet Ã  nouveau.");
   //              }
   //              else if (!from.Items.Contains(m_Fouet))
   //              {

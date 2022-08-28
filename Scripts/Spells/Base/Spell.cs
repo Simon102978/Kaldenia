@@ -1,4 +1,4 @@
-#region References
+ï»¿#region References
 using Server.Items;
 using Server.Misc;
 using Server.Mobiles;
@@ -636,7 +636,7 @@ namespace Server.Spells
 
 				if (m_Caster != null && !VerifyAffinity(cp, AffinityRequirements))
 				{
-					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinités requises.");
+					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinitÃ©s requises.");
 
 					if (m_Caster.AccessLevel > AccessLevel.Counselor)
 					{
@@ -721,7 +721,7 @@ namespace Server.Spells
 
 			else if (m_Caster is CustomPlayerMobile cp && !VerifyAffinity(cp, AffinityRequirements))
 			{			
-					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinités requises.");
+					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, false, "Vous n'avez pas les affinitÃ©s requises.");
 
 					if (m_Caster.AccessLevel > AccessLevel.Counselor)
 					{

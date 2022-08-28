@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     public class Emerald : Item, IGem
     {
@@ -14,7 +14,7 @@ namespace Server.Items
         {
             Stackable = true;
             Amount = amount;
-			Name = "�meraude";
+			Name = "Émeraude";
         }
 
         public Emerald(Serial serial)

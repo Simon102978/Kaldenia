@@ -1,4 +1,4 @@
-using Server.Items;
+﻿using Server.Items;
 using System;
 
 namespace Server.Engines.Quests
@@ -97,7 +97,7 @@ namespace Server.Engines.Quests
         public override object Refuse => 1074723;
         /* Those really big snakes like swamps, I've heard.  You might try the blighted grove. */
         public override object Uncomplete => 1074722;
-        /* Do you have it?  *gasp* What a tooth!  Here � I must get right to work. */
+        /* Do you have it?  *gasp* What a tooth!  Here … I must get right to work. */
         public override object Complete => 1074721;
         public override bool CanOffer()
         {

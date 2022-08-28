@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server.Network;
 using Server.Mobiles;
@@ -26,15 +26,15 @@ namespace Server.Items.Crops
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez pas planter une graine lorsque vous êtes sur votre monture." ); return; }
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez pas planter une graine lorsque vous Ãªtes sur votre monture." ); return; }
 			Point3D m_pnt = from.Location;
 			Map m_map = from.Map;
 			if ( !IsChildOf( from.Backpack ) ) { from.SendLocalizedMessage( 1042010 ); return; }
 			else if ( !CropHelper.CheckCanGrow( this, m_map, m_pnt.X, m_pnt.Y ) ) { from.SendMessage( "Cette graine ne poussera pas ici." ); return; }
 			ArrayList cropshere = CropHelper.CheckCrop( m_pnt, m_map, 0 );
-			if ( cropshere.Count > 0 ) { from.SendMessage( "Il y a déjà un plant qui pousse ici." ); return; }
+			if ( cropshere.Count > 0 ) { from.SendMessage( "Il y a dÃ©jÃ  un plant qui pousse ici." ); return; }
 			ArrayList cropsnear = CropHelper.CheckCrop( m_pnt, m_map, 1 );
-			if ( ( cropsnear.Count > 0 ) ) { from.SendMessage( "Il y a trop de plants à proximité." ); return; }
+			if ( ( cropsnear.Count > 0 ) ) { from.SendMessage( "Il y a trop de plants Ã  proximitÃ©." ); return; }
 			if ( this.BumpZ ) ++m_pnt.Z;
 			if ( !from.Mounted ) from.Animate( 32, 5, 1, true, false, 0 );
 			from.SendMessage("Vous plantez la graine.");
@@ -74,8 +74,8 @@ namespace Server.Items.Crops
 		}
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir être récolté sur votre monture." ); return; }
-			else from.SendMessage( "Votre pousse est trop jeune pour être récoltée." );
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Le plant est trop petit pour pouvoir Ãªtre rÃ©coltÃ© sur votre monture." ); return; }
+			else from.SendMessage( "Votre pousse est trop jeune pour Ãªtre rÃ©coltÃ©e." );
 		}
 		public MiniPistacioSeedling( Serial serial ) : base( serial ) { }
 
@@ -147,15 +147,15 @@ namespace Server.Items.Crops
 			if ( m_sower == null || m_sower.Deleted ) m_sower = from;
 		
 
-			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez récolter sur une monture." ); return; }
+			if ( from.Mounted && !CropHelper.CanWorkMounted ) { from.SendMessage( "Vous ne pouvez rÃ©colter sur une monture." ); return; }
 			if ( DateTime.UtcNow > lastpicked.AddSeconds(3) )
 			{
 				lastpicked = DateTime.UtcNow;
 				int cookValue = (int)from.Skills[SkillName.Cooking].Value / 20;
-				if ( cookValue == 0 ) { from.SendMessage( "Vous ignorez comment récolter cette pousse." ); return; }
+				if ( cookValue == 0 ) { from.SendMessage( "Vous ignorez comment rÃ©colter cette pousse." ); return; }
 				if ( from.InRange( this.GetWorldLocation(), 1 ) )
 				{
-					if ( m_yield < 1 ) { from.SendMessage( "Il n'y a rien à récolter ici." ); }
+					if ( m_yield < 1 ) { from.SendMessage( "Il n'y a rien Ã  rÃ©colter ici." ); }
 					else
 					{
 						from.Direction = from.GetDirectionTo( this );
@@ -164,16 +164,16 @@ namespace Server.Items.Crops
 						if ( cookValue > m_yield ) cookValue = m_yield + 1;
 						int pick = Utility.RandomMinMax( cookValue - 4, cookValue );
 						if (pick < 0 ) pick = 0;
-						if ( pick == 0 ) { from.SendMessage( "Votre récolte ne porte pas fruit." ); return; }
+						if ( pick == 0 ) { from.SendMessage( "Votre rÃ©colte ne porte pas fruit." ); return; }
 						m_yield -= pick;
-						from.SendMessage( "Vous récoltez {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
+						from.SendMessage( "Vous rÃ©coltez {0} crop{1}!", pick, ( pick == 1 ? "" : "s" ) );
 						if (m_yield < 1) ((Item)this).ItemID = pickedGraphic;
 						Pistacio crop = new Pistacio( pick );
 						from.AddToBackpack( crop );
 						if ( !regrowTimer.Running ) { regrowTimer.Start(); }
 					}
 				}
-				else { from.SendMessage( "Vous êtes trop loin pour récolter quelque chose." ); }
+				else { from.SendMessage( "Vous Ãªtes trop loin pour rÃ©colter quelque chose." ); }
 			}
 		}
 

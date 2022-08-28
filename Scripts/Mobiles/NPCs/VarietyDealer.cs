@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
@@ -7,7 +7,7 @@ namespace Server.Mobiles
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
         public VarietyDealer()
-            : base("Vendeur de variétés")
+            : base("Vendeur de variÃ©tÃ©s")
         {
         }
 

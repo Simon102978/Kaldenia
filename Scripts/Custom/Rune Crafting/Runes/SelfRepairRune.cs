@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Multis;
@@ -18,7 +18,7 @@ namespace Server.Items
 		public SelfRepairRune() : base()
 		{
 			Weight = 0.2;  // ?
-			Name = "Auto-R�paration";
+			Name = "Auto-Réparation";
 			Hue = 2584;
 		}
 

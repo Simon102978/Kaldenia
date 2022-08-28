@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Mobiles;
 using Server.Gumps;
@@ -58,7 +58,7 @@ namespace Server.Items
 				}
 				else 
 				{
-					from.SendMessage("Seul le créateur de la statue peut la terminer.");
+					from.SendMessage("Seul le crÃ©ateur de la statue peut la terminer.");
 				}
 			
 			}
@@ -75,7 +75,7 @@ namespace Server.Items
 				}
 				else
 				{
-					from.SendMessage("Seul le créateur de la statue peut la terminer.");
+					from.SendMessage("Seul le crÃ©ateur de la statue peut la terminer.");
 				}
 
 			}
@@ -131,7 +131,7 @@ namespace Server.Items
 		public override void GetProperties(ObjectPropertyList list)
         {
             if (!Finish)
-                list.Add("Statue à complèter");
+                list.Add("Statue Ã  complÃ¨ter");
 			else
 			{
 				list.Add(m_Title);

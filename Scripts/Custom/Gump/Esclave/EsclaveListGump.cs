@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -133,7 +133,7 @@ namespace Server.Gumps
 					}
 					else
 					{
-						from.SendMessage("Vous devez choisir un joueur qui à le statut d'esclave déchet.");
+						from.SendMessage("Vous devez choisir un joueur qui Ã  le statut d'esclave dÃ©chet.");
 
 					}
 				}			

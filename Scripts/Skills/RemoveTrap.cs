@@ -1,4 +1,4 @@
-using Server.Engines.VvV;
+ï»¿using Server.Engines.VvV;
 using Server.Guilds;
 using Server.Items;
 using Server.Network;
@@ -71,12 +71,12 @@ namespace Server.SkillHandlers
                         }
                         else*/ if (IsDisarming(from, tChest))
                         {
-							from.SendMessage("Vous etes entrain de désarmorcer le piège.");
+							from.SendMessage("Vous etes entrain de dÃ©sarmorcer le piÃ¨ge.");
                             from.SendLocalizedMessage(1159059); // You are already manipulating the trigger mechanism...
                         }
                         else if (IsBeingDisarmed(tChest))
                         {
-							from.SendMessage("Le piège est déjà désarmorcé.");
+							from.SendMessage("Le piÃ¨ge est dÃ©jÃ  dÃ©sarmorcÃ©.");
                        //     from.SendLocalizedMessage(1159063); // That trap is already being disarmed.
                         }
                         else if (tChest.AncientGuardians.Any(g => !g.Deleted))
@@ -290,13 +290,13 @@ namespace Server.SkillHandlers
             }
             if (!From.Alive)
             {
-				From.SendMessage("Vous devez être vivant pour désarmocer un piège.");
+				From.SendMessage("Vous devez Ãªtre vivant pour dÃ©sarmocer un piÃ¨ge.");
            //     From.SendLocalizedMessage(1159061); // Your ghostly fingers cannot manipulate the mechanism...
                 RemoveTrap.EndChestDisarmTimer(From);
             }
             else if (!From.InRange(Chest.GetWorldLocation(), 16) || Chest.Deleted)
             {
-				From.SendMessage("Vous êtes trop loins pour désarmocer le piège.");
+				From.SendMessage("Vous Ãªtes trop loins pour dÃ©sarmocer le piÃ¨ge.");
              //   From.SendLocalizedMessage(1159058); // You are too far away from the chest to manipulate the trigger mechanism.
                 RemoveTrap.EndChestDisarmTimer(From);
             }

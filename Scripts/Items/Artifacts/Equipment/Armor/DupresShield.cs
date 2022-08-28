@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     public class DupresShield : BaseShield
     {
@@ -19,7 +19,7 @@ namespace Server.Items
         {
         }
 
-        public override int LabelNumber => 1075196;// Dupre�s Shield
+        public override int LabelNumber => 1075196;// Dupre’s Shield
         public override int BasePhysicalResistance => 1;
         public override int BaseFireResistance => 0;
         public override int BaseColdResistance => 0;

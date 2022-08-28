@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -24,7 +24,7 @@ namespace Server.Gumps
 
 			DateTime date = CustomPersistence.Ouverture;
 
-			AddHtmlTexte(x +10, y + 20, 250, 60, "Determine la date d'ouverture du serveur pour le système d'expérience.");
+			AddHtmlTexte(x +10, y + 20, 250, 60, "Determine la date d'ouverture du serveur pour le systÃ¨me d'expÃ©rience.");
 
 			AddHtmlTexte(x + 10, y + 65, 150, "Jour");
 			AddTextEntryBg(x + 100, y + 60, 150, 30, 0, 1, date.Day.ToString());
@@ -32,7 +32,7 @@ namespace Server.Gumps
 			AddHtmlTexte(x + 10, y + 105, 150, "Mois");
 			AddTextEntryBg(x + 100, y + 100, 150, 30, 0, 2, date.Month.ToString());
 
-			AddHtmlTexte(x + 10, y + 145, 150, "Année");
+			AddHtmlTexte(x + 10, y + 145, 150, "AnnÃ©e");
 			AddTextEntryBg(x + 100, y + 140, 150, 30, 0, 3, date.Year.ToString());
 
 			AddButton(x + 35, y + 180, 1, 1147);
@@ -59,13 +59,13 @@ namespace Server.Gumps
 
 							if (!int.TryParse(info.GetTextEntry(1).Text, out day))
 							{
-								from.SendMessage("Le jours doit être un nombre de 0 à 31.");
+								from.SendMessage("Le jours doit Ãªtre un nombre de 0 Ã  31.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
 							else if (day < 1 || day > 31)
 							{
-								from.SendMessage("La cote doit être un nombre de 1 à 31.");
+								from.SendMessage("La cote doit Ãªtre un nombre de 1 Ã  31.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
@@ -76,13 +76,13 @@ namespace Server.Gumps
 
 							if (!int.TryParse(info.GetTextEntry(2).Text, out Month))
 							{
-								from.SendMessage("Le mois doit être un mois de 1 à 12.");
+								from.SendMessage("Le mois doit Ãªtre un mois de 1 Ã  12.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
 							else if (Month < 1 || Month > 12)
 							{
-								from.SendMessage("Le mois doit être un nombre de 1 à 12.");
+								from.SendMessage("Le mois doit Ãªtre un nombre de 1 Ã  12.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
@@ -91,13 +91,13 @@ namespace Server.Gumps
 
 							if (!int.TryParse(info.GetTextEntry(3).Text, out Year))
 							{
-								from.SendMessage("L'année doit être une année après 2022.");
+								from.SendMessage("L'annÃ©e doit Ãªtre une annÃ©e aprÃ¨s 2022.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}
 							else if (Year < 2022)
 							{
-								from.SendMessage("L'année doit être une année après 2022.");
+								from.SendMessage("L'annÃ©e doit Ãªtre une annÃ©e aprÃ¨s 2022.");
 								from.SendGump(new DateOuvertureGump(cp));
 								break;
 							}

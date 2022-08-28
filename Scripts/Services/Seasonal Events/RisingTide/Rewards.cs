@@ -1,4 +1,4 @@
-using Server.Gumps;
+ï»¿using Server.Gumps;
 using Server.Multis;
 using Server.Network;
 using System;
@@ -160,7 +160,7 @@ namespace Server.Items
             {
                 if (_NextFly > DateTime.UtcNow)
                 {
-                    m.SendMessage("Votre Perroquet est trop épuisé pour voler maintenant."); // Your parrot is too tired to fly right now.
+                    m.SendMessage("Votre Perroquet est trop Ã©puisÃ© pour voler maintenant."); // Your parrot is too tired to fly right now.
                 }
                 else
                 {

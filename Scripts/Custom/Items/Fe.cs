@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server;
 using Server.Mobiles;
 
@@ -15,7 +15,7 @@ namespace Server.Items
 			m_Player = cp;
 			Movable = false;
 			LootType = LootType.Blessed;
-			Name = "Fiole d'exp�rience";
+			Name = "Fiole d'expérience";
 			Hue = 2372;
 
 

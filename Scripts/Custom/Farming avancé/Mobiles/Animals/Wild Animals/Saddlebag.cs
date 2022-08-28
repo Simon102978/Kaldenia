@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Items;
 using Server.Targeting;
@@ -28,11 +28,11 @@ namespace Server.Items
 					from.Target = new BagTarget(this);
 				}
 				else
-					from.SendMessage("Cela doit être dans votre sac.");
+					from.SendMessage("Cela doit Ãªtre dans votre sac.");
 			}
 			else
 			{
-				from.SendMessage("Vous êtes trop bête pour savoir à quoi cela sert.");
+				from.SendMessage("Vous Ãªtes trop bÃªte pour savoir Ã  quoi cela sert.");
 			}
 		}
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server;
 using System.Collections;
 using System.Text;
@@ -51,7 +51,7 @@ namespace Server.Items
 			}
 			else 
   			{ 
-			from.SendMessage("Vous �tes trop loin de la ruche."); 
+			from.SendMessage("Vous êtes trop loin de la ruche."); 
 			return; 
   			} 
 		}

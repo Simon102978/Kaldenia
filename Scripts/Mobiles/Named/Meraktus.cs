@@ -1,4 +1,4 @@
-using Server.Engines.CannedEvil;
+﻿using Server.Engines.CannedEvil;
 using Server.Items;
 using System;
 using System.Collections;
@@ -34,7 +34,7 @@ namespace Server.Mobiles
             : base(AIType.AI_Melee)
         {
             Name = "Meraktus";
-            Title = "Le tourment�";
+            Title = "Le tourmenté";
             Body = 263;
             BaseSoundID = 680;
             Hue = 0x835;

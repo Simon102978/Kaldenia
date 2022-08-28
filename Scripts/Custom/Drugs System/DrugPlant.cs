@@ -1,4 +1,4 @@
-using System; 
+ï»¿using System; 
 using Server.Items;
 
 namespace Server.Items
@@ -47,7 +47,7 @@ namespace Server.Items
 					from.AddToBackpack(itemadd);
 					this.ItemID = 1;
 					this.Donne = false;
-					from.SendMessage("Vous les récoltez."); this.timer_pousse.Debuter();
+					from.SendMessage("Vous les rÃ©coltez."); this.timer_pousse.Debuter();
 				 
 				}
 			}
@@ -96,7 +96,7 @@ namespace Server.Items
                this.Start();
            }
 
-           // Apres 2.5 secondes, le timer sera declanché tout les secondes. apres 5 ticks, ça s'arretera
+           // Apres 2.5 secondes, le timer sera declanchÃ© tout les secondes. apres 5 ticks, Ã§a s'arretera
            public Timer_Pousse(DrugPlant from)
                : base(TimeSpan.Zero, TimeSpan.FromHours(1.0))
            {

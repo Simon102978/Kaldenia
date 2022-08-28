@@ -1,4 +1,4 @@
-using Server.Engines.Craft;
+ï»¿using Server.Engines.Craft;
 using System;
 
 namespace Server.Items
@@ -445,7 +445,7 @@ namespace Server.Items
 
 		{
 			Weight = 2.0;
-			Name = "Bock de Bière";
+			Name = "Bock de BiÃ¨re";
 			Layer = Layer.OneHanded;
 		}
 
@@ -554,7 +554,7 @@ namespace Server.Items
 
 		{
 			Weight = 2.0;
-			Name = "Corne à Boire";
+			Name = "Corne Ã  Boire";
 			Layer = Layer.OneHanded;
 		}
 

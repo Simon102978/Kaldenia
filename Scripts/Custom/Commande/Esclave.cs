@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Commands;
 using Server.Gumps;
@@ -34,7 +34,7 @@ namespace Server.Scripts.Commands
 				}
 				else
 				{
-					cm.SendMessage("Seul les Civenien et classe supérieur peuvent accèder à ce menu.");
+					cm.SendMessage("Seul les Civenien et classe supÃ©rieur peuvent accÃ¨der Ã  ce menu.");
 				}
 
 

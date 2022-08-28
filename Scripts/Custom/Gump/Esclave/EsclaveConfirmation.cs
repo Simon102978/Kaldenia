@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -32,15 +32,15 @@ namespace Server.Gumps
 
 			AddSection(x - 15, y - 35, 430, 100, "Information");
 
-			AddHtml(x, y, 375, 50,$"<h3><basefont color=#ffffff>{master.Name} vous offre de devenir son esclave, cela entrainera les conséquences suivantes : </basefont></h3>", false, false);
+			AddHtml(x, y, 375, 50,$"<h3><basefont color=#ffffff>{master.Name} vous offre de devenir son esclave, cela entrainera les consÃ©quences suivantes : </basefont></h3>", false, false);
 
 
 
 
-			string detail = $"Avantages:\n\n-Vous allez avoir accès à un banque\n-Vous allez avoir accès au même vendeur qu'un pérégrin\n-Vous serez taxé au même niveau qu'un pérégrin \n\n Désavantages:\n\n-Vous devrez obéir à {master.Name}\n-{master.Name} peut vous remettre déchêt sans préavis\n-{master.Name} connaitra vos talents";
+			string detail = $"Avantages:\n\n-Vous allez avoir accÃ¨s Ã  un banque\n-Vous allez avoir accÃ¨s au mÃªme vendeur qu'un pÃ©rÃ©grin\n-Vous serez taxÃ© au mÃªme niveau qu'un pÃ©rÃ©grin \n\n DÃ©savantages:\n\n-Vous devrez obÃ©ir Ã  {master.Name}\n-{master.Name} peut vous remettre dÃ©chÃªt sans prÃ©avis\n-{master.Name} connaitra vos talents";
 
 
-			AddSection(x - 15 , y + 66, 430, 200, "Conséquences", detail);
+			AddSection(x - 15 , y + 66, 430, 200, "ConsÃ©quences", detail);
 
 			AddBackground(x - 15, y + 267, 430, 60, 9270);   
 
@@ -64,7 +64,7 @@ namespace Server.Gumps
 			else
 			{
 				m_Master.SendMessage($"{m_Esclave.Name} accepte votre offre.");
-				m_Esclave.SendMessage($"Vous êtes maintenant l'esclave de {m_Master.Name}.");
+				m_Esclave.SendMessage($"Vous Ãªtes maintenant l'esclave de {m_Master.Name}.");
 
 				m_Master.AddEsclave(m_Esclave);
 			}

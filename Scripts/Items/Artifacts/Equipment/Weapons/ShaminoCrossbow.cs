@@ -1,4 +1,4 @@
-namespace Server.Items
+﻿namespace Server.Items
 {
     public class ShaminoCrossbow : RepeatingCrossbow
     {
@@ -19,7 +19,7 @@ namespace Server.Items
         {
         }
 
-        public override int LabelNumber => 1062915;// Shamino�s Best Crossbow
+        public override int LabelNumber => 1062915;// Shamino’s Best Crossbow
         public override int InitMinHits => 255;
         public override int InitMaxHits => 255;
         public override void Serialize(GenericWriter writer)

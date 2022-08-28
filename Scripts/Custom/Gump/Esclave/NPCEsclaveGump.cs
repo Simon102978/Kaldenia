@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -42,7 +42,7 @@ namespace Server.Gumps
 
 			AddButtonHtlml(x + 5, y + 40 + line++ * 25, 8, bh.Title == bh.customTitle ? "Cacher le titre" : "Afficher le titre", "#FFFFFF");
 
-			AddButtonHtlml(x + 5, y + 40 + line * 25, 3, "Changer l'écriture", "#FFFFFF");
+			AddButtonHtlml(x + 5, y + 40 + line * 25, 3, "Changer l'Ã©criture", "#FFFFFF");
 			AddLabel(x + 200, y + 40 + line++ * 25, bh.SpeechHue, "*******");
 
 			AddButtonHtlml(x + 5, y + 40 + line * 25, 4, "Changer les actions", "#FFFFFF");
@@ -116,7 +116,7 @@ namespace Server.Gumps
 			else if (info.ButtonID == 7)
 			{
 				m_From.Prompt = new AddTitlePrompt(m_From, m_Bh);
-				m_From.SendMessage("Veuillez écrire le nouveau titre.");
+				m_From.SendMessage("Veuillez Ã©crire le nouveau titre.");
 			}
 			else if (info.ButtonID == 8)
 			{

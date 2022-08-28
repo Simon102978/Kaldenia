@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Items;
 
 namespace Server.Engines.Craft
@@ -98,7 +98,7 @@ namespace Server.Engines.Craft
 			index = AddCraft( typeof( BlankCandle ), "Resources", "Blank Candle", 50.0, 80.0, typeof( Beeswax ), "Wax", 2, "You dont have enough wax" );
 			SetNeedHeat( index, true );
 
-			index = AddCraft(typeof(CandleFitSkull), "Resources", "Chandelle en forme de Cr�ne", 50.0, 80.0, typeof(Beeswax), "Wax", 4, "You dont have enough wax");
+			index = AddCraft(typeof(CandleFitSkull), "Resources", "Chandelle en forme de Crâne", 50.0, 80.0, typeof(Beeswax), "Wax", 4, "You dont have enough wax");
 			SetNeedHeat(index, true);
 			/* End Ressources */
 

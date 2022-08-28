@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Network;
@@ -56,7 +56,7 @@ namespace Server.Gumps
 			line++;
 			line++;
 
-			AddHtmlTexteColored(x, y + line * scale, 120, "Dépenses :", "#FFFFFF");
+			AddHtmlTexteColored(x, y + line * scale, 120, "DÃ©penses :", "#FFFFFF");
 
 			line++;
 
@@ -71,7 +71,7 @@ namespace Server.Gumps
 
 			AddHorizontalLigne(xAmountColum - 20, y + line * scale + 15, 120);
 			int Depenses = SalaireGold;
-			AddHtmlTexteColored(xSecondColum, y + line * scale, 200, "Total des dépenses :", "#FFFFFF");
+			AddHtmlTexteColored(xSecondColum, y + line * scale, 200, "Total des dÃ©penses :", "#FFFFFF");
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + Depenses.ToString("### ### ##0") + "</p>", "#FFFFFF");
 
 			line++;
@@ -80,7 +80,7 @@ namespace Server.Gumps
 
 
 			int Benefice = Revenue - Depenses;
-			AddHtmlTexteColored(x, y + line * scale, 300, "Bénéfice :", "#FFFFFF");
+			AddHtmlTexteColored(x, y + line * scale, 300, "BÃ©nÃ©fice :", "#FFFFFF");
 			AddHtmlTexteColored(xAmountColum, y + line * scale, 120, "<p style = \"text-align:right> " + Benefice.ToString("### ### ##0") + "</p>", "#FFFFFF");
 		}
 
@@ -97,7 +97,7 @@ namespace Server.Gumps
 				{
 
 					cp.Prompt = new AjustSalairePrompt(cp);
-					cp.SendMessage("Veuillez écrire le nouveau montant.");
+					cp.SendMessage("Veuillez Ã©crire le nouveau montant.");
 				}
 
 

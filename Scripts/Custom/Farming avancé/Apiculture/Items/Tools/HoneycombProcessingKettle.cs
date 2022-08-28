@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server; 
 using Server.Items;
 using Server.Network;
@@ -26,7 +26,7 @@ namespace Server.Items
 
          if (pack != null && pack.ConsumeTotal( typeof( HoneyComb ), 1 ) ) 
          { 
-            from.SendMessage("*Vous centrifugez le produit et séparez le miel et la cire*"); 
+            from.SendMessage("*Vous centrifugez le produit et sÃ©parez le miel et la cire*"); 
                 
                { 
 					
@@ -46,7 +46,7 @@ namespace Server.Items
 
          else 
          { 
-            from.SendMessage( "Vous êtes trop loin." ); 
+            from.SendMessage( "Vous Ãªtes trop loin." ); 
             return; 
          } 
 

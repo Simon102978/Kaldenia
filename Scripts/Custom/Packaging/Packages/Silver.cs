@@ -1,4 +1,4 @@
-using Server.Accounting;
+ï»¿using Server.Accounting;
 
 namespace Server.Items
 {
@@ -25,11 +25,11 @@ namespace Server.Items
 
 			if (amount != 1)
 			{
-				Name = "Pièces d'Argents";
+				Name = "PiÃ¨ces d'Argents";
 			}
 			else
 			{
-				Name = "Pièce d'Argent";
+				Name = "PiÃ¨ce d'Argent";
 			}
 
 			
@@ -74,11 +74,11 @@ namespace Server.Items
 
 			if (newValue != 1)
 			{
-				Name = "Pièces d'Argent";
+				Name = "PiÃ¨ces d'Argent";
 			}
 			else
 			{
-				Name = "Pièce d'Argent";
+				Name = "PiÃ¨ce d'Argent";
 			}
 
 			//UpdateTotal(this, TotalType.Gold, newValue - oldValue);

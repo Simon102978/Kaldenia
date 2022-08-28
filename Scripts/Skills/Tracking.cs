@@ -1,4 +1,4 @@
-using Server.Gumps;
+ï»¿using Server.Gumps;
 using Server.Network;
 using Server.Spells;
 using Server.Spells.Necromancy;
@@ -181,7 +181,7 @@ namespace Server.SkillHandlers
 
 			if (m_Page != 0)
 			{
-				AddButtonLabeled(20, Item * 155 + 20, 10002, 0, "Précédent");
+				AddButtonLabeled(20, Item * 155 + 20, 10002, 0, "PrÃ©cÃ©dent");
 			}
 
 

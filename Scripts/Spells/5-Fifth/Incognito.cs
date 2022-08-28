@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using Server.Mobiles;
 using Server.Spells.Seventh;
 using System;
@@ -89,7 +89,7 @@ namespace Server.Spells.Fifth
 			*/
 			else if (Caster.NameMod != null)
 			{
-				Caster.SendMessage("Vous ne pouvez pas lancer se sort quand votre identité est masquée.");
+				Caster.SendMessage("Vous ne pouvez pas lancer se sort quand votre identitÃ© est masquÃ©e.");
 			}
             else if (CheckSequence())
             {

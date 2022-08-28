@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server;
 using Server.Items;
@@ -25,11 +25,11 @@ namespace Server.Items
             ac = new
 
             AddonComponent(0x959);
-            ac.Name = "Cheminée en pierre";
+            ac.Name = "CheminÃ©e en pierre";
             AddComponent(ac, 0, 0, 0);
 
             ac = new AddonComponent(0x8DA);
-            ac.Name = "Cheminée en pierre";
+            ac.Name = "CheminÃ©e en pierre";
             AddComponent(ac, 0, 1, 0);
              
         }
@@ -42,14 +42,14 @@ namespace Server.Items
         public override void OnComponentUsed(AddonComponent ac, Mobile from)
         {
             if (!from.InRange(GetWorldLocation(), 2))
-                from.SendMessage("Vous êtes trop loin pour l'utiliser !");
+                from.SendMessage("Vous Ãªtes trop loin pour l'utiliser !");
             else
             {
                 if (ac.ItemID == 0x953)
                 {
                     ac.ItemID = 0x8DA;
                     Effects.PlaySound(from.Location, from.Map, 0x4B9);
-                    from.SendMessage("Vous éteignez le feu dans la cheminée !");
+                    from.SendMessage("Vous Ã©teignez le feu dans la cheminÃ©e !");
                 }
                 else if (ac.ItemID == 0x8DA)
                 {
@@ -64,13 +64,13 @@ namespace Server.Items
                     {
                         case 0:
                             {
-                                from.SendMessage("Vous devez avoir 3 bûches à mettre dans la cheminée");
+                                from.SendMessage("Vous devez avoir 3 bÃ»ches Ã  mettre dans la cheminÃ©e");
                                 break;
                             }
                         default:
                             {
                                 Effects.PlaySound(from.Location, from.Map, 0x137);
-                                from.SendMessage("Vous mettez les bûches dans la cheminée !");
+                                from.SendMessage("Vous mettez les bÃ»ches dans la cheminÃ©e !");
                                 ac.ItemID = 0x951;
                                 break;
                             }
@@ -86,13 +86,13 @@ namespace Server.Items
                         ac.ItemID = 0x953;
                         ac.Light = LightType.Circle225;
                         Effects.PlaySound(from.Location, from.Map, 0x4BA);
-                        from.SendMessage("Vous allumez un feu dans la cheminée.");
+                        from.SendMessage("Vous allumez un feu dans la cheminÃ©e.");
                     }
                     else
                     {
                         if (matchlight == null)
                         {
-                            from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la cheminée");
+                            from.SendMessage("Vous devez avoir une allumette pour allumer un feu dans la cheminÃ©e");
                         }
                     }
                 }

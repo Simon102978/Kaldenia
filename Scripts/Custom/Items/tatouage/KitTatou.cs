@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server;
 using Server.Items;
 using Server.Network;
@@ -78,7 +78,7 @@ namespace Server.Items
 					if (m_Item.UsesRemaining < 1)
 					{
 						correct = 0;
-						from.SendMessage("Vous avez bris� votre outil");
+						from.SendMessage("Vous avez brisé votre outil");
 						m_Item.Delete();
 					}
 					if (correct == 1)

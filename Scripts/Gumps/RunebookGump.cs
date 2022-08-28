@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using Server.Network;
 using Server.Prompts;
 using Server.Spells.Chivalry;
@@ -268,7 +268,7 @@ namespace Server.Gumps
 					{
 						if (!m_Book.HasSpell(id))
 						{
-							pm.SendMessage("Le grimoire que vous ciblez doit posséder le sort en question !");
+							pm.SendMessage("Le grimoire que vous ciblez doit possÃ©der le sort en question !");
 						}
 						else if (m_Book != null && (m_Book.Parent == from || (from.Backpack != null && m_Book.Parent == from.Backpack)))
 						{
@@ -276,10 +276,10 @@ namespace Server.Gumps
 						}
 					}
 					else
-						pm.SendMessage("Le numéro du sort est invalide !");
+						pm.SendMessage("Le numÃ©ro du sort est invalide !");
 				}
 				else
-					pm.SendMessage("Vous devez choisir le grimoire à utiliser avec la commande .choisirgrimoire !");
+					pm.SendMessage("Vous devez choisir le grimoire Ã  utiliser avec la commande .choisirgrimoire !");
 			}
 
 
@@ -405,7 +405,7 @@ namespace Server.Gumps
                                         from.CloseGump(typeof(RunebookGump));
                                         from.SendGump(new RunebookGump(from, Book));
 
-										from.SendMessage("Option désactivé.");
+										from.SendMessage("Option dÃ©sactivÃ©.");
                                       //  from.SendLocalizedMessage(502412); // There are no charges left on that item.
                                     }
                                     else

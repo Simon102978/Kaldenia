@@ -1,4 +1,4 @@
-using Server.Accounting;
+ï»¿using Server.Accounting;
 using Server.Commands;
 using Server.Commands.Generic;
 using Server.Mobiles;
@@ -91,7 +91,7 @@ namespace Server.Gumps
 
 				if (nameSender != "" || receivedText != "")
 				{
-					AddHtml(20, 265, 360, 20, Color(Center("Message envoyé par: " + nameSender), 0x1d), false, false);
+					AddHtml(20, 265, 360, 20, Color(Center("Message envoyÃ© par: " + nameSender), 0x1d), false, false);
 					AddHtml(20, 285, 360, 78, Color(receivedText, 0x1d), false, true);
 				}
 
@@ -278,7 +278,7 @@ namespace Server.Gumps
 			}
 			else if (focus.AccessLevel > from.AccessLevel && from.AccessLevel == AccessLevel.Player)
 			{
-				from.SendMessage("Vous ne pouvez envoyer un message à un maitre du jeu. Veuillez utiliser le systèmes de pages.");
+				from.SendMessage("Vous ne pouvez envoyer un message Ã  un maitre du jeu. Veuillez utiliser le systÃ¨mes de pages.");
 				return;
 			}
 			else if (from != focus && (focus.Hidden && from.AccessLevel < focus.AccessLevel))
@@ -345,7 +345,7 @@ namespace Server.Gumps
 						else
 						{
 							from.SendGump(new PropertiesGump(from, focus));
-							CommandLogging.WriteLine(from, "{0} {1} ouverture des propriétés de {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
+							CommandLogging.WriteLine(from, "{0} {1} ouverture des propriÃ©tÃ©s de {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
 						}
 
 						break;
@@ -377,7 +377,7 @@ namespace Server.Gumps
 							focus.MoveToWorld(from.Location, from.Map);
 							Resend(from, info);
 
-							CommandLogging.WriteLine(from, "{0} {1} amène {2} à la Localisation {3}, Map {4}", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), from.Location, from.Map);
+							CommandLogging.WriteLine(from, "{0} {1} amÃ¨ne {2} Ã  la Localisation {3}, Map {4}", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), from.Location, from.Map);
 						}
 
 						break;
@@ -423,7 +423,7 @@ namespace Server.Gumps
 
 							focus.Resurrect();
 
-							CommandLogging.WriteLine(from, "{0} {1} résurrecte {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
+							CommandLogging.WriteLine(from, "{0} {1} rÃ©surrecte {2} ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus));
 						}
 
 						Resend(from, info);

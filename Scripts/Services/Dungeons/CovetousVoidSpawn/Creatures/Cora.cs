@@ -1,4 +1,4 @@
-using Server.Engines.VoidPool;
+﻿using Server.Engines.VoidPool;
 using Server.Items;
 using System;
 
@@ -18,7 +18,7 @@ namespace Server.Mobiles
 			Female = true;
             Body = 0x191;
             Name = "Cora";
-            Title = "La sorci�re";
+            Title = "La sorcière";
 			Race = BaseRace.GetRace(Utility.Random(4));
 
 			HairItemID = 0x2045;

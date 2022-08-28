@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Server;
 using Server.Commands;
 using Server.Gumps;
@@ -65,13 +65,13 @@ namespace Server.Scripts.Commands
 
 				if ((clothing.RootParent != from) || !(clothing.IsChildOf(from.Backpack)))
 				{
-					from.SendMessage("Vous devez sélectionner un item dans votre sac et non sur vous.");
+					from.SendMessage("Vous devez sÃ©lectionner un item dans votre sac et non sur vous.");
 					return;
 				}
 
 				if (!(IsValid(clothing.Layer)))
 				{
-					from.SendMessage("Vous devez sélectionner un item avec un layer valide.");
+					from.SendMessage("Vous devez sÃ©lectionner un item avec un layer valide.");
 					return;
 				}
 		
@@ -97,12 +97,12 @@ namespace Server.Scripts.Commands
         }
 
         [Usage("ChangerLayer")]
-        [Description("Permet de de changer le layer à un objet.")]
+        [Description("Permet de de changer le layer Ã  un objet.")]
         public static void ChangerLayer_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;
 
-			from.SendMessage("Sélectionner un item pour changer son Layer");
+			from.SendMessage("SÃ©lectionner un item pour changer son Layer");
 			from.Target = new LayerTarget(); // Call our target
 
 

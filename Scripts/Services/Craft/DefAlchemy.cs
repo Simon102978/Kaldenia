@@ -1,4 +1,4 @@
-using Server.Items;
+ï»¿using Server.Items;
 using System;
 
 namespace Server.Engines.Craft
@@ -164,7 +164,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Nightshade), 1044358, 3, 1044366);
         
 
-            index = AddCraft(typeof(JukariBurnPoiltice), 1116349, "Potion de résistances", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
+            index = AddCraft(typeof(JukariBurnPoiltice), 1116349, "Potion de rÃ©sistances", 51.0, 151.0, typeof(Bottle), 1044529, 1, 500315);
             AddRes(index, typeof(BlackPearl), 1044353, 20, 1044361);
             AddRes(index, typeof(Vanilla), 1080000, 10, 1080008);          
          
@@ -206,11 +206,11 @@ namespace Server.Engines.Craft
 
             index = AddCraft(typeof(ParasiticPotion), 1116350, 1072942, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
             AddRes(index, typeof(NoxCrystal), "Nox Crystal", 5, "Pas assez de Nox Crystal");
-			AddRes(index, typeof(VeninAraigneeGeante), "Venin d'araignée géante", 1, "Vous n'avez pas suffisament de venin d'Araignée Géante");
+			AddRes(index, typeof(VeninAraigneeGeante), "Venin d'araignÃ©e gÃ©ante", 1, "Vous n'avez pas suffisament de venin d'AraignÃ©e GÃ©ante");
 
 			index = AddCraft(typeof(DarkglowPotion), 1116350, 1072943, 65.0, 115.0, typeof(Bottle), 1044529, 1, 500315);
             AddRes(index, typeof(NoxCrystal), "Nox Crystal", 5, "Pas assez de Nox Crystal");
-			AddRes(index, typeof(VeninAraigneeNoire), "Venin d'araignée noire", 1, "Vous n'avez pas suffisament de venin d'Araignée Noire");
+			AddRes(index, typeof(VeninAraigneeNoire), "Venin d'araignÃ©e noire", 1, "Vous n'avez pas suffisament de venin d'AraignÃ©e Noire");
 
 			index = AddCraft(typeof(ScouringToxin), 1116350, 1112292, 75.0, 100.0, typeof(NoxCrystal), "Nox Crystal", 1, "Pas assez de Nox Crystal");
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
@@ -250,7 +250,7 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Ginseng), 1044356, 3, 1044364);
 
       
-			index = AddCraft(typeof(HairDye), 1116351, "Teinture à Cheveux", 75.0, 100.0, typeof(BacVide), "Bac à teinture", 1, "Il vous faut un bac à teinture");
+			index = AddCraft(typeof(HairDye), 1116351, "Teinture Ã  Cheveux", 75.0, 100.0, typeof(BacVide), "Bac Ã  teinture", 1, "Il vous faut un bac Ã  teinture");
 			AddRes(index, typeof(Charcoal), "Charbon", 5, "Vous n'avez pas suffisament de Charbon");
 
 			#region Teintures
@@ -274,9 +274,9 @@ namespace Server.Engines.Craft
 			#endregion
 
 			#region Teintures BRUNE
-			index = AddCraft(typeof(CafeBruleDyeTub), "Teintures", "Cafe Brûlé", 25.0, 50.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			index = AddCraft(typeof(CafeBruleDyeTub), "Teintures", "Cafe BrÃ»lÃ©", 25.0, 50.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(CoffeeBean), "Grain de Café", 10, "Vous n'avez pas suffisament de Grains de Café");
+			AddRes(index, typeof(CoffeeBean), "Grain de CafÃ©", 10, "Vous n'avez pas suffisament de Grains de CafÃ©");
 
 			index = AddCraft(typeof(RouilleDyeTub), "Teintures", "Rouille", 50.0, 75.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
@@ -313,7 +313,7 @@ namespace Server.Engines.Craft
 			#region Teintures Bleu
 			index = AddCraft(typeof(BleuGlacierDyeTub), "Teintures", "Bleu Glacier", 25.0, 50.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(CheveuxGeant), "Cheveux de Géant", 5, "Vous n'avez pas suffisament de Cheveux de Géant");
+			AddRes(index, typeof(CheveuxGeant), "Cheveux de GÃ©ant", 5, "Vous n'avez pas suffisament de Cheveux de GÃ©ant");
 
 			index = AddCraft(typeof(BleuProfondDyeTub), "Teintures", "Bleu Profond", 50.0, 75.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
@@ -332,7 +332,7 @@ namespace Server.Engines.Craft
 			#region Teintures Verte
 			index = AddCraft(typeof(VertSombreDyeTub), "Teintures", "Vert Sombre", 25.0, 50.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(EcorceArbreGeant), "Ecorce d'arbre maudit", 5, "Vous n'avez pas suffisament d'écorce d'arbre maudit");
+			AddRes(index, typeof(EcorceArbreGeant), "Ecorce d'arbre maudit", 5, "Vous n'avez pas suffisament d'Ã©corce d'arbre maudit");
 
 			index = AddCraft(typeof(VertOliveDyeTub), "Teintures", "Vert Olive", 50.0, 75.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
@@ -341,7 +341,7 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(VertPrintanierDyeTub), "Teintures", "Vert Printanier", 65.0, 85.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(VeriteIngot), "Lingot de Vérite", 2, "Vous n'avez pas suffisament de Lingot de Vérite");
+			AddRes(index, typeof(VeriteIngot), "Lingot de VÃ©rite", 2, "Vous n'avez pas suffisament de Lingot de VÃ©rite");
 
 			index = AddCraft(typeof(VertIridescentDyeTub), "Teintures", "Vert Iridescent", 80, 100.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
@@ -351,11 +351,11 @@ namespace Server.Engines.Craft
 			#region Teintures TURQUOISE 
 			index = AddCraft(typeof(TurquoisePlumePaon), "Teintures", "Plume de Paon", 25.0, 50.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(EcorceArbreGeant), "Ecorce d'arbre Géant", 5, "Vous n'avez pas suffisament d'écorce d'arbre Géant");
+			AddRes(index, typeof(EcorceArbreGeant), "Ecorce d'arbre GÃ©ant", 5, "Vous n'avez pas suffisament d'Ã©corce d'arbre GÃ©ant");
 
 			index = AddCraft(typeof(TurquoiseDyeTub), "Teintures", "Turquoise", 50.0, 75.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(VeninAraigneeGeante), "Venin d'araignée Géante", 5, "Vous n'avez pas suffisament de Venin d'araignée géante");
+			AddRes(index, typeof(VeninAraigneeGeante), "Venin d'araignÃ©e GÃ©ante", 5, "Vous n'avez pas suffisament de Venin d'araignÃ©e gÃ©ante");
 
 
 			index = AddCraft(typeof(EcaillePoissonDyeTub), "Teintures", "Ecaille de Poisson", 65.0, 85.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
@@ -379,11 +379,11 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(PruneDyeTub), "Teintures", "Prune", 65.0, 85.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(PattesPanthere), "Pattes de Panthère", 2, "Vous n'avez pas suffisament de Patte de Panthère");
+			AddRes(index, typeof(PattesPanthere), "Pattes de PanthÃ¨re", 2, "Vous n'avez pas suffisament de Patte de PanthÃ¨re");
 
 			index = AddCraft(typeof(MauveVelourDyeTub), "Teintures", "Mauve Velour", 80, 100.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
-			AddRes(index, typeof(Amethyst), "Une Améthyste", 2, "Vous n'avez pas suffisament d'améthyste");
+			AddRes(index, typeof(Amethyst), "Une AmÃ©thyste", 2, "Vous n'avez pas suffisament d'amÃ©thyste");
 			#endregion
 
 			#region Teintures NEUTRE
@@ -391,7 +391,7 @@ namespace Server.Engines.Craft
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
 			AddRes(index, typeof(PlumesHarpie), "Plumes de Harpie", 5, "Vous n'avez pas suffisament de Plumes de Harpie");
 
-			index = AddCraft(typeof(GrisArgenteDyeTub), "Teintures", "Gris Argenté", 50.0, 75.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
+			index = AddCraft(typeof(GrisArgenteDyeTub), "Teintures", "Gris ArgentÃ©", 50.0, 75.0, typeof(BacVide), "Bac de Teinture", 1, "Il vous faut un bac de teinture");
 			AddRes(index, typeof(PoudreCoquillages), "Poudre de Coquillages", 5, "Vous n'avez pas suffisament de Poudre de Coquillages");
 			AddRes(index, typeof(OeufPierre), "Oeuf de Pierre", 2, "Vous n'avez pas suffisament d'oeuf de Pierre");
 

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
@@ -7,7 +7,7 @@ namespace Server.Mobiles
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
         [Constructable]
         public Necromancer()
-            : base("N�cromancien")
+            : base("Nécromancien")
         {
             SetSkill(SkillName.EvalInt, 80.0, 100.0);
             SetSkill(SkillName.Inscribe, 80.0, 100.0);

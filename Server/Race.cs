@@ -1,4 +1,4 @@
-#region References
+ï»¿#region References
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -207,7 +207,7 @@ namespace Server
 
 		public virtual void ChangeHue(Mobile m)
 		{
-			// Sert principalement à rotater sur le hue.
+			// Sert principalement Ã  rotater sur le hue.
 		}
 
 		public virtual int RotateHue(int Hue)
@@ -233,7 +233,7 @@ namespace Server
 
 			return SkinHues[n];
 
-			// Sert principalement à rotater sur le hue.
+			// Sert principalement Ã  rotater sur le hue.
 		}
 
 

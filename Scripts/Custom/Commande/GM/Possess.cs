@@ -343,13 +343,13 @@ namespace Server
 
                         if (m.Account != null)
                         {
-                            from.SendMessage("Vous ne pouvez posséder un autre joueur.");
+                            from.SendMessage("Vous ne pouvez possÃ¨der un autre joueur.");
                             return;
                         }
 
                         if (from.Possess != null)
                         {
-                            from.SendMessage("Vous possedez déjà un NPC.");
+                            from.SendMessage("Vous possedez dÃ©jÃ  un NPC.");
                             return;
                         }
 						
@@ -403,7 +403,7 @@ namespace Server
 					
 					if (from == null)
 					{
-						from.SendMessage("Vous devez être de forme MJ pour exécuter cette commande.");
+						from.SendMessage("Vous devez Ãªtre de forme MJ pour exÃ©cuter cette commande.");
 						return;
 					}
 					if (!origo.Player || origo.AccessLevel > AccessLevel.Player)
@@ -449,7 +449,7 @@ namespace Server
 					
 					if (from == null)
 					{
-						from.SendMessage("Vous devez être de forme MJ pour exécuter cette commande.");
+						from.SendMessage("Vous devez Ãªtre de forme MJ pour exÃ©cuter cette commande.");
 						return;
 					}
 					CleanupEquipItems(from);
@@ -471,14 +471,14 @@ namespace Server
         }
 		
         [Usage("PossederNPC")]
-        [Description("Permet à un animateur de posséder un npc.")]
+        [Description("Permet Ã  un animateur de possÃ¨der un npc.")]
         private static void Possess_OnCommand(CommandEventArgs e)
         {
             e.Mobile.Target = new PossessTarget();
         }
 
         [Usage("LibererNPC")]
-        [Description("Permet à un animateur de libérer un npc.")]
+        [Description("Permet Ã  un animateur de libÃ©rer un npc.")]
         private static void UnPossess_OnCommand(CommandEventArgs e)
         {
             try
@@ -487,7 +487,7 @@ namespace Server
 				
                 if (from.PossessStorage == null)
                 {
-                    from.SendMessage("Vous ne possédez aucun NPC.");
+                    from.SendMessage("Vous ne possÃ¨dez aucun NPC.");
                     return;
                 }
 
@@ -517,7 +517,7 @@ namespace Server
         }
 
         [Usage("CopierMoi")]
-        [Description("Permet à un animateur de créer un double de lui-même, mais en 'stone'.")]
+        [Description("Permet Ã  un animateur de crÃ©er un double de lui-mÃªme, mais en 'stone'.")]
         private static void CopyGm_OnCommand(CommandEventArgs e)
         {
             try
@@ -526,7 +526,7 @@ namespace Server
 
                 if (from == null)
                 {
-                    from.SendMessage("Vous devez être de forme MJ pour exécuter cette commande.");
+                    from.SendMessage("Vous devez Ãªtre de forme MJ pour exÃ©cuter cette commande.");
                     return;
                 }
 
@@ -554,14 +554,14 @@ namespace Server
         }
 		
         [Usage("ClonerNPC")]
-        [Description("Permet à un animateur de créer un double d'un NPC sur sa position")]
+        [Description("Permet Ã  un animateur de crÃ©er un double d'un NPC sur sa position")]
         private static void CloneNPC_OnCommand(CommandEventArgs e)
         {
 			e.Mobile.Target = new CloneTarget();
         }
 		
         [Usage("CopierNPC")]
-        [Description("Permet à un animateur de se transformer en NPC choisi")]
+        [Description("Permet Ã  un animateur de se transformer en NPC choisi")]
         private static void CopyNPC_OnCommand(CommandEventArgs e)
         {
 			e.Mobile.Target = new CopyTarget();

@@ -59,7 +59,7 @@ namespace Server.Items
 			}
 			else if (Lock)
 			{
-				m.SendMessage("Le levier semble cadenassé");
+				m.SendMessage("Le levier semble cadenassÃ©");
 
 			}
 			else if (CanOpen(m))
@@ -83,7 +83,7 @@ namespace Server.Items
 			}
 			else if (!m.InRange(this.Location,2))
 			{
-				m.SendMessage("Vous devez être à moin de deux cases pour activer un levier.");
+				m.SendMessage("Vous devez Ãªtre Ã  moin de deux cases pour activer un levier.");
 				return false;
 			}
 			return true;

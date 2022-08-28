@@ -18,7 +18,7 @@ namespace Server.StartUp
 			Map.Trammel.Season = 1;
 			Map.Ilshenar.Season = 1;
 			Console.ForegroundColor = ConsoleColor.Cyan;
-			Console.WriteLine("La Saison a été changée pour l'été");
+			Console.WriteLine("La Saison a Ã©tÃ© changÃ©e pour l'Ã©tÃ©");
 			Console.ResetColor();
 			#endregion
 		}

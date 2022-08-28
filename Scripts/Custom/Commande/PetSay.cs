@@ -20,7 +20,7 @@ namespace Server.Scripts.Commands
 		}
 
         [Usage("PetSay")] 
-	    [Description( "Permet de faire dire quelque chose à son animal de compagnie.")]
+	    [Description( "Permet de faire dire quelque chose Ã  son animal de compagnie.")]
         public static void PetSay_OnCommand(CommandEventArgs e)
 		{
 			if ( e.Length != 1 )
@@ -63,11 +63,11 @@ namespace Server.Scripts.Commands
                     targ.Say(m_Message);
                 }
                 else
-                    from.SendMessage("Vous n'êtes pas le maître de cette créature ou vous ne possédez pas le niveau nécessaire en Animal Taming pour faire agir cette créature.");
+                    from.SendMessage("Vous n'Ãªtes pas le maÃ®tre de cette crÃ©ature ou vous ne possÃ¨dez pas le niveau nÃ©cessaire en Animal Taming pour faire agir cette crÃ©ature.");
                 
             }
             else
-                from.SendMessage(256, "Il faut cliquer sur une créature.");
+                from.SendMessage(256, "Il faut cliquer sur une crÃ©ature.");
 		}
 	}
 }

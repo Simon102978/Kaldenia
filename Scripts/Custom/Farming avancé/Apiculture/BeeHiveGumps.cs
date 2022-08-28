@@ -125,7 +125,7 @@ namespace Server.Engines.Apiculture
 				case HiveHealth.Dying: AddLabel(116, 146, 37, "Mourrant"); break;
 				case HiveHealth.Sickly: AddLabel(116, 146, 52, "Malade"); break;
 				case HiveHealth.Healthy: AddLabel(116, 146, 67, "Sain"); break;
-                case HiveHealth.Thriving: AddLabel(116, 146, 92, "Prosp�ration"); break;
+                case HiveHealth.Thriving: AddLabel(116, 146, 92, "Prospération"); break;
 			}  
 
 			//resource

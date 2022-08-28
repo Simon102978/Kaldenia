@@ -37,7 +37,7 @@ namespace Server.ContextMenus
 			m_Pole.Bait = Bait.Aucun;
 			m_Pole.Charge = 0;
 
-			m_From.SendMessage("Vous enlevez l'app‚t.");
+			m_From.SendMessage("Vous enlevez l'app√¢t.");
 		}
 	}
 }
@@ -307,7 +307,7 @@ namespace Server.Items
 
 			if (UsesRemaining <= 0)
 			{
-				from.SendMessage("Votre canne ‡ pÍche se brise.");
+				from.SendMessage("Votre canne √† p√™che se brise.");
 				this.Delete();
 			}
 

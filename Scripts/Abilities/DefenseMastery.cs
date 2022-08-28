@@ -12,7 +12,7 @@ namespace Server.Items
 
         public override int BaseMana => 20;
 
-		public override string Name => "Maîtrise de la défense";
+		public override string Name => "MaÃ®trise de la dÃ©fense";
 		public override int Id => 17;
 
         public static bool GetMalus(Mobile targ, ref int damageMalus)

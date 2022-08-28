@@ -5020,7 +5020,7 @@ namespace Server.Mobiles
 				}
 			} //End Edit For Poker
 
-			if (Hidden) // Si tu as ete reveler dans les précédente actions, inutile de passer la dedans.
+			if (Hidden) // Si tu as ete reveler dans les prÃ©cÃ©dente actions, inutile de passer la dedans.
 			{
 
 				List<Mobile> list = new List<Mobile>();

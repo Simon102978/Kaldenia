@@ -23,7 +23,7 @@ namespace Server.Scripts.Commands
             if (name.Length > 0)
                 e.Mobile.Target = new RenomTarget(name);
             else
-                e.Mobile.SendMessage("Le nouveau nom doit avoir au moins un caractère.");
+                e.Mobile.SendMessage("Le nouveau nom doit avoir au moins un caractÃ¨re.");
         }
 
         private class RenomTarget : Target
@@ -44,7 +44,7 @@ namespace Server.Scripts.Commands
                     if (item.IsChildOf(from.Backpack)) 
                         item.Name = m_Name;
                     else
-                        from.SendMessage("L'item doit être dans votre sac.");
+                        from.SendMessage("L'item doit Ãªtre dans votre sac.");
                 }
 				else if (targeted is BaseArmor)
 				{
@@ -53,7 +53,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else if (targeted is BaseWeapon)
 				{
@@ -62,7 +62,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else if (targeted is BaseFood)
 				{
@@ -71,7 +71,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else if (targeted is BasePotion)
 				{
@@ -80,7 +80,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else if (targeted is BaseBeverage)
 				{
@@ -89,7 +89,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else if (targeted is CraftableFurniture)
 				{
@@ -98,7 +98,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else if (targeted is Item)
 				{
@@ -107,7 +107,7 @@ namespace Server.Scripts.Commands
 					if (item.IsChildOf(from.Backpack))
 						item.Name = m_Name;
 					else
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 				}
 				else
                 {

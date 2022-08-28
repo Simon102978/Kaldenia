@@ -23,7 +23,7 @@ namespace Server.Scripts.Commands
             if (name.Length > 0)
                 e.Mobile.Target = new MarqueTarget(name);
             else
-                e.Mobile.SendMessage("La marque doit avoir au moins un caractère.");
+                e.Mobile.SendMessage("La marque doit avoir au moins un caractÃ¨re.");
         }
 
         private class MarqueTarget : Target
@@ -42,12 +42,12 @@ namespace Server.Scripts.Commands
 
 					if (item.Createur != from)
 					{
-						from.SendMessage("Vous devez avoir créer l'objet pour mettre votre marque.");
+						from.SendMessage("Vous devez avoir crÃ©er l'objet pour mettre votre marque.");
 						return;
 					}
 					else if (!item.IsChildOf(from.Backpack))
 					{
-						from.SendMessage("L'item doit être dans votre sac.");
+						from.SendMessage("L'item doit Ãªtre dans votre sac.");
 						return;
 					}
 					else

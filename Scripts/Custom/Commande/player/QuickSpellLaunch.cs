@@ -23,7 +23,7 @@ namespace Server.Scripts.Commands
         {
             Mobile from = e.Mobile;
 
-            from.SendMessage("Ciblez le livre de sorts à utiliser");
+            from.SendMessage("Ciblez le livre de sorts Ã  utiliser");
             from.BeginTarget(12, false, TargetFlags.None, new TargetCallback(QSL_OnTarget));
         }
 

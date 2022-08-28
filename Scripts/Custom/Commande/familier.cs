@@ -16,7 +16,7 @@ namespace Server.Commands
 		}
 
 		[Usage( "Familier" )]
-		[Description( "Pour avoir accès au commande des familiers." )]
+		[Description( "Pour avoir accÃ¨s au commande des familiers." )]
         private static void Familier ( CommandEventArgs arg )
 		{
             arg.Mobile.Target = new FamiTarget();           
@@ -51,12 +51,12 @@ namespace Server.Commands
                 }
                 else
                 {
-                    from.SendMessage("Vous devez avoir le contrôle de la créature ciblée.");
+                    from.SendMessage("Vous devez avoir le contrÃ´le de la crÃ©ature ciblÃ©e.");
                 }             
             }
             else
             {
-                from.SendMessage("Vous devez cibler une créature.");
+                from.SendMessage("Vous devez cibler une crÃ©ature.");
             }
              
         }

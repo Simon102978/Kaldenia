@@ -102,7 +102,7 @@ namespace Server.Scripts.Commands
 								}
 								else
 								{
-									from.SendMessage("La saccoche doit être vide.");
+									from.SendMessage("La saccoche doit Ãªtre vide.");
 								}								
 							}
 							else if (targeted is PackLlama pl1)
@@ -115,7 +115,7 @@ namespace Server.Scripts.Commands
 								}
 								else
 								{
-									from.SendMessage("La saccoche doit être vide.");
+									from.SendMessage("La saccoche doit Ãªtre vide.");
 								}
 							}
 							else

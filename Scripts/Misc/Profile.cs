@@ -59,7 +59,7 @@ namespace Server.Misc
 					}
 					else if (cp.Deguise)
 					{
-						from.SendMessage("Vous êtes incapable de faire cela.");
+						from.SendMessage("Vous Ãªtes incapable de faire cela.");
 					}
 					else
 					{
@@ -107,7 +107,7 @@ namespace Server.Misc
 
 			if (beholder.AccessLevel == AccessLevel.Player && beheld.NameMod != null)
 			{
-				beholder.SendMessage("Vous ne réussissez pas à obtenir l'information.");
+				beholder.SendMessage("Vous ne rÃ©ussissez pas Ã  obtenir l'information.");
 				return;
 			}
 

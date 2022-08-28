@@ -75,7 +75,7 @@ namespace Server.Commands
 			
 			if ( from != null ) 
 			{
-				from.SendMessage( "Choisissez un NPC à contrôler..." );
+				from.SendMessage( "Choisissez un NPC Ã  contrÃ´ler..." );
 				//"Choose the target to control..."
 				
 				from.Target = new InternalTarget( e.Arguments );
@@ -159,7 +159,7 @@ namespace Server.Commands
 			{
 				if ( targeted is PlayerMobile && ((PlayerMobile)targeted).Player )
 				{
-					from.SendMessage("Vous ne pouvez contrôler un joueur");
+					from.SendMessage("Vous ne pouvez contrÃ´ler un joueur");
 					//"You cant control players"
 					return;
 				}
@@ -200,7 +200,7 @@ namespace Server.Commands
 			}
 			
 			
-			from.SendMessage("Vous contrôlez le NPC {0}, {1}", target.Name, target.Title);
+			from.SendMessage("Vous contrÃ´lez le NPC {0}, {1}", target.Name, target.Title);
 			//"You leave your Body an control {0}, {1}"
 
 			//Clone Player
@@ -257,11 +257,10 @@ namespace Server.Commands
 				//NPC Wiederherstellen
 				if ( !oldNPC.Deleted )
 				{
-					//Props immer übernehmen bei der Rückverwandlung?
-					//ja, weil sich hits etc ändern
+					
 					//Props from -> oldNPC
 					CopyProps( oldNPC, from, stats, skills );
-					//nicht nur zurück holen
+					
 					//if ( oldNPC.Map == Map.Internal )
 					//	oldNPC.MoveToWorld(from.Location, from.Map);
 					
@@ -279,10 +278,10 @@ namespace Server.Commands
 				}
 			}
 			
-			//Neuen Mobile übernehmen oder Control abbrechen
-			if ( target != oldPlayer && target != null && !target.Deleted ) //Neues Mobile übernehmen
+		
+			if ( target != oldPlayer && target != null && !target.Deleted ) 
 			{
-				from.SendMessage("Vous contrôlez  {0}, {1}", target.Name, target.Title);
+				from.SendMessage("Vous contrÃ´lez  {0}, {1}", target.Name, target.Title);
 				//"You Control  {0}, {1}"
 				
 				//Update ControlItem
@@ -325,11 +324,10 @@ namespace Server.Commands
 			//NPC wiederherstellen
 			if ( oldNPC != null && !oldNPC.Deleted )
 			{
-				//Props immer übernehmen bei der Rückverwandlung?
-				//ja, weil sich hits etc ändern
+
 				//Props from -> oldNPC
 				CopyProps( oldNPC, from, stats, skills );
-				//nicht nur zurück holen:
+
 				//if ( oldNPC.Map == Map.Internal )
 				//	oldNPC.MoveToWorld(from.Location, from.Map);
 				
@@ -343,7 +341,7 @@ namespace Server.Commands
 			}
 			else
 			{
-				from.SendMessage("Le NPC a été supprimé peu être à cause d'un respawn manuel");	
+				from.SendMessage("Le NPC a Ã©tÃ© supprimÃ© peu Ãªtre Ã  cause d'un respawn manuel");	
 				//"The original NPC was deleted. Maybe because a manual respawn"
 				oldNPC.Delete();
 			}

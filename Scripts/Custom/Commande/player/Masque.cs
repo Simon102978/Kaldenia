@@ -32,21 +32,21 @@ namespace Server.Scripts.Commands
 
 				if (cm.Masque)
 				{
-	//				from.SendMessage("Vous révelez votre identité.");
+	//				from.SendMessage("Vous rÃ©velez votre identitÃ©.");
 					cm.Masque = false;
 				}
 				else if (cm.NameMod != null)
 				{
-					from.SendMessage("Vous ne pouvez pas cacher votre identité pour le moment.");
+					from.SendMessage("Vous ne pouvez pas cacher votre identitÃ© pour le moment.");
 				}
 				else if (cm.CacheIdentite())
 				{
-					from.SendMessage("Vous cachez votre identité.");
+					from.SendMessage("Vous cachez votre identitÃ©.");
 					cm.Masque = true;
 				}
 				else
 				{
-					from.SendMessage("Vous devez avoir un foulard ou un casque qui permet de cacher votre identité.");
+					from.SendMessage("Vous devez avoir un foulard ou un casque qui permet de cacher votre identitÃ©.");
 				}
 			}
 		}

@@ -60,7 +60,7 @@ namespace Server.Gumps
             {
             	case 0:
             		{
-            			m.SendMessage(46, "Votre mot de passe n'a pas été modifié.");
+            			m.SendMessage(46, "Votre mot de passe n'a pas Ã©tÃ© modifiÃ©.");
             			return;
             		}
             	case 1:
@@ -81,14 +81,14 @@ namespace Server.Gumps
 						{
 							if( !(char.IsLetterOrDigit( newPass[i] )) ) //Char is NOT a letter or digit
 							{
-								m.SendMessage(37, "Les mots de passe doivent être composés seulement de lettres (A à Z) et des chiffres (0 à 9).");
+								m.SendMessage(37, "Les mots de passe doivent Ãªtre composÃ©s seulement de lettres (A Ã  Z) et des chiffres (0 Ã  9).");
 								return;
 							}
 						}
          	
             			Account a = m.Account as Account;
             
-            			if ( !(a.CheckPassword( origPass )) ) //"Password Attuale" è incorretta
+            			if ( !(a.CheckPassword( origPass )) ) //"Password Attuale" Ã  incorretta
             			{
             				m.SendMessage(37, "Le mot de passe actuel est incorrect. [ " + origPass + " ].");
             				m.CloseGump( typeof( PasswordChanger ) );
@@ -96,10 +96,10 @@ namespace Server.Gumps
             				return;
             			}
             
-	            		if ( (a.CheckPassword( origPass )) && (newPass == confirmNewPass) ) //La "Password Attuale" è corretta.
+	            		if ( (a.CheckPassword( origPass )) && (newPass == confirmNewPass) ) //La "Password Attuale" Ã  corretta.
             			{
             				a.SetPassword( newPass );
-            				m.SendMessage(1274, "Votre mot de passe a été modifié avec succès!");
+            				m.SendMessage(1274, "Votre mot de passe a Ã©tÃ© modifiÃ© avec succÃ¨s!");
            	 			}
             			break;
             		}

@@ -6,7 +6,7 @@ namespace Server.Items
         [Constructable]
         public SpecialDyeTub()
         {
-			Name = "Bac de Teinture (Spéciale)";
+			Name = "Bac de Teinture (SpÃ©ciale)";
 			Charges = 5;
         }
 

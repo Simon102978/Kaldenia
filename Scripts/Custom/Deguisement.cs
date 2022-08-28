@@ -328,7 +328,7 @@ namespace Server
 			}
 			else if (Name.Length < 3)
 			{
-				m_Player.SendMessage("Votre nom doit contenir plus de 3 caractères.");
+				m_Player.SendMessage("Votre nom doit contenir plus de 3 caractÃ¨res.");
 				return false;
 			}
 
@@ -347,7 +347,7 @@ namespace Server
 				m_Player.Race.RemoveRace(m_Player);
 				Race.AddRace(m_Player, m_Hue);
 
-				m_Player.SendMessage("Vous etes maintenant déguisé.");
+				m_Player.SendMessage("Vous etes maintenant dÃ©guisÃ©.");
 			}
 			else
 			{

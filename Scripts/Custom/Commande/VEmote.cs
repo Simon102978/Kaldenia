@@ -60,7 +60,7 @@ namespace Server.Scripts.Commands
                 else if (emote == "hic")
                 {
                     from.RevealingAction();
-                    from.PublicOverheadMessage(MessageType.Emote, from.EmoteHue, false, "*hïc*", false);
+                    from.PublicOverheadMessage(MessageType.Emote, from.EmoteHue, false, "*hic*", false);
                     PlaySound(from, from.Female ? 798 : 1070);
                 }
                 else if (emote == "bisou")
@@ -102,7 +102,7 @@ namespace Server.Scripts.Commands
                 else if (emote == "baille")
                 {
                     from.RevealingAction();
-                    from.PublicOverheadMessage(MessageType.Emote, from.EmoteHue, false, "*bâille*", false);
+                    from.PublicOverheadMessage(MessageType.Emote, from.EmoteHue, false, "*bÃ¢ille*", false);
                     PlaySound(from, from.Female ? 822 : 1096);
                 }
                 else if (emote == "wouahh")

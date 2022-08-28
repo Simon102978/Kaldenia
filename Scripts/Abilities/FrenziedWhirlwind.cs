@@ -13,7 +13,7 @@ namespace Server.Items
     public class FrenziedWhirlwind : WeaponAbility
     {
 
-		public override string Name => "Tourbillon frénétique";
+		public override string Name => "Tourbillon frÃ©nÃ©tique";
 
 		public override int Id => 15;
 

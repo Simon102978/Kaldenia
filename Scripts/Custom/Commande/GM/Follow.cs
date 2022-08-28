@@ -27,7 +27,7 @@ namespace Server.Scripts.Commands
 
             if (from != null && !from.Deleted)
             {
-                from.SendMessage("Sélectionner la cible à suivre. Sélectionner votre personnage pour arrêter de suivre quelqu'un.");
+                from.SendMessage("SÃ©lectionner la cible Ã  suivre. SÃ©lectionner votre personnage pour arrÃªter de suivre quelqu'un.");
                 from.Target = new FollowTarget();
             }
 		}
@@ -60,7 +60,7 @@ namespace Server.Scripts.Commands
 
             if ( target == null || !(target is Mobile))
             {
-                from.SendMessage("Cette cible est inadéquate.");
+                from.SendMessage("Cette cible est inadÃ©quate.");
                 return;
             }
 
@@ -78,13 +78,13 @@ namespace Server.Scripts.Commands
                     }
                     else
                     {
-                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus élevé que vous.");
+                        from.SendMessage("Vous ne pouvez pas suivre un Mj avec un rang plus Ã©levÃ© que vous.");
                         return;
                     }
                 }
                 else
                 {
-                    from.SendMessage("Vous êtes déjà en mode Follow.");
+                    from.SendMessage("Vous Ãªtes dÃ©jÃ  en mode Follow.");
                 }
             }
             else
@@ -129,7 +129,7 @@ namespace Server.Scripts.Commands
                         PlayerMobile m_pmTarget = m_Target as PlayerMobile;
                         if (m_From.AccessLevel == m_Target.AccessLevel && m_Target.Hidden && !m_pmTarget.VisibilityList.Contains(m_From))
                         {
-                            m_From.SendMessage("Le personnage s'est caché, vous ne pouvez plus le suivre.");
+                            m_From.SendMessage("Le personnage s'est cachÃ©, vous ne pouvez plus le suivre.");
                             Stop();
                             //m_From.CloseGump(typeof(FollowGump));
                             Follow.Collection.Remove(m_From);
@@ -151,7 +151,7 @@ namespace Server.Scripts.Commands
                     }
                     else if (m_Target.Map == Map.Internal)
                     {
-                        m_From.SendMessage("Le joueur s'est déconnecté.");
+                        m_From.SendMessage("Le joueur s'est dÃ©connectÃ©.");
                         Stop();
                         //m_From.CloseGump(typeof(FollowGump));
                         Follow.Collection.Remove(m_From);
@@ -160,7 +160,7 @@ namespace Server.Scripts.Commands
                 }
                 else
                 {
-                    m_From.SendMessage("Le joueur est supprimé.");
+                    m_From.SendMessage("Le joueur est supprimÃ©.");
                     m_From.SendMessage("Vous ne suivez plus le joueur.");
                     Stop();
                     //m_From.CloseGump(typeof(FollowGump));

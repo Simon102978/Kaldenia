@@ -13,7 +13,7 @@ namespace Server.Items
     {
         public override int BaseMana => 25;
 
-		public override string Name => "Désarçonner";
+		public override string Name => "DÃ©sarÃ§onner";
 
 		public override int Id => 6;
 

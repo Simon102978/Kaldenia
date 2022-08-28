@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using Server.Network;
 using Server.Mobiles;
@@ -30,7 +30,7 @@ namespace Server.Items.Crops
         {
             if (from.Mounted && !CropHelper.CanWorkMounted)
             {
-                from.SendMessage("Vous ne pouvez pas planter une graine lorsque vous êtes sur votre monture.");
+                from.SendMessage("Vous ne pouvez pas planter une graine lorsque vous Ãªtes sur votre monture.");
                 return;
             }
 
@@ -51,14 +51,14 @@ namespace Server.Items.Crops
             ArrayList cropshere = CropHelper.CheckCrop(m_pnt, m_map, 0);
             if (cropshere.Count > 0)
             {
-                from.SendMessage("Il y a déjà un plant qui pousse ici.");
+                from.SendMessage("Il y a dÃ©jÃ  un plant qui pousse ici.");
                 return;
             }
 
             ArrayList cropsnear = CropHelper.CheckCrop(m_pnt, m_map, 1);
             if ((cropsnear.Count > 2))
             {
-                from.SendMessage("Il y a trop de plants à proximité.");
+                from.SendMessage("Il y a trop de plants Ã  proximitÃ©.");
                 return;
             }
 

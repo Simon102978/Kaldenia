@@ -6,6 +6,7 @@ using Server.Mobiles;
 using Server.Items;
 using Server.Misc;
 using System.Collections.Generic;
+using Server.Custom;
 
 
 
@@ -132,11 +133,25 @@ namespace Server.Gumps
 			AddSection(x - 10, y + 317, 250, 135, "Expériences");
 
 			AddHtmlTexte(x + 10, y + 355, 150, "FE Disponible:");
+
+			int day = (int)(DateTime.Now - CustomPersistence.Ouverture).TotalDays + 1;
+
+			string couleur = "#FFFFFF";
+
+			if (day * 5 <= m_From.FENormalTotal)
+			{
+				couleur = "#336699";
+			}
+
 			AddHtmlTexte(x + 125, y + 355, 100, m_From.FE.ToString());
+
+
+
+
 			AddHtmlTexte(x + 10, y + 375, 150, "FE Attentes:");
 			AddHtmlTexte(x + 125, y + 375, 100, m_From.FEAttente.ToString());
 			AddHtmlTexte(x + 10, y + 395, 150, "FE Total:");
-			AddHtmlTexte(x + 125, y + 395, 100, m_From.FETotal.ToString());
+			AddHtmlTexteColored(x + 125, y + 395, 100, m_From.FETotal.ToString(), couleur);
 			AddHtmlTexte(x + 10, y + 415, 150, "Heures jouées:");
 			AddHtmlTexte(x + 125, y + 415, 100, Math.Round(m_From.Account.TotalGameTime.TotalHours, 2).ToString());
 

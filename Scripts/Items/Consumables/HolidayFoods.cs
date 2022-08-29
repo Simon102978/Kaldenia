@@ -145,9 +145,35 @@ namespace Server.Items
 				* MAKE IT STOP!
 				* AAAH! It feels like someone kicked me in the teeth!
 				*/
-                ConsumedBy.Say(1077388 + Utility.Random(5));
+              
 
-                if (Utility.RandomBool() && ConsumedBy.Body.IsHuman && !ConsumedBy.Mounted)
+				switch (Utility.Random(5))
+
+				{
+					case 0:
+						ConsumedBy.Say("AARGH ! C'EST BEAUCOUP TROP!");
+						break;
+					case 1:
+						ConsumedBy.Say("MES DENTS ! Perdu à jamais.");
+						break;
+					case 2:
+						ConsumedBy.Say("IL FAUT QUE CA S'ARRETE !");
+						break;
+					case 3:
+						ConsumedBy.Say("Trop de sucre ! Besoin d'aide.*avec un ton saccadé*");
+						break;
+					case 4:
+						ConsumedBy.Say("EnnnCOooree !");
+						break;
+
+
+					default:
+						break;
+				}
+
+
+
+				if (Utility.RandomBool() && ConsumedBy.Body.IsHuman && !ConsumedBy.Mounted)
                 {
                     ConsumedBy.Animate(32, 5, 1, true, false, 0);
                 }

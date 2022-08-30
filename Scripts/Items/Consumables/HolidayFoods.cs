@@ -241,11 +241,42 @@ namespace Server.Items
 
         public override bool Eat(Mobile from)
         {
-            int message = m_Messages[Utility.Random(m_Messages.Length)];
 
-            if (message != 0)
-            {
-                SendLocalizedMessageTo(from, message);
+
+			string message = null;
+
+			switch (Utility.Random(5))
+
+			{
+				case 0:
+					message = "Noooon !";
+					break;
+				case 1:
+					message = "Noooon ! Ne me mange pas ! JE suis pas commestible.";
+					break;
+				case 2:
+					message = "Quoi?! Mon pied a disparu.";
+					break;
+				case 3:
+					message = "Noooon ! J'ai des enfants ! Tu voudrais pas en faire des orphelins ? ";
+					break;
+				case 4:
+					message = "Cours, Cours ! Tu pourras pas m'attraper ! Je suis un homme d'epice !";
+					break;
+
+
+				default:
+					break;
+			}
+
+
+			//    int message = m_Messages[Utility.Random(m_Messages.Length)];
+
+			//        if (message != 0)
+			if (message != null)
+			{
+				//    SendLocalizedMessageTo( message);
+				from.SendMessage(message);
                 return false;
             }
 

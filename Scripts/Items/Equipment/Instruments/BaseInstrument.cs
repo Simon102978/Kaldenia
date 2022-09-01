@@ -358,7 +358,7 @@ namespace Server.Items
             - Radiation or Aura Damage (Heat, Cold etc.)
             - Summoning Undead
             */
-            double val = (targ.HitsMax * 1.6) + targ.StamMax + targ.ManaMax;
+            double val = (targ.HitsMax * 0.7) + targ.StamMax + targ.ManaMax;
 
             val += targ.SkillsTotal / 10;
 

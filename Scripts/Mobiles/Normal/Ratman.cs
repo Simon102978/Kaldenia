@@ -52,7 +52,7 @@ namespace Server.Mobiles
 		public override BoneType BoneType => BoneType.Regular;
 		public override void GenerateLoot()
         {
-            AddLoot(LootPack.Meager);
+            AddLoot(LootPack.Average);
 			AddLoot(LootPack.RandomLootItem(new System.Type[] { typeof(CheeseWedge), typeof(CheeseSlice), typeof(CheeseWheel) }, 25.0, 2, false, true));
 			AddLoot(LootPack.Others, Utility.RandomMinMax(1, 2));
 		}

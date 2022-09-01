@@ -51,7 +51,7 @@ namespace Server.Mobiles
             Karma = -7500;
 
             Tamable = !isFriend;
-            MinTameSkill = 107.1;
+            MinTameSkill = 90.1;
             ControlSlots = 2;
 
             SetWeaponAbility(WeaponAbility.BleedAttack);

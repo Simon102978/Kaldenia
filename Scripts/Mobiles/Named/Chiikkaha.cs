@@ -41,6 +41,7 @@
 
 		public override void GenerateLoot()
 		{
+			AddLoot(LootPack.Rich);
 			AddLoot(LootPack.LootItem<Items.Gold>(50, 100));
 			base.GenerateLoot();
 		}

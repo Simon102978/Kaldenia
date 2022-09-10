@@ -211,7 +211,8 @@ namespace Server.Items
         {
             Weight = 1.0;
             Stackable = true;
-        }
+			Name = "Cuisse de poulet cru";
+		}
 
         public RawChickenLeg(Serial serial)
             : base(serial)

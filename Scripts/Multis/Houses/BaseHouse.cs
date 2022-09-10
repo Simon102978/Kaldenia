@@ -4335,61 +4335,64 @@ namespace Server.Multis
             if (!from.Alive || m_House.Deleted || !m_House.IsFriend(from))
                 return;
 
-            if (targeted is Item)
-            {
-                Item item = targeted as Item;
+			if (targeted is Item)
+			{
+				Item item = targeted as Item;
 
-                if (m_Release)
-                {
-                    #region Mondain's legacy
-                    if (targeted is AddonContainerComponent)
-                    {
-                        AddonContainerComponent component = (AddonContainerComponent)targeted;
+				if (m_Release)
+				{
+					#region Mondain's legacy
+					if (targeted is AddonContainerComponent)
+					{
+						AddonContainerComponent component = (AddonContainerComponent)targeted;
 
-                        if (component.Addon != null)
-                            m_House.Release(from, component.Addon);
-                    }
-                    #endregion
-                    else if (item.Parent is Container)
-                    {
-                        from.SendLocalizedMessage(1080387); // You may not release this while it is in a container. 
-                    }
-                    else
-                    {
-                        m_House.Release(from, (Item)targeted);
-                    }
-                }
-                else
-                {
-                    if (targeted is VendorRentalContract)
-                    {
-                        from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1062392); // You must double click the contract in your pack to lock it down.
-                        from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 501732); // I cannot lock this down!
-                    }
-                    else if ((Item)targeted is AddonComponent)
-                    {
-                        from.LocalOverheadMessage(MessageType.Regular, 0x3E9, 501727); // You cannot lock that down!
-                        from.LocalOverheadMessage(MessageType.Regular, 0x3E9, 501732); // I cannot lock this down!
-                    }
-                    else
-                    {
-                        #region Mondain's legacy
-                        if (targeted is AddonContainerComponent)
-                        {
-                            AddonContainerComponent component = (AddonContainerComponent)targeted;
+						if (component.Addon != null)
+							m_House.Release(from, component.Addon);
+					}
+					#endregion
+					else if (item.Parent is Container)
+					{
+						from.SendLocalizedMessage(1080387); // You may not release this while it is in a container. 
+					}
+					else if (targeted is IChopable)
+						((IChopable)targeted).OnChop(from);
+					else
+					{
+						m_House.Release(from, (Item)targeted);
+					}
+				}
+				else
+				{
+					if (targeted is VendorRentalContract)
+					{
+						from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1062392); // You must double click the contract in your pack to lock it down.
+						from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 501732); // I cannot lock this down!
+					}
+					else if ((Item)targeted is AddonComponent)
+					{
+						from.LocalOverheadMessage(MessageType.Regular, 0x3E9, 501727); // You cannot lock that down!
+						from.LocalOverheadMessage(MessageType.Regular, 0x3E9, 501732); // I cannot lock this down!
+					}
+					else
+					{
+						#region Mondain's legacy
+						if (targeted is AddonContainerComponent)
+						{
+							AddonContainerComponent component = (AddonContainerComponent)targeted;
 
-                            if (component.Addon != null)
-                                m_House.LockDown(from, component.Addon);
-                        }
-                        else
-                        #endregion
-                        {
-                            m_House.LockDown(from, (Item)targeted);
-                        }
-                    }
-                }
-            }
-            else if (targeted is StaticTarget)
+							if (component.Addon != null)
+								m_House.LockDown(from, component.Addon);
+						}
+						else
+						#endregion
+						{
+							m_House.LockDown(from, (Item)targeted);
+						}
+					}
+				}
+			}
+		
+			else if (targeted is StaticTarget)
             {
                 return;
             }

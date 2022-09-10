@@ -145,9 +145,35 @@ namespace Server.Items
 				* MAKE IT STOP!
 				* AAAH! It feels like someone kicked me in the teeth!
 				*/
-                ConsumedBy.Say(1077388 + Utility.Random(5));
+              
 
-                if (Utility.RandomBool() && ConsumedBy.Body.IsHuman && !ConsumedBy.Mounted)
+				switch (Utility.Random(5))
+
+				{
+					case 0:
+						ConsumedBy.Say("AARGH ! C'EST BEAUCOUP TROP!");
+						break;
+					case 1:
+						ConsumedBy.Say("MES DENTS ! Perdu à jamais.");
+						break;
+					case 2:
+						ConsumedBy.Say("IL FAUT QUE CA S'ARRETE !");
+						break;
+					case 3:
+						ConsumedBy.Say("Trop de sucre ! Besoin d'aide.*avec un ton saccadé*");
+						break;
+					case 4:
+						ConsumedBy.Say("EnnnCOooree !");
+						break;
+
+
+					default:
+						break;
+				}
+
+
+
+				if (Utility.RandomBool() && ConsumedBy.Body.IsHuman && !ConsumedBy.Mounted)
                 {
                     ConsumedBy.Animate(32, 5, 1, true, false, 0);
                 }
@@ -215,11 +241,42 @@ namespace Server.Items
 
         public override bool Eat(Mobile from)
         {
-            int message = m_Messages[Utility.Random(m_Messages.Length)];
 
-            if (message != 0)
-            {
-                SendLocalizedMessageTo(from, message);
+
+			string message = null;
+
+			switch (Utility.Random(5))
+
+			{
+				case 0:
+					message = "Noooon !";
+					break;
+				case 1:
+					message = "Noooon ! Ne me mange pas ! JE suis pas commestible.";
+					break;
+				case 2:
+					message = "Quoi?! Mon pied a disparu.";
+					break;
+				case 3:
+					message = "Noooon ! J'ai des enfants ! Tu voudrais pas en faire des orphelins ? ";
+					break;
+				case 4:
+					message = "Cours, Cours ! Tu pourras pas m'attraper ! Je suis un homme d'epice !";
+					break;
+
+
+				default:
+					break;
+			}
+
+
+			//    int message = m_Messages[Utility.Random(m_Messages.Length)];
+
+			//        if (message != 0)
+			if (message != null)
+			{
+				//    SendLocalizedMessageTo( message);
+				from.SendMessage(message);
                 return false;
             }
 

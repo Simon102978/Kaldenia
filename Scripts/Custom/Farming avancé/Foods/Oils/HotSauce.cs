@@ -7,7 +7,7 @@ namespace Server.Items
             : base(0xEFD)
         {
             Stackable = true;
-            Name = "Hot Sauce";
+            Name = "Sauce piquante";
             Hue = 0x25;
         }
         public HotSauce(Serial serial)

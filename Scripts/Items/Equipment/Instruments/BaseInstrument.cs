@@ -10,7 +10,7 @@ namespace Server.Items
 
     public abstract class BaseInstrument : Item, ISlayer, IQuality, IResource
     {
-        public static readonly double MaxBardingDifficulty = 160.0;
+        public static readonly double MaxBardingDifficulty = 100.0;
 
         private int m_WellSound, m_BadlySound;
         private SlayerName m_Slayer, m_Slayer2;
@@ -358,7 +358,7 @@ namespace Server.Items
             - Radiation or Aura Damage (Heat, Cold etc.)
             - Summoning Undead
             */
-            double val = (targ.HitsMax * 1.6) + targ.StamMax + targ.ManaMax;
+            double val = (targ.HitsMax * 0.7) + targ.StamMax + targ.ManaMax;
 
             val += targ.SkillsTotal / 10;
 

@@ -245,13 +245,13 @@ namespace Server.Gumps
 					i = 1;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 6;
 					AddItem( loccoif2x,loccoif2y+marge, tatou[i,1]);
-                    AddLabel(loccoif2x + 65 ,loccoif2y+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoif2x + 130,loccoif2y+10+marge, 2101, ":");
+                    AddLabel(loccoif2x + 65,loccoif2y+10+marge, 2101, tatourelate[i]);
+
                     AddButton(loccoif2x+ 145,loccoif2y+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -259,13 +259,13 @@ namespace Server.Gumps
 					i = 2;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+                 
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 7;
 					AddItem( loccoif2x,loccoif2y+marge, tatou[i,1]);
                     AddLabel(loccoif2x + 65 ,loccoif2y+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoif2x + 130,loccoif2y+10+marge, 2101, ":");
+                  
                     AddButton(loccoif2x+ 145,loccoif2y+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -273,13 +273,13 @@ namespace Server.Gumps
 					i = 3;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+                    
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 8;
 					AddItem( loccoif2x,loccoif2y+marge, tatou[i,1]);
                     AddLabel(loccoif2x + 65 ,loccoif2y+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoif2x + 130,loccoif2y+10+marge, 2101, ":");
+
                     AddButton(loccoif2x+ 145,loccoif2y+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -291,9 +291,9 @@ namespace Server.Gumps
 					marge = marge + 50;
 
 					i = 15;
-                    AddLabel(loccoif2x + 70 ,loccoif2y+10+marge, 2101, tatourelate[i]); // Page Suivante
+               /*     AddLabel(loccoif2x + 70 ,loccoif2y+10+marge, 2101, tatourelate[i]); // Page Suivante
                     AddLabel(loccoif2x + 115,loccoif2y+10+marge, 2101, ":");
-                    AddButton(loccoif2x+ 130,loccoif2y+10+marge, 4005, 4007, i, GumpButtonType.Reply, 0);
+                    AddButton(loccoif2x+ 130,loccoif2y+10+marge, 4005, 4007, i, GumpButtonType.Reply, 0);*/
 					
 					break;
 				}
@@ -327,13 +327,13 @@ namespace Server.Gumps
 					i = 16;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+                  
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 21;
 					AddItem( loccoif2x,loccoif2y+marge, tatou[i,1]);
                     AddLabel(loccoif2x + 65 ,loccoif2y+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoif2x + 130,loccoif2y+10+marge, 2101, ":");
+                    
                     AddButton(loccoif2x+ 145,loccoif2y+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -341,13 +341,13 @@ namespace Server.Gumps
 					i = 17;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+                   
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 22;
 					AddItem( loccoif2x,loccoif2y+marge, tatou[i,1]);
                     AddLabel(loccoif2x + 65 ,loccoif2y+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoif2x + 130,loccoif2y+10+marge, 2101, ":");
+                  
                     AddButton(loccoif2x+ 145,loccoif2y+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -355,13 +355,13 @@ namespace Server.Gumps
 					i = 18;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 23;
 					AddItem( loccoif2x,loccoif2y+marge, tatou[i,1]);
                     AddLabel(loccoif2x + 65 ,loccoif2y+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoif2x + 130,loccoif2y+10+marge, 2101, ":");
+
                     AddButton(loccoif2x+ 145,loccoif2y+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -369,7 +369,7 @@ namespace Server.Gumps
 					i = 19;
 					AddItem( loccoifx-15,loccoify+marge, tatou[i,1]);
                     AddLabel(loccoifx + 50 ,loccoify+10+marge, 2101, tatourelate[i]);
-                    AddLabel(loccoifx + 115,loccoify+10+marge, 2101, ":");
+
                     AddButton(loccoifx+ 130,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					marge = marge + 50;
@@ -380,12 +380,12 @@ namespace Server.Gumps
 					
 					i = 29;
                     AddLabel(loccoifx + 5,loccoify+10+marge, 2101, tatourelate[i]); // Page Précédente
-                    AddLabel(loccoifx + 70,loccoify+10+marge, 2101, ":");
+
                     AddButton(loccoifx + 85,loccoify+10+marge, 4014, 4016, i, GumpButtonType.Reply, 0);
 
 					i = 30;
                     AddLabel(loccoif2x + 70 ,loccoif2y+10+marge, 2101, tatourelate[i]); // Page Suivante
-                    AddLabel(loccoif2x + 115,loccoif2y+10+marge, 2101, ":");
+
                     AddButton(loccoif2x+ 130,loccoif2y+10+marge, 4005, 4007, i, GumpButtonType.Reply, 0);
 					
 					break;
@@ -547,6 +547,7 @@ namespace Server.Gumps
 				}
 				int hue;
 				hue = 0;
+
 				try 
 				{
 					Item item22;

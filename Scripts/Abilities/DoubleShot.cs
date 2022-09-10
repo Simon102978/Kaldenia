@@ -32,7 +32,7 @@ namespace Server.Items
             Use(attacker, defender);
         }
 
-        public override bool Validate(Mobile from)
+  /*      public override bool Validate(Mobile from)
         {
             if (base.Validate(from))
             {
@@ -46,7 +46,7 @@ namespace Server.Items
             }
 
             return false;
-        }
+        }*/
 
         public void Use(Mobile attacker, Mobile defender)
         {

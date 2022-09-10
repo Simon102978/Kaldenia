@@ -1,3 +1,45 @@
+# A fixer - Kaldenia
+
+
+-PlayerVendor et maison fonctionne avec l'account, donc possibilité d'accèder au information de son alt.
+-les baits sont en jeu, les baits ne donne pas + de chance de capturer le poisson relié au bait
+-Protection en arcane retire entierement le MR et 13 physical resist.
+-Les guildes bug vs le nom // Deguisement ?
+-Fixer le healing, qui ramene le fantome a son corps, lorsque healer avec bandage
+-Quand on est deguise, notre nom sur la pierre de guilde et sur la plancarte (old) de maison change pour le nom de notre deguisement.
+-Si tu delog deguise, ca brise les infos de ton bodyvalue (tu te ramasse avec le mauvais skins et mauvaise teinte de peau.)
+-Valider que les aoe touche pas les invocations pour les sortilèges.
+-Fixer les crafts de nourritures de skills (a rescripter, les bouffe se stacks a l'infini (peu atteindre 200 dans un skills) mais ne dure que 2 minutes après la création)
+-Faire en sorte que les cadeaux puisse etre pièger.
+-les crops plantées dans une maison se suppriment apres un certain temps
+-on peu pas nourirre les triton avec de la meat... meme si ses supposer etre meat 
+-? ta machine espresso etait defectueuse ! y avait un delais de plusieurs jour que mon café soit pret !! et imposible de le sortir du baril ensuite 
+-Esclave (Qui fait planter, y'a un bug a quek part)
+-Cisseau de barbier, joueur et esclave ne marche pas
+-Esclave delog avec personnage
+-Josephine liberé fait planter le serveur lors de sa mort.
+
+
+# A faire ?
+
+-Possibilité de pouvoir drag un joueur assomer avec une commande?
+-Renom vs item id
+-Spell d'animation qui créer des mobs sinon j'avais rien d'autre lol
+-Enlever l'or prelever directement dans la banque, pour les achats (?)
+-Les statues ne semblent plus prendre la teinte du granit utilisé, même une fois 'complétée'.
+-dans le .deco il y a le .flip de commenté aussi
+-Crash Log n'apparait pas lorsqu'utiliser avec Linux...
+
+
+
+
+
+
+
+
+
+
+
 # [ServUO]
 
 [![Build Status](https://travis-ci.com/ServUO/ServUO.svg?branch=master)](https://travis-ci.com/ServUO/ServUO)

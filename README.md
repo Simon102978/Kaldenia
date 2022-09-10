@@ -1,6 +1,6 @@
 # A fixer - Kaldenia
 
-
+```
 -PlayerVendor et maison fonctionne avec l'account, donc possibilité d'accèder au information de son alt.
 -les baits sont en jeu, les baits ne donne pas + de chance de capturer le poisson relié au bait
 -Protection en arcane retire entierement le MR et 13 physical resist.
@@ -18,10 +18,11 @@
 -Cisseau de barbier, joueur et esclave ne marche pas
 -Esclave delog avec personnage
 -Josephine liberé fait planter le serveur lors de sa mort.
-
+```
 
 # A faire ?
 
+```
 -Possibilité de pouvoir drag un joueur assomer avec une commande?
 -Renom vs item id
 -Spell d'animation qui créer des mobs sinon j'avais rien d'autre lol
@@ -29,7 +30,7 @@
 -Les statues ne semblent plus prendre la teinte du granit utilisé, même une fois 'complétée'.
 -dans le .deco il y a le .flip de commenté aussi
 -Crash Log n'apparait pas lorsqu'utiliser avec Linux...
-
+```
 
 
 

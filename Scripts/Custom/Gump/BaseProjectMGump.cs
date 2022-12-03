@@ -302,7 +302,7 @@ namespace Server.Gumps
 
             if (hue.Length > 1)
             {
-                AddImage(x, y + 3, 996, hue[i]);
+                AddImage(x, y + 3, 996, hue[i] - 1);
                 AddButton(x, y + 3, 993, 993, buttonIDStart + i, GumpButtonType.Reply, 0);
 
                 x += 27;
@@ -310,7 +310,7 @@ namespace Server.Gumps
             }   
             while ( i < (hue.Length - 1 ) || i == 0)
             {
-                AddImage(x , y + 3, 997, hue[i]);
+                AddImage(x , y + 3, 997, hue[i] - 1);
                 AddButton(x , y + 3, 994, 994, buttonIDStart + i, GumpButtonType.Reply, 0);
 
                 x += 18;
@@ -319,7 +319,7 @@ namespace Server.Gumps
 
             if (hue.Length > 1)
             {
-                AddImage(x, y + 3, 995, hue[i]);
+                AddImage(x, y + 3, 995, hue[i] - 1);
                 AddButton(x, y + 3, 992, 992, buttonIDStart + i, GumpButtonType.Reply, 0);
                 x += 19;
                 i++;

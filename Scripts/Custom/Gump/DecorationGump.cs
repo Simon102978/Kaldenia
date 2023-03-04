@@ -231,7 +231,7 @@ namespace Server.Gumps
 
                     if ((from.GetDistanceToSqrt(item.Location) <= 1) && (from.InLOS(item)))
                     {
-						if (item.CanBeLock)
+						if (item.CanBeLock && item.Movable)
 						{
                             item.Movable = false;
 							item.LockByPlayer = true;
